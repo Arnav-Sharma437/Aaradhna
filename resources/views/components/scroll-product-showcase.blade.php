@@ -3,249 +3,171 @@
 ])
 
 @php
-    // Default curated showcase items if not passed dynamically
+    // Curated high-end spiritual products matching the editorial reference layout
     $items = $products ?? collect([
         (object)[
             'id' => 1,
-            'title' => 'Devi Refill Pack (100 Sticks)',
+            'title' => 'Devi Refill Pack',
             'slug' => 'devi-refill-pack',
-            'subtitle' => 'Pure Bhimseni Camphor & Divine Tulsi',
+            'subtitle' => '100 Bambooless Sticks • Bhimseni Camphor',
             'active_price' => 489.00,
-            'base_price' => 999.00,
-            'tag' => '✨ FESTIVE FAVORITE',
-            'large_image' => 'assets/images/devi-refill-pack-card.jpg',
-            'lifestyle_image' => 'assets/images/devi-refill-pack-card.jpg',
-            'description' => 'Infused with organic camphor, Vrindavan chandan, and sacred flora to elevate your temple atmosphere.',
-            'pack_info' => '100 Bambooless Sticks • Free Stand',
-            'rating' => 4.9,
-            'reviews_count' => 277
+            'image' => 'assets/images/devi-refill-pack-card.jpg',
+            'lifestyle' => 'assets/images/devi-refill-pack-card.jpg',
         ],
         (object)[
             'id' => 2,
-            'title' => 'Camphor (कपूर) Bambooless Agarbatti',
+            'title' => 'Camphor Bambooless Sticks',
             'slug' => 'camphor-bambooless-incense-sticks',
-            'subtitle' => 'Pure Bhimseni Crystal Aromatic Smoke',
+            'subtitle' => '100 Sticks • 0% Charcoal Purity',
             'active_price' => 489.00,
-            'base_price' => 999.00,
-            'tag' => '🌿 100% CHARCOAL-FREE',
-            'large_image' => 'assets/images/camphor-refill-pack-card.jpg',
-            'lifestyle_image' => 'assets/images/camphor-refill-pack-card.jpg',
-            'description' => 'Zero black soot, non-irritating soothing fragrance that purifies negative vastu energies.',
-            'pack_info' => '100 Sticks • Hand-Rolled Purity',
-            'rating' => 4.9,
-            'reviews_count' => 219
+            'image' => 'assets/images/camphor-refill-pack-card.jpg',
+            'lifestyle' => 'assets/images/camphor-refill-pack-card.jpg',
         ],
         (object)[
             'id' => 3,
-            'title' => 'Oudh Bambooless Incense Sticks',
+            'title' => 'Oudh Sacred Incense',
             'slug' => 'oudh-bambooless-incense-sticks',
-            'subtitle' => 'Ancient Assam Agarwood & Golden Amber',
+            'subtitle' => '40 Sticks • Ancient Assam Agarwood',
             'active_price' => 279.00,
-            'base_price' => 499.00,
-            'tag' => "👑 FOUNDER'S FAVORITE",
-            'large_image' => 'assets/images/oudh-pack-card.jpg',
-            'lifestyle_image' => 'assets/images/oudh-pack-card.jpg',
-            'description' => 'Rich, resinous oudh scent that creates deep meditative stillness during evening Sandhya.',
-            'pack_info' => '40 Sticks • 50 Mins Burn Time',
-            'rating' => 5.0,
-            'reviews_count' => 184
+            'image' => 'assets/images/oudh-pack-card.jpg',
+            'lifestyle' => 'assets/images/oudh-pack-card.jpg',
         ],
         (object)[
             'id' => 4,
-            'title' => 'Kesar Chandan Dhoop Cones',
+            'title' => 'Kesar Chandan Cones',
             'slug' => 'kesar-chandan-dhoop-cones',
-            'subtitle' => 'Kashmiri Saffron & Pure White Sandalwood',
+            'subtitle' => '40 Cones • Kashmiri Saffron & Sandalwood',
             'active_price' => 249.00,
-            'base_price' => 449.00,
-            'tag' => '🪔 DAILY HAVAN ESSENTIAL',
-            'large_image' => 'assets/images/chandan-cones-card.jpg',
-            'lifestyle_image' => 'assets/images/chandan-cones-card.jpg',
-            'description' => 'Charcoal-free sacred dhoop cones creating traditional temple fragrance for auspicious occasions.',
-            'pack_info' => '40 Cones • Ceramic Holder Included',
-            'rating' => 4.8,
-            'reviews_count' => 162
+            'image' => 'assets/images/chandan-cones-card.jpg',
+            'lifestyle' => 'assets/images/chandan-cones-card.jpg',
+        ],
+        (object)[
+            'id' => 5,
+            'title' => 'Guggal Loban Havan Cups',
+            'slug' => 'guggal-loban-havan-cup',
+            'subtitle' => '12 Cups • Pure Sambrani Resin',
+            'active_price' => 349.00,
+            'image' => 'assets/images/havan-cup.jpg',
+            'lifestyle' => 'assets/images/havan-cup.jpg',
         ],
     ]);
 
-    $totalSlides = count($items);
+    $totalItems = count($items);
 @endphp
 
 <!-- ========================================================================= -->
-<!-- PREMIUM SCROLL-DRIVEN PRODUCT SHOWCASE SECTION                           -->
-<!-- Pinned Sticky Container with Left Scaled Visuals & Right Rising Rail     -->
+<!-- EXACT REFERENCE REPLICA: STICKY HORIZONTAL VISUAL CANVAS + VERTICAL RAIL  -->
 <!-- ========================================================================= -->
 <section 
-    id="scroll-showcase-container" 
-    class="relative w-full bg-[#FAF7F2] border-b border-[#EADBCC] select-none"
-    style="height: {{ max(300, $totalSlides * 100) }}vh;"
-    data-total-slides="{{ $totalSlides }}"
+    id="exact-scroll-showcase" 
+    class="relative w-full bg-[#E5ECEF] border-b border-[#D0DCE1] select-none"
+    style="height: {{ max(350, $totalItems * 100) }}vh;"
+    data-total="{{ $totalItems }}"
 >
-    <!-- Sticky Screen Wrapper (Fixed viewport while scrolling through timeline) -->
-    <div class="sticky top-0 h-screen w-full flex flex-col justify-center overflow-hidden py-4 sm:py-6 lg:py-8 font-body">
+    <!-- Sticky Full-Screen Viewport Stage -->
+    <div class="sticky top-0 h-screen w-full flex items-stretch overflow-hidden font-body">
         
-        <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px] h-full flex flex-col justify-between">
+        <!-- ===================================================================== -->
+        <!-- 1. LEFT MAIN VISUAL CANVAS (~75-80% Width)                            -->
+        <!-- Wide panoramic runway showing MULTIPLE products across the stage      -->
+        <!-- ===================================================================== -->
+        <div class="w-full lg:w-[78%] h-full relative overflow-hidden bg-[#E5ECEF] flex flex-col justify-between p-6 sm:p-10 lg:p-14">
             
-            <!-- Top Section Header & Progression Indicator -->
-            <div class="flex items-center justify-between py-2 border-b border-[#EADBCC]/80 shrink-0">
-                <div class="flex items-center space-x-3">
-                    <span class="w-2 h-2 rounded-full bg-[#D38928] animate-pulse"></span>
-                    <span class="text-[11px] sm:text-xs font-bold uppercase tracking-[0.25em] text-[#965A15] font-heading">
-                        ✦ VEDIC SAMAGRI SHOWCASE • SCROLL TO EXPLORE ✦
-                    </span>
-                </div>
+            <!-- Top Editorial Header (Exact match to reference "Spring Summer 2026") -->
+            <div class="max-w-md z-20 space-y-2">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black font-heading text-[#121212] tracking-tight leading-none">
+                    Pavitra Collection 2026
+                </h2>
+                <p class="text-xs sm:text-sm text-gray-600 font-light leading-relaxed">
+                    Every sacred samagri is handcrafted with ancient Vedic vidhi to bring effortless serenity, purity, and divine blessings into your home temple.
+                </p>
+            </div>
+
+            <!-- Horizontal Visual Stage for Floating Figures / Products -->
+            <div class="relative flex-1 w-full flex items-center justify-center min-h-0 my-auto overflow-visible">
                 
-                <!-- Slide Index Counter & Visual Progress Pill -->
-                <div class="flex items-center space-x-3">
-                    <div class="text-xs font-bold text-[#121212] font-mono">
-                        <span id="showcase-current-num" class="text-[#D38928] text-sm sm:text-base">01</span>
-                        <span class="text-gray-400">/</span>
-                        <span class="text-gray-400">0{{ $totalSlides }}</span>
-                    </div>
-                    <!-- Minimal Progress Bar -->
-                    <div class="w-20 sm:w-28 h-1.5 bg-[#EADBCC] rounded-full overflow-hidden">
-                        <div id="showcase-progress-fill" class="h-full bg-gradient-to-r from-[#D38928] to-[#965A15] rounded-full transition-all duration-150 ease-out" style="width: 25%;"></div>
-                    </div>
+                <!-- Track that translates horizontally based on scroll progress -->
+                <div id="showcase-horizontal-track" class="relative w-full h-full flex items-center justify-center will-change-transform">
+                    
+                    @foreach($items as $index => $item)
+                        <!-- Each Visual Pack Item placed along the horizontal axis -->
+                        <div 
+                            class="showcase-visual-item absolute top-1/2 left-1/2 -translate-y-1/2 flex flex-col items-center justify-center will-change-transform transition-all duration-75"
+                            data-index="{{ $index }}"
+                        >
+                            <!-- Elegant Frameless Clean Visual -->
+                            <div class="visual-img-container relative flex items-center justify-center p-2">
+                                <img 
+                                    src="{{ asset($item->image) }}" 
+                                    alt="{{ $item->title }}"
+                                    class="max-h-[340px] sm:max-h-[440px] lg:max-h-[520px] w-auto object-contain drop-shadow-2xl rounded-[24px]"
+                                >
+                            </div>
+                        </div>
+                    @endforeach
+
+                </div>
+
+            </div>
+
+            <!-- Bottom Progress & Vedic Signature -->
+            <div class="flex items-center justify-between text-xs text-gray-500 z-20 pt-4">
+                <span class="font-serif italic text-gray-600">« शुद्धं समर्पयामि • 100% Bamboo-Free &amp; 0% Charcoal »</span>
+                <div class="flex items-center space-x-2">
+                    <span class="text-[10px] uppercase tracking-widest font-heading font-bold text-[#965A15]">Scroll to explore</span>
+                    <span class="animate-bounce">↓</span>
                 </div>
             </div>
 
-            <!-- Main Interactive Split Showcase Stage -->
-            <div class="flex-1 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center py-4 lg:py-6 min-h-0 overflow-hidden">
+        </div>
+
+        <!-- ===================================================================== -->
+        <!-- 2. RIGHT VERTICAL PRODUCT RAIL (~20-22% Width)                        -->
+        <!-- Narrow column with stacked rounded cards moving UPWARD continuously    -->
+        <!-- ===================================================================== -->
+        <div class="hidden lg:flex w-[22%] h-full relative bg-[#E5ECEF] border-l border-[#D0DCE1] flex-col justify-center px-4 py-8 overflow-hidden">
+            
+            <!-- Soft Gradient Fade Top & Bottom -->
+            <div class="absolute top-0 inset-x-0 h-16 bg-gradient-to-b from-[#E5ECEF] to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-[#E5ECEF] to-transparent z-10 pointer-events-none"></div>
+
+            <!-- Vertical Rail Container (Translates Upward) -->
+            <div id="showcase-rail-track" class="flex flex-col space-y-4 will-change-transform">
                 
-                <!-- ========================================================= -->
-                <!-- LEFT SIDE (65-70% / 8 Cols): LARGE SCALED VISUAL STAGE     -->
-                <!-- ========================================================= -->
-                <div class="lg:col-span-8 h-full min-h-[300px] sm:min-h-[420px] lg:min-h-[520px] relative rounded-[24px] sm:rounded-[32px] overflow-hidden bg-[#FFFDF9] border border-[#EADBCC] shadow-lg flex items-center justify-center p-4 sm:p-8">
-                    
-                    <!-- Ambient Backdrop Glow -->
-                    <div class="absolute inset-0 bg-gradient-to-tr from-[#FAF3EA] via-transparent to-[#FDF8F0] pointer-events-none"></div>
-                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-[#D38928]/10 rounded-full blur-[90px] pointer-events-none"></div>
+                @foreach($items as $index => $item)
+                    <!-- Single Product Card (Exact match to Reference: Square Image on Top, Title + Price below) -->
+                    <div 
+                        class="showcase-rail-card bg-white rounded-[22px] p-4 shadow-sm border border-transparent hover:border-[#D38928]/40 transition-all duration-300 cursor-pointer group flex flex-col justify-between"
+                        data-rail-index="{{ $index }}"
+                    >
+                        <!-- Square Product Image Container -->
+                        <div class="w-full aspect-square rounded-[16px] bg-[#F7FAFA] overflow-hidden flex items-center justify-center p-3 mb-3 border border-gray-100 group-hover:scale-[1.03] transition-transform duration-300">
+                            <img src="{{ asset($item->image) }}" alt="{{ $item->title }}" class="w-full h-full object-contain">
+                        </div>
 
-                    <!-- Slide Images Stack -->
-                    <div class="relative w-full h-full flex items-center justify-center">
-                        @foreach($items as $index => $item)
-                            <div 
-                                class="showcase-left-slide absolute inset-0 flex flex-col md:flex-row items-center justify-between p-4 sm:p-8 gap-6 will-change-transform"
-                                data-slide-index="{{ $index }}"
-                                style="
-                                    opacity: {{ $index === 0 ? '1' : '0' }};
-                                    transform: {{ $index === 0 ? 'scale(1) translateY(0)' : 'scale(0.85) translateY(40px)' }};
-                                    filter: {{ $index === 0 ? 'blur(0px)' : 'blur(10px)' }};
-                                    pointer-events: {{ $index === 0 ? 'auto' : 'none' }};
-                                "
-                            >
-                                <!-- Left Text Info Overlay within Visual Frame -->
-                                <div class="w-full md:w-5/12 space-y-3 sm:space-y-4 text-left z-10">
-                                    <div class="inline-block px-3 py-1 rounded-full bg-[#D38928]/15 border border-[#D38928]/40 text-[#965A15] text-[10px] sm:text-[11px] font-bold uppercase tracking-wider font-heading">
-                                        {{ $item->tag }}
-                                    </div>
-                                    
-                                    <h3 class="text-2xl sm:text-3xl lg:text-4xl font-black font-heading text-[#121212] tracking-tight leading-tight">
-                                        {{ $item->title }}
-                                    </h3>
-                                    
-                                    <p class="text-xs sm:text-sm text-gray-600 leading-relaxed font-light line-clamp-3">
-                                        {{ $item->description }}
-                                    </p>
-
-                                    <div class="flex items-center space-x-3 pt-2">
-                                        <div class="text-xl sm:text-2xl font-black font-heading text-[#C87A1E]">
-                                            ₹{{ number_format($item->active_price, 2) }}
-                                        </div>
-                                        <div class="text-xs sm:text-sm text-gray-400 line-through">
-                                            ₹{{ number_format($item->base_price, 2) }}
-                                        </div>
-                                    </div>
-
-                                    <div class="pt-2">
-                                        <a 
-                                            href="{{ route('products.show', $item->slug) }}" 
-                                            class="inline-flex items-center space-x-2 px-6 py-3 bg-[#121212] hover:bg-[#D38928] text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-[10px] shadow-md transition-all font-heading"
-                                        >
-                                            <span>Experience Purity</span>
-                                            <span>➔</span>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <!-- Right Large Packshot / Lifestyle Display -->
-                                <div class="w-full md:w-7/12 h-[220px] sm:h-[300px] lg:h-[400px] relative rounded-[20px] overflow-hidden bg-white border border-[#EADBCC] shadow-md">
-                                    <img 
-                                        src="{{ asset($item->large_image) }}" 
-                                        alt="{{ $item->title }}" 
-                                        class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700"
-                                    >
-                                    <div class="absolute bottom-3 right-3 px-3 py-1 rounded-[6px] bg-black/50 backdrop-blur-xs text-white text-[10px] sm:text-[11px] font-bold font-heading">
-                                        {{ $item->pack_info }}
-                                    </div>
-                                </div>
-
+                        <!-- Product Title & Price -->
+                        <div class="space-y-1 text-left">
+                            <h4 class="text-xs sm:text-[13px] font-bold font-serif text-[#121212] group-hover:text-[#D38928] transition-colors truncate">
+                                {{ $item->title }}
+                            </h4>
+                            <div class="text-xs sm:text-sm font-black font-heading text-[#121212]">
+                                ₹{{ number_format($item->active_price, 2) }}
                             </div>
-                        @endforeach
+                        </div>
                     </div>
-
-                </div>
-
-                <!-- ========================================================= -->
-                <!-- RIGHT SIDE (30-35% / 4 Cols): VERTICAL PRODUCT RAIL       -->
-                <!-- Synchronously translating upward on scroll                 -->
-                <!-- ========================================================= -->
-                <div class="lg:col-span-4 h-full relative overflow-hidden flex flex-col justify-center">
-                    
-                    <!-- Top & Bottom Soft Fading Masks for Smooth In/Out View -->
-                    <div class="absolute top-0 inset-x-0 h-12 bg-gradient-to-b from-[#FAF7F2] to-transparent z-10 pointer-events-none"></div>
-                    <div class="absolute bottom-0 inset-x-0 h-12 bg-gradient-to-t from-[#FAF7F2] to-transparent z-10 pointer-events-none"></div>
-
-                    <!-- Scroll Rail Inner Track (Calculated dynamically with transform translateY) -->
-                    <div id="showcase-vertical-rail" class="flex flex-col space-y-4 will-change-transform transition-transform duration-75 ease-out py-6">
-                        @foreach($items as $index => $item)
-                            <div 
-                                class="showcase-rail-card p-3.5 sm:p-4 rounded-[18px] bg-white border transition-all duration-300 shadow-xs flex items-center space-x-3.5 cursor-pointer"
-                                data-rail-index="{{ $index }}"
-                                data-slug="{{ $item->slug }}"
-                            >
-                                <!-- Thumbnail Box -->
-                                <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-[12px] bg-[#FAF7F2] border border-[#EADBCC] overflow-hidden shrink-0">
-                                    <img src="{{ asset($item->large_image) }}" alt="{{ $item->title }}" class="w-full h-full object-cover">
-                                </div>
-
-                                <!-- Card Metadata -->
-                                <div class="flex-1 min-w-0 space-y-1">
-                                    <span class="text-[9px] font-bold uppercase tracking-wider text-[#965A15] block font-heading">
-                                        0{{ $index + 1 }} • {{ $item->tag }}
-                                    </span>
-                                    <h4 class="text-xs sm:text-sm font-bold font-serif text-[#121212] truncate">
-                                        {{ $item->title }}
-                                    </h4>
-                                    <p class="text-[11px] text-gray-500 truncate font-light">
-                                        {{ $item->subtitle }}
-                                    </p>
-                                    <div class="flex items-center space-x-2 pt-0.5">
-                                        <span class="text-xs sm:text-sm font-black font-heading text-[#C87A1E]">
-                                            ₹{{ number_format($item->active_price, 2) }}
-                                        </span>
-                                        <span class="text-[10px] text-gray-400 line-through">
-                                            ₹{{ number_format($item->base_price, 2) }}
-                                        </span>
-                                    </div>
-                                </div>
-
-                                <!-- Active Pin Indicator -->
-                                <div class="showcase-rail-indicator w-7 h-7 rounded-full bg-[#FAF7F2] border border-[#EADBCC] flex items-center justify-center text-gray-400 shrink-0 text-xs transition-colors">
-                                    ➔
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-
-                </div>
+                @endforeach
 
             </div>
 
-            <!-- Bottom Devotional Tagline -->
-            <div class="py-2 flex items-center justify-between text-[11px] text-gray-500 border-t border-[#EADBCC]/80 shrink-0">
-                <span class="font-serif italic">« शुद्धं समर्पयामि — 100% Bamboo-Free &amp; Pure Temple Herbs »</span>
-                <span class="font-heading font-semibold text-[#D38928]">Interactive Scroll Sequence</span>
-            </div>
+            <!-- Floating Back-to-Top Button (from reference) -->
+            <button 
+                type="button" 
+                id="showcase-scroll-top-btn"
+                class="absolute bottom-6 right-6 z-20 w-10 h-10 rounded-full bg-white text-[#121212] hover:bg-[#D38928] hover:text-white flex items-center justify-center shadow-md border border-gray-200 transition-all duration-200 focus:outline-none cursor-pointer"
+                aria-label="Scroll Top"
+            >
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+            </button>
 
         </div>
 
@@ -253,109 +175,93 @@
 </section>
 
 <!-- ========================================================================= -->
-<!-- JAVASCRIPT SCROLL ENGINE (RequestAnimationFrame + Smooth Transformations) -->
+<!-- MATHEMATICAL SCROLL-DRIVEN CONTINUOUS ENGINE                              -->
 <!-- ========================================================================= -->
 @push('scripts')
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const container = document.getElementById('scroll-showcase-container');
-        if (!container) return;
+        const showcaseSection = document.getElementById('exact-scroll-showcase');
+        if (!showcaseSection) return;
 
-        const leftSlides = document.querySelectorAll('.showcase-left-slide');
-        const railTrack = document.getElementById('showcase-vertical-rail');
-        const railCards = document.querySelectorAll('.showcase-rail-card');
-        const progressFill = document.getElementById('showcase-progress-fill');
-        const currentNumEl = document.getElementById('showcase-current-num');
+        const visualItems = showcaseSection.querySelectorAll('.showcase-visual-item');
+        const railTrack = document.getElementById('showcase-rail-track');
+        const railCards = showcaseSection.querySelectorAll('.showcase-rail-card');
+        const scrollTopBtn = document.getElementById('showcase-scroll-top-btn');
 
-        const totalSlides = parseInt(container.dataset.totalSlides) || leftSlides.length;
+        const total = parseInt(showcaseSection.dataset.total) || visualItems.length;
         let ticking = false;
 
-        const updateShowcaseState = () => {
-            const rect = container.getBoundingClientRect();
-            const containerHeight = container.offsetHeight;
+        // Base horizontal spacing between items in viewport units / pixels
+        const getItemSpacing = () => {
+            const width = window.innerWidth;
+            if (width >= 1280) return 420;
+            if (width >= 1024) return 340;
+            if (width >= 640) return 260;
+            return 200;
+        };
+
+        const updateExactShowcase = () => {
+            const rect = showcaseSection.getBoundingClientRect();
+            const sectionHeight = showcaseSection.offsetHeight;
             const windowHeight = window.innerHeight;
 
-            // Compute total scrollable distance within pinned section
-            const totalScrollableDistance = containerHeight - windowHeight;
-            if (totalScrollableDistance <= 0) return;
+            const totalScrollable = sectionHeight - windowHeight;
+            if (totalScrollable <= 0) return;
 
-            // Calculate progress (0.0 to 1.0)
-            const currentScrolled = -rect.top;
-            const rawProgress = currentScrolled / totalScrollableDistance;
-            const progress = Math.min(Math.max(rawProgress, 0), 1);
+            // Compute normalized progress [0.0 ... 1.0]
+            const scrolledDistance = -rect.top;
+            const progress = Math.min(Math.max(scrolledDistance / totalScrollable, 0), 1);
 
-            // Determine active slide index and continuous fractional progress
-            const slideSegment = 1 / (totalSlides - 1 || 1);
-            const activeSlideIndex = Math.min(Math.floor(progress * totalSlides), totalSlides - 1);
-            const continuousIndex = progress * (totalSlides - 1);
+            // Fractional active index from 0 to total - 1
+            const continuousIndex = progress * (total - 1);
+            const activeIndex = Math.round(continuousIndex);
+            const spacing = getItemSpacing();
 
-            // 1. Update Progress Pill & Number Indicator
-            if (progressFill) {
-                progressFill.style.width = `${Math.round(progress * 100)}%`;
-            }
-            if (currentNumEl) {
-                currentNumEl.textContent = `0${activeSlideIndex + 1}`;
-            }
-
-            // 2. Animate Left Side Visuals (Scale, Opacity, Blur Transitions)
-            leftSlides.forEach((slide, i) => {
-                const distance = continuousIndex - i; // 0 when directly active, positive when passed, negative when upcoming
+            // 1. HORIZONTAL PHYSICAL MOVEMENT & PERSPECTIVE SCALING ACROSS LEFT CANVAS
+            visualItems.forEach((item, i) => {
+                // Offset from the continuous virtual center
+                const offset = i - continuousIndex;
                 
-                if (Math.abs(distance) < 1.0) {
-                    // Transitioning into or out of active view
-                    const normalized = 1 - Math.abs(distance);
-                    const opacity = Math.max(0, Math.min(1, normalized));
-                    const scale = 0.85 + (0.15 * normalized);
-                    const translateY = distance * -30; // Physical movement into place
-                    const blur = (1 - normalized) * 10;
+                // Horizontal coordinate relative to center of visual stage
+                const xPos = offset * spacing;
+                
+                // Distance to absolute center (0 = perfectly centered)
+                const distToCenter = Math.abs(offset);
 
-                    slide.style.opacity = opacity.toFixed(3);
-                    slide.style.transform = `scale(${scale.toFixed(3)}) translateY(${translateY.toFixed(1)}px)`;
-                    slide.style.filter = `blur(${blur.toFixed(1)}px)`;
-                    slide.style.pointerEvents = opacity > 0.6 ? 'auto' : 'none';
-                    slide.style.zIndex = Math.round(opacity * 10);
-                } else if (distance >= 1.0) {
-                    // Past slide (scaled down and faded up)
-                    slide.style.opacity = '0';
-                    slide.style.transform = 'scale(0.85) translateY(-40px)';
-                    slide.style.filter = 'blur(10px)';
-                    slide.style.pointerEvents = 'none';
-                    slide.style.zIndex = '0';
-                } else {
-                    // Upcoming slide (scaled down and faded down)
-                    slide.style.opacity = '0';
-                    slide.style.transform = 'scale(0.85) translateY(40px)';
-                    slide.style.filter = 'blur(10px)';
-                    slide.style.pointerEvents = 'none';
-                    slide.style.zIndex = '0';
-                }
+                // Scale formula: 1.0 at center, scaling down to 0.70 at sides
+                const scale = Math.max(0.68, 1.0 - (distToCenter * 0.28));
+                
+                // Opacity formula: 1.0 at center, fading down to 0.25 at sides
+                const opacity = Math.max(0.20, 1.0 - (distToCenter * 0.55));
+                
+                // Blur formula: 0px at center, increasing to 8px blur at sides
+                const blur = Math.min(8, distToCenter * 4.5);
+
+                // Z-index: centered element always stays on top
+                const zIndex = Math.round((1 - Math.min(distToCenter, 1)) * 30);
+
+                item.style.transform = `translate(-50%, -50%) translateX(${xPos.toFixed(1)}px) scale(${scale.toFixed(3)})`;
+                item.style.opacity = opacity.toFixed(3);
+                item.style.filter = `blur(${blur.toFixed(1)}px)`;
+                item.style.zIndex = zIndex;
             });
 
-            // 3. Animate Right Side Vertical Product Rail (Moving upward smoothly)
+            // 2. VERTICAL RAIL SYNCHRONIZED CONTINUOUS UPWARD MOVEMENT
             if (railTrack && railCards.length > 0) {
-                const cardHeight = railCards[0].offsetHeight + 16; // including gap/margin
-                const maxTranslate = (totalSlides - 1) * cardHeight;
-                const currentTranslateY = -(progress * maxTranslate);
+                const cardHeight = railCards[0].offsetHeight + 16; // height + gap
+                const totalRailDistance = (total - 1) * cardHeight;
+                const railTranslateY = -(progress * totalRailDistance);
 
-                railTrack.style.transform = `translateY(${currentTranslateY.toFixed(1)}px)`;
+                railTrack.style.transform = `translateY(${railTranslateY.toFixed(1)}px)`;
 
-                // Emphasize active card in rail
+                // Highlight active card
                 railCards.forEach((card, idx) => {
-                    const indicator = card.querySelector('.showcase-rail-indicator');
-                    if (idx === activeSlideIndex) {
-                        card.classList.add('border-[#D38928]', 'bg-[#FFFDF9]', 'shadow-md', 'scale-[1.02]');
-                        card.classList.remove('border-transparent', 'border-[#EADBCC]/60', 'bg-white', 'opacity-70');
-                        if (indicator) {
-                            indicator.classList.add('bg-[#D38928]', 'text-white', 'border-[#D38928]');
-                            indicator.classList.remove('bg-[#FAF7F2]', 'text-gray-400');
-                        }
+                    if (idx === activeIndex) {
+                        card.classList.add('ring-2', 'ring-[#D38928]', 'shadow-lg');
+                        card.classList.remove('opacity-60');
                     } else {
-                        card.classList.remove('border-[#D38928]', 'bg-[#FFFDF9]', 'shadow-md', 'scale-[1.02]');
-                        card.classList.add('border-[#EADBCC]/60', 'bg-white', 'opacity-70');
-                        if (indicator) {
-                            indicator.classList.remove('bg-[#D38928]', 'text-white', 'border-[#D38928]');
-                            indicator.classList.add('bg-[#FAF7F2]', 'text-gray-400');
-                        }
+                        card.classList.remove('ring-2', 'ring-[#D38928]', 'shadow-lg');
+                        card.classList.add('opacity-60');
                     }
                 });
             }
@@ -365,24 +271,24 @@
 
         const onScroll = () => {
             if (!ticking) {
-                window.requestAnimationFrame(updateShowcaseState);
+                window.requestAnimationFrame(updateExactShowcase);
                 ticking = true;
             }
         };
 
         window.addEventListener('scroll', onScroll, { passive: true });
-        window.addEventListener('resize', updateShowcaseState);
+        window.addEventListener('resize', updateExactShowcase);
 
-        // Click on right rail card to smoothly scroll to that slide position
+        // Click on right rail card smoothly scrolls directly to that item
         railCards.forEach((card, idx) => {
             card.addEventListener('click', () => {
-                const containerTop = container.offsetTop;
-                const containerHeight = container.offsetHeight;
+                const sectionTop = showcaseSection.offsetTop;
+                const sectionHeight = showcaseSection.offsetHeight;
                 const windowHeight = window.innerHeight;
-                const totalScrollableDistance = containerHeight - windowHeight;
+                const totalScrollable = sectionHeight - windowHeight;
                 
-                const targetProgress = idx / (totalSlides - 1 || 1);
-                const targetScrollY = containerTop + (targetProgress * totalScrollableDistance);
+                const targetProgress = idx / (total - 1);
+                const targetScrollY = sectionTop + (targetProgress * totalScrollable);
 
                 window.scrollTo({
                     top: targetScrollY,
@@ -391,8 +297,17 @@
             });
         });
 
+        if (scrollTopBtn) {
+            scrollTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: showcaseSection.offsetTop,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
         // Initialize state on page load
-        updateShowcaseState();
+        updateExactShowcase();
     });
 </script>
 @endpush
