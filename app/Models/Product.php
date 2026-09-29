@@ -102,6 +102,11 @@ class Product extends Model
         return $this->hasMany(Faq::class)->orderBy('sort_order');
     }
 
+    public function inventoryLogs(): HasMany
+    {
+        return $this->hasMany(InventoryLog::class)->latest();
+    }
+
     public function getActivePriceAttribute(): float
     {
         return (float) ($this->sale_price ?? $this->base_price);

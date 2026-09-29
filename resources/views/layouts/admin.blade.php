@@ -115,14 +115,14 @@
 
                             <!-- Inventory Tracking -->
                             <a 
-                                href="{{ route('admin.products.index', ['stock' => 'low_stock']) }}" 
-                                class="flex items-center justify-between px-3 py-2 rounded-[8px] text-xs font-medium text-[#CCCCCC] hover:bg-[#252525] hover:text-white transition-all group"
+                                href="{{ route('admin.inventory.index') }}" 
+                                class="flex items-center justify-between px-3 py-2 rounded-[8px] text-xs font-medium transition-all group {{ request()->routeIs('admin.inventory*') ? 'bg-[#2E2E2E] text-white font-bold' : 'text-[#CCCCCC] hover:bg-[#252525] hover:text-white' }}"
                             >
                                 <div class="flex items-center space-x-3">
                                     <svg class="w-4 h-4 text-white/60 group-hover:text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
                                     <span>Inventory</span>
                                 </div>
-                                <span class="px-1.5 py-0.5 text-[10px] font-bold rounded-full bg-rose-500/20 text-rose-300">1 alert</span>
+                                <span class="px-1.5 py-0.5 text-[10px] font-bold rounded-full bg-amber-500/20 text-amber-300">Live</span>
                             </a>
 
                             <!-- Categories -->

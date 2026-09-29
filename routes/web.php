@@ -37,6 +37,7 @@ use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\Admin\CollectionController as AdminCollectionController;
+use App\Http\Controllers\Admin\InventoryController as AdminInventoryController;
 
 Route::prefix('admin')->name('admin.')->group(function () {
     // Guest Admin Auth Routes
@@ -60,6 +61,13 @@ Route::prefix('admin')->name('admin.')->group(function () {
         // Collections Module
         Route::patch('/collections/{collection}/toggle-status', [AdminCollectionController::class, 'toggleStatus'])->name('collections.toggle-status');
         Route::resource('collections', AdminCollectionController::class);
+
+        // Inventory Management Module
+        Route::get('/inventory', [AdminInventoryController::class, 'index'])->name('inventory.index');
+        Route::post('/inventory/products/{product}/adjust', [AdminInventoryController::class, 'adjust'])->name('inventory.adjust');
+        Route::patch('/inventory/products/{product}/toggle-tracking', [AdminInventoryController::class, 'toggleTracking'])->name('inventory.toggle-tracking');
+        Route::post('/inventory/bulk-update', [AdminInventoryController::class, 'bulkUpdate'])->name('inventory.bulk-update');
+        Route::get('/inventory/history', [AdminInventoryController::class, 'history'])->name('inventory.history');
     });
 });
 
