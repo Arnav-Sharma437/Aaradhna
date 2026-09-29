@@ -50,43 +50,43 @@
         <!-- ========================================================================= -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             
-            <!-- LEFT COLUMN: Large High-Res Lifestyle & Packshots 2-Column Grid (6 Cols) -->
-            <div class="lg:col-span-6 space-y-4">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- LEFT COLUMN: Large High-Res Lifestyle & Packshots 2-Column Grid (7 Cols - Enlarged) -->
+            <div class="lg:col-span-7 space-y-5">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     
-                    <!-- Visual 1: Hero Packshot with Ceramic Stand Banner -->
-                    <div class="relative aspect-[4/5] rounded-[16px] overflow-hidden bg-white border border-[#EADBCC] shadow-xs group">
+                    <!-- Visual 1: Hero Packshot with Ceramic Stand Banner (Larger Aspect Ratio) -->
+                    <div class="relative aspect-[3/4] rounded-[20px] overflow-hidden bg-white border border-[#EADBCC] shadow-md group">
                         <img src="{{ asset($mainImg) }}" alt="{{ $product->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute top-3 right-3 text-right pointer-events-none select-none leading-none">
-                            <span class="text-[10px] uppercase font-semibold text-gray-500 block">pack of</span>
-                            <span class="text-xl font-black font-heading text-[#3E2D22] block my-0.5">100</span>
-                            <span class="text-[10px] uppercase font-semibold text-gray-500 block">sticks</span>
+                        <div class="absolute top-4 right-4 text-right pointer-events-none select-none leading-none">
+                            <span class="text-[11px] uppercase font-semibold text-gray-500 block">pack of</span>
+                            <span class="text-2xl font-black font-heading text-[#3E2D22] block my-0.5">100</span>
+                            <span class="text-[11px] uppercase font-semibold text-gray-500 block">sticks</span>
                         </div>
-                        <div class="absolute bottom-3 left-3 right-3 bg-black/50 backdrop-blur-xs py-1.5 px-3 rounded-[8px] text-center text-white text-[11px] font-bold tracking-wider">
+                        <div class="absolute bottom-3.5 left-3.5 right-3.5 bg-black/55 backdrop-blur-xs py-2 px-3 rounded-[10px] text-center text-white text-xs font-bold tracking-wider shadow-sm">
                             FREE CERAMIC STAND <span class="text-[#F6DAA8] font-normal">Worth ₹150/-</span>
                         </div>
                     </div>
 
                     <!-- Visual 2: Artisanal Pooja Altar & Burning Incense -->
-                    <div class="relative aspect-[4/5] rounded-[16px] overflow-hidden bg-white border border-[#EADBCC] shadow-xs group">
+                    <div class="relative aspect-[3/4] rounded-[20px] overflow-hidden bg-white border border-[#EADBCC] shadow-md group">
                         <img src="{{ asset('assets/images/hero-incense-banner.jpg') }}" alt="Aaradhna Sacred Altar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute bottom-3 left-3 right-3 bg-black/45 backdrop-blur-xs py-1.5 px-3 rounded-[8px] text-center text-white text-[10px] font-bold tracking-wider">
+                        <div class="absolute bottom-3.5 left-3.5 right-3.5 bg-black/55 backdrop-blur-xs py-2 px-3 rounded-[10px] text-center text-white text-[11px] font-bold tracking-wider shadow-sm">
                             100% BAMBOO FREE & VEDIC
                         </div>
                     </div>
 
                     <!-- Visual 3: Sacred Camphor / Temple Crystals -->
-                    <div class="relative aspect-[4/5] rounded-[16px] overflow-hidden bg-white border border-[#EADBCC] shadow-xs group">
+                    <div class="relative aspect-[3/4] rounded-[20px] overflow-hidden bg-white border border-[#EADBCC] shadow-md group">
                         <img src="{{ asset('assets/images/camphor-refill-pack-card.jpg') }}" alt="Pure Temple Camphor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/90 text-[#965A15] text-[10px] font-bold uppercase tracking-wider font-heading border border-[#D38928]/30">
+                        <div class="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/95 text-[#965A15] text-[11px] font-bold uppercase tracking-wider font-heading border border-[#D38928]/40 shadow-xs">
                             Zero Charcoal
                         </div>
                     </div>
 
                     <!-- Visual 4: Devotional Morning Ritual Living Room -->
-                    <div class="relative aspect-[4/5] rounded-[16px] overflow-hidden bg-white border border-[#EADBCC] shadow-xs group">
+                    <div class="relative aspect-[3/4] rounded-[20px] overflow-hidden bg-white border border-[#EADBCC] shadow-md group">
                         <img src="{{ asset('assets/images/hero-ram-uphaar-banner.jpg') }}" alt="Sacred Fragrance Ambience" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute bottom-3 left-3 right-3 bg-black/45 backdrop-blur-xs py-1.5 px-3 rounded-[8px] text-center text-white text-[10px] font-bold tracking-wider">
+                        <div class="absolute bottom-3.5 left-3.5 right-3.5 bg-black/55 backdrop-blur-xs py-2 px-3 rounded-[10px] text-center text-white text-[11px] font-bold tracking-wider shadow-sm">
                             TEMPLE-GRADE PURITY
                         </div>
                     </div>
@@ -94,7 +94,7 @@
                 </div>
 
                 <!-- Visual 5 & 6: Fragrance Notes Pyramid & Why Choose Aaradhna Infographics -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
                     
                     <!-- Card 1: Fragrance Notes Pyramid -->
                     <div class="bg-gradient-to-b from-[#A66E2E] to-[#6E4215] text-white p-6 rounded-[16px] shadow-sm flex flex-col justify-between">
@@ -152,8 +152,8 @@
                 </div>
             </div>
 
-            <!-- RIGHT COLUMN: Purchase Details, Multi-Buy Banner & Ceramic Stand (6 Cols) -->
-            <div class="lg:col-span-6 bg-white rounded-[24px] border border-[#EADBCC] p-6 sm:p-8 lg:p-10 shadow-xs space-y-6 sticky top-28">
+            <!-- RIGHT COLUMN: Purchase Details, Multi-Buy Banner & Ceramic Stand (5 Cols) -->
+            <div class="lg:col-span-5 bg-white rounded-[24px] border border-[#EADBCC] p-6 sm:p-8 lg:p-10 shadow-xs space-y-6 sticky top-28">
                 
                 <!-- Star Rating & Review Count -->
                 <div class="flex items-center space-x-2 text-[#D38928] text-sm">
