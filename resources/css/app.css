@@ -72,6 +72,72 @@
     animation-play-state: paused;
 }
 
+/* Sacred Dhoop & Incense Smoke Floating Animations */
+@keyframes smoke-rise-1 {
+    0% {
+        transform: translateY(0) scale(1) translateX(0);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.45;
+    }
+    60% {
+        transform: translateY(-80px) scale(1.6) translateX(25px);
+        opacity: 0.35;
+    }
+    100% {
+        transform: translateY(-160px) scale(2.2) translateX(-20px);
+        opacity: 0;
+    }
+}
+
+@keyframes smoke-rise-2 {
+    0% {
+        transform: translateY(0) scale(1) translateX(0);
+        opacity: 0;
+    }
+    25% {
+        opacity: 0.4;
+    }
+    65% {
+        transform: translateY(-90px) scale(1.8) translateX(-30px);
+        opacity: 0.25;
+    }
+    100% {
+        transform: translateY(-180px) scale(2.5) translateX(25px);
+        opacity: 0;
+    }
+}
+
+@keyframes diya-flicker {
+    0%, 100% {
+        transform: scale(1) translateY(0);
+        filter: drop-shadow(0 0 15px rgba(246, 218, 168, 0.8));
+    }
+    50% {
+        transform: scale(1.08) translateY(-2px);
+        filter: drop-shadow(0 0 25px rgba(211, 137, 40, 0.95));
+    }
+}
+
+.animate-smoke-1 {
+    animation: smoke-rise-1 9s ease-out infinite;
+}
+
+.animate-smoke-2 {
+    animation: smoke-rise-2 12s ease-out infinite;
+    animation-delay: 3s;
+}
+
+.animate-smoke-3 {
+    animation: smoke-rise-1 10s ease-out infinite;
+    animation-delay: 6s;
+}
+
+.animate-diya {
+    animation: diya-flicker 3s ease-in-out infinite;
+}
+
 .no-scrollbar::-webkit-scrollbar {
     display: none;
 }
