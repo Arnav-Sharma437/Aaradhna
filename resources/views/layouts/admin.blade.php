@@ -103,8 +103,8 @@
 
                             <!-- Products -->
                             <a 
-                                href="{{ route('admin.dashboard') }}" 
-                                class="flex items-center justify-between px-3 py-2 rounded-[8px] text-xs font-medium text-[#CCCCCC] hover:bg-[#252525] hover:text-white transition-all group"
+                                href="{{ route('admin.products.index') }}" 
+                                class="flex items-center justify-between px-3 py-2 rounded-[8px] text-xs font-medium transition-all group {{ request()->routeIs('admin.products*') ? 'bg-[#2E2E2E] text-white font-bold' : 'text-[#CCCCCC] hover:bg-[#252525] hover:text-white' }}"
                             >
                                 <div class="flex items-center space-x-3">
                                     <svg class="w-4 h-4 text-white/60 group-hover:text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
@@ -115,7 +115,7 @@
 
                             <!-- Inventory Tracking -->
                             <a 
-                                href="{{ route('admin.dashboard') }}" 
+                                href="{{ route('admin.products.index', ['stock' => 'low_stock']) }}" 
                                 class="flex items-center justify-between px-3 py-2 rounded-[8px] text-xs font-medium text-[#CCCCCC] hover:bg-[#252525] hover:text-white transition-all group"
                             >
                                 <div class="flex items-center space-x-3">

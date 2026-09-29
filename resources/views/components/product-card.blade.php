@@ -14,7 +14,8 @@
         'trial-pack-combo' => 'assets/images/devi-refill-pack-card.jpg',
     ];
 
-    $imageSrc = $imageMap[$product->slug] ?? 'assets/images/devi-refill-pack-card.jpg';
+    $primaryDbImage = $product->primaryImage ? $product->primaryImage->image_path : ($product->images->first() ? $product->images->first()->image_path : null);
+    $imageSrc = $primaryDbImage ?? ($imageMap[$product->slug] ?? 'assets/images/devi-refill-pack-card.jpg');
     $isSoldOut = $product->stock_quantity <= 0;
     
     // Top border pill badges

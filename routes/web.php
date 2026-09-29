@@ -34,6 +34,7 @@ Route::get('/blogs/{slug}', function (string $slug) {
 // =========================================================================
 use App\Http\Controllers\Admin\AuthController as AdminAuthController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
+use App\Http\Controllers\Admin\ProductController as AdminProductController;
 
 Route::prefix('admin')->name('admin.')->group(function () {
     // Guest Admin Auth Routes
@@ -45,6 +46,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::middleware(['admin'])->group(function () {
         Route::get('/', [AdminDashboardController::class, 'index']);
         Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
+
+        // Products Module
+        Route::patch('/products/{product}/toggle-status', [AdminProductController::class, 'toggleStatus'])->name('products.toggle-status');
+        Route::resource('products', AdminProductController::class);
     });
 });
 
