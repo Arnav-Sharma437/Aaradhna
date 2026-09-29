@@ -17,8 +17,10 @@ class CollectionController extends Controller
     public function show(Request $request, string $slug = 'all'): View
     {
         // 1. Fetch or synthesize Collection Meta
+        $dbCollection = Collection::where('slug', $slug)->where('is_active', true)->first();
+
         if ($slug === 'all') {
-            $collection = (object) [
+            $collection = $dbCollection ?? (object) [
                 'title' => 'All Sacred Products',
                 'slug' => 'all',
                 'description' => 'Discover our complete range of 100% natural pooja samagri, bambooless incense sticks, organic havan cups, and sacred attar sprays.',
@@ -27,25 +29,21 @@ class CollectionController extends Controller
                 'meta_description' => 'Explore 100% pure Vedic pooja essentials crafted without bamboo, toxic charcoal, or synthetic aromas.',
             ];
             $query = Product::where('status', 'active');
+        } elseif ($dbCollection) {
+            $collection = $dbCollection;
+            $query = $collection->products()->where('status', 'active');
         } else {
-            $dbCollection = Collection::where('slug', $slug)->where('is_active', true)->first();
-
-            if ($dbCollection) {
-                $collection = $dbCollection;
-                $query = $collection->products()->where('status', 'active');
-            } else {
-                // If slug matches a category directly
-                $category = Category::where('slug', $slug)->where('is_active', true)->firstOrFail();
-                $collection = (object) [
-                    'title' => $category->name,
-                    'slug' => $category->slug,
-                    'description' => $category->description ?? $category->subtitle,
-                    'banner_path' => $category->banner_path,
-                    'meta_title' => $category->meta_title ?? "{$category->name} — 100% Pure & Vedic | Aaradhna.co",
-                    'meta_description' => $category->meta_description ?? $category->description,
-                ];
-                $query = Product::where('category_id', $category->id)->where('status', 'active');
-            }
+            // If slug matches a category directly
+            $category = Category::where('slug', $slug)->where('is_active', true)->firstOrFail();
+            $collection = (object) [
+                'title' => $category->name,
+                'slug' => $category->slug,
+                'description' => $category->description ?? $category->subtitle,
+                'banner_path' => $category->banner_path,
+                'meta_title' => $category->meta_title ?? "{$category->name} — 100% Pure & Vedic | Aaradhna.co",
+                'meta_description' => $category->meta_description ?? $category->description,
+            ];
+            $query = Product::where('category_id', $category->id)->where('status', 'active');
         }
 
         // Eager load necessary relationships
