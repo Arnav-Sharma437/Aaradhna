@@ -29,58 +29,23 @@
     <!-- Drawer Navigation Content (Scrollable) -->
     <div class="flex-1 overflow-y-auto divide-y divide-sadhna-border/60">
         
-        <!-- Accordion 1: Pooja Shop -->
-        <div class="p-4">
-            <button 
-                type="button" 
-                class="mobile-accordion-toggle w-full flex items-center justify-between text-base font-bold text-sadhna-primary"
-                aria-expanded="false"
-            >
-                <span>Pooja Shop</span>
-                <svg class="w-4 h-4 text-gray-500 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                </svg>
-            </button>
-            <div class="mobile-accordion-content hidden mt-3 pl-3 space-y-2 border-l-2 border-sadhna-gold/40 text-sm">
-                <a href="{{ route('collections.show', 'bambooless') }}" class="block py-1 text-sadhna-primary hover:text-sadhna-gold">
-                    Bambooless
-                </a>
-                <a href="{{ route('collections.show', 'havan-cups') }}" class="block py-1 text-sadhna-primary hover:text-sadhna-gold">
-                    Havan Cups
-                </a>
-                <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block py-1 text-sadhna-primary hover:text-sadhna-gold">
-                    Dhoop Cones
-                </a>
-                
-                <div class="pt-2 border-t border-sadhna-border/50 text-xs font-semibold text-sadhna-muted uppercase tracking-wider">
-                    Offers &amp; Combos
-                </div>
-                <a href="{{ route('collections.show', 'super-save-offers') }}" class="block py-1 text-sadhna-primary hover:text-sadhna-gold">
-                    Super Save Offers
-                </a>
-                <a href="{{ route('collections.show', 'best-seller-combo') }}" class="block py-1 text-sadhna-primary hover:text-sadhna-gold">
-                    Best Seller Combo
-                </a>
-                <a href="{{ route('collections.show', 'all') }}" class="block py-1 text-sadhna-primary hover:text-sadhna-gold">
-                    All Sacred Products
-                </a>
-            </div>
-        </div>
-
-        <!-- Direct Nav Links -->
+        <!-- Direct Nav Links (No Dropdowns) -->
         <div class="p-4 space-y-3 text-base font-medium">
-            <a href="{{ route('collections.show', 'bambooless') }}" class="block text-sadhna-primary hover:text-sadhna-gold">
+            <a href="{{ route('collections.show', 'bambooless') }}" class="block py-1 text-sadhna-primary hover:text-sadhna-gold transition-colors font-semibold">
                 Bambooless
             </a>
-            <a href="{{ route('collections.show', 'super-save-offers') }}" class="flex items-center justify-between text-sadhna-primary hover:text-sadhna-gold">
-                <span>Super Save Offers</span>
+            <a href="{{ route('collections.show', 'havan-cups') }}" class="block py-1 text-sadhna-primary hover:text-sadhna-gold transition-colors font-semibold">
+                Havan Cups
+            </a>
+            <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block py-1 text-sadhna-primary hover:text-sadhna-gold transition-colors font-semibold">
+                Dhoop Cones
+            </a>
+            <a href="{{ route('collections.show', 'super-save-offers') }}" class="flex items-center justify-between py-1 text-sadhna-primary hover:text-sadhna-gold transition-colors font-semibold">
+                <span>Super Save Offer</span>
                 <span class="text-[10px] font-bold text-white bg-sadhna-gold px-2 py-0.5 rounded-full uppercase">Save</span>
             </a>
-            <a href="{{ route('collections.show', 'best-seller-combo') }}" class="block text-sadhna-primary hover:text-sadhna-gold">
+            <a href="{{ route('collections.show', 'best-seller-combo') }}" class="block py-1 text-sadhna-primary hover:text-sadhna-gold transition-colors font-semibold">
                 Best Seller Combo
-            </a>
-            <a href="{{ route('collections.show', 'all') }}" class="block text-sadhna-primary hover:text-sadhna-gold">
-                All Products
             </a>
         </div>
 

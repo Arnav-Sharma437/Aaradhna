@@ -6,19 +6,32 @@
 @section('content')
 @php
     $imageMap = [
-        'devi-refill-pack' => 'assets/images/devi-refill-pack-card.jpg',
-        'camphor-bambooless-incense-sticks' => 'assets/images/camphor-refill-pack-card.jpg',
-        'oudh-bambooless-incense-sticks' => 'assets/images/oudh-pack-card.jpg',
-        'sandalwood-havan-cup' => 'assets/images/chandan-cones-card.jpg',
-        'kesar-chandan-dhoop-cones' => 'assets/images/chandan-cones-card.jpg',
-        'guggal-loban-havan-cup' => 'assets/images/havan-cup.jpg',
-        'sandalwood-bambooless-incense-sticks' => 'assets/images/incense-pack.jpg',
-        'rose-bambooless-incense-sticks' => 'assets/images/incense-pack.jpg',
-        'chandan-attar-spray' => 'assets/images/attar-spray.jpg',
-        'trial-pack-combo' => 'assets/images/devi-refill-pack-card.jpg',
+        'kesar-chandan' => 'assets/images/oudh-pack-card.jpg',
+        'gulab' => 'assets/images/incense-pack.jpg',
+        'naagchampa' => 'assets/images/incense-pack.jpg',
+        'chandan' => 'assets/images/incense-pack.jpg',
+        'havan-bambooless' => 'assets/images/incense-pack.jpg',
+        'oudh' => 'assets/images/oudh-pack-card.jpg',
+        'mongra' => 'assets/images/incense-pack.jpg',
+        'bambooless-2-combo-pack' => 'assets/images/incense-pack.jpg',
+        'bambooless-3-combo-pack' => 'assets/images/oudh-pack-card.jpg',
+        'google-dhoop' => 'assets/images/havan-cup.jpg',
+        'loban' => 'assets/images/havan-cup.jpg',
+        'havan-cup' => 'assets/images/havan-cup.jpg',
+        'havan-cups-2-combo-pack' => 'assets/images/havan-cup.jpg',
+        'havan-cups-3-combo-pack' => 'assets/images/havan-cup.jpg',
+        'rooh-rose' => 'assets/images/dhoop-cones.jpg',
+        'jasmine' => 'assets/images/dhoop-cones.jpg',
+        'sandalwood-dhoop-cones' => 'assets/images/chandan-cones-card.jpg',
+        'forest-wood' => 'assets/images/dhoop-cones.jpg',
+        'lavender' => 'assets/images/dhoop-cones.jpg',
+        'patchouli' => 'assets/images/dhoop-cones.jpg',
+        'dhoop-cones-2-combo-pack' => 'assets/images/dhoop-cones.jpg',
+        'dhoop-cones-3-combo-pack' => 'assets/images/chandan-cones-card.jpg',
     ];
 
-    $mainImg = $imageMap[$product->slug] ?? 'assets/images/devi-refill-pack-card.jpg';
+    $primaryDbImage = $product->primaryImage ? $product->primaryImage->image_path : ($product->images->first() ? $product->images->first()->image_path : null);
+    $mainImg = $primaryDbImage ?? ($imageMap[$product->slug] ?? 'assets/images/incense-pack.jpg');
     $isSoldOut = $product->stock_quantity <= 0;
     $hasDiscount = $product->sale_price && ($product->base_price > $product->sale_price);
     $discountPercent = $product->discount_percentage ?: 51;

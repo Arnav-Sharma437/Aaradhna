@@ -26,27 +26,10 @@
                 </a>
             </div>
 
-            <!-- CENTER: Navigation Menu (Desktop) -->
+            <!-- CENTER: Navigation Menu (Desktop) - Simple No Dropdown -->
             <nav class="hidden lg:flex items-center space-x-6 xl:space-x-8">
                 
-                <!-- 1. Pooja Shop (with Mega Menu) -->
-                <div class="relative group" id="pooja-shop-nav-item">
-                    <a 
-                        href="{{ route('collections.show', 'all') }}" 
-                        class="inline-flex items-center py-6 text-[15px] xl:text-[16px] font-semibold text-[#1F1F1F] hover:text-[#D38928] transition-colors cursor-pointer"
-                        id="pooja-shop-toggle"
-                    >
-                        <span>Pooja Shop</span>
-                        <svg class="w-3.5 h-3.5 ml-1 text-gray-400 group-hover:rotate-180 group-hover:text-[#D38928] transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                        </svg>
-                    </a>
-
-                    <!-- Embed Exact Mega Menu -->
-                    <x-mega-menu />
-                </div>
-
-                <!-- 2. Bambooless -->
+                <!-- 1. Bambooless -->
                 <a 
                     href="{{ route('collections.show', 'bambooless') }}" 
                     class="text-[15px] xl:text-[16px] font-semibold text-[#1F1F1F] hover:text-[#D38928] transition-colors py-6 whitespace-nowrap"
@@ -54,15 +37,31 @@
                     Bambooless
                 </a>
 
-                <!-- 3. Super Save Offers -->
+                <!-- 2. Havan Cups -->
+                <a 
+                    href="{{ route('collections.show', 'havan-cups') }}" 
+                    class="text-[15px] xl:text-[16px] font-semibold text-[#1F1F1F] hover:text-[#D38928] transition-colors py-6 whitespace-nowrap"
+                >
+                    Havan Cups
+                </a>
+
+                <!-- 3. Dhoop Cones -->
+                <a 
+                    href="{{ route('collections.show', 'dhoop-cones') }}" 
+                    class="text-[15px] xl:text-[16px] font-semibold text-[#1F1F1F] hover:text-[#D38928] transition-colors py-6 whitespace-nowrap"
+                >
+                    Dhoop Cones
+                </a>
+
+                <!-- 4. Super Save Offer -->
                 <a 
                     href="{{ route('collections.show', 'super-save-offers') }}" 
                     class="text-[15px] xl:text-[16px] font-semibold text-[#1F1F1F] hover:text-[#D38928] transition-colors py-6 whitespace-nowrap"
                 >
-                    Super Save Offers
+                    Super Save Offer
                 </a>
 
-                <!-- 4. Best Seller Combo -->
+                <!-- 5. Best Seller Combo -->
                 <a 
                     href="{{ route('collections.show', 'best-seller-combo') }}" 
                     class="text-[15px] xl:text-[16px] font-semibold text-[#1F1F1F] hover:text-[#D38928] transition-colors py-6 whitespace-nowrap"

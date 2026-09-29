@@ -57,7 +57,7 @@
                     <!-- Call to Action Buttons -->
                     <div class="flex flex-wrap gap-4 pt-2">
                         <a 
-                            href="{{ route('products.show', 'trial-pack-combo') }}" 
+                            href="{{ route('products.show', 'bambooless-2-combo-pack') }}" 
                             class="inline-flex items-center justify-center px-8 py-3.5 bg-[#D38928] hover:bg-[#b8741e] text-white text-xs sm:text-sm font-bold uppercase tracking-widest rounded-[10px] shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 font-heading"
                         >
                             <span>Order Ram Uphaar Box</span>
@@ -121,14 +121,14 @@
                     <!-- Call to Action Buttons -->
                     <div class="flex flex-wrap gap-4 pt-2">
                         <a 
-                            href="{{ route('collections.show', 'incense-sticks') }}" 
+                            href="{{ route('collections.show', 'bambooless') }}" 
                             class="inline-flex items-center justify-center px-8 py-3.5 bg-[#D38928] hover:bg-[#b8741e] text-white text-xs sm:text-sm font-bold uppercase tracking-widest rounded-[10px] shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 font-heading"
                         >
-                            <span>Shop Incense Sticks</span>
+                            <span>Shop Bambooless</span>
                             <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                         </a>
                         <a 
-                            href="{{ route('products.show', 'trial-pack-combo') }}" 
+                            href="{{ route('products.show', 'bambooless-3-combo-pack') }}" 
                             class="inline-flex items-center justify-center px-7 py-3.5 bg-white/15 hover:bg-white/25 text-white text-xs sm:text-sm font-bold uppercase tracking-widest rounded-[10px] backdrop-blur-md border border-white/30 transition-all duration-200 font-heading"
                         >
                             Try Discovery Pack
@@ -431,69 +431,53 @@
             </div>
         </div>
 
-        <!-- 4 Luxury Category Cards (2x2 on mobile) -->
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
+        <!-- 3 Luxury Category Cards (1 col mobile, 3 cols desktop) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
             
-            <!-- Category 1 -->
-            <a href="{{ route('collections.show', 'incense-sticks') }}" class="group relative rounded-[12px] sm:rounded-[14px] overflow-hidden bg-white border border-[#EAE3D9] shadow-xs hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col">
-                <div class="relative w-full aspect-square overflow-hidden bg-stone-100">
+            <!-- Category 1: Bambooless -->
+            <a href="{{ route('collections.show', 'bambooless') }}" class="group relative rounded-[14px] overflow-hidden bg-white border border-[#EAE3D9] shadow-xs hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col">
+                <div class="relative w-full aspect-4/3 sm:aspect-square overflow-hidden bg-stone-100">
                     <img src="{{ asset('assets/images/incense-pack.jpg') }}" alt="Bambooless Incense Sticks" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent"></div>
-                    <div class="absolute bottom-2.5 left-2.5 right-2.5 sm:bottom-4 sm:left-4 sm:right-4 text-white">
-                        <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#F6DAA8] block">Zero Bamboo</span>
-                        <h3 class="text-base sm:text-lg font-bold font-heading">Incense Sticks</h3>
+                    <div class="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 text-white">
+                        <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#F6DAA8] block">Zero Bamboo • 100% Charcoal Free</span>
+                        <h3 class="text-lg sm:text-xl font-bold font-heading">Bambooless</h3>
                     </div>
                 </div>
-                <div class="p-2.5 sm:p-4 bg-white flex items-center justify-between text-xs sm:text-sm font-bold text-[#121212] group-hover:text-[#D38928] transition-colors">
-                    <span>Explore Sticks</span>
-                    <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                <div class="p-3 sm:p-4 bg-white flex items-center justify-between text-xs sm:text-sm font-bold text-[#121212] group-hover:text-[#D38928] transition-colors">
+                    <span>Explore Bambooless</span>
+                    <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                 </div>
             </a>
 
-            <!-- Category 2 -->
-            <a href="{{ route('collections.show', 'organic-havan-cups') }}" class="group relative rounded-[14px] overflow-hidden bg-white border border-[#EAE3D9] shadow-xs hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col">
-                <div class="relative w-full aspect-square overflow-hidden bg-stone-100">
+            <!-- Category 2: Havan Cups -->
+            <a href="{{ route('collections.show', 'havan-cups') }}" class="group relative rounded-[14px] overflow-hidden bg-white border border-[#EAE3D9] shadow-xs hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col">
+                <div class="relative w-full aspect-4/3 sm:aspect-square overflow-hidden bg-stone-100">
                     <img src="{{ asset('assets/images/havan-cup.jpg') }}" alt="Organic Havan Cups" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-                    <div class="absolute bottom-4 left-4 right-4 text-white">
-                        <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#F6DAA8] block">100% Vedic Ghee</span>
-                        <h3 class="text-base sm:text-lg font-bold font-heading">Havan Cups</h3>
+                    <div class="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 text-white">
+                        <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#F6DAA8] block">100% Vedic Ghee &amp; Samagri</span>
+                        <h3 class="text-lg sm:text-xl font-bold font-heading">Havan Cups</h3>
                     </div>
                 </div>
-                <div class="p-4 bg-white flex items-center justify-between text-xs sm:text-sm font-bold text-[#121212] group-hover:text-[#D38928] transition-colors">
-                    <span>Explore Cups</span>
+                <div class="p-3 sm:p-4 bg-white flex items-center justify-between text-xs sm:text-sm font-bold text-[#121212] group-hover:text-[#D38928] transition-colors">
+                    <span>Explore Havan Cups</span>
                     <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                 </div>
             </a>
 
-            <!-- Category 3 -->
-            <a href="{{ route('collections.show', 'charcoal-free-dhoop-cones') }}" class="group relative rounded-[14px] overflow-hidden bg-white border border-[#EAE3D9] shadow-xs hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col">
-                <div class="relative w-full aspect-square overflow-hidden bg-stone-100">
+            <!-- Category 3: Dhoop Cones -->
+            <a href="{{ route('collections.show', 'dhoop-cones') }}" class="group relative rounded-[14px] overflow-hidden bg-white border border-[#EAE3D9] shadow-xs hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col">
+                <div class="relative w-full aspect-4/3 sm:aspect-square overflow-hidden bg-stone-100">
                     <img src="{{ asset('assets/images/dhoop-cones.jpg') }}" alt="Charcoal Free Dhoop Cones" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-                    <div class="absolute bottom-4 left-4 right-4 text-white">
-                        <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#F6DAA8] block">Low Smoke</span>
-                        <h3 class="text-base sm:text-lg font-bold font-heading">Dhoop Cones</h3>
+                    <div class="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 text-white">
+                        <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#F6DAA8] block">Low Smoke • Flower Infused</span>
+                        <h3 class="text-lg sm:text-xl font-bold font-heading">Dhoop Cones</h3>
                     </div>
                 </div>
-                <div class="p-4 bg-white flex items-center justify-between text-xs sm:text-sm font-bold text-[#121212] group-hover:text-[#D38928] transition-colors">
-                    <span>Explore Cones</span>
-                    <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-                </div>
-            </a>
-
-            <!-- Category 4 -->
-            <a href="{{ route('collections.show', 'attar-spray') }}" class="group relative rounded-[14px] overflow-hidden bg-white border border-[#EAE3D9] shadow-xs hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col">
-                <div class="relative w-full aspect-square overflow-hidden bg-stone-100">
-                    <img src="{{ asset('assets/images/attar-spray.jpg') }}" alt="Natural Attar Sprays" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-                    <div class="absolute bottom-4 left-4 right-4 text-white">
-                        <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#F6DAA8] block">Alcohol Free</span>
-                        <h3 class="text-base sm:text-lg font-bold font-heading">Attar Sprays</h3>
-                    </div>
-                </div>
-                <div class="p-4 bg-white flex items-center justify-between text-xs sm:text-sm font-bold text-[#121212] group-hover:text-[#D38928] transition-colors">
-                    <span>Explore Attars</span>
+                <div class="p-3 sm:p-4 bg-white flex items-center justify-between text-xs sm:text-sm font-bold text-[#121212] group-hover:text-[#D38928] transition-colors">
+                    <span>Explore Dhoop Cones</span>
                     <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                 </div>
             </a>
@@ -945,14 +929,14 @@
                     <!-- Dual CTAs INSIDE the card properly -->
                     <div class="flex flex-wrap gap-4 pt-3">
                         <a 
-                            href="{{ route('products.show', 'trial-pack-combo') }}" 
+                            href="{{ route('products.show', 'bambooless-2-combo-pack') }}" 
                             class="inline-flex items-center justify-center px-8 py-3.5 bg-[#D38928] hover:bg-[#b8741e] text-white text-xs sm:text-sm font-bold uppercase tracking-widest rounded-[10px] shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 font-heading"
                         >
                             <span>Buy Ananta</span>
                             <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                         </a>
                         <a 
-                            href="{{ route('collections.show', 'combos') }}" 
+                            href="{{ route('collections.show', 'super-save-offers') }}" 
                             class="inline-flex items-center justify-center px-7 py-3.5 bg-white/15 hover:bg-white/25 text-white text-xs sm:text-sm font-bold uppercase tracking-widest rounded-[10px] backdrop-blur-md border border-white/30 transition-all duration-200 font-heading"
                         >
                             Buy Shubh

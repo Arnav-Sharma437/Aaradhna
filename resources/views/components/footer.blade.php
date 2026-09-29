@@ -53,12 +53,12 @@
 
             <!-- Essential Quick Links Navigation -->
             <nav class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs sm:text-sm text-white/90 font-medium">
-                <a href="{{ route('collections.show', 'all') }}" class="hover:text-[#F6DAA8] transition-colors">Pooja Shop</a>
-                <a href="{{ route('collections.show', 'incense-sticks') }}" class="hover:text-[#F6DAA8] transition-colors">Incense Sticks</a>
-                <a href="{{ route('collections.show', 'organic-havan-cups') }}" class="hover:text-[#F6DAA8] transition-colors">Havan Cups</a>
-                <a href="{{ route('collections.show', 'combos') }}" class="hover:text-[#F6DAA8] transition-colors">Combos</a>
+                <a href="{{ route('collections.show', 'bambooless') }}" class="hover:text-[#F6DAA8] transition-colors">Bambooless</a>
+                <a href="{{ route('collections.show', 'havan-cups') }}" class="hover:text-[#F6DAA8] transition-colors">Havan Cups</a>
+                <a href="{{ route('collections.show', 'dhoop-cones') }}" class="hover:text-[#F6DAA8] transition-colors">Dhoop Cones</a>
+                <a href="{{ route('collections.show', 'super-save-offers') }}" class="hover:text-[#F6DAA8] transition-colors">Super Save Offer</a>
+                <a href="{{ route('collections.show', 'best-seller-combo') }}" class="hover:text-[#F6DAA8] transition-colors">Best Seller Combo</a>
                 <a href="{{ route('wishlist.index') }}" class="hover:text-[#F6DAA8] transition-colors">Wishlist</a>
-                <a href="{{ route('pages.show', 'about-us') }}" class="hover:text-[#F6DAA8] transition-colors">About</a>
                 <a href="{{ route('pages.show', 'contact') }}" class="hover:text-[#F6DAA8] transition-colors">Contact</a>
             </nav>
 
