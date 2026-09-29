@@ -25,16 +25,16 @@
     --color-border-light: #E5E7EB;
 
     /* Semantic Aliases */
-    --color-sadhna-primary: #121212;
-    --color-sadhna-gold: #D38928;
-    --color-sadhna-light-gold: #F6DAA8;
-    --color-sadhna-maroon: #9B1C31;
-    --color-sadhna-warm-bg: #FDF5EB;
-    --color-sadhna-bg-gray: #F9F9F9;
-    --color-sadhna-bg-alt: #F3F3F3;
-    --color-sadhna-muted: #666666;
-    --color-sadhna-muted-light: #7B7B7B;
-    --color-sadhna-border: #E5E7EB;
+    --color-[#2B1810]: #121212;
+    --color-[#D38928]: #D38928;
+    --color-[#F6DAA8]: #F6DAA8;
+    --color-mangalam-maroon: #9B1C31;
+    --color-[#FAF5EE]: #FDF5EB;
+    --color-mangalam-bg-gray: #F9F9F9;
+    --color-mangalam-bg-alt: #F3F3F3;
+    --color-gray-500: #666666;
+    --color-gray-500-light: #7B7B7B;
+    --color-[#EAE3D9]: #E5E7EB;
 }
 
 @layer base {

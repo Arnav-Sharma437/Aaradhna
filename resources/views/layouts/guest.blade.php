@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Aaradhna.co') }} - @yield('title', 'Account')</title>
+    <title>{{ config('app.name', 'Mangalam.co') }} - @yield('title', 'Account')</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('styles')
 </head>
-<body class="antialiased text-sadhna-primary bg-sadhna-warm-bg min-h-screen flex items-center justify-center p-4 font-body">
+<body class="antialiased text-[#2B1810] bg-[#FAF5EE] min-h-screen flex items-center justify-center p-4 font-body">
     <div class="w-full max-w-md">
         @yield('content')
     </div>

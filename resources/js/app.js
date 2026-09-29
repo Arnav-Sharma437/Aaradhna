@@ -2,14 +2,14 @@ import './bootstrap';
 
 /**
  * =========================================================================
- * AARADHNA.CO™ - UNIFIED CLIENT-SIDE STATE MANAGEMENT & REACTIVE STORE
+ * MANGALAM.CO™ - UNIFIED CLIENT-SIDE STATE MANAGEMENT & REACTIVE STORE
  * =========================================================================
  * Pure, reliable LocalStorage management for Cart & Wishlist with zero phantom
  * initial data, persistent cross-page sync, and reactive drawer/badge UI.
  */
 
-const CART_STORAGE_KEY = 'aaradhna_cart_items_v2';
-const WISHLIST_STORAGE_KEY = 'aaradhna_wishlist_items_v2';
+const CART_STORAGE_KEY = 'mangalam_cart_items_v2';
+const WISHLIST_STORAGE_KEY = 'mangalam_wishlist_items_v2';
 
 // -------------------------------------------------------------------------
 // 1. Core State Helpers
@@ -25,7 +25,7 @@ export const getCart = () => {
 
 export const saveCart = (items) => {
     localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items));
-    window.dispatchEvent(new CustomEvent('aaradhna:cart-updated', { detail: { items } }));
+    window.dispatchEvent(new CustomEvent('mangalam:cart-updated', { detail: { items } }));
 };
 
 export const getWishlist = () => {
@@ -39,7 +39,7 @@ export const getWishlist = () => {
 
 export const saveWishlist = (items) => {
     localStorage.setItem(WISHLIST_STORAGE_KEY, JSON.stringify(items));
-    window.dispatchEvent(new CustomEvent('aaradhna:wishlist-updated', { detail: { items } }));
+    window.dispatchEvent(new CustomEvent('mangalam:wishlist-updated', { detail: { items } }));
 };
 
 // -------------------------------------------------------------------------
@@ -411,13 +411,13 @@ document.addEventListener('DOMContentLoaded', () => {
     renderCartPage();
 
     // Listen to custom store events
-    window.addEventListener('aaradhna:cart-updated', () => {
+    window.addEventListener('mangalam:cart-updated', () => {
         updateHeaderBadges();
         renderCartDrawer();
         renderCartPage();
     });
 
-    window.addEventListener('aaradhna:wishlist-updated', () => {
+    window.addEventListener('mangalam:wishlist-updated', () => {
         updateHeaderBadges();
         updateWishlistHeartIcons();
         renderWishlistPage();

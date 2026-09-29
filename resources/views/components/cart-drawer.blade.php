@@ -17,7 +17,7 @@
             <div class="flex items-center space-x-2">
                 <span class="text-base text-[#D38928]">✨</span>
                 <h3 class="text-base sm:text-lg font-bold font-heading text-[#121212] tracking-tight">
-                    Welcome to Aaradhna.co®
+                    Welcome to Mangalam.co®
                 </h3>
                 <span class="text-xs text-gray-400 font-mono" id="drawer-item-count-badge">(2)</span>
             </div>

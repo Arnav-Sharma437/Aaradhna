@@ -254,7 +254,7 @@
                             name="meta_title" 
                             id="meta_title" 
                             value="{{ old('meta_title', $collection->meta_title) }}" 
-                            placeholder="{{ $collection->title }} | Aaradhna" 
+                            placeholder="{{ $collection->title }} | Mangalam" 
                             class="w-full px-3.5 py-2 bg-white border border-[#D2D5D8] rounded-[8px] text-xs text-[#202223] focus:outline-none focus:border-[#D38928]"
                         >
                     </div>

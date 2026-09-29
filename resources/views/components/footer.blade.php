@@ -1,5 +1,5 @@
 <!-- ========================================================================= -->
-<!-- MINIMAL SPIRITUAL FOOTER WITH BOTTOM DHOOP SMOKE AMBIENCE — AARADHNA.CO™ -->
+<!-- MINIMAL SPIRITUAL FOOTER WITH BOTTOM DHOOP SMOKE AMBIENCE — MANGALAM.CO™ -->
 <!-- ========================================================================= -->
 <footer class="text-white font-body relative overflow-hidden bg-[#7A2E05] border-t border-[#F6DAA8]/30">
     
@@ -34,12 +34,16 @@
             
             <!-- Brand & Tagline -->
             <div class="flex items-center space-x-3.5 text-center md:text-left">
-                <a href="{{ route('home') }}" class="group inline-flex items-center">
-                    <img 
-                        src="{{ asset('assets/images/aaradhna-logo.png') }}" 
-                        alt="Aaradhna.co" 
-                        class="h-10 sm:h-12 w-auto object-contain brightness-0 invert opacity-95 transition-transform duration-200 group-hover:scale-105"
-                    >
+                <a href="{{ route('home') }}" class="group inline-flex items-center space-x-2">
+                    <div class="w-8 h-8 rounded-full bg-white/10 border border-white/30 flex items-center justify-center text-[#F6DAA8]">
+                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M12 2C6.5 2 2 6.5 2 12c0 3.5 1.8 6.6 4.6 8.4C8 18.5 11 16 12 12c1 4 4 6.5 5.4 8.4C20.2 18.6 22 15.5 22 12c0-5.5-4.5-10-10-10z"/>
+                            <path d="M12 2v20"/>
+                        </svg>
+                    </div>
+                    <span class="font-serif text-2xl font-black text-white tracking-wider uppercase">
+                        Mangalam
+                    </span>
                 </a>
                 <div class="hidden sm:block pl-3 border-l border-white/20">
                     <span class="text-[10px] uppercase tracking-[0.25em] text-[#F6DAA8] font-heading font-bold block">
@@ -89,7 +93,7 @@
 
             <!-- Devotional Copyright -->
             <div class="text-center text-[#F6DAA8]/90 font-serif">
-                <span>© {{ date('Y') }} Aaradhna.co™ • ॐ शान्तिः शान्तिः शान्तिः</span>
+                <span>© {{ date('Y') }} Mangalam.co™ • ॐ शान्तिः शान्तिः शान्तिः</span>
             </div>
 
             <!-- Social Media Icons -->

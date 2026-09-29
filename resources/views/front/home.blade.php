@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Aaradhna.co™ — 100% Pure Bambooless Agarbatti & Vedic Pooja Samagri')
+@section('title', 'Mangalam.co™ — 100% Pure Bambooless Agarbatti & Vedic Pooja Samagri')
 @section('meta_description', 'Shri Ram Uphaar, Bambooless Incense Sticks, Havan Cups, Dhoop Cones, and Natural Attar Sprays crafted as per Vedic Vidhi.')
 
 @section('content')
@@ -18,7 +18,7 @@
             <!-- Full Panoramic Image Background -->
             <img 
                 src="{{ asset('assets/images/hero-sacred-cones.jpg') }}" 
-                alt="Aaradhna Sacred Incense Cone Collection" 
+                alt="Mangalam Sacred Incense Cone Collection" 
                 class="absolute inset-0 w-full h-full object-cover object-[25%_center] sm:object-left lg:object-center"
             >
             <!-- Mobile/Tablet readability overlay (transparent on desktop right-side) -->
@@ -36,7 +36,7 @@
                     <div class="space-y-2">
                         <h1 class="text-3xl sm:text-5xl lg:text-[52px] xl:text-[58px] font-black font-serif text-[#2B1810] tracking-tight leading-[1.12]">
                             Discover <br class="hidden sm:inline">
-                            <span class="italic font-serif font-normal text-[#8B4513]">Aaradhna’s Incense</span> <br>
+                            <span class="italic font-serif font-normal text-[#8B4513]">Mangalam’s Incense</span> <br>
                             Cone Collection
                         </h1>
                         <p class="text-base sm:text-xl lg:text-[22px] font-bold text-[#0F5B4E] tracking-wide font-heading pt-1">
@@ -117,7 +117,7 @@
         <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 pointer-events-none z-0 flex items-center bg-[#FAF4EB]" data-slide="1">
             <img 
                 src="{{ asset('assets/images/hero-sacred-bambooless.jpg') }}" 
-                alt="Aaradhna Bambooless Incense Sticks" 
+                alt="Mangalam Bambooless Incense Sticks" 
                 class="absolute inset-0 w-full h-full object-cover object-[25%_center] sm:object-left lg:object-center"
             >
             <div class="absolute inset-0 bg-gradient-to-t from-[#FAF4EB]/95 via-[#FAF4EB]/60 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-[#FAF4EB]/30 lg:to-[#FAF4EB]/70"></div>
@@ -131,7 +131,7 @@
                     <div class="space-y-2">
                         <h2 class="text-3xl sm:text-5xl lg:text-[52px] xl:text-[58px] font-black font-serif text-[#2B1810] tracking-tight leading-[1.12]">
                             Discover <br class="hidden sm:inline">
-                            <span class="italic font-serif font-normal text-[#8B4513]">Aaradhna’s Bambooless</span> <br>
+                            <span class="italic font-serif font-normal text-[#8B4513]">Mangalam’s Bambooless</span> <br>
                             Incense Sticks
                         </h2>
                         <p class="text-base sm:text-xl lg:text-[22px] font-bold text-[#0F5B4E] tracking-wide font-heading pt-1">
@@ -772,7 +772,7 @@
                         </span>
                     </div>
                     <p class="text-sm sm:text-base text-[#121212] leading-relaxed italic font-medium pt-1">
-                        "I am a regular devotee of Aaradhna products since 2 years. Very pure havan cups and sambrani. In temples, we strictly avoid toxic bamboo, and Aaradhna is 100% compliant with sacred Agamas."
+                        "I am a regular devotee of Mangalam products since 2 years. Very pure havan cups and sambrani. In temples, we strictly avoid toxic bamboo, and Mangalam is 100% compliant with sacred Agamas."
                     </p>
                 </div>
                 <div class="flex items-center space-x-3 pt-4 border-t border-[#D38928]/30 mt-4">
@@ -1109,7 +1109,7 @@
                 <button type="button" class="faq-toggle w-full flex items-center justify-between text-left focus:outline-none">
                     <span class="text-sm sm:text-base font-bold text-[#121212] font-heading flex items-center space-x-3">
                         <span class="text-[#D38928] font-black text-sm">02.</span>
-                        <span>What makes Aaradhna products eco-friendly and low-smoke?</span>
+                        <span>What makes Mangalam products eco-friendly and low-smoke?</span>
                     </span>
                     <span class="faq-icon text-[#D38928] font-bold text-lg ml-3">⌄</span>
                 </button>
@@ -1123,7 +1123,7 @@
                 <button type="button" class="faq-toggle w-full flex items-center justify-between text-left focus:outline-none">
                     <span class="text-sm sm:text-base font-bold text-[#121212] font-heading flex items-center space-x-3">
                         <span class="text-[#D38928] font-black text-sm">03.</span>
-                        <span>Are Aaradhna products safe to use around babies, elders, and pets?</span>
+                        <span>Are Mangalam products safe to use around babies, elders, and pets?</span>
                     </span>
                     <span class="faq-icon text-[#D38928] font-bold text-lg ml-3">⌄</span>
                 </button>
@@ -1429,10 +1429,10 @@
         // 3. TOAST NOTIFICATION UTILITY
         // -------------------------------------------------------------
         function showNotification(title, message, iconType = 'cart') {
-            let toast = document.getElementById('aaradhna-live-toast');
+            let toast = document.getElementById('mangalam-live-toast');
             if (!toast) {
                 toast = document.createElement('div');
-                toast.id = 'aaradhna-live-toast';
+                toast.id = 'mangalam-live-toast';
                 toast.className = 'fixed bottom-6 right-6 z-50 bg-[#121212] text-white px-5 py-3.5 rounded-[12px] shadow-2xl border border-[#D38928]/50 flex items-center space-x-3 transition-all duration-300 transform translate-y-20 opacity-0 font-body';
                 document.body.appendChild(toast);
             }

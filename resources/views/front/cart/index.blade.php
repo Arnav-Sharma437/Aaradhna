@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Shopping Cart — Aaradhna.co™')
+@section('title', 'Shopping Cart — Mangalam.co™')
 @section('meta_description', 'Review your sacred pooja samagri essentials before secure checkout.')
 
 @section('content')
@@ -77,7 +77,7 @@
                             Promo / Festive Coupon
                         </label>
                         <div class="flex space-x-2">
-                            <input type="text" id="coupon-code-input" placeholder="Try: AARADHNA10" class="flex-1 px-3.5 py-2.5 bg-[#FAF7F2] border border-[#EADBCC] rounded-[10px] text-xs font-medium focus:outline-none focus:border-[#D38928] uppercase">
+                            <input type="text" id="coupon-code-input" placeholder="Try: MANGALAM10" class="flex-1 px-3.5 py-2.5 bg-[#FAF7F2] border border-[#EADBCC] rounded-[10px] text-xs font-medium focus:outline-none focus:border-[#D38928] uppercase">
                             <button type="button" id="apply-coupon-btn" class="px-4 py-2.5 bg-[#121212] hover:bg-[#D38928] text-white text-xs font-bold rounded-[10px] transition-colors font-heading">
                                 Apply
                             </button>

@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Aaradhna.co') }} - @yield('title', 'Pooja Samagri & Vidhi')</title>
+    <title>{{ config('app.name', 'Mangalam.co') }} - @yield('title', 'Pooja Samagri & Vidhi')</title>
     <meta name="description" content="@yield('meta_description', 'Pooja Samagri & Vidhi — शुद्धं समर्पयामि. Non-irritating bambooless incense sticks, organic havan cups, charcoal-free dhoop cones & alcohol-free attar sprays.')">
 
     <!-- OpenGraph Meta -->
-    <meta property="og:site_name" content="Aaradhna.co™">
-    <meta property="og:title" content="@yield('title', 'Aaradhna.co - Pooja Samagri & Vidhi')">
+    <meta property="og:site_name" content="Mangalam.co™">
+    <meta property="og:title" content="@yield('title', 'Mangalam.co - Pooja Samagri & Vidhi')">
     <meta property="og:description" content="@yield('meta_description', '100% pure Vedic pooja essentials.')">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
@@ -24,7 +24,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('styles')
 </head>
-<body class="antialiased text-sadhna-primary bg-white min-h-screen flex flex-col font-body selection:bg-sadhna-light-gold selection:text-sadhna-primary">
+<body class="antialiased text-[#2B1810] bg-white min-h-screen flex flex-col font-body selection:bg-[#F6DAA8] selection:text-[#2B1810]">
 
     <!-- 1. Announcement Bar -->
     <x-announcement-bar />

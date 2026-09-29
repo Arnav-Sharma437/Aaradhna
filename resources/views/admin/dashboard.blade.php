@@ -12,7 +12,7 @@
                 Store Dashboard
             </h1>
             <p class="text-xs text-gray-500 font-medium">
-                Live performance analytics, product inventory &amp; customer metrics for <span class="font-bold text-[#D38928]">Aaradhna.co™</span>
+                Live performance analytics, product inventory &amp; customer metrics for <span class="font-bold text-[#D38928]">Mangalam.co™</span>
             </p>
         </div>
 

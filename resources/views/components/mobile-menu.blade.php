@@ -10,14 +10,22 @@
     aria-label="Mobile Navigation"
 >
     <!-- Drawer Header -->
-    <div class="p-4 border-b border-sadhna-border flex items-center justify-between bg-sadhna-warm-bg/60">
-        <div class="flex items-center">
-            <img src="{{ asset('assets/images/aaradhna-logo.png') }}" alt="Aaradhna" class="h-8 w-auto object-contain">
+    <div class="p-4 border-b border-stone-200 flex items-center justify-between bg-[#FAF7F2]">
+        <div class="flex items-center space-x-2">
+            <div class="w-7 h-7 rounded-full bg-white border border-[#D38928]/40 flex items-center justify-center text-[#965A15] shadow-xs">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M12 2C6.5 2 2 6.5 2 12c0 3.5 1.8 6.6 4.6 8.4C8 18.5 11 16 12 12c1 4 4 6.5 5.4 8.4C20.2 18.6 22 15.5 22 12c0-5.5-4.5-10-10-10z"/>
+                    <path d="M12 2v20"/>
+                </svg>
+            </div>
+            <span class="font-serif text-lg font-black text-[#2B1810] tracking-wider uppercase">
+                Mangalam
+            </span>
         </div>
         <button 
             type="button" 
             id="mobile-drawer-close"
-            class="p-2 text-sadhna-muted hover:text-sadhna-primary focus:outline-none"
+            class="p-2 text-gray-500 hover:text-[#2B1810] focus:outline-none"
             aria-label="Close Mobile Menu"
         >
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -27,24 +35,24 @@
     </div>
 
     <!-- Drawer Navigation Content (Scrollable) -->
-    <div class="flex-1 overflow-y-auto divide-y divide-sadhna-border/60">
+    <div class="flex-1 overflow-y-auto divide-y divide-[#EAE3D9]/60">
         
         <!-- Direct Nav Links (No Dropdowns) -->
         <div class="p-4 space-y-3 text-base font-medium">
-            <a href="{{ route('collections.show', 'bambooless') }}" class="block py-1 text-sadhna-primary hover:text-sadhna-gold transition-colors font-semibold">
+            <a href="{{ route('collections.show', 'bambooless') }}" class="block py-1 text-[#2B1810] hover:text-[#D38928] transition-colors font-semibold">
                 Bambooless
             </a>
-            <a href="{{ route('collections.show', 'havan-cups') }}" class="block py-1 text-sadhna-primary hover:text-sadhna-gold transition-colors font-semibold">
+            <a href="{{ route('collections.show', 'havan-cups') }}" class="block py-1 text-[#2B1810] hover:text-[#D38928] transition-colors font-semibold">
                 Havan Cups
             </a>
-            <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block py-1 text-sadhna-primary hover:text-sadhna-gold transition-colors font-semibold">
+            <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block py-1 text-[#2B1810] hover:text-[#D38928] transition-colors font-semibold">
                 Dhoop Cones
             </a>
-            <a href="{{ route('collections.show', 'super-save-offers') }}" class="flex items-center justify-between py-1 text-sadhna-primary hover:text-sadhna-gold transition-colors font-semibold">
+            <a href="{{ route('collections.show', 'super-save-offers') }}" class="flex items-center justify-between py-1 text-[#2B1810] hover:text-[#D38928] transition-colors font-semibold">
                 <span>Super Save Offer</span>
-                <span class="text-[10px] font-bold text-white bg-sadhna-gold px-2 py-0.5 rounded-full uppercase">Save</span>
+                <span class="text-[10px] font-bold text-white bg-[#D38928] px-2 py-0.5 rounded-full uppercase">Save</span>
             </a>
-            <a href="{{ route('collections.show', 'best-seller-combo') }}" class="block py-1 text-sadhna-primary hover:text-sadhna-gold transition-colors font-semibold">
+            <a href="{{ route('collections.show', 'best-seller-combo') }}" class="block py-1 text-[#2B1810] hover:text-[#D38928] transition-colors font-semibold">
                 Best Seller Combo
             </a>
         </div>
@@ -61,19 +69,19 @@
         </div>
 
         <!-- Account / Help Links -->
-        <div class="p-4 space-y-2 text-sm text-sadhna-muted">
-            <a href="{{ url('/account') }}" class="flex items-center space-x-2 py-1 text-sadhna-primary hover:text-sadhna-gold">
+        <div class="p-4 space-y-2 text-sm text-gray-500">
+            <a href="{{ url('/account') }}" class="flex items-center space-x-2 py-1 text-[#2B1810] hover:text-[#D38928]">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
                 <span>My Account</span>
             </a>
-            <a href="{{ url('/account/wishlist') }}" class="flex items-center space-x-2 py-1 text-sadhna-primary hover:text-sadhna-maroon">
+            <a href="{{ url('/account/wishlist') }}" class="flex items-center space-x-2 py-1 text-[#2B1810] hover:text-mangalam-maroon">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
                 <span>Saved Wishlist</span>
             </a>
-            <a href="{{ route('pages.show', 'about-us') }}" class="block py-1 hover:text-sadhna-primary">
-                About Aaradhna.co
+            <a href="{{ route('pages.show', 'about-us') }}" class="block py-1 hover:text-[#2B1810]">
+                About Mangalam.co
             </a>
-            <a href="{{ route('pages.show', 'faqs') }}" class="block py-1 hover:text-sadhna-primary">
+            <a href="{{ route('pages.show', 'faqs') }}" class="block py-1 hover:text-[#2B1810]">
                 Frequently Asked Questions
             </a>
         </div>
@@ -81,8 +89,8 @@
     </div>
 
     <!-- Drawer Footer -->
-    <div class="p-4 border-t border-[#EADBCC] bg-[#FAF7F2] text-xs text-sadhna-muted">
-        <p class="font-semibold text-sadhna-primary font-heading">✦ शुद्धं समर्पयामि ✦</p>
+    <div class="p-4 border-t border-[#EADBCC] bg-[#FAF7F2] text-xs text-gray-500">
+        <p class="font-semibold text-[#2B1810] font-heading">✦ शुद्धं समर्पयामि ✦</p>
         <p class="mt-0.5 text-gray-500">100% Pure Vedic Samagri | Bambooless</p>
     </div>
 </aside>
