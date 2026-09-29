@@ -1,10 +1,10 @@
 <?php
 
-use IlluminateSupportFacadesRoute;
-use AppHttpControllersFrontHomeController;
-use AppHttpControllersFrontCollectionController;
-use AppHttpControllersFrontProductController;
-use AppHttpControllersFrontCartWishlistController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Front\HomeController;
+use App\Http\Controllers\Front\CollectionController;
+use App\Http\Controllers\Front\ProductController;
+use App\Http\Controllers\Front\CartWishlistController;
 
 // Storefront Homepage
 Route::get('/', [HomeController::class, 'index'])->name('home');

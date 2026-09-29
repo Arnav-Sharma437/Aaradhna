@@ -1,11 +1,11 @@
 <?php
 
-namespace AppHttpControllersFront;
+namespace App\Http\Controllers\Front;
 
-use AppHttpControllersController;
-use AppModelsProduct;
-use IlluminateHttpRequest;
-use IlluminateViewView;
+use App\Http\Controllers\Controller;
+use App\Models\Product;
+use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class CartWishlistController extends Controller
 {
