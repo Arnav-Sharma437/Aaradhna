@@ -35,6 +35,8 @@ Route::get('/blogs/{slug}', function (string $slug) {
 use App\Http\Controllers\Admin\AuthController as AdminAuthController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
+use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
+use App\Http\Controllers\Admin\CollectionController as AdminCollectionController;
 
 Route::prefix('admin')->name('admin.')->group(function () {
     // Guest Admin Auth Routes
@@ -50,6 +52,14 @@ Route::prefix('admin')->name('admin.')->group(function () {
         // Products Module
         Route::patch('/products/{product}/toggle-status', [AdminProductController::class, 'toggleStatus'])->name('products.toggle-status');
         Route::resource('products', AdminProductController::class);
+
+        // Categories Module
+        Route::patch('/categories/{category}/toggle-status', [AdminCategoryController::class, 'toggleStatus'])->name('categories.toggle-status');
+        Route::resource('categories', AdminCategoryController::class);
+
+        // Collections Module
+        Route::patch('/collections/{collection}/toggle-status', [AdminCollectionController::class, 'toggleStatus'])->name('collections.toggle-status');
+        Route::resource('collections', AdminCollectionController::class);
     });
 });
 
