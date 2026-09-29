@@ -442,7 +442,22 @@ document.addEventListener('DOMContentLoaded', () => {
             const qty = (atcBtn.id === 'main-add-to-cart-btn' || atcBtn.id === 'sticky-atc-btn') && qtyInput ? (parseInt(qtyInput.value) || 1) : 1;
 
             addToCart(product, qty);
-            openCartDrawer();
+
+            // Only auto-open Cart Drawer popup when triggered from Shoppable Video Reels section or Modal
+            const isVideoReel = atcBtn.closest('#shoppable-reels-section') || atcBtn.closest('#reel-video-modal') || atcBtn.id === 'modal-add-to-cart-btn';
+            
+            if (isVideoReel) {
+                openCartDrawer();
+            } else {
+                // In-place button confirmation feedback without opening intrusive popup drawer
+                const originalContent = atcBtn.innerHTML;
+                atcBtn.innerHTML = `<span>✓ Added</span>`;
+                atcBtn.classList.add('bg-[#15803D]', 'text-white');
+                setTimeout(() => {
+                    atcBtn.innerHTML = originalContent;
+                    atcBtn.classList.remove('bg-[#15803D]');
+                }, 1400);
+            }
         }
 
         // Delegated Wishlist Toggle
