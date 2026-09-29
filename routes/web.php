@@ -5,9 +5,14 @@ use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\CollectionController;
 use App\Http\Controllers\Front\ProductController;
 use App\Http\Controllers\Front\CartWishlistController;
+use App\Http\Controllers\Front\SearchController;
 
 // Storefront Homepage
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
+// Search Routes (Full Search & Predictive AJAX Suggestions)
+Route::get('/search', [SearchController::class, 'index'])->name('search.index');
+Route::get('/api/search/predictive', [SearchController::class, 'predictive'])->name('search.predictive');
 
 // Catalog / Collection Routes
 Route::get('/collections/{slug}', [CollectionController::class, 'show'])->name('collections.show');

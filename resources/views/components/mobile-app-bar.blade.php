@@ -1,7 +1,7 @@
 <!-- ========================================================================= -->
 <!-- MOBILE APP-LIKE BOTTOM FLOATING NAVIGATION BAR                           -->
 <!-- ========================================================================= -->
-<nav class="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur-lg border-t border-[#EADBCC] shadow-2xl py-2 px-3 pb-safe font-body">
+<nav class="lg:hidden fixed bottom-0 inset-x-0 z-50 bg-white/98 backdrop-blur-lg border-t border-[#EADBCC] shadow-2xl py-2 px-3 pb-safe font-body pointer-events-auto select-none">
     <div class="grid grid-cols-5 items-center text-center">
         
         <!-- 1. Home -->
@@ -21,8 +21,12 @@
         </a>
 
         <!-- 3. Search Modal Trigger -->
-        <button type="button" id="mobile-app-search-trigger" class="flex flex-col items-center justify-center space-y-1 py-1 text-xs text-gray-500 hover:text-[#D38928] transition-colors focus:outline-none">
-            <div class="w-9 h-9 -mt-3 rounded-full bg-[#D38928] text-white flex items-center justify-center shadow-lg border-2 border-white">
+        <button 
+            type="button" 
+            id="mobile-app-search-trigger" 
+            class="search-modal-opener flex flex-col items-center justify-center space-y-1 py-1 text-xs text-gray-500 hover:text-[#D38928] transition-colors focus:outline-none cursor-pointer"
+        >
+            <div class="w-9 h-9 -mt-3 rounded-full bg-[#D38928] text-white flex items-center justify-center shadow-lg border-2 border-white hover:scale-105 active:scale-95 transition-transform">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
                 </svg>
@@ -39,12 +43,16 @@
         </a>
 
         <!-- 5. Cart Drawer Opener -->
-        <a href="{{ route('cart.index') }}" id="mobile-app-cart-trigger" class="flex flex-col items-center justify-center space-y-1 py-1 text-xs text-gray-500 hover:text-[#D38928] transition-colors relative">
+        <button 
+            type="button" 
+            id="mobile-app-cart-trigger" 
+            class="cart-drawer-opener flex flex-col items-center justify-center space-y-1 py-1 text-xs text-gray-500 hover:text-[#D38928] transition-colors relative focus:outline-none cursor-pointer"
+        >
             <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
             </svg>
             <span class="text-xs font-bold font-heading">Cart</span>
-        </a>
+        </button>
 
     </div>
 </nav>

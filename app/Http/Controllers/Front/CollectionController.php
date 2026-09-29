@@ -50,6 +50,22 @@ class CollectionController extends Controller
         $query->with(['category', 'primaryImage', 'images', 'variants', 'approvedReviews']);
 
         // 2. Filters
+        // Search Keyword Filter
+        if ($request->filled('search') || $request->filled('q')) {
+            $searchTerm = trim($request->get('search', $request->get('q')));
+            $query->where(function ($sq) use ($searchTerm) {
+                $sq->where('title', 'LIKE', "%{$searchTerm}%")
+                   ->orWhere('hindi_title', 'LIKE', "%{$searchTerm}%")
+                   ->orWhere('sku', 'LIKE', "%{$searchTerm}%")
+                   ->orWhere('short_description', 'LIKE', "%{$searchTerm}%")
+                   ->orWhere('description', 'LIKE', "%{$searchTerm}%")
+                   ->orWhere('ingredients', 'LIKE', "%{$searchTerm}%")
+                   ->orWhereHas('category', function ($cq) use ($searchTerm) {
+                       $cq->where('name', 'LIKE', "%{$searchTerm}%");
+                   });
+            });
+        }
+
         // Availability Filter
         if ($request->filled('availability')) {
             if ($request->availability === 'in_stock') {

@@ -551,7 +551,7 @@ function closeCartDrawer() {
 function initCartDrawerUI() {
     const backdrop = document.getElementById('cart-drawer-backdrop');
     const closeBtn = document.getElementById('cart-drawer-close');
-    const triggers = document.querySelectorAll('#cart-drawer-trigger, .cart-drawer-opener');
+    const triggers = document.querySelectorAll('#cart-drawer-trigger, #header-cart-trigger, #mobile-app-cart-trigger, .cart-drawer-opener');
 
     triggers.forEach(t => t.addEventListener('click', (e) => {
         e.preventDefault();
@@ -649,19 +649,35 @@ function initMobileDrawer() {
 }
 
 function initSearchModal() {
-    const trigger = document.getElementById('search-modal-trigger');
     const modal = document.getElementById('search-modal');
     const backdrop = document.getElementById('search-modal-backdrop');
     const closeBtn = document.getElementById('search-modal-close');
     const input = document.getElementById('predictive-search-input');
+    const spinner = document.getElementById('search-spinner');
+    const resultsContainer = document.getElementById('predictive-results-container');
+    const resultsCountLabel = document.getElementById('results-count-label');
+    const resultsHeaderTitle = document.getElementById('results-header-title');
+    const categoriesSection = document.getElementById('search-categories-section');
+    const categoriesContainer = document.getElementById('search-categories-container');
+    const popularSearchesBox = document.getElementById('popular-searches-box');
+    const emptyState = document.getElementById('search-empty-state');
 
     if (!modal) return;
+
+    let debounceTimer;
 
     const openModal = () => {
         modal.classList.remove('opacity-0', 'pointer-events-none');
         modal.classList.add('opacity-100');
         document.body.classList.add('overflow-hidden');
-        if (input) setTimeout(() => input.focus(), 100);
+        if (input) {
+            setTimeout(() => {
+                input.focus();
+                if (!input.value.trim()) {
+                    performSearch('');
+                }
+            }, 100);
+        }
     };
 
     const closeModal = () => {
@@ -670,7 +686,15 @@ function initSearchModal() {
         document.body.classList.remove('overflow-hidden');
     };
 
-    if (trigger) trigger.addEventListener('click', openModal);
+    // Attach to all search triggers across desktop header and mobile bottom bar
+    document.querySelectorAll('#search-modal-trigger, #mobile-app-search-trigger, .search-modal-opener').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            openModal();
+        });
+    });
+
     if (closeBtn) closeBtn.addEventListener('click', closeModal);
     if (backdrop) backdrop.addEventListener('click', closeModal);
 
@@ -680,12 +704,108 @@ function initSearchModal() {
         }
     });
 
-    const tags = document.querySelectorAll('.search-tag');
-    tags.forEach(tag => {
+    async function performSearch(query) {
+        if (spinner) spinner.classList.remove('hidden');
+
+        try {
+            const res = await fetch(`/api/search/predictive?q=${encodeURIComponent(query)}`);
+            const data = await res.json();
+
+            if (spinner) spinner.classList.add('hidden');
+
+            const hasQuery = query.length > 0;
+
+            // Popular searches box visibility
+            if (popularSearchesBox) {
+                popularSearchesBox.style.display = hasQuery ? 'none' : 'block';
+            }
+
+            // Results title and counts
+            if (resultsHeaderTitle) {
+                resultsHeaderTitle.textContent = hasQuery ? `Results for "${query}"` : 'Featured Products';
+            }
+
+            if (resultsCountLabel) {
+                if (hasQuery && data.total > 0) {
+                    resultsCountLabel.textContent = `${data.total} item${data.total === 1 ? '' : 's'}`;
+                    resultsCountLabel.classList.remove('hidden');
+                } else {
+                    resultsCountLabel.classList.add('hidden');
+                }
+            }
+
+            // Categories Section
+            if (categoriesSection && categoriesContainer) {
+                if (data.categories && data.categories.length > 0) {
+                    categoriesSection.classList.remove('hidden');
+                    categoriesContainer.innerHTML = data.categories.map(c => `
+                        <a href="${c.url}" class="px-3 py-1.5 bg-[#FAF7F2] text-xs font-bold text-[#D38928] rounded-full border border-[#EADBCC] hover:bg-[#D38928] hover:text-white transition-colors">
+                            📁 ${c.name}
+                        </a>
+                    `).join('');
+                } else {
+                    categoriesSection.classList.add('hidden');
+                    categoriesContainer.innerHTML = '';
+                }
+            }
+
+            // Products Grid
+            if (data.products && data.products.length > 0) {
+                if (emptyState) emptyState.classList.add('hidden');
+                if (resultsContainer) {
+                    resultsContainer.classList.remove('hidden');
+                    resultsContainer.innerHTML = data.products.map(p => `
+                        <a href="${p.url}" class="flex items-center p-3 rounded-[12px] border border-[#EADBCC] hover:border-[#D38928] hover:bg-[#FAF7F2]/60 transition-all group bg-white shadow-2xs font-body">
+                            <div class="w-16 h-16 bg-[#FAF7F2] rounded-[8px] border border-[#EADBCC] overflow-hidden shrink-0 flex items-center justify-center">
+                                <img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform" onerror="this.src='/assets/images/devi-refill-pack-card.jpg'">
+                            </div>
+                            <div class="ml-3.5 flex-1 min-w-0 space-y-1">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-[10px] font-bold text-gray-400 uppercase font-heading truncate">${p.category}</span>
+                                    ${!p.is_in_stock ? '<span class="text-[10px] font-bold text-rose-600 bg-rose-50 px-1.5 py-0.5 rounded">Sold Out</span>' : ''}
+                                </div>
+                                <h6 class="text-xs sm:text-sm font-bold font-serif text-[#121212] group-hover:text-[#D38928] truncate">
+                                    ${p.title}
+                                </h6>
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-xs sm:text-sm font-black font-heading text-[#C87A1E]">${p.formatted_price}</span>
+                                    ${p.formatted_compare_price ? `<span class="text-xs text-gray-400 line-through">${p.formatted_compare_price}</span>` : ''}
+                                </div>
+                            </div>
+                        </a>
+                    `).join('');
+                }
+            } else {
+                if (resultsContainer) {
+                    resultsContainer.classList.add('hidden');
+                    resultsContainer.innerHTML = '';
+                }
+                if (emptyState) emptyState.classList.remove('hidden');
+            }
+        } catch (e) {
+            console.error('Search error:', e);
+            if (spinner) spinner.classList.add('hidden');
+        }
+    }
+
+    if (input) {
+        input.addEventListener('input', (e) => {
+            const query = e.target.value.trim();
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(() => {
+                performSearch(query);
+            }, 180);
+        });
+    }
+
+    // Popular search tags click
+    document.querySelectorAll('.search-tag').forEach(tag => {
         tag.addEventListener('click', () => {
             if (input) {
-                input.value = tag.textContent.trim();
+                const text = tag.textContent.trim();
+                input.value = text;
                 input.focus();
+                performSearch(text);
             }
         });
     });
