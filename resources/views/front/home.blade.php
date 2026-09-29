@@ -504,7 +504,12 @@
 </section>
 
 <!-- ========================================================================= -->
-<!-- 4. DAILY DEVOTIONAL RITUALS (Exact Match to User Screenshot Standard) -->
+<!-- 4. SHOPPABLE VIDEO REELS (Watch, Play & Direct Add to Cart)               -->
+<!-- ========================================================================= -->
+<x-shoppable-video-reels />
+
+<!-- ========================================================================= -->
+<!-- 5. DAILY DEVOTIONAL RITUALS (Exact Match to User Screenshot Standard) -->
 <!-- ========================================================================= -->
 <section class="py-16 sm:py-24 bg-white border-b border-[#EAE3D9]">
     <div class="w-full mx-auto px-5 sm:px-8 lg:px-[40px]">
