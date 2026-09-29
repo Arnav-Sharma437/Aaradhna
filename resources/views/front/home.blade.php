@@ -180,11 +180,6 @@
 </section>
 
 <!-- ========================================================================= -->
-<!-- NEW: SCROLL-DRIVEN PRODUCT SHOWCASE (STICKY PINNED + LEFT SCALE + RIGHT RAIL) -->
-<!-- ========================================================================= -->
-<x-scroll-product-showcase />
-
-<!-- ========================================================================= -->
 <!-- 2. BESTSELLER OF THE MONTH (Exact Match to User Screenshot)       -->
 <!-- ========================================================================= -->
 <section class="py-16 sm:py-24 bg-[#FAF7F2] border-b border-[#EAE3D9]">
