@@ -40,7 +40,7 @@
     
     <!-- Overlapping Top Border Pill Badge -->
     <div class="absolute -top-2.5 sm:-top-3.5 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
-        <span class="inline-block bg-white px-2.5 sm:px-4 py-0.5 rounded-full border border-[#D38928] text-[8px] sm:text-[11px] font-bold tracking-widest text-[#965A15] uppercase shadow-xs whitespace-nowrap font-heading">
+        <span class="inline-block bg-white px-2.5 sm:px-4 py-0.5 rounded-full border border-[#D38928] text-[11px] sm:text-xs font-bold tracking-widest text-[#965A15] uppercase shadow-xs whitespace-nowrap font-heading">
             {{ $topBadge }}
         </span>
     </div>
@@ -58,14 +58,14 @@
 
             <!-- Top Right Pack Info -->
             <div class="absolute top-2 right-2 sm:top-3 sm:right-3 text-right pointer-events-none select-none leading-none">
-                <span class="text-[8px] sm:text-[10px] uppercase font-semibold text-gray-500 block">pack of</span>
-                <span class="text-base sm:text-2xl font-black font-heading {{ $packColor }} block my-0.5">{{ $packCount }}</span>
-                <span class="text-[8px] sm:text-[10px] uppercase font-semibold text-gray-500 block">{{ $packUnit }}</span>
+                <span class="text-[10px] sm:text-[11px] uppercase font-semibold text-gray-500 block">pack of</span>
+                <span class="text-xl sm:text-2xl font-black font-heading {{ $packColor }} block my-0.5">{{ $packCount }}</span>
+                <span class="text-[10px] sm:text-[11px] uppercase font-semibold text-gray-500 block">{{ $packUnit }}</span>
             </div>
 
             <!-- Free Ceramic Stand Banner for Devi / Specials -->
             @if(str_contains($product->slug, 'devi'))
-                <div class="absolute bottom-1.5 left-1.5 right-1.5 sm:bottom-2 sm:left-2 sm:right-2 bg-black/45 backdrop-blur-xs py-0.5 sm:py-1 px-1.5 sm:px-2 rounded-[5px] sm:rounded-[6px] text-center text-white text-[8px] sm:text-[11px] font-bold tracking-wider">
+                <div class="absolute bottom-1.5 left-1.5 right-1.5 sm:bottom-2 sm:left-2 sm:right-2 bg-black/55 backdrop-blur-xs py-1 sm:py-1.5 px-1.5 sm:px-2 rounded-[5px] sm:rounded-[6px] text-center text-white text-[10px] sm:text-xs font-bold tracking-wider">
                     FREE STAND <span class="text-[#F6DAA8] font-normal hidden sm:inline">₹150/-</span>
                 </div>
             @endif
@@ -93,28 +93,28 @@
         
         <div class="space-y-1 sm:space-y-1.5">
             <!-- Title -->
-            <h3 class="text-xs sm:text-base font-bold font-serif text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
+            <h3 class="text-[15px] sm:text-base font-bold font-serif text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                 <a href="{{ route('products.show', $product->slug) }}">
                     {{ $product->title }}
                 </a>
             </h3>
 
             <!-- Reviews Rating -->
-            <div class="flex items-center space-x-1 sm:space-x-1.5 text-[#D38928] text-[10px] sm:text-xs">
-                <div class="flex text-[9px] sm:text-xs">
+            <div class="flex items-center space-x-1 sm:space-x-1.5 text-[#D38928] text-xs">
+                <div class="flex text-xs">
                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
-                <span class="text-[9px] sm:text-[11px] text-gray-500 font-medium truncate">({{ $reviewCount }})</span>
+                <span class="text-xs text-gray-500 font-medium truncate">({{ $reviewCount }})</span>
             </div>
         </div>
 
         <div>
             <!-- Price Block -->
             <div class="flex items-baseline space-x-1.5 sm:space-x-2 pt-0.5 sm:pt-1 pb-2 sm:pb-3.5">
-                <span class="text-[10px] sm:text-sm text-gray-400 line-through">
+                <span class="text-xs sm:text-sm text-gray-400 line-through">
                     ₹{{ number_format($mrpPrice, 2) }}
                 </span>
-                <span class="text-xs sm:text-xl font-black font-heading text-[#C87A1E]">
+                <span class="text-base sm:text-xl font-black font-heading text-[#C87A1E]">
                     ₹{{ number_format($product->active_price, 2) }}
                 </span>
             </div>
@@ -125,14 +125,14 @@
                     <button 
                         type="button" 
                         disabled 
-                        class="w-full py-2 sm:py-3 px-2 sm:px-4 bg-gray-200 text-gray-400 text-[10px] sm:text-sm font-semibold rounded-[8px] sm:rounded-[10px] cursor-not-allowed text-center font-heading"
+                        class="w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-gray-200 text-gray-400 text-xs sm:text-sm font-semibold rounded-[8px] sm:rounded-[10px] cursor-not-allowed text-center font-heading"
                     >
                         Sold Out
                     </button>
                 @else
                     <button 
-                        type="button"
-                        class="quick-add-to-cart-btn w-full py-2 sm:py-3 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] active:bg-[#965A15] text-white text-[10px] sm:text-sm font-semibold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer focus:outline-none"
+                        type="button" 
+                        class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] active:bg-[#965A15] text-white text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer focus:outline-none"
                         data-product-id="{{ $product->id }}"
                         data-product-title="{{ $product->title }}"
                         data-product-slug="{{ $product->slug }}"
