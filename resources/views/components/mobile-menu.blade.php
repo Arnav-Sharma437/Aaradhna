@@ -85,8 +85,19 @@
             <a href="{{ route('collections.show', 'all') }}" class="block text-sadhna-primary hover:text-sadhna-gold">
                 New Launches
             </a>
-            <a href="{{ route('pages.show', 'contact') }}" class="block text-sadhna-primary hover:text-sadhna-gold">
-                Contact Us
+            <a href="{{ route('products.show', 'trial-pack-combo') }}" class="block text-sadhna-primary hover:text-sadhna-gold">
+                Shri Ram Uphaar Box
+            </a>
+        </div>
+
+        <!-- Prominent Contact Us Button in Side Drawer -->
+        <div class="p-4 bg-[#FAF7F2]">
+            <a 
+                href="{{ route('pages.show', 'contact') }}" 
+                class="w-full flex items-center justify-center space-x-2 py-3 px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-sm font-bold uppercase tracking-wider rounded-[12px] shadow-sm font-heading transition-colors"
+            >
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                <span>Contact Us</span>
             </a>
         </div>
 
@@ -111,8 +122,8 @@
     </div>
 
     <!-- Drawer Footer -->
-    <div class="p-4 border-t border-sadhna-border bg-sadhna-warm-bg/40 text-xs text-sadhna-muted">
-        <p class="font-semibold text-sadhna-primary">शुद्धं समर्पयामि</p>
-        <p class="mt-0.5">100% Pure Vedic Ingredients | Bamboo-Free</p>
+    <div class="p-4 border-t border-[#EADBCC] bg-[#FAF7F2] text-xs text-sadhna-muted">
+        <p class="font-semibold text-sadhna-primary font-heading">✦ शुद्धं समर्पयामि ✦</p>
+        <p class="mt-0.5 text-gray-500">100% Pure Vedic Samagri | Bambooless</p>
     </div>
 </aside>

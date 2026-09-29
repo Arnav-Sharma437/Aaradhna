@@ -1,14 +1,14 @@
 <header class="sticky top-0 z-40 bg-white/98 backdrop-blur-md border-b border-[#EAE3D9] transition-all duration-200 shadow-xs font-body">
-    <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
-        <div class="flex items-center justify-between h-20 sm:h-22">
+    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
+        <div class="flex items-center justify-between h-16 sm:h-20 lg:h-22">
             
             <!-- LEFT: Mobile Menu Button & Aaradhna Logo -->
-            <div class="flex items-center space-x-3 sm:space-x-4 shrink-0">
+            <div class="flex items-center space-x-2 sm:space-x-4 shrink-0">
                 <!-- Mobile Menu Button -->
                 <button 
                     type="button" 
                     id="mobile-menu-trigger"
-                    class="lg:hidden p-2 -ml-2 text-[#121212] hover:text-[#D38928] focus:outline-none transition-colors"
+                    class="lg:hidden p-1.5 -ml-1 text-[#121212] hover:text-[#D38928] focus:outline-none transition-colors"
                     aria-label="Open Mobile Menu"
                 >
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -21,7 +21,7 @@
                     <img 
                         src="{{ asset('assets/images/aaradhna-logo.png') }}" 
                         alt="Aaradhna - Everything For Your Sacred Rituals" 
-                        class="h-12 sm:h-14 w-auto object-contain mix-blend-multiply transition-transform duration-200 group-hover:scale-105"
+                        class="h-10 sm:h-12 lg:h-14 w-auto object-contain mix-blend-multiply transition-transform duration-200 group-hover:scale-105"
                     >
                 </a>
             </div>
@@ -91,12 +91,12 @@
             </nav>
 
             <!-- RIGHT: Contact Us Pill + Search + Account + Cart -->
-            <div class="flex items-center space-x-3 sm:space-x-4 shrink-0">
+            <div class="flex items-center space-x-1.5 sm:space-x-3 lg:space-x-4 shrink-0">
                 
-                <!-- Contact Us Gold Rounded Pill with Dropdown Arrow -->
+                <!-- Contact Us Gold Rounded Pill with Dropdown Arrow (Desktop & Tablet only) -->
                 <a 
                     href="{{ route('pages.show', 'contact') }}" 
-                    class="inline-flex items-center px-5 py-2.5 bg-[#D38928] hover:bg-[#B8741E] text-white text-[14px] font-bold rounded-full shadow-xs hover:shadow-md transition-all duration-200 font-heading"
+                    class="hidden md:inline-flex items-center px-5 py-2.5 bg-[#D38928] hover:bg-[#B8741E] text-white text-[14px] font-bold rounded-full shadow-xs hover:shadow-md transition-all duration-200 font-heading"
                 >
                     <span>Contact Us</span>
                     <svg class="w-3.5 h-3.5 ml-1.5 text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -108,7 +108,7 @@
                 <button 
                     type="button" 
                     id="search-modal-trigger"
-                    class="p-2.5 text-[#1F1F1F] hover:text-[#D38928] transition-colors focus:outline-none"
+                    class="p-2 sm:p-2.5 text-[#1F1F1F] hover:text-[#D38928] transition-colors focus:outline-none"
                     aria-label="Open Search"
                 >
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -119,7 +119,7 @@
                 <!-- Customer Account -->
                 <a 
                     href="{{ url('/account') }}" 
-                    class="p-2.5 text-[#1F1F1F] hover:text-[#D38928] transition-colors hidden sm:inline-block"
+                    class="p-2 sm:p-2.5 text-[#1F1F1F] hover:text-[#D38928] transition-colors hidden sm:inline-block"
                     aria-label="Customer Account"
                 >
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -130,7 +130,7 @@
                 <!-- Wishlist with live badge -->
                 <a 
                     href="{{ route('wishlist.index') }}" 
-                    class="p-2.5 text-[#1F1F1F] hover:text-[#D38928] transition-colors relative inline-block"
+                    class="p-2 sm:p-2.5 text-[#1F1F1F] hover:text-[#D38928] transition-colors relative inline-block"
                     aria-label="Wishlist"
                 >
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -148,7 +148,7 @@
                 <a 
                     href="{{ route('cart.index') }}" 
                     id="cart-drawer-trigger"
-                    class="p-2.5 text-[#1F1F1F] hover:text-[#D38928] transition-colors relative inline-block"
+                    class="p-2 sm:p-2.5 text-[#1F1F1F] hover:text-[#D38928] transition-colors relative inline-block"
                     aria-label="Cart"
                 >
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
