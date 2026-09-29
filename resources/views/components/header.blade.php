@@ -53,9 +53,9 @@
                         class="inline-flex items-center py-6 text-[15px] xl:text-[16px] font-semibold text-[#1F1F1F] hover:text-[#D38928] transition-colors cursor-pointer"
                     >
                         <span>Super Save Offers</span>
-                        <svg class="w-3.5 h-3.5 ml-1 text-gray-400 group-hover:rotate-180 group-hover:text-[#D38928] transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <!-- <svg class="w-3.5 h-3.5 ml-1 text-gray-400 group-hover:rotate-180 group-hover:text-[#D38928] transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                        </svg>
+                        </svg> -->
                     </a>
                 </div>
 
@@ -65,9 +65,9 @@
                         href="{{ route('collections.show', 'all') }}" 
                         class="inline-flex items-center py-6 text-[15px] xl:text-[16px] font-semibold text-[#1F1F1F] hover:text-[#D38928] transition-colors cursor-pointer"
                     >
-                        <span>New Launches</span>
+                        <!-- <span>New Launches</span>
                         <svg class="w-3.5 h-3.5 ml-1 text-gray-400 group-hover:rotate-180 group-hover:text-[#D38928] transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/> -->
                         </svg>
                     </a>
                 </div>
@@ -75,8 +75,7 @@
                 <!-- 4. Best Seller Combo -->
                 <a 
                     href="{{ route('products.show', 'trial-pack-combo') }}" 
-                    class="text-[15px] xl:text-[16px] font-semibold text-[#1F1F1F] hover:text-[#D38928] transition-colors py-6 whitespace-nowrap"
-                >
+                    class="text-[15px] xl:text-[16px] font-semibold text-[#1F1F1F] hover:text-[#D38928] transition-colors py-6 whitespace-nowrap">
                     Best Seller Combo
                 </a>
 
@@ -99,9 +98,9 @@
                     class="hidden md:inline-flex items-center px-4.5 py-2 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-bold rounded-full shadow-xs hover:shadow-md transition-all duration-200 font-heading shrink-0"
                 >
                     <span>Contact Us</span>
-                    <svg class="w-3.5 h-3.5 ml-1.5 text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <!-- <svg class="w-3.5 h-3.5 ml-1.5 text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                    </svg>
+                    </svg> -->
                 </a>
 
                 <!-- Search Icon -->
