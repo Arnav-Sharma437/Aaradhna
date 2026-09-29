@@ -3,18 +3,24 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\BlogPost;
 use App\Models\Category;
 use App\Models\Collection;
+use App\Models\Coupon;
+use App\Models\Faq;
+use App\Models\HomepageBanner;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\Review;
+use App\Models\Setting;
+use App\Models\Testimonial;
 use App\Models\User;
 use Illuminate\View\View;
 
 class DashboardController extends Controller
 {
     /**
-     * Display the Admin Dashboard with live stats and catalog overview.
+     * Display the Shopify-style Admin Dashboard with live stats and store metrics.
      */
     public function index(): View
     {
@@ -22,9 +28,9 @@ class DashboardController extends Controller
         $totalProducts = Product::count();
         $activeProducts = Product::where('status', 'active')->count();
         $outOfStockProducts = Product::where('stock_quantity', '<=', 0)->count();
-        $lowStockProducts = Product::where('stock_quantity', '>', 0)->where('stock_quantity', '<=', 20)->count();
-        $totalCategories = Category::where('is_active', true)->count();
-        $totalCollections = Collection::where('is_active', true)->count();
+        $lowStockProducts = Product::where('stock_quantity', '>', 0)->where('stock_quantity', '<=', 30)->count();
+        $totalCategories = Category::count();
+        $totalCollections = Collection::count();
 
         // 2. Orders & Revenue Stats
         $totalOrders = Order::count();
@@ -33,7 +39,7 @@ class DashboardController extends Controller
         $completedOrders = Order::where('order_status', 'delivered')->count();
         $totalRevenue = (float) Order::where('payment_status', 'paid')->sum('total_amount');
 
-        // 3. Customer Stats
+        // 3. Customer & User Stats
         $totalCustomers = User::where('role', 'customer')->count();
         $totalUsers = User::count();
 
@@ -43,9 +49,21 @@ class DashboardController extends Controller
         $pendingReviews = Review::where('status', 'pending')->count();
         $averageRating = Review::where('status', 'approved')->avg('rating') ?: 5.0;
 
-        // 5. Recent Data
-        $recentProducts = Product::with(['category', 'primaryImage'])
-            ->orderBy('created_at', 'desc')
+        // 5. Marketing, Content & Config Counts
+        $totalCoupons = Coupon::count();
+        $totalBanners = HomepageBanner::count();
+        $totalFaqs = Faq::count();
+        $totalTestimonials = Testimonial::count();
+        $totalBlogs = BlogPost::count();
+
+        // 6. Recent / Live Data Lists
+        $recentProducts = Product::with(['category', 'primaryImage', 'variants'])
+            ->orderBy('id', 'asc')
+            ->take(6)
+            ->get();
+
+        $inventoryAlerts = Product::where('stock_quantity', '<=', 50)
+            ->orderBy('stock_quantity', 'asc')
             ->take(5)
             ->get();
 
@@ -77,7 +95,13 @@ class DashboardController extends Controller
             'approvedReviews',
             'pendingReviews',
             'averageRating',
+            'totalCoupons',
+            'totalBanners',
+            'totalFaqs',
+            'totalTestimonials',
+            'totalBlogs',
             'recentProducts',
+            'inventoryAlerts',
             'recentReviews',
             'recentOrders'
         ));
