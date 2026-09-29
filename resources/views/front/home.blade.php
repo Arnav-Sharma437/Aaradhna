@@ -11,97 +11,93 @@
 <section class="relative w-full bg-[#FAF5EE] overflow-hidden select-none border-b border-[#EAE3D9]" id="hero-banner-carousel">
     
     <!-- Slides Wrapper -->
-    <div class="relative w-full min-h-[480px] sm:min-h-[540px] lg:min-h-[580px] overflow-hidden">
+    <div class="relative w-full min-h-[460px] sm:min-h-[520px] lg:min-h-[580px] xl:min-h-[620px] overflow-hidden">
         
-        <!-- SLIDE 1: CLEAN TEMPLE FLOWERS & INCENSE CONES (MATCHING SCREENSHOT) -->
-        <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-100 z-10 flex items-center bg-gradient-to-r from-[#FBF8F3] via-[#FAF4EB] to-[#F5ECE0]" data-slide="0">
-            
-            <div class="w-full max-w-[1440px] mx-auto px-6 sm:px-12 lg:px-[60px] py-12 sm:py-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-                
-                <!-- Left: Sacred Ritual Image Showcase (5 Cols) -->
-                <div class="lg:col-span-5 flex justify-center items-center order-2 lg:order-1">
-                    <div class="relative w-full max-w-[420px] aspect-4/3 sm:aspect-square rounded-[20px] overflow-hidden shadow-2xl border-4 border-white/80 bg-white/50 group">
-                        <img 
-                            src="{{ asset('assets/images/dhoop-cones.jpg') }}" 
-                            alt="Aaradhna Sacred Incense Cones" 
-                            class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
-                        >
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
-                        <div class="absolute bottom-4 left-4 right-4 text-white text-center sm:text-left">
-                            <span class="text-[10px] sm:text-xs uppercase font-bold tracking-widest text-[#F6DAA8] block">✦ शुद्धं समर्पयामि ✦</span>
-                            <span class="text-sm sm:text-base font-bold font-heading">Hand-Rolled with Sacred Flowers</span>
-                        </div>
-                    </div>
-                </div>
+        <!-- SLIDE 1: SACRED INCENSE CONE COLLECTION (SEAMLESS FULL-BLEED PANORAMIC) -->
+        <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-100 z-10 flex items-center bg-[#FAF4EB]" data-slide="0">
+            <!-- Full Panoramic Image Background -->
+            <img 
+                src="{{ asset('assets/images/hero-sacred-cones.jpg') }}" 
+                alt="Aaradhna Sacred Incense Cone Collection" 
+                class="absolute inset-0 w-full h-full object-cover object-[25%_center] sm:object-left lg:object-center"
+            >
+            <!-- Mobile/Tablet readability overlay (transparent on desktop right-side) -->
+            <div class="absolute inset-0 bg-gradient-to-t from-[#FAF4EB]/95 via-[#FAF4EB]/60 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-[#FAF4EB]/30 lg:to-[#FAF4EB]/70"></div>
 
-                <!-- Right: Editorial Headlines & 3 Badges (7 Cols) -->
-                <div class="lg:col-span-7 text-center lg:text-left space-y-6 order-1 lg:order-2">
+            <div class="relative w-full max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-16 py-12 sm:py-16 grid grid-cols-1 lg:grid-cols-12 items-center z-10">
+                
+                <!-- Spacer for left photo subject on desktop -->
+                <div class="hidden lg:block lg:col-span-5 xl:col-span-6"></div>
+
+                <!-- Right: Editorial Headlines & 3 Badges (Exact Replica of Reference Screenshot) -->
+                <div class="lg:col-span-7 xl:col-span-6 text-center lg:text-left space-y-5 sm:space-y-6 pt-24 sm:pt-16 lg:pt-0">
                     
                     <!-- Main Hero Headlines -->
-                    <div class="space-y-2.5">
-                        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black font-serif text-[#2B1810] tracking-tight leading-[1.12]">
-                            Discover Aaradhna’s <br class="hidden sm:inline">
-                            <span class="italic font-normal text-[#965A15]">Sacred Incense</span> Collection
+                    <div class="space-y-2">
+                        <h1 class="text-3xl sm:text-5xl lg:text-[52px] xl:text-[58px] font-black font-serif text-[#2B1810] tracking-tight leading-[1.12]">
+                            Discover <br class="hidden sm:inline">
+                            <span class="italic font-serif font-normal text-[#8B4513]">Aaradhna’s Incense</span> <br>
+                            Cone Collection
                         </h1>
-                        <p class="text-base sm:text-xl font-bold text-[#0F5B4E] tracking-wide font-heading">
-                            Made From Sacred Temple Flowers &amp; Pure Vedic Herbs
+                        <p class="text-base sm:text-xl lg:text-[22px] font-bold text-[#0F5B4E] tracking-wide font-heading pt-1">
+                            Made From Sacred Temple Flowers
                         </p>
                     </div>
 
                     <!-- 3 Feature Badges in Circular Outlines (Exact Replica of Reference Image) -->
-                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-8 pt-2">
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-7 pt-2">
                         
                         <!-- Badge 1: 100% Charcoal Free -->
-                        <div class="flex flex-col items-center text-center space-y-2">
-                            <div class="w-13 h-13 sm:w-14 sm:h-14 rounded-full border-2 border-[#0F5B4E] flex items-center justify-center text-[#0F5B4E] bg-white/70 shadow-xs">
-                                <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <div class="flex flex-col items-center text-center space-y-1.5 sm:space-y-2">
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-[#0F5B4E] flex items-center justify-center text-[#0F5B4E] bg-white/80 shadow-xs">
+                                <svg class="w-6 h-6 sm:w-7 sm:h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                                     <path d="M12 2C6.5 2 2 6.5 2 12c0 3.5 1.8 6.6 4.6 8.4C8 18.5 11 16 12 12c1 4 4 6.5 5.4 8.4C20.2 18.6 22 15.5 22 12c0-5.5-4.5-10-10-10z"/>
                                     <path d="M12 2v20"/>
                                 </svg>
                             </div>
-                            <span class="text-xs sm:text-sm font-bold text-[#1F1F1F] font-heading">
+                            <span class="text-xs sm:text-sm font-bold text-[#1F1F1F] font-heading leading-tight">
                                 100%<br>Charcoal Free
                             </span>
                         </div>
 
                         <!-- Badge 2: Crafted By Hand -->
-                        <div class="flex flex-col items-center text-center space-y-2">
-                            <div class="w-13 h-13 sm:w-14 sm:h-14 rounded-full border-2 border-[#0F5B4E] flex items-center justify-center text-[#0F5B4E] bg-white/70 shadow-xs">
-                                <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <div class="flex flex-col items-center text-center space-y-1.5 sm:space-y-2">
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-[#0F5B4E] flex items-center justify-center text-[#0F5B4E] bg-white/80 shadow-xs">
+                                <svg class="w-6 h-6 sm:w-7 sm:h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                                     <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
                                     <path d="M12 15c-3.3 0-6-2.7-6-6V7a6 6 0 0 1 12 0v2c0 3.3-2.7 6-6 6z"/>
                                     <path d="M12 19a7 7 0 0 0 7-7"/>
                                     <path d="M5 12a7 7 0 0 0 7 7"/>
                                 </svg>
                             </div>
-                            <span class="text-xs sm:text-sm font-bold text-[#1F1F1F] font-heading">
+                            <span class="text-xs sm:text-sm font-bold text-[#1F1F1F] font-heading leading-tight">
                                 Crafted By<br>Hand
                             </span>
                         </div>
 
                         <!-- Badge 3: No Chemicals -->
-                        <div class="flex flex-col items-center text-center space-y-2">
-                            <div class="w-13 h-13 sm:w-14 sm:h-14 rounded-full border-2 border-[#0F5B4E] flex items-center justify-center text-[#0F5B4E] bg-white/70 shadow-xs">
-                                <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <div class="flex flex-col items-center text-center space-y-1.5 sm:space-y-2">
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-[#0F5B4E] flex items-center justify-center text-[#0F5B4E] bg-white/80 shadow-xs">
+                                <svg class="w-6 h-6 sm:w-7 sm:h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                                     <path d="M10 2v7.31L4.69 18.5a2 2 0 0 0 1.73 3h11.16a2 2 0 0 0 1.73-3L14 9.31V2"/>
                                     <path d="M8.5 2h7"/>
                                     <path d="M7 16h10"/>
                                 </svg>
                             </div>
-                            <span class="text-xs sm:text-sm font-bold text-[#1F1F1F] font-heading">
-                                Zero Harmful<br>Chemicals
+                            <span class="text-xs sm:text-sm font-bold text-[#1F1F1F] font-heading leading-tight">
+                                No<br>Chemicals
                             </span>
                         </div>
 
                     </div>
 
                     <!-- Call to Action Buttons -->
-                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-3">
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 pt-2">
                         <a 
-                            href="{{ route('collections.show', 'bambooless') }}" 
+                            href="{{ route('collections.show', 'dhoop-cones') }}" 
                             class="inline-flex items-center justify-center px-8 py-3.5 bg-[#D38928] hover:bg-[#b8741e] text-white text-xs sm:text-sm font-bold uppercase tracking-widest rounded-[10px] shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 font-heading"
                         >
-                            <span>Shop Bambooless</span>
+                            <span>Shop Dhoop Cones</span>
                             <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                         </a>
                         <a 
@@ -117,31 +113,73 @@
             </div>
         </div>
 
-        <!-- SLIDE 2: BAMBOOLEES AGARBATTI & INCENSE -->
-        <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 pointer-events-none z-0 flex items-center bg-[#121212]" data-slide="1">
+        <!-- SLIDE 2: BAMBOOLEES INCENSE STICKS (SEAMLESS FULL-BLEED PANORAMIC) -->
+        <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 pointer-events-none z-0 flex items-center bg-[#FAF4EB]" data-slide="1">
             <img 
-                src="{{ asset('assets/images/hero-incense-banner.jpg') }}" 
-                alt="Pure Bambooless Incense Sticks - Aaradhna" 
-                class="absolute inset-0 w-full h-full object-cover object-center"
+                src="{{ asset('assets/images/hero-sacred-bambooless.jpg') }}" 
+                alt="Aaradhna Bambooless Incense Sticks" 
+                class="absolute inset-0 w-full h-full object-cover object-[25%_center] sm:object-left lg:object-center"
             >
-            <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/30 sm:to-transparent"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-black/40"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#FAF4EB]/95 via-[#FAF4EB]/60 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-[#FAF4EB]/30 lg:to-[#FAF4EB]/70"></div>
 
-            <div class="relative w-full mx-auto px-6 sm:px-12 lg:px-[80px] py-16 sm:py-20 lg:py-24 w-full">
-                <div class="max-w-xl lg:max-w-2xl text-left space-y-5 sm:space-y-6">
-                    <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-[10px] bg-[#D38928]/90 text-white backdrop-blur-md shadow-lg border border-[#F6DAA8]/40">
-                        <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
-                        <span class="text-[11px] sm:text-xs font-bold uppercase tracking-widest font-heading">✦ ZERO BAMBOO • 100% PURE HERBS ✦</span>
-                    </div>
+            <div class="relative w-full max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-16 py-12 sm:py-16 grid grid-cols-1 lg:grid-cols-12 items-center z-10">
+                
+                <div class="hidden lg:block lg:col-span-5 xl:col-span-6"></div>
+
+                <div class="lg:col-span-7 xl:col-span-6 text-center lg:text-left space-y-5 sm:space-y-6 pt-24 sm:pt-16 lg:pt-0">
+                    
                     <div class="space-y-2">
-                        <h2 class="text-3xl sm:text-5xl lg:text-6xl font-black font-heading text-white tracking-tight leading-[1.12] drop-shadow-md">
-                            Bambooless <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#F6DAA8] via-[#D38928] to-[#F6DAA8]">Incense Sticks</span>
+                        <h2 class="text-3xl sm:text-5xl lg:text-[52px] xl:text-[58px] font-black font-serif text-[#2B1810] tracking-tight leading-[1.12]">
+                            Discover <br class="hidden sm:inline">
+                            <span class="italic font-serif font-normal text-[#8B4513]">Aaradhna’s Bambooless</span> <br>
+                            Incense Sticks
                         </h2>
-                        <p class="text-sm sm:text-base lg:text-lg text-white/90 font-medium leading-relaxed drop-shadow">
-                            Non-toxic, soot-free fragrances infused with pure sandalwood, rose petals &amp; natural herbs for serene meditation.
+                        <p class="text-base sm:text-xl lg:text-[22px] font-bold text-[#0F5B4E] tracking-wide font-heading pt-1">
+                            100% Zero Bamboo • Pure Vedic Herbs
                         </p>
                     </div>
-                    <div class="flex flex-wrap gap-4 pt-2">
+
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-7 pt-2">
+                        
+                        <div class="flex flex-col items-center text-center space-y-1.5 sm:space-y-2">
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-[#0F5B4E] flex items-center justify-center text-[#0F5B4E] bg-white/80 shadow-xs">
+                                <svg class="w-6 h-6 sm:w-7 sm:h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                    <path d="M12 2C6.5 2 2 6.5 2 12c0 3.5 1.8 6.6 4.6 8.4C8 18.5 11 16 12 12c1 4 4 6.5 5.4 8.4C20.2 18.6 22 15.5 22 12c0-5.5-4.5-10-10-10z"/>
+                                    <path d="M12 2v20"/>
+                                </svg>
+                            </div>
+                            <span class="text-xs sm:text-sm font-bold text-[#1F1F1F] font-heading leading-tight">
+                                100%<br>Charcoal Free
+                            </span>
+                        </div>
+
+                        <div class="flex flex-col items-center text-center space-y-1.5 sm:space-y-2">
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-[#0F5B4E] flex items-center justify-center text-[#0F5B4E] bg-white/80 shadow-xs">
+                                <svg class="w-6 h-6 sm:w-7 sm:h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                    <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+                                </svg>
+                            </div>
+                            <span class="text-xs sm:text-sm font-bold text-[#1F1F1F] font-heading leading-tight">
+                                Clean &amp;<br>Soot-Free
+                            </span>
+                        </div>
+
+                        <div class="flex flex-col items-center text-center space-y-1.5 sm:space-y-2">
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-[#0F5B4E] flex items-center justify-center text-[#0F5B4E] bg-white/80 shadow-xs">
+                                <svg class="w-6 h-6 sm:w-7 sm:h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                    <path d="M10 2v7.31L4.69 18.5a2 2 0 0 0 1.73 3h11.16a2 2 0 0 0 1.73-3L14 9.31V2"/>
+                                    <path d="M8.5 2h7"/>
+                                    <path d="M7 16h10"/>
+                                </svg>
+                            </div>
+                            <span class="text-xs sm:text-sm font-bold text-[#1F1F1F] font-heading leading-tight">
+                                Zero<br>Chemicals
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 pt-2">
                         <a 
                             href="{{ route('collections.show', 'bambooless') }}" 
                             class="inline-flex items-center justify-center px-8 py-3.5 bg-[#D38928] hover:bg-[#b8741e] text-white text-xs sm:text-sm font-bold uppercase tracking-widest rounded-[10px] shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 font-heading"
@@ -150,13 +188,15 @@
                             <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                         </a>
                         <a 
-                            href="{{ route('products.show', 'bambooless-3-combo-pack') }}" 
-                            class="inline-flex items-center justify-center px-7 py-3.5 bg-white/15 hover:bg-white/25 text-white text-xs sm:text-sm font-bold uppercase tracking-widest rounded-[10px] backdrop-blur-md border border-white/30 transition-all duration-200 font-heading"
+                            href="{{ route('collections.show', 'best-seller-combo') }}" 
+                            class="inline-flex items-center justify-center px-7 py-3.5 bg-white hover:bg-stone-50 text-[#1F1F1F] hover:text-[#D38928] text-xs sm:text-sm font-bold uppercase tracking-widest rounded-[10px] border border-[#D38928]/60 shadow-xs hover:shadow-md transition-all duration-200 font-heading"
                         >
-                            Try Discovery Pack
+                            Best Seller Combo
                         </a>
                     </div>
+
                 </div>
+
             </div>
         </div>
 
@@ -166,7 +206,7 @@
     <button 
         type="button" 
         id="hero-slider-prev"
-        class="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-black/45 hover:bg-[#D38928] text-white hover:text-white flex items-center justify-center backdrop-blur-md border border-white/30 hover:border-[#F6DAA8] shadow-2xl transition-all duration-300 transform hover:scale-110 active:scale-95 focus:outline-none cursor-pointer group"
+        class="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/80 hover:bg-[#D38928] text-[#1F1F1F] hover:text-white flex items-center justify-center backdrop-blur-md border border-[#D38928]/40 hover:border-[#F6DAA8] shadow-lg transition-all duration-300 transform hover:scale-105 active:scale-95 focus:outline-none cursor-pointer group"
         aria-label="Previous Slide"
     >
         <svg class="w-5 h-5 group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
@@ -174,16 +214,16 @@
     <button 
         type="button" 
         id="hero-slider-next"
-        class="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-black/45 hover:bg-[#D38928] text-white hover:text-white flex items-center justify-center backdrop-blur-md border border-white/30 hover:border-[#F6DAA8] shadow-2xl transition-all duration-300 transform hover:scale-110 active:scale-95 focus:outline-none cursor-pointer group"
+        class="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/80 hover:bg-[#D38928] text-[#1F1F1F] hover:text-white flex items-center justify-center backdrop-blur-md border border-[#D38928]/40 hover:border-[#F6DAA8] shadow-lg transition-all duration-300 transform hover:scale-105 active:scale-95 focus:outline-none cursor-pointer group"
         aria-label="Next Slide"
     >
         <svg class="w-5 h-5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
     </button>
 
     <!-- Carousel Pagination Dots -->
-    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex space-x-2.5" id="hero-slider-dots">
+    <div class="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-20 flex space-x-2.5" id="hero-slider-dots">
         <button type="button" class="w-8 h-2 rounded-[10px] bg-[#D38928] transition-all duration-300" data-index="0" aria-label="Slide 1"></button>
-        <button type="button" class="w-2.5 h-2 rounded-[10px] bg-white/40 hover:bg-white/70 transition-all duration-300" data-index="1" aria-label="Slide 2"></button>
+        <button type="button" class="w-2.5 h-2 rounded-[10px] bg-[#1F1F1F]/30 hover:bg-[#1F1F1F]/60 transition-all duration-300" data-index="1" aria-label="Slide 2"></button>
     </div>
 
 </section>
