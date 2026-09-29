@@ -25,7 +25,7 @@ class CollectionController extends Controller
                 'slug' => 'all',
                 'description' => 'Discover our complete range of 100% natural pooja samagri, bambooless incense sticks, organic havan cups, and sacred attar sprays.',
                 'banner_path' => null,
-                'meta_title' => 'Shop Pure Pooja Samagri & Bambooless Agarbatti | Aaradhna.co',
+                'meta_title' => 'Shop Pure Pooja Samagri & Bambooless Agarbatti | Mangalam.co',
                 'meta_description' => 'Explore 100% pure Vedic pooja essentials crafted without bamboo, toxic charcoal, or synthetic aromas.',
             ];
             $query = Product::where('status', 'active');
@@ -40,7 +40,7 @@ class CollectionController extends Controller
                 'slug' => $category->slug,
                 'description' => $category->description ?? $category->subtitle,
                 'banner_path' => $category->banner_path,
-                'meta_title' => $category->meta_title ?? "{$category->name} — 100% Pure & Vedic | Aaradhna.co",
+                'meta_title' => $category->meta_title ?? "{$category->name} — 100% Pure & Vedic | Mangalam.co",
                 'meta_description' => $category->meta_description ?? $category->description,
             ];
             $query = Product::where('category_id', $category->id)->where('status', 'active');
