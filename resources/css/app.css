@@ -1,0 +1,81 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    /* Fonts */
+    --font-body: 'Lato', sans-serif;
+    --font-heading: 'Maharlika', serif;
+    --font-sans: 'Lato', ui-sans-serif, system-ui, sans-serif;
+    --font-serif: 'Maharlika', serif;
+
+    /* Design Tokens */
+    --color-primary: #121212;
+    --color-gold: #D38928;
+    --color-light-gold: #F6DAA8;
+    --color-maroon: #9B1C31;
+    --color-warm-bg: #FDF5EB;
+    --color-secondary-bg: #F9F9F9;
+    --color-secondary-alt-bg: #F3F3F3;
+    --color-muted: #666666;
+    --color-muted-alt: #7B7B7B;
+    --color-border-light: #E5E7EB;
+
+    /* Semantic Aliases */
+    --color-sadhna-primary: #121212;
+    --color-sadhna-gold: #D38928;
+    --color-sadhna-light-gold: #F6DAA8;
+    --color-sadhna-maroon: #9B1C31;
+    --color-sadhna-warm-bg: #FDF5EB;
+    --color-sadhna-bg-gray: #F9F9F9;
+    --color-sadhna-bg-alt: #F3F3F3;
+    --color-sadhna-muted: #666666;
+    --color-sadhna-muted-light: #7B7B7B;
+    --color-sadhna-border: #E5E7EB;
+}
+
+@layer base {
+    body {
+        font-family: var(--font-body);
+        color: var(--color-primary);
+        background-color: #ffffff;
+    }
+
+    h1, h2, h3, h4, h5, h6, .font-heading {
+        font-family: 'Maharlika', serif;
+    }
+
+    p, span, a, button, input, textarea, select, .font-body, .font-sans {
+        font-family: 'Lato', sans-serif;
+    }
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-marquee {
+    display: flex;
+    width: max-content;
+    animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+    animation-play-state: paused;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
