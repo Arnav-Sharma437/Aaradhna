@@ -24,8 +24,8 @@
             <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/30 sm:to-transparent"></div>
             <div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-black/40"></div>
 
-            <!-- Content Container -->
-            <div class="relative w-full mx-auto px-5 sm:px-8 lg:px-[40px] py-16 sm:py-20 lg:py-24 w-full">
+            <!-- Content Container (Increased left padding to avoid arrow overlapping text) -->
+            <div class="relative w-full mx-auto px-6 sm:px-12 lg:px-[80px] py-16 sm:py-20 lg:py-24 w-full">
                 <div class="max-w-xl lg:max-w-2xl text-left space-y-5 sm:space-y-6 animate-fadeIn">
                     
                     <!-- Top Pill Badge -->
@@ -98,8 +98,8 @@
             <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/30 sm:to-transparent"></div>
             <div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-black/40"></div>
 
-            <!-- Content Container -->
-            <div class="relative w-full mx-auto px-5 sm:px-8 lg:px-[40px] py-16 sm:py-20 lg:py-24 w-full">
+            <!-- Content Container (Increased left padding to avoid arrow overlapping text) -->
+            <div class="relative w-full mx-auto px-6 sm:px-12 lg:px-[80px] py-16 sm:py-20 lg:py-24 w-full">
                 <div class="max-w-xl lg:max-w-2xl text-left space-y-5 sm:space-y-6">
                     
                     <!-- Top Pill Badge -->
@@ -153,22 +153,22 @@
 
     </div>
 
-    <!-- Carousel Controls (Prev/Next Arrows) -->
+    <!-- Luxury Premium Carousel Arrow Controls -->
     <button 
         type="button" 
         id="hero-slider-prev"
-        class="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-[10px] bg-black/40 hover:bg-[#D38928] text-white flex items-center justify-center backdrop-blur-md border border-white/20 transition-all duration-200 focus:outline-none"
+        class="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-black/45 hover:bg-[#D38928] text-white hover:text-white flex items-center justify-center backdrop-blur-md border border-white/30 hover:border-[#F6DAA8] shadow-2xl transition-all duration-300 transform hover:scale-110 active:scale-95 focus:outline-none cursor-pointer group"
         aria-label="Previous Slide"
     >
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg>
+        <svg class="w-5 h-5 group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
     </button>
     <button 
         type="button" 
         id="hero-slider-next"
-        class="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-[10px] bg-black/40 hover:bg-[#D38928] text-white flex items-center justify-center backdrop-blur-md border border-white/20 transition-all duration-200 focus:outline-none"
+        class="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-black/45 hover:bg-[#D38928] text-white hover:text-white flex items-center justify-center backdrop-blur-md border border-white/30 hover:border-[#F6DAA8] shadow-2xl transition-all duration-300 transform hover:scale-110 active:scale-95 focus:outline-none cursor-pointer group"
         aria-label="Next Slide"
     >
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+        <svg class="w-5 h-5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
     </button>
 
     <!-- Carousel Pagination Dots -->
