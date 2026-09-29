@@ -42,51 +42,45 @@
                 </svg>
             </button>
             <div class="mobile-accordion-content hidden mt-3 pl-3 space-y-2 border-l-2 border-sadhna-gold/40 text-sm">
-                <a href="{{ route('collections.show', 'incense-sticks') }}" class="block py-1 text-sadhna-primary hover:text-sadhna-gold">
-                    Bambooless Incense Sticks
+                <a href="{{ route('collections.show', 'bambooless') }}" class="block py-1 text-sadhna-primary hover:text-sadhna-gold">
+                    Bambooless
                 </a>
-                <a href="{{ route('collections.show', 'organic-havan-cups') }}" class="block py-1 text-sadhna-primary hover:text-sadhna-gold">
+                <a href="{{ route('collections.show', 'havan-cups') }}" class="block py-1 text-sadhna-primary hover:text-sadhna-gold">
                     Havan Cups
                 </a>
-                <a href="{{ route('collections.show', 'charcoal-free-dhoop-cones') }}" class="block py-1 text-sadhna-primary hover:text-sadhna-gold">
+                <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block py-1 text-sadhna-primary hover:text-sadhna-gold">
                     Dhoop Cones
-                </a>
-                <a href="{{ route('collections.show', 'attar-spray') }}" class="block py-1 text-sadhna-primary hover:text-sadhna-gold">
-                    Attar Sprays
-                </a>
-                <a href="{{ route('collections.show', 'combos') }}" class="block py-1 text-sadhna-primary hover:text-sadhna-gold">
-                    Combos &amp; Gift Sets
                 </a>
                 
                 <div class="pt-2 border-t border-sadhna-border/50 text-xs font-semibold text-sadhna-muted uppercase tracking-wider">
-                    Pack Sizes
+                    Offers &amp; Combos
                 </div>
-                <a href="{{ route('products.show', 'trial-pack-combo') }}" class="block py-1 text-sadhna-primary hover:text-sadhna-gold">
-                    Trial Packs
+                <a href="{{ route('collections.show', 'super-save-offers') }}" class="block py-1 text-sadhna-primary hover:text-sadhna-gold">
+                    Super Save Offers
                 </a>
-                <a href="{{ route('collections.show', 'pack-of-40') }}" class="block py-1 text-sadhna-primary hover:text-sadhna-gold">
-                    Pack of 40 Sticks
+                <a href="{{ route('collections.show', 'best-seller-combo') }}" class="block py-1 text-sadhna-primary hover:text-sadhna-gold">
+                    Best Seller Combo
                 </a>
-                <a href="{{ route('collections.show', 'refill-packs') }}" class="block py-1 text-sadhna-primary hover:text-sadhna-gold">
-                    Pack of 100 Sticks / Refills
+                <a href="{{ route('collections.show', 'all') }}" class="block py-1 text-sadhna-primary hover:text-sadhna-gold">
+                    All Sacred Products
                 </a>
             </div>
         </div>
 
         <!-- Direct Nav Links -->
         <div class="p-4 space-y-3 text-base font-medium">
-            <a href="{{ route('collections.show', 'incense-sticks') }}" class="block text-sadhna-primary hover:text-sadhna-gold">
-                Bambooless Incense Sticks
+            <a href="{{ route('collections.show', 'bambooless') }}" class="block text-sadhna-primary hover:text-sadhna-gold">
+                Bambooless
             </a>
-            <a href="{{ route('collections.show', 'combos') }}" class="flex items-center justify-between text-sadhna-primary hover:text-sadhna-gold">
+            <a href="{{ route('collections.show', 'super-save-offers') }}" class="flex items-center justify-between text-sadhna-primary hover:text-sadhna-gold">
                 <span>Super Save Offers</span>
                 <span class="text-[10px] font-bold text-white bg-sadhna-gold px-2 py-0.5 rounded-full uppercase">Save</span>
             </a>
-            <a href="{{ route('collections.show', 'all') }}" class="block text-sadhna-primary hover:text-sadhna-gold">
-                New Launches
+            <a href="{{ route('collections.show', 'best-seller-combo') }}" class="block text-sadhna-primary hover:text-sadhna-gold">
+                Best Seller Combo
             </a>
-            <a href="{{ route('products.show', 'trial-pack-combo') }}" class="block text-sadhna-primary hover:text-sadhna-gold">
-                Shri Ram Uphaar Box
+            <a href="{{ route('collections.show', 'all') }}" class="block text-sadhna-primary hover:text-sadhna-gold">
+                All Products
             </a>
         </div>
 

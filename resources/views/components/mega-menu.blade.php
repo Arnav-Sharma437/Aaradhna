@@ -1,51 +1,39 @@
 @props([
     'categories' => [
         [
-            'name' => 'Bambooless Incense Sticks',
+            'name' => 'Bambooless',
             'subtitle' => 'Non-irritating. Pure fragrances.',
-            'slug' => 'incense-sticks',
+            'slug' => 'bambooless',
             'icon' => 'incense'
         ],
         [
             'name' => 'Havan Cups',
             'subtitle' => '100% Organic & Vedic',
-            'slug' => 'organic-havan-cups',
+            'slug' => 'havan-cups',
             'icon' => 'havan'
         ],
         [
             'name' => 'Dhoop Cones',
             'subtitle' => 'Charcoal Free | Low Smoke',
-            'slug' => 'charcoal-free-dhoop-cones',
+            'slug' => 'dhoop-cones',
             'icon' => 'cone'
-        ],
-        [
-            'name' => 'Attar Sprays',
-            'subtitle' => 'Alcohol Free Fragrances',
-            'slug' => 'attar-spray',
-            'icon' => 'spray'
-        ],
-        [
-            'name' => 'Combos',
-            'subtitle' => 'Curated Gift Sets',
-            'slug' => 'combos',
-            'icon' => 'combo'
         ]
     ],
     'packOptions' => [
         [
-            'title' => 'Trial Packs',
-            'description' => 'Discover fragrances before you commit.',
-            'url' => route('products.show', 'trial-pack-combo')
+            'title' => 'Super Save Offers',
+            'description' => 'Best value combos with up to 25% savings.',
+            'url' => route('collections.show', 'super-save-offers')
         ],
         [
-            'title' => 'Pack of 40 Sticks',
-            'description' => 'Ideal for everyday pooja & sacred gifting.',
-            'url' => route('collections.show', 'pack-of-40')
+            'title' => 'Best Seller Combo',
+            'description' => 'Our most celebrated spiritual combo boxes.',
+            'url' => route('collections.show', 'best-seller-combo')
         ],
         [
-            'title' => 'Pack of 100 Sticks',
-            'description' => 'Continue your daily pooja, effortlessly.',
-            'url' => route('collections.show', 'refill-packs')
+            'title' => 'All Sacred Products',
+            'description' => 'Explore the complete 100% pure Vedic collection.',
+            'url' => route('collections.show', 'all')
         ]
     ]
 ])
