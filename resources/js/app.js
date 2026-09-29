@@ -1,24 +1,571 @@
 import './bootstrap';
 
+/**
+ * =========================================================================
+ * AARADHNA.CO™ - UNIFIED CLIENT-SIDE STATE MANAGEMENT & REACTIVE STORE
+ * =========================================================================
+ * Pure, reliable LocalStorage management for Cart & Wishlist with zero phantom
+ * initial data, persistent cross-page sync, and reactive drawer/badge UI.
+ */
+
+const CART_STORAGE_KEY = 'aaradhna_cart_items_v2';
+const WISHLIST_STORAGE_KEY = 'aaradhna_wishlist_items_v2';
+
+// -------------------------------------------------------------------------
+// 1. Core State Helpers
+// -------------------------------------------------------------------------
+export const getCart = () => {
+    try {
+        const stored = localStorage.getItem(CART_STORAGE_KEY);
+        return stored ? JSON.parse(stored) : [];
+    } catch (e) {
+        return [];
+    }
+};
+
+export const saveCart = (items) => {
+    localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items));
+    window.dispatchEvent(new CustomEvent('aaradhna:cart-updated', { detail: { items } }));
+};
+
+export const getWishlist = () => {
+    try {
+        const stored = localStorage.getItem(WISHLIST_STORAGE_KEY);
+        return stored ? JSON.parse(stored) : [];
+    } catch (e) {
+        return [];
+    }
+};
+
+export const saveWishlist = (items) => {
+    localStorage.setItem(WISHLIST_STORAGE_KEY, JSON.stringify(items));
+    window.dispatchEvent(new CustomEvent('aaradhna:wishlist-updated', { detail: { items } }));
+};
+
+// -------------------------------------------------------------------------
+// 2. Cart Operations
+// -------------------------------------------------------------------------
+export const addToCart = (product, quantity = 1) => {
+    const cart = getCart();
+    const existingIndex = cart.findIndex(item => item.title === product.title || (item.slug && item.slug === product.slug));
+    
+    if (existingIndex > -1) {
+        cart[existingIndex].quantity += quantity;
+    } else {
+        cart.push({
+            id: product.id || Date.now(),
+            title: product.title || 'Sacred Item',
+            slug: product.slug || '',
+            price: parseFloat(product.price) || 489.00,
+            image: product.image || '/assets/images/devi-refill-pack-card.jpg',
+            quantity: quantity,
+            packInfo: product.packInfo || 'Pack of 100 sticks'
+        });
+    }
+    
+    saveCart(cart);
+    return cart;
+};
+
+export const updateCartItemQuantity = (titleOrSlug, newQty) => {
+    let cart = getCart();
+    if (newQty <= 0) {
+        cart = cart.filter(item => item.title !== titleOrSlug && item.slug !== titleOrSlug);
+    } else {
+        const item = cart.find(item => item.title === titleOrSlug || item.slug === titleOrSlug);
+        if (item) item.quantity = newQty;
+    }
+    saveCart(cart);
+    return cart;
+};
+
+export const removeFromCart = (titleOrSlug) => {
+    let cart = getCart().filter(item => item.title !== titleOrSlug && item.slug !== titleOrSlug);
+    saveCart(cart);
+    return cart;
+};
+
+// -------------------------------------------------------------------------
+// 3. Wishlist Operations
+// -------------------------------------------------------------------------
+export const toggleWishlistItem = (product) => {
+    let list = getWishlist();
+    const exists = list.some(item => (typeof item === 'string' && item === product.title) || item.title === product.title || (item.slug && item.slug === product.slug));
+    
+    if (exists) {
+        list = list.filter(item => {
+            if (typeof item === 'string') return item !== product.title;
+            return item.title !== product.title && item.slug !== product.slug;
+        });
+    } else {
+        list.push({
+            id: product.id || Date.now(),
+            title: product.title || 'Sacred Samagri',
+            slug: product.slug || '',
+            price: parseFloat(product.price) || 489.00,
+            image: product.image || '/assets/images/devi-refill-pack-card.jpg',
+            packInfo: product.packInfo || '100 sticks'
+        });
+    }
+    
+    saveWishlist(list);
+    return !exists;
+};
+
+export const removeFromWishlist = (titleOrSlug) => {
+    let list = getWishlist().filter(item => {
+        if (typeof item === 'string') return item !== titleOrSlug;
+        return item.title !== titleOrSlug && item.slug !== titleOrSlug;
+    });
+    saveWishlist(list);
+    return list;
+};
+
+export const isInWishlist = (titleOrSlug) => {
+    const list = getWishlist();
+    return list.some(item => {
+        if (typeof item === 'string') return item === titleOrSlug;
+        return item.title === titleOrSlug || item.slug === titleOrSlug;
+    });
+};
+
+// -------------------------------------------------------------------------
+// 4. UI Synchronization (Badges, Drawer, Pages)
+// -------------------------------------------------------------------------
+function updateHeaderBadges() {
+    const cart = getCart();
+    const wishlist = getWishlist();
+
+    const totalCartCount = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+    const cartBadge = document.getElementById('header-cart-badge');
+    if (cartBadge) {
+        cartBadge.textContent = totalCartCount;
+    }
+
+    const wishBadge = document.getElementById('header-wishlist-badge');
+    if (wishBadge) {
+        wishBadge.textContent = wishlist.length;
+    }
+}
+
+function updateWishlistHeartIcons() {
+    document.querySelectorAll('.wishlist-toggle-btn').forEach(btn => {
+        const title = btn.dataset.productTitle || '';
+        const slug = btn.dataset.productSlug || '';
+        const active = isInWishlist(title) || (slug && isInWishlist(slug));
+        const icon = btn.querySelector('svg');
+
+        if (active) {
+            btn.classList.add('text-[#9B1C31]');
+            btn.classList.remove('text-gray-400');
+            if (icon) {
+                icon.setAttribute('fill', 'currentColor');
+                icon.classList.add('fill-current');
+            }
+        } else {
+            btn.classList.remove('text-[#9B1C31]');
+            btn.classList.add('text-gray-400');
+            if (icon) {
+                icon.setAttribute('fill', 'none');
+                icon.classList.remove('fill-current');
+            }
+        }
+    });
+}
+
+function renderCartDrawer() {
+    const container = document.getElementById('drawer-items-list');
+    if (!container) return;
+
+    const cart = getCart();
+    const countBadge = document.getElementById('drawer-item-count-badge');
+    if (countBadge) countBadge.textContent = `(${cart.length})`;
+
+    if (cart.length === 0) {
+        container.innerHTML = `
+            <div class="py-12 px-4 text-center space-y-3 font-body">
+                <div class="w-14 h-14 mx-auto bg-[#FAF7F2] rounded-full flex items-center justify-center text-[#D38928] text-2xl">
+                    🛍️
+                </div>
+                <h4 class="text-base font-bold font-heading text-[#121212]">Your Cart is Empty</h4>
+                <p class="text-xs text-gray-500 max-w-[240px] mx-auto">
+                    Add pure bambooless incense, havan cups, or refill packs to begin.
+                </p>
+            </div>
+        `;
+    } else {
+        container.innerHTML = cart.map(item => `
+            <div class="drawer-item-row flex items-center space-x-3 bg-white p-3 rounded-[12px] border border-[#EADBCC] shadow-2xs font-body" data-title="${item.title}" data-slug="${item.slug}" data-price="${item.price}">
+                <div class="w-16 h-16 rounded-[8px] bg-[#FAF7F2] overflow-hidden shrink-0 border border-[#EADBCC]">
+                    <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover">
+                </div>
+                <div class="flex-1 min-w-0 space-y-1">
+                    <div class="flex items-start justify-between">
+                        <h4 class="text-xs sm:text-sm font-bold font-serif text-[#121212] truncate">${item.title}</h4>
+                        <button type="button" class="drawer-remove-item text-gray-400 hover:text-[#9B1C31] p-1 transition-colors" data-title="${item.title}" aria-label="Remove item">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                        </button>
+                    </div>
+                    <div class="text-[11px] text-gray-500 font-medium">${item.packInfo || '100 sticks'}</div>
+                    <div class="flex items-center justify-between pt-1">
+                        <div class="flex items-center border border-[#EADBCC] rounded-[6px] bg-white overflow-hidden text-xs">
+                            <button type="button" class="drawer-qty-minus px-2 py-0.5 text-gray-600 hover:bg-gray-100 font-bold" data-title="${item.title}">−</button>
+                            <span class="drawer-qty-val px-2.5 py-0.5 font-bold text-[#121212]">${item.quantity}</span>
+                            <button type="button" class="drawer-qty-plus px-2 py-0.5 text-gray-600 hover:bg-gray-100 font-bold" data-title="${item.title}">+</button>
+                        </div>
+                        <div class="text-xs sm:text-sm font-black font-heading text-[#C87A1E]">
+                            ₹${(item.price * item.quantity).toFixed(2)}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    // Calculations
+    const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    const discount = Math.round(subtotal * 0.38);
+    const grandTotal = Math.max(0, subtotal - discount);
+
+    const subEl = document.getElementById('drawer-subtotal-val');
+    const discEl = document.getElementById('drawer-discount-val');
+    const totEl = document.getElementById('drawer-total-val');
+    const thresholdText = document.getElementById('drawer-threshold-text');
+    const milestoneFill = document.getElementById('drawer-milestone-fill');
+
+    if (subEl) subEl.textContent = '₹' + subtotal.toFixed(2);
+    if (discEl) discEl.textContent = '-₹' + discount.toFixed(2);
+    if (totEl) totEl.textContent = '₹' + grandTotal.toFixed(2);
+
+    if (subtotal >= 1499) {
+        if (thresholdText) thresholdText.innerHTML = '🎉 You unlocked <strong class="underline font-black">All Vedic Gifts & Free Shipping!</strong>';
+        if (milestoneFill) milestoneFill.style.width = '100%';
+    } else {
+        const remaining = (1499 - subtotal).toFixed(0);
+        if (thresholdText) thresholdText.innerHTML = `Add items worth ₹${remaining} to Unlock <strong class="underline font-black">Free Gift ₹399</strong>`;
+        const pct = Math.min(100, Math.round((subtotal / 1499) * 100));
+        if (milestoneFill) milestoneFill.style.width = `${pct}%`;
+    }
+}
+
+function renderWishlistPage() {
+    const grid = document.getElementById('wishlist-grid');
+    if (!grid) return;
+
+    const wishlist = getWishlist();
+
+    if (wishlist.length === 0) {
+        grid.className = 'w-full';
+        grid.innerHTML = `
+            <div class="bg-white rounded-[24px] border border-[#EADBCC] p-12 sm:p-16 text-center space-y-4 max-w-xl mx-auto shadow-xs font-body">
+                <div class="w-16 h-16 mx-auto bg-[#FAF7F2] rounded-full flex items-center justify-center text-[#D38928] text-3xl">
+                    🤍
+                </div>
+                <h3 class="text-2xl font-bold font-heading text-[#121212]">Your Wishlist is Currently Empty</h3>
+                <p class="text-xs sm:text-sm text-gray-500 max-w-md mx-auto">
+                    Save your favorite spiritual fragrances, havan cups, and sacred temple samagri to access them anytime.
+                </p>
+                <div class="pt-2">
+                    <a href="/collections/all" class="inline-block px-8 py-3.5 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-[10px] shadow-md transition-all font-heading">
+                        Discover Sacred Samagri
+                    </a>
+                </div>
+            </div>
+        `;
+    } else {
+        grid.className = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 lg:gap-8';
+        grid.innerHTML = wishlist.map(item => {
+            const title = typeof item === 'string' ? item : item.title;
+            const price = typeof item === 'object' && item.price ? item.price : 489;
+            const image = typeof item === 'object' && item.image ? item.image : '/assets/images/devi-refill-pack-card.jpg';
+            const slug = typeof item === 'object' && item.slug ? item.slug : 'devi-refill-pack';
+            const mrp = (price * 1.8).toFixed(2);
+
+            return `
+                <div class="product-card group relative flex flex-col bg-[#FFFDF9] rounded-[20px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 h-full font-body">
+                    <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
+                        <span class="inline-block bg-white px-4 py-0.5 rounded-full border border-[#D38928] text-[10px] sm:text-[11px] font-bold tracking-widest text-[#965A15] uppercase shadow-xs whitespace-nowrap font-heading">
+                            ✨ SAVED ✨
+                        </span>
+                    </div>
+                    <div class="p-3.5 pb-0">
+                        <div class="relative w-full aspect-square rounded-[16px] overflow-hidden bg-[#FAF7F2]">
+                            <a href="/products/${slug}" class="block w-full h-full">
+                                <img src="${image}" alt="${title}" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out">
+                            </a>
+                            <button type="button" class="wishlist-toggle-btn absolute top-3 left-3 z-10 w-8 h-8 rounded-full bg-white text-[#9B1C31] flex items-center justify-center shadow-md transition-all duration-200" data-product-title="${title}" data-product-slug="${slug}" data-product-price="${price}" data-product-image="${image}" aria-label="Remove from Wishlist">
+                                <svg class="w-4 h-4 fill-current text-[#9B1C31]" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-4 flex flex-col justify-between flex-grow space-y-3.5">
+                        <div class="space-y-1.5">
+                            <h3 class="text-lg sm:text-xl font-bold font-serif text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
+                                <a href="/products/${slug}">${title}</a>
+                            </h3>
+                            <div class="flex items-center space-x-1.5 text-[#D38928] text-xs">
+                                <div class="flex"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                <span class="text-[11px] text-gray-500 font-medium">(250+ reviews)</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex items-baseline space-x-2 pt-1 pb-3.5">
+                                <span class="text-xs sm:text-sm text-gray-400 line-through">₹${mrp}</span>
+                                <span class="text-lg sm:text-xl font-black font-heading text-[#C87A1E]">₹${price.toFixed(2)}</span>
+                            </div>
+                            <button type="button" class="quick-add-to-cart-btn w-full py-3 px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-semibold rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-2 font-heading cursor-pointer" data-product-title="${title}" data-product-slug="${slug}" data-product-price="${price}" data-product-image="${image}">
+                                <span>Move to Cart</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }).join('');
+    }
+}
+
+function renderCartPage() {
+    const container = document.getElementById('cart-items-container');
+    const emptyState = document.getElementById('cart-empty-state');
+    if (!container) return;
+
+    const cart = getCart();
+
+    if (cart.length === 0) {
+        container.classList.add('hidden');
+        if (emptyState) emptyState.classList.remove('hidden');
+    } else {
+        container.classList.remove('hidden');
+        if (emptyState) emptyState.classList.add('hidden');
+
+        container.innerHTML = cart.map(item => `
+            <div class="cart-item-row p-4 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 font-body" data-title="${item.title}" data-price="${item.price}">
+                <div class="flex items-center space-x-4 min-w-0">
+                    <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-[14px] bg-[#FAF7F2] border border-[#EADBCC] overflow-hidden shrink-0">
+                        <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="space-y-1 min-w-0">
+                        <h3 class="text-base sm:text-lg font-bold font-serif text-[#121212] truncate">
+                            <a href="/products/${item.slug || ''}" class="hover:text-[#D38928] transition-colors">${item.title}</a>
+                        </h3>
+                        <p class="text-xs text-gray-500">${item.packInfo || '100 sticks'}</p>
+                        <div class="text-xs sm:text-sm font-black text-[#C87A1E] font-heading">
+                            ₹${item.price.toFixed(2)}
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between sm:justify-end sm:space-x-6 pt-2 sm:pt-0 border-t sm:border-0 border-gray-100">
+                    <div class="flex items-center border border-[#EADBCC] rounded-[10px] bg-white overflow-hidden">
+                        <button type="button" class="cart-page-qty-minus px-3.5 py-2 text-gray-500 hover:text-[#121212] font-bold text-base" data-title="${item.title}">−</button>
+                        <input type="number" class="cart-item-qty w-10 text-center text-xs sm:text-sm font-bold border-none focus:ring-0 p-0 text-[#121212]" value="${item.quantity}" readonly>
+                        <button type="button" class="cart-page-qty-plus px-3.5 py-2 text-gray-500 hover:text-[#121212] font-bold text-base" data-title="${item.title}">+</button>
+                    </div>
+                    <div class="text-right min-w-[90px]">
+                        <span class="cart-row-total text-base sm:text-lg font-black font-heading text-[#121212]">
+                            ₹${(item.price * item.quantity).toFixed(2)}
+                        </span>
+                    </div>
+                    <button type="button" class="cart-page-remove-btn text-gray-400 hover:text-[#9B1C31] p-2 transition-colors" data-title="${item.title}" aria-label="Remove item">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                    </button>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    // Calculations
+    const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    const subEl = document.getElementById('summary-subtotal');
+    const grandEl = document.getElementById('summary-grand-total');
+    const shippingProgress = document.getElementById('shipping-progress-bar');
+    const shippingMsg = document.getElementById('free-shipping-msg');
+
+    if (subEl) subEl.textContent = '₹' + subtotal.toFixed(2);
+    if (grandEl) grandEl.textContent = '₹' + subtotal.toFixed(2);
+
+    if (subtotal >= 499) {
+        if (shippingProgress) shippingProgress.style.width = '100%';
+        if (shippingMsg) shippingMsg.textContent = '🎉 You have unlocked FREE Standard Shipping!';
+    } else {
+        const diff = (499 - subtotal).toFixed(2);
+        const pct = Math.min(100, Math.round((subtotal / 499) * 100));
+        if (shippingProgress) shippingProgress.style.width = pct + '%';
+        if (shippingMsg) shippingMsg.textContent = 'Add ₹' + diff + ' more to unlock FREE Standard Shipping!';
+    }
+}
+
+// -------------------------------------------------------------------------
+// 5. Global Event Listeners & Drawer Triggers
+// -------------------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', () => {
     initMegaMenu();
     initMobileDrawer();
     initSearchModal();
-    initCartBadge();
-    initCartDrawer();
-    initWishlist();
+    initCartDrawerUI();
+    
+    // Initial Render
+    updateHeaderBadges();
+    updateWishlistHeartIcons();
+    renderCartDrawer();
+    renderWishlistPage();
+    renderCartPage();
+
+    // Listen to custom store events
+    window.addEventListener('aaradhna:cart-updated', () => {
+        updateHeaderBadges();
+        renderCartDrawer();
+        renderCartPage();
+    });
+
+    window.addEventListener('aaradhna:wishlist-updated', () => {
+        updateHeaderBadges();
+        updateWishlistHeartIcons();
+        renderWishlistPage();
+    });
+
+    // Delegated click handler for Quick Add-To-Cart across all pages
+    document.addEventListener('click', (e) => {
+        const atcBtn = e.target.closest('.quick-add-to-cart-btn, #main-add-to-cart-btn, #sticky-atc-btn, .drawer-quick-add');
+        if (atcBtn) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const product = {
+                id: atcBtn.dataset.productId || Date.now(),
+                title: atcBtn.dataset.productTitle || atcBtn.dataset.title || 'Sacred Item',
+                slug: atcBtn.dataset.productSlug || '',
+                price: parseFloat(atcBtn.dataset.productPrice || atcBtn.dataset.price) || 489.00,
+                image: atcBtn.dataset.productImage || '/assets/images/devi-refill-pack-card.jpg',
+            };
+
+            const qtyInput = document.getElementById('product-quantity');
+            const qty = (atcBtn.id === 'main-add-to-cart-btn' || atcBtn.id === 'sticky-atc-btn') && qtyInput ? (parseInt(qtyInput.value) || 1) : 1;
+
+            addToCart(product, qty);
+            openCartDrawer();
+        }
+
+        // Delegated Wishlist Toggle
+        const wishBtn = e.target.closest('.wishlist-toggle-btn');
+        if (wishBtn) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const product = {
+                id: wishBtn.dataset.productId || Date.now(),
+                title: wishBtn.dataset.productTitle || 'Sacred Item',
+                slug: wishBtn.dataset.productSlug || '',
+                price: parseFloat(wishBtn.dataset.productPrice) || 489.00,
+                image: wishBtn.dataset.productImage || '/assets/images/devi-refill-pack-card.jpg',
+            };
+
+            toggleWishlistItem(product);
+        }
+
+        // Drawer Controls
+        if (e.target.closest('.drawer-qty-plus')) {
+            const title = e.target.closest('.drawer-qty-plus').dataset.title;
+            const cart = getCart();
+            const item = cart.find(i => i.title === title);
+            if (item) updateCartItemQuantity(title, item.quantity + 1);
+        }
+
+        if (e.target.closest('.drawer-qty-minus')) {
+            const title = e.target.closest('.drawer-qty-minus').dataset.title;
+            const cart = getCart();
+            const item = cart.find(i => i.title === title);
+            if (item && item.quantity > 1) updateCartItemQuantity(title, item.quantity - 1);
+            else if (item) removeFromCart(title);
+        }
+
+        if (e.target.closest('.drawer-remove-item')) {
+            const title = e.target.closest('.drawer-remove-item').dataset.title;
+            removeFromCart(title);
+        }
+
+        // Cart Page Controls
+        if (e.target.closest('.cart-page-qty-plus')) {
+            const title = e.target.closest('.cart-page-qty-plus').dataset.title;
+            const cart = getCart();
+            const item = cart.find(i => i.title === title);
+            if (item) updateCartItemQuantity(title, item.quantity + 1);
+        }
+
+        if (e.target.closest('.cart-page-qty-minus')) {
+            const title = e.target.closest('.cart-page-qty-minus').dataset.title;
+            const cart = getCart();
+            const item = cart.find(i => i.title === title);
+            if (item && item.quantity > 1) updateCartItemQuantity(title, item.quantity - 1);
+            else if (item) removeFromCart(title);
+        }
+
+        if (e.target.closest('.cart-page-remove-btn')) {
+            const title = e.target.closest('.cart-page-remove-btn').dataset.title;
+            removeFromCart(title);
+        }
+    });
 });
 
-/**
- * 1. Mega Menu Desktop Interaction
- */
+// -------------------------------------------------------------------------
+// 6. Slide-Over Cart Drawer UI Functions
+// -------------------------------------------------------------------------
+function openCartDrawer() {
+    const backdrop = document.getElementById('cart-drawer-backdrop');
+    const panel = document.getElementById('cart-drawer-panel');
+    if (!backdrop || !panel) return;
+
+    backdrop.classList.remove('opacity-0', 'pointer-events-none');
+    backdrop.classList.add('opacity-100');
+    panel.classList.remove('translate-x-full');
+    panel.classList.add('translate-x-0');
+    document.body.classList.add('overflow-hidden');
+}
+
+function closeCartDrawer() {
+    const backdrop = document.getElementById('cart-drawer-backdrop');
+    const panel = document.getElementById('cart-drawer-panel');
+    if (!backdrop || !panel) return;
+
+    panel.classList.add('translate-x-full');
+    panel.classList.remove('translate-x-0');
+    backdrop.classList.add('opacity-0', 'pointer-events-none');
+    backdrop.classList.remove('opacity-100');
+    document.body.classList.remove('overflow-hidden');
+}
+
+function initCartDrawerUI() {
+    const backdrop = document.getElementById('cart-drawer-backdrop');
+    const closeBtn = document.getElementById('cart-drawer-close');
+    const triggers = document.querySelectorAll('#cart-drawer-trigger, .cart-drawer-opener');
+
+    triggers.forEach(t => t.addEventListener('click', (e) => {
+        e.preventDefault();
+        openCartDrawer();
+    }));
+
+    if (closeBtn) closeBtn.addEventListener('click', closeCartDrawer);
+    if (backdrop) {
+        backdrop.addEventListener('click', (e) => {
+            if (e.target === backdrop) closeCartDrawer();
+        });
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && backdrop && !backdrop.classList.contains('pointer-events-none')) {
+            closeCartDrawer();
+        }
+    });
+}
+
+// -------------------------------------------------------------------------
+// 7. Navigation MegaMenu, Mobile Drawer, Predictive Search
+// -------------------------------------------------------------------------
 function initMegaMenu() {
     const navItem = document.getElementById('pooja-shop-nav-item');
     const megaMenu = document.getElementById('pooja-shop-mega-menu');
     const toggle = document.getElementById('pooja-shop-toggle');
 
     if (!navItem || !megaMenu) return;
-
     let timeoutId;
 
     const showMenu = () => {
@@ -42,9 +589,6 @@ function initMegaMenu() {
     megaMenu.addEventListener('mouseleave', hideMenu);
 }
 
-/**
- * 2. Mobile Drawer Navigation
- */
 function initMobileDrawer() {
     const trigger = document.getElementById('mobile-menu-trigger');
     const drawer = document.getElementById('mobile-drawer');
@@ -83,17 +627,12 @@ function initMobileDrawer() {
             if (content) {
                 content.classList.toggle('hidden');
                 btn.setAttribute('aria-expanded', !isExpanded);
-                if (icon) {
-                    icon.classList.toggle('rotate-180', !isExpanded);
-                }
+                if (icon) icon.classList.toggle('rotate-180', !isExpanded);
             }
         });
     });
 }
 
-/**
- * 3. Predictive Search Modal
- */
 function initSearchModal() {
     const trigger = document.getElementById('search-modal-trigger');
     const modal = document.getElementById('search-modal');
@@ -107,9 +646,7 @@ function initSearchModal() {
         modal.classList.remove('opacity-0', 'pointer-events-none');
         modal.classList.add('opacity-100');
         document.body.classList.add('overflow-hidden');
-        if (input) {
-            setTimeout(() => input.focus(), 100);
-        }
+        if (input) setTimeout(() => input.focus(), 100);
     };
 
     const closeModal = () => {
@@ -123,10 +660,8 @@ function initSearchModal() {
     if (backdrop) backdrop.addEventListener('click', closeModal);
 
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            if (!modal.classList.contains('pointer-events-none')) {
-                closeModal();
-            }
+        if (e.key === 'Escape' && !modal.classList.contains('pointer-events-none')) {
+            closeModal();
         }
     });
 
@@ -138,175 +673,5 @@ function initSearchModal() {
                 input.focus();
             }
         });
-    });
-}
-
-/**
- * 4. Cart Badge Initialization
- */
-function initCartBadge() {
-    const badge = document.getElementById('header-cart-badge');
-    if (!badge) return;
-
-    window.addEventListener('cart:updated', (event) => {
-        if (event.detail && typeof event.detail.count !== 'undefined') {
-            badge.textContent = event.detail.count;
-            badge.classList.remove('hidden');
-        }
-    });
-}
-
-/**
- * 5. Slide-Over Cart Drawer Controller
- */
-function initCartDrawer() {
-    const backdrop = document.getElementById('cart-drawer-backdrop');
-    const panel = document.getElementById('cart-drawer-panel');
-    const closeBtn = document.getElementById('cart-drawer-close');
-    const triggers = document.querySelectorAll('#cart-drawer-trigger, .cart-drawer-opener');
-
-    if (!backdrop || !panel) return;
-
-    const openDrawer = (e) => {
-        if (e) e.preventDefault();
-        backdrop.classList.remove('opacity-0', 'pointer-events-none');
-        backdrop.classList.add('opacity-100');
-        panel.classList.remove('translate-x-full');
-        panel.classList.add('translate-x-0');
-        document.body.classList.add('overflow-hidden');
-    };
-
-    const closeDrawer = () => {
-        panel.classList.add('translate-x-full');
-        panel.classList.remove('translate-x-0');
-        backdrop.classList.add('opacity-0', 'pointer-events-none');
-        backdrop.classList.remove('opacity-100');
-        document.body.classList.remove('overflow-hidden');
-    };
-
-    triggers.forEach(t => t.addEventListener('click', openDrawer));
-    if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
-    backdrop.addEventListener('click', (e) => {
-        if (e.target === backdrop) closeDrawer();
-    });
-
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && !backdrop.classList.contains('pointer-events-none')) {
-            closeDrawer();
-        }
-    });
-
-    // Handle Quick Add-to-cart clicks all across website to trigger drawer
-    document.addEventListener('click', (e) => {
-        const atcBtn = e.target.closest('.quick-add-to-cart-btn, #main-add-to-cart-btn, #sticky-atc-btn, .drawer-quick-add');
-        if (atcBtn) {
-            e.preventDefault();
-            
-            // Increment cart count
-            const badge = document.getElementById('header-cart-badge');
-            if (badge) {
-                const current = parseInt(badge.textContent || '0') + 1;
-                badge.textContent = current;
-                window.dispatchEvent(new CustomEvent('cart:updated', { detail: { count: current } }));
-            }
-
-            // Open the slide-over drawer immediately
-            setTimeout(() => {
-                openDrawer();
-            }, 150);
-        }
-    });
-
-    // Drawer internal steppers & remove buttons
-    const updateDrawerCalculations = () => {
-        let subtotal = 0;
-        const rows = document.querySelectorAll('.drawer-item-row');
-        rows.forEach(r => {
-            const p = parseFloat(r.dataset.price) || 0;
-            const q = parseInt(r.querySelector('.drawer-qty-val')?.textContent) || 1;
-            subtotal += (p * q);
-        });
-
-        const discount = Math.round(subtotal * 0.38);
-        const grandTotal = Math.max(0, subtotal - discount);
-
-        const subEl = document.getElementById('drawer-subtotal-val');
-        const discEl = document.getElementById('drawer-discount-val');
-        const totEl = document.getElementById('drawer-total-val');
-        const countBadge = document.getElementById('drawer-item-count-badge');
-
-        if (subEl) subEl.textContent = '₹' + subtotal.toFixed(2);
-        if (discEl) discEl.textContent = '-₹' + discount.toFixed(2);
-        if (totEl) totEl.textContent = '₹' + grandTotal.toFixed(2);
-        if (countBadge) countBadge.textContent = '(' + rows.length + ')';
-    };
-
-    document.addEventListener('click', (e) => {
-        if (e.target.closest('.drawer-qty-plus')) {
-            const row = e.target.closest('.drawer-item-row');
-            const qtyEl = row.querySelector('.drawer-qty-val');
-            let q = parseInt(qtyEl.textContent) || 1;
-            if (q < 99) qtyEl.textContent = q + 1;
-            updateDrawerCalculations();
-        }
-
-        if (e.target.closest('.drawer-qty-minus')) {
-            const row = e.target.closest('.drawer-item-row');
-            const qtyEl = row.querySelector('.drawer-qty-val');
-            let q = parseInt(qtyEl.textContent) || 1;
-            if (q > 1) {
-                qtyEl.textContent = q - 1;
-                updateDrawerCalculations();
-            }
-        }
-
-        if (e.target.closest('.drawer-remove-item')) {
-            const row = e.target.closest('.drawer-item-row');
-            if (row) {
-                row.remove();
-                updateDrawerCalculations();
-            }
-        }
-    });
-}
-
-/**
- * 6. Wishlist Management (LocalStorage + UI Sync)
- */
-function initWishlist() {
-    const wishlistKey = 'aaradhna_wishlist';
-    let savedItems = JSON.parse(localStorage.getItem(wishlistKey) || '["Devi Refill Pack", "Camphor Refill Pack", "Oudh Bambooless Sticks", "Chandan Cones"]');
-
-    const updateWishlistBadge = () => {
-        const badge = document.getElementById('header-wishlist-badge');
-        if (badge) badge.textContent = savedItems.length;
-    };
-
-    updateWishlistBadge();
-
-    document.addEventListener('click', (e) => {
-        const wishBtn = e.target.closest('.wishlist-toggle-btn');
-        if (wishBtn) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            const title = wishBtn.dataset.productTitle || 'Sacred Item';
-            const icon = wishBtn.querySelector('svg');
-
-            if (savedItems.includes(title)) {
-                savedItems = savedItems.filter(item => item !== title);
-                wishBtn.classList.remove('text-[#9B1C31]');
-                wishBtn.classList.add('text-gray-400');
-                if (icon) icon.setAttribute('fill', 'none');
-            } else {
-                savedItems.push(title);
-                wishBtn.classList.add('text-[#9B1C31]');
-                wishBtn.classList.remove('text-gray-400');
-                if (icon) icon.setAttribute('fill', 'currentColor');
-            }
-
-            localStorage.setItem(wishlistKey, JSON.stringify(savedItems));
-            updateWishlistBadge();
-        }
     });
 }

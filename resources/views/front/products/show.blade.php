@@ -230,7 +230,9 @@
                             class="flex-1 py-3.5 px-6 bg-[#D38928] hover:bg-[#B8741E] active:bg-[#965A15] text-white text-sm sm:text-base font-bold rounded-[10px] shadow-md hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-2 font-heading cursor-pointer focus:outline-none"
                             data-product-id="{{ $product->id }}"
                             data-product-title="{{ $product->title }}"
+                            data-product-slug="{{ $product->slug }}"
                             data-product-price="{{ $product->active_price }}"
+                            data-product-image="{{ asset($mainImg) }}"
                         >
                             <span>Add to Cart</span>
                         </button>
@@ -593,7 +595,9 @@
             class="py-2.5 px-7 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-[10px] shadow-sm font-heading cursor-pointer whitespace-nowrap"
             data-product-id="{{ $product->id }}"
             data-product-title="{{ $product->title }}"
+            data-product-slug="{{ $product->slug }}"
             data-product-price="{{ $product->active_price }}"
+            data-product-image="{{ asset($mainImg) }}"
         >
             Add to Cart
         </button>

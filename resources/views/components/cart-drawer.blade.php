@@ -75,60 +75,8 @@
         <!-- Scrollable Middle Section -->
         <div class="flex-1 overflow-y-auto divide-y divide-[#EADBCC] p-4 space-y-4 scrollbar-thin">
             
-            <!-- Cart Items List Container -->
-            <div id="drawer-items-list" class="space-y-3">
-                
-                <!-- Drawer Item 1: Camphor Refill Pack -->
-                <div class="drawer-item-row flex items-start justify-between gap-3 p-3 bg-[#FFFDF9] rounded-[14px] border border-[#EADBCC]" data-id="1" data-price="489.00">
-                    <div class="w-16 h-16 rounded-[10px] bg-[#FAF7F2] border border-[#EADBCC] overflow-hidden shrink-0">
-                        <img src="{{ asset('assets/images/camphor-refill-pack-card.jpg') }}" alt="Camphor Refill Pack" class="w-full h-full object-cover">
-                    </div>
-                    <div class="flex-1 min-w-0 space-y-0.5">
-                        <h4 class="text-xs sm:text-[13px] font-bold font-serif text-[#121212] truncate">Camphor Refill Pack</h4>
-                        <div class="flex items-baseline space-x-2 text-xs">
-                            <span class="text-[#C87A1E] font-black font-heading">₹489.00</span>
-                            <span class="text-gray-400 line-through text-[11px]">₹700.00</span>
-                        </div>
-                    </div>
-                    <div class="flex flex-col items-end justify-between h-16">
-                        <button type="button" class="drawer-remove-item text-gray-400 hover:text-[#9B1C31] transition-colors p-1" title="Remove item">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
-                        </button>
-                        <!-- Stepper -->
-                        <div class="flex items-center border border-[#EADBCC] rounded-[6px] bg-white overflow-hidden text-xs">
-                            <button type="button" class="drawer-qty-minus px-2 py-0.5 text-gray-500 hover:text-black font-bold">−</button>
-                            <span class="drawer-qty-val w-6 text-center font-bold text-[#121212]">1</span>
-                            <button type="button" class="drawer-qty-plus px-2 py-0.5 text-gray-500 hover:text-black font-bold">+</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Drawer Item 2: Sandalwood Havan Cup -->
-                <div class="drawer-item-row flex items-start justify-between gap-3 p-3 bg-[#FFFDF9] rounded-[14px] border border-[#EADBCC]" data-id="2" data-price="499.00">
-                    <div class="w-16 h-16 rounded-[10px] bg-[#FAF7F2] border border-[#EADBCC] overflow-hidden shrink-0">
-                        <img src="{{ asset('assets/images/chandan-cones-card.jpg') }}" alt="Sandalwood Havan Cup" class="w-full h-full object-cover">
-                    </div>
-                    <div class="flex-1 min-w-0 space-y-0.5">
-                        <h4 class="text-xs sm:text-[13px] font-bold font-serif text-[#121212] truncate">Sandalwood Havan Cup</h4>
-                        <div class="flex items-baseline space-x-2 text-xs">
-                            <span class="text-[#C87A1E] font-black font-heading">₹499.00</span>
-                            <span class="text-gray-400 line-through text-[11px]">₹649.00</span>
-                        </div>
-                    </div>
-                    <div class="flex flex-col items-end justify-between h-16">
-                        <button type="button" class="drawer-remove-item text-gray-400 hover:text-[#9B1C31] transition-colors p-1" title="Remove item">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
-                        </button>
-                        <!-- Stepper -->
-                        <div class="flex items-center border border-[#EADBCC] rounded-[6px] bg-white overflow-hidden text-xs">
-                            <button type="button" class="drawer-qty-minus px-2 py-0.5 text-gray-500 hover:text-black font-bold">−</button>
-                            <span class="drawer-qty-val w-6 text-center font-bold text-[#121212]">1</span>
-                            <button type="button" class="drawer-qty-plus px-2 py-0.5 text-gray-500 hover:text-black font-bold">+</button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+            <!-- Cart Items List Container (Dynamically rendered from store) -->
+            <div id="drawer-items-list" class="space-y-3"></div>
 
             <!-- 4. Quick Cross-Sell: Try These Fresh Fragrances As Well 👇 -->
             <div class="pt-4 space-y-2.5">

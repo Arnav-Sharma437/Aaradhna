@@ -76,6 +76,9 @@
                 class="wishlist-toggle-btn absolute top-3 left-3 z-10 w-8 h-8 rounded-full bg-white/90 hover:bg-white text-gray-400 hover:text-[#9B1C31] flex items-center justify-center shadow-md transition-all duration-200 focus:outline-none"
                 data-product-id="{{ $product->id }}"
                 data-product-title="{{ $product->title }}"
+                data-product-slug="{{ $product->slug }}"
+                data-product-price="{{ $product->active_price }}"
+                data-product-image="{{ asset($imageSrc) }}"
                 aria-label="Save to Wishlist"
             >
                 <svg class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -132,7 +135,9 @@
                         class="quick-add-to-cart-btn w-full py-3 px-4 bg-[#D38928] hover:bg-[#B8741E] active:bg-[#965A15] text-white text-xs sm:text-sm font-semibold rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-2 font-heading cursor-pointer focus:outline-none"
                         data-product-id="{{ $product->id }}"
                         data-product-title="{{ $product->title }}"
+                        data-product-slug="{{ $product->slug }}"
                         data-product-price="{{ $product->active_price }}"
+                        data-product-image="{{ asset($imageSrc) }}"
                     >
                         <span>Add to cart</span>
                     </button>
