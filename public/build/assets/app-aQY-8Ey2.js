@@ -56,7 +56,7 @@ function Ft(e,t){return function(){return e.apply(t,arguments)}}const{toString:w
                     </a>
                 </div>
             </div>
-        `):(e.className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 lg:gap-8",e.innerHTML=t.map(n=>{const r=typeof n=="string"?n:n.title,s=typeof n=="object"&&n.price?n.price:489,o=typeof n=="object"&&n.image?n.image:"/assets/images/devi-refill-pack-card.jpg",i=typeof n=="object"&&n.slug?n.slug:"devi-refill-pack",c=(s*1.8).toFixed(2);return`
+        `):(e.className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 lg:gap-8",e.innerHTML=t.map(n=>{const r=typeof n=="string"?n:n.title,s=typeof n=="object"&&n.price?n.price:489,o=typeof n=="object"&&n.image?n.image:"/assets/images/devi-refill-pack-card.jpg",i=typeof n=="object"&&n.slug?n.slug:"devi-refill-pack",c=(s*1.8).toFixed(2);return`
                 <div class="product-card group relative flex flex-col bg-[#FFFDF9] rounded-[20px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 h-full font-body">
                     <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
                         <span class="inline-block bg-white px-4 py-0.5 rounded-full border border-[#D38928] text-[10px] sm:text-[11px] font-bold tracking-widest text-[#965A15] uppercase shadow-xs whitespace-nowrap font-heading">

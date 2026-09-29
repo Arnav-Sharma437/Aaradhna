@@ -50,9 +50,66 @@
         <!-- ========================================================================= -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             
-            <!-- LEFT COLUMN: Large High-Res Lifestyle & Packshots 2-Column Grid (7 Cols - Enlarged) -->
+            <!-- LEFT COLUMN: Mobile Slider & Desktop High-Res Lifestyle 2-Column Grid (7 Cols) -->
             <div class="lg:col-span-7 space-y-5">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+
+                <!-- MOBILE TOUCH IMAGE SLIDER (Visible on mobile/tablet, hidden on desktop) -->
+                <div class="block lg:hidden relative" id="product-mobile-gallery">
+                    <!-- Carousel Track -->
+                    <div id="product-mobile-carousel" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-none rounded-[18px] border border-[#EADBCC] bg-white shadow-md">
+                        <!-- Slide 1 -->
+                        <div class="min-w-full snap-center relative aspect-[4/5] bg-white">
+                            <img src="{{ asset($mainImg) }}" alt="{{ $product->title }}" class="w-full h-full object-cover">
+                            <div class="absolute top-3.5 right-3.5 text-right pointer-events-none select-none leading-none bg-white/90 backdrop-blur-xs px-2.5 py-1.5 rounded-[8px] border border-[#EADBCC] shadow-xs">
+                                <span class="text-[9px] uppercase font-semibold text-gray-500 block">pack of</span>
+                                <span class="text-lg font-black font-heading text-[#3E2D22] block">100</span>
+                                <span class="text-[9px] uppercase font-semibold text-gray-500 block">sticks</span>
+                            </div>
+                            <div class="absolute bottom-3 left-3 right-3 bg-black/60 backdrop-blur-xs py-1.5 px-2.5 rounded-[8px] text-center text-white text-[11px] font-bold tracking-wide shadow-sm">
+                                FREE CERAMIC STAND <span class="text-[#F6DAA8] font-normal">Worth ₹150/-</span>
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="min-w-full snap-center relative aspect-[4/5] bg-white">
+                            <img src="{{ asset('assets/images/hero-incense-banner.jpg') }}" alt="Aaradhna Sacred Altar" class="w-full h-full object-cover">
+                            <div class="absolute bottom-3 left-3 right-3 bg-black/60 backdrop-blur-xs py-1.5 px-2.5 rounded-[8px] text-center text-white text-[11px] font-bold tracking-wide shadow-sm">
+                                100% BAMBOO FREE & VEDIC
+                            </div>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="min-w-full snap-center relative aspect-[4/5] bg-white">
+                            <img src="{{ asset('assets/images/camphor-refill-pack-card.jpg') }}" alt="Pure Temple Camphor" class="w-full h-full object-cover">
+                            <div class="absolute top-3.5 left-3.5 px-2.5 py-1 rounded-full bg-white/95 text-[#965A15] text-[10px] font-bold uppercase tracking-wider font-heading border border-[#D38928]/40 shadow-xs">
+                                Zero Charcoal
+                            </div>
+                        </div>
+                        <!-- Slide 4 -->
+                        <div class="min-w-full snap-center relative aspect-[4/5] bg-white">
+                            <img src="{{ asset('assets/images/hero-ram-uphaar-banner.jpg') }}" alt="Sacred Fragrance Ambience" class="w-full h-full object-cover">
+                            <div class="absolute bottom-3 left-3 right-3 bg-black/60 backdrop-blur-xs py-1.5 px-2.5 rounded-[8px] text-center text-white text-[11px] font-bold tracking-wide shadow-sm">
+                                TEMPLE-GRADE PURITY
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide Counter Badge & Indicators -->
+                    <div class="flex items-center justify-between mt-2.5 px-1">
+                        <!-- Dots -->
+                        <div class="flex space-x-1.5" id="mobile-gallery-dots">
+                            <span class="w-6 h-1.5 rounded-full bg-[#D38928] transition-all duration-300"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#D38928]/30 transition-all duration-300"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#D38928]/30 transition-all duration-300"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#D38928]/30 transition-all duration-300"></span>
+                        </div>
+                        <!-- Counter Pill -->
+                        <span id="mobile-gallery-counter" class="text-[11px] font-bold text-gray-600 bg-white border border-[#EADBCC] px-2.5 py-0.5 rounded-full shadow-xs">
+                            1 / 4
+                        </span>
+                    </div>
+                </div>
+
+                <!-- DESKTOP 2-COLUMN HIGH-RES GRID (Visible on lg, hidden on mobile) -->
+                <div class="hidden lg:grid grid-cols-2 gap-5">
                     
                     <!-- Visual 1: Hero Packshot with Ceramic Stand Banner (Larger Aspect Ratio) -->
                     <div class="relative aspect-[3/4] rounded-[20px] overflow-hidden bg-white border border-[#EADBCC] shadow-md group">
@@ -462,7 +519,7 @@
                     </h2>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 lg:gap-8">
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 lg:gap-8">
                     @foreach($relatedProducts as $relProduct)
                         <x-product-card :product="$relProduct" />
                     @endforeach
@@ -574,16 +631,16 @@
 <!-- STICKY BOTTOM ADD TO CART ON SCROLL -->
 <div 
     id="sticky-product-bar" 
-    class="fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur-md border-t border-[#EADBCC] p-3.5 shadow-2xl transform translate-y-full transition-transform duration-300 flex items-center justify-between gap-4 font-body"
+    class="fixed bottom-[52px] sm:bottom-0 inset-x-0 z-30 bg-white/95 backdrop-blur-md border-t border-[#EADBCC] p-3 sm:p-3.5 shadow-2xl transform translate-y-full transition-transform duration-300 flex items-center justify-between gap-4 font-body"
 >
     <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px] flex items-center justify-between">
         <div class="flex items-center space-x-3 overflow-hidden">
-            <div class="w-12 h-12 rounded-[8px] bg-[#FAF7F2] border border-[#EADBCC] overflow-hidden shrink-0">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-[8px] bg-[#FAF7F2] border border-[#EADBCC] overflow-hidden shrink-0">
                 <img src="{{ asset($mainImg) }}" alt="{{ $product->title }}" class="w-full h-full object-cover">
             </div>
             <div class="truncate">
-                <div class="text-sm font-bold text-[#121212] font-heading truncate">{{ $product->title }}</div>
-                <div class="text-xs font-black font-heading text-[#C87A1E]">
+                <div class="text-xs sm:text-sm font-bold text-[#121212] font-heading truncate">{{ $product->title }}</div>
+                <div class="text-xs sm:text-xs font-black font-heading text-[#C87A1E]">
                     ₹{{ number_format($product->active_price, 2) }}
                 </div>
             </div>
@@ -592,7 +649,7 @@
         <button 
             type="button" 
             id="sticky-atc-btn" 
-            class="py-2.5 px-7 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-[10px] shadow-sm font-heading cursor-pointer whitespace-nowrap"
+            class="py-2 sm:py-2.5 px-5 sm:px-7 bg-[#D38928] hover:bg-[#B8741E] text-white text-[11px] sm:text-sm font-bold uppercase tracking-wider rounded-[10px] shadow-sm font-heading cursor-pointer whitespace-nowrap"
             data-product-id="{{ $product->id }}"
             data-product-title="{{ $product->title }}"
             data-product-slug="{{ $product->slug }}"
@@ -607,6 +664,30 @@
 @push('scripts')
 <script>
     document.addEventListener('DOMContentLoaded', () => {
+        // Mobile Product Gallery Carousel Scroll Listener
+        const mobileCarousel = document.getElementById('product-mobile-carousel');
+        const dots = document.querySelectorAll('#mobile-gallery-dots span');
+        const counter = document.getElementById('mobile-gallery-counter');
+
+        if (mobileCarousel && dots.length > 0) {
+            mobileCarousel.addEventListener('scroll', () => {
+                const scrollLeft = mobileCarousel.scrollLeft;
+                const width = mobileCarousel.offsetWidth;
+                const activeIndex = Math.min(Math.round(scrollLeft / width), dots.length - 1);
+                
+                dots.forEach((dot, idx) => {
+                    if (idx === activeIndex) {
+                        dot.className = 'w-6 h-1.5 rounded-full bg-[#D38928] transition-all duration-300';
+                    } else {
+                        dot.className = 'w-1.5 h-1.5 rounded-full bg-[#D38928]/30 transition-all duration-300';
+                    }
+                });
+                if (counter) {
+                    counter.textContent = `${activeIndex + 1} / ${dots.length}`;
+                }
+            }, { passive: true });
+        }
+
         // Quantity Stepper
         const qtyInput = document.getElementById('product-quantity');
         const qtyDecrement = document.getElementById('qty-decrement');
@@ -660,10 +741,21 @@
         const stickyAtcBtn = document.getElementById('sticky-atc-btn');
         const handleAddToCart = (btn) => {
             const qty = parseInt(qtyInput?.value || '1');
-            const badge = document.getElementById('header-cart-badge');
-            if (badge) {
-                const current = parseInt(badge.textContent || '0') + qty;
-                badge.textContent = current;
+            const pId = btn.dataset.productId;
+            const pTitle = btn.dataset.productTitle;
+            const pSlug = btn.dataset.productSlug;
+            const pPrice = parseFloat(btn.dataset.productPrice || '0');
+            const pImage = btn.dataset.productImage;
+
+            if (window.CartStore) {
+                window.CartStore.addItem({
+                    id: pId,
+                    title: pTitle,
+                    slug: pSlug,
+                    price: pPrice,
+                    image: pImage,
+                    quantity: qty
+                });
             }
 
             const orig = btn.innerHTML;

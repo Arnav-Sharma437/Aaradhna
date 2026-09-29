@@ -273,7 +273,7 @@ function renderWishlistPage() {
             </div>
         `;
     } else {
-        grid.className = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 lg:gap-8';
+        grid.className = 'grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 lg:gap-8';
         grid.innerHTML = wishlist.map(item => {
             const title = typeof item === 'string' ? item : item.title;
             const price = typeof item === 'object' && item.price ? item.price : 489;

@@ -33,7 +33,7 @@
                     </h2>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 lg:gap-8">
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 lg:gap-8">
                     @foreach($featuredProducts as $fp)
                         <x-product-card :product="$fp" />
                     @endforeach
