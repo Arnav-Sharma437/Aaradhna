@@ -533,10 +533,6 @@
     </div>
 </section>
 
-<!-- ========================================================================= -->
-<!-- 4. SHOPPABLE VIDEO REELS (Watch, Play & Direct Add to Cart)               -->
-<!-- ========================================================================= -->
-<x-shoppable-video-reels />
 
 <!-- ========================================================================= -->
 <!-- 5. DAILY DEVOTIONAL RITUALS (Exact Match to User Screenshot Standard) -->
