@@ -1,8 +1,8 @@
-<footer class="bg-[#DE8D27] text-white font-body pt-8 sm:pt-12 pb-8 px-4 sm:px-6 lg:px-[40px]">
-    <div class="w-full max-w-[1440px] mx-auto space-y-10">
+<footer class="text-white font-body pt-8 sm:pt-12 pb-8 px-4 sm:px-6 lg:px-[40px] bg-cover bg-center relative" style="background-color: #DE8D27; background-image: url('{{ asset('images/footer-pattern-bg.png') }}'); background-repeat: repeat;">
+    <div class="w-full max-w-[1440px] mx-auto space-y-10 relative z-10">
         
         <!-- Large Translucent Rounded Container Card (Exact Screenshot) -->
-        <div class="bg-[#CA7B1C]/80 backdrop-blur-md rounded-[24px] sm:rounded-[32px] p-6 sm:p-10 lg:p-14 border border-white/15 shadow-xl">
+        <div class="bg-[#CA7B1C]/85 backdrop-blur-md rounded-[24px] sm:rounded-[32px] p-6 sm:p-10 lg:p-14 border border-white/20 shadow-2xl">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
                 
                 <!-- Column 1: Newsletter & B2B Button (5 Cols) -->

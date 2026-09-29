@@ -127,6 +127,23 @@
                     </svg>
                 </a>
 
+                <!-- Wishlist with live badge -->
+                <a 
+                    href="{{ route('wishlist.index') }}" 
+                    class="p-2.5 text-[#1F1F1F] hover:text-[#D38928] transition-colors relative inline-block"
+                    aria-label="Wishlist"
+                >
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                    </svg>
+                    <span 
+                        id="header-wishlist-badge"
+                        class="absolute top-1 right-0.5 bg-[#D38928] text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center leading-none ring-2 ring-white"
+                    >
+                        0
+                    </span>
+                </a>
+
                 <!-- Shopping Bag / Cart with live badge -->
                 <a 
                     href="{{ route('cart.index') }}" 
