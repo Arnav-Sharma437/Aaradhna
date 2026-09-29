@@ -12,7 +12,7 @@ use Illuminate\View\View;
 class CollectionController extends Controller
 {
     /**
-     * Display the specified collection or all products with filters and sorting.
+     * Display the specified collection or all products with full luxury reactive filters and sorting.
      */
     public function show(Request $request, string $slug = 'all'): View
     {
@@ -23,7 +23,7 @@ class CollectionController extends Controller
                 'slug' => 'all',
                 'description' => 'Discover our complete range of 100% natural pooja samagri, bambooless incense sticks, organic havan cups, and sacred attar sprays.',
                 'banner_path' => null,
-                'meta_title' => 'Shop Pure Pooja Samagri & Bambooless Agarbatti | Sadhna.co',
+                'meta_title' => 'Shop Pure Pooja Samagri & Bambooless Agarbatti | Aaradhna.co',
                 'meta_description' => 'Explore 100% pure Vedic pooja essentials crafted without bamboo, toxic charcoal, or synthetic aromas.',
             ];
             $query = Product::where('status', 'active');
@@ -41,7 +41,7 @@ class CollectionController extends Controller
                     'slug' => $category->slug,
                     'description' => $category->description ?? $category->subtitle,
                     'banner_path' => $category->banner_path,
-                    'meta_title' => $category->meta_title ?? "{$category->name} — 100% Pure & Vedic | Sadhna.co",
+                    'meta_title' => $category->meta_title ?? "{$category->name} — 100% Pure & Vedic | Aaradhna.co",
                     'meta_description' => $category->meta_description ?? $category->description,
                 ];
                 $query = Product::where('category_id', $category->id)->where('status', 'active');
@@ -89,11 +89,15 @@ class CollectionController extends Controller
             }
         }
 
-        // Pack Size Variant Filter
+        // Pack Size Filter (Searches in variants, title, or description)
         if ($request->filled('pack_size')) {
             $packSize = $request->pack_size;
-            $query->whereHas('variants', function ($vq) use ($packSize) {
-                $vq->where('title', 'LIKE', "%{$packSize}%");
+            $query->where(function ($pq) use ($packSize) {
+                $pq->where('title', 'LIKE', "%{$packSize}%")
+                   ->orWhere('description', 'LIKE', "%{$packSize}%")
+                   ->orWhereHas('variants', function ($vq) use ($packSize) {
+                       $vq->where('title', 'LIKE', "%{$packSize}%");
+                   });
             });
         }
 
@@ -128,10 +132,18 @@ class CollectionController extends Controller
         // 4. Paginate Products
         $products = $query->paginate(12)->withQueryString();
 
-        // 5. Filter Data for Facets
-        $allCategories = Category::where('is_active', true)->orderBy('sort_order')->get();
+        // 5. Facet Counts
+        $allCategories = Category::where('is_active', true)->withCount(['products' => function ($pq) {
+            $pq->where('status', 'active');
+        }])->orderBy('sort_order')->get();
+
+        $totalActiveCount = Product::where('status', 'active')->count();
         $inStockCount = Product::where('status', 'active')->where('stock_quantity', '>', 0)->count();
         $outOfStockCount = Product::where('status', 'active')->where('stock_quantity', '<=', 0)->count();
+
+        // Calculate dynamic min and max prices for range slider
+        $minProductPrice = (int) floor(Product::where('status', 'active')->min('sale_price') ?: 100);
+        $maxProductPrice = (int) ceil(Product::where('status', 'active')->max('base_price') ?: 1999);
 
         return view('front.collections.show', compact(
             'collection',
@@ -139,8 +151,11 @@ class CollectionController extends Controller
             'slug',
             'sortBy',
             'allCategories',
+            'totalActiveCount',
             'inStockCount',
-            'outOfStockCount'
+            'outOfStockCount',
+            'minProductPrice',
+            'maxProductPrice'
         ));
     }
 }
