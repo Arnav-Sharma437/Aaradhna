@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileDrawer();
     initSearchModal();
     initCartBadge();
+    initCartDrawer();
+    initWishlist();
 });
 
 /**
@@ -71,7 +73,6 @@ function initMobileDrawer() {
     if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
     overlay.addEventListener('click', closeDrawer);
 
-    // Mobile Accordion functionality
     const accordionToggles = document.querySelectorAll('.mobile-accordion-toggle');
     accordionToggles.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -121,7 +122,6 @@ function initSearchModal() {
     if (closeBtn) closeBtn.addEventListener('click', closeModal);
     if (backdrop) backdrop.addEventListener('click', closeModal);
 
-    // Escape key closes modal or mobile drawer
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
             if (!modal.classList.contains('pointer-events-none')) {
@@ -130,7 +130,6 @@ function initSearchModal() {
         }
     });
 
-    // Quick tag clicks populate search input
     const tags = document.querySelectorAll('.search-tag');
     tags.forEach(tag => {
         tag.addEventListener('click', () => {
@@ -149,11 +148,165 @@ function initCartBadge() {
     const badge = document.getElementById('header-cart-badge');
     if (!badge) return;
 
-    // Listen to potential global cart events
     window.addEventListener('cart:updated', (event) => {
         if (event.detail && typeof event.detail.count !== 'undefined') {
             badge.textContent = event.detail.count;
             badge.classList.remove('hidden');
+        }
+    });
+}
+
+/**
+ * 5. Slide-Over Cart Drawer Controller
+ */
+function initCartDrawer() {
+    const backdrop = document.getElementById('cart-drawer-backdrop');
+    const panel = document.getElementById('cart-drawer-panel');
+    const closeBtn = document.getElementById('cart-drawer-close');
+    const triggers = document.querySelectorAll('#cart-drawer-trigger, .cart-drawer-opener');
+
+    if (!backdrop || !panel) return;
+
+    const openDrawer = (e) => {
+        if (e) e.preventDefault();
+        backdrop.classList.remove('opacity-0', 'pointer-events-none');
+        backdrop.classList.add('opacity-100');
+        panel.classList.remove('translate-x-full');
+        panel.classList.add('translate-x-0');
+        document.body.classList.add('overflow-hidden');
+    };
+
+    const closeDrawer = () => {
+        panel.classList.add('translate-x-full');
+        panel.classList.remove('translate-x-0');
+        backdrop.classList.add('opacity-0', 'pointer-events-none');
+        backdrop.classList.remove('opacity-100');
+        document.body.classList.remove('overflow-hidden');
+    };
+
+    triggers.forEach(t => t.addEventListener('click', openDrawer));
+    if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+    backdrop.addEventListener('click', (e) => {
+        if (e.target === backdrop) closeDrawer();
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !backdrop.classList.contains('pointer-events-none')) {
+            closeDrawer();
+        }
+    });
+
+    // Handle Quick Add-to-cart clicks all across website to trigger drawer
+    document.addEventListener('click', (e) => {
+        const atcBtn = e.target.closest('.quick-add-to-cart-btn, #main-add-to-cart-btn, #sticky-atc-btn, .drawer-quick-add');
+        if (atcBtn) {
+            e.preventDefault();
+            
+            // Increment cart count
+            const badge = document.getElementById('header-cart-badge');
+            if (badge) {
+                const current = parseInt(badge.textContent || '0') + 1;
+                badge.textContent = current;
+                window.dispatchEvent(new CustomEvent('cart:updated', { detail: { count: current } }));
+            }
+
+            // Open the slide-over drawer immediately
+            setTimeout(() => {
+                openDrawer();
+            }, 150);
+        }
+    });
+
+    // Drawer internal steppers & remove buttons
+    const updateDrawerCalculations = () => {
+        let subtotal = 0;
+        const rows = document.querySelectorAll('.drawer-item-row');
+        rows.forEach(r => {
+            const p = parseFloat(r.dataset.price) || 0;
+            const q = parseInt(r.querySelector('.drawer-qty-val')?.textContent) || 1;
+            subtotal += (p * q);
+        });
+
+        const discount = Math.round(subtotal * 0.38);
+        const grandTotal = Math.max(0, subtotal - discount);
+
+        const subEl = document.getElementById('drawer-subtotal-val');
+        const discEl = document.getElementById('drawer-discount-val');
+        const totEl = document.getElementById('drawer-total-val');
+        const countBadge = document.getElementById('drawer-item-count-badge');
+
+        if (subEl) subEl.textContent = '₹' + subtotal.toFixed(2);
+        if (discEl) discEl.textContent = '-₹' + discount.toFixed(2);
+        if (totEl) totEl.textContent = '₹' + grandTotal.toFixed(2);
+        if (countBadge) countBadge.textContent = '(' + rows.length + ')';
+    };
+
+    document.addEventListener('click', (e) => {
+        if (e.target.closest('.drawer-qty-plus')) {
+            const row = e.target.closest('.drawer-item-row');
+            const qtyEl = row.querySelector('.drawer-qty-val');
+            let q = parseInt(qtyEl.textContent) || 1;
+            if (q < 99) qtyEl.textContent = q + 1;
+            updateDrawerCalculations();
+        }
+
+        if (e.target.closest('.drawer-qty-minus')) {
+            const row = e.target.closest('.drawer-item-row');
+            const qtyEl = row.querySelector('.drawer-qty-val');
+            let q = parseInt(qtyEl.textContent) || 1;
+            if (q > 1) {
+                qtyEl.textContent = q - 1;
+                updateDrawerCalculations();
+            }
+        }
+
+        if (e.target.closest('.drawer-remove-item')) {
+            const row = e.target.closest('.drawer-item-row');
+            if (row) {
+                row.remove();
+                updateDrawerCalculations();
+            }
+        }
+    });
+}
+
+/**
+ * 6. Wishlist Management (LocalStorage + UI Sync)
+ */
+function initWishlist() {
+    const wishlistKey = 'aaradhna_wishlist';
+    let savedItems = JSON.parse(localStorage.getItem(wishlistKey) || '["Devi Refill Pack", "Camphor Refill Pack", "Oudh Bambooless Sticks", "Chandan Cones"]');
+
+    const updateWishlistBadge = () => {
+        const badge = document.getElementById('header-wishlist-badge');
+        if (badge) badge.textContent = savedItems.length;
+    };
+
+    updateWishlistBadge();
+
+    document.addEventListener('click', (e) => {
+        const wishBtn = e.target.closest('.wishlist-toggle-btn');
+        if (wishBtn) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const title = wishBtn.dataset.productTitle || 'Sacred Item';
+            const icon = wishBtn.querySelector('svg');
+
+            if (savedItems.includes(title)) {
+                savedItems = savedItems.filter(item => item !== title);
+                wishBtn.classList.remove('text-[#9B1C31]');
+                wishBtn.classList.add('text-gray-400');
+                if (icon) icon.setAttribute('fill', 'none');
+            } else {
+                savedItems.push(title);
+                wishBtn.classList.add('text-[#9B1C31]');
+                wishBtn.classList.remove('text-gray-400');
+                if (icon) icon.setAttribute('fill', 'currentColor');
+            }
+
+            localStorage.setItem(wishlistKey, JSON.stringify(savedItems));
+            updateWishlistBadge();
         }
     });
 }

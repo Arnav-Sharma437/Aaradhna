@@ -38,7 +38,10 @@
     <!-- 4. Predictive Search Modal -->
     <x-search-modal />
 
-    <!-- 5. Main Content -->
+    <!-- 5. Slide-over Luxury Cart Drawer -->
+    <x-cart-drawer />
+
+    <!-- 6. Main Content -->
     <main class="flex-grow">
         @yield('content')
     </main>
