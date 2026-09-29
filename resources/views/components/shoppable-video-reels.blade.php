@@ -102,11 +102,11 @@
 <!-- ========================================================================= -->
 <!-- SHOPPABLE VIDEO REELS SECTION (Infinite Loop Slider + Video Modal)        -->
 <!-- ========================================================================= -->
-<section class="py-14 sm:py-20 bg-[#FDFBF7] border-b border-[#EAE3D9] overflow-hidden font-body select-none relative" id="shoppable-reels-section">
+<section class="py-12 sm:py-18 bg-[#FDFBF7] border-b border-[#EAE3D9] overflow-hidden font-body select-none relative" id="shoppable-reels-section">
     <div class="w-full mx-auto px-4 sm:px-8 lg:px-[40px]">
         
-        <!-- Header -->
-        <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-12 space-y-2">
+        <!-- Section Header -->
+        <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12 space-y-2">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ SACRED UNBOXING &amp; RITUALS ✦</span>
             <h2 class="text-2xl sm:text-4xl lg:text-5xl font-black text-[#121212] font-heading tracking-tight">
                 Experience Divine Fragrance
@@ -263,85 +263,191 @@
 </section>
 
 <!-- ========================================================================= -->
-<!-- FULLSCREEN REELS VIDEO MODAL LIGHTBOX (With Sound & Direct Checkout)      -->
+<!-- EXACT 3D COVERFLOW REELS LIGHTBOX MODAL (Matches Reference Screenshot)    -->
 <!-- ========================================================================= -->
 <div 
     id="reel-video-modal" 
-    class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 opacity-0 pointer-events-none transition-all duration-300 font-body"
+    class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 font-body select-none overflow-hidden"
 >
     <!-- Modal Backdrop Click Area -->
     <div class="absolute inset-0" id="reel-modal-backdrop"></div>
 
-    <!-- Modal Content Box (Tall 9:16 Reel Player with Product Card) -->
-    <div class="relative z-10 w-full max-w-sm sm:max-w-md bg-neutral-950 rounded-[20px] overflow-hidden border border-white/20 shadow-2xl flex flex-col max-h-[92vh]">
+    <!-- Top Right Floating Close Button -->
+    <button 
+        type="button" 
+        id="reel-modal-close"
+        class="absolute top-4 right-4 sm:top-6 sm:right-8 z-40 w-11 h-11 rounded-full bg-white/20 hover:bg-white text-white hover:text-black flex items-center justify-center backdrop-blur-md border border-white/30 transition-all duration-200 cursor-pointer shadow-2xl focus:outline-none"
+        aria-label="Close Reel"
+    >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+
+    <!-- 3D Carousel Stage Container -->
+    <div class="relative z-20 w-full max-w-5xl h-full max-h-[90vh] flex items-center justify-center px-4 sm:px-12">
         
-        <!-- Top Bar: Close Button & Reel Title -->
-        <div class="absolute top-3 inset-x-3 z-20 flex items-center justify-between text-white pointer-events-none">
-            <span class="px-3 py-1 rounded-full bg-black/50 backdrop-blur-md text-xs font-bold font-heading border border-white/20 text-[#F6DAA8]">
-                ✦ Aaradhna Vedic Reel
-            </span>
-            <button 
-                type="button" 
-                id="reel-modal-close"
-                class="w-9 h-9 rounded-full bg-black/60 hover:bg-[#9B1C31] text-white flex items-center justify-center backdrop-blur-md border border-white/20 transition-all duration-200 pointer-events-auto cursor-pointer focus:outline-none"
-                aria-label="Close Video"
-            >
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
-            </button>
+        <!-- Left Flanking Card (Previous Reel Preview) -->
+        <div 
+            id="modal-card-prev"
+            class="hidden md:flex flex-col w-[260px] aspect-[9/16] rounded-[22px] overflow-hidden bg-neutral-900 border border-white/10 shadow-2xl opacity-40 scale-85 -mr-16 cursor-pointer hover:opacity-75 transition-all duration-300 z-10 shrink-0 select-none pointer-events-auto"
+            title="Previous Reel"
+        >
+            <img id="modal-prev-poster" src="" alt="Prev Reel" class="w-full h-full object-cover">
         </div>
 
-        <!-- Main Video Container -->
-        <div class="relative w-full aspect-[9/16] bg-black overflow-hidden flex items-center justify-center">
+        <!-- Center Active Reel Card (Main Playing Reel with Shoppable UI) -->
+        <div 
+            id="modal-card-active"
+            class="relative z-30 w-full max-w-[340px] sm:max-w-[370px] md:max-w-[385px] aspect-[9/16] bg-black rounded-[24px] overflow-hidden border border-white/20 shadow-2xl flex flex-col justify-between shrink-0 transition-transform duration-300"
+        >
+            <!-- Top Drag Handle Pill -->
+            <div class="absolute top-2.5 inset-x-0 z-30 flex justify-center pointer-events-none">
+                <div class="w-12 h-1 bg-white/70 rounded-full shadow-xs"></div>
+            </div>
+
+            <!-- Video Player -->
             <video 
                 id="modal-reel-video"
-                class="w-full h-full object-cover cursor-pointer"
-                controls
+                class="absolute inset-0 w-full h-full object-cover cursor-pointer"
                 autoplay
                 playsinline
                 loop
             ></video>
 
-            <!-- Video Navigation Arrows in Modal -->
-            <button 
-                type="button" 
-                id="modal-prev-video" 
-                class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/50 hover:bg-[#D38928] text-white flex items-center justify-center backdrop-blur-xs border border-white/20 transition-all cursor-pointer"
-                aria-label="Previous Reel"
-            >
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
-            </button>
-            <button 
-                type="button" 
-                id="modal-next-video" 
-                class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/50 hover:bg-[#D38928] text-white flex items-center justify-center backdrop-blur-xs border border-white/20 transition-all cursor-pointer"
-                aria-label="Next Reel"
-            >
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-            </button>
-        </div>
+            <!-- Gradient Shadow for Bottom Text Legibility -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent pointer-events-none z-10"></div>
 
-        <!-- Bottom Modal Product Bar with Direct Add to Cart -->
-        <div class="bg-white p-3.5 border-t border-[#EADBCC] flex items-center justify-between gap-3 shadow-lg">
-            <div class="flex items-center space-x-3 min-w-0">
-                <img id="modal-product-img" src="" alt="Product" class="w-12 h-12 rounded-[8px] object-cover border border-[#EADBCC] p-0.5 bg-[#FAF7F2] shrink-0">
-                <div class="min-w-0">
-                    <h4 id="modal-product-title" class="text-xs sm:text-sm font-bold font-serif text-[#1F1F1F] truncate leading-tight">Product Title</h4>
-                    <div class="flex items-baseline space-x-1.5 pt-0.5">
-                        <span id="modal-product-price" class="text-xs sm:text-sm font-black font-heading text-[#1F1F1F]">₹489</span>
-                        <span id="modal-product-mrp" class="text-[11px] text-gray-400 line-through">₹700</span>
-                        <span id="modal-product-discount" class="text-[11px] font-bold text-[#15803D]">30% OFF</span>
+            <!-- Right Vertical Social Actions Rail -->
+            <div class="absolute right-3 bottom-28 sm:bottom-32 z-20 flex flex-col items-center space-y-3.5">
+                <!-- Like Button -->
+                <button 
+                    type="button" 
+                    id="modal-like-btn"
+                    class="flex flex-col items-center text-white group cursor-pointer focus:outline-none"
+                    aria-label="Like Video"
+                >
+                    <div class="w-10 h-10 rounded-full bg-black/40 backdrop-blur-md border border-white/25 flex items-center justify-center text-white group-hover:scale-110 group-active:scale-95 transition-all duration-200">
+                        <svg id="modal-heart-icon" class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                        </svg>
                     </div>
+                    <span id="modal-like-count" class="text-[11px] font-bold text-white/90 drop-shadow-md mt-1">299 Likes</span>
+                </button>
+
+                <!-- More Options (Three Dots) -->
+                <button 
+                    type="button" 
+                    class="w-8 h-8 rounded-full bg-black/30 backdrop-blur-xs flex items-center justify-center text-white/80 hover:text-white cursor-pointer"
+                    aria-label="More Options"
+                >
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Bottom Left Mute Toggle Button -->
+            <div class="absolute left-3 bottom-28 sm:bottom-32 z-20">
+                <button 
+                    type="button" 
+                    id="modal-mute-btn"
+                    class="px-3 py-1 rounded-full bg-black/50 backdrop-blur-md border border-white/20 text-white text-xs font-semibold flex items-center space-x-1.5 hover:bg-black/70 cursor-pointer shadow-lg transition-all"
+                >
+                    <svg id="modal-volume-icon" class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/>
+                    </svg>
+                    <span id="modal-mute-label">Mute</span>
+                </button>
+            </div>
+
+            <!-- Bottom Shoppable Product Overlay Card (Exact Match to Screenshot) -->
+            <div class="relative z-20 p-3 sm:p-3.5 mt-auto">
+                <div class="bg-black/55 backdrop-blur-md border border-white/20 p-2.5 rounded-[16px] shadow-2xl space-y-2.5">
+                    
+                    <!-- Product Info Row -->
+                    <div class="flex items-center justify-between gap-2">
+                        <div class="flex items-center space-x-2.5 min-w-0 flex-1">
+                            <!-- Thumbnail -->
+                            <div class="w-11 h-11 rounded-[8px] bg-white p-0.5 border border-white/30 shrink-0 overflow-hidden">
+                                <img id="modal-product-img" src="" alt="Product Thumbnail" class="w-full h-full object-cover rounded-[6px]">
+                            </div>
+
+                            <!-- Title & Pricing -->
+                            <div class="min-w-0 flex-1 text-left">
+                                <h4 id="modal-product-title" class="text-xs sm:text-[13px] font-bold text-white truncate drop-shadow-xs font-serif leading-tight">
+                                    Nagchampa Refill Pack
+                                </h4>
+                                <div class="flex items-baseline space-x-1.5 pt-0.5">
+                                    <span id="modal-product-price" class="text-xs sm:text-sm font-black text-white font-heading">₹489</span>
+                                    <span id="modal-product-mrp" class="text-[11px] text-white/60 line-through">₹700</span>
+                                    <span id="modal-product-discount" class="text-[11px] font-bold text-[#4ADE80]">30% OFF</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mini Peek Box on the right (Next item preview) -->
+                        <div class="w-10 h-10 rounded-[8px] bg-white/20 backdrop-blur-md border border-white/30 shrink-0 overflow-hidden hidden sm:flex items-center justify-center p-0.5 opacity-80 hover:opacity-100 transition-opacity">
+                            <img id="modal-peek-img" src="" alt="Peek" class="w-full h-full object-cover rounded-[6px]">
+                        </div>
+                    </div>
+
+                    <!-- Action Row: Full Width White Add-To-Cart Button -->
+                    <div class="flex items-center space-x-2">
+                        <button 
+                            type="button" 
+                            id="modal-add-to-cart-btn"
+                            class="quick-add-to-cart-btn flex-1 py-2.5 px-4 bg-white hover:bg-amber-50 active:bg-amber-100 text-[#121212] font-black text-xs sm:text-sm rounded-[10px] shadow-lg transition-all duration-200 transform active:scale-95 flex items-center justify-center space-x-1.5 font-heading cursor-pointer focus:outline-none"
+                            data-product-id="1"
+                            data-product-title=""
+                            data-product-slug=""
+                            data-product-price=""
+                            data-product-image=""
+                        >
+                            <span>Add to Cart</span>
+                        </button>
+                        
+                        <!-- Mini Quick Buy Icon Button -->
+                        <button 
+                            type="button"
+                            id="modal-quick-bag-btn"
+                            class="w-9 h-9 rounded-[10px] bg-white/20 hover:bg-white/30 backdrop-blur-md border border-white/30 text-white flex items-center justify-center transition-all cursor-pointer shrink-0"
+                            aria-label="Direct Bag"
+                        >
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- Powered by text -->
+                <div class="text-center pt-2">
+                    <span class="text-[10px] tracking-wider text-white/50 font-medium">✦ powered by ReelCart</span>
                 </div>
             </div>
 
-            <button 
-                type="button" 
-                id="modal-add-to-cart-btn"
-                class="quick-add-to-cart-btn px-5 py-2.5 bg-[#D38928] hover:bg-[#B8741E] active:bg-[#965A15] text-white text-xs sm:text-sm font-bold rounded-[8px] shadow-xs shrink-0 font-heading cursor-pointer transition-all duration-200"
-            >
-                Add to Cart
-            </button>
         </div>
+
+        <!-- Right Flanking Card (Next Reel Preview) -->
+        <div 
+            id="modal-card-next"
+            class="hidden md:flex flex-col w-[260px] aspect-[9/16] rounded-[22px] overflow-hidden bg-neutral-900 border border-white/10 shadow-2xl opacity-40 scale-85 -ml-16 cursor-pointer hover:opacity-75 transition-all duration-300 z-10 shrink-0 select-none pointer-events-auto"
+            title="Next Reel"
+        >
+            <img id="modal-next-poster" src="" alt="Next Reel" class="w-full h-full object-cover">
+        </div>
+
+        <!-- Right Navigation Arrow Button (Prominent Circular Button like in screenshot) -->
+        <button 
+            type="button" 
+            id="modal-next-arrow"
+            class="absolute right-2 sm:right-0 top-1/2 -translate-y-1/2 z-40 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white text-[#121212] hover:bg-[#D38928] hover:text-white flex items-center justify-center shadow-2xl transition-all duration-200 transform hover:scale-110 active:scale-95 cursor-pointer border border-black/10 focus:outline-none"
+            aria-label="Next Reel"
+        >
+            <svg class="w-6 h-6 sm:w-7 sm:h-7 ml-0.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+            </svg>
+        </button>
 
     </div>
 </div>
@@ -356,20 +462,33 @@
         const nextBtn = document.getElementById('reel-scroll-next');
         const cards = document.querySelectorAll('.reel-card');
 
+        // Modal Elements
         const modal = document.getElementById('reel-video-modal');
         const modalBackdrop = document.getElementById('reel-modal-backdrop');
         const modalClose = document.getElementById('reel-modal-close');
         const modalVideo = document.getElementById('modal-reel-video');
         const modalImg = document.getElementById('modal-product-img');
+        const modalPeekImg = document.getElementById('modal-peek-img');
         const modalTitle = document.getElementById('modal-product-title');
         const modalPrice = document.getElementById('modal-product-price');
         const modalMrp = document.getElementById('modal-product-mrp');
         const modalDiscount = document.getElementById('modal-product-discount');
         const modalCartBtn = document.getElementById('modal-add-to-cart-btn');
-        const modalPrevBtn = document.getElementById('modal-prev-video');
-        const modalNextBtn = document.getElementById('modal-next-video');
+        const modalQuickBagBtn = document.getElementById('modal-quick-bag-btn');
+        const modalMuteBtn = document.getElementById('modal-mute-btn');
+        const modalMuteLabel = document.getElementById('modal-mute-label');
+        const modalLikeBtn = document.getElementById('modal-like-btn');
+        const modalHeartIcon = document.getElementById('modal-heart-icon');
+        const modalLikeCount = document.getElementById('modal-like-count');
+        const modalNextArrow = document.getElementById('modal-next-arrow');
+        const modalCardPrev = document.getElementById('modal-card-prev');
+        const modalCardNext = document.getElementById('modal-card-next');
+        const modalPrevPoster = document.getElementById('modal-prev-poster');
+        const modalNextPoster = document.getElementById('modal-next-poster');
 
         let currentReelIndex = 0;
+        let isMuted = false;
+        let isLiked = false;
         const totalCards = cards.length;
 
         // ---------------------------------------------------------------------
@@ -384,7 +503,6 @@
             if (!track) return;
             const maxScroll = track.scrollWidth - track.clientWidth;
             if (track.scrollLeft >= maxScroll - 10) {
-                // Wrap to start for infinite loop
                 track.scrollTo({ left: 0, behavior: 'smooth' });
             } else {
                 track.scrollBy({ left: getCardWidth(), behavior: 'smooth' });
@@ -394,7 +512,6 @@
         const scrollPrev = () => {
             if (!track) return;
             if (track.scrollLeft <= 10) {
-                // Wrap to end for infinite loop
                 track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' });
             } else {
                 track.scrollBy({ left: -getCardWidth(), behavior: 'smooth' });
@@ -405,14 +522,13 @@
         if (prevBtn) prevBtn.addEventListener('click', scrollPrev);
 
         // Auto Loop Interval (continuous smooth loop)
-        let autoLoopTimer = setInterval(scrollNext, 4000);
+        let autoLoopTimer = setInterval(scrollNext, 4500);
 
-        // Pause auto loop on hover or touch
         if (track) {
             track.addEventListener('mouseenter', () => clearInterval(autoLoopTimer));
             track.addEventListener('mouseleave', () => {
                 clearInterval(autoLoopTimer);
-                autoLoopTimer = setInterval(scrollNext, 4000);
+                autoLoopTimer = setInterval(scrollNext, 4500);
             });
             track.addEventListener('touchstart', () => clearInterval(autoLoopTimer), { passive: true });
         }
@@ -440,7 +556,7 @@
         }
 
         // ---------------------------------------------------------------------
-        // 2. VIDEO POPUP MODAL ON CARD CLICK
+        // 2. VIDEO POPUP MODAL (3D Coverflow Lightbox)
         // ---------------------------------------------------------------------
         const openReelModal = (index) => {
             if (index < 0) index = totalCards - 1;
@@ -449,6 +565,9 @@
 
             const card = cards[currentReelIndex];
             if (!card) return;
+
+            const prevIndex = (currentReelIndex - 1 + totalCards) % totalCards;
+            const nextIndex = (currentReelIndex + 1) % totalCards;
 
             const videoSrc = card.getAttribute('data-video');
             const posterSrc = card.getAttribute('data-poster');
@@ -460,14 +579,27 @@
             const slug = card.getAttribute('data-slug');
             const id = card.getAttribute('data-id');
 
-            // Populate Modal
+            // Flanking card posters
+            if (modalPrevPoster && cards[prevIndex]) {
+                modalPrevPoster.src = cards[prevIndex].getAttribute('data-poster');
+            }
+            if (modalNextPoster && cards[nextIndex]) {
+                modalNextPoster.src = cards[nextIndex].getAttribute('data-poster');
+            }
+            if (modalPeekImg && cards[nextIndex]) {
+                modalPeekImg.src = cards[nextIndex].getAttribute('data-thumbnail');
+            }
+
+            // Populate Active Modal Video & Details
             if (modalVideo) {
                 modalVideo.src = videoSrc;
                 modalVideo.poster = posterSrc;
-                modalVideo.muted = false; // with sound
+                modalVideo.muted = isMuted;
                 modalVideo.currentTime = 0;
                 modalVideo.play().catch(() => {
                     modalVideo.muted = true;
+                    isMuted = true;
+                    updateMuteUI();
                     modalVideo.play();
                 });
             }
@@ -478,7 +610,7 @@
             if (modalMrp) modalMrp.textContent = '₹' + mrp;
             if (modalDiscount) modalDiscount.textContent = discount;
 
-            // Set cart dataset on modal cart button
+            // Set cart dataset on modal cart buttons
             if (modalCartBtn) {
                 modalCartBtn.setAttribute('data-product-id', id);
                 modalCartBtn.setAttribute('data-product-title', title);
@@ -487,11 +619,22 @@
                 modalCartBtn.setAttribute('data-product-image', thumbnail);
             }
 
+            if (modalQuickBagBtn && modalCartBtn) {
+                modalQuickBagBtn.onclick = (e) => {
+                    e.stopPropagation();
+                    modalCartBtn.click();
+                };
+            }
+
+            // Reset like state
+            isLiked = false;
+            updateLikeUI();
+
             // Show Modal
             if (modal) {
                 modal.classList.remove('opacity-0', 'pointer-events-none');
                 modal.classList.add('opacity-100', 'pointer-events-auto');
-                document.body.style.overflow = 'hidden'; // prevent page scroll
+                document.body.style.overflow = 'hidden';
             }
         };
 
@@ -507,10 +650,69 @@
             }
         };
 
-        // Attach click listeners to cards
+        const updateMuteUI = () => {
+            if (modalMuteLabel) {
+                modalMuteLabel.textContent = isMuted ? 'Unmute' : 'Mute';
+            }
+        };
+
+        if (modalMuteBtn) {
+            modalMuteBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (!modalVideo) return;
+                isMuted = !isMuted;
+                modalVideo.muted = isMuted;
+                updateMuteUI();
+            });
+        }
+
+        const updateLikeUI = () => {
+            if (modalHeartIcon) {
+                if (isLiked) {
+                    modalHeartIcon.setAttribute('fill', '#EF4444');
+                    modalHeartIcon.classList.add('text-red-500');
+                    if (modalLikeCount) modalLikeCount.textContent = '300 Likes';
+                } else {
+                    modalHeartIcon.setAttribute('fill', 'none');
+                    modalHeartIcon.classList.remove('text-red-500');
+                    if (modalLikeCount) modalLikeCount.textContent = '299 Likes';
+                }
+            }
+        };
+
+        if (modalLikeBtn) {
+            modalLikeBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                isLiked = !isLiked;
+                updateLikeUI();
+            });
+        }
+
+        // Flanking card clicks & Next Arrow
+        if (modalCardPrev) {
+            modalCardPrev.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openReelModal(currentReelIndex - 1);
+            });
+        }
+
+        if (modalCardNext) {
+            modalCardNext.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openReelModal(currentReelIndex + 1);
+            });
+        }
+
+        if (modalNextArrow) {
+            modalNextArrow.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openReelModal(currentReelIndex + 1);
+            });
+        }
+
+        // Attach click listeners to cards on main grid
         cards.forEach((card, index) => {
             card.addEventListener('click', (e) => {
-                // If clicked button inside card, don't open modal
                 if (e.target.closest('button')) return;
                 openReelModal(index);
             });
@@ -519,20 +721,12 @@
         if (modalClose) modalClose.addEventListener('click', closeReelModal);
         if (modalBackdrop) modalBackdrop.addEventListener('click', closeReelModal);
 
-        if (modalPrevBtn) modalPrevBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            openReelModal(currentReelIndex - 1);
-        });
-
-        if (modalNextBtn) modalNextBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            openReelModal(currentReelIndex + 1);
-        });
-
-        // Close on ESC key
+        // Close on ESC key or Arrow Navigation
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal && !modal.classList.contains('pointer-events-none')) {
-                closeReelModal();
+            if (modal && !modal.classList.contains('pointer-events-none')) {
+                if (e.key === 'Escape') closeReelModal();
+                if (e.key === 'ArrowRight') openReelModal(currentReelIndex + 1);
+                if (e.key === 'ArrowLeft') openReelModal(currentReelIndex - 1);
             }
         });
 
@@ -548,22 +742,5 @@
                 previewVideo.pause();
             });
         });
-
-        // Intersection Observer for auto-playing preview on mobile
-        if ('IntersectionObserver' in window) {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    const video = entry.target.querySelector('.reel-preview-video');
-                    if (!video) return;
-                    if (entry.isIntersecting) {
-                        video.play().catch(() => {});
-                    } else {
-                        video.pause();
-                    }
-                });
-            }, { threshold: 0.6 });
-
-            cards.forEach(card => observer.observe(card));
-        }
     });
 </script>
