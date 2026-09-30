@@ -458,7 +458,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initial Render
     updateHeaderBadges();
-    updateCartButtonStates();
     updateWishlistHeartIcons();
     renderCartDrawer();
     renderWishlistPage();
@@ -467,7 +466,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Listen to custom store events
     window.addEventListener('mangalam:cart-updated', () => {
         updateHeaderBadges();
-        updateCartButtonStates();
         renderCartDrawer();
         renderCartPage();
     });
@@ -498,12 +496,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             addToCart(product, qty);
 
-            // Persistent Green State Feedback (stays green!)
-            updateCartButtonStates();
-            atcBtn.classList.add('bg-emerald-700', 'hover:bg-emerald-800', 'text-white');
-            atcBtn.classList.remove('bg-[#D38928]', 'hover:bg-[#B8741E]');
-            const span = atcBtn.querySelector('span');
-            if (span) span.textContent = '✓ Added to Cart';
+            // Directly open the luxury Cart Drawer immediately
+            openCartDrawer();
         }
 
         // Delegated Wishlist Toggle

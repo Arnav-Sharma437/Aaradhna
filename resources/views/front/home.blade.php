@@ -229,6 +229,123 @@
 </section>
 
 <!-- ========================================================================= -->
+<!-- 1.5. EXPLORE BY SACRED CATEGORIES (Big Rounded Circles Just Below Banner) -->
+<!-- ========================================================================= -->
+<section class="py-10 sm:py-14 bg-white border-b border-[#EAE3D9] font-body">
+    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-xl mx-auto mb-8 sm:mb-10 space-y-1.5">
+            <span class="text-[11px] sm:text-xs font-bold uppercase tracking-[0.25em] text-[#D38928] font-heading">✦ SACRED COLLECTION ✦</span>
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black text-[#121212] font-heading tracking-tight">
+                Shop by Sacred Category
+            </h2>
+        </div>
+
+        <!-- 5 Circular Category Circles (Horizontal Flex / Centered Grid) -->
+        <div class="flex items-center justify-start sm:justify-center gap-5 sm:gap-8 lg:gap-12 overflow-x-auto pb-4 pt-2 no-scrollbar px-2">
+            
+            <!-- Category 1: Bambooless -->
+            <a href="{{ route('collections.show', 'bambooless') }}" class="group flex flex-col items-center text-center shrink-0 space-y-3 cursor-pointer">
+                <div class="w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full p-1 bg-gradient-to-tr from-[#D38928] via-[#F6DAA8] to-[#965A15] shadow-md group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+                    <div class="w-full h-full rounded-full overflow-hidden bg-[#FAF7F2] border-2 border-white">
+                        <img 
+                            src="{{ asset('assets/images/mangalam-agarbatti-box.jpg') }}" 
+                            alt="Bambooless Incense" 
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        >
+                    </div>
+                </div>
+                <div class="space-y-0.5">
+                    <h3 class="text-sm sm:text-base font-bold font-serif text-[#1F1F1F] group-hover:text-[#D38928] transition-colors whitespace-nowrap">
+                        Bambooless
+                    </h3>
+                    <span class="text-[10px] font-semibold text-[#965A15] uppercase tracking-wider block font-heading">Pure Sticks</span>
+                </div>
+            </a>
+
+            <!-- Category 2: Havan Cups -->
+            <a href="{{ route('collections.show', 'havan-cups') }}" class="group flex flex-col items-center text-center shrink-0 space-y-3 cursor-pointer">
+                <div class="w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full p-1 bg-gradient-to-tr from-[#D38928] via-[#F6DAA8] to-[#965A15] shadow-md group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+                    <div class="w-full h-full rounded-full overflow-hidden bg-[#FAF7F2] border-2 border-white">
+                        <img 
+                            src="{{ asset('assets/images/mangalam-havan-cups.jpg') }}" 
+                            alt="Havan Cups" 
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        >
+                    </div>
+                </div>
+                <div class="space-y-0.5">
+                    <h3 class="text-sm sm:text-base font-bold font-serif text-[#1F1F1F] group-hover:text-[#D38928] transition-colors whitespace-nowrap">
+                        Havan Cups
+                    </h3>
+                    <span class="text-[10px] font-semibold text-[#965A15] uppercase tracking-wider block font-heading">Vedic Samagri</span>
+                </div>
+            </a>
+
+            <!-- Category 3: Dhoop Cones -->
+            <a href="{{ route('collections.show', 'dhoop-cones') }}" class="group flex flex-col items-center text-center shrink-0 space-y-3 cursor-pointer">
+                <div class="w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full p-1 bg-gradient-to-tr from-[#D38928] via-[#F6DAA8] to-[#965A15] shadow-md group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+                    <div class="w-full h-full rounded-full overflow-hidden bg-[#FAF7F2] border-2 border-white">
+                        <img 
+                            src="{{ asset('assets/images/mangalam-dhoop-box.jpg') }}" 
+                            alt="Dhoop Cones" 
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        >
+                    </div>
+                </div>
+                <div class="space-y-0.5">
+                    <h3 class="text-sm sm:text-base font-bold font-serif text-[#1F1F1F] group-hover:text-[#D38928] transition-colors whitespace-nowrap">
+                        Dhoop Cones
+                    </h3>
+                    <span class="text-[10px] font-semibold text-[#965A15] uppercase tracking-wider block font-heading">100% Charcoal Free</span>
+                </div>
+            </a>
+
+            <!-- Category 4: Super Save Offers -->
+            <a href="{{ route('bundles.trial-packs') }}" class="group flex flex-col items-center text-center shrink-0 space-y-3 cursor-pointer">
+                <div class="w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full p-1 bg-gradient-to-tr from-[#B24E2B] via-[#D38928] to-[#965A15] shadow-md group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+                    <div class="w-full h-full rounded-full overflow-hidden bg-[#FAF7F2] border-2 border-white">
+                        <img 
+                            src="{{ asset('assets/images/banner-5-trial-packs.jpg') }}" 
+                            alt="Super Save Offers" 
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        >
+                    </div>
+                </div>
+                <div class="space-y-0.5">
+                    <h3 class="text-sm sm:text-base font-bold font-serif text-[#1F1F1F] group-hover:text-[#D38928] transition-colors whitespace-nowrap">
+                        Super Save Offer
+                    </h3>
+                    <span class="text-[10px] font-semibold text-[#B24E2B] uppercase tracking-wider block font-heading">5 Packs @ ₹799</span>
+                </div>
+            </a>
+
+            <!-- Category 5: Best Seller Combo -->
+            <a href="{{ route('collections.show', 'best-seller-combo') }}" class="group flex flex-col items-center text-center shrink-0 space-y-3 cursor-pointer">
+                <div class="w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full p-1 bg-gradient-to-tr from-[#D38928] via-[#F6DAA8] to-[#965A15] shadow-md group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+                    <div class="w-full h-full rounded-full overflow-hidden bg-[#FAF7F2] border-2 border-white">
+                        <img 
+                            src="{{ asset('assets/images/hero-mangalam-cones.jpg') }}" 
+                            alt="Best Seller Combo" 
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        >
+                    </div>
+                </div>
+                <div class="space-y-0.5">
+                    <h3 class="text-sm sm:text-base font-bold font-serif text-[#1F1F1F] group-hover:text-[#D38928] transition-colors whitespace-nowrap">
+                        Best Seller Combo
+                    </h3>
+                    <span class="text-[10px] font-semibold text-[#965A15] uppercase tracking-wider block font-heading">Exclusive Combos</span>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- ========================================================================= -->
 <!-- 2. BESTSELLER OF THE MONTH (Exact Match to User Screenshot)       -->
 <!-- ========================================================================= -->
 <section class="py-16 sm:py-24 bg-[#FAF7F2] border-b border-[#EAE3D9]">
