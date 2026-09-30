@@ -326,8 +326,9 @@ function renderWishlistPage() {
                     </div>
                     <div class="p-3.5 pb-0">
                         <div class="relative w-full aspect-square rounded-[16px] overflow-hidden bg-[#FAF7F2]">
-                            <a href="/products/${slug}" class="block w-full h-full">
-                                <img src="${image}" alt="${title}" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out">
+                            <a href="/products/${slug}" class="block w-full h-full relative overflow-hidden">
+                                <img src="${image}" alt="${title}" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
+                                <img src="/assets/images/single-bambooless-stick.jpg" alt="${title} (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                             </a>
                             <button type="button" class="wishlist-toggle-btn absolute top-3 left-3 z-10 w-8 h-8 rounded-full bg-white text-[#9B1C31] flex items-center justify-center shadow-md transition-all duration-200" data-product-title="${title}" data-product-slug="${slug}" data-product-price="${price}" data-product-image="${image}" aria-label="Remove from Wishlist">
                                 <svg class="w-4 h-4 fill-current text-[#9B1C31]" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>

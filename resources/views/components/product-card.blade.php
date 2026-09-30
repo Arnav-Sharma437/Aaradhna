@@ -26,8 +26,43 @@
         'dhoop-cones-3-combo-pack' => 'assets/images/chandan-cones-card.jpg',
     ];
 
+    $hoverImageMap = [
+        // Bambooless products -> single stick / lifestyle hover
+        'kesar-chandan' => 'assets/images/single-bambooless-stick.jpg',
+        'gulab' => 'assets/images/single-bambooless-stick.jpg',
+        'naagchampa' => 'assets/images/single-bambooless-stick.jpg',
+        'chandan' => 'assets/images/single-bambooless-stick.jpg',
+        'havan-bambooless' => 'assets/images/single-bambooless-stick.jpg',
+        'oudh' => 'assets/images/single-bambooless-stick.jpg',
+        'mongra' => 'assets/images/single-bambooless-stick.jpg',
+        'bambooless-2-combo-pack' => 'assets/images/single-bambooless-stick.jpg',
+        'bambooless-3-combo-pack' => 'assets/images/single-bambooless-stick.jpg',
+
+        // Havan Cups products -> single havan cup hover
+        'google-dhoop' => 'assets/images/single-havan-cup.jpg',
+        'loban' => 'assets/images/single-havan-cup.jpg',
+        'havan-cup' => 'assets/images/single-havan-cup.jpg',
+        'havan-cups-2-combo-pack' => 'assets/images/single-havan-cup.jpg',
+        'havan-cups-3-combo-pack' => 'assets/images/single-havan-cup.jpg',
+
+        // Dhoop Cones products -> single dhoop cone hover
+        'rooh-rose' => 'assets/images/single-dhoop-cone.jpg',
+        'jasmine' => 'assets/images/single-dhoop-cone.jpg',
+        'sandalwood-dhoop-cones' => 'assets/images/single-dhoop-cone.jpg',
+        'forest-wood' => 'assets/images/single-dhoop-cone.jpg',
+        'lavender' => 'assets/images/single-dhoop-cone.jpg',
+        'patchouli' => 'assets/images/single-dhoop-cone.jpg',
+        'dhoop-cones-2-combo-pack' => 'assets/images/single-dhoop-cone.jpg',
+        'dhoop-cones-3-combo-pack' => 'assets/images/single-dhoop-cone.jpg',
+    ];
+
     $primaryDbImage = $product->primaryImage ? $product->primaryImage->image_path : ($product->images->first() ? $product->images->first()->image_path : null);
     $imageSrc = $primaryDbImage ?? ($imageMap[$product->slug] ?? 'assets/images/incense-pack.jpg');
+    
+    // Check if secondary image exists in DB or fallback to hoverImageMap
+    $secondaryDbImage = $product->images->count() > 1 ? $product->images->get(1)->image_path : null;
+    $hoverImageSrc = $secondaryDbImage ?? ($hoverImageMap[$product->slug] ?? 'assets/images/single-bambooless-stick.jpg');
+
     $isSoldOut = $product->stock_quantity <= 0;
     
     // Top border pill badges
@@ -58,19 +93,27 @@
         </span>
     </div>
 
-    <!-- Product Image Box -->
+    <!-- Product Image Box with Smooth Hover Transition -->
     <div class="p-2 sm:p-3.5 pb-0">
         <div class="relative w-full aspect-square rounded-[12px] sm:rounded-[16px] overflow-hidden bg-[#FAF7F2]">
-            <a href="{{ route('products.show', $product->slug) }}" class="block w-full h-full">
+            <a href="{{ route('products.show', $product->slug) }}" class="block w-full h-full relative overflow-hidden">
+                <!-- Primary Image -->
                 <img 
                     src="{{ asset($imageSrc) }}" 
                     alt="{{ $product->title }}" 
-                    class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out"
+                    class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105"
+                >
+                <!-- Secondary / Hover Image -->
+                <img 
+                    src="{{ asset($hoverImageSrc) }}" 
+                    alt="{{ $product->title }} (Detail)" 
+                    class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out"
+                    loading="lazy"
                 >
             </a>
 
             <!-- Top Right Pack Info -->
-            <div class="absolute top-2 right-2 sm:top-3 sm:right-3 text-right pointer-events-none select-none leading-none">
+            <div class="absolute top-2 right-2 sm:top-3 sm:right-3 text-right pointer-events-none select-none leading-none z-10">
                 <span class="text-[10px] sm:text-[11px] uppercase font-semibold text-gray-500 block">pack of</span>
                 <span class="text-xl sm:text-2xl font-black font-heading {{ $packColor }} block my-0.5">{{ $packCount }}</span>
                 <span class="text-[10px] sm:text-[11px] uppercase font-semibold text-gray-500 block">{{ $packUnit }}</span>
@@ -78,7 +121,7 @@
 
             <!-- Free Ceramic Stand Banner for Devi / Specials -->
             @if(str_contains($product->slug, 'devi'))
-                <div class="absolute bottom-1.5 left-1.5 right-1.5 sm:bottom-2 sm:left-2 sm:right-2 bg-black/55 backdrop-blur-xs py-1 sm:py-1.5 px-1.5 sm:px-2 rounded-[5px] sm:rounded-[6px] text-center text-white text-[10px] sm:text-xs font-bold tracking-wider">
+                <div class="absolute bottom-1.5 left-1.5 right-1.5 sm:bottom-2 sm:left-2 sm:right-2 bg-black/55 backdrop-blur-xs py-1 sm:py-1.5 px-1.5 sm:px-2 rounded-[5px] sm:rounded-[6px] text-center text-white text-[10px] sm:text-xs font-bold tracking-wider z-10">
                     FREE STAND <span class="text-[#F6DAA8] font-normal hidden sm:inline">₹150/-</span>
                 </div>
             @endif
@@ -86,7 +129,7 @@
             <!-- Wishlist Floating Button -->
             <button 
                 type="button" 
-                class="wishlist-toggle-btn absolute top-2 left-2 sm:top-3 sm:left-3 z-10 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/90 hover:bg-white text-gray-400 hover:text-[#9B1C31] flex items-center justify-center shadow-md transition-all duration-200 focus:outline-none"
+                class="wishlist-toggle-btn absolute top-2 left-2 sm:top-3 sm:left-3 z-10 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/90 hover:bg-white text-gray-400 hover:text-[#9B1C31] flex items-center justify-center shadow-md transition-all duration-200 focus:outline-none cursor-pointer"
                 data-product-id="{{ $product->id }}"
                 data-product-title="{{ $product->title }}"
                 data-product-slug="{{ $product->slug }}"
@@ -101,61 +144,57 @@
         </div>
     </div>
 
-    <!-- Product Details Content -->
+    <!-- Product Card Content -->
     <div class="p-3 sm:p-5 pt-2 sm:pt-4 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3.5">
         
-        <div class="space-y-1 sm:space-y-1.5">
-            <!-- Title -->
-            <h3 class="text-[15px] sm:text-base font-bold font-serif text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
+        <div class="space-y-1">
+            <h3 class="text-[15px] sm:text-xl font-bold font-serif text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                 <a href="{{ route('products.show', $product->slug) }}">
                     {{ $product->title }}
                 </a>
             </h3>
 
-            <!-- Reviews Rating -->
-            <div class="flex items-center space-x-1 sm:space-x-1.5 text-[#D38928] text-xs">
+            <!-- 5 Star Golden Rating Strip -->
+            <div class="flex items-center space-x-1.5 text-[#D38928] text-xs">
                 <div class="flex text-xs">
                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
-                <span class="text-xs text-gray-500 font-medium truncate">({{ $reviewCount }})</span>
+                <span class="text-xs text-gray-500 font-medium">({{ $reviewCount }})</span>
             </div>
         </div>
 
+        <!-- Pricing & Add to Cart -->
         <div>
-            <!-- Price Block -->
-            <div class="flex items-baseline space-x-1.5 sm:space-x-2 pt-0.5 sm:pt-1 pb-2 sm:pb-3.5">
+            <div class="flex items-baseline space-x-1.5 pt-0.5 pb-2 sm:pb-3.5">
                 <span class="text-xs sm:text-sm text-gray-400 line-through">
-                    ₹{{ number_format($mrpPrice, 2) }}
+                    ₹{{ number_format($mrpPrice, 0) }}
                 </span>
                 <span class="text-base sm:text-xl font-black font-heading text-[#C87A1E]">
                     ₹{{ number_format($product->active_price, 2) }}
                 </span>
             </div>
 
-            <!-- Add to Cart CTA Button -->
-            <div>
-                @if($isSoldOut)
-                    <button 
-                        type="button" 
-                        disabled 
-                        class="w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-gray-200 text-gray-400 text-xs sm:text-sm font-semibold rounded-[8px] sm:rounded-[10px] cursor-not-allowed text-center font-heading"
-                    >
-                        Sold Out
-                    </button>
-                @else
-                    <button 
-                        type="button" 
-                        class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] active:bg-[#965A15] text-white text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer focus:outline-none"
-                        data-product-id="{{ $product->id }}"
-                        data-product-title="{{ $product->title }}"
-                        data-product-slug="{{ $product->slug }}"
-                        data-product-price="{{ $product->active_price }}"
-                        data-product-image="{{ asset($imageSrc) }}"
-                    >
-                        <span>Add to cart</span>
-                    </button>
-                @endif
-            </div>
+            @if($isSoldOut)
+                <button 
+                    type="button" 
+                    disabled
+                    class="w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-gray-200 text-gray-500 text-xs sm:text-sm font-bold uppercase tracking-wider rounded-[8px] sm:rounded-[10px] cursor-not-allowed font-heading text-center"
+                >
+                    Sold Out
+                </button>
+            @else
+                <button 
+                    type="button" 
+                    class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer"
+                    data-product-id="{{ $product->id }}"
+                    data-product-title="{{ $product->title }}"
+                    data-product-slug="{{ $product->slug }}"
+                    data-product-price="{{ $product->active_price }}"
+                    data-product-image="{{ asset($imageSrc) }}"
+                >
+                    <span>Add to cart</span>
+                </button>
+            @endif
         </div>
 
     </div>

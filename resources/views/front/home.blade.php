@@ -262,7 +262,7 @@
                 <div class="p-2 sm:p-3.5 pb-0">
                     <div class="relative w-full aspect-square rounded-[12px] sm:rounded-[16px] overflow-hidden bg-[#FAF7F2]">
                         <a href="{{ route('products.show', 'kesar-chandan') }}" class="block w-full h-full">
-                            <img src="{{ asset('assets/images/oudh-pack-card.jpg') }}" alt="Kesar Chandan Bambooless" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out">
+                            <img src="{{ asset('assets/images/oudh-pack-card.jpg') }}" alt="Kesar Chandan Bambooless" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105"><img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Kesar Chandan (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                         </a>
                         <div class="absolute top-2 right-2 sm:top-3 sm:right-3 text-right pointer-events-none select-none leading-none">
                             <span class="text-[10px] sm:text-[11px] uppercase font-semibold text-gray-500 block">pack of</span>
@@ -309,7 +309,7 @@
                 <div class="p-2 sm:p-3.5 pb-0">
                     <div class="relative w-full aspect-square rounded-[12px] sm:rounded-[16px] overflow-hidden bg-[#FAF7F2]">
                         <a href="{{ route('products.show', 'chandan') }}" class="block w-full h-full">
-                            <img src="{{ asset('assets/images/incense-pack.jpg') }}" alt="Chandan Incense" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out">
+                            <img src="{{ asset('assets/images/incense-pack.jpg') }}" alt="Chandan Incense" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105"><img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Chandan (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                         </a>
                         <div class="absolute top-2 right-2 sm:top-3 sm:right-3 text-right pointer-events-none select-none leading-none">
                             <span class="text-[10px] sm:text-[11px] uppercase font-semibold text-gray-500 block">pack of</span>
@@ -356,7 +356,7 @@
                 <div class="p-2 sm:p-3.5 pb-0">
                     <div class="relative w-full aspect-square rounded-[12px] sm:rounded-[16px] overflow-hidden bg-[#FAF7F2]">
                         <a href="{{ route('products.show', 'oudh') }}" class="block w-full h-full">
-                            <img src="{{ asset('assets/images/oudh-pack-card.jpg') }}" alt="Oudh Incense" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out">
+                            <img src="{{ asset('assets/images/oudh-pack-card.jpg') }}" alt="Oudh Incense" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105"><img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Oudh (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                         </a>
                         <div class="absolute top-2 right-2 sm:top-3 sm:right-3 text-right pointer-events-none select-none leading-none">
                             <span class="text-[10px] sm:text-[11px] uppercase font-semibold text-gray-500 block">pack of</span>
@@ -403,7 +403,7 @@
                 <div class="p-2 sm:p-3.5 pb-0">
                     <div class="relative w-full aspect-square rounded-[12px] sm:rounded-[16px] overflow-hidden bg-[#FAF7F2]">
                         <a href="{{ route('products.show', 'google-dhoop') }}" class="block w-full h-full">
-                            <img src="{{ asset('assets/images/havan-cup.jpg') }}" alt="Google Dhoop Havan Cup" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out">
+                            <img src="{{ asset('assets/images/havan-cup.jpg') }}" alt="Google Dhoop Havan Cup" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105"><img src="{{ asset('assets/images/single-havan-cup.jpg') }}" alt="Google Dhoop (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                         </a>
                         <div class="absolute top-2 right-2 sm:top-3 sm:right-3 text-right pointer-events-none select-none leading-none">
                             <span class="text-[10px] sm:text-[11px] uppercase font-semibold text-gray-500 block">box of</span>
