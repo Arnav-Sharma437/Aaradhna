@@ -53,9 +53,26 @@
                     </a>
                 </div>
             </div>
-            <a href="{{ route('collections.show', 'best-seller-combo') }}" class="block py-1 text-[#2B1810] hover:text-[#D38928] transition-colors font-semibold">
-                Best Seller Combo
-            </a>
+            <div>
+                <div class="py-1 text-xs font-bold tracking-wider text-[#965A15] uppercase">Best Seller Combo</div>
+                <div class="pl-2 mt-1 space-y-1">
+                    <a href="{{ route('products.show', 'bambooless-2-combo-pack') }}" class="flex items-center justify-between py-1 text-sm font-medium text-[#2B1810] hover:text-[#D38928]">
+                        <span>Bambooless Combo Pack</span>
+                        <span class="text-[9px] font-bold text-white bg-[#D38928] px-1.5 py-0.5 rounded">SAVE 30%</span>
+                    </a>
+                    <a href="{{ route('products.show', 'havan-cups-2-combo-pack') }}" class="flex items-center justify-between py-1 text-sm font-medium text-[#2B1810] hover:text-[#D38928]">
+                        <span>Havan Cups Combo Pack</span>
+                        <span class="text-[9px] font-bold text-white bg-[#D38928] px-1.5 py-0.5 rounded">SAVE 35%</span>
+                    </a>
+                    <a href="{{ route('products.show', 'dhoop-cones-2-combo-pack') }}" class="flex items-center justify-between py-1 text-sm font-medium text-[#2B1810] hover:text-[#D38928]">
+                        <span>Dhoop Cones Combo Pack</span>
+                        <span class="text-[9px] font-bold text-white bg-[#D38928] px-1.5 py-0.5 rounded">SAVE 25%</span>
+                    </a>
+                    <a href="{{ route('collections.show', 'best-seller-combo') }}" class="block py-1 text-xs font-bold text-[#D38928] hover:text-[#B8741E]">
+                        View All Combos ➔
+                    </a>
+                </div>
+            </div>
         </div>
 
         <!-- Prominent Contact Us Button in Side Drawer -->

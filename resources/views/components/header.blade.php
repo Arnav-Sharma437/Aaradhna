@@ -80,13 +80,59 @@
                     </div>
                 </div>
 
-                <!-- 5. Best Seller Combo -->
-                <a 
-                    href="{{ route('collections.show', 'best-seller-combo') }}" 
-                    class="text-[14px] xl:text-[15px] font-normal text-[#1F1F1F] hover:text-[#D38928] transition-colors py-4 whitespace-nowrap tracking-wide"
-                >
-                    Best Seller Combo
-                </a>
+                <!-- 5. Best Seller Combo (Dropdown) -->
+                <div class="relative group py-4">
+                    <button 
+                        type="button"
+                        class="flex items-center space-x-1 text-[14px] xl:text-[15px] font-normal text-[#1F1F1F] group-hover:text-[#D38928] transition-colors whitespace-nowrap tracking-wide cursor-pointer focus:outline-none"
+                    >
+                        <span>Best Seller Combo</span>
+                        <svg class="w-4 h-4 text-[#8C827A] group-hover:text-[#D38928] group-hover:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    
+                    <!-- Dropdown Content for 3 Combo Products -->
+                    <div class="absolute left-0 top-full -mt-1 w-72 bg-white rounded-xl shadow-xl border border-[#EAE3D9] py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top group-hover:translate-y-0 translate-y-1 pointer-events-none group-hover:pointer-events-auto">
+                        <!-- Combo 1: Bambooless Combo -->
+                        <a 
+                            href="{{ route('products.show', 'bambooless-2-combo-pack') }}" 
+                            class="flex items-center justify-between px-4 py-2.5 text-sm font-normal text-[#2B1810] hover:bg-[#FAF7F2] hover:text-[#D38928] transition-colors"
+                        >
+                            <span>Bambooless Combo Pack</span>
+                            <span class="text-[10px] font-bold bg-[#D38928]/10 text-[#965A15] px-1.5 py-0.5 rounded">SAVE 30%</span>
+                        </a>
+
+                        <!-- Combo 2: Havan Cups Combo -->
+                        <a 
+                            href="{{ route('products.show', 'havan-cups-2-combo-pack') }}" 
+                            class="flex items-center justify-between px-4 py-2.5 text-sm font-normal text-[#2B1810] hover:bg-[#FAF7F2] hover:text-[#D38928] transition-colors"
+                        >
+                            <span>Havan Cups Combo Pack</span>
+                            <span class="text-[10px] font-bold bg-[#D38928]/10 text-[#965A15] px-1.5 py-0.5 rounded">SAVE 35%</span>
+                        </a>
+
+                        <!-- Combo 3: Dhoop Cones Combo -->
+                        <a 
+                            href="{{ route('products.show', 'dhoop-cones-2-combo-pack') }}" 
+                            class="flex items-center justify-between px-4 py-2.5 text-sm font-normal text-[#2B1810] hover:bg-[#FAF7F2] hover:text-[#D38928] transition-colors"
+                        >
+                            <span>Dhoop Cones Combo Pack</span>
+                            <span class="text-[10px] font-bold bg-[#D38928]/10 text-[#965A15] px-1.5 py-0.5 rounded">SAVE 25%</span>
+                        </a>
+
+                        <!-- View All Combos Link -->
+                        <div class="pt-1.5 mt-1.5 border-t border-[#EAE3D9]">
+                            <a 
+                                href="{{ route('collections.show', 'best-seller-combo') }}" 
+                                class="flex items-center justify-between px-4 py-1.5 text-xs font-bold text-[#D38928] hover:text-[#B8741E] transition-colors font-heading"
+                            >
+                                <span>View All Combos</span>
+                                <span>➔</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
             </nav>
 
