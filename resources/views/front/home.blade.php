@@ -455,116 +455,119 @@
 </section>
 
 <!-- ========================================================================= -->
-<!-- 1.5. EXPLORE BY SACRED CATEGORIES (Big Rounded Circles Just Below Banner) -->
+<!-- 3. PRODUCTS CATEGORY (Big Clear Circles with Scattered Floral Petals BG)   -->
 <!-- ========================================================================= -->
-<section class="py-10 sm:py-14 bg-white border-b border-[#EAE3D9] font-body">
-    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
+<section class="relative py-16 sm:py-24 bg-[#FFFDF9] border-b border-[#EAE3D9] overflow-hidden font-body select-none">
+    
+    <!-- Subtle Background Flower Petals & Herb Texture Overlay -->
+    <div class="absolute inset-0 opacity-[0.22] pointer-events-none mix-blend-multiply bg-cover bg-center" style="background-image: url('{{ asset('assets/images/sacred-petals-bg.jpg') }}');"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-[#FFFDF9]/80 via-transparent to-[#FFFDF9]/85 pointer-events-none"></div>
+
+    <div class="relative z-10 w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
         
-        <!-- Section Header -->
-        <div class="text-center max-w-xl mx-auto mb-8 sm:mb-10 space-y-1.5">
-            <span class="text-[11px] sm:text-xs font-bold uppercase tracking-[0.25em] text-[#D38928] font-heading">✦ SACRED COLLECTION ✦</span>
-            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black text-[#121212] font-heading tracking-tight">
-                Shop by Sacred Category
+        <!-- Section Header (Exact Styling to User Reference) -->
+        <div class="text-center max-w-2xl mx-auto mb-14 sm:mb-18 space-y-2">
+            <span class="text-[11px] sm:text-xs font-bold uppercase tracking-[0.3em] text-[#0F5B4E] font-heading">
+                ✦ 100% NATURAL • CHARCOAL FREE ✦
+            </span>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-[#5C6F2A] tracking-wider uppercase">
+                Products Category
             </h2>
+            <p class="text-xs sm:text-sm text-gray-600 max-w-lg mx-auto">
+                Handcrafted from sacred temple flowers &amp; pure living resins for divine daily rituals.
+            </p>
         </div>
 
-        <!-- 5 Circular Category Circles (Horizontal Flex / Centered Grid) -->
-        <div class="flex items-center justify-start sm:justify-center gap-5 sm:gap-8 lg:gap-12 overflow-x-auto pb-4 pt-2 no-scrollbar px-2">
+        <!-- 3 Main Product Categories Grid (Big Rounded Circles with Clear Product Focus) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 lg:gap-14 max-w-5xl mx-auto">
             
-            <!-- Category 1: Bambooless -->
-            <a href="{{ route('collections.show', 'bambooless') }}" class="group flex flex-col items-center text-center shrink-0 space-y-3 cursor-pointer">
-                <div class="w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full p-1 bg-gradient-to-tr from-[#D38928] via-[#F6DAA8] to-[#965A15] shadow-md group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
-                    <div class="w-full h-full rounded-full overflow-hidden bg-[#FAF7F2] border-2 border-white">
+            <!-- Category 1: Bamboo-less Dhoop Sticks -->
+            <div class="group flex flex-col items-center text-center space-y-5">
+                <!-- Big Rounded Circle Avatar (Product in Clear Focus) -->
+                <a href="{{ route('collections.show', 'bambooless') }}" class="block relative w-44 h-44 sm:w-52 sm:h-52 lg:w-56 lg:h-56 rounded-full p-2 bg-gradient-to-tr from-[#D38928]/40 via-[#FAF5EE] to-[#5C6F2A]/40 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                    <div class="w-full h-full rounded-full overflow-hidden bg-white border-2 border-[#EADBCC] shadow-inner flex items-center justify-center p-2">
                         <img 
-                            src="{{ asset('assets/images/mangalam-agarbatti-box.jpg') }}" 
-                            alt="Bambooless Incense" 
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            src="{{ asset('assets/images/category-bambooless-stick.jpg') }}" 
+                            alt="Bamboo-less Dhoop Stick" 
+                            class="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform duration-500"
                         >
                     </div>
-                </div>
-                <div class="space-y-0.5">
-                    <h3 class="text-sm sm:text-base font-bold font-serif text-[#1F1F1F] group-hover:text-[#D38928] transition-colors whitespace-nowrap">
-                        Bambooless
-                    </h3>
-                    <span class="text-[10px] font-semibold text-[#965A15] uppercase tracking-wider block font-heading">Pure Sticks</span>
-                </div>
-            </a>
+                </a>
 
-            <!-- Category 2: Havan Cups -->
-            <a href="{{ route('collections.show', 'havan-cups') }}" class="group flex flex-col items-center text-center shrink-0 space-y-3 cursor-pointer">
-                <div class="w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full p-1 bg-gradient-to-tr from-[#D38928] via-[#F6DAA8] to-[#965A15] shadow-md group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
-                    <div class="w-full h-full rounded-full overflow-hidden bg-[#FAF7F2] border-2 border-white">
-                        <img 
-                            src="{{ asset('assets/images/mangalam-havan-cups.jpg') }}" 
-                            alt="Havan Cups" 
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                        >
+                <!-- Tag & Details -->
+                <div class="space-y-2.5 max-w-xs">
+                    <!-- Box Tag matching screenshot -->
+                    <div>
+                        <a href="{{ route('collections.show', 'bambooless') }}" class="inline-block px-5 py-1.5 border border-[#121212] hover:border-[#5C6F2A] bg-white text-[11px] sm:text-xs font-bold uppercase tracking-widest text-[#121212] hover:text-[#5C6F2A] transition-colors font-heading shadow-2xs">
+                            Dhoop Stick
+                        </a>
                     </div>
-                </div>
-                <div class="space-y-0.5">
-                    <h3 class="text-sm sm:text-base font-bold font-serif text-[#1F1F1F] group-hover:text-[#D38928] transition-colors whitespace-nowrap">
-                        Havan Cups
+                    <h3 class="text-lg sm:text-xl font-bold font-serif text-[#1F1F1F]">
+                        <a href="{{ route('collections.show', 'bambooless') }}" class="hover:text-[#D38928] transition-colors">Bamboo-less Dhoop Stick</a>
                     </h3>
-                    <span class="text-[10px] font-semibold text-[#965A15] uppercase tracking-wider block font-heading">Vedic Samagri</span>
+                    <p class="text-xs sm:text-[13px] text-gray-600 leading-relaxed font-normal">
+                        Dhoop Sticks fill your space with soothing fragrance, creating an aura of peace, positivity, and divine calm.
+                    </p>
                 </div>
-            </a>
+            </div>
 
-            <!-- Category 3: Dhoop Cones -->
-            <a href="{{ route('collections.show', 'dhoop-cones') }}" class="group flex flex-col items-center text-center shrink-0 space-y-3 cursor-pointer">
-                <div class="w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full p-1 bg-gradient-to-tr from-[#D38928] via-[#F6DAA8] to-[#965A15] shadow-md group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
-                    <div class="w-full h-full rounded-full overflow-hidden bg-[#FAF7F2] border-2 border-white">
+            <!-- Category 2: Easy to Use Dhoop Cones -->
+            <div class="group flex flex-col items-center text-center space-y-5">
+                <!-- Big Rounded Circle Avatar -->
+                <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block relative w-44 h-44 sm:w-52 sm:h-52 lg:w-56 lg:h-56 rounded-full p-2 bg-gradient-to-tr from-[#D38928]/40 via-[#FAF5EE] to-[#5C6F2A]/40 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                    <div class="w-full h-full rounded-full overflow-hidden bg-white border-2 border-[#EADBCC] shadow-inner flex items-center justify-center p-2">
                         <img 
-                            src="{{ asset('assets/images/mangalam-dhoop-box.jpg') }}" 
-                            alt="Dhoop Cones" 
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            src="{{ asset('assets/images/category-dhoop-cones.jpg') }}" 
+                            alt="Easy to Use Dhoop Cones" 
+                            class="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform duration-500"
                         >
                     </div>
-                </div>
-                <div class="space-y-0.5">
-                    <h3 class="text-sm sm:text-base font-bold font-serif text-[#1F1F1F] group-hover:text-[#D38928] transition-colors whitespace-nowrap">
-                        Dhoop Cones
-                    </h3>
-                    <span class="text-[10px] font-semibold text-[#965A15] uppercase tracking-wider block font-heading">100% Charcoal Free</span>
-                </div>
-            </a>
+                </a>
 
-            <!-- Category 4: Super Save Offers -->
-            <a href="{{ route('bundles.trial-packs') }}" class="group flex flex-col items-center text-center shrink-0 space-y-3 cursor-pointer">
-                <div class="w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full p-1 bg-gradient-to-tr from-[#B24E2B] via-[#D38928] to-[#965A15] shadow-md group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
-                    <div class="w-full h-full rounded-full overflow-hidden bg-[#FAF7F2] border-2 border-white">
-                        <img 
-                            src="{{ asset('assets/images/banner-5-trial-packs.jpg') }}" 
-                            alt="Super Save Offers" 
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                        >
+                <!-- Tag & Details -->
+                <div class="space-y-2.5 max-w-xs">
+                    <div>
+                        <a href="{{ route('collections.show', 'dhoop-cones') }}" class="inline-block px-5 py-1.5 border border-[#121212] hover:border-[#5C6F2A] bg-white text-[11px] sm:text-xs font-bold uppercase tracking-widest text-[#121212] hover:text-[#5C6F2A] transition-colors font-heading shadow-2xs">
+                            Dhoop Cones
+                        </a>
                     </div>
-                </div>
-                <div class="space-y-0.5">
-                    <h3 class="text-sm sm:text-base font-bold font-serif text-[#1F1F1F] group-hover:text-[#D38928] transition-colors whitespace-nowrap">
-                        Super Save Offer
+                    <h3 class="text-lg sm:text-xl font-bold font-serif text-[#1F1F1F]">
+                        <a href="{{ route('collections.show', 'dhoop-cones') }}" class="hover:text-[#D38928] transition-colors">Easy to Use Dhoop Cone</a>
                     </h3>
-                    <span class="text-[10px] font-semibold text-[#B24E2B] uppercase tracking-wider block font-heading">5 Packs @ ₹799</span>
+                    <p class="text-xs sm:text-[13px] text-gray-600 leading-relaxed font-normal">
+                        Dhoop Cones release a rich, long-lasting aroma that purifies the air and uplifts the spirit with every burn.
+                    </p>
                 </div>
-            </a>
+            </div>
 
-            <!-- Category 5: Best Seller Combo -->
-            <a href="{{ route('collections.show', 'best-seller-combo') }}" class="group flex flex-col items-center text-center shrink-0 space-y-3 cursor-pointer">
-                <div class="w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full p-1 bg-gradient-to-tr from-[#D38928] via-[#F6DAA8] to-[#965A15] shadow-md group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
-                    <div class="w-full h-full rounded-full overflow-hidden bg-[#FAF7F2] border-2 border-white">
+            <!-- Category 3: 100% Organic Havan Cups -->
+            <div class="group flex flex-col items-center text-center space-y-5">
+                <!-- Big Rounded Circle Avatar -->
+                <a href="{{ route('collections.show', 'havan-cups') }}" class="block relative w-44 h-44 sm:w-52 sm:h-52 lg:w-56 lg:h-56 rounded-full p-2 bg-gradient-to-tr from-[#D38928]/40 via-[#FAF5EE] to-[#5C6F2A]/40 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                    <div class="w-full h-full rounded-full overflow-hidden bg-white border-2 border-[#EADBCC] shadow-inner flex items-center justify-center p-2">
                         <img 
-                            src="{{ asset('assets/images/hero-mangalam-cones.jpg') }}" 
-                            alt="Best Seller Combo" 
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            src="{{ asset('assets/images/category-havan-cup.jpg') }}" 
+                            alt="100% Organic Havan Cups" 
+                            class="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform duration-500"
                         >
                     </div>
-                </div>
-                <div class="space-y-0.5">
-                    <h3 class="text-sm sm:text-base font-bold font-serif text-[#1F1F1F] group-hover:text-[#D38928] transition-colors whitespace-nowrap">
-                        Best Seller Combo
+                </a>
+
+                <!-- Tag & Details -->
+                <div class="space-y-2.5 max-w-xs">
+                    <div>
+                        <a href="{{ route('collections.show', 'havan-cups') }}" class="inline-block px-5 py-1.5 border border-[#121212] hover:border-[#5C6F2A] bg-white text-[11px] sm:text-xs font-bold uppercase tracking-widest text-[#121212] hover:text-[#5C6F2A] transition-colors font-heading shadow-2xs">
+                            Havan Cup
+                        </a>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold font-serif text-[#1F1F1F]">
+                        <a href="{{ route('collections.show', 'havan-cups') }}" class="hover:text-[#D38928] transition-colors">100% Organic Havan Cups</a>
                     </h3>
-                    <span class="text-[10px] font-semibold text-[#965A15] uppercase tracking-wider block font-heading">Exclusive Combos</span>
+                    <p class="text-xs sm:text-[13px] text-gray-600 leading-relaxed font-normal">
+                        Organic Havan Cups made with natural ingredients, free from chemicals and artificial fragrance, for a pure experience.
+                    </p>
                 </div>
-            </a>
+            </div>
 
         </div>
 
