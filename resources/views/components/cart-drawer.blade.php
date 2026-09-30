@@ -3,13 +3,13 @@
 <!-- ========================================================================= -->
 <div 
     id="cart-drawer-backdrop" 
-    class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs opacity-0 pointer-events-none transition-opacity duration-300 ease-out font-body"
+    class="fixed inset-0 z-[70] bg-black/60 backdrop-blur-xs opacity-0 pointer-events-none transition-opacity duration-300 ease-out font-body"
     aria-hidden="true"
 >
     <!-- Slide-over Container -->
     <div 
         id="cart-drawer-panel" 
-        class="fixed inset-y-0 right-0 max-w-full w-full sm:w-[480px] md:w-[500px] bg-white shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300 ease-out overflow-hidden"
+        class="fixed inset-y-0 right-0 max-w-full w-full sm:w-[480px] md:w-[500px] bg-white shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300 ease-out overflow-hidden z-[70]"
     >
         
         <!-- 1. Header: Welcome & Close Button -->
@@ -158,7 +158,7 @@
         </div>
 
         <!-- 6. Footer Checkout & Calculations -->
-        <div class="p-4 bg-white border-t border-[#EADBCC] space-y-3 shrink-0 shadow-lg">
+        <div class="p-4 pb-6 sm:pb-4 pb-safe bg-white border-t border-[#EADBCC] space-y-3 shrink-0 shadow-lg">
             
             <!-- Trust strip -->
             <div class="py-1 px-2 bg-[#FAF7F2] rounded-[6px] text-center text-[10px] font-bold text-gray-600 font-heading flex items-center justify-center space-x-2">
