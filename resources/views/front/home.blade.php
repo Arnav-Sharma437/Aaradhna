@@ -48,48 +48,52 @@
                         </p>
                     </div>
 
-                    <!-- 3 Feature Badges in Circular Outlines (Clean horizontal layout) -->
-                    <div class="flex items-center justify-center lg:justify-start gap-5 sm:gap-7 pt-1">
+                    <!-- 3 Authentic Vedic Purity Badges (Evenly Spaced Across Full CTA Width) -->
+                    <div class="grid grid-cols-3 gap-3 sm:gap-6 max-w-md sm:max-w-lg mx-auto lg:mx-0 pt-2 pb-1">
                         
                         <!-- Badge 1: 100% Charcoal Free -->
-                        <div class="flex flex-col items-center text-center space-y-1.5 shrink-0">
-                            <div class="w-12 h-12 rounded-full border border-[#0F5B4E] flex items-center justify-center text-[#0F5B4E] bg-white/95 shadow-xs">
-                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                                    <path d="M12 2C6.5 2 2 6.5 2 12c0 3.5 1.8 6.6 4.6 8.4C8 18.5 11 16 12 12c1 4 4 6.5 5.4 8.4C20.2 18.6 22 15.5 22 12c0-5.5-4.5-10-10-10z"/>
-                                    <path d="M12 2v20"/>
+                        <div class="flex flex-col items-center lg:items-start text-center lg:text-left space-y-1.5">
+                            <div class="w-11 h-11 rounded-full bg-white/95 border border-[#0F5B4E]/30 text-[#0F5B4E] flex items-center justify-center shadow-xs">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2m0 14v2m8-8h-2M6 12H4m12.364-6.364l-1.414 1.414M7.05 16.95l-1.414 1.414m12.728 0l-1.414-1.414M7.05 7.05L5.636 5.636M12 8a4 4 0 100 8 4 4 0 000-8z"/>
                                 </svg>
                             </div>
-                            <span class="text-[11px] sm:text-xs font-semibold text-[#1F1F1F] leading-tight">
-                                100%<br>Charcoal Free
+                            <span class="text-xs sm:text-[13px] font-semibold text-[#1F1F1F] leading-tight">
+                                100% Charcoal Free
+                            </span>
+                            <span class="text-[10px] sm:text-[11px] text-[#0F5B4E] font-medium hidden sm:block">
+                                Zero Black Soot
                             </span>
                         </div>
 
                         <!-- Badge 2: Crafted By Hand -->
-                        <div class="flex flex-col items-center text-center space-y-1.5 shrink-0">
-                            <div class="w-12 h-12 rounded-full border border-[#0F5B4E] flex items-center justify-center text-[#0F5B4E] bg-white/95 shadow-xs">
-                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-                                    <path d="M12 15c-3.3 0-6-2.7-6-6V7a6 6 0 0 1 12 0v2c0 3.3-2.7 6-6 6z"/>
-                                    <path d="M12 19a7 7 0 0 0 7-7"/>
-                                    <path d="M5 12a7 7 0 0 0 7 7"/>
+                        <div class="flex flex-col items-center lg:items-start text-center lg:text-left space-y-1.5">
+                            <div class="w-11 h-11 rounded-full bg-white/95 border border-[#0F5B4E]/30 text-[#0F5B4E] flex items-center justify-center shadow-xs">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-6-4.35-6-9.5a6 6 0 0 1 12 0c0 5.15-6 9.5-6 9.5z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 11.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
                                 </svg>
                             </div>
-                            <span class="text-[11px] sm:text-xs font-semibold text-[#1F1F1F] leading-tight">
-                                Crafted By<br>Hand
+                            <span class="text-xs sm:text-[13px] font-semibold text-[#1F1F1F] leading-tight">
+                                Crafted By Hand
+                            </span>
+                            <span class="text-[10px] sm:text-[11px] text-[#0F5B4E] font-medium hidden sm:block">
+                                Sacred Temple Flowers
                             </span>
                         </div>
 
                         <!-- Badge 3: Zero Chemicals -->
-                        <div class="flex flex-col items-center text-center space-y-1.5 shrink-0">
-                            <div class="w-12 h-12 rounded-full border border-[#0F5B4E] flex items-center justify-center text-[#0F5B4E] bg-white/95 shadow-xs">
-                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                                    <path d="M10 2v7.31L4.69 18.5a2 2 0 0 0 1.73 3h11.16a2 2 0 0 0 1.73-3L14 9.31V2"/>
-                                    <path d="M8.5 2h7"/>
-                                    <path d="M7 16h10"/>
+                        <div class="flex flex-col items-center lg:items-start text-center lg:text-left space-y-1.5">
+                            <div class="w-11 h-11 rounded-full bg-white/95 border border-[#0F5B4E]/30 text-[#0F5B4E] flex items-center justify-center shadow-xs">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
                                 </svg>
                             </div>
-                            <span class="text-[11px] sm:text-xs font-semibold text-[#1F1F1F] leading-tight">
-                                Zero<br>Chemicals
+                            <span class="text-xs sm:text-[13px] font-semibold text-[#1F1F1F] leading-tight">
+                                Zero Harmful Toxins
+                            </span>
+                            <span class="text-[10px] sm:text-[11px] text-[#0F5B4E] font-medium hidden sm:block">
+                                Pure Vedic Herbs
                             </span>
                         </div>
 
@@ -147,41 +151,52 @@
                         </p>
                     </div>
 
-                    <div class="flex items-center justify-center lg:justify-start gap-5 sm:gap-7 pt-1">
+                    <!-- 3 Authentic Vedic Purity Badges (Evenly Spaced Across Full CTA Width) -->
+                    <div class="grid grid-cols-3 gap-3 sm:gap-6 max-w-md sm:max-w-lg mx-auto lg:mx-0 pt-2 pb-1">
                         
-                        <div class="flex flex-col items-center text-center space-y-1.5 shrink-0">
-                            <div class="w-12 h-12 rounded-full border border-[#0F5B4E] flex items-center justify-center text-[#0F5B4E] bg-white/95 shadow-xs">
-                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                                    <path d="M12 2C6.5 2 2 6.5 2 12c0 3.5 1.8 6.6 4.6 8.4C8 18.5 11 16 12 12c1 4 4 6.5 5.4 8.4C20.2 18.6 22 15.5 22 12c0-5.5-4.5-10-10-10z"/>
-                                    <path d="M12 2v20"/>
+                        <!-- Badge 1: 100% Bamboo Free -->
+                        <div class="flex flex-col items-center lg:items-start text-center lg:text-left space-y-1.5">
+                            <div class="w-11 h-11 rounded-full bg-white/95 border border-[#0F5B4E]/30 text-[#0F5B4E] flex items-center justify-center shadow-xs">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2m0 14v2m8-8h-2M6 12H4m12.364-6.364l-1.414 1.414M7.05 16.95l-1.414 1.414m12.728 0l-1.414-1.414M7.05 7.05L5.636 5.636M12 8a4 4 0 100 8 4 4 0 000-8z"/>
                                 </svg>
                             </div>
-                            <span class="text-[11px] sm:text-xs font-semibold text-[#1F1F1F] leading-tight">
-                                100%<br>Charcoal Free
+                            <span class="text-xs sm:text-[13px] font-semibold text-[#1F1F1F] leading-tight">
+                                100% Bamboo Free
+                            </span>
+                            <span class="text-[10px] sm:text-[11px] text-[#0F5B4E] font-medium hidden sm:block">
+                                As Per Vedic Shastras
                             </span>
                         </div>
 
-                        <div class="flex flex-col items-center text-center space-y-1.5 shrink-0">
-                            <div class="w-12 h-12 rounded-full border border-[#0F5B4E] flex items-center justify-center text-[#0F5B4E] bg-white/95 shadow-xs">
-                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                                    <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+                        <!-- Badge 2: Clean & Soot-Free -->
+                        <div class="flex flex-col items-center lg:items-start text-center lg:text-left space-y-1.5">
+                            <div class="w-11 h-11 rounded-full bg-white/95 border border-[#0F5B4E]/30 text-[#0F5B4E] flex items-center justify-center shadow-xs">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-6-4.35-6-9.5a6 6 0 0 1 12 0c0 5.15-6 9.5-6 9.5z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 11.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
                                 </svg>
                             </div>
-                            <span class="text-[11px] sm:text-xs font-semibold text-[#1F1F1F] leading-tight">
-                                Clean &amp;<br>Soot-Free
+                            <span class="text-xs sm:text-[13px] font-semibold text-[#1F1F1F] leading-tight">
+                                Clean &amp; Soot-Free
+                            </span>
+                            <span class="text-[10px] sm:text-[11px] text-[#0F5B4E] font-medium hidden sm:block">
+                                Pure White Smoke
                             </span>
                         </div>
 
-                        <div class="flex flex-col items-center text-center space-y-1.5 shrink-0">
-                            <div class="w-12 h-12 rounded-full border border-[#0F5B4E] flex items-center justify-center text-[#0F5B4E] bg-white/95 shadow-xs">
-                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                                    <path d="M10 2v7.31L4.69 18.5a2 2 0 0 0 1.73 3h11.16a2 2 0 0 0 1.73-3L14 9.31V2"/>
-                                    <path d="M8.5 2h7"/>
-                                    <path d="M7 16h10"/>
+                        <!-- Badge 3: Zero Chemicals -->
+                        <div class="flex flex-col items-center lg:items-start text-center lg:text-left space-y-1.5">
+                            <div class="w-11 h-11 rounded-full bg-white/95 border border-[#0F5B4E]/30 text-[#0F5B4E] flex items-center justify-center shadow-xs">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
                                 </svg>
                             </div>
-                            <span class="text-[11px] sm:text-xs font-semibold text-[#1F1F1F] leading-tight">
-                                Zero<br>Chemicals
+                            <span class="text-xs sm:text-[13px] font-semibold text-[#1F1F1F] leading-tight">
+                                Zero Harmful Toxins
+                            </span>
+                            <span class="text-[10px] sm:text-[11px] text-[#0F5B4E] font-medium hidden sm:block">
+                                Pure Vedic Herbs
                             </span>
                         </div>
 
