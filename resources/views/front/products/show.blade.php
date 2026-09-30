@@ -367,7 +367,7 @@
                 <div class="space-y-3 pt-2">
                     <div class="flex items-center space-x-3">
                         <!-- Stepper Box -->
-                        <div class="flex items-center justify-between border border-gray-300 rounded-[8px] bg-white px-3 py-2.5 w-28 shrink-0">
+                        <div class="flex items-center justify-between border border-gray-300 rounded-[8px] sm:rounded-[10px] bg-white px-3 py-2.5 w-28 shrink-0">
                             <button type="button" id="qty-decrement" class="text-gray-600 hover:text-[#1A1A1A] transition-colors focus:outline-none font-bold text-lg leading-none cursor-pointer">−</button>
                             <input 
                                 type="number" 
@@ -382,11 +382,11 @@
                             <button type="button" id="qty-increment" class="text-gray-600 hover:text-[#1A1A1A] transition-colors focus:outline-none font-bold text-lg leading-none cursor-pointer">+</button>
                         </div>
 
-                        <!-- Solid Golden Orange Rounded Pill Add to Cart CTA -->
+                        <!-- Solid Golden Orange Add to Cart CTA -->
                         <button 
                             type="button" 
                             id="main-add-to-cart-btn"
-                            class="flex-1 py-3.5 px-8 bg-[#D38928] hover:bg-[#B8741E] active:bg-[#965A15] text-white text-sm sm:text-base font-semibold rounded-full shadow-xs hover:shadow-md transition-all duration-200 text-center flex items-center justify-center cursor-pointer focus:outline-none"
+                            class="flex-1 py-3 px-8 bg-[#D38928] hover:bg-[#B8741E] active:bg-[#965A15] text-white text-sm sm:text-base font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 text-center flex items-center justify-center cursor-pointer focus:outline-none font-heading"
                             data-product-id="{{ $product->id }}"
                             data-product-title="{{ $product->title }}"
                             data-product-slug="{{ $product->slug }}"
@@ -400,7 +400,7 @@
                     <!-- Buy It Now Button -->
                     <a 
                         href="{{ route('cart.index') }}" 
-                        class="block w-full py-3.5 px-6 bg-white hover:bg-stone-50 border border-gray-900 text-gray-900 text-sm sm:text-base font-semibold rounded-[8px] shadow-xs text-center transition-colors"
+                        class="block w-full py-3 px-6 bg-white hover:bg-stone-50 border border-gray-900 text-gray-900 text-sm sm:text-base font-bold rounded-[8px] sm:rounded-[10px] shadow-xs text-center transition-colors font-heading"
                     >
                         Buy It Now
                     </a>
