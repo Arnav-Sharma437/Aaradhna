@@ -313,7 +313,7 @@
                             <span class="text-xs sm:text-sm text-gray-400 line-through">₹375</span>
                             <span class="text-base sm:text-xl font-black font-heading text-[#C87A1E]">₹289.00</span>
                         </div>
-                        <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-[#121212] hover:bg-[#D38928] text-white text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Kesar Chandan" data-product-price="289.00">
+                        <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-white text-[#1F1F1F] border border-[#D38928] shadow-xs group-hover:bg-[#D38928] group-hover:text-white group-hover:shadow-md hover:!bg-[#B8741E] text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] transition-all duration-300 transform group-hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Kesar Chandan" data-product-price="289.00">
                             <span>Add to cart</span>
                         </button>
                     </div>
@@ -360,7 +360,7 @@
                             <span class="text-xs sm:text-sm text-gray-400 line-through">₹375</span>
                             <span class="text-base sm:text-xl font-black font-heading text-[#C87A1E]">₹289.00</span>
                         </div>
-                        <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-[#121212] hover:bg-[#D38928] text-white text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Chandan" data-product-price="289.00">
+                        <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-white text-[#1F1F1F] border border-[#D38928] shadow-xs group-hover:bg-[#D38928] group-hover:text-white group-hover:shadow-md hover:!bg-[#B8741E] text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] transition-all duration-300 transform group-hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Chandan" data-product-price="289.00">
                             <span>Add to cart</span>
                         </button>
                     </div>
@@ -407,7 +407,7 @@
                             <span class="text-xs sm:text-sm text-gray-400 line-through">₹425</span>
                             <span class="text-base sm:text-xl font-black font-heading text-[#C87A1E]">₹349.00</span>
                         </div>
-                        <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-[#121212] hover:bg-[#D38928] text-white text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Oudh (ऊद)" data-product-price="349.00">
+                        <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-white text-[#1F1F1F] border border-[#D38928] shadow-xs group-hover:bg-[#D38928] group-hover:text-white group-hover:shadow-md hover:!bg-[#B8741E] text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] transition-all duration-300 transform group-hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Oudh (ऊद)" data-product-price="349.00">
                             <span>Add to cart</span>
                         </button>
                     </div>
@@ -454,7 +454,7 @@
                             <span class="text-xs sm:text-sm text-gray-400 line-through">₹450</span>
                             <span class="text-base sm:text-xl font-black font-heading text-[#C87A1E]">₹349.00</span>
                         </div>
-                        <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-[#121212] hover:bg-[#D38928] text-white text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Google Dhoop" data-product-price="349.00">
+                        <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-white text-[#1F1F1F] border border-[#D38928] shadow-xs group-hover:bg-[#D38928] group-hover:text-white group-hover:shadow-md hover:!bg-[#B8741E] text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] transition-all duration-300 transform group-hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Google Dhoop" data-product-price="349.00">
                             <span>Add to cart</span>
                         </button>
                     </div>
@@ -662,7 +662,7 @@
                             <span class="text-xs sm:text-sm text-gray-400 line-through">₹999</span>
                             <span class="text-base sm:text-xl font-black font-heading text-[#C87A1E]">₹489.00</span>
                         </div>
-                        <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-[#121212] hover:bg-[#D38928] text-white text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Devi Refill Pack" data-product-price="489.00">
+                        <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-white text-[#1F1F1F] border border-[#D38928] shadow-xs group-hover:bg-[#D38928] group-hover:text-white group-hover:shadow-md hover:!bg-[#B8741E] text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] transition-all duration-300 transform group-hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Devi Refill Pack" data-product-price="489.00">
                             <span>Add to cart</span>
                         </button>
                     </div>
@@ -694,7 +694,7 @@
                 <div class="p-3 sm:p-5 pt-2 sm:pt-4 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3.5">
                     <div class="space-y-1">
                         <h3 class="text-[15px] sm:text-xl font-bold font-serif text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
-                            <a href="{{ route('products.show', 'camphor-bambooless-incense-sticks') }}">Camphor <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">Refill</span></a>
+                            <a href="{{ route('products.show', 'camphor-bambooless-incense-sticks') }}">Camphor <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(Refill)</span></a>
                         </h3>
                         <div class="flex items-center space-x-1 text-[#D38928] text-xs">
                             <div class="flex text-xs"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
@@ -706,7 +706,7 @@
                             <span class="text-xs sm:text-sm text-gray-400 line-through">₹999</span>
                             <span class="text-base sm:text-xl font-black font-heading text-[#C87A1E]">₹489.00</span>
                         </div>
-                        <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-[#121212] hover:bg-[#D38928] text-white text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Camphor Refill Pack" data-product-price="489.00">
+                        <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-white text-[#1F1F1F] border border-[#D38928] shadow-xs group-hover:bg-[#D38928] group-hover:text-white group-hover:shadow-md hover:!bg-[#B8741E] text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] transition-all duration-300 transform group-hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Camphor Refill Pack" data-product-price="489.00">
                             <span>Add to cart</span>
                         </button>
                     </div>
@@ -738,7 +738,7 @@
                 <div class="p-3 sm:p-5 pt-2 sm:pt-4 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3.5">
                     <div class="space-y-1">
                         <h3 class="text-[15px] sm:text-xl font-bold font-serif text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
-                            <a href="{{ route('products.show', 'oudh-bambooless-incense-sticks') }}">Oudh <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">Sticks</span></a>
+                            <a href="{{ route('products.show', 'oudh-bambooless-incense-sticks') }}">Oudh <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(Sticks)</span></a>
                         </h3>
                         <div class="flex items-center space-x-1 text-[#D38928] text-xs">
                             <div class="flex text-xs"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
@@ -750,7 +750,7 @@
                             <span class="text-xs sm:text-sm text-gray-400 line-through">₹499</span>
                             <span class="text-base sm:text-xl font-black font-heading text-[#C87A1E]">₹279.00</span>
                         </div>
-                        <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-[#121212] hover:bg-[#D38928] text-white text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Oudh Bambooless Sticks" data-product-price="279.00">
+                        <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-white text-[#1F1F1F] border border-[#D38928] shadow-xs group-hover:bg-[#D38928] group-hover:text-white group-hover:shadow-md hover:!bg-[#B8741E] text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] transition-all duration-300 transform group-hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Oudh Bambooless Sticks" data-product-price="279.00">
                             <span>Add to cart</span>
                         </button>
                     </div>
@@ -794,7 +794,7 @@
                             <span class="text-xs sm:text-sm text-gray-400 line-through">₹449</span>
                             <span class="text-base sm:text-xl font-black font-heading text-[#C87A1E]">₹249.00</span>
                         </div>
-                        <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-[#121212] hover:bg-[#D38928] text-white text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Chandan Cones" data-product-price="249.00">
+                        <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-white text-[#1F1F1F] border border-[#D38928] shadow-xs group-hover:bg-[#D38928] group-hover:text-white group-hover:shadow-md hover:!bg-[#B8741E] text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] transition-all duration-300 transform group-hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Chandan Cones" data-product-price="249.00">
                             <span>Add to cart</span>
                         </button>
                     </div>
