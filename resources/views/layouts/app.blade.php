@@ -43,6 +43,9 @@
     <!-- 5. Slide-over Luxury Cart Drawer -->
     <x-cart-drawer />
 
+    <!-- 5.1 GoKwik 1-Click Express Checkout Modal -->
+    <x-gokwik-checkout />
+
     <!-- 6. Main Content -->
     <main class="flex-grow">
         @yield('content')

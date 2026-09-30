@@ -185,14 +185,23 @@
                 </div>
             </div>
 
-            <!-- Gold Checkout Button with Payment Gateway icons -->
-            <a 
-                href="{{ route('cart.index') }}" 
-                class="w-full py-3.5 px-5 bg-[#D38928] hover:bg-[#B8741E] active:bg-[#965A15] text-white text-sm sm:text-base font-bold uppercase tracking-wider rounded-[10px] shadow-md hover:shadow-xl transition-all duration-200 flex items-center justify-center space-x-2 font-heading text-center cursor-pointer"
+            <!-- GoKwik 1-Click Fast Checkout Button -->
+            <button 
+                type="button" 
+                onclick="window.openGoKwikCheckout()"
+                class="gokwik-checkout-trigger w-full py-3.5 px-5 bg-[#00A86B] hover:bg-[#008f5b] active:bg-[#00784c] text-white text-sm sm:text-base font-black uppercase tracking-wider rounded-[10px] shadow-md hover:shadow-xl transition-all duration-200 flex items-center justify-between font-heading text-center cursor-pointer"
             >
-                <span>CHECKOUT</span>
-                <span class="text-xs font-mono bg-white/20 px-2 py-0.5 rounded-full">GPay / UPI / Cards ➔</span>
-            </a>
+                <div class="flex items-center space-x-2">
+                    <span class="text-base">⚡</span>
+                    <span>1-CLICK CHECKOUT</span>
+                </div>
+                <div class="flex items-center space-x-1 bg-black/20 px-2.5 py-1 rounded-md text-[11px] font-mono">
+                    <span>UPI / COD / Cards ➔</span>
+                </div>
+            </button>
+            <div class="text-center pt-0.5">
+                <span class="text-[10px] text-gray-400 font-medium">⚡ Powered by GoKwik • 100% Safe &amp; Verified</span>
+            </div>
 
         </div>
 

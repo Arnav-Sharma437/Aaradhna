@@ -106,9 +106,17 @@
                         <p class="text-[10px] text-gray-400 text-right">Inclusive of all Vedic Samagri GST taxes.</p>
                     </div>
 
-                    <!-- Checkout CTA -->
-                    <button type="button" id="checkout-trigger-btn" class="w-full py-4 px-6 bg-[#D38928] hover:bg-[#B8741E] text-white text-sm sm:text-base font-bold rounded-[10px] shadow-md hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 font-heading text-center cursor-pointer">
-                        Proceed to Secure Checkout 🔒
+                    <!-- Checkout CTA: GoKwik 1-Click Fast Checkout -->
+                    <button 
+                        type="button" 
+                        onclick="window.openGoKwikCheckout()"
+                        class="gokwik-checkout-trigger w-full py-4 px-6 bg-[#00A86B] hover:bg-[#008f5b] text-white text-sm sm:text-base font-black uppercase tracking-wider rounded-[10px] shadow-md hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 font-heading text-center cursor-pointer flex items-center justify-between"
+                    >
+                        <span class="flex items-center gap-2">
+                            <span class="text-lg">⚡</span>
+                            <span>1-CLICK GOKWIK CHECKOUT</span>
+                        </span>
+                        <span class="bg-black/20 px-2.5 py-1 rounded text-xs font-mono">UPI / COD ➔</span>
                     </button>
 
                     <!-- Trust Badges -->
