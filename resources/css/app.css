@@ -7,10 +7,11 @@
 
 @theme {
     /* Fonts */
-    --font-body: 'Lato', sans-serif;
-    --font-heading: 'Maharlika', serif;
-    --font-sans: 'Lato', ui-sans-serif, system-ui, sans-serif;
-    --font-serif: 'Maharlika', serif;
+    --font-body: 'Marcellus', 'Plus Jakarta Sans', serif;
+    --font-heading: 'Cinzel', 'Marcellus', serif;
+    --font-sans: 'Marcellus', 'Plus Jakarta Sans', sans-serif;
+    --font-serif: 'Cinzel Decorative', 'Cinzel', serif;
+    --font-spiritual: 'Cinzel Decorative', 'Cinzel', 'Marcellus', serif;
 
     /* Design Tokens */
     --color-primary: #121212;
@@ -45,11 +46,16 @@
     }
 
     h1, h2, h3, h4, h5, h6, .font-heading {
-        font-family: 'Maharlika', serif;
+        font-family: 'Cinzel', 'Marcellus', serif;
+        letter-spacing: 0.02em;
+    }
+
+    .font-serif, .font-spiritual {
+        font-family: 'Cinzel Decorative', 'Cinzel', serif;
     }
 
     p, span, a, button, input, textarea, select, .font-body, .font-sans {
-        font-family: 'Lato', sans-serif;
+        font-family: 'Marcellus', 'Plus Jakarta Sans', sans-serif;
     }
 }
 
