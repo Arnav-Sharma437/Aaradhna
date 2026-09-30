@@ -7,14 +7,14 @@
 <div class="bg-[#FAF7F2] min-h-screen pb-36 font-body">
 
     <!-- ========================================================================= -->
-    <!-- 1. FULL-WIDTH HERO FESTIVE BANNER (No Breadcrumbs, Edge-to-Edge)           -->
+    <!-- 1. FULL-WIDTH HERO FESTIVE BANNER (Uncut Original Ratio, Edge-to-Edge)     -->
     <!-- ========================================================================= -->
     <div class="w-full bg-[#FAF4EB]">
-        <div class="w-full aspect-[21/9] sm:aspect-[24/8] lg:aspect-[32/9] max-h-[460px] overflow-hidden">
+        <div class="w-full">
             <img 
                 src="{{ asset('assets/images/banner-buy2-get1-free.jpg') }}" 
                 alt="Buy 2 Get 1 FREE + Chandan Pack FREE - Mangalam" 
-                class="w-full h-full object-cover object-center"
+                class="w-full h-auto block object-contain"
             >
         </div>
 

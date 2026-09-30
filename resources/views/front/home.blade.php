@@ -10,8 +10,8 @@
 <!-- ========================================================================= -->
 <section class="relative w-full bg-[#FAF5EE] overflow-hidden select-none border-b border-[#EAE3D9]" id="hero-banner-carousel">
     
-    <!-- Slides Wrapper -->
-    <div class="relative w-full min-h-[460px] sm:min-h-[520px] lg:min-h-[580px] xl:min-h-[620px] overflow-hidden">
+    <!-- Slides Wrapper (Compact, Balanced Viewport Height for Mac & Desktops) -->
+    <div class="relative w-full min-h-[380px] sm:min-h-[440px] lg:min-h-[480px] xl:min-h-[520px] max-h-[560px] overflow-hidden">
         
         <!-- SLIDE 1: SACRED INCENSE CONE COLLECTION (SEAMLESS FULL-BLEED PANORAMIC) -->
         <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-100 z-10 flex items-center bg-[#FAF4EB]" data-slide="0">
