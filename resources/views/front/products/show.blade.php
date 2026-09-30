@@ -482,91 +482,214 @@
         <!-- ========================================================================= -->
         <!-- 2. SPECIFICATION & COMPARISON TABLE (Mangalam vs Others)                  -->
         <!-- ========================================================================= -->
-        <div class="mt-16 sm:mt-24 space-y-8">
-            <div class="text-center max-w-xl mx-auto space-y-2">
-                <span class="text-[11px] font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ PURITY AUDIT ✦</span>
+        <div class="mt-16 sm:mt-24 space-y-10">
+            <div class="text-center max-w-2xl mx-auto space-y-3">
+                <div class="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-[#FAF4EB] border border-[#EADBCC] text-[#C87A1E] shadow-2xs">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#D38928]"></span>
+                    <span class="text-[11px] font-bold uppercase tracking-[0.2em] font-heading">Purity Audit &amp; Standards</span>
+                </div>
                 <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black text-[#121212] font-heading tracking-tight">
                     Specification &amp; Purity Comparison
                 </h2>
-                <p class="text-xs sm:text-sm text-gray-500">
+                <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
                     Why spiritual seekers and temple priests trust Mangalam over ordinary commercial incense.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8 items-stretch">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
                 
-                <!-- Left Table: Specifications (5 Cols) -->
-                <div class="md:col-span-5 bg-white rounded-[20px] border border-[#EADBCC] overflow-hidden shadow-xs flex flex-col justify-between">
-                    <div class="bg-[#D38928] text-white text-center py-3.5 px-4 font-bold text-sm uppercase tracking-wider font-heading">
-                        Specifications
+                <!-- Left Card: Vedic Specifications (5 Cols) -->
+                <div class="lg:col-span-5 bg-gradient-to-b from-white via-[#FDFCF9] to-[#FAF6EE] rounded-[24px] border border-[#EADBCC] p-6 sm:p-7 shadow-[0_12px_35px_-10px_rgba(18,18,18,0.06),0_1px_3px_rgba(0,0,0,0.04)] flex flex-col justify-between relative overflow-hidden group">
+                    <!-- Top Glow Accent -->
+                    <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-[#D38928] via-[#F2C078] to-[#B8741E]"></div>
+                    
+                    <div>
+                        <!-- Header -->
+                        <div class="flex items-center justify-between pb-5 border-b border-[#EADBCC]">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#D38928] to-[#B8741E] text-white flex items-center justify-center shadow-md shrink-0">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="font-heading font-black text-base sm:text-lg text-[#121212] tracking-tight">Key Specifications</h3>
+                                    <span class="text-[11px] text-gray-500 font-medium">100% Authentic &amp; Vedic</span>
+                                </div>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full bg-[#FAF4EB] border border-[#EADBCC] text-[#C87A1E] text-[10px] font-bold uppercase tracking-wider font-heading">
+                                Verified
+                            </span>
+                        </div>
+
+                        <!-- Specs Rows -->
+                        <div class="divide-y divide-[#EADBCC]/70 text-xs sm:text-sm pt-2">
+                            <div class="py-3 sm:py-3.5 flex items-center justify-between gap-3">
+                                <span class="text-gray-500 font-medium">Country of Origin</span>
+                                <span class="text-[#121212] font-bold font-heading flex items-center gap-1.5">
+                                    <span>Vrindavan, Bharat</span>
+                                    <span class="text-sm">🇮🇳</span>
+                                </span>
+                            </div>
+                            <div class="py-3 sm:py-3.5 flex items-center justify-between gap-3">
+                                <span class="text-gray-500 font-medium">Item Form</span>
+                                <strong class="text-[#121212] font-bold font-heading">Bambooless Incense</strong>
+                            </div>
+                            <div class="py-3 sm:py-3.5 flex items-center justify-between gap-3">
+                                <span class="text-gray-500 font-medium">Key Herb / Essence</span>
+                                <strong class="text-[#121212] font-bold font-heading text-right">Pure Bhimseni &amp; Herbs</strong>
+                            </div>
+                            <div class="py-3 sm:py-3.5 flex items-center justify-between gap-3">
+                                <span class="text-gray-500 font-medium">Stick Count</span>
+                                <strong class="text-[#121212] font-bold font-heading">100 Sticks / Pack</strong>
+                            </div>
+                            <div class="py-3 sm:py-3.5 flex items-center justify-between gap-3">
+                                <span class="text-gray-500 font-medium">Burn Time</span>
+                                <strong class="text-[#121212] font-bold font-heading">45 - 50 Minutes</strong>
+                            </div>
+                            <div class="py-3 sm:py-3.5 flex items-center justify-between gap-3">
+                                <span class="text-gray-500 font-medium">Ceramic Holder</span>
+                                <span class="px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-black font-heading shadow-2xs">
+                                    Included FREE (₹150 Value)
+                                </span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="divide-y divide-[#EADBCC] text-xs sm:text-sm p-2 flex-grow">
-                        <div class="py-3 px-4 flex justify-between">
-                            <span class="text-gray-500 font-medium">Country of Origin</span>
-                            <strong class="text-[#121212] font-semibold">Vrindavan, Bharat 🇮🇳</strong>
-                        </div>
-                        <div class="py-3 px-4 flex justify-between">
-                            <span class="text-gray-500 font-medium">Item Form</span>
-                            <strong class="text-[#121212] font-semibold">Bambooless Sticks</strong>
-                        </div>
-                        <div class="py-3 px-4 flex justify-between">
-                            <span class="text-gray-500 font-medium">Key Herb</span>
-                            <strong class="text-[#121212] font-semibold">Pure Bhimseni Camphor & Herbs</strong>
-                        </div>
-                        <div class="py-3 px-4 flex justify-between">
-                            <span class="text-gray-500 font-medium">Stick Count</span>
-                            <strong class="text-[#121212] font-semibold">100 Sticks / Pack</strong>
-                        </div>
-                        <div class="py-3 px-4 flex justify-between">
-                            <span class="text-gray-500 font-medium">Burn Time</span>
-                            <strong class="text-[#121212] font-semibold">45 - 50 Minutes</strong>
-                        </div>
-                        <div class="py-3 px-4 flex justify-between">
-                            <span class="text-gray-500 font-medium">Ceramic Holder</span>
-                            <strong class="text-emerald-700 font-bold">Included FREE (₹150 Value)</strong>
-                        </div>
+
+                    <div class="mt-4 pt-3.5 border-t border-[#EADBCC]/60 flex items-center justify-between text-[11px] text-gray-500">
+                        <span class="flex items-center gap-1.5">
+                            <svg class="w-3.5 h-3.5 text-[#D38928]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                            Lab Tested Purity
+                        </span>
+                        <span class="font-medium text-[#C87A1E]">Zero Synthetic Chemical</span>
                     </div>
                 </div>
 
-                <!-- Right Table: Features Mangalam vs Others (7 Cols) -->
-                <div class="md:col-span-7 bg-white rounded-[20px] border border-[#EADBCC] overflow-hidden shadow-xs">
-                    <div class="grid grid-cols-12 bg-[#8C5318] text-white text-center py-3.5 px-4 font-bold text-xs sm:text-sm uppercase tracking-wider font-heading">
-                        <div class="col-span-6 text-left">Features</div>
-                        <div class="col-span-3 text-center bg-[#D38928] py-0.5 rounded-[6px]">Mangalam™</div>
-                        <div class="col-span-3 text-center">Others</div>
+                <!-- Right Card: Purity Comparison Table (7 Cols) -->
+                <div class="lg:col-span-7 bg-gradient-to-b from-white via-[#FDFCF9] to-[#FAF6EE] rounded-[24px] border border-[#EADBCC] p-6 sm:p-7 shadow-[0_12px_35px_-10px_rgba(18,18,18,0.06),0_1px_3px_rgba(0,0,0,0.04)] flex flex-col justify-between relative overflow-hidden">
+                    <!-- Top Glow Accent -->
+                    <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-[#D38928] via-[#B8741E] to-[#8C5318]"></div>
+
+                    <div>
+                        <!-- Header Comparison Columns -->
+                        <div class="grid grid-cols-12 items-center pb-4 border-b border-[#EADBCC] gap-2">
+                            <div class="col-span-6">
+                                <h3 class="font-heading font-black text-base sm:text-lg text-[#121212] tracking-tight">Purity Standard</h3>
+                                <span class="text-[11px] text-gray-500 font-medium">Scripture vs Ordinary</span>
+                            </div>
+                            <div class="col-span-3 text-center">
+                                <div class="inline-flex items-center justify-center w-full py-1.5 px-2.5 rounded-full bg-gradient-to-r from-[#D38928] to-[#B8741E] text-white text-[11px] sm:text-xs font-black uppercase tracking-wider shadow-sm font-heading">
+                                    Mangalam™
+                                </div>
+                            </div>
+                            <div class="col-span-3 text-center">
+                                <div class="inline-flex items-center justify-center w-full py-1.5 px-2.5 rounded-full bg-gray-100 text-gray-500 text-[11px] sm:text-xs font-bold uppercase tracking-wider font-heading">
+                                    Others
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Comparison Rows -->
+                        <div class="divide-y divide-[#EADBCC]/70 text-xs sm:text-sm pt-1">
+                            
+                            <!-- Row 1 -->
+                            <div class="grid grid-cols-12 py-3 sm:py-3.5 items-center gap-2">
+                                <div class="col-span-6">
+                                    <div class="font-bold text-[#121212] leading-tight">100% Bamboo-Free</div>
+                                    <div class="text-[11px] text-gray-500 hidden sm:block">Sanatana Scripture Compliant</div>
+                                </div>
+                                <div class="col-span-3 text-center flex justify-center">
+                                    <span class="inline-flex items-center justify-center gap-1 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-emerald-100 text-emerald-800 font-bold text-xs sm:text-sm shadow-2xs">
+                                        ✓
+                                    </span>
+                                </div>
+                                <div class="col-span-3 text-center flex justify-center">
+                                    <span class="inline-flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-red-100 text-red-700 font-bold text-xs sm:text-sm shadow-2xs">
+                                        ✕
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Row 2 -->
+                            <div class="grid grid-cols-12 py-3 sm:py-3.5 items-center gap-2">
+                                <div class="col-span-6">
+                                    <div class="font-bold text-[#121212] leading-tight">Zero Toxic Charcoal</div>
+                                    <div class="text-[11px] text-gray-500 hidden sm:block">No black smoke or eye irritation</div>
+                                </div>
+                                <div class="col-span-3 text-center flex justify-center">
+                                    <span class="inline-flex items-center justify-center gap-1 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-emerald-100 text-emerald-800 font-bold text-xs sm:text-sm shadow-2xs">
+                                        ✓
+                                    </span>
+                                </div>
+                                <div class="col-span-3 text-center flex justify-center">
+                                    <span class="inline-flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-red-100 text-red-700 font-bold text-xs sm:text-sm shadow-2xs">
+                                        ✕
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Row 3 -->
+                            <div class="grid grid-cols-12 py-3 sm:py-3.5 items-center gap-2">
+                                <div class="col-span-6">
+                                    <div class="font-bold text-[#121212] leading-tight">Pure Botanical Herbs</div>
+                                    <div class="text-[11px] text-gray-500 hidden sm:block">Real flowers, Guggal &amp; Resins</div>
+                                </div>
+                                <div class="col-span-3 text-center flex justify-center">
+                                    <span class="inline-flex items-center justify-center gap-1 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-emerald-100 text-emerald-800 font-bold text-xs sm:text-sm shadow-2xs">
+                                        ✓
+                                    </span>
+                                </div>
+                                <div class="col-span-3 text-center flex justify-center">
+                                    <span class="inline-flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-red-100 text-red-700 font-bold text-xs sm:text-sm shadow-2xs">
+                                        ✕
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Row 4 -->
+                            <div class="grid grid-cols-12 py-3 sm:py-3.5 items-center gap-2">
+                                <div class="col-span-6">
+                                    <div class="font-bold text-[#121212] leading-tight">Long-Lasting Aroma</div>
+                                    <div class="text-[11px] text-gray-500 hidden sm:block">Lingers for 4+ hours</div>
+                                </div>
+                                <div class="col-span-3 text-center flex justify-center">
+                                    <span class="inline-flex items-center justify-center gap-1 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-emerald-100 text-emerald-800 font-bold text-xs sm:text-sm shadow-2xs">
+                                        ✓
+                                    </span>
+                                </div>
+                                <div class="col-span-3 text-center flex justify-center">
+                                    <span class="inline-flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-red-100 text-red-700 font-bold text-xs sm:text-sm shadow-2xs">
+                                        ✕
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Row 5 -->
+                            <div class="grid grid-cols-12 py-3 sm:py-3.5 items-center gap-2">
+                                <div class="col-span-6">
+                                    <div class="font-bold text-[#121212] leading-tight">Complimentary Stand</div>
+                                    <div class="text-[11px] text-gray-500 hidden sm:block">Artisan Terracotta / Ceramic</div>
+                                </div>
+                                <div class="col-span-3 text-center flex justify-center">
+                                    <span class="inline-flex items-center justify-center gap-1 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-emerald-100 text-emerald-800 font-bold text-xs sm:text-sm shadow-2xs">
+                                        ✓
+                                    </span>
+                                </div>
+                                <div class="col-span-3 text-center flex justify-center">
+                                    <span class="inline-flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-red-100 text-red-700 font-bold text-xs sm:text-sm shadow-2xs">
+                                        ✕
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
-                    <div class="divide-y divide-[#EADBCC] text-xs sm:text-sm">
-                        
-                        <div class="grid grid-cols-12 py-3.5 px-4 items-center">
-                            <div class="col-span-6 font-semibold text-[#121212]">100% Bamboo-Free (Scripture Compliant)</div>
-                            <div class="col-span-3 text-center"><span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-100 text-emerald-800 font-bold text-xs">✓</span></div>
-                            <div class="col-span-3 text-center"><span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-100 text-red-800 font-bold text-xs">✕</span></div>
-                        </div>
 
-                        <div class="grid grid-cols-12 py-3.5 px-4 items-center">
-                            <div class="col-span-6 font-semibold text-[#121212]">Zero Toxic Charcoal (No Eye Burning)</div>
-                            <div class="col-span-3 text-center"><span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-100 text-emerald-800 font-bold text-xs">✓</span></div>
-                            <div class="col-span-3 text-center"><span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-100 text-red-800 font-bold text-xs">✕</span></div>
-                        </div>
-
-                        <div class="grid grid-cols-12 py-3.5 px-4 items-center">
-                            <div class="col-span-6 font-semibold text-[#121212]">Premium Organic Essential Herbs</div>
-                            <div class="col-span-3 text-center"><span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-100 text-emerald-800 font-bold text-xs">✓</span></div>
-                            <div class="col-span-3 text-center"><span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-100 text-red-800 font-bold text-xs">✕</span></div>
-                        </div>
-
-                        <div class="grid grid-cols-12 py-3.5 px-4 items-center">
-                            <div class="col-span-6 font-semibold text-[#121212]">Long-Lasting Temple Scent (4+ Hours)</div>
-                            <div class="col-span-3 text-center"><span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-100 text-emerald-800 font-bold text-xs">✓</span></div>
-                            <div class="col-span-3 text-center"><span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-100 text-red-800 font-bold text-xs">✕</span></div>
-                        </div>
-
-                        <div class="grid grid-cols-12 py-3.5 px-4 items-center">
-                            <div class="col-span-6 font-semibold text-[#121212]">Complimentary Artisan Terracotta Stand</div>
-                            <div class="col-span-3 text-center"><span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-100 text-emerald-800 font-bold text-xs">✓</span></div>
-                            <div class="col-span-3 text-center"><span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-100 text-red-800 font-bold text-xs">✕</span></div>
-                        </div>
-
+                    <div class="mt-4 pt-3.5 border-t border-[#EADBCC]/60 flex items-center justify-between text-[11px] text-gray-500">
+                        <span class="flex items-center gap-1.5">
+                            <span class="text-[#D38928]">✦</span> 100% Eco-Friendly &amp; Non-Toxic
+                        </span>
+                        <span class="font-bold text-emerald-700">Recommended for Daily Pooja</span>
                     </div>
                 </div>
 
