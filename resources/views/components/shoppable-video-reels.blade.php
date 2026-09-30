@@ -267,7 +267,7 @@
 <!-- ========================================================================= -->
 <div 
     id="reel-video-modal" 
-    class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 font-body select-none overflow-hidden"
+    class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center opacity-0 pointer-events-none transition-all duration-300 font-body select-none overflow-hidden"
 >
     <!-- Modal Backdrop Click Area -->
     <div class="absolute inset-0" id="reel-modal-backdrop"></div>
@@ -288,7 +288,7 @@
         <!-- Left Flanking Card (Previous Reel Preview) -->
         <div 
             id="modal-card-prev"
-            class="hidden md:flex flex-col w-[260px] aspect-[9/16] rounded-[22px] overflow-hidden bg-neutral-900 border border-white/10 shadow-2xl opacity-40 scale-85 -mr-16 cursor-pointer hover:opacity-75 transition-all duration-300 z-10 shrink-0 select-none pointer-events-auto"
+            class="hidden md:flex flex-col w-[260px] aspect-[9/16] rounded-[22px] overflow-hidden bg-neutral-900 border border-white/10 shadow-2xl opacity-40 scale-85 -mr-16 cursor-pointer hover:opacity-75 transition-all duration-300 z-10 shrink-0 select-none"
             title="Previous Reel"
         >
             <img id="modal-prev-poster" src="" alt="Prev Reel" class="w-full h-full object-cover">
@@ -431,7 +431,7 @@
         <!-- Right Flanking Card (Next Reel Preview) -->
         <div 
             id="modal-card-next"
-            class="hidden md:flex flex-col w-[260px] aspect-[9/16] rounded-[22px] overflow-hidden bg-neutral-900 border border-white/10 shadow-2xl opacity-40 scale-85 -ml-16 cursor-pointer hover:opacity-75 transition-all duration-300 z-10 shrink-0 select-none pointer-events-auto"
+            class="hidden md:flex flex-col w-[260px] aspect-[9/16] rounded-[22px] overflow-hidden bg-neutral-900 border border-white/10 shadow-2xl opacity-40 scale-85 -ml-16 cursor-pointer hover:opacity-75 transition-all duration-300 z-10 shrink-0 select-none"
             title="Next Reel"
         >
             <img id="modal-next-poster" src="" alt="Next Reel" class="w-full h-full object-cover">
@@ -632,8 +632,12 @@
 
             // Show Modal
             if (modal) {
-                modal.classList.remove('opacity-0', 'pointer-events-none');
-                modal.classList.add('opacity-100', 'pointer-events-auto');
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                requestAnimationFrame(() => {
+                    modal.classList.remove('opacity-0', 'pointer-events-none');
+                    modal.classList.add('opacity-100', 'pointer-events-auto');
+                });
                 document.body.style.overflow = 'hidden';
             }
         };
@@ -642,6 +646,12 @@
             if (modal) {
                 modal.classList.add('opacity-0', 'pointer-events-none');
                 modal.classList.remove('opacity-100', 'pointer-events-auto');
+                setTimeout(() => {
+                    if (modal.classList.contains('opacity-0')) {
+                        modal.classList.add('hidden');
+                        modal.classList.remove('flex');
+                    }
+                }, 300);
                 document.body.style.overflow = '';
             }
             if (modalVideo) {
