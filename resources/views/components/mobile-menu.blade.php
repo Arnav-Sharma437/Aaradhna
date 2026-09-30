@@ -11,17 +11,9 @@
 >
     <!-- Drawer Header -->
     <div class="p-4 border-b border-stone-200 flex items-center justify-between bg-[#FAF7F2]">
-        <div class="flex items-center space-x-2">
-            <div class="w-7 h-7 rounded-full bg-white border border-[#D38928]/40 flex items-center justify-center text-[#965A15] shadow-xs">
-                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                    <path d="M12 2C6.5 2 2 6.5 2 12c0 3.5 1.8 6.6 4.6 8.4C8 18.5 11 16 12 12c1 4 4 6.5 5.4 8.4C20.2 18.6 22 15.5 22 12c0-5.5-4.5-10-10-10z"/>
-                    <path d="M12 2v20"/>
-                </svg>
-            </div>
-            <span class="font-serif text-lg font-black text-[#2B1810] tracking-wider uppercase">
-                Mangalam
-            </span>
-        </div>
+        <a href="{{ route('home') }}" class="flex items-center">
+            <img src="{{ asset('assets/images/mangalam-logo.png') }}" alt="Mangalam" class="h-8 w-auto object-contain">
+        </a>
         <button 
             type="button" 
             id="mobile-drawer-close"

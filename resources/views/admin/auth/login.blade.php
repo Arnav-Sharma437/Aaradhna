@@ -17,9 +17,9 @@
     <div class="w-full max-w-md">
         
         <!-- Brand Header / Logo -->
-        <div class="text-center mb-8 space-y-2">
-            <div class="inline-flex items-center justify-center w-14 h-14 rounded-[16px] bg-[#D38928] text-white shadow-2xl border border-white/20 mb-2">
-                <span class="font-heading font-black text-2xl">आ</span>
+        <div class="text-center mb-8 space-y-3">
+            <div class="inline-flex items-center justify-center p-3.5 rounded-[16px] bg-white shadow-2xl border border-white/20 mb-2">
+                <img src="{{ asset('assets/images/mangalam-logo.png') }}" alt="Mangalam Logo" class="h-10 w-auto object-contain">
             </div>
             <h1 class="text-2xl sm:text-3xl font-black font-heading tracking-tight text-white">
                 Mangalam Admin

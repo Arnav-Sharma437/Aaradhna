@@ -48,11 +48,11 @@
                 <div>
                     <div class="h-14 px-4 bg-[#141414] border-b border-[#2C2C2C] flex items-center justify-between">
                         <div class="flex items-center space-x-2.5 min-w-0">
-                            <div class="w-8 h-8 rounded-[8px] bg-gradient-to-br from-[#D38928] to-[#965A15] text-white flex items-center justify-center font-heading font-black text-sm shadow-md shrink-0">
-                                आ
+                            <div class="h-8 bg-white px-2 py-1 rounded-[8px] flex items-center justify-center shadow-md shrink-0">
+                                <img src="{{ asset('assets/images/mangalam-logo.png') }}" alt="Mangalam" class="h-full w-auto object-contain">
                             </div>
                             <div class="min-w-0">
-                                <span class="text-xs font-bold text-white tracking-wide truncate block font-heading">Mangalam.co™</span>
+                                <span class="text-xs font-bold text-white tracking-wide truncate block font-heading">Admin Portal</span>
                                 <span class="flex items-center space-x-1 text-[10px] text-emerald-400 font-mono">
                                     <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
                                     <span>Store Live</span>
