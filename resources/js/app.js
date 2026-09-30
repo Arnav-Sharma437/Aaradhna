@@ -5,11 +5,13 @@ import './bootstrap';
  * MANGALAM.CO™ - UNIFIED CLIENT-SIDE STATE MANAGEMENT & REACTIVE STORE
  * =========================================================================
  * Pure, reliable LocalStorage management for Cart & Wishlist with zero phantom
- * initial data, persistent cross-page sync, and reactive drawer/badge UI.
+ * initial data, persistent cross-page sync, reactive button states, and accurate calculations.
  */
 
 const CART_STORAGE_KEY = 'mangalam_cart_items_v2';
 const WISHLIST_STORAGE_KEY = 'mangalam_wishlist_items_v2';
+
+let activeCouponDiscount = 0; // percentage e.g. 0.10
 
 // -------------------------------------------------------------------------
 // 1. Core State Helpers
@@ -26,6 +28,11 @@ export const getCart = () => {
 export const saveCart = (items) => {
     localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items));
     window.dispatchEvent(new CustomEvent('mangalam:cart-updated', { detail: { items } }));
+};
+
+export const clearCart = () => {
+    localStorage.removeItem(CART_STORAGE_KEY);
+    window.dispatchEvent(new CustomEvent('mangalam:cart-updated', { detail: { items: [] } }));
 };
 
 export const getWishlist = () => {
@@ -47,7 +54,7 @@ export const saveWishlist = (items) => {
 // -------------------------------------------------------------------------
 export const addToCart = (product, quantity = 1) => {
     const cart = getCart();
-    const existingIndex = cart.findIndex(item => item.title === product.title || (item.slug && item.slug === product.slug));
+    const existingIndex = cart.findIndex(item => item.title === product.title || (item.slug && item.slug === product.slug && item.id === product.id));
     
     if (existingIndex > -1) {
         cart[existingIndex].quantity += quantity;
@@ -70,9 +77,9 @@ export const addToCart = (product, quantity = 1) => {
 export const updateCartItemQuantity = (titleOrSlug, newQty) => {
     let cart = getCart();
     if (newQty <= 0) {
-        cart = cart.filter(item => item.title !== titleOrSlug && item.slug !== titleOrSlug);
+        cart = cart.filter(item => item.title !== titleOrSlug && item.slug !== titleOrSlug && item.id !== titleOrSlug);
     } else {
-        const item = cart.find(item => item.title === titleOrSlug || item.slug === titleOrSlug);
+        const item = cart.find(item => item.title === titleOrSlug || item.slug === titleOrSlug || item.id === titleOrSlug);
         if (item) item.quantity = newQty;
     }
     saveCart(cart);
@@ -80,7 +87,7 @@ export const updateCartItemQuantity = (titleOrSlug, newQty) => {
 };
 
 export const removeFromCart = (titleOrSlug) => {
-    let cart = getCart().filter(item => item.title !== titleOrSlug && item.slug !== titleOrSlug);
+    let cart = getCart().filter(item => item.title !== titleOrSlug && item.slug !== titleOrSlug && item.id !== titleOrSlug);
     saveCart(cart);
     return cart;
 };
@@ -130,7 +137,7 @@ export const isInWishlist = (titleOrSlug) => {
 };
 
 // -------------------------------------------------------------------------
-// 4. UI Synchronization (Badges, Drawer, Pages)
+// 4. UI Synchronization (Badges, Buttons, Drawer, Pages)
 // -------------------------------------------------------------------------
 function updateHeaderBadges() {
     const cart = getCart();
@@ -146,6 +153,35 @@ function updateHeaderBadges() {
     if (wishBadge) {
         wishBadge.textContent = wishlist.length;
     }
+}
+
+// Persistent Green State for Add to Cart Buttons
+function updateCartButtonStates() {
+    const cart = getCart();
+    const inCartTitles = new Set(cart.map(item => item.title));
+    const inCartSlugs = new Set(cart.filter(item => item.slug).map(item => item.slug));
+
+    document.querySelectorAll('.quick-add-to-cart-btn, #main-add-to-cart-btn, #sticky-atc-btn').forEach(btn => {
+        const title = btn.dataset.productTitle || btn.dataset.title || '';
+        const slug = btn.dataset.productSlug || '';
+        const isInCart = inCartTitles.has(title) || (slug && inCartSlugs.has(slug));
+
+        if (isInCart) {
+            btn.classList.add('bg-emerald-700', 'hover:bg-emerald-800', 'text-white');
+            btn.classList.remove('bg-[#D38928]', 'hover:bg-[#B8741E]');
+            const span = btn.querySelector('span');
+            if (span) {
+                span.textContent = '✓ Added in Cart';
+            }
+        } else {
+            btn.classList.remove('bg-emerald-700', 'hover:bg-emerald-800');
+            btn.classList.add('bg-[#D38928]', 'hover:bg-[#B8741E]', 'text-white');
+            const span = btn.querySelector('span');
+            if (span) {
+                span.textContent = (btn.id === 'main-add-to-cart-btn' || btn.id === 'sticky-atc-btn') ? 'Add to Cart' : 'Move to Cart';
+            }
+        }
+    });
 }
 
 function updateWishlistHeartIcons() {
@@ -189,7 +225,7 @@ function renderCartDrawer() {
                 </div>
                 <h4 class="text-base font-bold font-heading text-[#121212]">Your Cart is Empty</h4>
                 <p class="text-xs text-gray-500 max-w-[240px] mx-auto">
-                    Add pure bambooless incense, havan cups, or refill packs to begin.
+                    Add pure bambooless incense, havan cups, or festive bundles to begin.
                 </p>
             </div>
         `;
@@ -202,11 +238,11 @@ function renderCartDrawer() {
                 <div class="flex-1 min-w-0 space-y-1">
                     <div class="flex items-start justify-between">
                         <h4 class="text-xs sm:text-sm font-bold font-serif text-[#121212] truncate">${item.title}</h4>
-                        <button type="button" class="drawer-remove-item text-gray-400 hover:text-[#9B1C31] p-1 transition-colors" data-title="${item.title}" aria-label="Remove item">
+                        <button type="button" class="drawer-remove-item text-gray-400 hover:text-[#9B1C31] p-1 transition-colors cursor-pointer" data-title="${item.title}" aria-label="Remove item">
                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
                         </button>
                     </div>
-                    <div class="text-[11px] text-gray-500 font-medium">${item.packInfo || '100 sticks'}</div>
+                    <div class="text-[11px] text-gray-500 font-medium truncate">${item.packInfo || '100 sticks'}</div>
                     <div class="flex items-center justify-between pt-1">
                         <div class="flex items-center border border-[#EADBCC] rounded-[6px] bg-white overflow-hidden text-xs">
                             <button type="button" class="drawer-qty-minus px-2 py-0.5 text-gray-600 hover:bg-gray-100 font-bold" data-title="${item.title}">−</button>
@@ -222,9 +258,9 @@ function renderCartDrawer() {
         `).join('');
     }
 
-    // Calculations
+    // Accurate Calculations (No phantom 38% deductions)
     const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    const discount = Math.round(subtotal * 0.38);
+    const discount = activeCouponDiscount > 0 ? (subtotal * activeCouponDiscount) : 0;
     const grandTotal = Math.max(0, subtotal - discount);
 
     const subEl = document.getElementById('drawer-subtotal-val');
@@ -237,13 +273,13 @@ function renderCartDrawer() {
     if (discEl) discEl.textContent = '-₹' + discount.toFixed(2);
     if (totEl) totEl.textContent = '₹' + grandTotal.toFixed(2);
 
-    if (subtotal >= 1499) {
-        if (thresholdText) thresholdText.innerHTML = '🎉 You unlocked <strong class="underline font-black">All Vedic Gifts & Free Shipping!</strong>';
+    if (subtotal >= 499) {
+        if (thresholdText) thresholdText.innerHTML = '🎉 You unlocked <strong class="underline font-black">Free Shipping & Festive Benefits!</strong>';
         if (milestoneFill) milestoneFill.style.width = '100%';
     } else {
-        const remaining = (1499 - subtotal).toFixed(0);
-        if (thresholdText) thresholdText.innerHTML = `Add items worth ₹${remaining} to Unlock <strong class="underline font-black">Free Gift ₹399</strong>`;
-        const pct = Math.min(100, Math.round((subtotal / 1499) * 100));
+        const remaining = (499 - subtotal).toFixed(0);
+        if (thresholdText) thresholdText.innerHTML = `Add items worth ₹${remaining} to Unlock <strong class="underline font-black">Free Delivery</strong>`;
+        const pct = Math.min(100, Math.round((subtotal / 499) * 100));
         if (milestoneFill) milestoneFill.style.width = `${pct}%`;
     }
 }
@@ -266,7 +302,7 @@ function renderWishlistPage() {
                     Save your favorite spiritual fragrances, havan cups, and sacred temple samagri to access them anytime.
                 </p>
                 <div class="pt-2">
-                    <a href="/collections/all" class="inline-block px-8 py-3.5 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-[10px] shadow-md transition-all font-heading">
+                    <a href="/collections/bambooless" class="inline-block px-8 py-3.5 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-[10px] shadow-md transition-all font-heading">
                         Discover Sacred Samagri
                     </a>
                 </div>
@@ -346,7 +382,7 @@ function renderCartPage() {
                     </div>
                     <div class="space-y-1 min-w-0">
                         <h3 class="text-base sm:text-lg font-bold font-serif text-[#121212] truncate">
-                            <a href="/products/${item.slug || ''}" class="hover:text-[#D38928] transition-colors">${item.title}</a>
+                            <a href="${item.slug ? '/products/' + item.slug : '#'}" class="hover:text-[#D38928] transition-colors">${item.title}</a>
                         </h3>
                         <p class="text-xs text-gray-500">${item.packInfo || '100 sticks'}</p>
                         <div class="text-xs sm:text-sm font-black text-[#C87A1E] font-heading">
@@ -356,16 +392,16 @@ function renderCartPage() {
                 </div>
                 <div class="flex items-center justify-between sm:justify-end sm:space-x-6 pt-2 sm:pt-0 border-t sm:border-0 border-gray-100">
                     <div class="flex items-center border border-[#EADBCC] rounded-[10px] bg-white overflow-hidden">
-                        <button type="button" class="cart-page-qty-minus px-3.5 py-2 text-gray-500 hover:text-[#121212] font-bold text-base" data-title="${item.title}">−</button>
+                        <button type="button" class="cart-page-qty-minus px-3.5 py-2 text-gray-500 hover:text-[#121212] font-bold text-base cursor-pointer" data-title="${item.title}">−</button>
                         <input type="number" class="cart-item-qty w-10 text-center text-xs sm:text-sm font-bold border-none focus:ring-0 p-0 text-[#121212]" value="${item.quantity}" readonly>
-                        <button type="button" class="cart-page-qty-plus px-3.5 py-2 text-gray-500 hover:text-[#121212] font-bold text-base" data-title="${item.title}">+</button>
+                        <button type="button" class="cart-page-qty-plus px-3.5 py-2 text-gray-500 hover:text-[#121212] font-bold text-base cursor-pointer" data-title="${item.title}">+</button>
                     </div>
                     <div class="text-right min-w-[90px]">
                         <span class="cart-row-total text-base sm:text-lg font-black font-heading text-[#121212]">
                             ₹${(item.price * item.quantity).toFixed(2)}
                         </span>
                     </div>
-                    <button type="button" class="cart-page-remove-btn text-gray-400 hover:text-[#9B1C31] p-2 transition-colors" data-title="${item.title}" aria-label="Remove item">
+                    <button type="button" class="cart-page-remove-btn text-gray-400 hover:text-[#9B1C31] p-2 transition-colors cursor-pointer" data-title="${item.title}" aria-label="Remove item">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
                     </button>
                 </div>
@@ -373,15 +409,20 @@ function renderCartPage() {
         `).join('');
     }
 
-    // Calculations
+    // Accurate Price Calculations
     const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    const discount = activeCouponDiscount > 0 ? (subtotal * activeCouponDiscount) : 0;
+    const grandTotal = Math.max(0, subtotal - discount);
+
     const subEl = document.getElementById('summary-subtotal');
+    const discEl = document.getElementById('summary-discount');
     const grandEl = document.getElementById('summary-grand-total');
     const shippingProgress = document.getElementById('shipping-progress-bar');
     const shippingMsg = document.getElementById('free-shipping-msg');
 
     if (subEl) subEl.textContent = '₹' + subtotal.toFixed(2);
-    if (grandEl) grandEl.textContent = '₹' + subtotal.toFixed(2);
+    if (discEl) discEl.textContent = '-₹' + discount.toFixed(2);
+    if (grandEl) grandEl.textContent = '₹' + grandTotal.toFixed(2);
 
     if (subtotal >= 499) {
         if (shippingProgress) shippingProgress.style.width = '100%';
@@ -395,16 +436,29 @@ function renderCartPage() {
 }
 
 // -------------------------------------------------------------------------
-// 5. Global Event Listeners & Drawer Triggers
+// 5. Global Window API & Initialization
 // -------------------------------------------------------------------------
+window.CartStore = {
+    getCart,
+    saveCart,
+    clearCart,
+    addItem: (item) => addToCart(item, item.quantity || 1),
+    updateQuantity: updateCartItemQuantity,
+    removeItem: removeFromCart,
+    openDrawer: openCartDrawer,
+    closeDrawer: closeCartDrawer
+};
+
 document.addEventListener('DOMContentLoaded', () => {
     initMegaMenu();
     initMobileDrawer();
     initSearchModal();
     initCartDrawerUI();
+    initCheckoutModal();
     
     // Initial Render
     updateHeaderBadges();
+    updateCartButtonStates();
     updateWishlistHeartIcons();
     renderCartDrawer();
     renderWishlistPage();
@@ -413,6 +467,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Listen to custom store events
     window.addEventListener('mangalam:cart-updated', () => {
         updateHeaderBadges();
+        updateCartButtonStates();
         renderCartDrawer();
         renderCartPage();
     });
@@ -423,7 +478,7 @@ document.addEventListener('DOMContentLoaded', () => {
         renderWishlistPage();
     });
 
-    // Delegated click handler for Quick Add-To-Cart across all pages
+    // Delegated click handler for Add-To-Cart across all pages
     document.addEventListener('click', (e) => {
         const atcBtn = e.target.closest('.quick-add-to-cart-btn, #main-add-to-cart-btn, #sticky-atc-btn, .drawer-quick-add');
         if (atcBtn) {
@@ -443,21 +498,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
             addToCart(product, qty);
 
-            // Only auto-open Cart Drawer popup when triggered from Shoppable Video Reels section or Modal
-            const isVideoReel = atcBtn.closest('#shoppable-reels-section') || atcBtn.closest('#reel-video-modal') || atcBtn.id === 'modal-add-to-cart-btn';
-            
-            if (isVideoReel) {
-                openCartDrawer();
-            } else {
-                // In-place button confirmation feedback without opening intrusive popup drawer
-                const originalContent = atcBtn.innerHTML;
-                atcBtn.innerHTML = `<span>✓ Added</span>`;
-                atcBtn.classList.add('bg-[#15803D]', 'text-white');
-                setTimeout(() => {
-                    atcBtn.innerHTML = originalContent;
-                    atcBtn.classList.remove('bg-[#15803D]');
-                }, 1400);
-            }
+            // Persistent Green State Feedback (stays green!)
+            updateCartButtonStates();
+            atcBtn.classList.add('bg-emerald-700', 'hover:bg-emerald-800', 'text-white');
+            atcBtn.classList.remove('bg-[#D38928]', 'hover:bg-[#B8741E]');
+            const span = atcBtn.querySelector('span');
+            if (span) span.textContent = '✓ Added to Cart';
         }
 
         // Delegated Wishlist Toggle
@@ -519,10 +565,97 @@ document.addEventListener('DOMContentLoaded', () => {
             removeFromCart(title);
         }
     });
+
+    // Coupon Code on Cart Page
+    const applyCouponBtn = document.getElementById('apply-coupon-btn');
+    const couponInput = document.getElementById('coupon-code-input');
+    const couponFeedback = document.getElementById('coupon-feedback');
+
+    if (applyCouponBtn && couponInput) {
+        applyCouponBtn.addEventListener('click', () => {
+            const code = couponInput.value.trim().toUpperCase();
+            if (code === 'MANGALAM10' || code === 'FESTIVE10' || code === 'SAVE10') {
+                activeCouponDiscount = 0.10;
+                if (couponFeedback) {
+                    couponFeedback.textContent = `✓ Code ${code} applied: Extra 10% Festive Discount!`;
+                    couponFeedback.classList.remove('hidden', 'text-rose-600');
+                    couponFeedback.classList.add('text-emerald-700');
+                }
+                renderCartPage();
+                renderCartDrawer();
+            } else if (code.length > 0) {
+                if (couponFeedback) {
+                    couponFeedback.textContent = `✕ Invalid or expired coupon code.`;
+                    couponFeedback.classList.remove('hidden', 'text-emerald-700');
+                    couponFeedback.classList.add('text-rose-600');
+                }
+            }
+        });
+    }
 });
 
 // -------------------------------------------------------------------------
-// 6. Slide-Over Cart Drawer UI Functions
+// 6. Checkout Modal & Order Placement
+// -------------------------------------------------------------------------
+function initCheckoutModal() {
+    const modalBackdrop = document.getElementById('checkout-modal-backdrop');
+    const checkoutTrigger = document.getElementById('checkout-trigger-btn');
+    const closeBtn = document.getElementById('close-checkout-modal-btn');
+    const form = document.getElementById('express-checkout-form');
+    const payableEl = document.getElementById('modal-payable-total');
+    const formContainer = document.getElementById('checkout-form-container');
+    const successContainer = document.getElementById('checkout-success-container');
+    const successOrderId = document.getElementById('success-order-id');
+
+    if (!modalBackdrop) return;
+
+    const openCheckout = () => {
+        const cart = getCart();
+        if (cart.length === 0) {
+            alert('Your basket is empty. Please add items before checking out.');
+            return;
+        }
+
+        const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        const discount = activeCouponDiscount > 0 ? (subtotal * activeCouponDiscount) : 0;
+        const total = Math.max(0, subtotal - discount);
+
+        if (payableEl) payableEl.textContent = '₹' + total.toFixed(2);
+        if (formContainer) formContainer.classList.remove('hidden');
+        if (successContainer) successContainer.classList.add('hidden');
+
+        modalBackdrop.classList.remove('hidden');
+        modalBackdrop.classList.add('flex');
+        document.body.classList.add('overflow-hidden');
+    };
+
+    const closeCheckout = () => {
+        modalBackdrop.classList.add('hidden');
+        modalBackdrop.classList.remove('flex');
+        document.body.classList.remove('overflow-hidden');
+    };
+
+    if (checkoutTrigger) checkoutTrigger.addEventListener('click', openCheckout);
+    if (closeBtn) closeBtn.addEventListener('click', closeCheckout);
+    modalBackdrop.addEventListener('click', (e) => {
+        if (e.target === modalBackdrop) closeCheckout();
+    });
+
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const orderId = 'MGLM-' + Math.floor(10000 + Math.random() * 90000);
+            if (successOrderId) successOrderId.textContent = '#' + orderId;
+            
+            clearCart();
+            if (formContainer) formContainer.classList.add('hidden');
+            if (successContainer) successContainer.classList.remove('hidden');
+        });
+    }
+}
+
+// -------------------------------------------------------------------------
+// 7. Slide-Over Cart Drawer UI Functions
 // -------------------------------------------------------------------------
 function openCartDrawer() {
     const backdrop = document.getElementById('cart-drawer-backdrop');
@@ -573,7 +706,7 @@ function initCartDrawerUI() {
 }
 
 // -------------------------------------------------------------------------
-// 7. Navigation MegaMenu, Mobile Drawer, Predictive Search
+// 8. Navigation MegaMenu, Mobile Drawer, Predictive Search
 // -------------------------------------------------------------------------
 function initMegaMenu() {
     const navItem = document.getElementById('pooja-shop-nav-item');
@@ -631,21 +764,6 @@ function initMobileDrawer() {
     trigger.addEventListener('click', openDrawer);
     if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
     overlay.addEventListener('click', closeDrawer);
-
-    const accordionToggles = document.querySelectorAll('.mobile-accordion-toggle');
-    accordionToggles.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const content = btn.nextElementSibling;
-            const icon = btn.querySelector('svg');
-            const isExpanded = btn.getAttribute('aria-expanded') === 'true';
-
-            if (content) {
-                content.classList.toggle('hidden');
-                btn.setAttribute('aria-expanded', !isExpanded);
-                if (icon) icon.classList.toggle('rotate-180', !isExpanded);
-            }
-        });
-    });
 }
 
 function initSearchModal() {
@@ -686,7 +804,6 @@ function initSearchModal() {
         document.body.classList.remove('overflow-hidden');
     };
 
-    // Attach to all search triggers across desktop header and mobile bottom bar
     document.querySelectorAll('#search-modal-trigger, #mobile-app-search-trigger, .search-modal-opener').forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
@@ -715,12 +832,10 @@ function initSearchModal() {
 
             const hasQuery = query.length > 0;
 
-            // Popular searches box visibility
             if (popularSearchesBox) {
                 popularSearchesBox.style.display = hasQuery ? 'none' : 'block';
             }
 
-            // Results title and counts
             if (resultsHeaderTitle) {
                 resultsHeaderTitle.textContent = hasQuery ? `Results for "${query}"` : 'Featured Products';
             }
@@ -734,7 +849,6 @@ function initSearchModal() {
                 }
             }
 
-            // Categories Section
             if (categoriesSection && categoriesContainer) {
                 if (data.categories && data.categories.length > 0) {
                     categoriesSection.classList.remove('hidden');
@@ -749,7 +863,6 @@ function initSearchModal() {
                 }
             }
 
-            // Products Grid
             if (data.products && data.products.length > 0) {
                 if (emptyState) emptyState.classList.add('hidden');
                 if (resultsContainer) {
@@ -798,7 +911,6 @@ function initSearchModal() {
         });
     }
 
-    // Popular search tags click
     document.querySelectorAll('.search-tag').forEach(tag => {
         tag.addEventListener('click', () => {
             if (input) {

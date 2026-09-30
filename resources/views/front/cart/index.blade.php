@@ -48,7 +48,7 @@
                         Explore our pure bambooless incense sticks, havan cups, and sacred temple samagri.
                     </p>
                     <div class="pt-2">
-                        <a href="{{ route('collections.show', 'all') }}" class="inline-block px-8 py-3 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-[10px] shadow-md transition-all font-heading">
+                        <a href="{{ route('collections.show', 'bambooless') }}" class="inline-block px-8 py-3 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-[10px] shadow-md transition-all font-heading">
                             Explore Pooja Shop
                         </a>
                     </div>
@@ -56,7 +56,7 @@
 
                 <!-- Back to Shop -->
                 <div class="flex items-center justify-between pt-2">
-                    <a href="{{ route('collections.show', 'all') }}" class="inline-flex items-center text-xs sm:text-sm font-bold text-[#D38928] hover:underline font-heading">
+                    <a href="{{ route('collections.show', 'bambooless') }}" class="inline-flex items-center text-xs sm:text-sm font-bold text-[#D38928] hover:underline font-heading">
                         ← Continue Shopping
                     </a>
                 </div>
@@ -78,7 +78,7 @@
                         </label>
                         <div class="flex space-x-2">
                             <input type="text" id="coupon-code-input" placeholder="Try: MANGALAM10" class="flex-1 px-3.5 py-2.5 bg-[#FAF7F2] border border-[#EADBCC] rounded-[10px] text-xs font-medium focus:outline-none focus:border-[#D38928] uppercase">
-                            <button type="button" id="apply-coupon-btn" class="px-4 py-2.5 bg-[#121212] hover:bg-[#D38928] text-white text-xs font-bold rounded-[10px] transition-colors font-heading">
+                            <button type="button" id="apply-coupon-btn" class="px-4 py-2.5 bg-[#121212] hover:bg-[#D38928] text-white text-xs font-bold rounded-[10px] transition-colors font-heading cursor-pointer">
                                 Apply
                             </button>
                         </div>
@@ -133,23 +133,104 @@
 
         </div>
 
-        <!-- You May Also Like Section -->
-        @if(isset($featuredProducts) && $featuredProducts->count() > 0)
-            <div class="mt-20">
-                <div class="text-center max-w-xl mx-auto mb-10 space-y-2">
-                    <span class="text-[11px] font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ DEVOTEE FAVORITES ✦</span>
-                    <h2 class="text-2xl sm:text-3xl font-black text-[#121212] font-heading tracking-tight">
-                        Complete Your Sacred Pooja
-                    </h2>
+    </div>
+</div>
+
+<!-- ========================================================================= -->
+<!-- INSTANT SECURE CHECKOUT MODAL                                             -->
+<!-- ========================================================================= -->
+<div id="checkout-modal-backdrop" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs hidden items-center justify-center p-4 font-body">
+    <div class="bg-white rounded-[24px] border border-[#EADBCC] max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl p-6 sm:p-8 space-y-6 animate-scale-up">
+        
+        <!-- Modal Header -->
+        <div class="flex items-center justify-between border-b border-[#EADBCC] pb-4">
+            <div class="flex items-center space-x-2">
+                <div class="w-7 h-7 rounded-full bg-[#FAF5EE] border border-[#D38928] flex items-center justify-center text-[#965A15] font-bold text-xs">
+                    🕉
+                </div>
+                <h3 class="text-lg font-black font-heading text-[#121212]">
+                    Secure Express Checkout
+                </h3>
+            </div>
+            <button type="button" id="close-checkout-modal-btn" class="p-1.5 text-gray-400 hover:text-black rounded-full hover:bg-gray-100 cursor-pointer">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+
+        <!-- Checkout Form Content -->
+        <div id="checkout-form-container" class="space-y-4">
+            <!-- Order Total Pill -->
+            <div class="bg-[#FAF7F2] rounded-[12px] p-3.5 border border-[#EADBCC] flex items-center justify-between text-xs font-bold font-heading">
+                <span class="text-gray-600">Payable Amount:</span>
+                <span id="modal-payable-total" class="text-base text-[#C87A1E]">₹0.00</span>
+            </div>
+
+            <!-- Customer Details Form -->
+            <form id="express-checkout-form" class="space-y-3.5">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-gray-700 mb-1 font-heading">Full Name *</label>
+                        <input type="text" required id="cust-name" placeholder="e.g. Ramesh Sharma" class="w-full px-3 py-2 text-xs rounded-[8px] border border-[#EADBCC] focus:border-[#D38928] focus:outline-none bg-[#FFFDF9]">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-gray-700 mb-1 font-heading">Phone Number *</label>
+                        <input type="tel" required id="cust-phone" placeholder="10-digit mobile number" class="w-full px-3 py-2 text-xs rounded-[8px] border border-[#EADBCC] focus:border-[#D38928] focus:outline-none bg-[#FFFDF9]">
+                    </div>
                 </div>
 
-                <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 lg:gap-8">
-                    @foreach($featuredProducts as $fp)
-                        <x-product-card :product="$fp" />
-                    @endforeach
+                <div>
+                    <label class="block text-[11px] font-bold uppercase tracking-wider text-gray-700 mb-1 font-heading">Delivery Address *</label>
+                    <textarea required id="cust-address" rows="2" placeholder="House/Flat No., Street, Landmark" class="w-full px-3 py-2 text-xs rounded-[8px] border border-[#EADBCC] focus:border-[#D38928] focus:outline-none bg-[#FFFDF9]"></textarea>
                 </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-gray-700 mb-1 font-heading">City *</label>
+                        <input type="text" required id="cust-city" placeholder="e.g. Delhi / Mumbai" class="w-full px-3 py-2 text-xs rounded-[8px] border border-[#EADBCC] focus:border-[#D38928] focus:outline-none bg-[#FFFDF9]">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-gray-700 mb-1 font-heading">Pincode *</label>
+                        <input type="text" required id="cust-pincode" placeholder="6-digit PIN" class="w-full px-3 py-2 text-xs rounded-[8px] border border-[#EADBCC] focus:border-[#D38928] focus:outline-none bg-[#FFFDF9]">
+                    </div>
+                </div>
+
+                <!-- Payment Options -->
+                <div class="pt-2 space-y-2">
+                    <label class="block text-[11px] font-bold uppercase tracking-wider text-gray-700 font-heading">Select Payment Method</label>
+                    <div class="grid grid-cols-2 gap-2 text-xs font-bold">
+                        <label class="flex items-center space-x-2 p-2.5 rounded-[8px] border border-[#D38928] bg-[#FAF7F2] cursor-pointer">
+                            <input type="radio" name="payment_method" value="COD" checked class="text-[#D38928] focus:ring-0">
+                            <span>Cash on Delivery (COD)</span>
+                        </label>
+                        <label class="flex items-center space-x-2 p-2.5 rounded-[8px] border border-[#EADBCC] hover:border-[#D38928] bg-white cursor-pointer">
+                            <input type="radio" name="payment_method" value="UPI" class="text-[#D38928] focus:ring-0">
+                            <span>UPI / GPay / QR</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Place Order Button -->
+                <button type="submit" id="place-order-btn" class="w-full py-3.5 px-6 bg-[#D38928] hover:bg-[#B8741E] text-white text-sm font-bold uppercase tracking-wider rounded-[10px] shadow-md hover:shadow-xl transition-all font-heading cursor-pointer mt-4">
+                    Confirm & Place Sacred Order ➔
+                </button>
+            </form>
+        </div>
+
+        <!-- Success Screen (Hidden initially) -->
+        <div id="checkout-success-container" class="hidden text-center py-6 space-y-4">
+            <div class="w-16 h-16 mx-auto rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-3xl font-bold">
+                ✓
             </div>
-        @endif
+            <h4 class="text-2xl font-black font-heading text-[#121212]">Order Placed Successfully!</h4>
+            <p class="text-xs sm:text-sm text-gray-600 max-w-sm mx-auto">
+                Thank you for choosing <strong>Mangalam.co™</strong>. Your sacred pooja samagri order <span id="success-order-id" class="font-mono font-bold text-[#D38928]">#MGLM-78241</span> has been placed.
+            </p>
+            <div class="pt-4">
+                <a href="{{ route('home') }}" class="inline-block px-8 py-3 bg-[#121212] hover:bg-[#D38928] text-white text-xs font-bold uppercase tracking-wider rounded-[10px] transition-colors font-heading">
+                    Return to Homepage
+                </a>
+            </div>
+        </div>
 
     </div>
 </div>

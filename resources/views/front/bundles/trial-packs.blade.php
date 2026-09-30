@@ -4,56 +4,48 @@
 @section('meta_description', 'Choose any 5 sacred trial packs at just ₹799. 100% Bambooless & Charcoal Free Vedic Agarbatti.')
 
 @section('content')
-<div class="bg-[#FAF7F2] min-h-screen py-6 sm:py-10 pb-36 font-body">
-    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px] space-y-8">
-        
-        <!-- Breadcrumb Navigation -->
-        <nav class="flex items-center text-xs text-gray-500 space-x-2 font-medium" aria-label="Breadcrumb">
-            <a href="{{ route('home') }}" class="hover:text-[#D38928] transition-colors">Home</a>
-            <span>/</span>
-            <span class="text-[#D38928] font-bold">Super Save Offers</span>
-            <span>/</span>
-            <span class="text-[#121212] font-bold">Buy any 5 Trial Pack @ 799</span>
-        </nav>
+<div class="bg-[#FAF7F2] min-h-screen pb-36 font-body">
 
-        <!-- ========================================================================= -->
-        <!-- 1. HERO FESTIVE BANNER (Exact Match to User Screenshot)                   -->
-        <!-- ========================================================================= -->
-        <div class="bg-white rounded-[24px] border border-[#EADBCC] shadow-xs overflow-hidden">
-            <!-- Main Hero Image Banner -->
-            <div class="relative w-full aspect-[16/9] sm:aspect-[21/9] lg:aspect-[24/9] bg-[#FAF4EB]">
-                <img 
-                    src="{{ asset('assets/images/banner-5-trial-packs.jpg') }}" 
-                    alt="5 Divine Essentials at just ₹799 - Mangalam" 
-                    class="w-full h-full object-cover object-center"
-                >
-            </div>
+    <!-- ========================================================================= -->
+    <!-- 1. FULL-WIDTH HERO FESTIVE BANNER (No Breadcrumbs, Edge-to-Edge)           -->
+    <!-- ========================================================================= -->
+    <div class="w-full bg-[#FAF4EB]">
+        <div class="w-full aspect-[21/9] sm:aspect-[24/8] lg:aspect-[32/9] max-h-[460px] overflow-hidden">
+            <img 
+                src="{{ asset('assets/images/banner-5-trial-packs.jpg') }}" 
+                alt="5 Divine Essentials at just ₹799 - Mangalam" 
+                class="w-full h-full object-cover object-center"
+            >
+        </div>
 
-            <!-- Festive Notice Strip (Exact Replica of Screenshot) -->
-            <div class="p-4 sm:p-5 bg-[#FFFDF9] border-t border-[#EADBCC]">
-                <div class="max-w-4xl mx-auto rounded-[16px] border border-[#C27E27]/40 bg-[#FAF3EA] p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
-                    <div class="flex items-center space-x-3.5 text-center sm:text-left">
-                        <div class="w-10 h-10 rounded-full bg-[#831F2E] text-white flex items-center justify-center font-bold text-lg shrink-0 shadow-xs">
-                            i
-                        </div>
-                        <div>
-                            <h4 class="text-sm sm:text-base font-black text-[#831F2E] font-heading leading-snug">
-                                This is a Festive Offer – Best Price Already Applied!
-                            </h4>
-                            <p class="text-xs text-gray-700 font-medium">
-                                Festive items cannot be combined with any coupon codes, cart offers, or free gift eligibility.
-                            </p>
-                        </div>
+        <!-- Festive Notice Strip (Full Width) -->
+        <div class="w-full py-3.5 px-4 bg-[#FFFDF9] border-y border-[#EADBCC]">
+            <div class="max-w-5xl mx-auto rounded-[14px] border border-[#C27E27]/40 bg-[#FAF3EA] p-3.5 sm:p-4 flex flex-col sm:flex-row items-center justify-between gap-3 shadow-2xs">
+                <div class="flex items-center space-x-3 text-center sm:text-left">
+                    <div class="w-9 h-9 rounded-full bg-[#831F2E] text-white flex items-center justify-center font-bold text-base shrink-0 shadow-xs">
+                        i
                     </div>
-                    <div class="shrink-0 flex items-center justify-center w-10 h-10 rounded-[10px] border border-[#C27E27]/40 bg-white/70 text-[#C27E27] font-bold text-lg">
-                        %
+                    <div>
+                        <h4 class="text-xs sm:text-sm font-black text-[#831F2E] font-heading leading-snug">
+                            This is a Festive Offer – Best Price Already Applied!
+                        </h4>
+                        <p class="text-[11px] sm:text-xs text-gray-700 font-medium">
+                            Festive items cannot be combined with any coupon codes, cart offers, or free gift eligibility.
+                        </p>
                     </div>
+                </div>
+                <div class="shrink-0 flex items-center justify-center w-9 h-9 rounded-[8px] border border-[#C27E27]/40 bg-white/70 text-[#C27E27] font-bold text-base">
+                    %
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px] pt-8 space-y-8">
 
         <!-- Section Title -->
-        <div class="text-center space-y-1 pt-2">
+        <div class="text-center space-y-1">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ STEP 1: CREATE YOUR CUSTOM BOX ✦</span>
             <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black text-[#121212] font-heading">
                 Select Any 5 Sacred Trial Packs
@@ -98,7 +90,7 @@
                                 <span class="text-[11px] text-gray-400 line-through">₹{{ $prod['mrp'] }}</span>
                             </div>
 
-                            <!-- Add to Box Button -->
+                            <!-- Add to Box Button (Persistent Green on Selection) -->
                             <button 
                                 type="button" 
                                 class="add-to-box-btn w-full py-2 sm:py-2.5 px-3 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs font-bold uppercase tracking-wider rounded-[8px] shadow-xs hover:shadow-md transition-all font-heading cursor-pointer flex items-center justify-center space-x-1"
@@ -174,6 +166,29 @@
         const addBundleBtn = document.getElementById('add-bundle-to-cart-btn');
         const bundleBtnText = document.getElementById('bundle-btn-text');
 
+        // Update card button states so green persists
+        const updateCardButtonStates = () => {
+            const countsById = {};
+            selectedItems.forEach(item => {
+                countsById[item.id] = (countsById[item.id] || 0) + 1;
+            });
+
+            document.querySelectorAll('.bundle-item-card').forEach(card => {
+                const id = card.dataset.id;
+                const btn = card.querySelector('.add-to-box-btn');
+                const btnText = btn.querySelector('.btn-text');
+                const count = countsById[id] || 0;
+
+                if (count > 0) {
+                    btn.className = "add-to-box-btn w-full py-2 sm:py-2.5 px-3 bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold uppercase tracking-wider rounded-[8px] shadow-xs font-heading cursor-pointer flex items-center justify-center space-x-1";
+                    btnText.textContent = `✓ In Box (${count})`;
+                } else {
+                    btn.className = "add-to-box-btn w-full py-2 sm:py-2.5 px-3 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs font-bold uppercase tracking-wider rounded-[8px] shadow-xs hover:shadow-md transition-all font-heading cursor-pointer flex items-center justify-center space-x-1";
+                    btnText.textContent = "Add to Box";
+                }
+            });
+        };
+
         const updateUI = () => {
             const count = selectedItems.length;
             const remaining = MAX_ITEMS - count;
@@ -213,16 +228,18 @@
                 addBundleBtn.disabled = true;
                 addBundleBtn.className = "w-full sm:w-auto px-8 py-3.5 bg-gray-200 text-gray-400 text-xs sm:text-sm font-bold uppercase tracking-wider rounded-[10px] transition-all font-heading cursor-not-allowed shadow-none";
             } else {
-                statusMsg.innerHTML = `🎉 <span class="text-emerald-700">Custom 5-Pack Box Complete! Ready for ₹${BUNDLE_PRICE}</span>`;
-                bundleBtnText.textContent = `Add Bundle to Cart @ ₹${BUNDLE_PRICE}`;
+                statusMsg.innerHTML = `🎉 <span class="text-emerald-700 font-bold">5 Sacred Trial Packs Selected! Ready at ₹${BUNDLE_PRICE}</span>`;
+                bundleBtnText.textContent = `Proceed to Checkout @ ₹${BUNDLE_PRICE} ➔`;
                 addBundleBtn.disabled = false;
                 addBundleBtn.className = "w-full sm:w-auto px-8 py-3.5 bg-[#D38928] hover:bg-[#B8741E] active:bg-[#965A15] text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-[10px] shadow-lg hover:shadow-xl transition-all font-heading cursor-pointer transform hover:-translate-y-0.5 animate-pulse";
             }
+
+            updateCardButtonStates();
         };
 
         const addItem = (item) => {
             if (selectedItems.length >= MAX_ITEMS) {
-                alert('You have already added 5 trial packs! Remove one or proceed to add bundle to cart.');
+                alert('You have already added 5 trial packs! Click "Proceed to Checkout" or remove a pack to change.');
                 return;
             }
             selectedItems.push(item);
@@ -246,17 +263,10 @@
 
             btn.addEventListener('click', () => {
                 addItem(item);
-                const origText = btn.innerHTML;
-                btn.innerHTML = '<span>Added ✓</span>';
-                btn.classList.add('bg-emerald-700');
-                setTimeout(() => {
-                    btn.innerHTML = origText;
-                    btn.classList.remove('bg-emerald-700');
-                }, 1000);
             });
         });
 
-        // Add Entire Bundle to Cart
+        // Add Entire Bundle to Cart & Direct Checkout Redirect
         addBundleBtn.addEventListener('click', () => {
             if (selectedItems.length !== MAX_ITEMS) return;
 
@@ -268,6 +278,7 @@
                 price: BUNDLE_PRICE,
                 image: '{{ asset("assets/images/banner-5-trial-packs.jpg") }}',
                 quantity: 1,
+                packInfo: `5 Trial Packs @ ₹799 (${bundleTitles})`,
                 subtitle: `Included: ${bundleTitles}`
             };
 
@@ -275,13 +286,8 @@
                 window.CartStore.addItem(bundleItem);
             }
 
-            // Open cart drawer
-            const cartTrigger = document.getElementById('cart-drawer-trigger');
-            if (cartTrigger) {
-                cartTrigger.click();
-            } else {
-                window.location.href = "{{ route('cart.index') }}";
-            }
+            // Direct checkout navigation with exact ₹799 calculation
+            window.location.href = "{{ route('cart.index') }}";
         });
     });
 </script>

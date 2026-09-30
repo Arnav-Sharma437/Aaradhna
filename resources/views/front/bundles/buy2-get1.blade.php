@@ -4,32 +4,25 @@
 @section('meta_description', 'Create your own festive bundle! Buy 2 Refill Packs & Get 1 FREE plus a Chandan Trial Pack FREE at just ₹999.')
 
 @section('content')
-<div class="bg-[#FAF7F2] min-h-screen py-6 sm:py-10 pb-36 font-body">
-    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px] space-y-8">
-        
-        <!-- Breadcrumb Navigation -->
-        <nav class="flex items-center text-xs text-gray-500 space-x-2 font-medium" aria-label="Breadcrumb">
-            <a href="{{ route('home') }}" class="hover:text-[#D38928] transition-colors">Home</a>
-            <span>/</span>
-            <span class="text-[#D38928] font-bold">Super Save Offers</span>
-            <span>/</span>
-            <span class="text-[#121212] font-bold">Buy 2 get 1 free</span>
-        </nav>
+<div class="bg-[#FAF7F2] min-h-screen pb-36 font-body">
 
-        <!-- ========================================================================= -->
-        <!-- 1. HERO FESTIVE BANNER (Exact Match to User Screenshot)                   -->
-        <!-- ========================================================================= -->
-        <div class="bg-white rounded-[24px] border border-[#EADBCC] shadow-xs overflow-hidden">
-            <div class="relative w-full aspect-[16/9] sm:aspect-[21/9] lg:aspect-[24/9] bg-[#FAF4EB]">
-                <img 
-                    src="{{ asset('assets/images/banner-buy2-get1-free.jpg') }}" 
-                    alt="Buy 2 Get 1 FREE + Chandan Pack FREE - Mangalam" 
-                    class="w-full h-full object-cover object-center"
-                >
-            </div>
+    <!-- ========================================================================= -->
+    <!-- 1. FULL-WIDTH HERO FESTIVE BANNER (No Breadcrumbs, Edge-to-Edge)           -->
+    <!-- ========================================================================= -->
+    <div class="w-full bg-[#FAF4EB]">
+        <div class="w-full aspect-[21/9] sm:aspect-[24/8] lg:aspect-[32/9] max-h-[460px] overflow-hidden">
+            <img 
+                src="{{ asset('assets/images/banner-buy2-get1-free.jpg') }}" 
+                alt="Buy 2 Get 1 FREE + Chandan Pack FREE - Mangalam" 
+                class="w-full h-full object-cover object-center"
+            >
         </div>
+    </div>
 
-        <!-- Step Indicator (Step 1 / Step 2) matching screenshot -->
+    <!-- Main Container -->
+    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px] pt-8 space-y-8">
+
+        <!-- Step Indicator (Step 1 / Step 2) -->
         <div class="max-w-md mx-auto text-center space-y-2">
             <div class="flex items-center justify-center space-x-6 text-xs font-bold font-heading text-gray-400">
                 <span class="text-[#D38928]">Step 1: Choose 3 Packs</span>
@@ -82,7 +75,7 @@
                                 <span class="text-[11px] text-gray-400 line-through">₹{{ $prod['mrp'] }}</span>
                             </div>
 
-                            <!-- Add to Box Button -->
+                            <!-- Add to Box Button (Persistent Green on Selection) -->
                             <button 
                                 type="button" 
                                 class="add-to-box-btn w-full py-2 sm:py-2.5 px-3 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs font-bold uppercase tracking-wider rounded-[8px] shadow-xs hover:shadow-md transition-all font-heading cursor-pointer flex items-center justify-center space-x-1"
@@ -169,6 +162,29 @@
         const addBundleBtn = document.getElementById('add-bundle-to-cart-btn');
         const bundleBtnText = document.getElementById('bundle-btn-text');
 
+        // Update card button states so green persists
+        const updateCardButtonStates = () => {
+            const countsById = {};
+            selectedItems.forEach(item => {
+                countsById[item.id] = (countsById[item.id] || 0) + 1;
+            });
+
+            document.querySelectorAll('.bundle-item-card').forEach(card => {
+                const id = card.dataset.id;
+                const btn = card.querySelector('.add-to-box-btn');
+                const btnText = btn.querySelector('.btn-text');
+                const count = countsById[id] || 0;
+
+                if (count > 0) {
+                    btn.className = "add-to-box-btn w-full py-2 sm:py-2.5 px-3 bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold uppercase tracking-wider rounded-[8px] shadow-xs font-heading cursor-pointer flex items-center justify-center space-x-1";
+                    btnText.textContent = `✓ In Box (${count})`;
+                } else {
+                    btn.className = "add-to-box-btn w-full py-2 sm:py-2.5 px-3 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs font-bold uppercase tracking-wider rounded-[8px] shadow-xs hover:shadow-md transition-all font-heading cursor-pointer flex items-center justify-center space-x-1";
+                    btnText.textContent = "Add to Box";
+                }
+            });
+        };
+
         const updateUI = () => {
             const count = selectedItems.length;
             const remaining = MAX_ITEMS - count;
@@ -206,16 +222,18 @@
                 addBundleBtn.disabled = true;
                 addBundleBtn.className = "w-full sm:w-auto px-8 py-3.5 bg-gray-200 text-gray-400 text-xs sm:text-sm font-bold uppercase tracking-wider rounded-[10px] transition-all font-heading cursor-not-allowed shadow-none";
             } else {
-                statusMsg.innerHTML = `🎉 <span class="text-emerald-700">Buy 2 Get 1 FREE Bundle Complete (+ Free Gift)!</span>`;
-                bundleBtnText.textContent = `Add Bundle to Cart @ ₹${BUNDLE_PRICE}`;
+                statusMsg.innerHTML = `🎉 <span class="text-emerald-700 font-bold">Buy 2 Get 1 FREE Bundle Complete (+ Free Gift)!</span>`;
+                bundleBtnText.textContent = `Proceed to Checkout @ ₹${BUNDLE_PRICE} ➔`;
                 addBundleBtn.disabled = false;
                 addBundleBtn.className = "w-full sm:w-auto px-8 py-3.5 bg-[#D38928] hover:bg-[#B8741E] active:bg-[#965A15] text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-[10px] shadow-lg hover:shadow-xl transition-all font-heading cursor-pointer transform hover:-translate-y-0.5 animate-pulse";
             }
+
+            updateCardButtonStates();
         };
 
         const addItem = (item) => {
             if (selectedItems.length >= MAX_ITEMS) {
-                alert('You have already selected 3 packs! Remove an item to change selection.');
+                alert('You have already selected 3 packs! Click "Proceed to Checkout" or remove a pack to change.');
                 return;
             }
             selectedItems.push(item);
@@ -238,16 +256,10 @@
 
             btn.addEventListener('click', () => {
                 addItem(item);
-                const origText = btn.innerHTML;
-                btn.innerHTML = '<span>Added ✓</span>';
-                btn.classList.add('bg-emerald-700');
-                setTimeout(() => {
-                    btn.innerHTML = origText;
-                    btn.classList.remove('bg-emerald-700');
-                }, 1000);
             });
         });
 
+        // Add Bundle to Cart & Direct Checkout Redirect
         addBundleBtn.addEventListener('click', () => {
             if (selectedItems.length !== MAX_ITEMS) return;
 
@@ -259,6 +271,7 @@
                 price: BUNDLE_PRICE,
                 image: '{{ asset("assets/images/banner-buy2-get1-free.jpg") }}',
                 quantity: 1,
+                packInfo: `Buy 2 Get 1 FREE (${bundleTitles}) + Free Gift`,
                 subtitle: `Included: ${bundleTitles} + Free Gift`
             };
 
@@ -266,12 +279,8 @@
                 window.CartStore.addItem(bundleItem);
             }
 
-            const cartTrigger = document.getElementById('cart-drawer-trigger');
-            if (cartTrigger) {
-                cartTrigger.click();
-            } else {
-                window.location.href = "{{ route('cart.index') }}";
-            }
+            // Direct checkout navigation with exact ₹999 calculation
+            window.location.href = "{{ route('cart.index') }}";
         });
     });
 </script>
