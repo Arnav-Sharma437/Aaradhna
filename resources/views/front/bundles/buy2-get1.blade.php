@@ -17,6 +17,28 @@
                 class="w-full h-full object-cover object-center"
             >
         </div>
+
+        <!-- Festive Notice Strip (Full Width Container matching Home standard) -->
+        <div class="w-full py-3.5 px-4 sm:px-8 lg:px-[40px] bg-[#FFFDF9] border-y border-[#EADBCC]">
+            <div class="w-full max-w-[1440px] mx-auto rounded-[14px] border border-[#C27E27]/40 bg-[#FAF3EA] p-3.5 sm:p-4 flex flex-col sm:flex-row items-center justify-between gap-3 shadow-2xs">
+                <div class="flex items-center space-x-3 text-center sm:text-left">
+                    <div class="w-9 h-9 rounded-full bg-[#831F2E] text-white flex items-center justify-center font-bold text-base shrink-0 shadow-xs">
+                        i
+                    </div>
+                    <div>
+                        <h4 class="text-xs sm:text-sm font-black text-[#831F2E] font-heading leading-snug">
+                            This is a Festive Offer – Best Price Already Applied!
+                        </h4>
+                        <p class="text-[11px] sm:text-xs text-gray-700 font-medium">
+                            Festive items cannot be combined with any coupon codes, cart offers, or free gift eligibility.
+                        </p>
+                    </div>
+                </div>
+                <div class="shrink-0 flex items-center justify-center w-9 h-9 rounded-[8px] border border-[#C27E27]/40 bg-white/70 text-[#C27E27] font-bold text-base">
+                    %
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Main Container -->

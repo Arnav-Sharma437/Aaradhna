@@ -18,9 +18,9 @@
             >
         </div>
 
-        <!-- Festive Notice Strip (Full Width) -->
-        <div class="w-full py-3.5 px-4 bg-[#FFFDF9] border-y border-[#EADBCC]">
-            <div class="max-w-5xl mx-auto rounded-[14px] border border-[#C27E27]/40 bg-[#FAF3EA] p-3.5 sm:p-4 flex flex-col sm:flex-row items-center justify-between gap-3 shadow-2xs">
+        <!-- Festive Notice Strip (Full Width Container matching Home standard) -->
+        <div class="w-full py-3.5 px-4 sm:px-8 lg:px-[40px] bg-[#FFFDF9] border-y border-[#EADBCC]">
+            <div class="w-full max-w-[1440px] mx-auto rounded-[14px] border border-[#C27E27]/40 bg-[#FAF3EA] p-3.5 sm:p-4 flex flex-col sm:flex-row items-center justify-between gap-3 shadow-2xs">
                 <div class="flex items-center space-x-3 text-center sm:text-left">
                     <div class="w-9 h-9 rounded-full bg-[#831F2E] text-white flex items-center justify-center font-bold text-base shrink-0 shadow-xs">
                         i

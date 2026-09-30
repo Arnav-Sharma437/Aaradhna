@@ -24,7 +24,7 @@
             <!-- Mobile/Tablet readability overlay (transparent on desktop right-side) -->
             <div class="absolute inset-0 bg-gradient-to-t from-[#FAF4EB]/95 via-[#FAF4EB]/60 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-[#FAF4EB]/30 lg:to-[#FAF4EB]/70"></div>
 
-            <div class="relative w-full max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-16 py-12 sm:py-16 grid grid-cols-1 lg:grid-cols-12 items-center z-10">
+            <div class="relative w-full max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-16 py-10 sm:py-14 grid grid-cols-1 lg:grid-cols-12 items-center z-10">
                 
                 <!-- Spacer for left photo subject on desktop -->
                 <div class="hidden lg:block lg:col-span-5 xl:col-span-6"></div>
@@ -34,12 +34,12 @@
                     
                     <!-- Main Hero Headlines -->
                     <div class="space-y-2">
-                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#D38928]/10 border border-[#D38928]/30 text-[#D38928] text-xs font-semibold tracking-wider uppercase">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#D38928]/10 border border-[#D38928]/30 text-[#D38928] text-xs font-semibold tracking-wider uppercase">
                             <span>✦</span>
                             <span>100% Pure &amp; Organic</span>
                             <span>✦</span>
                         </div>
-                        <h1 class="text-2xl sm:text-3xl lg:text-[38px] xl:text-[42px] font-normal text-[#2B1810] tracking-tight leading-snug lg:leading-[1.25]">
+                        <h1 class="text-2xl sm:text-3xl lg:text-[36px] xl:text-[40px] font-normal text-[#2B1810] tracking-tight leading-snug lg:leading-[1.25]">
                             Discover <span class="italic font-normal text-[#8B4513]">Mangalam’s</span><br class="hidden sm:inline">
                             Incense Cone Collection
                         </h1>
@@ -48,13 +48,13 @@
                         </p>
                     </div>
 
-                    <!-- 3 Feature Badges in Circular Outlines -->
-                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6 pt-1">
+                    <!-- 3 Feature Badges in Circular Outlines (Clean horizontal layout) -->
+                    <div class="flex items-center justify-center lg:justify-start gap-5 sm:gap-7 pt-1">
                         
                         <!-- Badge 1: 100% Charcoal Free -->
-                        <div class="flex flex-col items-center text-center space-y-1.5">
-                            <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-[#0F5B4E] flex items-center justify-center text-[#0F5B4E] bg-white/90 shadow-xs">
-                                <svg class="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <div class="flex flex-col items-center text-center space-y-1.5 shrink-0">
+                            <div class="w-12 h-12 rounded-full border border-[#0F5B4E] flex items-center justify-center text-[#0F5B4E] bg-white/95 shadow-xs">
+                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                                     <path d="M12 2C6.5 2 2 6.5 2 12c0 3.5 1.8 6.6 4.6 8.4C8 18.5 11 16 12 12c1 4 4 6.5 5.4 8.4C20.2 18.6 22 15.5 22 12c0-5.5-4.5-10-10-10z"/>
                                     <path d="M12 2v20"/>
                                 </svg>
@@ -65,9 +65,9 @@
                         </div>
 
                         <!-- Badge 2: Crafted By Hand -->
-                        <div class="flex flex-col items-center text-center space-y-1.5">
-                            <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-[#0F5B4E] flex items-center justify-center text-[#0F5B4E] bg-white/90 shadow-xs">
-                                <svg class="w-6 h-6 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <div class="flex flex-col items-center text-center space-y-1.5 shrink-0">
+                            <div class="w-12 h-12 rounded-full border border-[#0F5B4E] flex items-center justify-center text-[#0F5B4E] bg-white/95 shadow-xs">
+                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                                     <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
                                     <path d="M12 15c-3.3 0-6-2.7-6-6V7a6 6 0 0 1 12 0v2c0 3.3-2.7 6-6 6z"/>
                                     <path d="M12 19a7 7 0 0 0 7-7"/>
@@ -79,10 +79,10 @@
                             </span>
                         </div>
 
-                        <!-- Badge 3: No Chemicals -->
-                        <div class="flex flex-col items-center text-center space-y-1.5">
-                            <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-[#0F5B4E] flex items-center justify-center text-[#0F5B4E] bg-white/90 shadow-xs">
-                                <svg class="w-6 h-6 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <!-- Badge 3: Zero Chemicals -->
+                        <div class="flex flex-col items-center text-center space-y-1.5 shrink-0">
+                            <div class="w-12 h-12 rounded-full border border-[#0F5B4E] flex items-center justify-center text-[#0F5B4E] bg-white/95 shadow-xs">
+                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                                     <path d="M10 2v7.31L4.69 18.5a2 2 0 0 0 1.73 3h11.16a2 2 0 0 0 1.73-3L14 9.31V2"/>
                                     <path d="M8.5 2h7"/>
                                     <path d="M7 16h10"/>
@@ -126,19 +126,19 @@
             >
             <div class="absolute inset-0 bg-gradient-to-t from-[#FAF4EB]/95 via-[#FAF4EB]/60 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-[#FAF4EB]/30 lg:to-[#FAF4EB]/70"></div>
 
-            <div class="relative w-full max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-16 py-12 sm:py-16 grid grid-cols-1 lg:grid-cols-12 items-center z-10">
+            <div class="relative w-full max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-16 py-10 sm:py-14 grid grid-cols-1 lg:grid-cols-12 items-center z-10">
                 
                 <div class="hidden lg:block lg:col-span-5 xl:col-span-6"></div>
 
                 <div class="lg:col-span-7 xl:col-span-6 text-center lg:text-left space-y-4 sm:space-y-5 pt-20 sm:pt-14 lg:pt-0">
                     
                     <div class="space-y-2">
-                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#D38928]/10 border border-[#D38928]/30 text-[#D38928] text-xs font-semibold tracking-wider uppercase">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#D38928]/10 border border-[#D38928]/30 text-[#D38928] text-xs font-semibold tracking-wider uppercase">
                             <span>✦</span>
                             <span>100% Pure &amp; Organic</span>
                             <span>✦</span>
                         </div>
-                        <h2 class="text-2xl sm:text-3xl lg:text-[38px] xl:text-[42px] font-normal text-[#2B1810] tracking-tight leading-snug lg:leading-[1.25]">
+                        <h2 class="text-2xl sm:text-3xl lg:text-[36px] xl:text-[40px] font-normal text-[#2B1810] tracking-tight leading-snug lg:leading-[1.25]">
                             Discover <span class="italic font-normal text-[#8B4513]">Mangalam’s</span><br class="hidden sm:inline">
                             Bambooless Incense Sticks
                         </h2>
@@ -147,11 +147,11 @@
                         </p>
                     </div>
 
-                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6 pt-1">
+                    <div class="flex items-center justify-center lg:justify-start gap-5 sm:gap-7 pt-1">
                         
-                        <div class="flex flex-col items-center text-center space-y-1.5">
-                            <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-[#0F5B4E] flex items-center justify-center text-[#0F5B4E] bg-white/90 shadow-xs">
-                                <svg class="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <div class="flex flex-col items-center text-center space-y-1.5 shrink-0">
+                            <div class="w-12 h-12 rounded-full border border-[#0F5B4E] flex items-center justify-center text-[#0F5B4E] bg-white/95 shadow-xs">
+                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                                     <path d="M12 2C6.5 2 2 6.5 2 12c0 3.5 1.8 6.6 4.6 8.4C8 18.5 11 16 12 12c1 4 4 6.5 5.4 8.4C20.2 18.6 22 15.5 22 12c0-5.5-4.5-10-10-10z"/>
                                     <path d="M12 2v20"/>
                                 </svg>
@@ -161,9 +161,9 @@
                             </span>
                         </div>
 
-                        <div class="flex flex-col items-center text-center space-y-1.5">
-                            <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-[#0F5B4E] flex items-center justify-center text-[#0F5B4E] bg-white/90 shadow-xs">
-                                <svg class="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <div class="flex flex-col items-center text-center space-y-1.5 shrink-0">
+                            <div class="w-12 h-12 rounded-full border border-[#0F5B4E] flex items-center justify-center text-[#0F5B4E] bg-white/95 shadow-xs">
+                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                                     <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
                                 </svg>
                             </div>
@@ -172,9 +172,9 @@
                             </span>
                         </div>
 
-                        <div class="flex flex-col items-center text-center space-y-1.5">
-                            <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-[#0F5B4E] flex items-center justify-center text-[#0F5B4E] bg-white/90 shadow-xs">
-                                <svg class="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <div class="flex flex-col items-center text-center space-y-1.5 shrink-0">
+                            <div class="w-12 h-12 rounded-full border border-[#0F5B4E] flex items-center justify-center text-[#0F5B4E] bg-white/95 shadow-xs">
+                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                                     <path d="M10 2v7.31L4.69 18.5a2 2 0 0 0 1.73 3h11.16a2 2 0 0 0 1.73-3L14 9.31V2"/>
                                     <path d="M8.5 2h7"/>
                                     <path d="M7 16h10"/>
@@ -574,6 +574,20 @@
         </div>
 
     </div>
+</section>
+
+<!-- ========================================================================= -->
+<!-- 4. STANDALONE PROMO BANNER: BUY 5 TRIAL PACKS @ 799 (Edge-to-Edge)        -->
+<!-- ========================================================================= -->
+<section class="w-full bg-[#FAF4EB] border-b border-[#EADBCC] overflow-hidden select-none">
+    <a href="{{ route('bundles.trial-packs') }}" class="block w-full group focus:outline-none">
+        <img 
+            src="{{ asset('assets/images/banner-5-trial-packs.jpg') }}" 
+            alt="Festive Collection - 5 Divine Essentials at just ₹799 - Mangalam" 
+            class="w-full h-auto block object-cover group-hover:opacity-95 transition-opacity duration-300"
+            loading="lazy"
+        >
+    </a>
 </section>
 
 <!-- ========================================================================= -->
@@ -1047,72 +1061,17 @@
 </section>
 
 <!-- ========================================================================= -->
-<!-- 7. FULL-WIDTH GIFTS THAT FEEL LIKE BLESSINGS (Directly Above FAQs)         -->
+<!-- 7. STANDALONE PROMO BANNER: BUY 2 GET 1 FREE (Edge-to-Edge Above FAQ)     -->
 <!-- ========================================================================= -->
-<section class="relative w-full overflow-hidden select-none bg-[#0F1B16] border-y border-[#D38928]/40 min-h-[420px] sm:min-h-[500px] lg:min-h-[560px] flex items-center">
-    
-    <!-- Full Panoramic Image Background (Edge to Edge) -->
-    <img 
-        src="{{ asset('assets/images/gifts-blessings-banner.jpg') }}" 
-        alt="Mangalam Gifts That Feel Like Blessings - Sacred Combo Offers" 
-        class="absolute inset-0 w-full h-full object-cover object-[75%_center] sm:object-right lg:object-center transform hover:scale-[1.02] transition-transform duration-1000 ease-out"
-    >
-
-    <!-- Deep Devotional Gradient Overlay for 100% Crisp Left Typography -->
-    <div class="absolute inset-0 bg-gradient-to-t from-[#0B1510]/95 via-[#0B1510]/85 to-transparent sm:bg-gradient-to-r sm:from-[#0B1510]/95 sm:via-[#0B1510]/80 sm:to-transparent lg:w-[60%]"></div>
-
-    <!-- Content on the Left Container -->
-    <div class="relative w-full max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-16 py-14 sm:py-20 lg:py-24 z-10">
-        <div class="max-w-xl text-left space-y-5 sm:space-y-6">
-            
-            <!-- Devotional Tag -->
-            <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#D38928]/30 border border-[#F6DAA8]/40 text-[#F6DAA8] text-[11px] sm:text-xs font-semibold tracking-widest uppercase backdrop-blur-xs">
-                <span>🪔</span>
-                <span>SACRED RITUAL HAMPERS &amp; COMBOS</span>
-            </div>
-
-            <!-- Headline matching reference -->
-            <div class="space-y-2.5">
-                <h2 class="text-3xl sm:text-5xl lg:text-[54px] font-normal font-serif text-[#F6DAA8] tracking-tight leading-[1.12] drop-shadow-md">
-                    Gifts That <br>
-                    <span class="italic font-normal text-white drop-shadow-lg">Feel Like Blessings</span>
-                </h2>
-                
-                <p class="text-xs sm:text-sm lg:text-base text-stone-200 max-w-md leading-relaxed pt-1">
-                    Thoughtfully crafted ritual boxes for pooja, celebrations, housewarmings and meaningful gifting.
-                </p>
-            </div>
-
-            <!-- Interactive Direct Combo Buttons (Matching User Reference) -->
-            <div class="pt-2 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3.5">
-                
-                <!-- Button 1: Buy any 5 Trial Pack @ 799 -->
-                <a 
-                    href="{{ route('bundles.trial-packs') }}" 
-                    class="inline-flex items-center justify-between sm:justify-center space-x-3 px-6 py-3.5 bg-white/95 hover:bg-white text-[#1A1005] rounded-[10px] shadow-lg hover:shadow-xl border border-[#D38928]/50 transition-all duration-200 transform hover:-translate-y-0.5 group"
-                >
-                    <span class="text-xs sm:text-sm font-bold font-body text-gray-900 group-hover:text-[#D38928] transition-colors">Buy any 5 Trial Pack @ 799</span>
-                    <span class="px-2.5 py-0.5 bg-[#FAF0E1] text-[#965A15] text-xs font-black rounded-[6px] border border-[#D38928]/30 font-heading">
-                        ₹799
-                    </span>
-                </a>
-
-                <!-- Button 2: Buy 2 get 1 free -->
-                <a 
-                    href="{{ route('bundles.buy2get1') }}" 
-                    class="inline-flex items-center justify-between sm:justify-center space-x-3 px-6 py-3.5 bg-white/95 hover:bg-white text-[#1A1005] rounded-[10px] shadow-lg hover:shadow-xl border border-[#D38928]/50 transition-all duration-200 transform hover:-translate-y-0.5 group"
-                >
-                    <span class="text-xs sm:text-sm font-bold font-body text-gray-900 group-hover:text-[#D38928] transition-colors">Buy 2 get 1 free</span>
-                    <span class="px-2.5 py-0.5 bg-[#FDE8E8] text-[#9B1C31] text-[10px] font-black uppercase tracking-wider rounded-[6px] border border-[#9B1C31]/20 font-heading">
-                        FREE GIFT
-                    </span>
-                </a>
-
-            </div>
-
-        </div>
-    </div>
-
+<section class="w-full bg-[#FAF4EB] border-b border-[#EADBCC] overflow-hidden select-none">
+    <a href="{{ route('bundles.buy2get1') }}" class="block w-full group focus:outline-none">
+        <img 
+            src="{{ asset('assets/images/banner-buy2-get1-free.jpg') }}" 
+            alt="Buy 2 Get 1 FREE + Chandan Pack FREE @ ₹999 - Mangalam" 
+            class="w-full h-auto block object-cover group-hover:opacity-95 transition-opacity duration-300"
+            loading="lazy"
+        >
+    </a>
 </section>
 
 <!-- ========================================================================= -->
