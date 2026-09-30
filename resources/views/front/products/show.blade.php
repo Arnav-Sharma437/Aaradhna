@@ -753,21 +753,24 @@
 <!-- FLOATING 3D STICKY BOTTOM ADD TO CART ON SCROLL -->
 <div 
     id="sticky-product-bar" 
-    class="fixed bottom-[68px] lg:bottom-6 left-1/2 -translate-x-1/2 z-40 w-[calc(100%-1.5rem)] sm:w-auto sm:min-w-[480px] max-w-xl bg-white/95 backdrop-blur-xl border border-[#EADBCC]/80 rounded-[20px] sm:rounded-full px-3.5 sm:px-5 py-2.5 sm:py-3 shadow-[0_20px_50px_rgba(18,18,18,0.2),0_4px_15px_rgba(211,137,40,0.15)] ring-1 ring-black/5 transform translate-y-32 opacity-0 pointer-events-none transition-all duration-300 flex items-center justify-between gap-3 sm:gap-6 font-body select-none"
+    class="fixed bottom-[68px] lg:bottom-6 left-1/2 -translate-x-1/2 z-40 w-[94%] sm:w-[85%] lg:w-[70%] max-w-5xl bg-white/98 backdrop-blur-2xl border-2 border-[#EADBCC] rounded-2xl sm:rounded-[28px] px-4 sm:px-7 py-3 sm:py-3.5 shadow-[0_25px_60px_-10px_rgba(0,0,0,0.32),0_12px_28px_-6px_rgba(211,137,40,0.3),inset_0_2px_4px_rgba(255,255,255,1)] transform translate-y-32 opacity-0 pointer-events-none transition-all duration-300 flex items-center justify-between gap-4 sm:gap-8 font-body select-none"
 >
-    <div class="flex items-center space-x-3 overflow-hidden min-w-0 pr-1">
-        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-[14px] sm:rounded-full bg-[#FAF7F2] border border-[#EADBCC] overflow-hidden shrink-0 shadow-inner">
+    <div class="flex items-center space-x-3.5 sm:space-x-4 overflow-hidden min-w-0 pr-2">
+        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-[#FAF7F2] border border-[#EADBCC] overflow-hidden shrink-0 shadow-md">
             <img src="{{ asset($mainImg) }}" alt="{{ $product->title }}" class="w-full h-full object-cover">
         </div>
         <div class="truncate text-left">
-            <div class="text-xs sm:text-[13px] font-bold text-[#121212] font-heading truncate leading-tight">{{ $product->title }}</div>
-            <div class="flex items-baseline space-x-2 pt-0.5">
-                <span class="text-xs sm:text-sm font-black font-heading text-[#C87A1E]">
+            <div class="text-xs sm:text-base font-bold text-[#121212] font-heading truncate leading-tight">{{ $product->title }}</div>
+            <div class="flex items-baseline space-x-2 pt-0.5 sm:pt-1">
+                <span class="text-sm sm:text-lg font-black font-heading text-[#C87A1E]">
                     ₹{{ number_format($product->active_price, 2) }}
                 </span>
                 @if(isset($mrpPrice) && $mrpPrice > $product->active_price)
-                    <span class="text-[11px] text-gray-400 line-through">
+                    <span class="text-xs sm:text-sm text-gray-400 line-through">
                         ₹{{ number_format($mrpPrice, 2) }}
+                    </span>
+                    <span class="hidden sm:inline-block px-2 py-0.5 bg-[#FFF8EE] border border-[#F0D5AA] text-[#C87A1E] text-[10px] font-bold rounded-full">
+                        {{ round((($mrpPrice - $product->active_price) / $mrpPrice) * 100) }}% OFF
                     </span>
                 @endif
             </div>
@@ -777,14 +780,14 @@
     <button 
         type="button" 
         id="sticky-atc-btn" 
-        class="py-2.5 sm:py-2.5 px-4 sm:px-6 bg-gradient-to-b from-[#E2983B] to-[#C0771E] hover:from-[#D38928] hover:to-[#A86415] text-white text-[11px] sm:text-xs font-black uppercase tracking-wider rounded-[14px] sm:rounded-full shadow-[0_6px_14px_rgba(211,137,40,0.35),inset_0_1px_1px_rgba(255,255,255,0.4)] hover:shadow-[0_8px_20px_rgba(211,137,40,0.45)] active:scale-95 transition-all font-heading cursor-pointer whitespace-nowrap shrink-0 flex items-center space-x-1.5"
+        class="py-3 sm:py-3.5 px-5 sm:px-8 bg-gradient-to-r from-[#D38928] via-[#E2983B] to-[#B8741E] hover:from-[#B8741E] hover:to-[#A86415] text-white text-xs sm:text-sm font-black uppercase tracking-wider rounded-xl sm:rounded-2xl shadow-[0_8px_20px_rgba(211,137,40,0.4),inset_0_1px_2px_rgba(255,255,255,0.5)] hover:shadow-[0_12px_28px_rgba(211,137,40,0.55)] active:scale-95 transition-all font-heading cursor-pointer whitespace-nowrap shrink-0 flex items-center space-x-2"
         data-product-id="{{ $product->id }}"
         data-product-title="{{ $product->title }}"
         data-product-slug="{{ $product->slug }}"
         data-product-price="{{ $product->active_price }}"
         data-product-image="{{ asset($mainImg) }}"
     >
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
         </svg>
         <span>Add to Cart</span>
