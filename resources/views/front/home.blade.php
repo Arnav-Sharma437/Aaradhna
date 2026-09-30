@@ -1089,7 +1089,7 @@
                 <!-- Button 1: Buy any 5 Trial Pack @ 799 -->
                 <a 
                     href="{{ route('bundles.trial-packs') }}" 
-                    class="inline-flex items-center justify-between sm:justify-center space-x-3 px-5 py-3.5 bg-white/95 hover:bg-white text-[#1A1005] rounded-[10px] shadow-lg hover:shadow-xl border border-[#D38928]/50 transition-all duration-200 transform hover:-translate-y-0.5 group"
+                    class="inline-flex items-center justify-between sm:justify-center space-x-3 px-6 py-3.5 bg-white/95 hover:bg-white text-[#1A1005] rounded-[10px] shadow-lg hover:shadow-xl border border-[#D38928]/50 transition-all duration-200 transform hover:-translate-y-0.5 group"
                 >
                     <span class="text-xs sm:text-sm font-bold font-body text-gray-900 group-hover:text-[#D38928] transition-colors">Buy any 5 Trial Pack @ 799</span>
                     <span class="px-2.5 py-0.5 bg-[#FAF0E1] text-[#965A15] text-xs font-black rounded-[6px] border border-[#D38928]/30 font-heading">
@@ -1100,21 +1100,12 @@
                 <!-- Button 2: Buy 2 get 1 free -->
                 <a 
                     href="{{ route('bundles.buy2get1') }}" 
-                    class="inline-flex items-center justify-between sm:justify-center space-x-3 px-5 py-3.5 bg-white/95 hover:bg-white text-[#1A1005] rounded-[10px] shadow-lg hover:shadow-xl border border-[#D38928]/50 transition-all duration-200 transform hover:-translate-y-0.5 group"
+                    class="inline-flex items-center justify-between sm:justify-center space-x-3 px-6 py-3.5 bg-white/95 hover:bg-white text-[#1A1005] rounded-[10px] shadow-lg hover:shadow-xl border border-[#D38928]/50 transition-all duration-200 transform hover:-translate-y-0.5 group"
                 >
                     <span class="text-xs sm:text-sm font-bold font-body text-gray-900 group-hover:text-[#D38928] transition-colors">Buy 2 get 1 free</span>
-                    <span class="px-2 py-0.5 bg-[#FDE8E8] text-[#9B1C31] text-[10px] font-black uppercase tracking-wider rounded-[6px] border border-[#9B1C31]/20 font-heading">
+                    <span class="px-2.5 py-0.5 bg-[#FDE8E8] text-[#9B1C31] text-[10px] font-black uppercase tracking-wider rounded-[6px] border border-[#9B1C31]/20 font-heading">
                         FREE GIFT
                     </span>
-                </a>
-
-                <!-- Button 3: Main Shop Now Combo CTA -->
-                <a 
-                    href="{{ route('collections.show', 'best-seller-combo') }}" 
-                    class="inline-flex items-center justify-center space-x-2 px-7 py-3.5 bg-gradient-to-r from-[#D38928] via-[#E29B3B] to-[#C07B20] hover:from-[#B8741E] hover:to-[#965A15] text-[#1A1005] font-bold text-xs sm:text-sm uppercase tracking-widest rounded-[10px] shadow-xl hover:shadow-2xl transition-all duration-200 transform hover:-translate-y-0.5 font-heading cursor-pointer"
-                >
-                    <span>SHOP NOW</span>
-                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                 </a>
 
             </div>
