@@ -313,7 +313,7 @@
                             <span class="text-xs sm:text-sm text-gray-400 line-through">₹375</span>
                             <span class="text-base sm:text-xl font-black font-heading text-[#C87A1E]">₹289.00</span>
                         </div>
-                        <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Kesar Chandan" data-product-price="289.00">
+                        <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-[#121212] hover:bg-[#D38928] text-white text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Kesar Chandan" data-product-price="289.00">
                             <span>Add to cart</span>
                         </button>
                     </div>
@@ -360,7 +360,7 @@
                             <span class="text-xs sm:text-sm text-gray-400 line-through">₹375</span>
                             <span class="text-base sm:text-xl font-black font-heading text-[#C87A1E]">₹289.00</span>
                         </div>
-                        <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Chandan" data-product-price="289.00">
+                        <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-[#121212] hover:bg-[#D38928] text-white text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Chandan" data-product-price="289.00">
                             <span>Add to cart</span>
                         </button>
                     </div>
@@ -407,7 +407,7 @@
                             <span class="text-xs sm:text-sm text-gray-400 line-through">₹425</span>
                             <span class="text-base sm:text-xl font-black font-heading text-[#C87A1E]">₹349.00</span>
                         </div>
-                        <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Oudh (ऊद)" data-product-price="349.00">
+                        <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-[#121212] hover:bg-[#D38928] text-white text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Oudh (ऊद)" data-product-price="349.00">
                             <span>Add to cart</span>
                         </button>
                     </div>
@@ -454,7 +454,7 @@
                             <span class="text-xs sm:text-sm text-gray-400 line-through">₹450</span>
                             <span class="text-base sm:text-xl font-black font-heading text-[#C87A1E]">₹349.00</span>
                         </div>
-                        <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Google Dhoop" data-product-price="349.00">
+                        <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-[#121212] hover:bg-[#D38928] text-white text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Google Dhoop" data-product-price="349.00">
                             <span>Add to cart</span>
                         </button>
                     </div>
@@ -500,7 +500,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-10 sm:gap-12 lg:gap-14 max-w-5xl mx-auto">
             
             <!-- Category 1: Single Bamboo-less Dhoop Stick -->
-            <div class="group flex flex-col items-center text-center space-y-6">
+            <div class="group flex flex-col items-center text-center space-y-4 sm:space-y-5">
                 <!-- Large Rounded Circle with Single Stick Focus -->
                 <a href="{{ route('collections.show', 'bambooless') }}" class="block relative w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72 xl:w-76 xl:h-76 rounded-full p-2.5 bg-white shadow-xl hover:shadow-2xl border-2 border-[#EADBCC] hover:border-[#D38928] group-hover:scale-105 transition-all duration-500 cursor-pointer">
                     <div class="w-full h-full rounded-full overflow-hidden bg-[#FAF7F2] flex items-center justify-center p-3">
@@ -512,27 +512,22 @@
                     </div>
                 </a>
 
-                <!-- Details & Standard Brand Button -->
-                <div class="space-y-3 max-w-xs flex flex-col items-center">
-                    <div>
-                        <a 
-                            href="{{ route('collections.show', 'bambooless') }}" 
-                            class="inline-flex items-center justify-center px-6 py-2 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs font-bold uppercase tracking-wider rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 font-heading cursor-pointer"
-                        >
-                            Dhoop Stick
-                        </a>
-                    </div>
-                    <h3 class="text-lg sm:text-xl font-bold font-serif text-[#1F1F1F]">
+                <!-- Clean Non-button Category Details -->
+                <div class="space-y-1.5 max-w-xs flex flex-col items-center">
+                    <span class="text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading block">
+                        Dhoop Stick
+                    </span>
+                    <h3 class="text-sm sm:text-base font-semibold text-[#1F1F1F]">
                         <a href="{{ route('collections.show', 'bambooless') }}" class="hover:text-[#D38928] transition-colors">Bamboo-less Dhoop Stick</a>
                     </h3>
-                    <p class="text-xs sm:text-[13px] text-gray-600 leading-relaxed font-normal">
+                    <p class="text-[11px] sm:text-xs text-gray-500 leading-normal font-normal">
                         Dhoop Sticks fill your space with soothing fragrance, creating an aura of peace, positivity, and divine calm.
                     </p>
                 </div>
             </div>
 
             <!-- Category 2: Single Dhoop Cone -->
-            <div class="group flex flex-col items-center text-center space-y-6">
+            <div class="group flex flex-col items-center text-center space-y-4 sm:space-y-5">
                 <!-- Large Rounded Circle with Single Cone Focus -->
                 <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block relative w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72 xl:w-76 xl:h-76 rounded-full p-2.5 bg-white shadow-xl hover:shadow-2xl border-2 border-[#EADBCC] hover:border-[#D38928] group-hover:scale-105 transition-all duration-500 cursor-pointer">
                     <div class="w-full h-full rounded-full overflow-hidden bg-[#FAF7F2] flex items-center justify-center p-3">
@@ -544,27 +539,22 @@
                     </div>
                 </a>
 
-                <!-- Details & Standard Brand Button -->
-                <div class="space-y-3 max-w-xs flex flex-col items-center">
-                    <div>
-                        <a 
-                            href="{{ route('collections.show', 'dhoop-cones') }}" 
-                            class="inline-flex items-center justify-center px-6 py-2 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs font-bold uppercase tracking-wider rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 font-heading cursor-pointer"
-                        >
-                            Dhoop Cones
-                        </a>
-                    </div>
-                    <h3 class="text-lg sm:text-xl font-bold font-serif text-[#1F1F1F]">
+                <!-- Clean Non-button Category Details -->
+                <div class="space-y-1.5 max-w-xs flex flex-col items-center">
+                    <span class="text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading block">
+                        Dhoop Cones
+                    </span>
+                    <h3 class="text-sm sm:text-base font-semibold text-[#1F1F1F]">
                         <a href="{{ route('collections.show', 'dhoop-cones') }}" class="hover:text-[#D38928] transition-colors">Easy to Use Dhoop Cone</a>
                     </h3>
-                    <p class="text-xs sm:text-[13px] text-gray-600 leading-relaxed font-normal">
+                    <p class="text-[11px] sm:text-xs text-gray-500 leading-normal font-normal">
                         Dhoop Cones release a rich, long-lasting aroma that purifies the air and uplifts the spirit with every burn.
                     </p>
                 </div>
             </div>
 
             <!-- Category 3: Single 100% Organic Havan Cup -->
-            <div class="group flex flex-col items-center text-center space-y-6">
+            <div class="group flex flex-col items-center text-center space-y-4 sm:space-y-5">
                 <!-- Large Rounded Circle with Single Cup Focus -->
                 <a href="{{ route('collections.show', 'havan-cups') }}" class="block relative w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72 xl:w-76 xl:h-76 rounded-full p-2.5 bg-white shadow-xl hover:shadow-2xl border-2 border-[#EADBCC] hover:border-[#D38928] group-hover:scale-105 transition-all duration-500 cursor-pointer">
                     <div class="w-full h-full rounded-full overflow-hidden bg-[#FAF7F2] flex items-center justify-center p-3">
@@ -576,20 +566,15 @@
                     </div>
                 </a>
 
-                <!-- Details & Standard Brand Button -->
-                <div class="space-y-3 max-w-xs flex flex-col items-center">
-                    <div>
-                        <a 
-                            href="{{ route('collections.show', 'havan-cups') }}" 
-                            class="inline-flex items-center justify-center px-6 py-2 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs font-bold uppercase tracking-wider rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 font-heading cursor-pointer"
-                        >
-                            Havan Cup
-                        </a>
-                    </div>
-                    <h3 class="text-lg sm:text-xl font-bold font-serif text-[#1F1F1F]">
+                <!-- Clean Non-button Category Details -->
+                <div class="space-y-1.5 max-w-xs flex flex-col items-center">
+                    <span class="text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading block">
+                        Havan Cup
+                    </span>
+                    <h3 class="text-sm sm:text-base font-semibold text-[#1F1F1F]">
                         <a href="{{ route('collections.show', 'havan-cups') }}" class="hover:text-[#D38928] transition-colors">100% Organic Havan Cups</a>
                     </h3>
-                    <p class="text-xs sm:text-[13px] text-gray-600 leading-relaxed font-normal">
+                    <p class="text-[11px] sm:text-xs text-gray-500 leading-normal font-normal">
                         Organic Havan Cups made with natural ingredients, free from chemicals and artificial fragrance, for a pure experience.
                     </p>
                 </div>
@@ -677,7 +662,7 @@
                             <span class="text-xs sm:text-sm text-gray-400 line-through">₹999</span>
                             <span class="text-base sm:text-xl font-black font-heading text-[#C87A1E]">₹489.00</span>
                         </div>
-                        <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Devi Refill Pack" data-product-price="489.00">
+                        <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-[#121212] hover:bg-[#D38928] text-white text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Devi Refill Pack" data-product-price="489.00">
                             <span>Add to cart</span>
                         </button>
                     </div>
@@ -721,7 +706,7 @@
                             <span class="text-xs sm:text-sm text-gray-400 line-through">₹999</span>
                             <span class="text-base sm:text-xl font-black font-heading text-[#C87A1E]">₹489.00</span>
                         </div>
-                        <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Camphor Refill Pack" data-product-price="489.00">
+                        <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-[#121212] hover:bg-[#D38928] text-white text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Camphor Refill Pack" data-product-price="489.00">
                             <span>Add to cart</span>
                         </button>
                     </div>
@@ -765,7 +750,7 @@
                             <span class="text-xs sm:text-sm text-gray-400 line-through">₹499</span>
                             <span class="text-base sm:text-xl font-black font-heading text-[#C87A1E]">₹279.00</span>
                         </div>
-                        <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Oudh Bambooless Sticks" data-product-price="279.00">
+                        <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-[#121212] hover:bg-[#D38928] text-white text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Oudh Bambooless Sticks" data-product-price="279.00">
                             <span>Add to cart</span>
                         </button>
                     </div>
@@ -809,7 +794,7 @@
                             <span class="text-xs sm:text-sm text-gray-400 line-through">₹449</span>
                             <span class="text-base sm:text-xl font-black font-heading text-[#C87A1E]">₹249.00</span>
                         </div>
-                        <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Chandan Cones" data-product-price="249.00">
+                        <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-[#121212] hover:bg-[#D38928] text-white text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Chandan Cones" data-product-price="249.00">
                             <span>Add to cart</span>
                         </button>
                     </div>
