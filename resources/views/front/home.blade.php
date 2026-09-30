@@ -43,7 +43,7 @@
                             Discover <span class="italic font-normal text-[#8B4513]">Mangalam’s</span><br class="hidden sm:inline">
                             Incense Cone Collection
                         </h1>
-                        <p class="text-sm sm:text-base lg:text-lg font-medium text-[#0F5B4E] tracking-normal">
+                        <p class="text-sm sm:text-base lg:text-lg font-medium text-[#8B4513] tracking-normal">
                             Made From Sacred Temple Flowers &amp; Pure Vedic Herbs
                         </p>
                     </div>
@@ -53,7 +53,7 @@
                         
                         <!-- Badge 1: 100% Charcoal Free -->
                         <div class="flex flex-col items-center lg:items-start text-center lg:text-left space-y-1.5">
-                            <div class="w-11 h-11 rounded-full bg-white/95 border border-[#0F5B4E]/30 text-[#0F5B4E] flex items-center justify-center shadow-xs">
+                            <div class="w-11 h-11 rounded-full bg-[#FAF5EE] border border-[#D38928]/40 text-[#965A15] flex items-center justify-center shadow-xs">
                                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2m0 14v2m8-8h-2M6 12H4m12.364-6.364l-1.414 1.414M7.05 16.95l-1.414 1.414m12.728 0l-1.414-1.414M7.05 7.05L5.636 5.636M12 8a4 4 0 100 8 4 4 0 000-8z"/>
                                 </svg>
@@ -61,14 +61,14 @@
                             <span class="text-xs sm:text-[13px] font-semibold text-[#1F1F1F] leading-tight">
                                 100% Charcoal Free
                             </span>
-                            <span class="text-[10px] sm:text-[11px] text-[#0F5B4E] font-medium hidden sm:block">
+                            <span class="text-[10px] sm:text-[11px] text-[#965A15] font-medium hidden sm:block">
                                 Zero Black Soot
                             </span>
                         </div>
 
                         <!-- Badge 2: Crafted By Hand -->
                         <div class="flex flex-col items-center lg:items-start text-center lg:text-left space-y-1.5">
-                            <div class="w-11 h-11 rounded-full bg-white/95 border border-[#0F5B4E]/30 text-[#0F5B4E] flex items-center justify-center shadow-xs">
+                            <div class="w-11 h-11 rounded-full bg-[#FAF5EE] border border-[#D38928]/40 text-[#965A15] flex items-center justify-center shadow-xs">
                                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-6-4.35-6-9.5a6 6 0 0 1 12 0c0 5.15-6 9.5-6 9.5z"/>
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 11.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
@@ -77,14 +77,14 @@
                             <span class="text-xs sm:text-[13px] font-semibold text-[#1F1F1F] leading-tight">
                                 Crafted By Hand
                             </span>
-                            <span class="text-[10px] sm:text-[11px] text-[#0F5B4E] font-medium hidden sm:block">
+                            <span class="text-[10px] sm:text-[11px] text-[#965A15] font-medium hidden sm:block">
                                 Sacred Temple Flowers
                             </span>
                         </div>
 
                         <!-- Badge 3: Zero Chemicals -->
                         <div class="flex flex-col items-center lg:items-start text-center lg:text-left space-y-1.5">
-                            <div class="w-11 h-11 rounded-full bg-white/95 border border-[#0F5B4E]/30 text-[#0F5B4E] flex items-center justify-center shadow-xs">
+                            <div class="w-11 h-11 rounded-full bg-[#FAF5EE] border border-[#D38928]/40 text-[#965A15] flex items-center justify-center shadow-xs">
                                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
                                 </svg>
@@ -92,7 +92,7 @@
                             <span class="text-xs sm:text-[13px] font-semibold text-[#1F1F1F] leading-tight">
                                 Zero Harmful Toxins
                             </span>
-                            <span class="text-[10px] sm:text-[11px] text-[#0F5B4E] font-medium hidden sm:block">
+                            <span class="text-[10px] sm:text-[11px] text-[#965A15] font-medium hidden sm:block">
                                 Pure Vedic Herbs
                             </span>
                         </div>
@@ -146,7 +146,7 @@
                             Discover <span class="italic font-normal text-[#8B4513]">Mangalam’s</span><br class="hidden sm:inline">
                             Bambooless Incense Sticks
                         </h2>
-                        <p class="text-sm sm:text-base lg:text-lg font-medium text-[#0F5B4E] tracking-normal">
+                        <p class="text-sm sm:text-base lg:text-lg font-medium text-[#8B4513] tracking-normal">
                             100% Zero Bamboo • Pure Vedic Herbs
                         </p>
                     </div>
@@ -156,7 +156,7 @@
                         
                         <!-- Badge 1: 100% Bamboo Free -->
                         <div class="flex flex-col items-center lg:items-start text-center lg:text-left space-y-1.5">
-                            <div class="w-11 h-11 rounded-full bg-white/95 border border-[#0F5B4E]/30 text-[#0F5B4E] flex items-center justify-center shadow-xs">
+                            <div class="w-11 h-11 rounded-full bg-[#FAF5EE] border border-[#D38928]/40 text-[#965A15] flex items-center justify-center shadow-xs">
                                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2m0 14v2m8-8h-2M6 12H4m12.364-6.364l-1.414 1.414M7.05 16.95l-1.414 1.414m12.728 0l-1.414-1.414M7.05 7.05L5.636 5.636M12 8a4 4 0 100 8 4 4 0 000-8z"/>
                                 </svg>
@@ -164,14 +164,14 @@
                             <span class="text-xs sm:text-[13px] font-semibold text-[#1F1F1F] leading-tight">
                                 100% Bamboo Free
                             </span>
-                            <span class="text-[10px] sm:text-[11px] text-[#0F5B4E] font-medium hidden sm:block">
+                            <span class="text-[10px] sm:text-[11px] text-[#965A15] font-medium hidden sm:block">
                                 As Per Vedic Shastras
                             </span>
                         </div>
 
                         <!-- Badge 2: Clean & Soot-Free -->
                         <div class="flex flex-col items-center lg:items-start text-center lg:text-left space-y-1.5">
-                            <div class="w-11 h-11 rounded-full bg-white/95 border border-[#0F5B4E]/30 text-[#0F5B4E] flex items-center justify-center shadow-xs">
+                            <div class="w-11 h-11 rounded-full bg-[#FAF5EE] border border-[#D38928]/40 text-[#965A15] flex items-center justify-center shadow-xs">
                                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-6-4.35-6-9.5a6 6 0 0 1 12 0c0 5.15-6 9.5-6 9.5z"/>
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 11.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
@@ -180,14 +180,14 @@
                             <span class="text-xs sm:text-[13px] font-semibold text-[#1F1F1F] leading-tight">
                                 Clean &amp; Soot-Free
                             </span>
-                            <span class="text-[10px] sm:text-[11px] text-[#0F5B4E] font-medium hidden sm:block">
+                            <span class="text-[10px] sm:text-[11px] text-[#965A15] font-medium hidden sm:block">
                                 Pure White Smoke
                             </span>
                         </div>
 
                         <!-- Badge 3: Zero Chemicals -->
                         <div class="flex flex-col items-center lg:items-start text-center lg:text-left space-y-1.5">
-                            <div class="w-11 h-11 rounded-full bg-white/95 border border-[#0F5B4E]/30 text-[#0F5B4E] flex items-center justify-center shadow-xs">
+                            <div class="w-11 h-11 rounded-full bg-[#FAF5EE] border border-[#D38928]/40 text-[#965A15] flex items-center justify-center shadow-xs">
                                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
                                 </svg>
@@ -195,7 +195,7 @@
                             <span class="text-xs sm:text-[13px] font-semibold text-[#1F1F1F] leading-tight">
                                 Zero Harmful Toxins
                             </span>
-                            <span class="text-[10px] sm:text-[11px] text-[#0F5B4E] font-medium hidden sm:block">
+                            <span class="text-[10px] sm:text-[11px] text-[#965A15] font-medium hidden sm:block">
                                 Pure Vedic Herbs
                             </span>
                         </div>
@@ -485,10 +485,10 @@
         
         <!-- Section Header -->
         <div class="text-center max-w-2xl mx-auto mb-14 sm:mb-18 space-y-2">
-            <span class="text-[11px] sm:text-xs font-bold uppercase tracking-[0.3em] text-[#5C6F2A] font-heading">
+            <span class="text-[11px] sm:text-xs font-bold uppercase tracking-[0.3em] text-[#D38928] font-heading">
                 ✦ 100% NATURAL • CHARCOAL FREE ✦
             </span>
-            <h2 class="text-2xl sm:text-3xl lg:text-[36px] font-serif font-normal text-[#5C6F2A] tracking-wider uppercase">
+            <h2 class="text-2xl sm:text-3xl lg:text-[36px] font-serif font-normal text-[#2B1810] tracking-wider uppercase">
                 Products Category
             </h2>
             <p class="text-xs sm:text-sm text-gray-600 max-w-md mx-auto">
@@ -512,10 +512,13 @@
                     </div>
                 </a>
 
-                <!-- Details & Box Tag -->
-                <div class="space-y-3 max-w-xs">
+                <!-- Details & Standard Brand Button -->
+                <div class="space-y-3 max-w-xs flex flex-col items-center">
                     <div>
-                        <a href="{{ route('collections.show', 'bambooless') }}" class="inline-block px-5 py-1.5 border border-[#121212] hover:border-[#5C6F2A] bg-white text-[11px] sm:text-xs font-bold uppercase tracking-widest text-[#121212] hover:text-[#5C6F2A] transition-colors font-heading shadow-2xs">
+                        <a 
+                            href="{{ route('collections.show', 'bambooless') }}" 
+                            class="inline-flex items-center justify-center px-6 py-2 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs font-bold uppercase tracking-wider rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 font-heading cursor-pointer"
+                        >
                             Dhoop Stick
                         </a>
                     </div>
@@ -541,10 +544,13 @@
                     </div>
                 </a>
 
-                <!-- Details & Box Tag -->
-                <div class="space-y-3 max-w-xs">
+                <!-- Details & Standard Brand Button -->
+                <div class="space-y-3 max-w-xs flex flex-col items-center">
                     <div>
-                        <a href="{{ route('collections.show', 'dhoop-cones') }}" class="inline-block px-5 py-1.5 border border-[#121212] hover:border-[#5C6F2A] bg-white text-[11px] sm:text-xs font-bold uppercase tracking-widest text-[#121212] hover:text-[#5C6F2A] transition-colors font-heading shadow-2xs">
+                        <a 
+                            href="{{ route('collections.show', 'dhoop-cones') }}" 
+                            class="inline-flex items-center justify-center px-6 py-2 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs font-bold uppercase tracking-wider rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 font-heading cursor-pointer"
+                        >
                             Dhoop Cones
                         </a>
                     </div>
@@ -570,10 +576,13 @@
                     </div>
                 </a>
 
-                <!-- Details & Box Tag -->
-                <div class="space-y-3 max-w-xs">
+                <!-- Details & Standard Brand Button -->
+                <div class="space-y-3 max-w-xs flex flex-col items-center">
                     <div>
-                        <a href="{{ route('collections.show', 'havan-cups') }}" class="inline-block px-5 py-1.5 border border-[#121212] hover:border-[#5C6F2A] bg-white text-[11px] sm:text-xs font-bold uppercase tracking-widest text-[#121212] hover:text-[#5C6F2A] transition-colors font-heading shadow-2xs">
+                        <a 
+                            href="{{ route('collections.show', 'havan-cups') }}" 
+                            class="inline-flex items-center justify-center px-6 py-2 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs font-bold uppercase tracking-wider rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 font-heading cursor-pointer"
+                        >
                             Havan Cup
                         </a>
                     </div>
