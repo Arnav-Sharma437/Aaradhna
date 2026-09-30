@@ -88,11 +88,11 @@
         <!-- ========================================================================= -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             
-            <!-- LEFT COLUMN: Main Hero Image + Thumbnails Below (7 Cols) -->
+            <!-- LEFT COLUMN: Mobile Single+Thumbnails & Desktop High-Res 2-Column Grid (7 Cols) -->
             <div class="lg:col-span-7 space-y-6">
 
-                <!-- Interactive Main Hero Image + Below Thumbnail Strip -->
-                <div class="space-y-4">
+                <!-- 1. MOBILE/TABLET VIEW: Main Hero Image + Horizontal Thumbnails Below (Visible on mobile/tablet, hidden on desktop) -->
+                <div class="block lg:hidden space-y-3.5" id="product-mobile-gallery">
                     <!-- Main Large Hero Image -->
                     <div class="relative w-full aspect-square sm:aspect-[4/3.8] rounded-[20px] sm:rounded-[24px] overflow-hidden bg-[#FAF7F2] border border-gray-200/80 shadow-xs group">
                         <img 
@@ -117,7 +117,7 @@
                         </div>
                     </div>
 
-                    <!-- Horizontal Thumbnails Strip Directly Below (Mobile & Desktop) -->
+                    <!-- Horizontal Thumbnails Strip Directly Below -->
                     <div class="flex items-center gap-3 sm:gap-4 overflow-x-auto pb-2 scrollbar-none" id="product-thumbnails-container">
                         @foreach($galleryImages as $index => $imgUrl)
                             <button 
@@ -131,6 +131,50 @@
                             </button>
                         @endforeach
                     </div>
+                </div>
+
+                <!-- 2. DESKTOP VIEW: Large High-Res 2-Column Grid (Visible on lg, hidden on mobile) -->
+                <div class="hidden lg:grid grid-cols-2 gap-5">
+                    
+                    <!-- Visual 1: Hero Packshot with Ceramic Stand Banner -->
+                    <div class="relative aspect-[3/4] rounded-[20px] overflow-hidden bg-[#FAF7F2] border border-gray-200 shadow-xs group">
+                        <img src="{{ $galleryImages[0] }}" alt="{{ $product->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        @if($hasDiscount || $discountPercent)
+                        <div class="absolute top-4 left-4 z-10 pointer-events-none">
+                            <span class="inline-block bg-[#8B1E1E] text-white text-xs font-bold px-3 py-1 rounded-[6px] tracking-wide shadow-sm">
+                                {{ $discountPercent }}% OFF
+                            </span>
+                        </div>
+                        @endif
+                        <div class="absolute bottom-3.5 left-3.5 right-3.5 bg-black/60 backdrop-blur-xs py-2 px-3 rounded-[10px] text-center text-white text-xs font-bold tracking-wider shadow-sm">
+                            FREE CERAMIC STAND <span class="text-[#F6DAA8] font-normal">Worth ₹150/-</span>
+                        </div>
+                    </div>
+
+                    <!-- Visual 2: Artisanal Pooja Altar & Burning Incense -->
+                    <div class="relative aspect-[3/4] rounded-[20px] overflow-hidden bg-[#FAF7F2] border border-gray-200 shadow-xs group">
+                        <img src="{{ $galleryImages[1] ?? asset('assets/images/hero-incense-banner.jpg') }}" alt="Mangalam Sacred Altar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute bottom-3.5 left-3.5 right-3.5 bg-black/60 backdrop-blur-xs py-2 px-3 rounded-[10px] text-center text-white text-xs font-bold tracking-wider shadow-sm">
+                            100% BAMBOO FREE &amp; VEDIC
+                        </div>
+                    </div>
+
+                    <!-- Visual 3: Sacred Camphor / Temple Crystals / Detail -->
+                    <div class="relative aspect-[3/4] rounded-[20px] overflow-hidden bg-[#FAF7F2] border border-gray-200 shadow-xs group">
+                        <img src="{{ $galleryImages[2] ?? asset('assets/images/camphor-refill-pack-card.jpg') }}" alt="Pure Temple Ingredients" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/95 text-[#965A15] text-[11px] font-bold uppercase tracking-wider font-heading border border-[#D38928]/40 shadow-xs">
+                            Zero Charcoal
+                        </div>
+                    </div>
+
+                    <!-- Visual 4: Devotional Ambient Living Room -->
+                    <div class="relative aspect-[3/4] rounded-[20px] overflow-hidden bg-[#FAF7F2] border border-gray-200 shadow-xs group">
+                        <img src="{{ $galleryImages[3] ?? asset('assets/images/hero-ram-uphaar-banner.jpg') }}" alt="Sacred Fragrance Ambience" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute bottom-3.5 left-3.5 right-3.5 bg-black/60 backdrop-blur-xs py-2 px-3 rounded-[10px] text-center text-white text-xs font-bold tracking-wider shadow-sm">
+                            TEMPLE-GRADE PURITY
+                        </div>
+                    </div>
+
                 </div>
 
                 <!-- Fragrance Notes Pyramid & Why Choose Mangalam Infographics -->
