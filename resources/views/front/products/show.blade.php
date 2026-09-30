@@ -239,34 +239,12 @@
             <!-- RIGHT COLUMN: Clean, Seamless Purchase Details (5 Cols) -->
             <div class="lg:col-span-5 space-y-5 lg:pl-4 sticky top-28">
                 
-                <!-- 1. Star Rating, Review Count & Share Button -->
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center space-x-2 text-[#D38928] text-base">
-                        <div class="flex text-[#D38928]">
-                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                        </div>
-                        <span class="text-sm text-gray-600 font-normal">{{ $reviewCount }} reviews</span>
+                <!-- 1. Star Rating & Review Count -->
+                <div class="flex items-center space-x-2 text-[#D38928] text-base">
+                    <div class="flex text-[#D38928]">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                     </div>
-
-                    <!-- Quick Share Button -->
-                    <button 
-                        type="button" 
-                        class="product-share-trigger inline-flex items-center space-x-1.5 px-3.5 py-1.5 rounded-full bg-white hover:bg-gray-50 border border-gray-200 text-xs font-semibold text-gray-700 hover:text-[#D38928] transition-all cursor-pointer shadow-2xs"
-                        data-title="{{ $product->title }}"
-                        data-url="{{ url()->current() }}"
-                        data-text="Check out {{ $product->title }} on Mangalam.co — 100% Pure & Sacred Vedic Incense!"
-                        title="Share this product"
-                        aria-label="Share this product"
-                    >
-                        <svg class="w-3.5 h-3.5 text-[#D38928]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <circle cx="18" cy="5" r="3"></circle>
-                            <circle cx="6" cy="12" r="3"></circle>
-                            <circle cx="18" cy="19" r="3"></circle>
-                            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
-                            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
-                        </svg>
-                        <span>Share</span>
-                    </button>
+                    <span class="text-sm text-gray-600 font-normal">{{ $reviewCount }} reviews</span>
                 </div>
 
                 <!-- 2. Product Title (Large Headline) -->
@@ -406,62 +384,7 @@
                     </a>
                 </div>
 
-                <!-- 7. Social Share Bar (WhatsApp, Facebook, Copy Link) -->
-                <div class="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-gray-100">
-                    <div class="flex items-center space-x-2 text-xs font-semibold text-gray-700">
-                        <svg class="w-4 h-4 text-[#D38928]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <circle cx="18" cy="5" r="3"></circle>
-                            <circle cx="6" cy="12" r="3"></circle>
-                            <circle cx="18" cy="19" r="3"></circle>
-                            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
-                            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
-                        </svg>
-                        <span>Share Product:</span>
-                    </div>
 
-                    <div class="flex items-center space-x-2">
-                        <!-- WhatsApp Share -->
-                        <a 
-                            href="https://api.whatsapp.com/send?text={{ urlencode($product->title . ' — 100% Pure Vedic Samagri: ' . url()->current()) }}" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            class="w-9 h-9 rounded-full bg-gray-50 hover:bg-emerald-50 border border-gray-200 hover:border-emerald-500 text-emerald-600 flex items-center justify-center transition-all shadow-2xs hover:scale-105"
-                            title="Share on WhatsApp"
-                            aria-label="Share on WhatsApp"
-                        >
-                            <svg class="w-4 h-4 fill-currentColor" viewBox="0 0 24 24">
-                                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
-                            </svg>
-                        </a>
-
-                        <!-- Facebook Share -->
-                        <a 
-                            href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(url()->current()) }}" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            class="w-9 h-9 rounded-full bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-500 text-blue-600 flex items-center justify-center transition-all shadow-2xs hover:scale-105"
-                            title="Share on Facebook"
-                            aria-label="Share on Facebook"
-                        >
-                            <svg class="w-4 h-4 fill-currentColor" viewBox="0 0 24 24">
-                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                            </svg>
-                        </a>
-
-                        <!-- Copy Link Quick Button -->
-                        <button 
-                            type="button" 
-                            class="product-copy-link-btn inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-gray-50 hover:bg-gray-100 border border-gray-200 hover:border-[#D38928] text-gray-700 hover:text-[#D38928] text-xs font-semibold transition-all shadow-2xs cursor-pointer"
-                            data-url="{{ url()->current() }}"
-                            title="Copy link to clipboard"
-                        >
-                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
-                            </svg>
-                            <span>Copy Link</span>
-                        </button>
-                    </div>
-                </div>
 
                 <!-- Complimentary Ceramic Stand Card -->
                 <div class="p-4 bg-[#FFFDF9] border border-[#EADBCC] rounded-[16px] flex items-center space-x-4">
