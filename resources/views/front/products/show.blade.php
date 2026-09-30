@@ -695,39 +695,66 @@
 
             <!-- Reviews List -->
             <div class="space-y-6">
-                <div class="p-6 bg-[#FAF7F2] rounded-[16px] border border-[#EADBCC] space-y-2.5">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center space-x-2">
-                            <div class="flex text-[#D38928] text-xs">
-                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                @if(isset($product->approvedReviews) && $product->approvedReviews->count() > 0)
+                    @foreach($product->approvedReviews as $rev)
+                        <div class="p-5 sm:p-6 bg-transparent rounded-[16px] border border-[#EADBCC] space-y-2.5">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-2">
+                                    <div class="flex text-[#D38928] text-xs">
+                                        @for($i = 1; $i <= 5; $i++)
+                                            <span>{{ $i <= $rev->rating ? '★' : '☆' }}</span>
+                                        @endfor
+                                    </div>
+                                    <span class="text-xs font-bold text-[#121212] font-heading">{{ $rev->reviewer_name ?? 'Devotee' }}</span>
+                                    @if($rev->is_verified_buyer ?? true)
+                                        <span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 text-[10px] font-bold rounded-full">Verified Buyer</span>
+                                    @endif
+                                </div>
+                                <span class="text-[11px] text-gray-400">{{ $rev->created_at ? $rev->created_at->diffForHumans() : 'Recently' }}</span>
                             </div>
-                            <span class="text-xs font-bold text-[#121212] font-heading">Pandit Rameshwar Mishra</span>
-                            <span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 text-[10px] font-bold rounded-full">Verified Buyer</span>
+                            @if(!empty($rev->title))
+                                <h4 class="text-sm font-bold text-[#121212] font-heading">{{ $rev->title }}</h4>
+                            @endif
+                            <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                                {{ $rev->review_text ?? $rev->comment ?? '' }}
+                            </p>
                         </div>
-                        <span class="text-[11px] text-gray-400">2 days ago</span>
+                    @endforeach
+                @else
+                    <div class="p-5 sm:p-6 bg-transparent rounded-[16px] border border-[#EADBCC] space-y-2.5">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <div class="flex text-[#D38928] text-xs">
+                                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                </div>
+                                <span class="text-xs font-bold text-[#121212] font-heading">Pandit Rameshwar Mishra</span>
+                                <span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 text-[10px] font-bold rounded-full">Verified Buyer</span>
+                            </div>
+                            <span class="text-[11px] text-gray-400">2 days ago</span>
+                        </div>
+                        <h4 class="text-sm font-bold text-[#121212] font-heading">Genuine Vedic Purity & Zero Charcoal</h4>
+                        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                            I perform daily Chandi Path and Sandhya Vandana. Finding completely bambooless agarbatti with authentic Bhimseni camphor notes is rare. It cleanses the whole home atmosphere without producing any suffocating dark smoke.
+                        </p>
                     </div>
-                    <h4 class="text-sm font-bold text-[#121212] font-heading">Genuine Vedic Purity & Zero Charcoal</h4>
-                    <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                        I perform daily Chandi Path and Sandhya Vandana. Finding completely bambooless agarbatti with authentic Bhimseni camphor notes is rare. It cleanses the whole home atmosphere without producing any suffocating dark smoke.
-                    </p>
-                </div>
 
-                <div class="p-6 bg-[#FAF7F2] rounded-[16px] border border-[#EADBCC] space-y-2.5">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center space-x-2">
-                            <div class="flex text-[#D38928] text-xs">
-                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    <div class="p-5 sm:p-6 bg-transparent rounded-[16px] border border-[#EADBCC] space-y-2.5">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <div class="flex text-[#D38928] text-xs">
+                                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                </div>
+                                <span class="text-xs font-bold text-[#121212] font-heading">Sunita Aggarwal</span>
+                                <span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 text-[10px] font-bold rounded-full">Verified Buyer</span>
                             </div>
-                            <span class="text-xs font-bold text-[#121212] font-heading">Sunita Aggarwal</span>
-                            <span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 text-[10px] font-bold rounded-full">Verified Buyer</span>
+                            <span class="text-[11px] text-gray-400">5 days ago</span>
                         </div>
-                        <span class="text-[11px] text-gray-400">5 days ago</span>
+                        <h4 class="text-sm font-bold text-[#121212] font-heading">The Free Ceramic Stand is So Beautiful!</h4>
+                        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                            Ordered the pack of 100 sticks and received the terracotta stand inside. The packaging is pure luxury and the fragrance fills our pooja mandir throughout the morning. Will definitely repurchase!
+                        </p>
                     </div>
-                    <h4 class="text-sm font-bold text-[#121212] font-heading">The Free Ceramic Stand is So Beautiful!</h4>
-                    <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                        Ordered the pack of 100 sticks and received the terracotta stand inside. The packaging is pure luxury and the fragrance fills our pooja mandir throughout the morning. Will definitely repurchase!
-                    </p>
-                </div>
+                @endif
             </div>
 
         </div>
