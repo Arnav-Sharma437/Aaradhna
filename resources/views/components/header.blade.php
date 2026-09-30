@@ -18,7 +18,7 @@
 
                 <!-- Brand Logo (Left-aligned) -->
                 <a href="{{ route('home') }}" class="group flex items-center py-1" aria-label="Mangalam - Pure Sacred Rituals">
-                    <img src="{{ asset('assets/images/mangalam-logo.png') }}" alt="Mangalam" class="h-9 sm:h-11 w-auto object-contain">
+                    <img src="{{ asset('assets/images/mangalam-logo.png') }}" alt="Mangalam" class="h-12 sm:h-16 w-auto max-w-[160px] sm:max-w-[220px] object-contain transition-transform group-hover:scale-105">
                 </a>
             </div>
 

@@ -34,8 +34,8 @@
             
             <!-- Brand & Tagline -->
             <div class="flex items-center space-x-3.5 text-center md:text-left">
-                <a href="{{ route('home') }}" class="group inline-flex items-center bg-white px-3 py-1.5 rounded-[10px] shadow-xs">
-                    <img src="{{ asset('assets/images/mangalam-logo.png') }}" alt="Mangalam" class="h-7 sm:h-8 w-auto object-contain">
+                <a href="{{ route('home') }}" class="group inline-flex items-center bg-white px-3.5 py-2 rounded-[12px] shadow-sm hover:shadow-md transition-all">
+                    <img src="{{ asset('assets/images/mangalam-logo.png') }}" alt="Mangalam" class="h-9 sm:h-11 w-auto max-w-[150px] object-contain">
                 </a>
                 <div class="hidden sm:block pl-3 border-l border-white/20">
                     <span class="text-[10px] uppercase tracking-[0.25em] text-[#F6DAA8] font-heading font-bold block">
