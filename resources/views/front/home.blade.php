@@ -984,64 +984,56 @@
 </section>
 
 <!-- ========================================================================= -->
-<!-- 6. INTRODUCING ANANTA & SHUBH (Luxury Spotlight Showcase)                 -->
+<!-- 6. GIFTS THAT FEEL LIKE BLESSINGS (Panoramic Luxury Combo Offer Banner)   -->
 <!-- ========================================================================= -->
-<section class="py-16 sm:py-20 bg-white border-b border-[#EAE3D9]">
-    <div class="w-full mx-auto px-5 sm:px-8 lg:px-[40px]">
+<section class="py-12 sm:py-16 bg-[#FAF7F2] border-b border-[#EAE3D9]">
+    <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
         
-        <div class="relative rounded-[20px] overflow-hidden bg-gradient-to-r from-[#181818] via-[#2A1810] to-[#141414] border border-[#D38928]/40 p-8 sm:p-12 lg:p-16 shadow-2xl">
+        <div class="relative rounded-[22px] sm:rounded-[28px] overflow-hidden shadow-2xl border border-[#D38928]/40 bg-[#0F1B16] min-h-[380px] sm:min-h-[460px] lg:min-h-[500px] flex items-center">
             
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            <!-- Full Panoramic Image Background -->
+            <img 
+                src="{{ asset('assets/images/gifts-blessings-banner.jpg') }}" 
+                alt="Mangalam Gifts That Feel Like Blessings - Sacred Combo Offers" 
+                class="absolute inset-0 w-full h-full object-cover object-[75%_center] sm:object-right lg:object-center transform hover:scale-[1.02] transition-transform duration-1000 ease-out"
+            >
+
+            <!-- Dark / Emerald Devotional Gradient Overlay for 100% Crisp Left Typography -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent sm:bg-gradient-to-r sm:from-[#0B1510]/95 sm:via-[#0B1510]/80 sm:to-transparent lg:w-[62%]"></div>
+
+            <!-- Content on the Left -->
+            <div class="relative z-10 p-6 sm:p-12 lg:p-16 max-w-xl text-left space-y-4 sm:space-y-6">
                 
-                <!-- Left Content Block -->
-                <div class="lg:col-span-6 space-y-5 text-left text-white">
-                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-[10px] bg-[#D38928]/90 text-white backdrop-blur-md shadow-md border border-[#F6DAA8]/40">
-                        <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
-                        <span class="text-[10px] font-bold uppercase tracking-widest font-heading">✦ INTRODUCING NEW EDITION ✦</span>
-                    </div>
-
-                    <div class="space-y-2">
-                        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-normal font-heading tracking-tight leading-tight">
-                            ANANTA &amp; SHUBH <br>
-                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#F6DAA8] via-[#D38928] to-[#F6DAA8]">COLLECTION</span>
-                        </h2>
-                        <p class="text-xs sm:text-sm lg:text-base text-gray-300 leading-relaxed">
-                            Handcrafted incense created with rare oudh, living sandalwood resins, and Himalayan spices where ancient tradition creates pure spiritual aura.
-                        </p>
-                    </div>
-
-                    <!-- Dual CTAs INSIDE the card properly -->
-                    <div class="flex flex-wrap gap-4 pt-3">
-                        <a 
-                            href="{{ route('products.show', 'bambooless-2-combo-pack') }}" 
-                            class="inline-flex items-center justify-center px-7 py-3 bg-[#D38928] hover:bg-[#b8741e] text-white text-xs sm:text-sm font-semibold uppercase tracking-wider rounded-[10px] shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5"
-                        >
-                            <span>Buy Ananta</span>
-                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                        </a>
-                        <a 
-                            href="{{ route('collections.show', 'super-save-offers') }}" 
-                            class="inline-flex items-center justify-center px-6 py-3 bg-white/15 hover:bg-white/25 text-white text-xs sm:text-sm font-semibold uppercase tracking-wider rounded-[10px] backdrop-blur-md border border-white/30 transition-all duration-200"
-                        >
-                            Buy Shubh
-                        </a>
-                    </div>
+                <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#D38928]/30 border border-[#F6DAA8]/40 text-[#F6DAA8] text-[11px] sm:text-xs font-semibold tracking-widest uppercase backdrop-blur-xs">
+                    <span>🪔</span>
+                    <span>SACRED RITUAL HAMPERS &amp; COMBOS</span>
                 </div>
 
-                <!-- Right Visual Presentation -->
-                <div class="lg:col-span-6 flex justify-center">
-                    <div class="relative w-full max-w-md aspect-[4/3] rounded-[14px] overflow-hidden border border-[#D38928]/40 shadow-2xl">
-                        <img 
-                            src="{{ asset('assets/images/hero-incense-banner.jpg') }}" 
-                            alt="Ananta &amp; Shubh Collection" 
-                            class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700"
-                        >
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                        <div class="absolute bottom-4 left-4 right-4 text-white">
-                            <span class="text-xs font-bold font-heading text-[#F6DAA8]">Handmade Vedic Incense</span>
-                            <p class="text-[11px] text-gray-300">Natural Essential Oils • 45 Mins Burn</p>
-                        </div>
-                    </div>
+                <div class="space-y-2.5">
+                    <h2 class="text-3xl sm:text-5xl lg:text-[50px] font-normal font-serif text-[#F6DAA8] tracking-tight leading-[1.14] drop-shadow-md">
+                        Gifts That <br>
+                        <span class="italic font-normal text-white drop-shadow-lg">Feel Like Blessings</span>
+                    </h2>
+                    
+                    <p class="text-xs sm:text-sm lg:text-base text-stone-200 max-w-md leading-relaxed pt-1">
+                        Thoughtfully crafted ritual boxes for pooja, celebrations, housewarmings and meaningful gifting.
+                    </p>
+                </div>
+
+                <div class="pt-2 flex flex-wrap items-center gap-3.5">
+                    <a 
+                        href="{{ route('collections.show', 'best-seller-combo') }}" 
+                        class="inline-flex items-center justify-center px-8 sm:px-10 py-3.5 sm:py-4 bg-gradient-to-r from-[#D38928] via-[#E29B3B] to-[#C07B20] hover:from-[#B8741E] hover:to-[#965A15] text-[#1A1005] font-bold text-xs sm:text-sm uppercase tracking-widest rounded-[10px] shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-0.5 font-heading cursor-pointer"
+                    >
+                        <span>SHOP NOW</span>
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </a>
+                    <a 
+                        href="{{ route('collections.show', 'super-save-offers') }}" 
+                        class="inline-flex items-center justify-center px-6 sm:px-7 py-3.5 bg-white/10 hover:bg-white/20 text-white text-xs sm:text-sm font-semibold uppercase tracking-wider rounded-[10px] backdrop-blur-md border border-white/30 transition-all duration-200"
+                    >
+                        Super Save Offers
+                    </a>
                 </div>
 
             </div>
