@@ -30,79 +30,83 @@
                 <div class="hidden lg:block lg:col-span-5 xl:col-span-6"></div>
 
                 <!-- Right: Editorial Headlines & 3 Badges (Exact Replica of Reference Screenshot) -->
-                <div class="lg:col-span-7 xl:col-span-6 text-center lg:text-left space-y-5 sm:space-y-6 pt-24 sm:pt-16 lg:pt-0">
+                <div class="lg:col-span-7 xl:col-span-6 text-center lg:text-left space-y-4 sm:space-y-5 pt-20 sm:pt-14 lg:pt-0">
                     
                     <!-- Main Hero Headlines -->
                     <div class="space-y-2">
-                        <h1 class="text-3xl sm:text-5xl lg:text-[52px] xl:text-[58px] font-black font-serif text-[#2B1810] tracking-tight leading-[1.12]">
-                            Discover <br class="hidden sm:inline">
-                            <span class="italic font-serif font-normal text-[#8B4513]">Mangalam’s Incense</span> <br>
-                            Cone Collection
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#D38928]/10 border border-[#D38928]/30 text-[#D38928] text-xs font-semibold tracking-wider uppercase">
+                            <span>✦</span>
+                            <span>100% Pure &amp; Organic</span>
+                            <span>✦</span>
+                        </div>
+                        <h1 class="text-2xl sm:text-3xl lg:text-[38px] xl:text-[42px] font-normal text-[#2B1810] tracking-tight leading-snug lg:leading-[1.25]">
+                            Discover <span class="italic font-normal text-[#8B4513]">Mangalam’s</span><br class="hidden sm:inline">
+                            Incense Cone Collection
                         </h1>
-                        <p class="text-base sm:text-xl lg:text-[22px] font-bold text-[#0F5B4E] tracking-wide font-heading pt-1">
-                            Made From Sacred Temple Flowers
+                        <p class="text-sm sm:text-base lg:text-lg font-medium text-[#0F5B4E] tracking-normal">
+                            Made From Sacred Temple Flowers &amp; Pure Vedic Herbs
                         </p>
                     </div>
 
-                    <!-- 3 Feature Badges in Circular Outlines (Exact Replica of Reference Image) -->
-                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-7 pt-2">
+                    <!-- 3 Feature Badges in Circular Outlines -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6 pt-1">
                         
                         <!-- Badge 1: 100% Charcoal Free -->
-                        <div class="flex flex-col items-center text-center space-y-1.5 sm:space-y-2">
-                            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-[#0F5B4E] flex items-center justify-center text-[#0F5B4E] bg-white/80 shadow-xs">
-                                <svg class="w-6 h-6 sm:w-7 sm:h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <div class="flex flex-col items-center text-center space-y-1.5">
+                            <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-[#0F5B4E] flex items-center justify-center text-[#0F5B4E] bg-white/90 shadow-xs">
+                                <svg class="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                                     <path d="M12 2C6.5 2 2 6.5 2 12c0 3.5 1.8 6.6 4.6 8.4C8 18.5 11 16 12 12c1 4 4 6.5 5.4 8.4C20.2 18.6 22 15.5 22 12c0-5.5-4.5-10-10-10z"/>
                                     <path d="M12 2v20"/>
                                 </svg>
                             </div>
-                            <span class="text-xs sm:text-sm font-bold text-[#1F1F1F] font-heading leading-tight">
+                            <span class="text-[11px] sm:text-xs font-semibold text-[#1F1F1F] leading-tight">
                                 100%<br>Charcoal Free
                             </span>
                         </div>
 
                         <!-- Badge 2: Crafted By Hand -->
-                        <div class="flex flex-col items-center text-center space-y-1.5 sm:space-y-2">
-                            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-[#0F5B4E] flex items-center justify-center text-[#0F5B4E] bg-white/80 shadow-xs">
-                                <svg class="w-6 h-6 sm:w-7 sm:h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <div class="flex flex-col items-center text-center space-y-1.5">
+                            <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-[#0F5B4E] flex items-center justify-center text-[#0F5B4E] bg-white/90 shadow-xs">
+                                <svg class="w-6 h-6 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                                     <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
                                     <path d="M12 15c-3.3 0-6-2.7-6-6V7a6 6 0 0 1 12 0v2c0 3.3-2.7 6-6 6z"/>
                                     <path d="M12 19a7 7 0 0 0 7-7"/>
                                     <path d="M5 12a7 7 0 0 0 7 7"/>
                                 </svg>
                             </div>
-                            <span class="text-xs sm:text-sm font-bold text-[#1F1F1F] font-heading leading-tight">
+                            <span class="text-[11px] sm:text-xs font-semibold text-[#1F1F1F] leading-tight">
                                 Crafted By<br>Hand
                             </span>
                         </div>
 
                         <!-- Badge 3: No Chemicals -->
-                        <div class="flex flex-col items-center text-center space-y-1.5 sm:space-y-2">
-                            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-[#0F5B4E] flex items-center justify-center text-[#0F5B4E] bg-white/80 shadow-xs">
-                                <svg class="w-6 h-6 sm:w-7 sm:h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <div class="flex flex-col items-center text-center space-y-1.5">
+                            <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-[#0F5B4E] flex items-center justify-center text-[#0F5B4E] bg-white/90 shadow-xs">
+                                <svg class="w-6 h-6 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                                     <path d="M10 2v7.31L4.69 18.5a2 2 0 0 0 1.73 3h11.16a2 2 0 0 0 1.73-3L14 9.31V2"/>
                                     <path d="M8.5 2h7"/>
                                     <path d="M7 16h10"/>
                                 </svg>
                             </div>
-                            <span class="text-xs sm:text-sm font-bold text-[#1F1F1F] font-heading leading-tight">
-                                No<br>Chemicals
+                            <span class="text-[11px] sm:text-xs font-semibold text-[#1F1F1F] leading-tight">
+                                Zero<br>Chemicals
                             </span>
                         </div>
 
                     </div>
 
                     <!-- Call to Action Buttons -->
-                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 pt-2">
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 pt-1">
                         <a 
                             href="{{ route('collections.show', 'dhoop-cones') }}" 
-                            class="inline-flex items-center justify-center px-8 py-3.5 bg-[#D38928] hover:bg-[#b8741e] text-white text-xs sm:text-sm font-bold uppercase tracking-widest rounded-[10px] shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 font-heading"
+                            class="inline-flex items-center justify-center px-7 py-3 bg-[#D38928] hover:bg-[#b8741e] text-white text-xs sm:text-sm font-semibold uppercase tracking-wider rounded-[8px] sm:rounded-[10px] shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5"
                         >
                             <span>Shop Dhoop Cones</span>
-                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                         </a>
                         <a 
                             href="{{ route('collections.show', 'super-save-offers') }}" 
-                            class="inline-flex items-center justify-center px-7 py-3.5 bg-white hover:bg-stone-50 text-[#1F1F1F] hover:text-[#D38928] text-xs sm:text-sm font-bold uppercase tracking-widest rounded-[10px] border border-[#D38928]/60 shadow-xs hover:shadow-md transition-all duration-200 font-heading"
+                            class="inline-flex items-center justify-center px-6 py-3 bg-white hover:bg-stone-50 text-[#1F1F1F] hover:text-[#D38928] text-xs sm:text-sm font-semibold uppercase tracking-wider rounded-[8px] sm:rounded-[10px] border border-[#D38928]/60 shadow-xs hover:shadow-md transition-all duration-200"
                         >
                             Super Save Offers
                         </a>
@@ -126,70 +130,74 @@
                 
                 <div class="hidden lg:block lg:col-span-5 xl:col-span-6"></div>
 
-                <div class="lg:col-span-7 xl:col-span-6 text-center lg:text-left space-y-5 sm:space-y-6 pt-24 sm:pt-16 lg:pt-0">
+                <div class="lg:col-span-7 xl:col-span-6 text-center lg:text-left space-y-4 sm:space-y-5 pt-20 sm:pt-14 lg:pt-0">
                     
                     <div class="space-y-2">
-                        <h2 class="text-3xl sm:text-5xl lg:text-[52px] xl:text-[58px] font-black font-serif text-[#2B1810] tracking-tight leading-[1.12]">
-                            Discover <br class="hidden sm:inline">
-                            <span class="italic font-serif font-normal text-[#8B4513]">Mangalam’s Bambooless</span> <br>
-                            Incense Sticks
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#D38928]/10 border border-[#D38928]/30 text-[#D38928] text-xs font-semibold tracking-wider uppercase">
+                            <span>✦</span>
+                            <span>100% Pure &amp; Organic</span>
+                            <span>✦</span>
+                        </div>
+                        <h2 class="text-2xl sm:text-3xl lg:text-[38px] xl:text-[42px] font-normal text-[#2B1810] tracking-tight leading-snug lg:leading-[1.25]">
+                            Discover <span class="italic font-normal text-[#8B4513]">Mangalam’s</span><br class="hidden sm:inline">
+                            Bambooless Incense Sticks
                         </h2>
-                        <p class="text-base sm:text-xl lg:text-[22px] font-bold text-[#0F5B4E] tracking-wide font-heading pt-1">
+                        <p class="text-sm sm:text-base lg:text-lg font-medium text-[#0F5B4E] tracking-normal">
                             100% Zero Bamboo • Pure Vedic Herbs
                         </p>
                     </div>
 
-                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-7 pt-2">
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6 pt-1">
                         
-                        <div class="flex flex-col items-center text-center space-y-1.5 sm:space-y-2">
-                            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-[#0F5B4E] flex items-center justify-center text-[#0F5B4E] bg-white/80 shadow-xs">
-                                <svg class="w-6 h-6 sm:w-7 sm:h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <div class="flex flex-col items-center text-center space-y-1.5">
+                            <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-[#0F5B4E] flex items-center justify-center text-[#0F5B4E] bg-white/90 shadow-xs">
+                                <svg class="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                                     <path d="M12 2C6.5 2 2 6.5 2 12c0 3.5 1.8 6.6 4.6 8.4C8 18.5 11 16 12 12c1 4 4 6.5 5.4 8.4C20.2 18.6 22 15.5 22 12c0-5.5-4.5-10-10-10z"/>
                                     <path d="M12 2v20"/>
                                 </svg>
                             </div>
-                            <span class="text-xs sm:text-sm font-bold text-[#1F1F1F] font-heading leading-tight">
+                            <span class="text-[11px] sm:text-xs font-semibold text-[#1F1F1F] leading-tight">
                                 100%<br>Charcoal Free
                             </span>
                         </div>
 
-                        <div class="flex flex-col items-center text-center space-y-1.5 sm:space-y-2">
-                            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-[#0F5B4E] flex items-center justify-center text-[#0F5B4E] bg-white/80 shadow-xs">
-                                <svg class="w-6 h-6 sm:w-7 sm:h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <div class="flex flex-col items-center text-center space-y-1.5">
+                            <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-[#0F5B4E] flex items-center justify-center text-[#0F5B4E] bg-white/90 shadow-xs">
+                                <svg class="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                                     <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
                                 </svg>
                             </div>
-                            <span class="text-xs sm:text-sm font-bold text-[#1F1F1F] font-heading leading-tight">
+                            <span class="text-[11px] sm:text-xs font-semibold text-[#1F1F1F] leading-tight">
                                 Clean &amp;<br>Soot-Free
                             </span>
                         </div>
 
-                        <div class="flex flex-col items-center text-center space-y-1.5 sm:space-y-2">
-                            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-[#0F5B4E] flex items-center justify-center text-[#0F5B4E] bg-white/80 shadow-xs">
-                                <svg class="w-6 h-6 sm:w-7 sm:h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <div class="flex flex-col items-center text-center space-y-1.5">
+                            <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-[#0F5B4E] flex items-center justify-center text-[#0F5B4E] bg-white/90 shadow-xs">
+                                <svg class="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                                     <path d="M10 2v7.31L4.69 18.5a2 2 0 0 0 1.73 3h11.16a2 2 0 0 0 1.73-3L14 9.31V2"/>
                                     <path d="M8.5 2h7"/>
                                     <path d="M7 16h10"/>
                                 </svg>
                             </div>
-                            <span class="text-xs sm:text-sm font-bold text-[#1F1F1F] font-heading leading-tight">
+                            <span class="text-[11px] sm:text-xs font-semibold text-[#1F1F1F] leading-tight">
                                 Zero<br>Chemicals
                             </span>
                         </div>
 
                     </div>
 
-                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 pt-2">
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 pt-1">
                         <a 
                             href="{{ route('collections.show', 'bambooless') }}" 
-                            class="inline-flex items-center justify-center px-8 py-3.5 bg-[#D38928] hover:bg-[#b8741e] text-white text-xs sm:text-sm font-bold uppercase tracking-widest rounded-[10px] shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 font-heading"
+                            class="inline-flex items-center justify-center px-7 py-3 bg-[#D38928] hover:bg-[#b8741e] text-white text-xs sm:text-sm font-semibold uppercase tracking-wider rounded-[8px] sm:rounded-[10px] shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5"
                         >
                             <span>Shop Bambooless</span>
-                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                         </a>
                         <a 
                             href="{{ route('collections.show', 'best-seller-combo') }}" 
-                            class="inline-flex items-center justify-center px-7 py-3.5 bg-white hover:bg-stone-50 text-[#1F1F1F] hover:text-[#D38928] text-xs sm:text-sm font-bold uppercase tracking-widest rounded-[10px] border border-[#D38928]/60 shadow-xs hover:shadow-md transition-all duration-200 font-heading"
+                            class="inline-flex items-center justify-center px-6 py-3 bg-white hover:bg-stone-50 text-[#1F1F1F] hover:text-[#D38928] text-xs sm:text-sm font-semibold uppercase tracking-wider rounded-[8px] sm:rounded-[10px] border border-[#D38928]/60 shadow-xs hover:shadow-md transition-all duration-200"
                         >
                             Best Seller Combo
                         </a>
@@ -237,9 +245,9 @@
     <div class="w-full mx-auto px-5 sm:px-8 lg:px-[40px]">
         
         <!-- Section Header with Subtitle -->
-        <div class="text-center max-w-2xl mx-auto mb-14 space-y-2">
+        <div class="text-center max-w-2xl mx-auto mb-12 space-y-2">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ PURE VEDIC BLESSINGS ✦</span>
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#121212] font-heading tracking-tight">
+            <h2 class="text-2xl sm:text-3xl lg:text-[36px] font-normal text-[#121212] font-heading tracking-tight">
                 Bestseller of the Month
             </h2>
             <p class="text-sm sm:text-base text-gray-600">
@@ -465,7 +473,7 @@
             <span class="text-[11px] sm:text-xs font-bold uppercase tracking-[0.3em] text-[#5C6F2A] font-heading">
                 ✦ 100% NATURAL • CHARCOAL FREE ✦
             </span>
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-[#5C6F2A] tracking-wider uppercase">
+            <h2 class="text-2xl sm:text-3xl lg:text-[36px] font-serif font-normal text-[#5C6F2A] tracking-wider uppercase">
                 Products Category
             </h2>
             <p class="text-xs sm:text-sm text-gray-600 max-w-md mx-auto">
@@ -574,9 +582,9 @@
 <section class="py-16 sm:py-24 bg-white border-b border-[#EAE3D9]">
     <div class="w-full mx-auto px-5 sm:px-8 lg:px-[40px]">
         
-        <div class="text-center max-w-2xl mx-auto mb-14 space-y-2">
+        <div class="text-center max-w-2xl mx-auto mb-12 space-y-2">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ DAILY RITUAL GUIDES ✦</span>
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#121212] font-heading tracking-tight">
+            <h2 class="text-2xl sm:text-3xl lg:text-[36px] font-normal text-[#121212] font-heading tracking-tight">
                 Devotional Moments of Peace
             </h2>
             <p class="text-sm sm:text-base text-gray-600">
@@ -777,9 +785,9 @@
     <div class="w-full mx-auto px-5 sm:px-8 lg:px-[40px]">
         
         <!-- Header -->
-        <div class="text-center max-w-2xl mx-auto mb-14 space-y-2">
+        <div class="text-center max-w-2xl mx-auto mb-12 space-y-2">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ 50,000+ BLESSED HOMES ✦</span>
-            <h2 class="text-3xl sm:text-4xl font-black text-[#121212] font-heading tracking-tight">
+            <h2 class="text-2xl sm:text-3xl lg:text-[36px] font-normal text-[#121212] font-heading tracking-tight">
                 Devotee Experiences
             </h2>
             <p class="text-sm sm:text-base text-gray-600">
@@ -993,7 +1001,7 @@
                     </div>
 
                     <div class="space-y-2">
-                        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black font-heading tracking-tight leading-tight">
+                        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-normal font-heading tracking-tight leading-tight">
                             ANANTA &amp; SHUBH <br>
                             <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#F6DAA8] via-[#D38928] to-[#F6DAA8]">COLLECTION</span>
                         </h2>
@@ -1006,14 +1014,14 @@
                     <div class="flex flex-wrap gap-4 pt-3">
                         <a 
                             href="{{ route('products.show', 'bambooless-2-combo-pack') }}" 
-                            class="inline-flex items-center justify-center px-8 py-3.5 bg-[#D38928] hover:bg-[#b8741e] text-white text-xs sm:text-sm font-bold uppercase tracking-widest rounded-[10px] shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 font-heading"
+                            class="inline-flex items-center justify-center px-7 py-3 bg-[#D38928] hover:bg-[#b8741e] text-white text-xs sm:text-sm font-semibold uppercase tracking-wider rounded-[10px] shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5"
                         >
                             <span>Buy Ananta</span>
-                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                         </a>
                         <a 
                             href="{{ route('collections.show', 'super-save-offers') }}" 
-                            class="inline-flex items-center justify-center px-7 py-3.5 bg-white/15 hover:bg-white/25 text-white text-xs sm:text-sm font-bold uppercase tracking-widest rounded-[10px] backdrop-blur-md border border-white/30 transition-all duration-200 font-heading"
+                            class="inline-flex items-center justify-center px-6 py-3 bg-white/15 hover:bg-white/25 text-white text-xs sm:text-sm font-semibold uppercase tracking-wider rounded-[10px] backdrop-blur-md border border-white/30 transition-all duration-200"
                         >
                             Buy Shubh
                         </a>
@@ -1051,7 +1059,7 @@
         
         <div class="text-center max-w-2xl mx-auto mb-12 space-y-2">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ SACRED PROMISES ✦</span>
-            <h2 class="text-3xl sm:text-4xl font-black text-[#121212] font-heading tracking-tight">
+            <h2 class="text-2xl sm:text-3xl lg:text-[36px] font-normal text-[#121212] font-heading tracking-tight">
                 Rooted in Purity
             </h2>
             <p class="text-sm sm:text-base text-gray-600">
@@ -1114,7 +1122,7 @@
         
         <div class="text-center max-w-2xl mx-auto mb-12 space-y-2">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ CLARITY &amp; VIDHI ✦</span>
-            <h2 class="text-3xl sm:text-4xl font-black text-[#121212] font-heading tracking-tight">
+            <h2 class="text-2xl sm:text-3xl lg:text-[36px] font-normal text-[#121212] font-heading tracking-tight">
                 Frequently Asked Questions
             </h2>
             <p class="text-sm sm:text-base text-gray-600">
