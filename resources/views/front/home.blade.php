@@ -455,48 +455,53 @@
 </section>
 
 <!-- ========================================================================= -->
-<!-- 3. PRODUCTS CATEGORY (Big Clear Circles with Scattered Floral Petals BG)   -->
+<!-- 3. PRODUCTS CATEGORY (Large Single-Item Circles & Artistic Corner Branches) -->
 <!-- ========================================================================= -->
-<section class="relative py-16 sm:py-24 bg-[#FFFDF9] border-b border-[#EAE3D9] overflow-hidden font-body select-none">
+<section class="relative py-20 sm:py-28 bg-[#FAF8F5] border-b border-[#EAE3D9] overflow-hidden font-body select-none">
     
-    <!-- Subtle Background Flower Petals & Herb Texture Overlay -->
-    <div class="absolute inset-0 opacity-[0.22] pointer-events-none mix-blend-multiply bg-cover bg-center" style="background-image: url('{{ asset('assets/images/sacred-petals-bg.jpg') }}');"></div>
-    <div class="absolute inset-0 bg-gradient-to-b from-[#FFFDF9]/80 via-transparent to-[#FFFDF9]/85 pointer-events-none"></div>
+    <!-- Top-Right Artistic Floral Branch (Dali) Peeking In -->
+    <div class="absolute -top-6 -right-6 w-48 sm:w-64 lg:w-80 pointer-events-none select-none mix-blend-multiply opacity-85 z-0">
+        <img src="{{ asset('assets/images/branch-top-right.jpg') }}" alt="" class="w-full h-auto object-contain">
+    </div>
+
+    <!-- Bottom-Left Blooming Rose & Petals Branch Peeking In -->
+    <div class="absolute -bottom-8 -left-8 w-48 sm:w-64 lg:w-80 pointer-events-none select-none mix-blend-multiply opacity-85 z-0">
+        <img src="{{ asset('assets/images/branch-bottom-left.jpg') }}" alt="" class="w-full h-auto object-contain">
+    </div>
 
     <div class="relative z-10 w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
         
-        <!-- Section Header (Exact Styling to User Reference) -->
-        <div class="text-center max-w-2xl mx-auto mb-14 sm:mb-18 space-y-2">
-            <span class="text-[11px] sm:text-xs font-bold uppercase tracking-[0.3em] text-[#0F5B4E] font-heading">
+        <!-- Section Header (Exact Match to User Reference) -->
+        <div class="text-center max-w-2xl mx-auto mb-16 sm:mb-20 space-y-2.5">
+            <span class="text-[11px] sm:text-xs font-bold uppercase tracking-[0.3em] text-[#5C6F2A] font-heading">
                 ✦ 100% NATURAL • CHARCOAL FREE ✦
             </span>
             <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-[#5C6F2A] tracking-wider uppercase">
                 Products Category
             </h2>
-            <p class="text-xs sm:text-sm text-gray-600 max-w-lg mx-auto">
+            <p class="text-xs sm:text-sm text-gray-600 max-w-md mx-auto">
                 Handcrafted from sacred temple flowers &amp; pure living resins for divine daily rituals.
             </p>
         </div>
 
-        <!-- 3 Main Product Categories Grid (Big Rounded Circles with Clear Product Focus) -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 lg:gap-14 max-w-5xl mx-auto">
+        <!-- 3 Big Single-Product Category Circles -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 sm:gap-12 lg:gap-14 max-w-5xl mx-auto">
             
-            <!-- Category 1: Bamboo-less Dhoop Sticks -->
-            <div class="group flex flex-col items-center text-center space-y-5">
-                <!-- Big Rounded Circle Avatar (Product in Clear Focus) -->
-                <a href="{{ route('collections.show', 'bambooless') }}" class="block relative w-44 h-44 sm:w-52 sm:h-52 lg:w-56 lg:h-56 rounded-full p-2 bg-gradient-to-tr from-[#D38928]/40 via-[#FAF5EE] to-[#5C6F2A]/40 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
-                    <div class="w-full h-full rounded-full overflow-hidden bg-white border-2 border-[#EADBCC] shadow-inner flex items-center justify-center p-2">
+            <!-- Category 1: Single Bamboo-less Dhoop Stick -->
+            <div class="group flex flex-col items-center text-center space-y-6">
+                <!-- Very Large Rounded Circle with Single Stick Focus -->
+                <a href="{{ route('collections.show', 'bambooless') }}" class="block relative w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72 xl:w-76 xl:h-76 rounded-full p-2.5 bg-white shadow-xl hover:shadow-2xl border-2 border-[#EADBCC] hover:border-[#D38928] group-hover:scale-105 transition-all duration-500 cursor-pointer">
+                    <div class="w-full h-full rounded-full overflow-hidden bg-[#FAF7F2] flex items-center justify-center p-3">
                         <img 
-                            src="{{ asset('assets/images/category-bambooless-stick.jpg') }}" 
+                            src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" 
                             alt="Bamboo-less Dhoop Stick" 
-                            class="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform duration-500"
+                            class="w-full h-full object-contain rounded-full group-hover:scale-110 transition-transform duration-500"
                         >
                     </div>
                 </a>
 
-                <!-- Tag & Details -->
-                <div class="space-y-2.5 max-w-xs">
-                    <!-- Box Tag matching screenshot -->
+                <!-- Details & Box Tag -->
+                <div class="space-y-3 max-w-xs">
                     <div>
                         <a href="{{ route('collections.show', 'bambooless') }}" class="inline-block px-5 py-1.5 border border-[#121212] hover:border-[#5C6F2A] bg-white text-[11px] sm:text-xs font-bold uppercase tracking-widest text-[#121212] hover:text-[#5C6F2A] transition-colors font-heading shadow-2xs">
                             Dhoop Stick
@@ -511,21 +516,21 @@
                 </div>
             </div>
 
-            <!-- Category 2: Easy to Use Dhoop Cones -->
-            <div class="group flex flex-col items-center text-center space-y-5">
-                <!-- Big Rounded Circle Avatar -->
-                <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block relative w-44 h-44 sm:w-52 sm:h-52 lg:w-56 lg:h-56 rounded-full p-2 bg-gradient-to-tr from-[#D38928]/40 via-[#FAF5EE] to-[#5C6F2A]/40 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
-                    <div class="w-full h-full rounded-full overflow-hidden bg-white border-2 border-[#EADBCC] shadow-inner flex items-center justify-center p-2">
+            <!-- Category 2: Single Dhoop Cone -->
+            <div class="group flex flex-col items-center text-center space-y-6">
+                <!-- Very Large Rounded Circle with Single Cone Focus -->
+                <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block relative w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72 xl:w-76 xl:h-76 rounded-full p-2.5 bg-white shadow-xl hover:shadow-2xl border-2 border-[#EADBCC] hover:border-[#D38928] group-hover:scale-105 transition-all duration-500 cursor-pointer">
+                    <div class="w-full h-full rounded-full overflow-hidden bg-[#FAF7F2] flex items-center justify-center p-3">
                         <img 
-                            src="{{ asset('assets/images/category-dhoop-cones.jpg') }}" 
-                            alt="Easy to Use Dhoop Cones" 
-                            class="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform duration-500"
+                            src="{{ asset('assets/images/single-dhoop-cone.jpg') }}" 
+                            alt="Easy to Use Dhoop Cone" 
+                            class="w-full h-full object-contain rounded-full group-hover:scale-110 transition-transform duration-500"
                         >
                     </div>
                 </a>
 
-                <!-- Tag & Details -->
-                <div class="space-y-2.5 max-w-xs">
+                <!-- Details & Box Tag -->
+                <div class="space-y-3 max-w-xs">
                     <div>
                         <a href="{{ route('collections.show', 'dhoop-cones') }}" class="inline-block px-5 py-1.5 border border-[#121212] hover:border-[#5C6F2A] bg-white text-[11px] sm:text-xs font-bold uppercase tracking-widest text-[#121212] hover:text-[#5C6F2A] transition-colors font-heading shadow-2xs">
                             Dhoop Cones
@@ -540,21 +545,21 @@
                 </div>
             </div>
 
-            <!-- Category 3: 100% Organic Havan Cups -->
-            <div class="group flex flex-col items-center text-center space-y-5">
-                <!-- Big Rounded Circle Avatar -->
-                <a href="{{ route('collections.show', 'havan-cups') }}" class="block relative w-44 h-44 sm:w-52 sm:h-52 lg:w-56 lg:h-56 rounded-full p-2 bg-gradient-to-tr from-[#D38928]/40 via-[#FAF5EE] to-[#5C6F2A]/40 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
-                    <div class="w-full h-full rounded-full overflow-hidden bg-white border-2 border-[#EADBCC] shadow-inner flex items-center justify-center p-2">
+            <!-- Category 3: Single 100% Organic Havan Cup -->
+            <div class="group flex flex-col items-center text-center space-y-6">
+                <!-- Very Large Rounded Circle with Single Cup Focus -->
+                <a href="{{ route('collections.show', 'havan-cups') }}" class="block relative w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72 xl:w-76 xl:h-76 rounded-full p-2.5 bg-white shadow-xl hover:shadow-2xl border-2 border-[#EADBCC] hover:border-[#D38928] group-hover:scale-105 transition-all duration-500 cursor-pointer">
+                    <div class="w-full h-full rounded-full overflow-hidden bg-[#FAF7F2] flex items-center justify-center p-3">
                         <img 
-                            src="{{ asset('assets/images/category-havan-cup.jpg') }}" 
+                            src="{{ asset('assets/images/single-havan-cup.jpg') }}" 
                             alt="100% Organic Havan Cups" 
-                            class="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform duration-500"
+                            class="w-full h-full object-contain rounded-full group-hover:scale-110 transition-transform duration-500"
                         >
                     </div>
                 </a>
 
-                <!-- Tag & Details -->
-                <div class="space-y-2.5 max-w-xs">
+                <!-- Details & Box Tag -->
+                <div class="space-y-3 max-w-xs">
                     <div>
                         <a href="{{ route('collections.show', 'havan-cups') }}" class="inline-block px-5 py-1.5 border border-[#121212] hover:border-[#5C6F2A] bg-white text-[11px] sm:text-xs font-bold uppercase tracking-widest text-[#121212] hover:text-[#5C6F2A] transition-colors font-heading shadow-2xs">
                             Havan Cup
