@@ -222,64 +222,117 @@
                 </div>
             </div>
 
-            <!-- RIGHT COLUMN: Purchase Details, Multi-Buy Banner & Ceramic Stand (5 Cols) -->
-            <div class="lg:col-span-5 bg-white rounded-[24px] border border-[#EADBCC] p-6 sm:p-8 lg:p-10 shadow-xs space-y-6 sticky top-28">
+            <!-- RIGHT COLUMN: Purchase Details (Exact Match to User Uploaded Screenshot) -->
+            <div class="lg:col-span-5 bg-white rounded-[24px] border border-[#EADBCC] p-6 sm:p-8 lg:p-10 shadow-xs space-y-5 sticky top-28">
                 
-                <!-- Star Rating & Review Count -->
-                <div class="flex items-center space-x-2 text-[#D38928] text-sm">
-                    <div class="flex">
+                <!-- 1. Star Rating & Review Count -->
+                <div class="flex items-center space-x-2 text-[#D38928] text-base">
+                    <div class="flex text-[#D38928]">
                         <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                     </div>
-                    <span class="text-xs text-gray-500 font-semibold font-body">({{ $reviewCount }} Devotee Reviews)</span>
+                    <span class="text-sm text-gray-600 font-normal">{{ $reviewCount }} reviews</span>
                 </div>
 
-                <!-- Product Title & Subtitle -->
+                <!-- 2. Product Title (Large Serif Headline) -->
                 <div class="space-y-1">
-                    <h1 class="text-2xl sm:text-3xl lg:text-4xl font-black text-[#121212] font-heading tracking-tight leading-snug">
+                    <h1 class="text-3xl sm:text-4xl lg:text-[42px] font-serif font-normal text-[#1A1A1A] tracking-tight leading-[1.12]">
                         {{ $product->title }}
                     </h1>
-                    <p class="text-xs sm:text-sm text-gray-600 font-medium">
-                        Infused with pure Vedic resins, handcrafted for divine peace, morning Sandhya, and temple aarti.
-                    </p>
+                    <div class="text-[11px] sm:text-xs tracking-[0.18em] text-gray-500 uppercase font-medium pt-0.5 font-heading">
+                        {{ $product->category ? $product->category->name : 'HAVAN CUP' }}
+                    </div>
                 </div>
 
-                <!-- Badges Highlights (Bamboo Free, Zero Charcoal, Pure Herbs) -->
-                <div class="flex flex-wrap gap-2 pt-1">
-                    <span class="px-3 py-1 bg-[#FAF7F2] border border-[#EADBCC] text-[#965A15] rounded-full text-[11px] font-bold uppercase tracking-wider font-heading">
-                        🌿 0% Bamboo
-                    </span>
-                    <span class="px-3 py-1 bg-[#FAF7F2] border border-[#EADBCC] text-[#965A15] rounded-full text-[11px] font-bold uppercase tracking-wider font-heading">
-                        ✨ Zero Charcoal
-                    </span>
-                    <span class="px-3 py-1 bg-[#FAF7F2] border border-[#EADBCC] text-[#965A15] rounded-full text-[11px] font-bold uppercase tracking-wider font-heading">
-                        🪔 Temple Grade
-                    </span>
-                </div>
-
-                <!-- Pricing Display -->
-                <div class="space-y-1 pt-2">
-                    <div class="flex items-baseline space-x-3">
-                        <span class="text-xs sm:text-sm text-gray-400 line-through">
+                <!-- 3. Pricing Display & Savings Pill -->
+                <div class="space-y-1.5 pt-1">
+                    <div class="flex flex-wrap items-baseline gap-2.5 sm:gap-3">
+                        <span class="text-base sm:text-lg text-gray-500 line-through">
                             ₹{{ number_format($mrpPrice, 2) }}
                         </span>
-                        <span id="display-sale-price" class="text-2xl sm:text-3xl lg:text-4xl font-black font-heading text-[#C87A1E]">
+                        <span id="display-sale-price" class="text-2xl sm:text-3xl font-bold font-heading text-[#C87A1E]">
                             ₹{{ number_format($product->active_price, 2) }}
                         </span>
-                        <span class="px-2.5 py-0.5 bg-[#9B1C31] text-white text-xs font-bold uppercase tracking-wider rounded-full font-heading">
-                            Save {{ $discountPercent }}%
+                        <span class="px-3 py-1 bg-[#FFF8EE] border border-[#F0D5AA] text-[#C87A1E] text-xs font-semibold rounded-full">
+                            Save ₹{{ number_format($mrpPrice - $product->active_price, 2) }} ({{ round((($mrpPrice - $product->active_price) / $mrpPrice) * 100) }}%)
                         </span>
                     </div>
-                    <p class="text-[11px] text-gray-500">
-                        Inclusive of all taxes. Free shipping on orders above ₹499.
+                    <p class="text-xs text-gray-500 pt-0.5">
+                        Taxes included. <a href="{{ route('pages.show', 'shipping-policy') }}" class="underline hover:text-[#D38928]">Shipping</a> calculated at checkout.
                     </p>
                 </div>
 
-                <!-- Quantity & Add to Cart -->
-                <div class="space-y-3 pt-2">
+                <!-- 4. Key Tagline / Mission Statement (Bold Serif) -->
+                <div class="pt-2">
+                    <p class="text-base sm:text-lg font-bold text-[#1A1A1A] leading-snug font-serif">
+                        {{ $product->short_description ?: 'For removing negative vibrations from home, office and personal spaces.' }}
+                    </p>
+                </div>
+
+                <!-- 5. 4 Iconic Feature Circles with Text (Exact Replica of Screenshot) -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-y-4 gap-x-4 pt-2 pb-2">
+                    
+                    <!-- Feature 1: Chemical Free -->
+                    <div class="flex items-center space-x-2.5">
+                        <div class="w-11 h-11 rounded-full border border-[#D38928] flex items-center justify-center text-[#D38928] bg-transparent shrink-0">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M12 2C6.5 2 2 6.5 2 12c0 3.5 1.8 6.6 4.6 8.4C8 18.5 11 16 12 12c1 4 4 6.5 5.4 8.4C20.2 18.6 22 15.5 22 12c0-5.5-4.5-10-10-10z"/>
+                                <path d="M12 2v20"/>
+                            </svg>
+                        </div>
+                        <span class="text-xs sm:text-sm font-bold text-[#1A1A1A] leading-tight">
+                            Chemical Free
+                        </span>
+                    </div>
+
+                    <!-- Feature 2: Grahshuddhi Ingredients -->
+                    <div class="flex items-center space-x-2.5">
+                        <div class="w-11 h-11 rounded-full border border-[#D38928] flex items-center justify-center text-[#D38928] bg-transparent shrink-0">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                <polyline points="9 22 9 12 15 12 15 22"/>
+                            </svg>
+                        </div>
+                        <span class="text-xs sm:text-sm font-bold text-[#1A1A1A] leading-tight">
+                            Grahshuddhi<br>Ingredients
+                        </span>
+                    </div>
+
+                    <!-- Feature 3: Natural ingredients -->
+                    <div class="flex items-center space-x-2.5">
+                        <div class="w-11 h-11 rounded-full border border-[#D38928] flex items-center justify-center text-[#D38928] bg-transparent shrink-0">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                                <path d="M12 15c-3.3 0-6-2.7-6-6V7a6 6 0 0 1 12 0v2c0 3.3-2.7 6-6 6z"/>
+                                <path d="M12 19a7 7 0 0 0 7-7"/>
+                                <path d="M5 12a7 7 0 0 0 7 7"/>
+                            </svg>
+                        </div>
+                        <span class="text-xs sm:text-sm font-bold text-[#1A1A1A] leading-tight">
+                            Natural<br>ingredients
+                        </span>
+                    </div>
+
+                    <!-- Feature 4: Free Safe grip stand -->
+                    <div class="flex items-center space-x-2.5">
+                        <div class="w-11 h-11 rounded-full border border-[#D38928] flex items-center justify-center text-[#D38928] bg-transparent shrink-0">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <circle cx="12" cy="12" r="9"/>
+                                <path d="M12 7v5l3 3"/>
+                            </svg>
+                        </div>
+                        <span class="text-xs sm:text-sm font-bold text-[#1A1A1A] leading-tight">
+                            Free Safe grip<br>stand
+                        </span>
+                    </div>
+
+                </div>
+
+                <!-- 6. Quantity Stepper + Add to Cart CTA Row -->
+                <div class="space-y-3 pt-3">
                     <div class="flex items-center space-x-3">
-                        <!-- Stepper -->
-                        <div class="flex items-center border border-[#EADBCC] rounded-[10px] bg-white overflow-hidden">
-                            <button type="button" id="qty-decrement" class="px-4 py-3 text-gray-500 hover:text-[#121212] transition-colors focus:outline-none font-bold text-base">−</button>
+                        <!-- Square Stepper Box matching screenshot -->
+                        <div class="flex items-center justify-between border border-[#1A1A1A] rounded-[4px] bg-white px-3 py-2.5 w-28 shrink-0">
+                            <button type="button" id="qty-decrement" class="text-gray-600 hover:text-[#1A1A1A] transition-colors focus:outline-none font-bold text-lg leading-none cursor-pointer">−</button>
                             <input 
                                 type="number" 
                                 id="product-quantity" 
@@ -287,82 +340,45 @@
                                 value="1" 
                                 min="1" 
                                 max="99" 
-                                class="w-12 text-center text-sm font-bold border-none focus:ring-0 p-0 text-[#121212]"
+                                class="w-10 text-center text-sm font-bold border-none focus:ring-0 p-0 text-[#1A1A1A]"
                                 readonly
                             >
-                            <button type="button" id="qty-increment" class="px-4 py-3 text-gray-500 hover:text-[#121212] transition-colors focus:outline-none font-bold text-base">+</button>
+                            <button type="button" id="qty-increment" class="text-gray-600 hover:text-[#1A1A1A] transition-colors focus:outline-none font-bold text-lg leading-none cursor-pointer">+</button>
                         </div>
 
-                        <!-- Add to Cart CTA -->
+                        <!-- Solid Golden Orange Rounded Pill Add to Cart CTA -->
                         <button 
                             type="button" 
                             id="main-add-to-cart-btn"
-                            class="flex-1 py-3.5 px-6 bg-[#D38928] hover:bg-[#B8741E] active:bg-[#965A15] text-white text-sm sm:text-base font-bold rounded-[10px] shadow-md hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-2 font-heading cursor-pointer focus:outline-none"
+                            class="flex-1 py-3.5 px-8 bg-[#D38928] hover:bg-[#B8741E] active:bg-[#965A15] text-white text-sm sm:text-base font-bold rounded-full shadow-xs hover:shadow-md transition-all duration-200 text-center flex items-center justify-center font-heading cursor-pointer focus:outline-none"
                             data-product-id="{{ $product->id }}"
                             data-product-title="{{ $product->title }}"
                             data-product-slug="{{ $product->slug }}"
                             data-product-price="{{ $product->active_price }}"
                             data-product-image="{{ asset($mainImg) }}"
                         >
-                            <span>Add to Cart</span>
+                            <span>Add to cart</span>
                         </button>
                     </div>
 
-                    <!-- Buy It Now Button -->
+                    <!-- Buy It Now Button (Full Width with light warm cream background & dark border) -->
                     <a 
                         href="{{ route('cart.index') }}" 
-                        class="block w-full py-3.5 px-6 bg-[#121212] hover:bg-[#2A2A2A] text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-[10px] shadow-sm text-center font-heading transition-colors"
+                        class="block w-full py-3.5 px-6 bg-[#FFF8EE] hover:bg-[#FDF3E3] border border-[#1A1A1A] text-[#1A1A1A] text-sm sm:text-base font-bold rounded-[4px] shadow-xs text-center font-heading transition-colors"
                     >
-                        Buy It Now ➔
+                        Buy It Now
                     </a>
                 </div>
 
-                <!-- BOGO / Multi-Buy Banner (Exact Screenshot Match) -->
-                <div class="rounded-[16px] overflow-hidden border border-[#D38928]/40 shadow-sm relative bg-[#1E120A] text-white p-5 flex items-center justify-between">
-                    <div class="space-y-1 relative z-10 max-w-[65%]">
-                        <span class="text-[9px] font-extrabold uppercase tracking-widest text-[#F6DAA8] font-heading block">FESTIVE OFFER</span>
-                        <h4 class="text-base sm:text-lg font-black font-heading text-white leading-tight">
-                            Buy 2, Get 1 FREE
-                        </h4>
-                        <p class="text-[11px] text-white/80 leading-snug">
-                            + Free Chandan Dhoop Cones Worth ₹249/-
-                        </p>
-                    </div>
-                    <div class="shrink-0 relative z-10">
-                        <a href="{{ route('collections.show', 'combos') }}" class="px-3.5 py-2 bg-[#D38928] hover:bg-[#B8741E] text-white text-[11px] font-bold rounded-[8px] font-heading whitespace-nowrap inline-block shadow-xs">
-                            Claim Offer
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Complimentary Ceramic Stand Card (Exact Screenshot Match) -->
-                <div class="p-4 bg-[#FFFDF9] border border-[#EADBCC] rounded-[16px] flex items-center space-x-4">
-                    <div class="w-16 h-16 rounded-[12px] bg-[#FAF7F2] border border-[#EADBCC] flex items-center justify-center shrink-0 overflow-hidden">
+                <!-- Complimentary Ceramic Stand Card -->
+                <div class="p-4 bg-[#FFFDF9] border border-[#EADBCC] rounded-[16px] flex items-center space-x-4 mt-4">
+                    <div class="w-14 h-14 rounded-[12px] bg-[#FAF7F2] border border-[#EADBCC] flex items-center justify-center shrink-0 overflow-hidden">
                         <img src="{{ asset('assets/images/devi-refill-pack-card.jpg') }}" alt="Ceramic Stand" class="w-full h-full object-cover">
                     </div>
                     <div class="space-y-0.5 text-xs">
                         <span class="text-[10px] font-bold uppercase tracking-wider text-[#D38928] font-heading block">FREE GIFT INCLUDED</span>
-                        <strong class="text-sm font-bold text-[#121212] font-heading block">Complimentary Artisanal Ceramic Stand</strong>
-                        <p class="text-gray-500 text-[11px]">Included with every box for safe and auspicious burning.</p>
-                    </div>
-                </div>
-
-                <!-- Trust Guarantees -->
-                <div class="grid grid-cols-3 gap-2 pt-2 border-t border-[#EADBCC] text-center text-[10px] text-gray-500 font-medium">
-                    <div class="flex flex-col items-center p-2 bg-[#FAF7F2] rounded-[10px]">
-                        <span class="text-sm mb-0.5">🌱</span>
-                        <span class="font-bold text-[#121212]">0% Bamboo</span>
-                        <span>Safe Breathing</span>
-                    </div>
-                    <div class="flex flex-col items-center p-2 bg-[#FAF7F2] rounded-[10px]">
-                        <span class="text-sm mb-0.5">✨</span>
-                        <span class="font-bold text-[#121212]">Zero Charcoal</span>
-                        <span>No Black Smoke</span>
-                    </div>
-                    <div class="flex flex-col items-center p-2 bg-[#FAF7F2] rounded-[10px]">
-                        <span class="text-sm mb-0.5">🚚</span>
-                        <span class="font-bold text-[#121212]">Fast Dispatch</span>
-                        <span>Pan India</span>
+                        <strong class="text-sm font-bold text-[#121212] font-heading block">Complimentary Artisanal Stand</strong>
+                        <p class="text-gray-500 text-[11px]">Included with every pack for safe and auspicious burning.</p>
                     </div>
                 </div>
 
