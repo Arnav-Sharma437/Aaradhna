@@ -750,37 +750,45 @@
     </div>
 </div>
 
-<!-- STICKY BOTTOM ADD TO CART ON SCROLL -->
+<!-- FLOATING 3D STICKY BOTTOM ADD TO CART ON SCROLL -->
 <div 
     id="sticky-product-bar" 
-    class="fixed bottom-[52px] sm:bottom-0 inset-x-0 z-30 bg-white/95 backdrop-blur-md border-t border-[#EADBCC] p-3 sm:p-3.5 shadow-2xl transform translate-y-full transition-transform duration-300 flex items-center justify-between gap-4 font-body"
+    class="fixed bottom-[68px] lg:bottom-6 left-1/2 -translate-x-1/2 z-40 w-[calc(100%-1.5rem)] sm:w-auto sm:min-w-[480px] max-w-xl bg-white/95 backdrop-blur-xl border border-[#EADBCC]/80 rounded-[20px] sm:rounded-full px-3.5 sm:px-5 py-2.5 sm:py-3 shadow-[0_20px_50px_rgba(18,18,18,0.2),0_4px_15px_rgba(211,137,40,0.15)] ring-1 ring-black/5 transform translate-y-32 opacity-0 pointer-events-none transition-all duration-300 flex items-center justify-between gap-3 sm:gap-6 font-body select-none"
 >
-    <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px] flex items-center justify-between">
-        <div class="flex items-center space-x-3 overflow-hidden">
-            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-[8px] bg-[#FAF7F2] border border-[#EADBCC] overflow-hidden shrink-0">
-                <img src="{{ asset($mainImg) }}" alt="{{ $product->title }}" class="w-full h-full object-cover">
-            </div>
-            <div class="truncate">
-                <div class="text-xs sm:text-sm font-bold text-[#121212] font-heading truncate">{{ $product->title }}</div>
-                <div class="text-xs sm:text-xs font-black font-heading text-[#C87A1E]">
+    <div class="flex items-center space-x-3 overflow-hidden min-w-0 pr-1">
+        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-[14px] sm:rounded-full bg-[#FAF7F2] border border-[#EADBCC] overflow-hidden shrink-0 shadow-inner">
+            <img src="{{ asset($mainImg) }}" alt="{{ $product->title }}" class="w-full h-full object-cover">
+        </div>
+        <div class="truncate text-left">
+            <div class="text-xs sm:text-[13px] font-bold text-[#121212] font-heading truncate leading-tight">{{ $product->title }}</div>
+            <div class="flex items-baseline space-x-2 pt-0.5">
+                <span class="text-xs sm:text-sm font-black font-heading text-[#C87A1E]">
                     ₹{{ number_format($product->active_price, 2) }}
-                </div>
+                </span>
+                @if(isset($mrpPrice) && $mrpPrice > $product->active_price)
+                    <span class="text-[11px] text-gray-400 line-through">
+                        ₹{{ number_format($mrpPrice, 2) }}
+                    </span>
+                @endif
             </div>
         </div>
-
-        <button 
-            type="button" 
-            id="sticky-atc-btn" 
-            class="py-2 sm:py-2.5 px-5 sm:px-7 bg-[#D38928] hover:bg-[#B8741E] text-white text-[11px] sm:text-sm font-bold uppercase tracking-wider rounded-[10px] shadow-sm font-heading cursor-pointer whitespace-nowrap"
-            data-product-id="{{ $product->id }}"
-            data-product-title="{{ $product->title }}"
-            data-product-slug="{{ $product->slug }}"
-            data-product-price="{{ $product->active_price }}"
-            data-product-image="{{ asset($mainImg) }}"
-        >
-            Add to Cart
-        </button>
     </div>
+
+    <button 
+        type="button" 
+        id="sticky-atc-btn" 
+        class="py-2.5 sm:py-2.5 px-4 sm:px-6 bg-gradient-to-b from-[#E2983B] to-[#C0771E] hover:from-[#D38928] hover:to-[#A86415] text-white text-[11px] sm:text-xs font-black uppercase tracking-wider rounded-[14px] sm:rounded-full shadow-[0_6px_14px_rgba(211,137,40,0.35),inset_0_1px_1px_rgba(255,255,255,0.4)] hover:shadow-[0_8px_20px_rgba(211,137,40,0.45)] active:scale-95 transition-all font-heading cursor-pointer whitespace-nowrap shrink-0 flex items-center space-x-1.5"
+        data-product-id="{{ $product->id }}"
+        data-product-title="{{ $product->title }}"
+        data-product-slug="{{ $product->slug }}"
+        data-product-price="{{ $product->active_price }}"
+        data-product-image="{{ asset($mainImg) }}"
+    >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+        </svg>
+        <span>Add to Cart</span>
+    </button>
 </div>
 
 @push('scripts')
@@ -855,9 +863,11 @@
             window.addEventListener('scroll', () => {
                 const rect = mainAtcBtn.getBoundingClientRect();
                 if (rect.bottom < 0) {
-                    stickyBar.classList.remove('translate-y-full');
+                    stickyBar.classList.remove('translate-y-32', 'opacity-0', 'pointer-events-none');
+                    stickyBar.classList.add('translate-y-0', 'opacity-100', 'pointer-events-auto');
                 } else {
-                    stickyBar.classList.add('translate-y-full');
+                    stickyBar.classList.add('translate-y-32', 'opacity-0', 'pointer-events-none');
+                    stickyBar.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
                 }
             });
         }
