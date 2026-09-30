@@ -37,9 +37,33 @@
     $discountPercent = $product->discount_percentage ?: 51;
     $mrpPrice = $product->base_price > $product->active_price ? $product->base_price : ($product->active_price * 1.8);
     $reviewCount = $product->approvedReviews->count() ?: 219;
+@e    // Gallery images array
+    $galleryImages = [];
+    if ($product->images && $product->images->count() > 0) {
+        foreach ($product->images as $img) {
+            $galleryImages[] = asset($img->image_path);
+        }
+    }
+    
+    if (empty($galleryImages)) {
+        $galleryImages[] = asset($mainImg);
+        if ($product->category && str_contains(strtolower($product->category->slug), 'cone')) {
+            $galleryImages[] = asset('assets/images/single-dhoop-cone.jpg');
+            $galleryImages[] = asset('assets/images/chandan-cones-card.jpg');
+            $galleryImages[] = asset('assets/images/hero-sacred-cones.jpg');
+        } elseif ($product->category && str_contains(strtolower($product->category->slug), 'cup')) {
+            $galleryImages[] = asset('assets/images/single-havan-cup.jpg');
+            $galleryImages[] = asset('assets/images/havan-cup.jpg');
+            $galleryImages[] = asset('assets/images/hero-ram-uphaar-banner.jpg');
+        } else {
+            $galleryImages[] = asset('assets/images/single-bambooless-stick.jpg');
+            $galleryImages[] = asset('assets/images/hero-incense-banner.jpg');
+            $galleryImages[] = asset('assets/images/camphor-refill-pack-card.jpg');
+        }
+    }
 @endphp
 
-<div class="bg-[#FAF7F2] min-h-screen py-6 lg:py-10 font-body">
+<div class="bg-white min-h-screen py-6 lg:py-10 font-body">
     <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
 
         <!-- Breadcrumbs -->
@@ -59,118 +83,63 @@
         </nav>
 
         <!-- ========================================================================= -->
-        <!-- 1. MAIN HERO SECTION (Left: 2x3 Large Grid Visuals | Right: Purchase Panel) -->
+        <!-- 1. MAIN HERO SECTION (Left: Main Image + Gallery | Right: Clean Purchase Panel) -->
         <!-- ========================================================================= -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             
-            <!-- LEFT COLUMN: Mobile Slider & Desktop High-Res Lifestyle 2-Column Grid (7 Cols) -->
-            <div class="lg:col-span-7 space-y-5">
+            <!-- LEFT COLUMN: Main Hero Image + Thumbnails Below (7 Cols) -->
+            <div class="lg:col-span-7 space-y-6">
 
-                <!-- MOBILE TOUCH IMAGE SLIDER (Visible on mobile/tablet, hidden on desktop) -->
-                <div class="block lg:hidden relative" id="product-mobile-gallery">
-                    <!-- Carousel Track -->
-                    <div id="product-mobile-carousel" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-none rounded-[18px] border border-[#EADBCC] bg-white shadow-md">
-                        <!-- Slide 1 -->
-                        <div class="min-w-full snap-center relative aspect-[4/5] bg-white">
-                            <img src="{{ asset($mainImg) }}" alt="{{ $product->title }}" class="w-full h-full object-cover">
-                            <div class="absolute top-3.5 right-3.5 text-right pointer-events-none select-none leading-none bg-white/90 backdrop-blur-xs px-2.5 py-1.5 rounded-[8px] border border-[#EADBCC] shadow-xs">
-                                <span class="text-[9px] uppercase font-semibold text-gray-500 block">pack of</span>
-                                <span class="text-lg font-black font-heading text-[#3E2D22] block">100</span>
-                                <span class="text-[9px] uppercase font-semibold text-gray-500 block">sticks</span>
-                            </div>
-                            <div class="absolute bottom-3 left-3 right-3 bg-black/60 backdrop-blur-xs py-1.5 px-2.5 rounded-[8px] text-center text-white text-[11px] font-bold tracking-wide shadow-sm">
-                                FREE CERAMIC STAND <span class="text-[#F6DAA8] font-normal">Worth ₹150/-</span>
-                            </div>
+                <!-- Interactive Main Hero Image + Below Thumbnail Strip -->
+                <div class="space-y-4">
+                    <!-- Main Large Hero Image -->
+                    <div class="relative w-full aspect-square sm:aspect-[4/3.8] rounded-[20px] sm:rounded-[24px] overflow-hidden bg-[#FAF7F2] border border-gray-200/80 shadow-xs group">
+                        <img 
+                            id="main-product-gallery-img" 
+                            src="{{ $galleryImages[0] }}" 
+                            alt="{{ $product->title }}" 
+                            class="w-full h-full object-cover transition-opacity duration-200 ease-out"
+                        >
+                        
+                        <!-- Discount Badge top-left -->
+                        @if($hasDiscount || $discountPercent)
+                        <div class="absolute top-4 left-4 z-10 pointer-events-none">
+                            <span class="inline-block bg-[#8B1E1E] text-white text-[11px] sm:text-xs font-bold px-3 py-1 rounded-[6px] tracking-wide shadow-sm">
+                                {{ $discountPercent }}% OFF
+                            </span>
                         </div>
-                        <!-- Slide 2 -->
-                        <div class="min-w-full snap-center relative aspect-[4/5] bg-white">
-                            <img src="{{ asset('assets/images/hero-incense-banner.jpg') }}" alt="Mangalam Sacred Altar" class="w-full h-full object-cover">
-                            <div class="absolute bottom-3 left-3 right-3 bg-black/60 backdrop-blur-xs py-1.5 px-2.5 rounded-[8px] text-center text-white text-[11px] font-bold tracking-wide shadow-sm">
-                                100% BAMBOO FREE & VEDIC
-                            </div>
-                        </div>
-                        <!-- Slide 3 -->
-                        <div class="min-w-full snap-center relative aspect-[4/5] bg-white">
-                            <img src="{{ asset('assets/images/camphor-refill-pack-card.jpg') }}" alt="Pure Temple Camphor" class="w-full h-full object-cover">
-                            <div class="absolute top-3.5 left-3.5 px-2.5 py-1 rounded-full bg-white/95 text-[#965A15] text-[10px] font-bold uppercase tracking-wider font-heading border border-[#D38928]/40 shadow-xs">
-                                Zero Charcoal
-                            </div>
-                        </div>
-                        <!-- Slide 4 -->
-                        <div class="min-w-full snap-center relative aspect-[4/5] bg-white">
-                            <img src="{{ asset('assets/images/hero-ram-uphaar-banner.jpg') }}" alt="Sacred Fragrance Ambience" class="w-full h-full object-cover">
-                            <div class="absolute bottom-3 left-3 right-3 bg-black/60 backdrop-blur-xs py-1.5 px-2.5 rounded-[8px] text-center text-white text-[11px] font-bold tracking-wide shadow-sm">
-                                TEMPLE-GRADE PURITY
-                            </div>
-                        </div>
-                    </div>
+                        @endif
 
-                    <!-- Slide Counter Badge & Indicators -->
-                    <div class="flex items-center justify-between mt-2.5 px-1">
-                        <!-- Dots -->
-                        <div class="flex space-x-1.5" id="mobile-gallery-dots">
-                            <span class="w-6 h-1.5 rounded-full bg-[#D38928] transition-all duration-300"></span>
-                            <span class="w-1.5 h-1.5 rounded-full bg-[#D38928]/30 transition-all duration-300"></span>
-                            <span class="w-1.5 h-1.5 rounded-full bg-[#D38928]/30 transition-all duration-300"></span>
-                            <span class="w-1.5 h-1.5 rounded-full bg-[#D38928]/30 transition-all duration-300"></span>
-                        </div>
-                        <!-- Counter Pill -->
-                        <span id="mobile-gallery-counter" class="text-[11px] font-bold text-gray-600 bg-white border border-[#EADBCC] px-2.5 py-0.5 rounded-full shadow-xs">
-                            1 / 4
-                        </span>
-                    </div>
-                </div>
-
-                <!-- DESKTOP 2-COLUMN HIGH-RES GRID (Visible on lg, hidden on mobile) -->
-                <div class="hidden lg:grid grid-cols-2 gap-5">
-                    
-                    <!-- Visual 1: Hero Packshot with Ceramic Stand Banner (Larger Aspect Ratio) -->
-                    <div class="relative aspect-[3/4] rounded-[20px] overflow-hidden bg-white border border-[#EADBCC] shadow-md group">
-                        <img src="{{ asset($mainImg) }}" alt="{{ $product->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute top-4 right-4 text-right pointer-events-none select-none leading-none">
-                            <span class="text-[11px] uppercase font-semibold text-gray-500 block">pack of</span>
-                            <span class="text-2xl font-black font-heading text-[#3E2D22] block my-0.5">100</span>
-                            <span class="text-[11px] uppercase font-semibold text-gray-500 block">sticks</span>
-                        </div>
-                        <div class="absolute bottom-3.5 left-3.5 right-3.5 bg-black/55 backdrop-blur-xs py-2 px-3 rounded-[10px] text-center text-white text-xs font-bold tracking-wider shadow-sm">
+                        <!-- Free Ceramic Stand highlight tag bottom -->
+                        <div class="absolute bottom-3.5 left-3.5 right-3.5 bg-black/60 backdrop-blur-xs py-2 px-3.5 rounded-[10px] text-center text-white text-xs font-semibold tracking-wide shadow-sm">
                             FREE CERAMIC STAND <span class="text-[#F6DAA8] font-normal">Worth ₹150/-</span>
                         </div>
                     </div>
 
-                    <!-- Visual 2: Artisanal Pooja Altar & Burning Incense -->
-                    <div class="relative aspect-[3/4] rounded-[20px] overflow-hidden bg-white border border-[#EADBCC] shadow-md group">
-                        <img src="{{ asset('assets/images/hero-incense-banner.jpg') }}" alt="Mangalam Sacred Altar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute bottom-3.5 left-3.5 right-3.5 bg-black/55 backdrop-blur-xs py-2 px-3 rounded-[10px] text-center text-white text-[11px] font-bold tracking-wider shadow-sm">
-                            100% BAMBOO FREE & VEDIC
-                        </div>
+                    <!-- Horizontal Thumbnails Strip Directly Below (Mobile & Desktop) -->
+                    <div class="flex items-center gap-3 sm:gap-4 overflow-x-auto pb-2 scrollbar-none" id="product-thumbnails-container">
+                        @foreach($galleryImages as $index => $imgUrl)
+                            <button 
+                                type="button" 
+                                class="gallery-thumbnail-btn relative w-20 h-20 sm:w-24 sm:h-24 rounded-[12px] sm:rounded-[16px] overflow-hidden bg-[#FAF7F2] border-2 transition-all duration-200 shrink-0 cursor-pointer focus:outline-none {{ $index === 0 ? 'border-[#D38928] ring-2 ring-[#D38928]/30 shadow-sm opacity-100' : 'border-gray-200 hover:border-gray-400 opacity-75 hover:opacity-100' }}"
+                                data-img-src="{{ $imgUrl }}"
+                                data-index="{{ $index }}"
+                                aria-label="View product image {{ $index + 1 }}"
+                            >
+                                <img src="{{ $imgUrl }}" alt="{{ $product->title }} thumbnail {{ $index + 1 }}" class="w-full h-full object-cover">
+                            </button>
+                        @endforeach
                     </div>
-
-                    <!-- Visual 3: Sacred Camphor / Temple Crystals -->
-                    <div class="relative aspect-[3/4] rounded-[20px] overflow-hidden bg-white border border-[#EADBCC] shadow-md group">
-                        <img src="{{ asset('assets/images/camphor-refill-pack-card.jpg') }}" alt="Pure Temple Camphor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/95 text-[#965A15] text-[11px] font-bold uppercase tracking-wider font-heading border border-[#D38928]/40 shadow-xs">
-                            Zero Charcoal
-                        </div>
-                    </div>
-
-                    <!-- Visual 4: Devotional Morning Ritual Living Room -->
-                    <div class="relative aspect-[3/4] rounded-[20px] overflow-hidden bg-white border border-[#EADBCC] shadow-md group">
-                        <img src="{{ asset('assets/images/hero-ram-uphaar-banner.jpg') }}" alt="Sacred Fragrance Ambience" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute bottom-3.5 left-3.5 right-3.5 bg-black/55 backdrop-blur-xs py-2 px-3 rounded-[10px] text-center text-white text-[11px] font-bold tracking-wider shadow-sm">
-                            TEMPLE-GRADE PURITY
-                        </div>
-                    </div>
-
                 </div>
 
-                <!-- Visual 5 & 6: Fragrance Notes Pyramid & Why Choose Mangalam Infographics -->
+                <!-- Fragrance Notes Pyramid & Why Choose Mangalam Infographics -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
                     
                     <!-- Card 1: Fragrance Notes Pyramid -->
                     <div class="bg-gradient-to-b from-[#A66E2E] to-[#6E4215] text-white p-6 rounded-[16px] shadow-sm flex flex-col justify-between">
                         <div>
                             <span class="text-[10px] font-extrabold uppercase tracking-widest text-[#F6DAA8] font-heading block mb-1">AROMATIC PROFILE</span>
-                            <h3 class="text-2xl font-black font-heading mb-4 text-white">Fragrance Notes</h3>
+                            <h3 class="text-xl sm:text-2xl font-normal font-heading mb-4 text-white">Fragrance Notes</h3>
                             
                             <div class="space-y-3 text-xs">
                                 <div class="bg-black/20 p-2.5 rounded-[8px] border border-white/10">
@@ -193,10 +162,10 @@
                     </div>
 
                     <!-- Card 2: Why Choose Mangalam -->
-                    <div class="bg-[#FFFDF9] border border-[#EADBCC] p-6 rounded-[16px] shadow-sm flex flex-col justify-between">
+                    <div class="bg-[#FFFDF9] border border-gray-200 p-6 rounded-[16px] shadow-sm flex flex-col justify-between">
                         <div>
                             <span class="text-[10px] font-extrabold uppercase tracking-widest text-[#D38928] font-heading block mb-1">PURITY GUARANTEE</span>
-                            <h3 class="text-2xl font-black font-heading mb-4 text-[#121212]">Why Choose Mangalam</h3>
+                            <h3 class="text-xl sm:text-2xl font-normal font-heading mb-4 text-[#121212]">Why Choose Mangalam</h3>
                             
                             <ul class="space-y-3 text-xs text-gray-700">
                                 <li class="flex items-start">
@@ -213,7 +182,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="pt-4 border-t border-[#EADBCC] mt-4 flex items-center justify-between text-[11px] font-bold text-[#965A15] font-heading">
+                        <div class="pt-4 border-t border-gray-200 mt-4 flex items-center justify-between text-[11px] font-bold text-[#965A15] font-heading">
                             <span>VEDIC CERTIFIED</span>
                             <span>MADE IN BHARAT 🇮🇳</span>
                         </div>
@@ -222,8 +191,8 @@
                 </div>
             </div>
 
-            <!-- RIGHT COLUMN: Purchase Details (Exact Match to User Uploaded Screenshot) -->
-            <div class="lg:col-span-5 bg-white rounded-[24px] border border-[#EADBCC] p-6 sm:p-8 lg:p-10 shadow-xs space-y-5 sticky top-28">
+            <!-- RIGHT COLUMN: Clean, Seamless Purchase Details (5 Cols) -->
+            <div class="lg:col-span-5 space-y-5 lg:pl-4 sticky top-28">
                 
                 <!-- 1. Star Rating, Review Count & Share Button -->
                 <div class="flex items-center justify-between">
@@ -237,7 +206,7 @@
                     <!-- Quick Share Button -->
                     <button 
                         type="button" 
-                        class="product-share-trigger inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-[#FAF7F2] hover:bg-[#FAF3EA] border border-[#EADBCC] text-xs font-bold text-gray-700 hover:text-[#D38928] transition-all cursor-pointer shadow-2xs font-heading"
+                        class="product-share-trigger inline-flex items-center space-x-1.5 px-3.5 py-1.5 rounded-full bg-white hover:bg-gray-50 border border-gray-200 text-xs font-semibold text-gray-700 hover:text-[#D38928] transition-all cursor-pointer shadow-2xs"
                         data-title="{{ $product->title }}"
                         data-url="{{ url()->current() }}"
                         data-text="Check out {{ $product->title }} on Mangalam.co — 100% Pure & Sacred Vedic Incense!"
@@ -255,12 +224,12 @@
                     </button>
                 </div>
 
-                <!-- 2. Product Title (Large Serif Headline) -->
+                <!-- 2. Product Title (Large Headline) -->
                 <div class="space-y-1">
-                    <h1 class="text-3xl sm:text-4xl lg:text-[42px] font-serif font-normal text-[#1A1A1A] tracking-tight leading-[1.12]">
+                    <h1 class="text-3xl sm:text-4xl lg:text-[40px] font-normal text-[#1A1A1A] tracking-tight leading-[1.15]">
                         {{ $product->title }}
                     </h1>
-                    <div class="text-[11px] sm:text-xs tracking-[0.18em] text-gray-500 uppercase font-medium pt-0.5 font-heading">
+                    <div class="text-[11px] sm:text-xs tracking-[0.2em] text-gray-500 uppercase font-medium pt-0.5 font-heading">
                         {{ $product->category ? $product->category->name : 'HAVAN CUP' }}
                     </div>
                 </div>
@@ -283,15 +252,15 @@
                     </p>
                 </div>
 
-                <!-- 4. Key Tagline / Mission Statement (Bold Serif) -->
-                <div class="pt-2">
-                    <p class="text-base sm:text-lg font-bold text-[#1A1A1A] leading-snug font-serif">
-                        {{ $product->short_description ?: 'For removing negative vibrations from home, office and personal spaces.' }}
+                <!-- 4. Key Tagline / Short Description -->
+                <div class="pt-1">
+                    <p class="text-base sm:text-lg font-normal text-[#1A1A1A] leading-relaxed">
+                        {{ $product->short_description ?: 'Traditional temple fragrance with rich floral and earthy resin notes for deep meditation.' }}
                     </p>
                 </div>
 
-                <!-- 5. 4 Iconic Feature Circles with Text (Exact Replica of Screenshot) -->
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-y-4 gap-x-4 pt-2 pb-2">
+                <!-- 5. 4 Iconic Feature Circles with Text -->
+                <div class="grid grid-cols-2 sm:grid-cols-2 gap-y-4 gap-x-4 pt-2 pb-2">
                     
                     <!-- Feature 1: Chemical Free -->
                     <div class="flex items-center space-x-2.5">
@@ -301,8 +270,8 @@
                                 <path d="M12 2v20"/>
                             </svg>
                         </div>
-                        <span class="text-xs sm:text-sm font-bold text-[#1A1A1A] leading-tight">
-                            Chemical Free
+                        <span class="text-xs sm:text-sm font-semibold text-[#1A1A1A] leading-tight">
+                            Chemical<br>Free
                         </span>
                     </div>
 
@@ -314,7 +283,7 @@
                                 <polyline points="9 22 9 12 15 12 15 22"/>
                             </svg>
                         </div>
-                        <span class="text-xs sm:text-sm font-bold text-[#1A1A1A] leading-tight">
+                        <span class="text-xs sm:text-sm font-semibold text-[#1A1A1A] leading-tight">
                             Grahshuddhi<br>Ingredients
                         </span>
                     </div>
@@ -329,7 +298,7 @@
                                 <path d="M5 12a7 7 0 0 0 7 7"/>
                             </svg>
                         </div>
-                        <span class="text-xs sm:text-sm font-bold text-[#1A1A1A] leading-tight">
+                        <span class="text-xs sm:text-sm font-semibold text-[#1A1A1A] leading-tight">
                             Natural<br>ingredients
                         </span>
                     </div>
@@ -342,18 +311,18 @@
                                 <path d="M12 7v5l3 3"/>
                             </svg>
                         </div>
-                        <span class="text-xs sm:text-sm font-bold text-[#1A1A1A] leading-tight">
-                            Free Safe grip<br>stand
+                        <span class="text-xs sm:text-sm font-semibold text-[#1A1A1A] leading-tight">
+                            Free Safe<br>grip stand
                         </span>
                     </div>
 
                 </div>
 
                 <!-- 6. Quantity Stepper + Add to Cart CTA Row -->
-                <div class="space-y-3 pt-3">
+                <div class="space-y-3 pt-2">
                     <div class="flex items-center space-x-3">
-                        <!-- Square Stepper Box matching screenshot -->
-                        <div class="flex items-center justify-between border border-[#1A1A1A] rounded-[4px] bg-white px-3 py-2.5 w-28 shrink-0">
+                        <!-- Stepper Box -->
+                        <div class="flex items-center justify-between border border-gray-300 rounded-[8px] bg-white px-3 py-2.5 w-28 shrink-0">
                             <button type="button" id="qty-decrement" class="text-gray-600 hover:text-[#1A1A1A] transition-colors focus:outline-none font-bold text-lg leading-none cursor-pointer">−</button>
                             <input 
                                 type="number" 
@@ -372,29 +341,29 @@
                         <button 
                             type="button" 
                             id="main-add-to-cart-btn"
-                            class="flex-1 py-3.5 px-8 bg-[#D38928] hover:bg-[#B8741E] active:bg-[#965A15] text-white text-sm sm:text-base font-bold rounded-full shadow-xs hover:shadow-md transition-all duration-200 text-center flex items-center justify-center font-heading cursor-pointer focus:outline-none"
+                            class="flex-1 py-3.5 px-8 bg-[#D38928] hover:bg-[#B8741E] active:bg-[#965A15] text-white text-sm sm:text-base font-semibold rounded-full shadow-xs hover:shadow-md transition-all duration-200 text-center flex items-center justify-center cursor-pointer focus:outline-none"
                             data-product-id="{{ $product->id }}"
                             data-product-title="{{ $product->title }}"
                             data-product-slug="{{ $product->slug }}"
                             data-product-price="{{ $product->active_price }}"
-                            data-product-image="{{ asset($mainImg) }}"
+                            data-product-image="{{ $galleryImages[0] }}"
                         >
                             <span>Add to cart</span>
                         </button>
                     </div>
 
-                    <!-- Buy It Now Button (Full Width with light warm cream background & dark border) -->
+                    <!-- Buy It Now Button -->
                     <a 
                         href="{{ route('cart.index') }}" 
-                        class="block w-full py-3.5 px-6 bg-[#FFF8EE] hover:bg-[#FDF3E3] border border-[#1A1A1A] text-[#1A1A1A] text-sm sm:text-base font-bold rounded-[4px] shadow-xs text-center font-heading transition-colors"
+                        class="block w-full py-3.5 px-6 bg-white hover:bg-stone-50 border border-gray-900 text-gray-900 text-sm sm:text-base font-semibold rounded-[8px] shadow-xs text-center transition-colors"
                     >
                         Buy It Now
                     </a>
                 </div>
 
-                <!-- 7. Social Share Bar (WhatsApp, Facebook, Native Share, Copy Link) -->
-                <div class="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-[#EADBCC]/70">
-                    <div class="flex items-center space-x-2 text-xs font-bold text-gray-700 font-heading">
+                <!-- 7. Social Share Bar (WhatsApp, Facebook, Copy Link) -->
+                <div class="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-gray-100">
+                    <div class="flex items-center space-x-2 text-xs font-semibold text-gray-700">
                         <svg class="w-4 h-4 text-[#D38928]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <circle cx="18" cy="5" r="3"></circle>
                             <circle cx="6" cy="12" r="3"></circle>
@@ -411,7 +380,7 @@
                             href="https://api.whatsapp.com/send?text={{ urlencode($product->title . ' — 100% Pure Vedic Samagri: ' . url()->current()) }}" 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            class="w-8 h-8 rounded-full bg-[#FAF7F2] hover:bg-emerald-50 border border-[#EADBCC] hover:border-emerald-500 text-emerald-600 flex items-center justify-center transition-all shadow-2xs hover:scale-105"
+                            class="w-9 h-9 rounded-full bg-gray-50 hover:bg-emerald-50 border border-gray-200 hover:border-emerald-500 text-emerald-600 flex items-center justify-center transition-all shadow-2xs hover:scale-105"
                             title="Share on WhatsApp"
                             aria-label="Share on WhatsApp"
                         >
@@ -425,7 +394,7 @@
                             href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(url()->current()) }}" 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            class="w-8 h-8 rounded-full bg-[#FAF7F2] hover:bg-blue-50 border border-[#EADBCC] hover:border-blue-500 text-blue-600 flex items-center justify-center transition-all shadow-2xs hover:scale-105"
+                            class="w-9 h-9 rounded-full bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-500 text-blue-600 flex items-center justify-center transition-all shadow-2xs hover:scale-105"
                             title="Share on Facebook"
                             aria-label="Share on Facebook"
                         >
@@ -437,7 +406,7 @@
                         <!-- Copy Link Quick Button -->
                         <button 
                             type="button" 
-                            class="product-copy-link-btn inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-[#FAF7F2] hover:bg-[#FAF3EA] border border-[#EADBCC] hover:border-[#D38928] text-gray-700 hover:text-[#D38928] text-xs font-bold transition-all shadow-2xs cursor-pointer font-heading"
+                            class="product-copy-link-btn inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-gray-50 hover:bg-gray-100 border border-gray-200 hover:border-[#D38928] text-gray-700 hover:text-[#D38928] text-xs font-semibold transition-all shadow-2xs cursor-pointer"
                             data-url="{{ url()->current() }}"
                             title="Copy link to clipboard"
                         >
@@ -450,7 +419,7 @@
                 </div>
 
                 <!-- Complimentary Ceramic Stand Card -->
-                <div class="p-4 bg-[#FFFDF9] border border-[#EADBCC] rounded-[16px] flex items-center space-x-4 mt-4">
+                <div class="p-4 bg-[#FFFDF9] border border-[#EADBCC] rounded-[16px] flex items-center space-x-4">
                     <div class="w-14 h-14 rounded-[12px] bg-[#FAF7F2] border border-[#EADBCC] flex items-center justify-center shrink-0 overflow-hidden">
                         <img src="{{ asset('assets/images/devi-refill-pack-card.jpg') }}" alt="Ceramic Stand" class="w-full h-full object-cover">
                     </div>
@@ -772,28 +741,31 @@
 @push('scripts')
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        // Mobile Product Gallery Carousel Scroll Listener
-        const mobileCarousel = document.getElementById('product-mobile-carousel');
-        const dots = document.querySelectorAll('#mobile-gallery-dots span');
-        const counter = document.getElementById('mobile-gallery-counter');
+        // Thumbnail Gallery Switcher (Instant Image Swap on Click)
+        const mainGalleryImg = document.getElementById('main-product-gallery-img');
+        const thumbnailBtns = document.querySelectorAll('.gallery-thumbnail-btn');
 
-        if (mobileCarousel && dots.length > 0) {
-            mobileCarousel.addEventListener('scroll', () => {
-                const scrollLeft = mobileCarousel.scrollLeft;
-                const width = mobileCarousel.offsetWidth;
-                const activeIndex = Math.min(Math.round(scrollLeft / width), dots.length - 1);
-                
-                dots.forEach((dot, idx) => {
-                    if (idx === activeIndex) {
-                        dot.className = 'w-6 h-1.5 rounded-full bg-[#D38928] transition-all duration-300';
-                    } else {
-                        dot.className = 'w-1.5 h-1.5 rounded-full bg-[#D38928]/30 transition-all duration-300';
+        if (mainGalleryImg && thumbnailBtns.length > 0) {
+            thumbnailBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const newSrc = btn.dataset.imgSrc;
+                    if (newSrc && mainGalleryImg.src !== newSrc) {
+                        mainGalleryImg.style.opacity = '0.3';
+                        mainGalleryImg.src = newSrc;
+                        mainGalleryImg.onload = () => {
+                            mainGalleryImg.style.opacity = '1';
+                        };
                     }
+                    
+                    // Update Active Thumbnail Border Styling
+                    thumbnailBtns.forEach(b => {
+                        b.classList.remove('border-[#D38928]', 'ring-2', 'ring-[#D38928]/30', 'opacity-100');
+                        b.classList.add('border-gray-200', 'opacity-75');
+                    });
+                    btn.classList.remove('border-gray-200', 'opacity-75');
+                    btn.classList.add('border-[#D38928]', 'ring-2', 'ring-[#D38928]/30', 'opacity-100');
                 });
-                if (counter) {
-                    counter.textContent = `${activeIndex + 1} / ${dots.length}`;
-                }
-            }, { passive: true });
+            });
         }
 
         // Quantity Stepper
@@ -845,7 +817,7 @@
             });
         }
 
-        // Add to Cart
+        // Add to Cart & Open Drawer Immediately
         const stickyAtcBtn = document.getElementById('sticky-atc-btn');
         const handleAddToCart = (btn) => {
             const qty = parseInt(qtyInput?.value || '1');
@@ -866,13 +838,8 @@
                 });
             }
 
-            const orig = btn.innerHTML;
-            btn.innerHTML = '<span>Added to Basket ✓</span>';
-            btn.classList.add('bg-emerald-700');
-            setTimeout(() => {
-                btn.innerHTML = orig;
-                btn.classList.remove('bg-emerald-700');
-            }, 1800);
+            // Immediately open cart drawer
+            window.dispatchEvent(new CustomEvent('open-cart-drawer'));
         };
 
         if (mainAtcBtn) mainAtcBtn.addEventListener('click', () => handleAddToCart(mainAtcBtn));
