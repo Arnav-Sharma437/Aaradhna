@@ -454,7 +454,119 @@
     </div>
 </section>
 
+<!-- ========================================================================= -->
+<!-- 3. PRODUCTS CATEGORY (Clean Large Single-Item Circles on Pure Soft Cream) -->
+<!-- ========================================================================= -->
+<section class="py-16 sm:py-24 bg-[#FFFDF9] border-b border-[#EAE3D9] font-body select-none">
+    <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-2xl mx-auto mb-14 sm:mb-18 space-y-2">
+            <span class="text-[11px] sm:text-xs font-bold uppercase tracking-[0.3em] text-[#5C6F2A] font-heading">
+                ✦ 100% NATURAL • CHARCOAL FREE ✦
+            </span>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-[#5C6F2A] tracking-wider uppercase">
+                Products Category
+            </h2>
+            <p class="text-xs sm:text-sm text-gray-600 max-w-md mx-auto">
+                Handcrafted from sacred temple flowers &amp; pure living resins for divine daily rituals.
+            </p>
+        </div>
 
+        <!-- 3 Big Single-Product Category Circles -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 sm:gap-12 lg:gap-14 max-w-5xl mx-auto">
+            
+            <!-- Category 1: Single Bamboo-less Dhoop Stick -->
+            <div class="group flex flex-col items-center text-center space-y-6">
+                <!-- Large Rounded Circle with Single Stick Focus -->
+                <a href="{{ route('collections.show', 'bambooless') }}" class="block relative w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72 xl:w-76 xl:h-76 rounded-full p-2.5 bg-white shadow-xl hover:shadow-2xl border-2 border-[#EADBCC] hover:border-[#D38928] group-hover:scale-105 transition-all duration-500 cursor-pointer">
+                    <div class="w-full h-full rounded-full overflow-hidden bg-[#FAF7F2] flex items-center justify-center p-3">
+                        <img 
+                            src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" 
+                            alt="Bamboo-less Dhoop Stick" 
+                            class="w-full h-full object-contain rounded-full group-hover:scale-110 transition-transform duration-500"
+                        >
+                    </div>
+                </a>
+
+                <!-- Details & Box Tag -->
+                <div class="space-y-3 max-w-xs">
+                    <div>
+                        <a href="{{ route('collections.show', 'bambooless') }}" class="inline-block px-5 py-1.5 border border-[#121212] hover:border-[#5C6F2A] bg-white text-[11px] sm:text-xs font-bold uppercase tracking-widest text-[#121212] hover:text-[#5C6F2A] transition-colors font-heading shadow-2xs">
+                            Dhoop Stick
+                        </a>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold font-serif text-[#1F1F1F]">
+                        <a href="{{ route('collections.show', 'bambooless') }}" class="hover:text-[#D38928] transition-colors">Bamboo-less Dhoop Stick</a>
+                    </h3>
+                    <p class="text-xs sm:text-[13px] text-gray-600 leading-relaxed font-normal">
+                        Dhoop Sticks fill your space with soothing fragrance, creating an aura of peace, positivity, and divine calm.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Category 2: Single Dhoop Cone -->
+            <div class="group flex flex-col items-center text-center space-y-6">
+                <!-- Large Rounded Circle with Single Cone Focus -->
+                <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block relative w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72 xl:w-76 xl:h-76 rounded-full p-2.5 bg-white shadow-xl hover:shadow-2xl border-2 border-[#EADBCC] hover:border-[#D38928] group-hover:scale-105 transition-all duration-500 cursor-pointer">
+                    <div class="w-full h-full rounded-full overflow-hidden bg-[#FAF7F2] flex items-center justify-center p-3">
+                        <img 
+                            src="{{ asset('assets/images/single-dhoop-cone.jpg') }}" 
+                            alt="Easy to Use Dhoop Cone" 
+                            class="w-full h-full object-contain rounded-full group-hover:scale-110 transition-transform duration-500"
+                        >
+                    </div>
+                </a>
+
+                <!-- Details & Box Tag -->
+                <div class="space-y-3 max-w-xs">
+                    <div>
+                        <a href="{{ route('collections.show', 'dhoop-cones') }}" class="inline-block px-5 py-1.5 border border-[#121212] hover:border-[#5C6F2A] bg-white text-[11px] sm:text-xs font-bold uppercase tracking-widest text-[#121212] hover:text-[#5C6F2A] transition-colors font-heading shadow-2xs">
+                            Dhoop Cones
+                        </a>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold font-serif text-[#1F1F1F]">
+                        <a href="{{ route('collections.show', 'dhoop-cones') }}" class="hover:text-[#D38928] transition-colors">Easy to Use Dhoop Cone</a>
+                    </h3>
+                    <p class="text-xs sm:text-[13px] text-gray-600 leading-relaxed font-normal">
+                        Dhoop Cones release a rich, long-lasting aroma that purifies the air and uplifts the spirit with every burn.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Category 3: Single 100% Organic Havan Cup -->
+            <div class="group flex flex-col items-center text-center space-y-6">
+                <!-- Large Rounded Circle with Single Cup Focus -->
+                <a href="{{ route('collections.show', 'havan-cups') }}" class="block relative w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72 xl:w-76 xl:h-76 rounded-full p-2.5 bg-white shadow-xl hover:shadow-2xl border-2 border-[#EADBCC] hover:border-[#D38928] group-hover:scale-105 transition-all duration-500 cursor-pointer">
+                    <div class="w-full h-full rounded-full overflow-hidden bg-[#FAF7F2] flex items-center justify-center p-3">
+                        <img 
+                            src="{{ asset('assets/images/single-havan-cup.jpg') }}" 
+                            alt="100% Organic Havan Cups" 
+                            class="w-full h-full object-contain rounded-full group-hover:scale-110 transition-transform duration-500"
+                        >
+                    </div>
+                </a>
+
+                <!-- Details & Box Tag -->
+                <div class="space-y-3 max-w-xs">
+                    <div>
+                        <a href="{{ route('collections.show', 'havan-cups') }}" class="inline-block px-5 py-1.5 border border-[#121212] hover:border-[#5C6F2A] bg-white text-[11px] sm:text-xs font-bold uppercase tracking-widest text-[#121212] hover:text-[#5C6F2A] transition-colors font-heading shadow-2xs">
+                            Havan Cup
+                        </a>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold font-serif text-[#1F1F1F]">
+                        <a href="{{ route('collections.show', 'havan-cups') }}" class="hover:text-[#D38928] transition-colors">100% Organic Havan Cups</a>
+                    </h3>
+                    <p class="text-xs sm:text-[13px] text-gray-600 leading-relaxed font-normal">
+                        Organic Havan Cups made with natural ingredients, free from chemicals and artificial fragrance, for a pure experience.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
 
 <!-- ========================================================================= -->
 <!-- 5. DAILY DEVOTIONAL RITUALS (Exact Match to User Screenshot Standard) -->
