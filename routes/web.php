@@ -20,6 +20,11 @@ Route::get('/collections/{slug}', [CollectionController::class, 'show'])->name('
 // Product Detail Routes
 Route::get('/products/{slug}', [ProductController::class, 'show'])->name('products.show');
 
+// Bundle Builder Offers (Super Save Offers)
+use App\Http\Controllers\Front\BundleController;
+Route::get('/bundles/buy-any-5-trial-packs', [BundleController::class, 'trialPacks'])->name('bundles.trial-packs');
+Route::get('/bundles/buy-2-get-1-free', [BundleController::class, 'buy2Get1Free'])->name('bundles.buy2get1');
+
 // Cart & Wishlist Routes
 Route::get('/cart', [CartWishlistController::class, 'cart'])->name('cart.index');
 Route::get('/wishlist', [CartWishlistController::class, 'wishlist'])->name('wishlist.index');

@@ -62,13 +62,36 @@
                     Dhoop Cones
                 </a>
 
-                <!-- 4. Super Save Offer -->
-                <a 
-                    href="{{ route('collections.show', 'super-save-offers') }}" 
-                    class="text-[14px] xl:text-[15px] font-semibold text-[#1F1F1F] hover:text-[#D38928] transition-colors py-4 whitespace-nowrap tracking-wide"
-                >
-                    Super Save Offer
-                </a>
+                <!-- 4. Super Save Offers (Dropdown matching screenshot) -->
+                <div class="relative group py-4">
+                    <button 
+                        type="button"
+                        class="flex items-center space-x-1 text-[14px] xl:text-[15px] font-semibold text-[#1F1F1F] group-hover:text-[#D38928] transition-colors whitespace-nowrap tracking-wide cursor-pointer focus:outline-none"
+                    >
+                        <span>Super Save Offers</span>
+                        <svg class="w-4 h-4 text-[#8C827A] group-hover:text-[#D38928] group-hover:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    
+                    <!-- Dropdown Content -->
+                    <div class="absolute left-0 top-full -mt-1 w-64 bg-white rounded-xl shadow-xl border border-[#EAE3D9] py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top group-hover:translate-y-0 translate-y-1 pointer-events-none group-hover:pointer-events-auto">
+                        <a 
+                            href="{{ route('bundles.trial-packs') }}" 
+                            class="flex items-center justify-between px-4 py-2.5 text-sm font-medium text-[#2B1810] hover:bg-[#FAF7F2] hover:text-[#D38928] transition-colors"
+                        >
+                            <span>Buy any 5 Trial Pack @ 799</span>
+                            <span class="text-[10px] font-bold bg-[#D38928]/10 text-[#965A15] px-1.5 py-0.5 rounded">₹799</span>
+                        </a>
+                        <a 
+                            href="{{ route('bundles.buy2get1') }}" 
+                            class="flex items-center justify-between px-4 py-2.5 text-sm font-medium text-[#2B1810] hover:bg-[#FAF7F2] hover:text-[#D38928] transition-colors"
+                        >
+                            <span>Buy 2 get 1 free</span>
+                            <span class="text-[10px] font-bold bg-[#B24E2B]/10 text-[#B24E2B] px-1.5 py-0.5 rounded">FREE GIFT</span>
+                        </a>
+                    </div>
+                </div>
 
                 <!-- 5. Best Seller Combo -->
                 <a 

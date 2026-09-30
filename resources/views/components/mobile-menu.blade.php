@@ -48,10 +48,19 @@
             <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block py-1 text-[#2B1810] hover:text-[#D38928] transition-colors font-semibold">
                 Dhoop Cones
             </a>
-            <a href="{{ route('collections.show', 'super-save-offers') }}" class="flex items-center justify-between py-1 text-[#2B1810] hover:text-[#D38928] transition-colors font-semibold">
-                <span>Super Save Offer</span>
-                <span class="text-[10px] font-bold text-white bg-[#D38928] px-2 py-0.5 rounded-full uppercase">Save</span>
-            </a>
+            <div>
+                <div class="py-1 text-xs font-bold tracking-wider text-[#965A15] uppercase">Super Save Offers</div>
+                <div class="pl-2 mt-1 space-y-1">
+                    <a href="{{ route('bundles.trial-packs') }}" class="flex items-center justify-between py-1 text-sm font-medium text-[#2B1810] hover:text-[#D38928]">
+                        <span>Buy any 5 Trial Pack @ 799</span>
+                        <span class="text-[9px] font-bold text-white bg-[#D38928] px-1.5 py-0.5 rounded">₹799</span>
+                    </a>
+                    <a href="{{ route('bundles.buy2get1') }}" class="flex items-center justify-between py-1 text-sm font-medium text-[#2B1810] hover:text-[#D38928]">
+                        <span>Buy 2 get 1 free</span>
+                        <span class="text-[9px] font-bold text-white bg-[#B24E2B] px-1.5 py-0.5 rounded">Offer</span>
+                    </a>
+                </div>
+            </div>
             <a href="{{ route('collections.show', 'best-seller-combo') }}" class="block py-1 text-[#2B1810] hover:text-[#D38928] transition-colors font-semibold">
                 Best Seller Combo
             </a>
