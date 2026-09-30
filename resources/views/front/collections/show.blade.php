@@ -5,7 +5,7 @@
 
 @section('content')
 <div class="bg-[#FAF7F2] min-h-screen py-6 lg:py-10 font-body">
-    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
+    <div class="w-full mx-auto px-5 sm:px-8 lg:px-[40px]">
 
         <!-- Top Bar: Total Count & Sort Dropdown -->
         <div class="bg-white rounded-[18px] border border-[#EADBCC] p-4 sm:p-5 mb-8 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -81,6 +81,83 @@
                     </div>
                 </div>
             @endif
+
+        </div>
+
+        <!-- ========================================================================= -->
+        <!-- BOTTOM COLLECTION STORY & VEDIC RITUAL BRIEF                              -->
+        <!-- ========================================================================= -->
+        <div class="mt-16 sm:mt-24 pt-12 sm:pt-16 border-t border-[#EADBCC] bg-white rounded-[24px] p-6 sm:p-10 lg:p-12 shadow-xs border border-[#EADBCC] space-y-10">
+            
+            <!-- Header & Devotional Intro -->
+            <div class="max-w-3xl space-y-3">
+                <div class="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-[#D38928]/10 border border-[#D38928]/30 text-[#D38928] text-[11px] sm:text-xs font-bold uppercase tracking-widest font-heading">
+                    <span>✦</span>
+                    <span>SACRED VIDHI &amp; CRAFTSMANSHIP</span>
+                    <span>✦</span>
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-serif font-normal text-[#121212] tracking-tight">
+                    About Our {{ $collection->title }}
+                </h2>
+                <p class="text-xs sm:text-sm lg:text-base text-gray-600 leading-relaxed">
+                    {{ $collection->description ?? 'Handcrafted according to timeless Ayurvedic traditions in Vrindavan Dham. Every single item is made without burning harmful bamboo or toxic black charcoal, preserving the sacred sanctity of your daily prayers and meditation.' }}
+                </p>
+            </div>
+
+            <!-- 3 Sacred Heritage Pillars for the Collection -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+                
+                <div class="p-5 rounded-[16px] bg-[#FAF7F2] border border-[#EADBCC] space-y-2.5">
+                    <div class="w-10 h-10 rounded-full bg-white border border-[#D38928]/40 text-[#D38928] flex items-center justify-center text-lg shadow-2xs">
+                        🌿
+                    </div>
+                    <h3 class="text-sm sm:text-base font-bold text-[#121212] font-heading">100% Bamboo-Free</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        Honoring scriptural prohibitions against burning Vamsha (bamboo). Gentle on the respiratory system and holy for deities.
+                    </p>
+                </div>
+
+                <div class="p-5 rounded-[16px] bg-[#FAF7F2] border border-[#EADBCC] space-y-2.5">
+                    <div class="w-10 h-10 rounded-full bg-white border border-[#D38928]/40 text-[#D38928] flex items-center justify-center text-lg shadow-2xs">
+                        🌸
+                    </div>
+                    <h3 class="text-sm sm:text-base font-bold text-[#121212] font-heading">Sacred Temple Flowers</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        Recycled sacred blossoms from temple deities blended with pure Guggal, Loban, and Desi Cow Ghee.
+                    </p>
+                </div>
+
+                <div class="p-5 rounded-[16px] bg-[#FAF7F2] border border-[#EADBCC] space-y-2.5">
+                    <div class="w-10 h-10 rounded-full bg-white border border-[#D38928]/40 text-[#D38928] flex items-center justify-center text-lg shadow-2xs">
+                        ✨
+                    </div>
+                    <h3 class="text-sm sm:text-base font-bold text-[#121212] font-heading">Non-Toxic White Smoke</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        Produces soothing, eye-friendly white smoke that naturally purifies prana and creates a peaceful sanctum.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Devotional Note -->
+            <div class="p-4 sm:p-5 rounded-[14px] bg-[#FAF3EA] border border-[#C27E27]/40 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div class="flex items-center space-x-3.5">
+                    <div class="w-9 h-9 rounded-full bg-[#831F2E] text-white flex items-center justify-center font-bold text-sm shrink-0 shadow-xs">
+                        🪔
+                    </div>
+                    <div>
+                        <h4 class="text-xs sm:text-sm font-bold text-[#831F2E] font-heading">
+                            Certified 100% Shuddh Vedic Vidhi Compliant
+                        </h4>
+                        <p class="text-[11px] sm:text-xs text-stone-700">
+                            Suitable for everyday morning Sandhya, evening aartis, temple rituals, yoga and deep dhyan practice.
+                        </p>
+                    </div>
+                </div>
+                <a href="{{ route('bundles.trial-packs') }}" class="shrink-0 px-5 py-2.5 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs font-bold uppercase tracking-wider rounded-[8px] transition-colors font-heading shadow-xs whitespace-nowrap">
+                    Explore Combos &rarr;
+                </a>
+            </div>
 
         </div>
 
