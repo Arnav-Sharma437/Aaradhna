@@ -29,10 +29,14 @@ Route::get('/bundles/buy-2-get-1-free', [BundleController::class, 'buy2Get1Free'
 Route::get('/cart', [CartWishlistController::class, 'cart'])->name('cart.index');
 Route::get('/wishlist', [CartWishlistController::class, 'wishlist'])->name('wishlist.index');
 
-// Placeholder Static & Policy Page Routes
-Route::get('/pages/{slug}', function (string $slug) {
-    return response("<h1>Aaradhna — " . e($slug) . "</h1>", 200);
-})->name('pages.show');
+// Static, About, Contact & Policy Routes
+use App\Http\Controllers\Front\PageController;
+Route::get('/about', [PageController::class, 'about'])->name('pages.about');
+Route::get('/about-us', [PageController::class, 'about'])->name('pages.about-us');
+Route::get('/contact', [PageController::class, 'contact'])->name('pages.contact');
+Route::get('/contact-us', [PageController::class, 'contact'])->name('pages.contact-us');
+Route::post('/contact/submit', [PageController::class, 'submitContact'])->name('pages.contact.submit');
+Route::get('/pages/{slug}', [PageController::class, 'policy'])->name('pages.show');
 
 // Placeholder Blog Route
 Route::get('/blogs/{slug}', function (string $slug) {

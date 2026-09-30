@@ -62,8 +62,9 @@
                 <a href="{{ route('collections.show', 'dhoop-cones') }}" class="hover:text-[#F6DAA8] transition-colors">Dhoop Cones</a>
                 <a href="{{ route('collections.show', 'super-save-offers') }}" class="hover:text-[#F6DAA8] transition-colors">Super Save Offer</a>
                 <a href="{{ route('collections.show', 'best-seller-combo') }}" class="hover:text-[#F6DAA8] transition-colors">Best Seller Combo</a>
+                <a href="{{ route('pages.about') }}" class="hover:text-[#F6DAA8] transition-colors">About Us</a>
+                <a href="{{ route('pages.contact') }}" class="hover:text-[#F6DAA8] transition-colors">Contact Us</a>
                 <a href="{{ route('wishlist.index') }}" class="hover:text-[#F6DAA8] transition-colors">Wishlist</a>
-                <a href="{{ route('pages.show', 'contact') }}" class="hover:text-[#F6DAA8] transition-colors">Contact</a>
             </nav>
 
             <!-- WhatsApp Direct Helpdesk Pill -->
