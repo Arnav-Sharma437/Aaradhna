@@ -7,11 +7,11 @@
 
 @theme {
     /* Fonts */
-    --font-body: 'Plus Jakarta Sans', sans-serif;
-    --font-heading: 'Philosopher', 'Cormorant Garamond', serif;
-    --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
-    --font-serif: 'Cormorant Garamond', 'Philosopher', serif;
-    --font-spiritual: 'Philosopher', 'Cormorant Garamond', serif;
+    --font-body: 'Jost', sans-serif;
+    --font-heading: 'Libre Baskerville', serif;
+    --font-sans: 'Jost', ui-sans-serif, system-ui, sans-serif;
+    --font-serif: 'Libre Baskerville', serif;
+    --font-spiritual: 'Libre Baskerville', serif;
 
     /* Design Tokens */
     --color-primary: #121212;
@@ -46,16 +46,15 @@
     }
 
     h1, h2, h3, h4, h5, h6, .font-heading {
-        font-family: 'Philosopher', 'Cormorant Garamond', serif;
-        letter-spacing: 0.01em;
+        font-family: 'Libre Baskerville', serif;
     }
 
     .font-serif, .font-spiritual {
-        font-family: 'Cormorant Garamond', 'Philosopher', serif;
+        font-family: 'Libre Baskerville', serif;
     }
 
     p, span, a, button, input, textarea, select, .font-body, .font-sans {
-        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-family: 'Jost', sans-serif;
     }
 }
 
