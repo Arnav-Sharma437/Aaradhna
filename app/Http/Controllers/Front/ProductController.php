@@ -14,8 +14,26 @@ class ProductController extends Controller
      */
     public function show(string $slug): View
     {
-        $product = Product::where('slug', $slug)
-            ->where('status', 'active')
+        // Aliases mapping for promotional, card, and legacy URLs
+        $aliases = [
+            'devi-refill-pack' => 'naagchampa',
+            'camphor-bambooless-incense-sticks' => 'havan-bambooless',
+            'camphor-refill-pack' => 'havan-bambooless',
+            'camphor' => 'havan-bambooless',
+            'oudh-bambooless-incense-sticks' => 'oudh',
+            'oudh-classic' => 'oudh',
+            'kesar-chandan-dhoop-cones' => 'sandalwood-dhoop-cones',
+            'chandan-cones' => 'sandalwood-dhoop-cones',
+            'chandan' => 'chandan',
+        ];
+
+        $targetSlug = $aliases[$slug] ?? $slug;
+
+        $product = Product::where('status', 'active')
+            ->where(function ($q) use ($slug, $targetSlug) {
+                $q->where('slug', $slug)
+                  ->orWhere('slug', $targetSlug);
+            })
             ->with([
                 'category',
                 'primaryImage',
@@ -30,7 +48,28 @@ class ProductController extends Controller
                 },
                 'approvedReviews',
             ])
-            ->firstOrFail();
+            ->first();
+
+        // If still not found, try finding by partial slug match before 404
+        if (!$product) {
+            $product = Product::where('status', 'active')
+                ->where('slug', 'LIKE', '%' . explode('-', $slug)[0] . '%')
+                ->with([
+                    'category',
+                    'primaryImage',
+                    'images' => function ($q) {
+                        $q->orderBy('is_primary', 'desc')->orderBy('sort_order', 'asc');
+                    },
+                    'variants' => function ($q) {
+                        $q->orderBy('sort_order', 'asc');
+                    },
+                    'faqs' => function ($q) {
+                        $q->where('is_active', true)->orderBy('sort_order', 'asc');
+                    },
+                    'approvedReviews',
+                ])
+                ->firstOrFail();
+        }
 
         // 4 Related Products from same category or active products
         $relatedProducts = Product::where('status', 'active')

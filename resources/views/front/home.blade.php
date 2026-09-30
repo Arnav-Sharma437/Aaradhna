@@ -631,7 +631,7 @@
                 </div>
                 <div class="p-2 sm:p-3.5 pb-0">
                     <div class="relative w-full aspect-square rounded-[12px] sm:rounded-[16px] overflow-hidden bg-[#FAF7F2]">
-                        <a href="{{ route('products.show', 'devi-refill-pack') }}" class="block w-full h-full">
+                        <a href="{{ route('products.show', 'kesar-chandan') }}" class="block w-full h-full">
                             <img src="{{ asset('assets/images/devi-refill-pack-card.jpg') }}" alt="Devi Refill Pack" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105"><img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Devi Refill Pack (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                         </a>
                         <div class="absolute top-2 right-2 sm:top-3 sm:right-3 text-right pointer-events-none select-none leading-none">
@@ -650,7 +650,7 @@
                 <div class="p-3 sm:p-5 pt-2 sm:pt-4 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3.5">
                     <div class="space-y-1">
                         <h3 class="text-[15px] sm:text-xl font-bold font-serif text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
-                            <a href="{{ route('products.show', 'devi-refill-pack') }}">Devi <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">Refill Pack</span></a>
+                            <a href="{{ route('products.show', 'kesar-chandan') }}">Devi <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">Refill Pack</span></a>
                         </h3>
                         <div class="flex items-center space-x-1 text-[#D38928] text-xs">
                             <div class="flex text-xs"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
@@ -678,7 +678,7 @@
                 </div>
                 <div class="p-2 sm:p-3.5 pb-0">
                     <div class="relative w-full aspect-square rounded-[12px] sm:rounded-[16px] overflow-hidden bg-[#FAF7F2]">
-                        <a href="{{ route('products.show', 'camphor-bambooless-incense-sticks') }}" class="block w-full h-full">
+                        <a href="{{ route('products.show', 'havan-bambooless') }}" class="block w-full h-full">
                             <img src="{{ asset('assets/images/camphor-refill-pack-card.jpg') }}" alt="Camphor Refill Pack" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105"><img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Camphor Refill Pack (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                         </a>
                         <div class="absolute top-2 right-2 sm:top-3 sm:right-3 text-right pointer-events-none select-none leading-none">
@@ -694,7 +694,7 @@
                 <div class="p-3 sm:p-5 pt-2 sm:pt-4 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3.5">
                     <div class="space-y-1">
                         <h3 class="text-[15px] sm:text-xl font-bold font-serif text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
-                            <a href="{{ route('products.show', 'camphor-bambooless-incense-sticks') }}">Camphor <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(Refill)</span></a>
+                            <a href="{{ route('products.show', 'havan-bambooless') }}">Camphor <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(Refill)</span></a>
                         </h3>
                         <div class="flex items-center space-x-1 text-[#D38928] text-xs">
                             <div class="flex text-xs"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
@@ -722,7 +722,7 @@
                 </div>
                 <div class="p-2 sm:p-3.5 pb-0">
                     <div class="relative w-full aspect-square rounded-[12px] sm:rounded-[16px] overflow-hidden bg-[#FAF7F2]">
-                        <a href="{{ route('products.show', 'oudh-bambooless-incense-sticks') }}" class="block w-full h-full">
+                        <a href="{{ route('products.show', 'oudh') }}" class="block w-full h-full">
                             <img src="{{ asset('assets/images/oudh-pack-card.jpg') }}" alt="Oudh Bambooless Sticks" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105"><img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Oudh Bambooless Sticks (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                         </a>
                         <div class="absolute top-2 right-2 sm:top-3 sm:right-3 text-right pointer-events-none select-none leading-none">
@@ -738,7 +738,7 @@
                 <div class="p-3 sm:p-5 pt-2 sm:pt-4 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3.5">
                     <div class="space-y-1">
                         <h3 class="text-[15px] sm:text-xl font-bold font-serif text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
-                            <a href="{{ route('products.show', 'oudh-bambooless-incense-sticks') }}">Oudh <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(Sticks)</span></a>
+                            <a href="{{ route('products.show', 'oudh') }}">Oudh <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(Sticks)</span></a>
                         </h3>
                         <div class="flex items-center space-x-1 text-[#D38928] text-xs">
                             <div class="flex text-xs"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
@@ -766,7 +766,7 @@
                 </div>
                 <div class="p-2 sm:p-3.5 pb-0">
                     <div class="relative w-full aspect-square rounded-[12px] sm:rounded-[16px] overflow-hidden bg-[#FAF7F2]">
-                        <a href="{{ route('products.show', 'kesar-chandan-dhoop-cones') }}" class="block w-full h-full">
+                        <a href="{{ route('products.show', 'sandalwood-dhoop-cones') }}" class="block w-full h-full">
                             <img src="{{ asset('assets/images/chandan-cones-card.jpg') }}" alt="Chandan Cones" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105"><img src="{{ asset('assets/images/single-dhoop-cone.jpg') }}" alt="Chandan Cones (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                         </a>
                         <div class="absolute top-2 right-2 sm:top-3 sm:right-3 text-right pointer-events-none select-none leading-none">
@@ -782,7 +782,7 @@
                 <div class="p-3 sm:p-5 pt-2 sm:pt-4 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3.5">
                     <div class="space-y-1">
                         <h3 class="text-[15px] sm:text-xl font-bold font-serif text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
-                            <a href="{{ route('products.show', 'kesar-chandan-dhoop-cones') }}">Chandan <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(चंदन)</span></a>
+                            <a href="{{ route('products.show', 'sandalwood-dhoop-cones') }}">Chandan <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(चंदन)</span></a>
                         </h3>
                         <div class="flex items-center space-x-1 text-[#D38928] text-xs">
                             <div class="flex text-xs"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
