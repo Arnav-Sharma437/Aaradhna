@@ -37,7 +37,8 @@
     $discountPercent = $product->discount_percentage ?: 51;
     $mrpPrice = $product->base_price > $product->active_price ? $product->base_price : ($product->active_price * 1.8);
     $reviewCount = $product->approvedReviews->count() ?: 219;
-@e    // Gallery images array
+
+    // Gallery images array
     $galleryImages = [];
     if ($product->images && $product->images->count() > 0) {
         foreach ($product->images as $img) {
