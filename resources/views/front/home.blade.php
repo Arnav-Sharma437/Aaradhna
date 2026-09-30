@@ -984,67 +984,7 @@
 </section>
 
 <!-- ========================================================================= -->
-<!-- 6. GIFTS THAT FEEL LIKE BLESSINGS (Panoramic Luxury Combo Offer Banner)   -->
-<!-- ========================================================================= -->
-<section class="py-12 sm:py-16 bg-[#FAF7F2] border-b border-[#EAE3D9]">
-    <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
-        
-        <div class="relative rounded-[22px] sm:rounded-[28px] overflow-hidden shadow-2xl border border-[#D38928]/40 bg-[#0F1B16] min-h-[380px] sm:min-h-[460px] lg:min-h-[500px] flex items-center">
-            
-            <!-- Full Panoramic Image Background -->
-            <img 
-                src="{{ asset('assets/images/gifts-blessings-banner.jpg') }}" 
-                alt="Mangalam Gifts That Feel Like Blessings - Sacred Combo Offers" 
-                class="absolute inset-0 w-full h-full object-cover object-[75%_center] sm:object-right lg:object-center transform hover:scale-[1.02] transition-transform duration-1000 ease-out"
-            >
-
-            <!-- Dark / Emerald Devotional Gradient Overlay for 100% Crisp Left Typography -->
-            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent sm:bg-gradient-to-r sm:from-[#0B1510]/95 sm:via-[#0B1510]/80 sm:to-transparent lg:w-[62%]"></div>
-
-            <!-- Content on the Left -->
-            <div class="relative z-10 p-6 sm:p-12 lg:p-16 max-w-xl text-left space-y-4 sm:space-y-6">
-                
-                <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#D38928]/30 border border-[#F6DAA8]/40 text-[#F6DAA8] text-[11px] sm:text-xs font-semibold tracking-widest uppercase backdrop-blur-xs">
-                    <span>🪔</span>
-                    <span>SACRED RITUAL HAMPERS &amp; COMBOS</span>
-                </div>
-
-                <div class="space-y-2.5">
-                    <h2 class="text-3xl sm:text-5xl lg:text-[50px] font-normal font-serif text-[#F6DAA8] tracking-tight leading-[1.14] drop-shadow-md">
-                        Gifts That <br>
-                        <span class="italic font-normal text-white drop-shadow-lg">Feel Like Blessings</span>
-                    </h2>
-                    
-                    <p class="text-xs sm:text-sm lg:text-base text-stone-200 max-w-md leading-relaxed pt-1">
-                        Thoughtfully crafted ritual boxes for pooja, celebrations, housewarmings and meaningful gifting.
-                    </p>
-                </div>
-
-                <div class="pt-2 flex flex-wrap items-center gap-3.5">
-                    <a 
-                        href="{{ route('collections.show', 'best-seller-combo') }}" 
-                        class="inline-flex items-center justify-center px-8 sm:px-10 py-3.5 sm:py-4 bg-gradient-to-r from-[#D38928] via-[#E29B3B] to-[#C07B20] hover:from-[#B8741E] hover:to-[#965A15] text-[#1A1005] font-bold text-xs sm:text-sm uppercase tracking-widest rounded-[10px] shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-0.5 font-heading cursor-pointer"
-                    >
-                        <span>SHOP NOW</span>
-                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                    </a>
-                    <a 
-                        href="{{ route('collections.show', 'super-save-offers') }}" 
-                        class="inline-flex items-center justify-center px-6 sm:px-7 py-3.5 bg-white/10 hover:bg-white/20 text-white text-xs sm:text-sm font-semibold uppercase tracking-wider rounded-[10px] backdrop-blur-md border border-white/30 transition-all duration-200"
-                    >
-                        Super Save Offers
-                    </a>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-</section>
-
-<!-- ========================================================================= -->
-<!-- 7. ROOTED IN PURITY (4 Pillars of Vedic Dharma)                           -->
+<!-- 6. ROOTED IN PURITY (4 Pillars of Vedic Dharma)                           -->
 <!-- ========================================================================= -->
 <section class="py-16 sm:py-20 bg-[#FDFBF7] border-b border-[#EAE3D9]">
     <div class="w-full mx-auto px-5 sm:px-8 lg:px-[40px]">
@@ -1104,6 +1044,84 @@
         </div>
 
     </div>
+</section>
+
+<!-- ========================================================================= -->
+<!-- 7. FULL-WIDTH GIFTS THAT FEEL LIKE BLESSINGS (Directly Above FAQs)         -->
+<!-- ========================================================================= -->
+<section class="relative w-full overflow-hidden select-none bg-[#0F1B16] border-y border-[#D38928]/40 min-h-[420px] sm:min-h-[500px] lg:min-h-[560px] flex items-center">
+    
+    <!-- Full Panoramic Image Background (Edge to Edge) -->
+    <img 
+        src="{{ asset('assets/images/gifts-blessings-banner.jpg') }}" 
+        alt="Mangalam Gifts That Feel Like Blessings - Sacred Combo Offers" 
+        class="absolute inset-0 w-full h-full object-cover object-[75%_center] sm:object-right lg:object-center transform hover:scale-[1.02] transition-transform duration-1000 ease-out"
+    >
+
+    <!-- Deep Devotional Gradient Overlay for 100% Crisp Left Typography -->
+    <div class="absolute inset-0 bg-gradient-to-t from-[#0B1510]/95 via-[#0B1510]/85 to-transparent sm:bg-gradient-to-r sm:from-[#0B1510]/95 sm:via-[#0B1510]/80 sm:to-transparent lg:w-[60%]"></div>
+
+    <!-- Content on the Left Container -->
+    <div class="relative w-full max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-16 py-14 sm:py-20 lg:py-24 z-10">
+        <div class="max-w-xl text-left space-y-5 sm:space-y-6">
+            
+            <!-- Devotional Tag -->
+            <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#D38928]/30 border border-[#F6DAA8]/40 text-[#F6DAA8] text-[11px] sm:text-xs font-semibold tracking-widest uppercase backdrop-blur-xs">
+                <span>🪔</span>
+                <span>SACRED RITUAL HAMPERS &amp; COMBOS</span>
+            </div>
+
+            <!-- Headline matching reference -->
+            <div class="space-y-2.5">
+                <h2 class="text-3xl sm:text-5xl lg:text-[54px] font-normal font-serif text-[#F6DAA8] tracking-tight leading-[1.12] drop-shadow-md">
+                    Gifts That <br>
+                    <span class="italic font-normal text-white drop-shadow-lg">Feel Like Blessings</span>
+                </h2>
+                
+                <p class="text-xs sm:text-sm lg:text-base text-stone-200 max-w-md leading-relaxed pt-1">
+                    Thoughtfully crafted ritual boxes for pooja, celebrations, housewarmings and meaningful gifting.
+                </p>
+            </div>
+
+            <!-- Interactive Direct Combo Buttons (Matching User Reference) -->
+            <div class="pt-2 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3.5">
+                
+                <!-- Button 1: Buy any 5 Trial Pack @ 799 -->
+                <a 
+                    href="{{ route('bundles.trial-packs') }}" 
+                    class="inline-flex items-center justify-between sm:justify-center space-x-3 px-5 py-3.5 bg-white/95 hover:bg-white text-[#1A1005] rounded-[10px] shadow-lg hover:shadow-xl border border-[#D38928]/50 transition-all duration-200 transform hover:-translate-y-0.5 group"
+                >
+                    <span class="text-xs sm:text-sm font-bold font-body text-gray-900 group-hover:text-[#D38928] transition-colors">Buy any 5 Trial Pack @ 799</span>
+                    <span class="px-2.5 py-0.5 bg-[#FAF0E1] text-[#965A15] text-xs font-black rounded-[6px] border border-[#D38928]/30 font-heading">
+                        ₹799
+                    </span>
+                </a>
+
+                <!-- Button 2: Buy 2 get 1 free -->
+                <a 
+                    href="{{ route('bundles.buy2get1') }}" 
+                    class="inline-flex items-center justify-between sm:justify-center space-x-3 px-5 py-3.5 bg-white/95 hover:bg-white text-[#1A1005] rounded-[10px] shadow-lg hover:shadow-xl border border-[#D38928]/50 transition-all duration-200 transform hover:-translate-y-0.5 group"
+                >
+                    <span class="text-xs sm:text-sm font-bold font-body text-gray-900 group-hover:text-[#D38928] transition-colors">Buy 2 get 1 free</span>
+                    <span class="px-2 py-0.5 bg-[#FDE8E8] text-[#9B1C31] text-[10px] font-black uppercase tracking-wider rounded-[6px] border border-[#9B1C31]/20 font-heading">
+                        FREE GIFT
+                    </span>
+                </a>
+
+                <!-- Button 3: Main Shop Now Combo CTA -->
+                <a 
+                    href="{{ route('collections.show', 'best-seller-combo') }}" 
+                    class="inline-flex items-center justify-center space-x-2 px-7 py-3.5 bg-gradient-to-r from-[#D38928] via-[#E29B3B] to-[#C07B20] hover:from-[#B8741E] hover:to-[#965A15] text-[#1A1005] font-bold text-xs sm:text-sm uppercase tracking-widest rounded-[10px] shadow-xl hover:shadow-2xl transition-all duration-200 transform hover:-translate-y-0.5 font-heading cursor-pointer"
+                >
+                    <span>SHOP NOW</span>
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+
 </section>
 
 <!-- ========================================================================= -->
