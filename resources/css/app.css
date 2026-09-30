@@ -7,11 +7,11 @@
 
 @theme {
     /* Fonts */
-    --font-body: 'Marcellus', 'Plus Jakarta Sans', serif;
-    --font-heading: 'Cinzel', 'Marcellus', serif;
-    --font-sans: 'Marcellus', 'Plus Jakarta Sans', sans-serif;
-    --font-serif: 'Cinzel Decorative', 'Cinzel', serif;
-    --font-spiritual: 'Cinzel Decorative', 'Cinzel', 'Marcellus', serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+    --font-heading: 'Philosopher', 'Cormorant Garamond', serif;
+    --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-serif: 'Cormorant Garamond', 'Philosopher', serif;
+    --font-spiritual: 'Philosopher', 'Cormorant Garamond', serif;
 
     /* Design Tokens */
     --color-primary: #121212;
@@ -46,16 +46,16 @@
     }
 
     h1, h2, h3, h4, h5, h6, .font-heading {
-        font-family: 'Cinzel', 'Marcellus', serif;
-        letter-spacing: 0.02em;
+        font-family: 'Philosopher', 'Cormorant Garamond', serif;
+        letter-spacing: 0.01em;
     }
 
     .font-serif, .font-spiritual {
-        font-family: 'Cinzel Decorative', 'Cinzel', serif;
+        font-family: 'Cormorant Garamond', 'Philosopher', serif;
     }
 
     p, span, a, button, input, textarea, select, .font-body, .font-sans {
-        font-family: 'Marcellus', 'Plus Jakarta Sans', sans-serif;
+        font-family: 'Plus Jakarta Sans', sans-serif;
     }
 }
 
