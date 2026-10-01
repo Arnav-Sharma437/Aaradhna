@@ -502,12 +502,12 @@
             <!-- Category 1: Single Bamboo-less Dhoop Stick -->
             <div class="group flex flex-col items-center text-center space-y-3.5 sm:space-y-4">
                 <!-- Borderless White Rounded Circle -->
-                <a href="{{ route('collections.show', 'bambooless') }}" class="block relative w-40 h-40 sm:w-52 sm:h-52 lg:w-56 lg:h-56 xl:w-60 xl:h-60 rounded-full p-2 bg-white shadow-md hover:shadow-xl group-hover:scale-105 transition-all duration-500 cursor-pointer">
-                    <div class="w-full h-full rounded-full overflow-hidden bg-white p-2.5 sm:p-3.5 flex items-center justify-center relative">
+                <a href="{{ route('collections.show', 'bambooless') }}" class="block relative w-44 h-44 sm:w-56 sm:h-56 lg:w-64 lg:h-64 xl:w-68 xl:h-68 rounded-full p-2 bg-white shadow-md hover:shadow-2xl group-hover:scale-105 transition-all duration-500 cursor-pointer">
+                    <div class="w-full h-full rounded-full overflow-hidden bg-white p-1 sm:p-2 flex items-center justify-center relative">
                         <img 
                             src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" 
                             alt="Bamboo-less Dhoop Stick" 
-                            class="w-full h-full object-contain rounded-full group-hover:scale-110 transition-transform duration-500"
+                            class="w-full h-full object-contain rounded-full scale-105 group-hover:scale-115 transition-transform duration-500"
                         >
                     </div>
                 </a>
@@ -529,12 +529,12 @@
             <!-- Category 2: Single Dhoop Cone -->
             <div class="group flex flex-col items-center text-center space-y-3.5 sm:space-y-4">
                 <!-- Borderless White Rounded Circle -->
-                <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block relative w-40 h-40 sm:w-52 sm:h-52 lg:w-56 lg:h-56 xl:w-60 xl:h-60 rounded-full p-2 bg-white shadow-md hover:shadow-xl group-hover:scale-105 transition-all duration-500 cursor-pointer">
-                    <div class="w-full h-full rounded-full overflow-hidden bg-white p-2.5 sm:p-3.5 flex items-center justify-center relative">
+                <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block relative w-44 h-44 sm:w-56 sm:h-56 lg:w-64 lg:h-64 xl:w-68 xl:h-68 rounded-full p-2 bg-white shadow-md hover:shadow-2xl group-hover:scale-105 transition-all duration-500 cursor-pointer">
+                    <div class="w-full h-full rounded-full overflow-hidden bg-white p-1 sm:p-2 flex items-center justify-center relative">
                         <img 
                             src="{{ asset('assets/images/single-dhoop-cone.jpg') }}" 
                             alt="Easy to Use Dhoop Cone" 
-                            class="w-full h-full object-contain rounded-full group-hover:scale-110 transition-transform duration-500"
+                            class="w-full h-full object-contain rounded-full scale-105 group-hover:scale-115 transition-transform duration-500"
                         >
                     </div>
                 </a>
@@ -556,12 +556,12 @@
             <!-- Category 3: Single 100% Organic Havan Cup -->
             <div class="group flex flex-col items-center text-center space-y-3.5 sm:space-y-4">
                 <!-- Borderless White Rounded Circle -->
-                <a href="{{ route('collections.show', 'havan-cups') }}" class="block relative w-40 h-40 sm:w-52 sm:h-52 lg:w-56 lg:h-56 xl:w-60 xl:h-60 rounded-full p-2 bg-white shadow-md hover:shadow-xl group-hover:scale-105 transition-all duration-500 cursor-pointer">
-                    <div class="w-full h-full rounded-full overflow-hidden bg-white p-2.5 sm:p-3.5 flex items-center justify-center relative">
+                <a href="{{ route('collections.show', 'havan-cups') }}" class="block relative w-44 h-44 sm:w-56 sm:h-56 lg:w-64 lg:h-64 xl:w-68 xl:h-68 rounded-full p-2 bg-white shadow-md hover:shadow-2xl group-hover:scale-105 transition-all duration-500 cursor-pointer">
+                    <div class="w-full h-full rounded-full overflow-hidden bg-white p-1 sm:p-2 flex items-center justify-center relative">
                         <img 
                             src="{{ asset('assets/images/single-havan-cup.jpg') }}" 
                             alt="100% Organic Havan Cups" 
-                            class="w-full h-full object-contain rounded-full group-hover:scale-110 transition-transform duration-500"
+                            class="w-full h-full object-contain rounded-full scale-105 group-hover:scale-115 transition-transform duration-500"
                         >
                     </div>
                 </a>
@@ -583,7 +583,7 @@
             <!-- Category 4: Mangalam Pitambara Havan Pack (COMING SOON) -->
             <div class="group flex flex-col items-center text-center space-y-3.5 sm:space-y-4">
                 <!-- Borderless White Rounded Circle with Coming Soon Tag -->
-                <a href="{{ route('products.pitambara') }}" class="block relative w-40 h-40 sm:w-52 sm:h-52 lg:w-56 lg:h-56 xl:w-60 xl:h-60 rounded-full p-2 bg-white shadow-md hover:shadow-xl group-hover:scale-105 transition-all duration-500 cursor-pointer">
+                <a href="{{ route('products.pitambara') }}" class="block relative w-44 h-44 sm:w-56 sm:h-56 lg:w-64 lg:h-64 xl:w-68 xl:h-68 rounded-full p-2 bg-white shadow-md hover:shadow-2xl group-hover:scale-105 transition-all duration-500 cursor-pointer">
                     <!-- Floating Coming Soon Pill -->
                     <div class="absolute -top-1.5 left-1/2 -translate-x-1/2 z-20 whitespace-nowrap">
                         <span class="inline-flex items-center space-x-1 bg-[#D38928] text-white text-[9px] sm:text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full shadow-md font-heading tracking-wider animate-pulse">
@@ -591,11 +591,11 @@
                         </span>
                     </div>
 
-                    <div class="w-full h-full rounded-full overflow-hidden bg-white p-2.5 sm:p-3.5 flex items-center justify-center relative">
+                    <div class="w-full h-full rounded-full overflow-hidden bg-white p-1 sm:p-2 flex items-center justify-center relative">
                         <img 
                             src="{{ asset('assets/images/pitambara-pack.jpg') }}" 
                             alt="Pitambara Havan Pack" 
-                            class="w-full h-full object-contain rounded-full group-hover:scale-110 transition-transform duration-500"
+                            class="w-full h-full object-contain rounded-full scale-105 group-hover:scale-115 transition-transform duration-500"
                         >
                     </div>
                 </a>
