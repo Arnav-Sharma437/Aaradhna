@@ -1,14 +1,14 @@
 <header class="sticky top-0 z-40 bg-white/98 backdrop-blur-md border-b border-[#EAE3D9] transition-all duration-200 shadow-xs font-body">
-    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
-        <div class="flex items-center justify-between h-20 sm:h-22">
+    <div class="w-full max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8 xl:px-10">
+        <div class="flex items-center justify-between h-18 sm:h-20 lg:h-22 gap-2 sm:gap-4">
             
             <!-- LEFT: Mobile Menu Button (Mobile only) + Brand Logo -->
-            <div class="flex items-center space-x-3 sm:space-x-4 lg:w-1/4 justify-start shrink-0">
-                <!-- Mobile Menu Button (Mobile Only) -->
+            <div class="flex items-center space-x-2 sm:space-x-3 shrink-0">
+                <!-- Mobile Menu Button (Mobile / Tablet Only) -->
                 <button 
                     type="button" 
                     id="mobile-menu-trigger"
-                    class="lg:hidden p-2 -ml-2 text-[#121212] hover:text-[#D38928] focus:outline-none transition-colors"
+                    class="lg:hidden p-2 -ml-1.5 text-[#121212] hover:text-[#D38928] focus:outline-none transition-colors rounded-lg hover:bg-stone-100/60 cursor-pointer"
                     aria-label="Open Mobile Menu"
                 >
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -18,17 +18,21 @@
 
                 <!-- Brand Logo (Left-aligned) -->
                 <a href="{{ route('home') }}" class="group flex items-center py-1" aria-label="Mangalam - Pure Sacred Rituals">
-                    <img src="{{ asset('assets/images/mangalam-logo.png') }}" alt="Mangalam" class="h-12 sm:h-16 w-auto max-w-[160px] sm:max-w-[220px] object-contain transition-transform group-hover:scale-105">
+                    <img 
+                        src="{{ asset('assets/images/mangalam-logo.png') }}" 
+                        alt="Mangalam" 
+                        class="h-10 sm:h-13 lg:h-15 w-auto max-w-[130px] sm:max-w-[160px] lg:max-w-[190px] xl:max-w-[210px] object-contain transition-transform group-hover:scale-102"
+                    >
                 </a>
             </div>
 
-            <!-- CENTER: Navigation Menu (Desktop) - Perfectly Centered, Normal Font Weight -->
-            <nav class="hidden lg:flex items-center justify-center flex-1 space-x-6 xl:space-x-8">
+            <!-- CENTER: Navigation Menu (Desktop & Laptop) - Fluid Auto Spacing -->
+            <nav class="hidden lg:flex items-center justify-center flex-1 min-w-0 space-x-2.5 lg:space-x-3.5 xl:space-x-5 2xl:space-x-7 px-1 xl:px-3">
                 
                 <!-- 1. Bambooless -->
                 <a 
                     href="{{ route('collections.show', 'bambooless') }}" 
-                    class="text-[14px] xl:text-[15px] font-normal text-[#1F1F1F] hover:text-[#D38928] transition-colors py-4 whitespace-nowrap tracking-wide"
+                    class="text-[13px] lg:text-[13.5px] xl:text-[14.5px] font-medium text-[#1F1F1F] hover:text-[#D38928] transition-colors py-2 xl:py-3 whitespace-nowrap tracking-normal"
                 >
                     Bambooless
                 </a>
@@ -36,7 +40,7 @@
                 <!-- 2. Havan Cups -->
                 <a 
                     href="{{ route('collections.show', 'havan-cups') }}" 
-                    class="text-[14px] xl:text-[15px] font-normal text-[#1F1F1F] hover:text-[#D38928] transition-colors py-4 whitespace-nowrap tracking-wide"
+                    class="text-[13px] lg:text-[13.5px] xl:text-[14.5px] font-medium text-[#1F1F1F] hover:text-[#D38928] transition-colors py-2 xl:py-3 whitespace-nowrap tracking-normal"
                 >
                     Havan Cups
                 </a>
@@ -44,19 +48,19 @@
                 <!-- 3. Dhoop Cones -->
                 <a 
                     href="{{ route('collections.show', 'dhoop-cones') }}" 
-                    class="text-[14px] xl:text-[15px] font-normal text-[#1F1F1F] hover:text-[#D38928] transition-colors py-4 whitespace-nowrap tracking-wide"
+                    class="text-[13px] lg:text-[13.5px] xl:text-[14.5px] font-medium text-[#1F1F1F] hover:text-[#D38928] transition-colors py-2 xl:py-3 whitespace-nowrap tracking-normal"
                 >
                     Dhoop Cones
                 </a>
 
-                <!-- 4. Super Save Offers (Dropdown matching screenshot) -->
-                <div class="relative group py-4">
+                <!-- 4. Super Save Offers (Dropdown) -->
+                <div class="relative group py-2 xl:py-3">
                     <button 
                         type="button"
-                        class="flex items-center space-x-1 text-[14px] xl:text-[15px] font-normal text-[#1F1F1F] group-hover:text-[#D38928] transition-colors whitespace-nowrap tracking-wide cursor-pointer focus:outline-none"
+                        class="flex items-center space-x-1 text-[13px] lg:text-[13.5px] xl:text-[14.5px] font-medium text-[#1F1F1F] group-hover:text-[#D38928] transition-colors whitespace-nowrap tracking-normal cursor-pointer focus:outline-none"
                     >
                         <span>Super Save Offers</span>
-                        <svg class="w-4 h-4 text-[#8C827A] group-hover:text-[#D38928] group-hover:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-3.5 h-3.5 text-[#8C827A] group-hover:text-[#D38928] group-hover:rotate-180 transition-transform duration-200 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                         </svg>
                     </button>
@@ -65,14 +69,14 @@
                     <div class="absolute left-0 top-full -mt-1 w-64 bg-white rounded-xl shadow-xl border border-[#EAE3D9] py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top group-hover:translate-y-0 translate-y-1 pointer-events-none group-hover:pointer-events-auto">
                         <a 
                             href="{{ route('bundles.trial-packs') }}" 
-                            class="flex items-center justify-between px-4 py-2.5 text-sm font-normal text-[#2B1810] hover:bg-[#FAF7F2] hover:text-[#D38928] transition-colors"
+                            class="flex items-center justify-between px-4 py-2.5 text-xs sm:text-sm font-normal text-[#2B1810] hover:bg-[#FAF7F2] hover:text-[#D38928] transition-colors"
                         >
                             <span>Buy any 5 Trial Pack @ 799</span>
                             <span class="text-[10px] font-bold bg-[#D38928]/10 text-[#965A15] px-1.5 py-0.5 rounded">₹799</span>
                         </a>
                         <a 
                             href="{{ route('bundles.buy2get1') }}" 
-                            class="flex items-center justify-between px-4 py-2.5 text-sm font-normal text-[#2B1810] hover:bg-[#FAF7F2] hover:text-[#D38928] transition-colors"
+                            class="flex items-center justify-between px-4 py-2.5 text-xs sm:text-sm font-normal text-[#2B1810] hover:bg-[#FAF7F2] hover:text-[#D38928] transition-colors"
                         >
                             <span>Buy 2 get 1 free</span>
                             <span class="text-[10px] font-bold bg-[#B24E2B]/10 text-[#B24E2B] px-1.5 py-0.5 rounded">FREE GIFT</span>
@@ -81,29 +85,27 @@
                 </div>
 
                 <!-- 5. Best Seller Combo (Dropdown) -->
-                <div class="relative group py-4">
+                <div class="relative group py-2 xl:py-3">
                     <button 
                         type="button"
-                        class="flex items-center space-x-1 text-[14px] xl:text-[15px] font-normal text-[#1F1F1F] group-hover:text-[#D38928] transition-colors whitespace-nowrap tracking-wide cursor-pointer focus:outline-none"
+                        class="flex items-center space-x-1 text-[13px] lg:text-[13.5px] xl:text-[14.5px] font-medium text-[#1F1F1F] group-hover:text-[#D38928] transition-colors whitespace-nowrap tracking-normal cursor-pointer focus:outline-none"
                     >
                         <span>Best Seller Combo</span>
-                        <svg class="w-4 h-4 text-[#8C827A] group-hover:text-[#D38928] group-hover:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-3.5 h-3.5 text-[#8C827A] group-hover:text-[#D38928] group-hover:rotate-180 transition-transform duration-200 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                         </svg>
                     </button>
                     
-                    <!-- Dropdown Content for 3 Combo Products -->
+                    <!-- Dropdown Content -->
                     <div class="absolute left-0 top-full -mt-1 w-72 bg-white rounded-xl shadow-xl border border-[#EAE3D9] py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top group-hover:translate-y-0 translate-y-1 pointer-events-none group-hover:pointer-events-auto">
-                        <!-- Combo 1: Pack of Six -->
                         <a 
                             href="{{ route('products.show', 'pack-of-six') }}" 
-                            class="flex items-center justify-between px-4 py-2.5 text-sm font-normal text-[#2B1810] hover:bg-[#FAF7F2] hover:text-[#D38928] transition-colors"
+                            class="flex items-center justify-between px-4 py-2.5 text-xs sm:text-sm font-normal text-[#2B1810] hover:bg-[#FAF7F2] hover:text-[#D38928] transition-colors"
                         >
                             <span>Pack of Six Grand Combo</span>
                             <span class="text-[10px] font-bold bg-[#D38928]/10 text-[#965A15] px-1.5 py-0.5 rounded">₹1199</span>
                         </a>
 
-                        <!-- View All Combos Link -->
                         <div class="pt-1.5 mt-1.5 border-t border-[#EAE3D9]">
                             <a 
                                 href="{{ route('collections.show', 'best-seller-combo') }}" 
@@ -116,22 +118,22 @@
                     </div>
                 </div>
 
-                <!-- 6. Pitambara Havan (At the End of the Menu) -->
+                <!-- 6. Pitambara Havan (Highlighted New Product Launch at the End) -->
                 <a 
                     href="{{ route('products.pitambara') }}" 
-                    class="relative inline-flex items-center space-x-1.5 text-[14px] xl:text-[15px] font-bold text-[#965A15] hover:text-[#D38928] transition-all py-4 whitespace-nowrap tracking-wide group"
+                    class="relative inline-flex items-center space-x-1 lg:space-x-1.5 text-[13px] lg:text-[13.5px] xl:text-[14.5px] font-bold text-[#965A15] hover:text-[#D38928] transition-all py-2 xl:py-3 whitespace-nowrap tracking-normal group shrink-0"
                 >
-                    <span class="text-amber-500 animate-pulse text-xs">✦</span>
+                    <span class="text-amber-500 animate-pulse text-xs leading-none">✦</span>
                     <span class="font-heading">Pitambara Havan</span>
-                    <span class="text-[9px] font-black uppercase tracking-wider bg-gradient-to-r from-[#D38928] to-[#B8741E] text-white px-2 py-0.5 rounded-full shadow-xs ring-1 ring-[#D38928]/40 animate-pulse">
+                    <span class="text-[8px] xl:text-[9px] font-black uppercase tracking-wider bg-gradient-to-r from-[#D38928] to-[#B8741E] text-white px-1.5 xl:px-2 py-0.5 rounded-full shadow-2xs ring-1 ring-[#D38928]/30 animate-pulse leading-none">
                         COMING SOON 🔥
                     </span>
                 </a>
 
             </nav>
 
-            <!-- RIGHT: Clean Compact Action Icons (Search + Account + Wishlist + Cart) with Tight Gap -->
-            <div class="flex items-center justify-end space-x-1 sm:space-x-1.5 lg:w-1/4 shrink-0">
+            <!-- RIGHT: Clean Compact Action Icons (Search + Account + Wishlist + Cart) -->
+            <div class="flex items-center justify-end space-x-0.5 sm:space-x-1 lg:space-x-1.5 shrink-0">
                 
                 <!-- 1. Search Icon Button -->
                 <button 
@@ -145,10 +147,10 @@
                     </svg>
                 </button>
 
-                <!-- 2. Customer Account (Hidden on Mobile) -->
+                <!-- 2. Customer Account (Hidden on small screens) -->
                 <a 
                     href="{{ auth()->check() ? route('account.index') : route('account.login') }}" 
-                    class="p-1.5 sm:p-2 text-[#1F1F1F] hover:text-[#D38928] transition-colors hidden sm:inline-flex items-center justify-center shrink-0 rounded-full hover:bg-stone-50 relative group"
+                    class="p-1.5 sm:p-2 text-[#1F1F1F] hover:text-[#D38928] transition-colors hidden md:inline-flex items-center justify-center shrink-0 rounded-full hover:bg-stone-50 relative group"
                     aria-label="Customer Account"
                     title="{{ auth()->check() ? 'My Devotee Account (' . auth()->user()->name . ')' : 'Sign In to Devotee Account' }}"
                 >
