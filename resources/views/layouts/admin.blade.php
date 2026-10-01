@@ -7,10 +7,10 @@
 
     <title>@yield('title', 'Shopify-Style Admin') — Mangalam.co™</title>
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Instrument Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 
     <!-- Styles / Scripts via Vite -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])

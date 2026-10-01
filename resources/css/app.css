@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
 @import 'tailwindcss';
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
@@ -6,12 +7,13 @@
 @source '../**/*.js';
 
 @theme {
-    /* Fonts */
-    --font-body: 'Jost', sans-serif;
-    --font-heading: 'Libre Baskerville', serif;
-    --font-sans: 'Jost', ui-sans-serif, system-ui, sans-serif;
-    --font-serif: 'Libre Baskerville', serif;
-    --font-spiritual: 'Libre Baskerville', serif;
+    /* Fonts - Instrument Sans Everywhere */
+    --font-body: 'Instrument Sans', sans-serif;
+    --font-heading: 'Instrument Sans', sans-serif;
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-serif: 'Instrument Sans', sans-serif;
+    --font-spiritual: 'Instrument Sans', sans-serif;
+    --font-cinzel: 'Instrument Sans', sans-serif;
 
     /* Design Tokens */
     --color-primary: #121212;
@@ -39,22 +41,18 @@
 }
 
 @layer base {
+    *, ::before, ::after {
+        font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif !important;
+    }
+
     body {
-        font-family: var(--font-body);
+        font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif !important;
         color: var(--color-primary);
         background-color: #ffffff;
     }
 
-    h1, h2, h3, h4, h5, h6, .font-heading {
-        font-family: 'Libre Baskerville', serif;
-    }
-
-    .font-serif, .font-spiritual {
-        font-family: 'Libre Baskerville', serif;
-    }
-
-    p, span, a, button, input, textarea, select, .font-body, .font-sans {
-        font-family: 'Jost', sans-serif;
+    h1, h2, h3, h4, h5, h6, .font-heading, .font-serif, .font-spiritual, .font-cinzel, .font-body, .font-sans, p, span, a, button, input, textarea, select {
+        font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif !important;
     }
 }
 
