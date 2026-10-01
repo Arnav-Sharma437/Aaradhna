@@ -1191,79 +1191,142 @@
 </section>
 
 <!-- ========================================================================= -->
-<!-- 6. ROOTED IN PURITY (Minimal & Ultra-Premium 3-Pillar Section)             -->
+<!-- 6. ROOTED IN PURITY (Bespoke Luxury 4-Pillar Heritage Section)            -->
 <!-- ========================================================================= -->
-<section class="py-14 sm:py-20 bg-white border-b border-[#EAE3D9] select-none font-body">
-    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
+<section class="py-14 sm:py-20 bg-white border-b border-[#EADBCC] select-none font-body relative overflow-hidden">
+    
+    <!-- Subtle Golden Aura -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#D38928]/4 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px] relative z-10">
         
-        <!-- Minimal Title -->
-        <div class="text-center max-w-xl mx-auto mb-10 sm:mb-12">
-            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-normal text-[#121212] font-heading tracking-tight">
+        <!-- Header -->
+        <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-14 space-y-2">
+            <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ THE SACRED STANDARD ✦</span>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#121212] font-heading tracking-tight leading-tight">
                 Rooted in Purity
             </h2>
+            <p class="text-xs sm:text-sm text-gray-500 max-w-lg mx-auto">
+                Four eternal vows of sanctity crafted into every sacred stick, dhoop cup, and fragrance.
+            </p>
         </div>
 
-        <!-- 3 Minimalist Clean Cards -->
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6 lg:gap-8 max-w-4xl mx-auto">
+        <!-- 4 Luxury Feature Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             
-            <!-- Pillar 1: Ancient Recipes -->
-            <div class="bg-[#FAF5EE] rounded-[16px] py-10 px-6 sm:py-12 sm:px-8 flex flex-col items-center justify-center text-center transition-all duration-300 hover:shadow-md hover:-translate-y-1 group">
-                <div class="w-20 h-20 sm:w-22 sm:h-22 rounded-full border-2 border-[#121212] flex items-center justify-center text-[#121212] group-hover:scale-105 transition-transform duration-300">
-                    <svg class="w-10 h-10 sm:w-11 sm:h-11" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                        <!-- Mortar Bowl -->
-                        <path d="M10 24h28c0 9-6.27 16-14 16s-14-7-14-16Z"/>
-                        <path d="M17 40h14"/>
-                        <!-- Pestle -->
-                        <path d="M29 14l5-6"/>
-                        <path d="M22 24l8-11a2 2 0 0 1 2.8 0l1.4 1.4a2 2 0 0 1 0 2.8L26 24"/>
-                        <!-- Small Herb Leaf -->
-                        <path d="M16 14c0-3 3-5 5-5s1 3 0 5-5 0-5 0Z"/>
-                        <circle cx="21" cy="18" r="1" fill="currentColor"/>
-                    </svg>
+            <!-- Pillar 01: 100% Bamboo-Free -->
+            <div class="bg-white rounded-[20px] p-6 sm:p-7 border border-[#EADBCC] hover:border-[#D38928] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 relative flex flex-col justify-between group shadow-xs">
+                <span class="absolute top-4 right-5 text-xs font-bold font-serif text-[#D38928]/50 group-hover:text-[#D38928] transition-colors">01</span>
+                <div class="space-y-3">
+                    <div class="w-13 h-13 rounded-[14px] bg-[#FAF5EE] border border-[#EADBCC] flex items-center justify-center text-[#831F2E] group-hover:bg-[#831F2E] group-hover:text-white group-hover:scale-105 transition-all duration-300 shadow-2xs">
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+                            <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-base sm:text-lg font-bold font-serif text-[#121212] group-hover:text-[#831F2E] transition-colors leading-snug">
+                            100% Bamboo-Free
+                        </h3>
+                        <p class="text-xs text-gray-500 pt-1 leading-relaxed">
+                            Sacred herbal core strictly following ancient Agama Vidhi.
+                        </p>
+                    </div>
                 </div>
-                <h3 class="text-sm sm:text-base font-serif font-bold text-[#121212] mt-6 tracking-wide">
-                    Ancient Recipes
-                </h3>
+                <div class="pt-4 mt-4 border-t border-[#EAE3D9]">
+                    <span class="inline-flex items-center text-[10px] font-bold uppercase tracking-wider text-[#965A15] bg-[#FAF5EE] px-2.5 py-0.5 rounded-full border border-[#EADBCC]/70 font-heading">
+                        No Vamsha Wood
+                    </span>
+                </div>
             </div>
 
-            <!-- Pillar 2: Purest Ingredients -->
-            <div class="bg-[#FAF5EE] rounded-[16px] py-10 px-6 sm:py-12 sm:px-8 flex flex-col items-center justify-center text-center transition-all duration-300 hover:shadow-md hover:-translate-y-1 group">
-                <div class="w-20 h-20 sm:w-22 sm:h-22 rounded-full border-2 border-[#121212] flex items-center justify-center text-[#121212] group-hover:scale-105 transition-transform duration-300">
-                    <svg class="w-10 h-10 sm:w-11 sm:h-11" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                        <!-- 3 Sprouting Leaves -->
-                        <path d="M24 10c-3 4-3 9 0 12 3-3 3-8 0-12Z"/>
-                        <path d="M18 16c-4 1-6 5-4 9 3-1 6-4 4-9Z"/>
-                        <path d="M30 16c4 1 6 5 4 9-3-1-6-4-4-9Z"/>
-                        <!-- Cupping Hand -->
-                        <path d="M13 29c4-1 9 1 11 4l2-1c2-1 4-1 6 1l4 5"/>
-                        <path d="M11 29c-2 2-3 5-1 7l5 5h14l6-7"/>
-                    </svg>
+            <!-- Pillar 02: Zero Charcoal -->
+            <div class="bg-white rounded-[20px] p-6 sm:p-7 border border-[#EADBCC] hover:border-[#D38928] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 relative flex flex-col justify-between group shadow-xs">
+                <span class="absolute top-4 right-5 text-xs font-bold font-serif text-[#D38928]/50 group-hover:text-[#D38928] transition-colors">02</span>
+                <div class="space-y-3">
+                    <div class="w-13 h-13 rounded-[14px] bg-[#FAF5EE] border border-[#EADBCC] flex items-center justify-center text-[#831F2E] group-hover:bg-[#831F2E] group-hover:text-white group-hover:scale-105 transition-all duration-300 shadow-2xs">
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+                            <path d="M12 18a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-base sm:text-lg font-bold font-serif text-[#121212] group-hover:text-[#831F2E] transition-colors leading-snug">
+                            Zero Charcoal &amp; Coal
+                        </h3>
+                        <p class="text-xs text-gray-500 pt-1 leading-relaxed">
+                            Pure organic tree resins yielding clean, non-toxic white ash.
+                        </p>
+                    </div>
                 </div>
-                <h3 class="text-sm sm:text-base font-serif font-bold text-[#121212] mt-6 tracking-wide">
-                    Purest Ingredients
-                </h3>
+                <div class="pt-4 mt-4 border-t border-[#EAE3D9]">
+                    <span class="inline-flex items-center text-[10px] font-bold uppercase tracking-wider text-[#965A15] bg-[#FAF5EE] px-2.5 py-0.5 rounded-full border border-[#EADBCC]/70 font-heading">
+                        Zero Black Soot
+                    </span>
+                </div>
             </div>
 
-            <!-- Pillar 3: Eco-conscious -->
-            <div class="bg-[#FAF5EE] rounded-[16px] py-10 px-6 sm:py-12 sm:px-8 flex flex-col items-center justify-center text-center transition-all duration-300 hover:shadow-md hover:-translate-y-1 group">
-                <div class="w-20 h-20 sm:w-22 sm:h-22 rounded-full border-2 border-[#121212] flex items-center justify-center text-[#121212] group-hover:scale-105 transition-transform duration-300">
-                    <svg class="w-10 h-10 sm:w-11 sm:h-11" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                        <!-- Open Box -->
-                        <path d="M14 26l10 5 10-5"/>
-                        <path d="M24 31v10"/>
-                        <path d="M12 25l12-6 12 6v13l-12 6-12-6V25Z"/>
-                        <path d="M10 22l6-4"/>
-                        <path d="M38 22l-6-4"/>
-                        <!-- Eco Recycling / Leaf Circle Above -->
-                        <circle cx="24" cy="15" r="5"/>
-                        <path d="M22 13l3 2-2 3"/>
-                    </svg>
+            <!-- Pillar 03: Sacred Temple Flowers -->
+            <div class="bg-white rounded-[20px] p-6 sm:p-7 border border-[#EADBCC] hover:border-[#D38928] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 relative flex flex-col justify-between group shadow-xs">
+                <span class="absolute top-4 right-5 text-xs font-bold font-serif text-[#D38928]/50 group-hover:text-[#D38928] transition-colors">03</span>
+                <div class="space-y-3">
+                    <div class="w-13 h-13 rounded-[14px] bg-[#FAF5EE] border border-[#EADBCC] flex items-center justify-center text-[#831F2E] group-hover:bg-[#831F2E] group-hover:text-white group-hover:scale-105 transition-all duration-300 shadow-2xs">
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2a5 5 0 0 1 5 5c0 4-5 9-5 9s-5-5-5-9a5 5 0 0 1 5-5Z"/>
+                            <circle cx="12" cy="7" r="2"/>
+                            <path d="M6 14c-2 2-3 5-1 7h14c2-2 1-5-1-7"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-base sm:text-lg font-bold font-serif text-[#121212] group-hover:text-[#831F2E] transition-colors leading-snug">
+                            Sacred Temple Flowers
+                        </h3>
+                        <p class="text-xs text-gray-500 pt-1 leading-relaxed">
+                            Handcrafted from holy temple pushpa recycled in Vrindavan Dham.
+                        </p>
+                    </div>
                 </div>
-                <h3 class="text-sm sm:text-base font-serif font-bold text-[#121212] mt-6 tracking-wide">
-                    Eco-conscious
-                </h3>
+                <div class="pt-4 mt-4 border-t border-[#EAE3D9]">
+                    <span class="inline-flex items-center text-[10px] font-bold uppercase tracking-wider text-[#965A15] bg-[#FAF5EE] px-2.5 py-0.5 rounded-full border border-[#EADBCC]/70 font-heading">
+                        Vrindavan Sacred Seva
+                    </span>
+                </div>
             </div>
 
+            <!-- Pillar 04: Desi Cow Ghee & Camphor -->
+            <div class="bg-white rounded-[20px] p-6 sm:p-7 border border-[#EADBCC] hover:border-[#D38928] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 relative flex flex-col justify-between group shadow-xs">
+                <span class="absolute top-4 right-5 text-xs font-bold font-serif text-[#D38928]/50 group-hover:text-[#D38928] transition-colors">04</span>
+                <div class="space-y-3">
+                    <div class="w-13 h-13 rounded-[14px] bg-[#FAF5EE] border border-[#EADBCC] flex items-center justify-center text-[#831F2E] group-hover:bg-[#831F2E] group-hover:text-white group-hover:scale-105 transition-all duration-300 shadow-2xs">
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 3c-1.2 1.8-1.8 3-1.8 4.2a1.8 1.8 0 0 0 3.6 0c0-1.2-.6-2.4-1.8-4.2z" fill="#D38928" stroke="#831F2E"/>
+                            <path d="M4 14c0 4 3.5 7 8 7s8-3 8-7c0-1.5-1-2.5-2-2.5H6c-1 0-2 1-2 2.5z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-base sm:text-lg font-bold font-serif text-[#121212] group-hover:text-[#831F2E] transition-colors leading-snug">
+                            Desi Cow Ghee &amp; Camphor
+                        </h3>
+                        <p class="text-xs text-gray-500 pt-1 leading-relaxed">
+                            Infused with pure Gir gomaya &amp; authentic Bhimseni camphor.
+                        </p>
+                    </div>
+                </div>
+                <div class="pt-4 mt-4 border-t border-[#EAE3D9]">
+                    <span class="inline-flex items-center text-[10px] font-bold uppercase tracking-wider text-[#965A15] bg-[#FAF5EE] px-2.5 py-0.5 rounded-full border border-[#EADBCC]/70 font-heading">
+                        Bhimseni Purity
+                    </span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Sleek Bottom Trust Pill -->
+        <div class="mt-8 sm:mt-10 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#FAF5EE] border border-[#EADBCC] text-xs font-semibold text-gray-700 shadow-2xs">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span>100% Lab Tested Smoke Safe for Daily Home Worship, Asthmatics &amp; Children</span>
+            </div>
         </div>
 
     </div>
