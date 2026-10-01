@@ -83,7 +83,7 @@ Route::middleware(['auth'])->prefix('account')->name('account.')->group(function
 });
 
 // =========================================================================
-// ADMIN AUTHENTICATION & DASHBOARD ROUTES
+// ADMIN AUTHENTICATION & BACKEND STORE MANAGEMENT ROUTES
 // =========================================================================
 use App\Http\Controllers\Admin\AuthController as AdminAuthController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
@@ -91,6 +91,15 @@ use App\Http\Controllers\Admin\ProductController as AdminProductController;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\Admin\CollectionController as AdminCollectionController;
 use App\Http\Controllers\Admin\InventoryController as AdminInventoryController;
+use App\Http\Controllers\Admin\OrderController as AdminOrderController;
+use App\Http\Controllers\Admin\CustomerController as AdminCustomerController;
+use App\Http\Controllers\Admin\CouponController as AdminCouponController;
+use App\Http\Controllers\Admin\ReviewController as AdminReviewController;
+use App\Http\Controllers\Admin\BannerController as AdminBannerController;
+use App\Http\Controllers\Admin\BlogController as AdminBlogController;
+use App\Http\Controllers\Admin\FaqController as AdminFaqController;
+use App\Http\Controllers\Admin\TestimonialController as AdminTestimonialController;
+use App\Http\Controllers\Admin\SettingController as AdminSettingController;
 
 Route::prefix('admin')->name('admin.')->group(function () {
     // Guest Admin Auth Routes
@@ -103,24 +112,68 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/', [AdminDashboardController::class, 'index']);
         Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
 
-        // Products Module
+        // 1. Orders Management Module
+        Route::patch('/orders/{order}/status', [AdminOrderController::class, 'updateStatus'])->name('orders.update-status');
+        Route::patch('/orders/{order}/tracking', [AdminOrderController::class, 'updateTracking'])->name('orders.update-tracking');
+        Route::resource('orders', AdminOrderController::class)->only(['index', 'show', 'destroy']);
+
+        // 2. Products Module
         Route::patch('/products/{product}/toggle-status', [AdminProductController::class, 'toggleStatus'])->name('products.toggle-status');
         Route::resource('products', AdminProductController::class);
 
-        // Categories Module
-        Route::patch('/categories/{category}/toggle-status', [AdminCategoryController::class, 'toggleStatus'])->name('categories.toggle-status');
-        Route::resource('categories', AdminCategoryController::class);
-
-        // Collections Module
-        Route::patch('/collections/{collection}/toggle-status', [AdminCollectionController::class, 'toggleStatus'])->name('collections.toggle-status');
-        Route::resource('collections', AdminCollectionController::class);
-
-        // Inventory Management Module
+        // 3. Inventory Tracking Module
         Route::get('/inventory', [AdminInventoryController::class, 'index'])->name('inventory.index');
         Route::post('/inventory/products/{product}/adjust', [AdminInventoryController::class, 'adjust'])->name('inventory.adjust');
         Route::patch('/inventory/products/{product}/toggle-tracking', [AdminInventoryController::class, 'toggleTracking'])->name('inventory.toggle-tracking');
         Route::post('/inventory/bulk-update', [AdminInventoryController::class, 'bulkUpdate'])->name('inventory.bulk-update');
         Route::get('/inventory/history', [AdminInventoryController::class, 'history'])->name('inventory.history');
+
+        // 4. Categories Module
+        Route::patch('/categories/{category}/toggle-status', [AdminCategoryController::class, 'toggleStatus'])->name('categories.toggle-status');
+        Route::resource('categories', AdminCategoryController::class);
+
+        // 5. Collections Module
+        Route::patch('/collections/{collection}/toggle-status', [AdminCollectionController::class, 'toggleStatus'])->name('collections.toggle-status');
+        Route::resource('collections', AdminCollectionController::class);
+
+        // 6. Customers 360 Module
+        Route::get('/customers', [AdminCustomerController::class, 'index'])->name('customers.index');
+        Route::get('/customers/{customer}', [AdminCustomerController::class, 'show'])->name('customers.show');
+        Route::patch('/customers/{customer}/toggle-status', [AdminCustomerController::class, 'toggleStatus'])->name('customers.toggle-status');
+
+        // 7. Discounts & Promo Codes Module
+        Route::patch('/coupons/{coupon}/toggle-status', [AdminCouponController::class, 'toggleStatus'])->name('coupons.toggle-status');
+        Route::resource('coupons', AdminCouponController::class);
+
+        // 8. Product Reviews Moderation Module
+        Route::get('/reviews', [AdminReviewController::class, 'index'])->name('reviews.index');
+        Route::patch('/reviews/{review}/status', [AdminReviewController::class, 'updateStatus'])->name('reviews.update-status');
+        Route::delete('/reviews/{review}', [AdminReviewController::class, 'destroy'])->name('reviews.destroy');
+
+        // 9. Banners & Sliders Module
+        Route::patch('/banners/{banner}/toggle-status', [AdminBannerController::class, 'toggleStatus'])->name('banners.toggle-status');
+        Route::resource('banners', AdminBannerController::class);
+
+        // 10. Blog Posts Module
+        Route::patch('/blogs/{blog}/toggle-status', [AdminBlogController::class, 'toggleStatus'])->name('blogs.toggle-status');
+        Route::resource('blogs', AdminBlogController::class);
+
+        // 11. FAQs Module
+        Route::get('/faqs', [AdminFaqController::class, 'index'])->name('faqs.index');
+        Route::post('/faqs', [AdminFaqController::class, 'store'])->name('faqs.store');
+        Route::put('/faqs/{faq}', [AdminFaqController::class, 'update'])->name('faqs.update');
+        Route::delete('/faqs/{faq}', [AdminFaqController::class, 'destroy'])->name('faqs.destroy');
+        Route::patch('/faqs/{faq}/toggle-status', [AdminFaqController::class, 'toggleStatus'])->name('faqs.toggle-status');
+
+        // 12. Devotee Testimonials Module
+        Route::get('/testimonials', [AdminTestimonialController::class, 'index'])->name('testimonials.index');
+        Route::post('/testimonials', [AdminTestimonialController::class, 'store'])->name('testimonials.store');
+        Route::put('/testimonials/{testimonial}', [AdminTestimonialController::class, 'update'])->name('testimonials.update');
+        Route::delete('/testimonials/{testimonial}', [AdminTestimonialController::class, 'destroy'])->name('testimonials.destroy');
+        Route::patch('/testimonials/{testimonial}/toggle-status', [AdminTestimonialController::class, 'toggleStatus'])->name('testimonials.toggle-status');
+
+        // 13. Store Settings & Config Module
+        Route::get('/settings', [AdminSettingController::class, 'index'])->name('settings.index');
+        Route::post('/settings', [AdminSettingController::class, 'update'])->name('settings.update');
     });
 });
-
