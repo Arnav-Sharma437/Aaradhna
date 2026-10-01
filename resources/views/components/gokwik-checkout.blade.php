@@ -226,13 +226,20 @@
                     </div>
                 </div>
 
-                <div class="pt-2">
+                <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-2.5">
+                    <a 
+                        href="{{ route('account.index', ['tab' => 'orders']) }}" 
+                        id="gokwik-view-order-btn"
+                        class="w-full sm:w-auto px-6 py-3 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs font-bold uppercase tracking-wider rounded-[10px] transition-colors font-heading text-center shadow-xs"
+                    >
+                        View Order Details ➔
+                    </a>
                     <button 
                         type="button" 
                         id="gokwik-done-btn"
-                        class="px-8 py-3 bg-[#121212] hover:bg-[#D38928] text-white text-xs font-bold uppercase tracking-wider rounded-[10px] transition-colors font-heading cursor-pointer"
+                        class="w-full sm:w-auto px-6 py-3 bg-[#121212] hover:bg-gray-800 text-white text-xs font-bold uppercase tracking-wider rounded-[10px] transition-colors font-heading cursor-pointer"
                     >
-                        Continue Shopping ➔
+                        Continue Shopping
                     </button>
                 </div>
             </div>
@@ -328,11 +335,11 @@
             });
         }
 
-        // Handle Pay button click (Simulate instant GoKwik payment)
+        // Handle Pay button click (Simulate instant GoKwik payment & save order to DB)
         if (payBtn) {
-            payBtn.addEventListener('click', () => {
+            payBtn.addEventListener('click', async () => {
                 payBtn.innerHTML = `
-                    <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
+                    <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white inline" fill="none" viewBox="0 0 24 24">
                         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
@@ -340,7 +347,34 @@
                 `;
                 payBtn.disabled = true;
 
-                setTimeout(() => {
+                const phoneInput = document.getElementById('gokwik-phone-input');
+                const phone = phoneInput ? phoneInput.value : '9876543210';
+                const selectedPayment = document.querySelector('input[name="gokwik_payment"]:checked')?.value || 'UPI';
+
+                let orderTotal = 1447;
+                if (payablePriceEl) {
+                    const parsed = parseFloat(payablePriceEl.textContent.replace(/[^0-9.]/g, ''));
+                    if (!isNaN(parsed) && parsed > 0) orderTotal = parsed;
+                }
+
+                try {
+                    const response = await fetch("{{ route('checkout.create-order') }}", {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRF-TOKEN': "{{ csrf_token() }}",
+                            'Accept': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            phone: phone,
+                            payment_method: selectedPayment === 'UPI' ? 'UPI (GoKwik Fast 1-Click)' : (selectedPayment === 'COD' ? 'Cash on Delivery (COD)' : 'Card / NetBanking'),
+                            items: window.cartItems || [],
+                            total_amount: orderTotal
+                        })
+                    });
+
+                    const data = await response.json();
+
                     if (step1) step1.classList.add('hidden');
                     if (successScreen) successScreen.classList.remove('hidden');
 
@@ -349,12 +383,26 @@
                     if (window.cartItems) window.cartItems = [];
                     if (window.updateCartBadges) window.updateCartBadges();
 
-                    // Generate random order ID
                     const orderIdEl = document.getElementById('gokwik-order-num');
-                    if (orderIdEl) {
-                        orderIdEl.textContent = '#GK-' + Math.floor(100000 + Math.random() * 900000);
+                    const viewOrderBtn = document.getElementById('gokwik-view-order-btn');
+
+                    if (data.success && data.order_number) {
+                        if (orderIdEl) orderIdEl.textContent = '#' + data.order_number;
+                        if (viewOrderBtn && data.redirect_url) viewOrderBtn.href = data.redirect_url;
+                    } else {
+                        if (orderIdEl) orderIdEl.textContent = '#MG-GK-' + Math.floor(100000 + Math.random() * 900000);
                     }
-                }, 1200);
+                } catch (e) {
+                    if (step1) step1.classList.add('hidden');
+                    if (successScreen) successScreen.classList.remove('hidden');
+
+                    localStorage.removeItem('mangalam_cart');
+                    if (window.cartItems) window.cartItems = [];
+                    if (window.updateCartBadges) window.updateCartBadges();
+
+                    const orderIdEl = document.getElementById('gokwik-order-num');
+                    if (orderIdEl) orderIdEl.textContent = '#MG-GK-' + Math.floor(100000 + Math.random() * 900000);
+                }
             });
         }
 

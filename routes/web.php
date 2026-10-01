@@ -44,6 +44,45 @@ Route::get('/blogs/{slug}', function (string $slug) {
 })->name('blogs.index');
 
 // =========================================================================
+// CUSTOMER AUTHENTICATION & ACCOUNT PORTAL ROUTES
+// =========================================================================
+use App\Http\Controllers\Front\AccountAuthController;
+use App\Http\Controllers\Front\AccountController;
+use App\Http\Controllers\Front\CheckoutController;
+
+// Public Auth Routes
+Route::get('/login', [AccountAuthController::class, 'showLogin'])->name('login');
+Route::get('/register', [AccountAuthController::class, 'showRegister'])->name('register');
+Route::get('/account/login', [AccountAuthController::class, 'showLogin'])->name('account.login');
+Route::post('/account/login', [AccountAuthController::class, 'login'])->name('account.login.submit');
+Route::post('/account/demo-login', [AccountAuthController::class, 'demoLogin'])->name('account.demo-login');
+Route::get('/account/register', [AccountAuthController::class, 'showRegister'])->name('account.register');
+Route::post('/account/register', [AccountAuthController::class, 'register'])->name('account.register.submit');
+Route::post('/account/logout', [AccountAuthController::class, 'logout'])->name('account.logout');
+
+// Order Placement API (GoKwik & Cart Checkout)
+Route::post('/api/checkout/create-order', [CheckoutController::class, 'createOrder'])->name('checkout.create-order');
+
+// Protected Customer Account Routes
+Route::middleware(['auth'])->prefix('account')->name('account.')->group(function () {
+    Route::get('/', [AccountController::class, 'index'])->name('index');
+    Route::get('/dashboard', [AccountController::class, 'index'])->name('dashboard');
+    Route::get('/profile', [AccountController::class, 'index'])->name('profile');
+    Route::put('/profile', [AccountController::class, 'updateProfile'])->name('profile.update');
+    Route::put('/password', [AccountController::class, 'updatePassword'])->name('password.update');
+    Route::get('/orders', [AccountController::class, 'index'])->name('orders');
+    Route::get('/orders/{orderNumber}', [AccountController::class, 'orderDetail'])->name('orders.show');
+    Route::get('/addresses', [AccountController::class, 'index'])->name('addresses');
+    Route::post('/addresses', [AccountController::class, 'storeAddress'])->name('addresses.store');
+    Route::put('/addresses/{id}', [AccountController::class, 'updateAddress'])->name('addresses.update');
+    Route::delete('/addresses/{id}', [AccountController::class, 'deleteAddress'])->name('addresses.destroy');
+    Route::patch('/addresses/{id}/default', [AccountController::class, 'setDefaultAddress'])->name('addresses.default');
+    Route::get('/wishlist', function () {
+        return redirect()->route('wishlist.index');
+    })->name('wishlist');
+});
+
+// =========================================================================
 // ADMIN AUTHENTICATION & DASHBOARD ROUTES
 // =========================================================================
 use App\Http\Controllers\Admin\AuthController as AdminAuthController;
