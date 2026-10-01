@@ -67,20 +67,18 @@
                         </div>
 
                         <!-- Badge 2: Crafted By Hand -->
-                        <div class="flex flex-col items-center lg:items-start text-center lg:text-left space-y-1.5">
-                            <div class="w-11 h-11 rounded-full bg-[#FAF5EE] border border-[#D38928]/40 text-[#965A15] flex items-center justify-center shadow-xs">
-                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-6-4.35-6-9.5a6 6 0 0 1 12 0c0 5.15-6 9.5-6 9.5z"/>
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 11.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
-                                </svg>
-                            </div>
-                            <span class="text-xs sm:text-[16px] font-semibold text-[#1F1F1F] leading-tight">
-                                Crafted By Hand
-                            </span>
-                            <!-- <span class="text-[10px] sm:text-[11px] text-[#965A15] font-medium hidden sm:block">
-                                Sacred Temple Flowers
-                            </span> -->
-                        </div>
+                        <div class="flex items-center gap-3">
+    <div class="w-11 h-11 shrink-0 rounded-full bg-[#FAF5EE] border border-[#D38928]/40 text-[#965A15] flex items-center justify-center shadow-xs">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-6-4.35-6-9.5a6 6 0 0 1 12 0c0 5.15-6 9.5-6 9.5z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 11.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+        </svg>
+    </div>
+
+    <span class="text-[17px] font-semibold text-[#1F1F1F] leading-tight">
+        Crafted By Hand
+    </span>
+</div>
 
                         <!-- Badge 3: Zero Chemicals -->
                         <div class="flex flex-col items-center lg:items-start text-center lg:text-left space-y-1.5">
