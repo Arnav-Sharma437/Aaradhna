@@ -20,11 +20,11 @@
     /* Fonts */
     --font-recoleta: 'Recoleta', Georgia, serif;
     --font-body: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
-    --font-heading: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-heading: 'Recoleta', Georgia, serif;
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
-    --font-serif: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
-    --font-spiritual: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
-    --font-cinzel: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-serif: 'Recoleta', Georgia, serif;
+    --font-spiritual: 'Recoleta', Georgia, serif;
+    --font-cinzel: 'Recoleta', Georgia, serif;
 
     /* Design Tokens */
     --color-primary: #121212;
@@ -58,27 +58,30 @@
         background-color: #ffffff;
     }
 
-    h1, h2, h3, h4, h5, h6, .font-heading {
-        font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif !important;
-        font-weight: 800 !important;
+    h1, h2, h3, h4, h5, h6, .font-heading, .font-serif, .font-spiritual, .font-cinzel, .font-recoleta {
+        font-family: 'Recoleta', Georgia, serif !important;
+        font-weight: 700 !important;
     }
 }
 
-/* Recoleta font for Banner section titles only */
-.font-recoleta,
-.recoleta,
-#hero-banner-carousel h1,
-#hero-banner-carousel h2 {
-    font-family: 'Recoleta', 'Georgia', serif;
-}
-
-/* Ensure all badges, pills, and % signs use Instrument Sans */
-#hero-banner-carousel .font-body,
+/* Ensure menu items, buttons, paragraphs, and badges use Instrument Sans */
+header nav a,
+header nav button,
+#mobile-drawer a,
+#mobile-drawer button,
 #hero-banner-carousel p,
 #hero-banner-carousel span,
+#hero-banner-carousel a,
 #hero-banner-carousel button,
-#hero-banner-carousel a {
+.font-body,
+.font-sans {
     font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+}
+
+#hero-banner-carousel h1,
+#hero-banner-carousel h2 {
+    font-family: 'Recoleta', Georgia, serif !important;
+    font-weight: 700 !important;
 }
 
 /* Menu Hover Underline Effect with Announcement Bar Color (#831F2E) */
