@@ -63,13 +63,21 @@
     }
 }
 
-/* Recoleta font for Banner section titles & decorative elements */
+/* Recoleta font for Banner section titles only */
 .font-recoleta,
 .recoleta,
 #hero-banner-carousel h1,
-#hero-banner-carousel h2,
-#hero-banner-carousel h3 {
-    font-family: 'Recoleta', Georgia, serif;
+#hero-banner-carousel h2 {
+    font-family: 'Recoleta', 'Georgia', serif;
+}
+
+/* Ensure all badges, pills, and % signs use Instrument Sans */
+#hero-banner-carousel .font-body,
+#hero-banner-carousel p,
+#hero-banner-carousel span,
+#hero-banner-carousel button,
+#hero-banner-carousel a {
+    font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
 }
 
 /* Menu Hover Underline Effect with Announcement Bar Color (#831F2E) */

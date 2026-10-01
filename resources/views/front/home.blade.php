@@ -8,7 +8,7 @@
 <!-- ========================================================================= -->
 <!-- 1. FULL-WIDTH CLEAN LUXURY HERO BANNER                                     -->
 <!-- ========================================================================= -->
-<section class="relative w-full bg-[#FAF5EE] overflow-hidden select-none border-b border-[#EAE3D9] font-recoleta" id="hero-banner-carousel">
+<section class="relative w-full bg-[#FAF5EE] overflow-hidden select-none border-b border-[#EAE3D9] font-body" id="hero-banner-carousel">
     
     <!-- Slides Wrapper (Compact, Balanced Viewport Height for Mac & Desktops) -->
     <div class="relative w-full min-h-[380px] sm:min-h-[440px] lg:min-h-[480px] xl:min-h-[520px] max-h-[560px] overflow-hidden">
@@ -34,66 +34,58 @@
                     
                     <!-- Main Hero Headlines -->
                     <div class="space-y-2">
-                        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#D38928]/10 border border-[#D38928]/30 text-[#D38928] text-xs font-semibold tracking-wider uppercase">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#D38928]/10 border border-[#D38928]/30 text-[#D38928] text-xs font-semibold tracking-wider uppercase font-body">
                             <span>✦</span>
                             <span>100% Pure &amp; Organic</span>
                             <span>✦</span>
                         </div>
-                        <h1 class="text-2xl sm:text-3xl lg:text-[36px] xl:text-[40px] font-bold text-[#2B1810] tracking-tight leading-snug lg:leading-[1.25]">
+                        <h1 class="text-2xl sm:text-3xl lg:text-[36px] xl:text-[40px] font-bold text-[#2B1810] tracking-tight leading-snug lg:leading-[1.25] font-recoleta">
                             Discover <span class="not-italic font-bold text-[#8B4513]">Mangalam’s</span><br class="hidden sm:inline">
                             Incense Cone Collection
                         </h1>
-                        <p class="text-sm sm:text-base lg:text-lg font-medium text-[#8B4513] tracking-normal">
+                        <p class="text-sm sm:text-base lg:text-lg font-medium text-[#8B4513] tracking-normal font-body">
                             Made From Sacred Temple Flowers &amp; Pure Vedic Herbs
                         </p>
                     </div>
 
-                    <!-- 3 Authentic Vedic Purity Badges (Evenly Spaced Across Full CTA Width) -->
-                    <div class="grid grid-cols-3 gap-3 sm:gap-6 max-w-md sm:max-w-lg mx-auto lg:mx-0 pt-2 pb-1">
+                    <!-- 3 Authentic Vedic Purity Badges (Consistent Horizontal Style) -->
+                    <div class="grid grid-cols-3 gap-3 sm:gap-6 max-w-md sm:max-w-lg mx-auto lg:mx-0 pt-2 pb-1 font-body">
                         
                         <!-- Badge 1: 100% Charcoal Free -->
-                        <div class="flex flex-col items-center lg:items-start text-center lg:text-left space-y-1.5">
-                            <div class="w-11 h-11 rounded-full bg-[#FAF5EE] border border-[#D38928]/40 text-[#965A15] flex items-center justify-center shadow-xs">
+                        <div class="flex items-center gap-2.5 sm:gap-3 text-left">
+                            <div class="w-10 h-10 sm:w-11 sm:h-11 shrink-0 rounded-full bg-[#FAF5EE] border border-[#D38928]/40 text-[#965A15] flex items-center justify-center shadow-xs">
                                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2m0 14v2m8-8h-2M6 12H4m12.364-6.364l-1.414 1.414M7.05 16.95l-1.414 1.414m12.728 0l-1.414-1.414M7.05 7.05L5.636 5.636M12 8a4 4 0 100 8 4 4 0 000-8z"/>
                                 </svg>
                             </div>
-                            <span class="text-xs sm:text-[16px] font-semibold text-[#1F1F1F] leading-tight">
+                            <span class="text-xs sm:text-[14px] lg:text-[15px] font-semibold text-[#1F1F1F] leading-tight">
                                 100% Charcoal Free
                             </span>
-                            <!-- <span class="text-[10px] sm:text-[11px] text-[#965A15] font-medium hidden sm:block">
-                                Zero Black Soot
-                            </span> -->
                         </div>
 
                         <!-- Badge 2: Crafted By Hand -->
-                        <div class="flex items-center gap-3">
-    <div class="w-11 h-11 shrink-0 rounded-full bg-[#FAF5EE] border border-[#D38928]/40 text-[#965A15] flex items-center justify-center shadow-xs">
-        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-6-4.35-6-9.5a6 6 0 0 1 12 0c0 5.15-6 9.5-6 9.5z"/>
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 11.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
-        </svg>
-    </div>
+                        <div class="flex items-center gap-2.5 sm:gap-3 text-left">
+                            <div class="w-10 h-10 sm:w-11 sm:h-11 shrink-0 rounded-full bg-[#FAF5EE] border border-[#D38928]/40 text-[#965A15] flex items-center justify-center shadow-xs">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-6-4.35-6-9.5a6 6 0 0 1 12 0c0 5.15-6 9.5-6 9.5z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 11.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+                                </svg>
+                            </div>
+                            <span class="text-xs sm:text-[14px] lg:text-[15px] font-semibold text-[#1F1F1F] leading-tight">
+                                Crafted By Hand
+                            </span>
+                        </div>
 
-    <span class="text-[17px] font-semibold text-[#1F1F1F] leading-tight">
-        Crafted By Hand
-    </span>
-</div>
-
-                        <!-- Badge 3: Zero Chemicals -->
-                        <div class="flex flex-col items-center lg:items-start text-center lg:text-left space-y-1.5">
-                            <div class="w-11 h-11 rounded-full bg-[#FAF5EE] border border-[#D38928]/40 text-[#965A15] flex items-center justify-center shadow-xs">
+                        <!-- Badge 3: Zero Harmful Toxins -->
+                        <div class="flex items-center gap-2.5 sm:gap-3 text-left">
+                            <div class="w-10 h-10 sm:w-11 sm:h-11 shrink-0 rounded-full bg-[#FAF5EE] border border-[#D38928]/40 text-[#965A15] flex items-center justify-center shadow-xs">
                                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
                                 </svg>
                             </div>
-                            <span class="text-xs sm:text-[16px] font-semibold text-[#1F1F1F] leading-tight">
+                            <span class="text-xs sm:text-[14px] lg:text-[15px] font-semibold text-[#1F1F1F] leading-tight">
                                 Zero Harmful Toxins
                             </span>
-                            </span>
-                            <!-- <span class="text-[10px] sm:text-[11px] text-[#965A15] font-medium hidden sm:block">
-                                Pure Vedic Herbs
-                            </span> -->
                         </div>
 
                     </div>
@@ -150,53 +142,44 @@
                         </p>
                     </div>
 
-                    <!-- 3 Authentic Vedic Purity Badges (Evenly Spaced Across Full CTA Width) -->
-                    <div class="grid grid-cols-3 gap-3 sm:gap-6 max-w-md sm:max-w-lg mx-auto lg:mx-0 pt-2 pb-1">
+                    <!-- 3 Authentic Vedic Purity Badges (Consistent Horizontal Style) -->
+                    <div class="grid grid-cols-3 gap-3 sm:gap-6 max-w-md sm:max-w-lg mx-auto lg:mx-0 pt-2 pb-1 font-body">
                         
                         <!-- Badge 1: 100% Bamboo Free -->
-                        <div class="flex flex-col items-center lg:items-start text-center lg:text-left space-y-1.5">
-                            <div class="w-11 h-11 rounded-full bg-[#FAF5EE] border border-[#D38928]/40 text-[#965A15] flex items-center justify-center shadow-xs">
+                        <div class="flex items-center gap-2.5 sm:gap-3 text-left">
+                            <div class="w-10 h-10 sm:w-11 sm:h-11 shrink-0 rounded-full bg-[#FAF5EE] border border-[#D38928]/40 text-[#965A15] flex items-center justify-center shadow-xs">
                                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2m0 14v2m8-8h-2M6 12H4m12.364-6.364l-1.414 1.414M7.05 16.95l-1.414 1.414m12.728 0l-1.414-1.414M7.05 7.05L5.636 5.636M12 8a4 4 0 100 8 4 4 0 000-8z"/>
                                 </svg>
                             </div>
-                            <span class="text-xs sm:text-[15px] font-semibold text-[#1F1F1F] leading-tight">
+                            <span class="text-xs sm:text-[14px] lg:text-[15px] font-semibold text-[#1F1F1F] leading-tight">
                                 100% Bamboo Free
                             </span>
-                            <!-- <span class="text-[10px] sm:text-[11px] text-[#965A15] font-medium hidden sm:block">
-                                As Per Vedic Shastras
-                            </span> -->
                         </div>
 
                         <!-- Badge 2: Clean & Soot-Free -->
-                        <div class="flex flex-col items-center lg:items-start text-center lg:text-left space-y-1.5">
-                            <div class="w-11 h-11 rounded-full bg-[#FAF5EE] border border-[#D38928]/40 text-[#965A15] flex items-center justify-center shadow-xs">
+                        <div class="flex items-center gap-2.5 sm:gap-3 text-left">
+                            <div class="w-10 h-10 sm:w-11 sm:h-11 shrink-0 rounded-full bg-[#FAF5EE] border border-[#D38928]/40 text-[#965A15] flex items-center justify-center shadow-xs">
                                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-6-4.35-6-9.5a6 6 0 0 1 12 0c0 5.15-6 9.5-6 9.5z"/>
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 11.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
                                 </svg>
                             </div>
-                            <span class="text-xs sm:text-[15px] font-semibold text-[#1F1F1F] leading-tight">
+                            <span class="text-xs sm:text-[14px] lg:text-[15px] font-semibold text-[#1F1F1F] leading-tight">
                                 Clean &amp; Soot-Free
                             </span>
-                            <!-- <span class="text-[10px] sm:text-[11px] text-[#965A15] font-medium hidden sm:block">
-                                Pure White Smoke
-                            </span> -->
                         </div>
 
-                        <!-- Badge 3: Zero Chemicals -->
-                        <div class="flex flex-col items-center lg:items-start text-center lg:text-left space-y-1.5">
-                            <div class="w-11 h-11 rounded-full bg-[#FAF5EE] border border-[#D38928]/40 text-[#965A15] flex items-center justify-center shadow-xs">
+                        <!-- Badge 3: Zero Harmful Toxins -->
+                        <div class="flex items-center gap-2.5 sm:gap-3 text-left">
+                            <div class="w-10 h-10 sm:w-11 sm:h-11 shrink-0 rounded-full bg-[#FAF5EE] border border-[#D38928]/40 text-[#965A15] flex items-center justify-center shadow-xs">
                                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
                                 </svg>
                             </div>
-                            <span class="text-xs sm:text-[15px] font-semibold text-[#1F1F1F] leading-tight">
+                            <span class="text-xs sm:text-[14px] lg:text-[15px] font-semibold text-[#1F1F1F] leading-tight">
                                 Zero Harmful Toxins
                             </span>
-                            <!-- <span class="text-[10px] sm:text-[11px] text-[#965A15] font-medium hidden sm:block">
-                                Pure Vedic Herbs
-                            </span> -->
                         </div>
 
                     </div>
@@ -261,7 +244,7 @@
         <!-- Section Header with Subtitle -->
         <div class="text-center max-w-2xl mx-auto mb-12 space-y-2">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ PURE VEDIC BLESSINGS ✦</span>
-            <h2 class="text-2xl sm:text-3xl lg:text-[36px] font-bold text-[#121212] font-heading tracking-tight">
+            <h2 class="text-2xl sm:text-3xl lg:text-[36px] font-normal text-[#121212] font-heading tracking-tight">
                 Bestseller of the Month
             </h2>
             <p class="text-sm sm:text-base text-gray-600">
@@ -487,7 +470,7 @@
             <span class="text-[11px] sm:text-xs font-bold uppercase tracking-[0.3em] text-[#D38928] font-heading">
                 ✦ 100% NATURAL • CHARCOAL FREE ✦
             </span>
-            <h2 class="text-2xl sm:text-3xl lg:text-[36px] font-serif font-bold text-[#2B1810] tracking-wider uppercase">
+            <h2 class="text-2xl sm:text-3xl lg:text-[36px] font-serif font-normal text-[#2B1810] tracking-wider uppercase">
                 Products Category
             </h2>
             <p class="text-xs sm:text-sm text-gray-600 max-w-md mx-auto">
@@ -645,7 +628,7 @@
         
         <div class="text-center max-w-2xl mx-auto mb-12 space-y-2">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ DAILY RITUAL GUIDES ✦</span>
-            <h2 class="text-2xl sm:text-3xl lg:text-[36px] font-bold text-[#121212] font-heading tracking-tight">
+            <h2 class="text-2xl sm:text-3xl lg:text-[36px] font-normal text-[#121212] font-heading tracking-tight">
                 Devotional Moments of Peace
             </h2>
             <p class="text-sm sm:text-base text-gray-600">
@@ -857,7 +840,7 @@
         <!-- Header -->
         <div class="text-center max-w-2xl mx-auto mb-12 space-y-2">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ 50,000+ BLESSED HOMES ✦</span>
-            <h2 class="text-2xl sm:text-3xl lg:text-[36px] font-bold text-[#121212] font-heading tracking-tight">
+            <h2 class="text-2xl sm:text-3xl lg:text-[36px] font-normal text-[#121212] font-heading tracking-tight">
                 Devotee Experiences
             </h2>
             <p class="text-sm sm:text-base text-gray-600">
@@ -1061,7 +1044,7 @@
         
         <div class="text-center max-w-2xl mx-auto mb-12 space-y-2">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ SACRED PROMISES ✦</span>
-            <h2 class="text-2xl sm:text-3xl lg:text-[36px] font-bold text-[#121212] font-heading tracking-tight">
+            <h2 class="text-2xl sm:text-3xl lg:text-[36px] font-normal text-[#121212] font-heading tracking-tight">
                 Rooted in Purity
             </h2>
             <p class="text-sm sm:text-base text-gray-600">
