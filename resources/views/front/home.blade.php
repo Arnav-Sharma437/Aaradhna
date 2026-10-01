@@ -11,38 +11,47 @@
 <section class="relative w-full bg-[#FAF5EE] overflow-hidden select-none border-b border-[#EAE3D9] font-body" id="hero-banner-carousel">
     
     <!-- Slides Wrapper (High-Impact Clean Visual Hero Banner for Desktop & Mobile) -->
-    <div class="relative w-full h-[520px] sm:h-[580px] md:h-[640px] lg:h-[700px] xl:h-[740px] overflow-hidden" style="min-height: 520px;">
+    <div class="relative w-full h-[420px] sm:h-[540px] md:h-[620px] lg:h-[700px] xl:h-[740px] overflow-hidden">
         
-        <!-- SLIDE 1: SACRED BAMBOOLEES COLLECTION (NO TEXT OVERLAY) -->
+        <!-- SLIDE 1: SACRED BAMBOOLEES COLLECTION (RESPONSIVE DESKTOP & MOBILE BANNER) -->
         <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-100 pointer-events-auto z-10 flex items-center bg-[#FAF4EB]" data-slide="0">
             <a href="{{ route('collections.show', 'bambooless') }}" class="block w-full h-full relative cursor-pointer" aria-label="Explore Sacred Bambooless Incense Collection">
-                <img 
-                    src="{{ asset('assets/images/hero-sacred.jpg') }}" 
-                    alt="Mangalam Sacred Bambooless Collection" 
-                    class="absolute inset-0 w-full h-full object-cover object-center"
-                >
+                <picture class="w-full h-full block">
+                    <source media="(max-width: 768px)" srcset="{{ asset('assets/images/hero-sacred-mobile.jpg') }}">
+                    <img 
+                        src="{{ asset('assets/images/hero-sacred.jpg') }}" 
+                        alt="Mangalam Sacred Bambooless Collection" 
+                        class="w-full h-full object-cover object-center"
+                    >
+                </picture>
             </a>
         </div>
 
-        <!-- SLIDE 2: SACRED HAVAN CUPS COLLECTION (NO TEXT OVERLAY) -->
+        <!-- SLIDE 2: SACRED HAVAN CUPS COLLECTION (RESPONSIVE DESKTOP & MOBILE BANNER) -->
         <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 pointer-events-none z-0 flex items-center bg-[#FAF4EB]" data-slide="1">
             <a href="{{ route('collections.show', 'havan-cups') }}" class="block w-full h-full relative cursor-pointer" aria-label="Explore Sacred Havan Cups Collection">
-                <img 
-                    src="{{ asset('assets/images/hero-sacred-hawan-cups.jpg') }}" 
-                    alt="Mangalam Sacred Havan Cups Collection" 
-                    class="absolute inset-0 w-full h-full object-cover object-center"
-                >
+                <picture class="w-full h-full block">
+                    <source media="(max-width: 768px)" srcset="{{ asset('assets/images/hero-sacred-hawan-cups-mobile.jpg') }}">
+                    <img 
+                        src="{{ asset('assets/images/hero-sacred-hawan-cups.jpg') }}" 
+                        alt="Mangalam Sacred Havan Cups Collection" 
+                        class="w-full h-full object-cover object-center"
+                    >
+                </picture>
             </a>
         </div>
 
-        <!-- SLIDE 3: SACRED DHOOP CONES COLLECTION (NO TEXT OVERLAY) -->
+        <!-- SLIDE 3: SACRED DHOOP CONES COLLECTION (RESPONSIVE DESKTOP & MOBILE BANNER) -->
         <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 pointer-events-none z-0 flex items-center bg-[#FAF4EB]" data-slide="2">
             <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block w-full h-full relative cursor-pointer" aria-label="Explore Sacred Dhoop Cones Collection">
-                <img 
-                    src="{{ asset('assets/images/hera-sacred-dhoop-cones.jpg') }}" 
-                    alt="Mangalam Sacred Dhoop Cones Collection" 
-                    class="absolute inset-0 w-full h-full object-cover object-center"
-                >
+                <picture class="w-full h-full block">
+                    <source media="(max-width: 768px)" srcset="{{ asset('assets/images/hera-sacred-dhoop-cones-mobile.jpg') }}">
+                    <img 
+                        src="{{ asset('assets/images/hera-sacred-dhoop-cones.jpg') }}" 
+                        alt="Mangalam Sacred Dhoop Cones Collection" 
+                        class="w-full h-full object-cover object-center"
+                    >
+                </picture>
             </a>
         </div>
 
@@ -312,7 +321,7 @@
             <span class="text-[11px] sm:text-xs font-bold uppercase tracking-[0.3em] text-[#D38928] font-heading">
                 ✦ 100% NATURAL • CHARCOAL FREE ✦
             </span>
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#2B1810] font-heading tracking-tight uppercase leading-tight">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#2B1810] font-heading tracking-tight capitalize leading-tight">
                 Product Categories
             </h2>
             <p class="text-xs sm:text-sm text-gray-600 max-w-md mx-auto">

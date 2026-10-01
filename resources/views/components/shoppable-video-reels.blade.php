@@ -107,8 +107,8 @@
         
         <!-- Section Header -->
         <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12 space-y-2">
-            <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ SACRED UNBOXING &amp; RITUALS ✦</span>
-            <h2 class="text-2xl sm:text-4xl lg:text-5xl font-black text-[#121212] font-heading tracking-tight">
+            <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#831F2E] font-heading">✦ SACRED UNBOXING &amp; RITUALS ✦</span>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#121212] font-heading tracking-tight">
                 Experience Divine Fragrance
             </h2>
             <p class="text-sm sm:text-base text-gray-600">
@@ -123,7 +123,7 @@
             <button 
                 type="button" 
                 id="reel-scroll-prev"
-                class="absolute -left-2 sm:-left-4 top-[40%] -translate-y-1/2 z-30 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-white/95 hover:bg-[#D38928] text-[#121212] hover:text-white border border-[#EADBCC] shadow-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 active:scale-95 cursor-pointer"
+                class="absolute -left-2 sm:-left-4 top-[40%] -translate-y-1/2 z-30 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-white/95 hover:bg-[#831F2E] text-[#121212] hover:text-white border border-[#EADBCC] shadow-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 active:scale-95 cursor-pointer"
                 aria-label="Previous Videos"
             >
                 <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
@@ -133,7 +133,7 @@
             <button 
                 type="button" 
                 id="reel-scroll-next"
-                class="absolute -right-2 sm:-right-4 top-[40%] -translate-y-1/2 z-30 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-white/95 hover:bg-[#D38928] text-[#121212] hover:text-white border border-[#EADBCC] shadow-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 active:scale-95 cursor-pointer"
+                class="absolute -right-2 sm:-right-4 top-[40%] -translate-y-1/2 z-30 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-white/95 hover:bg-[#831F2E] text-[#121212] hover:text-white border border-[#EADBCC] shadow-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 active:scale-95 cursor-pointer"
                 aria-label="Next Videos"
             >
                 <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
@@ -240,7 +240,7 @@
                             <!-- Add to Cart Full Width Dark Button (Direct to Cart Drawer without redirecting to inner page) -->
                             <button 
                                 type="button" 
-                                class="quick-add-to-cart-btn w-full py-2.5 px-3 bg-[#1E1E1E] hover:bg-[#D38928] active:bg-[#965A15] text-white text-xs sm:text-sm font-bold rounded-[8px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 flex items-center justify-center space-x-1.5 font-heading cursor-pointer focus:outline-none"
+                                class="quick-add-to-cart-btn w-full py-2.5 px-3 bg-[#831F2E] hover:bg-[#6E1724] active:bg-[#57121C] text-white text-xs sm:text-sm font-bold rounded-[8px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 flex items-center justify-center space-x-1.5 font-heading cursor-pointer focus:outline-none"
                                 data-product-id="{{ $reel['id'] }}"
                                 data-product-title="{{ $reel['title'] }}"
                                 data-product-slug="{{ $reel['slug'] }}"

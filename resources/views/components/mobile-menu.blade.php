@@ -57,23 +57,13 @@
                 Best Seller Combo
             </a>
 
-            <!-- Pitambara Havan (Attached Coming Soon Badge) -->
-            <div class="pt-2">
-                <a 
-                    href="{{ route('products.pitambara') }}" 
-                    class="flex flex-col items-start p-3 rounded-xl bg-gradient-to-r from-[#FAF0DE] to-[#FFFDF9] border border-[#E8CBA3] shadow-xs group"
-                >
-                    <div class="flex flex-col items-start mb-1.5">
-                        <span class="text-[7.5px] font-bold uppercase tracking-wider bg-[#831F2E] text-white px-1.5 py-[2px] rounded-[3px] leading-none whitespace-nowrap">
-                            COMING SOON
-                        </span>
-                        <span class="w-0 h-0 border-x-[3px] border-x-transparent border-t-[3px] border-t-[#831F2E] ml-2 -mt-[0.5px]"></span>
-                    </div>
-                    <div class="text-[#831F2E] font-bold text-sm">
-                        Pitambara Havan
-                    </div>
-                </a>
-            </div>
+            <!-- Pitambara Havan Link -->
+            <a 
+                href="{{ route('products.pitambara') }}" 
+                class="block py-1 text-[#831F2E] font-bold transition-colors"
+            >
+                Pitambara Havan
+            </a>
         </div>
 
         <!-- Prominent Contact Us Button in Side Drawer -->

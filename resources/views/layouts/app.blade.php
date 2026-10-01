@@ -22,7 +22,8 @@
     <link href="https://fonts.cdnfonts.com/css/recoleta" rel="stylesheet">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="{{ asset('assets/images/mangalam-logo.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('assets/images/fac-icon.png') }}">
+    <link rel="shortcut icon" type="image/png" href="{{ asset('assets/images/fac-icon.png') }}">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('styles')

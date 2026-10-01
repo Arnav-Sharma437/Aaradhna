@@ -138,37 +138,27 @@
                     Best Seller Combo
                 </a>
 
-                <!-- 6. Pitambara Havan (Attached Centered Coming Soon Badge with Pointer) -->
-                <div class="relative py-2 xl:py-3 flex items-center justify-center">
-                    <!-- Attached Badge on Top with Connector Pointer -->
-                    <div class="absolute -top-1.5 lg:-top-2 left-1/2 -translate-x-1/2 flex flex-col items-center pointer-events-none z-10">
-                        <span class="text-[7.5px] lg:text-[8px] font-bold uppercase tracking-wider bg-[#831F2E] text-white px-2 py-[2px] rounded-[3px] shadow-2xs leading-none whitespace-nowrap">
-                            COMING SOON
-                        </span>
-                        <span class="w-0 h-0 border-x-[3px] border-x-transparent border-t-[3px] border-t-[#831F2E] -mt-[0.5px]"></span>
-                    </div>
-                    <a 
-                        href="{{ route('products.pitambara') }}" 
-                        class="nav-link-hover text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-bold text-[#831F2E] hover:text-[#6E1724] transition-colors whitespace-nowrap"
-                        aria-label="Pitambara Havan - Coming Soon"
-                    >
-                        Pitambara Havan
-                    </a>
-                </div>
+                <!-- 6. Pitambara Havan (Underline Hover Link) -->
+                <a 
+                    href="{{ route('products.pitambara') }}" 
+                    class="nav-link-hover text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-bold text-[#831F2E] hover:text-[#6E1724] transition-colors py-2 xl:py-3 whitespace-nowrap"
+                >
+                    Pitambara Havan
+                </a>
 
             </nav>
 
             <!-- RIGHT: Clean Compact Action Icons (Search + Account + Wishlist + Cart) -->
-            <div class="flex items-center justify-end space-x-0.5 sm:space-x-1 lg:space-x-1.5 shrink-0">
+            <div class="flex items-center justify-end space-x-1 sm:space-x-1.5 lg:space-x-2 shrink-0">
                 
                 <!-- 1. Search Icon Button -->
                 <button 
                     type="button" 
                     id="search-modal-trigger"
-                    class="p-1.5 sm:p-2 text-[#1F1F1F] hover:text-[#D38928] transition-colors focus:outline-none shrink-0 cursor-pointer rounded-full hover:bg-stone-50"
+                    class="p-2 text-[#1F1F1F] hover:text-[#831F2E] transition-colors focus:outline-none shrink-0 cursor-pointer rounded-full hover:bg-stone-50"
                     aria-label="Open Search"
                 >
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                    <svg class="w-6 h-6 sm:w-[25px] sm:h-[25px]" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
                     </svg>
                 </button>
@@ -176,11 +166,11 @@
                 <!-- 2. Customer Account (Hidden on small screens) -->
                 <a 
                     href="{{ auth()->check() ? route('account.index') : route('account.login') }}" 
-                    class="p-1.5 sm:p-2 text-[#1F1F1F] hover:text-[#D38928] transition-colors hidden md:inline-flex items-center justify-center shrink-0 rounded-full hover:bg-stone-50 relative group"
+                    class="p-2 text-[#1F1F1F] hover:text-[#831F2E] transition-colors hidden md:inline-flex items-center justify-center shrink-0 rounded-full hover:bg-stone-50 relative group"
                     aria-label="Customer Account"
                     title="{{ auth()->check() ? 'My Devotee Account (' . auth()->user()->name . ')' : 'Sign In to Devotee Account' }}"
                 >
-                    <svg class="w-5 h-5 {{ auth()->check() ? 'text-[#D38928]' : '' }}" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                    <svg class="w-6 h-6 sm:w-[25px] sm:h-[25px] {{ auth()->check() ? 'text-[#831F2E]' : '' }}" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
                     </svg>
                 </a>
@@ -188,15 +178,15 @@
                 <!-- 3. Wishlist with live badge -->
                 <a 
                     href="{{ route('wishlist.index') }}" 
-                    class="p-1.5 sm:p-2 text-[#1F1F1F] hover:text-[#D38928] transition-colors relative inline-flex items-center justify-center shrink-0 rounded-full hover:bg-stone-50"
+                    class="p-2 text-[#1F1F1F] hover:text-[#831F2E] transition-colors relative inline-flex items-center justify-center shrink-0 rounded-full hover:bg-stone-50"
                     aria-label="Wishlist"
                 >
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                    <svg class="w-6 h-6 sm:w-[25px] sm:h-[25px]" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
                     </svg>
                     <span 
                         id="header-wishlist-badge"
-                        class="absolute top-1 right-0.5 bg-[#D38928] text-white text-[9px] font-bold w-3.5 h-3.5 rounded-full flex items-center justify-center leading-none ring-2 ring-white"
+                        class="absolute top-1 right-0.5 bg-[#831F2E] text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center leading-none ring-2 ring-white"
                     >
                         0
                     </span>
@@ -206,16 +196,16 @@
                 <a 
                     href="{{ route('cart.index') }}" 
                     id="cart-drawer-trigger"
-                    class="p-1.5 sm:p-2 text-[#1F1F1F] hover:text-[#D38928] transition-colors relative inline-flex items-center justify-center shrink-0 cursor-pointer rounded-full hover:bg-stone-50"
+                    class="p-2 text-[#1F1F1F] hover:text-[#831F2E] transition-colors relative inline-flex items-center justify-center shrink-0 cursor-pointer rounded-full hover:bg-stone-50"
                     aria-label="Cart"
                 >
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                    <svg class="w-6 h-6 sm:w-[25px] sm:h-[25px]" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
                     </svg>
                     
                     <span 
                         id="header-cart-badge"
-                        class="absolute top-1 right-0.5 bg-[#9B1C31] text-white text-[9px] font-bold w-3.5 h-3.5 rounded-full flex items-center justify-center leading-none ring-2 ring-white"
+                        class="absolute top-1 right-0.5 bg-[#831F2E] text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center leading-none ring-2 ring-white"
                     >
                         {{ session('cart_count', 0) }}
                     </span>
