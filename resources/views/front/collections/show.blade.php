@@ -5,7 +5,7 @@
 
 @section('content')
 <div class="bg-[#FAF7F2] min-h-screen py-6 lg:py-10 font-body">
-    <div class="w-full mx-auto px-5 sm:px-8 lg:px-[40px]">
+    <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
 
         <!-- Top Bar: Total Count & Sort Dropdown -->
         <div class="bg-white rounded-[18px] border border-[#EADBCC] p-4 sm:p-5 mb-8 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4">

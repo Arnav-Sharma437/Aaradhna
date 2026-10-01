@@ -90,7 +90,7 @@
 <!-- 2. BESTSELLER OF THE MONTH (Mobile Horizontal Slider + 4+4 Load More)     -->
 <!-- ========================================================================= -->
 <section class="py-14 sm:py-20 bg-[#FAF7F2] border-b border-[#EAE3D9] overflow-hidden">
-    <div class="w-full mx-auto px-5 sm:px-8 lg:px-[40px]">
+    <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
         
         <!-- Section Header with Subtitle -->
         <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-12 space-y-2">
@@ -671,17 +671,19 @@
 </section>
 
 <!-- ========================================================================= -->
-<!-- 4. STANDALONE PROMO BANNER: BUY 5 TRIAL PACKS @ 799 (Edge-to-Edge)        -->
+<!-- 4. STANDALONE PROMO BANNER: BUY 5 TRIAL PACKS @ 799                       -->
 <!-- ========================================================================= -->
-<section class="w-full bg-[#FAF4EB] border-b border-[#EADBCC] overflow-hidden select-none">
-    <a href="{{ route('bundles.trial-packs') }}" class="block w-full group focus:outline-none">
-        <img 
-            src="{{ asset('assets/images/banner-5-trial-packs.jpg') }}" 
-            alt="Festive Collection - 5 Divine Essentials at just ₹799 - Mangalam" 
-            class="w-full h-auto block object-cover group-hover:opacity-95 transition-opacity duration-300"
-            loading="lazy"
-        >
-    </a>
+<section class="w-full bg-[#FAF4EB] border-b border-[#EADBCC] overflow-hidden select-none py-2 sm:py-4">
+    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
+        <a href="{{ route('bundles.trial-packs') }}" class="block w-full group focus:outline-none rounded-[16px] sm:rounded-[20px] overflow-hidden shadow-xs">
+            <img 
+                src="{{ asset('assets/images/banner-5-trial-packs.jpg') }}" 
+                alt="Festive Collection - 5 Divine Essentials at just ₹799 - Mangalam" 
+                class="w-full h-auto block object-cover group-hover:opacity-95 group-hover:scale-[1.01] transition-all duration-300"
+                loading="lazy"
+            >
+        </a>
+    </div>
 </section>
 
 <!-- ========================================================================= -->
@@ -693,7 +695,7 @@
 <!-- 6. DAILY DEVOTIONAL RITUALS (Exact Match to User Screenshot Standard) -->
 <!-- ========================================================================= -->
 <section class="py-16 sm:py-24 bg-white border-b border-[#EAE3D9]">
-    <div class="w-full mx-auto px-5 sm:px-8 lg:px-[40px]">
+    <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
         
         <div class="text-center max-w-2xl mx-auto mb-12 space-y-2">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ DAILY RITUAL GUIDES ✦</span>
@@ -892,7 +894,7 @@
 <!-- 5. DEVOTEE TESTIMONIALS (3D Interactive Coverflow Slider)                 -->
 <!-- ========================================================================= -->
 <section class="py-18 sm:py-24 bg-[#FDFBF7] border-b border-[#EAE3D9] overflow-hidden select-none" id="testimonial-3d-section">
-    <div class="w-full mx-auto px-5 sm:px-8 lg:px-[40px]">
+    <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
         
         <!-- Header -->
         <div class="text-center max-w-2xl mx-auto mb-12 space-y-2">
@@ -1270,24 +1272,27 @@
 </section>
 
 <!-- ========================================================================= -->
-<!-- 7. STANDALONE PROMO BANNER: BUY 2 GET 1 FREE (Edge-to-Edge Above FAQ)     -->
+<!-- 7. STANDALONE PROMO BANNER: BUY 2 GET 1 FREE (Above FAQ)                  -->
 <!-- ========================================================================= -->
-<section class="w-full bg-[#FAF4EB] border-b border-[#EADBCC] overflow-hidden select-none">
-    <a href="{{ route('bundles.buy2get1') }}" class="block w-full group focus:outline-none">
-        <img 
-            src="{{ asset('assets/images/banner-buy2-get1-free.jpg') }}" 
-            alt="Buy 2 Get 1 FREE + Chandan Pack FREE @ ₹999 - Mangalam" 
-            class="w-full h-auto block object-cover group-hover:opacity-95 transition-opacity duration-300"
-            loading="lazy"
-        >
-    </a>
+<section class="w-full bg-[#FAF4EB] border-b border-[#EADBCC] overflow-hidden select-none py-2 sm:py-4">
+    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
+        <a href="{{ route('bundles.buy2get1') }}" class="block w-full group focus:outline-none rounded-[16px] sm:rounded-[20px] overflow-hidden shadow-xs">
+            <img 
+                src="{{ asset('assets/images/banner-buy2-get1-free.jpg') }}" 
+                alt="Buy 2 Get 1 FREE + Chandan Pack FREE @ ₹999 - Mangalam" 
+                class="w-full h-auto block object-cover group-hover:opacity-95 group-hover:scale-[1.01] transition-all duration-300"
+                loading="lazy"
+            >
+        </a>
+    </div>
 </section>
 
 <!-- ========================================================================= -->
 <!-- 8. FREQUENTLY ASKED QUESTIONS (Luxury Modern Accordions)                  -->
 <!-- ========================================================================= -->
 <section class="py-16 sm:py-24 bg-[#FAF7F2]/60 border-b border-[#EADBCC] select-none">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+    <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
+        <div class="max-w-4xl mx-auto space-y-10">
         
         <!-- Section Header -->
         <div class="text-center max-w-2xl mx-auto space-y-3">
@@ -1403,7 +1408,6 @@
             </div>
 
         </div>
-
     </div>
 </section>
 
@@ -1411,7 +1415,7 @@
 <!-- 9. CERTIFIED TRUST & PURITY RECOGNITION (Luxury Seals)                    -->
 <!-- ========================================================================= -->
 <section class="py-14 sm:py-16 bg-[#FDFBF7] border-b border-[#EAE3D9]">
-    <div class="w-full mx-auto px-5 sm:px-8 lg:px-[40px]">
+    <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
         
         <div class="text-center mb-8">
             <span class="text-[11px] font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ CERTIFIED VEDIC STANDARDS ✦</span>

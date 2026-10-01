@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="bg-[#FAF7F2] min-h-screen py-8 sm:py-12">
-    <div class="w-full mx-auto px-4 sm:px-6 lg:px-[40px] max-w-7xl">
+    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-[40px]">
         
         <!-- Top Breadcrumb & Sacred Welcome Bar -->
         <div class="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#EADBCC] pb-4">
