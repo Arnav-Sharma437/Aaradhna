@@ -163,15 +163,16 @@
                         <!-- 9:16 Video Preview Container -->
                         <div class="relative w-full aspect-[9/16] rounded-[16px] overflow-hidden bg-neutral-900 border border-[#EADBCC] shadow-xs group-hover:shadow-xl group-hover:border-[#D38928] transition-all duration-300 transform group-hover:-translate-y-1">
                             
-                            <!-- Video Element (Autoplay Muted Preview) -->
+                            <!-- Video Element (Autoplay Muted Loop Continuous Preview) -->
                             <video 
                                 class="reel-preview-video w-full h-full object-cover pointer-events-none"
                                 src="{{ asset($reel['video_url']) }}"
                                 poster="{{ asset($reel['poster']) }}"
+                                autoplay
                                 loop
                                 muted
                                 playsinline
-                                preload="metadata"
+                                preload="auto"
                             ></video>
 
                             <!-- Subtle Vignette -->
@@ -740,17 +741,27 @@
             }
         });
 
-        // Autoplay muted previews in card grid
-        cards.forEach(card => {
-            const previewVideo = card.querySelector('.reel-preview-video');
-            if (!previewVideo) return;
+        // Continuous Autoplay Muted Previews in Card Grid
+        const previewVideos = document.querySelectorAll('.reel-preview-video');
+        const startAllPreviewVideos = () => {
+            previewVideos.forEach(video => {
+                video.muted = true;
+                video.loop = true;
+                const playPromise = video.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(() => {
+                        // If browser restricts unmuted/initial autoplay, retry on user interaction
+                        const startOnInteract = () => {
+                            video.play().catch(() => {});
+                        };
+                        window.addEventListener('scroll', startOnInteract, { once: true, passive: true });
+                        window.addEventListener('touchstart', startOnInteract, { once: true, passive: true });
+                        window.addEventListener('click', startOnInteract, { once: true, passive: true });
+                    });
+                }
+            });
+        };
 
-            card.addEventListener('mouseenter', () => {
-                previewVideo.play().catch(() => {});
-            });
-            card.addEventListener('mouseleave', () => {
-                previewVideo.pause();
-            });
-        });
+        startAllPreviewVideos();
     });
 </script>
