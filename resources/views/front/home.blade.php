@@ -8,7 +8,7 @@
 <!-- ========================================================================= -->
 <!-- 1. FULL-WIDTH CLEAN LUXURY HERO BANNER                                     -->
 <!-- ========================================================================= -->
-<section class="relative w-full bg-[#FAF5EE] overflow-hidden select-none border-b border-[#EAE3D9]" id="hero-banner-carousel">
+<section class="relative w-full bg-[#FAF5EE] overflow-hidden select-none border-b border-[#EAE3D9] font-recoleta" id="hero-banner-carousel">
     
     <!-- Slides Wrapper (Compact, Balanced Viewport Height for Mac & Desktops) -->
     <div class="relative w-full min-h-[380px] sm:min-h-[440px] lg:min-h-[480px] xl:min-h-[520px] max-h-[560px] overflow-hidden">

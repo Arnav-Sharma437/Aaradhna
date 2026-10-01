@@ -6,7 +6,7 @@
 
 <aside 
     id="mobile-drawer"
-    class="fixed top-0 left-0 w-4/5 max-w-sm h-full bg-white z-50 shadow-2xl -translate-x-full transition-transform duration-300 ease-in-out flex flex-col font-body"
+    class="fixed top-0 left-0 w-4/5 max-w-sm h-full bg-white z-50 shadow-2xl -translate-x-full transition-transform duration-300 ease-in-out flex flex-col font-recoleta"
     aria-label="Mobile Navigation"
 >
     <!-- Drawer Header -->
@@ -27,10 +27,10 @@
     </div>
 
     <!-- Drawer Navigation Content (Scrollable) -->
-    <div class="flex-1 overflow-y-auto divide-y divide-[#EAE3D9]/60">
+    <div class="flex-1 overflow-y-auto divide-y divide-[#EAE3D9]/60 font-recoleta">
         
         <!-- Direct Nav Links (No Dropdowns) -->
-        <div class="p-4 space-y-3 text-base font-medium">
+        <div class="p-4 space-y-3 text-base font-medium font-recoleta">
             <a href="{{ route('collections.show', 'bambooless') }}" class="block py-1 text-[#2B1810] hover:text-[#D38928] transition-colors font-semibold">
                 Bambooless
             </a>

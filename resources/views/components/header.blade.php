@@ -27,7 +27,7 @@
             </div>
 
             <!-- CENTER: Navigation Menu (Desktop & Laptop) - Fluid Auto Spacing -->
-            <nav class="hidden lg:flex items-center justify-center flex-1 min-w-0 space-x-2.5 lg:space-x-3.5 xl:space-x-5 2xl:space-x-7 px-1 xl:px-3">
+            <nav class="hidden lg:flex items-center justify-center flex-1 min-w-0 space-x-2.5 lg:space-x-3.5 xl:space-x-5 2xl:space-x-7 px-1 xl:px-3 font-recoleta">
                 
                 <!-- 1. Bambooless -->
                 <a 

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/recoleta');
 @import 'tailwindcss';
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
@@ -6,14 +7,24 @@
 @source '../**/*.blade.php';
 @source '../**/*.js';
 
+@font-face {
+    font-family: 'Recoleta';
+    font-style: normal;
+    font-weight: 300 900;
+    src: local('Recoleta'), local('Recoleta Regular'), local('Recoleta-Regular'),
+         url('https://fonts.cdnfonts.com/s/31694/Recoleta-RegularDEMO.woff') format('woff');
+    font-display: swap;
+}
+
 @theme {
-    /* Fonts - Instrument Sans Everywhere */
-    --font-body: 'Instrument Sans', sans-serif;
-    --font-heading: 'Instrument Sans', sans-serif;
+    /* Fonts */
+    --font-recoleta: 'Recoleta', Georgia, serif;
+    --font-body: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-heading: 'Recoleta', Georgia, serif;
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
-    --font-serif: 'Instrument Sans', sans-serif;
-    --font-spiritual: 'Instrument Sans', sans-serif;
-    --font-cinzel: 'Instrument Sans', sans-serif;
+    --font-serif: 'Recoleta', Georgia, serif;
+    --font-spiritual: 'Recoleta', Georgia, serif;
+    --font-cinzel: 'Recoleta', Georgia, serif;
 
     /* Design Tokens */
     --color-primary: #121212;
@@ -41,19 +52,31 @@
 }
 
 @layer base {
-    *, ::before, ::after {
-        font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif !important;
-    }
-
     body {
-        font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif !important;
+        font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
         color: var(--color-primary);
         background-color: #ffffff;
     }
+}
 
-    h1, h2, h3, h4, h5, h6, .font-heading, .font-serif, .font-spiritual, .font-cinzel, .font-body, .font-sans, p, span, a, button, input, textarea, select {
-        font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif !important;
-    }
+/* Recoleta font for Menus and Banner section */
+.font-recoleta,
+.recoleta,
+header nav a,
+header nav button,
+header nav span,
+#mobile-drawer,
+#mobile-drawer a,
+#mobile-drawer button,
+#mobile-drawer span,
+#hero-banner-carousel,
+#hero-banner-carousel h1,
+#hero-banner-carousel h2,
+#hero-banner-carousel h3,
+#hero-banner-carousel p,
+#hero-banner-carousel span,
+#hero-banner-carousel a {
+    font-family: 'Recoleta', Georgia, serif !important;
 }
 
 @keyframes marquee {
