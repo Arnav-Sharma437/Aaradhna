@@ -894,10 +894,10 @@
 <!-- 5. DEVOTEE TESTIMONIALS (2-Row Continuous Smooth Marquee Ticker)         -->
 <!-- ========================================================================= -->
 <section class="py-14 sm:py-20 bg-white border-b border-[#EAE3D9] overflow-hidden select-none" id="testimonials-marquee-section">
-    <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px] mb-8 sm:mb-12">
+    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
         
         <!-- Header -->
-        <div class="text-center max-w-2xl mx-auto space-y-2">
+        <div class="text-center max-w-2xl mx-auto space-y-2 mb-8 sm:mb-12">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ 50,000+ BLESSED HOMES ✦</span>
             <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#121212] font-heading tracking-tight leading-tight">
                 Devotee Experiences
@@ -907,16 +907,18 @@
             </p>
         </div>
 
-    </div>
-
-    <!-- 2 Continuous Scrolling Rows with Left & Right Gradient Fade Masks -->
-    <div class="relative w-full space-y-4 sm:space-y-6 overflow-hidden marquee-track-pause [mask-image:linear-gradient(to_right,transparent,black_3%,black_97%,transparent)]">
+        <!-- 2 Continuous Scrolling Rows with Left & Right Gradient Fade Overlays -->
+        <div class="relative w-full space-y-4 sm:space-y-6 overflow-hidden marquee-track-pause">
+            
+            <!-- Left & Right Edge Fade Gradients -->
+            <div class="absolute top-0 bottom-0 left-0 w-12 sm:w-28 z-20 pointer-events-none bg-gradient-to-r from-white via-white/90 to-transparent"></div>
+            <div class="absolute top-0 bottom-0 right-0 w-12 sm:w-28 z-20 pointer-events-none bg-gradient-to-l from-white via-white/90 to-transparent"></div>
         
-        <!-- ========================================== -->
-        <!-- ROW 1: RIGHT TO LEFT (Continuous Scroll)   -->
-        <!-- ========================================== -->
-        <div class="flex overflow-hidden">
-            <div class="animate-marquee-left flex space-x-4 sm:space-x-6 py-2">
+            <!-- ========================================== -->
+            <!-- ROW 1: RIGHT TO LEFT (Continuous Scroll)   -->
+            <!-- ========================================== -->
+            <div class="flex overflow-hidden">
+                <div class="animate-marquee-left flex space-x-4 sm:space-x-6 py-2">
                 
                 @php
                     $row1Testimonials = [
@@ -1184,6 +1186,7 @@
             </div>
         </div>
 
+    </div>
     </div>
 </section>
 
