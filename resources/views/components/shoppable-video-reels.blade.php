@@ -189,8 +189,8 @@
 
                             <!-- Centered Subtle Play Button Overlay (Visible only on hover, soft transparent) -->
                             <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-95 group-hover:scale-100">
-                                <div class="w-13 h-13 rounded-full bg-black/30 backdrop-blur-xs border border-white/30 text-white flex items-center justify-center group-hover:bg-[#831F2E]/85 transition-all duration-300 shadow-md">
-                                    <svg class="w-6 h-6 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                                <div class="w-12 h-12 rounded-full bg-black/35 backdrop-blur-sm border border-white/20 text-white/90 flex items-center justify-center group-hover:bg-black/55 transition-all duration-300 shadow-md">
+                                    <svg class="w-5 h-5 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M8 5v14l11-7z"/>
                                     </svg>
                                 </div>
@@ -313,6 +313,14 @@
                 playsinline
                 loop
             ></video>
+
+            <!-- Centered Modal Play/Pause Flash Indicator (Soft Transparent Glass) -->
+            <div id="modal-play-indicator" class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-0 transition-opacity duration-300 z-20">
+                <div class="w-14 h-14 rounded-full bg-black/40 backdrop-blur-sm border border-white/20 text-white/90 flex items-center justify-center shadow-lg">
+                    <svg id="modal-play-icon" class="w-6 h-6 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    <svg id="modal-pause-icon" class="w-6 h-6 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                </div>
+            </div>
 
             <!-- Gradient Shadow for Bottom Text Legibility -->
             <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent pointer-events-none z-10"></div>
@@ -666,6 +674,34 @@
                 modalMuteLabel.textContent = isMuted ? 'Unmute' : 'Mute';
             }
         };
+
+        if (modalVideo) {
+            modalVideo.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const indicator = document.getElementById('modal-play-indicator');
+                const playIcon = document.getElementById('modal-play-icon');
+                const pauseIcon = document.getElementById('modal-pause-icon');
+                
+                if (modalVideo.paused) {
+                    modalVideo.play();
+                    if (playIcon) playIcon.classList.remove('hidden');
+                    if (pauseIcon) pauseIcon.classList.add('hidden');
+                } else {
+                    modalVideo.pause();
+                    if (playIcon) playIcon.classList.add('hidden');
+                    if (pauseIcon) pauseIcon.classList.remove('hidden');
+                }
+
+                if (indicator) {
+                    indicator.classList.remove('opacity-0');
+                    indicator.classList.add('opacity-100');
+                    setTimeout(() => {
+                        indicator.classList.remove('opacity-100');
+                        indicator.classList.add('opacity-0');
+                    }, 400);
+                }
+            });
+        }
 
         if (modalMuteBtn) {
             modalMuteBtn.addEventListener('click', (e) => {
