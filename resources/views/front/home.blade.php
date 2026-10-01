@@ -35,6 +35,17 @@
             </a>
         </div>
 
+        <!-- SLIDE 3: SACRED DHOOP CONES COLLECTION (NO TEXT OVERLAY) -->
+        <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 pointer-events-none z-0 flex items-center bg-[#FAF4EB]" data-slide="2">
+            <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block w-full h-full relative cursor-pointer" aria-label="Explore Sacred Dhoop Cones Collection">
+                <img 
+                    src="{{ asset('assets/images/hera-sacred-dhoop-cones.jpg') }}" 
+                    alt="Mangalam Sacred Dhoop Cones Collection" 
+                    class="absolute inset-0 w-full h-full object-cover object-center"
+                >
+            </a>
+        </div>
+
     </div>
 
     <!-- Luxury Premium Carousel Arrow Controls -->
@@ -59,6 +70,7 @@
     <div class="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-20 flex space-x-2.5" id="hero-slider-dots">
         <button type="button" class="w-8 h-2 rounded-[10px] bg-[#D38928] transition-all duration-300" data-index="0" aria-label="Slide 1"></button>
         <button type="button" class="w-2.5 h-2 rounded-[10px] bg-[#1F1F1F]/30 hover:bg-[#1F1F1F]/60 transition-all duration-300" data-index="1" aria-label="Slide 2"></button>
+        <button type="button" class="w-2.5 h-2 rounded-[10px] bg-[#1F1F1F]/30 hover:bg-[#1F1F1F]/60 transition-all duration-300" data-index="2" aria-label="Slide 3"></button>
     </div>
 
 </section>
