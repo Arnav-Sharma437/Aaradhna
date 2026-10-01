@@ -86,7 +86,7 @@
         <!-- Section Header with Subtitle -->
         <div class="text-center max-w-2xl mx-auto mb-12 space-y-2">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ PURE VEDIC BLESSINGS ✦</span>
-            <h2 class="text-2xl sm:text-3xl lg:text-[44px] font-black text-[#121212] font-heading tracking-tight leading-tight">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#121212] font-heading tracking-tight leading-tight">
                 Bestseller of the Month
             </h2>
             <p class="text-sm sm:text-base text-gray-600">
@@ -312,7 +312,7 @@
             <span class="text-[11px] sm:text-xs font-bold uppercase tracking-[0.3em] text-[#D38928] font-heading">
                 ✦ 100% NATURAL • CHARCOAL FREE ✦
             </span>
-            <h2 class="text-2xl sm:text-3xl lg:text-[44px] font-black text-[#2B1810] font-heading tracking-tight uppercase leading-tight">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#2B1810] font-heading tracking-tight uppercase leading-tight">
                 Product Categories
             </h2>
             <p class="text-xs sm:text-sm text-gray-600 max-w-md mx-auto">
@@ -470,7 +470,7 @@
         
         <div class="text-center max-w-2xl mx-auto mb-12 space-y-2">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ DAILY RITUAL GUIDES ✦</span>
-            <h2 class="text-2xl sm:text-3xl lg:text-[44px] font-black text-[#121212] font-heading tracking-tight leading-tight">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#121212] font-heading tracking-tight leading-tight">
                 Devotional Moments of Peace
             </h2>
             <p class="text-sm sm:text-base text-gray-600">
@@ -682,7 +682,7 @@
         <!-- Header -->
         <div class="text-center max-w-2xl mx-auto mb-12 space-y-2">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ 50,000+ BLESSED HOMES ✦</span>
-            <h2 class="text-2xl sm:text-3xl lg:text-[44px] font-black text-[#121212] font-heading tracking-tight leading-tight">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#121212] font-heading tracking-tight leading-tight">
                 Devotee Experiences
             </h2>
             <p class="text-sm sm:text-base text-gray-600">
@@ -886,7 +886,7 @@
         
         <div class="text-center max-w-2xl mx-auto mb-12 space-y-2">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ SACRED PROMISES ✦</span>
-            <h2 class="text-2xl sm:text-3xl lg:text-[44px] font-black text-[#121212] font-heading tracking-tight leading-tight">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#121212] font-heading tracking-tight leading-tight">
                 Rooted in Purity
             </h2>
             <p class="text-sm sm:text-base text-gray-600">
@@ -967,7 +967,7 @@
                 <span class="w-1.5 h-1.5 rounded-full bg-[#D38928]"></span>
                 <span class="text-[11px] font-bold uppercase tracking-[0.2em] font-heading">Clarity &amp; Vidhi</span>
             </div>
-            <h2 class="text-2xl sm:text-3xl lg:text-[44px] font-bold text-[#121212] font-heading tracking-tight leading-tight">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#121212] font-heading tracking-tight leading-tight">
                 Frequently Asked Questions
             </h2>
             <p class="text-xs sm:text-sm text-gray-600 leading-relaxed max-w-xl mx-auto">
