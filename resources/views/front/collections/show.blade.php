@@ -135,34 +135,9 @@
 
                 </div>
 
-                <!-- Right: Sort By Dropdown & Product Count -->
+                <!-- Right: Product Count -->
                 <div class="flex items-center space-x-4 w-full md:w-auto justify-between md:justify-end text-xs sm:text-sm">
-                    <div class="flex items-center space-x-2">
-                        <label for="sort-select" class="text-gray-600 font-normal whitespace-nowrap">
-                            Sort by:
-                        </label>
-                        <div class="relative">
-                            <select 
-                                id="sort-select" 
-                                name="sort_by" 
-                                onchange="document.getElementById('collection-filter-form').submit()"
-                                class="bg-transparent text-xs sm:text-sm font-medium text-[#121212] pr-6 py-1 focus:outline-none cursor-pointer appearance-none"
-                            >
-                                <option value="featured" {{ $sortBy === 'featured' ? 'selected' : '' }}>Featured</option>
-                                <option value="best_selling" {{ $sortBy === 'best_selling' ? 'selected' : '' }}>Best Selling</option>
-                                <option value="price_low_high" {{ $sortBy === 'price_low_high' ? 'selected' : '' }}>Price: Low to High</option>
-                                <option value="price_high_low" {{ $sortBy === 'price_high_low' ? 'selected' : '' }}>Price: High to Low</option>
-                                <option value="title_asc" {{ $sortBy === 'title_asc' ? 'selected' : '' }}>Alphabetically: A-Z</option>
-                                <option value="title_desc" {{ $sortBy === 'title_desc' ? 'selected' : '' }}>Alphabetically: Z-A</option>
-                                <option value="newest" {{ $sortBy === 'newest' ? 'selected' : '' }}>Newest</option>
-                            </select>
-                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center text-gray-500">
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                            </div>
-                        </div>
-                    </div>
-
-                    <span class="text-gray-500 whitespace-nowrap pl-2">
+                    <span class="text-gray-600 font-medium whitespace-nowrap">
                         {{ $products->total() }} {{ Str::plural('product', $products->total()) }}
                     </span>
                 </div>
