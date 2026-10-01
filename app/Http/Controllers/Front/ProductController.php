@@ -16,15 +16,24 @@ class ProductController extends Controller
     {
         // Aliases mapping for promotional, card, and legacy URLs
         $aliases = [
-            'devi-refill-pack' => 'naagchampa',
-            'camphor-bambooless-incense-sticks' => 'havan-bambooless',
-            'camphor-refill-pack' => 'havan-bambooless',
-            'camphor' => 'havan-bambooless',
-            'oudh-bambooless-incense-sticks' => 'oudh',
-            'oudh-classic' => 'oudh',
+            'kesar-chandan' => 'swarna-pushpa',
+            'marygold' => 'swarna-pushpa',
+            'marigold' => 'swarna-pushpa',
+            'naagchampa' => 'divya-naagchampa',
+            'devi-refill-pack' => 'divya-naagchampa',
+            'chandan' => 'chandan-saanjh',
+            'oudh' => 'royal-oudh',
+            'oudh-classic' => 'royal-oudh',
+            'oudh-bambooless-incense-sticks' => 'royal-oudh',
+            'mongra' => 'mogra-noor',
+            'mogra' => 'mogra-noor',
+            'gulab' => 'gulab-rooh',
+            'rose' => 'gulab-rooh',
+            'lavender' => 'lavender-veda',
+            'bambooless-2-combo-pack' => 'pack-of-six',
+            'bambooless-3-combo-pack' => 'pack-of-six',
             'kesar-chandan-dhoop-cones' => 'sandalwood-dhoop-cones',
             'chandan-cones' => 'sandalwood-dhoop-cones',
-            'chandan' => 'chandan',
         ];
 
         $targetSlug = $aliases[$slug] ?? $slug;
