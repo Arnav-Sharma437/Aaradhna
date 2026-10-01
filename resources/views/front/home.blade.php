@@ -530,12 +530,22 @@
             <div class="group flex flex-col items-center text-center space-y-4 sm:space-y-5">
                 <!-- Large Rounded Circle with Single Cone Focus -->
                 <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block relative w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72 xl:w-76 xl:h-76 rounded-full p-2.5 bg-white shadow-xl hover:shadow-2xl border-2 border-[#EADBCC] hover:border-[#D38928] group-hover:scale-105 transition-all duration-500 cursor-pointer">
-                    <div class="w-full h-full rounded-full overflow-hidden bg-[#FAF7F2] flex items-center justify-center p-3">
-                        <img 
-                            src="{{ asset('assets/images/single-dhoop-cone.jpg') }}" 
-                            alt="Easy to Use Dhoop Cone" 
-                            class="w-full h-full object-contain rounded-full group-hover:scale-110 transition-transform duration-500"
+                    <div class="w-full h-full rounded-full overflow-hidden bg-[#FAF7F2] flex items-center justify-center relative">
+                        <video 
+                            autoplay 
+                            loop 
+                            muted 
+                            playsinline 
+                            class="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform duration-500 pointer-events-none"
+                            poster="{{ asset('assets/images/single-dhoop-cone.jpg') }}"
                         >
+                            <source src="{{ asset('assets/images/Dhoop Cone Gif.mp4') }}" type="video/mp4">
+                            <img 
+                                src="{{ asset('assets/images/single-dhoop-cone.jpg') }}" 
+                                alt="Easy to Use Dhoop Cone" 
+                                class="w-full h-full object-contain rounded-full group-hover:scale-110 transition-transform duration-500"
+                            >
+                        </video>
                     </div>
                 </a>
 
