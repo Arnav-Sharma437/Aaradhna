@@ -7,23 +7,21 @@
 <div class="bg-white min-h-screen pb-36 font-body">
 
     <!-- ========================================================================= -->
-    <!-- 1. HERO FESTIVE BANNER & NOTICE STRIP (Inside 1440px Container)           -->
+    <!-- 1. HERO FESTIVE BANNER (Full-Width Edge-to-Edge)                          -->
     <!-- ========================================================================= -->
-    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px] pt-4 sm:pt-6 space-y-4">
-        
-        <!-- Festive Banner with Rounded Corners matching Home Standard -->
-        <div class="w-full rounded-[16px] sm:rounded-[20px] overflow-hidden shadow-xs border border-[#EADBCC]">
-            <picture class="block w-full">
-                <source media="(max-width: 640px)" srcset="{{ asset('assets/images/trial-pack-mobile.jpg') }}">
-                <img 
-                    src="{{ asset('assets/images/trial-pack-desktop.jpg') }}" 
-                    alt="5 Divine Essentials at just ₹799 - Mangalam" 
-                    class="w-full h-auto block object-cover"
-                >
-            </picture>
-        </div>
+    <div class="w-full">
+        <picture class="block w-full">
+            <source media="(max-width: 640px)" srcset="{{ asset('assets/images/trial-pack-mobile.jpg') }}">
+            <img 
+                src="{{ asset('assets/images/trial-pack-desktop.jpg') }}" 
+                alt="5 Divine Essentials at just ₹799 - Mangalam" 
+                class="w-full h-auto block object-cover"
+            >
+        </picture>
+    </div>
 
-        <!-- Festive Notice Strip inside Container -->
+    <!-- Festive Notice Strip inside Container -->
+    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px] pt-4 sm:pt-6">
         <div class="rounded-[14px] border border-[#C27E27]/40 bg-[#FAF3EA] p-3.5 sm:p-4 flex flex-col sm:flex-row items-center justify-between gap-3 shadow-2xs">
             <div class="flex items-center space-x-3 text-center sm:text-left">
                 <div class="w-9 h-9 rounded-full bg-[#831F2E] text-white flex items-center justify-center font-bold text-base shrink-0 shadow-xs">
@@ -42,7 +40,6 @@
                 %
             </div>
         </div>
-
     </div>
 
     <!-- Main Container -->
