@@ -531,21 +531,11 @@
                 <!-- Borderless White Rounded Circle -->
                 <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block relative w-40 h-40 sm:w-52 sm:h-52 lg:w-56 lg:h-56 xl:w-60 xl:h-60 rounded-full p-2 bg-white shadow-md hover:shadow-xl group-hover:scale-105 transition-all duration-500 cursor-pointer">
                     <div class="w-full h-full rounded-full overflow-hidden bg-white p-2.5 sm:p-3.5 flex items-center justify-center relative">
-                        <video 
-                            autoplay 
-                            loop 
-                            muted 
-                            playsinline 
-                            class="w-full h-full object-contain rounded-full group-hover:scale-110 transition-transform duration-500 pointer-events-none"
-                            poster="{{ asset('assets/images/single-dhoop-cone.jpg') }}"
+                        <img 
+                            src="{{ asset('assets/images/single-dhoop-cone.jpg') }}" 
+                            alt="Easy to Use Dhoop Cone" 
+                            class="w-full h-full object-contain rounded-full group-hover:scale-110 transition-transform duration-500"
                         >
-                            <source src="{{ asset('assets/images/Dhoop Cone Gif.mp4') }}" type="video/mp4">
-                            <img 
-                                src="{{ asset('assets/images/single-dhoop-cone.jpg') }}" 
-                                alt="Easy to Use Dhoop Cone" 
-                                class="w-full h-full object-contain rounded-full group-hover:scale-110 transition-transform duration-500"
-                            >
-                        </video>
                     </div>
                 </a>
 
