@@ -4,51 +4,171 @@
 @section('meta_description', $collection->meta_description ?? $collection->description)
 
 @section('content')
-<div class="bg-[#FAF7F2] min-h-screen py-6 lg:py-10 font-body">
+<div class="bg-white min-h-screen py-6 lg:py-10 pb-24 font-body">
     <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
 
-        <!-- Top Bar: Total Count & Sort Dropdown -->
-        <div class="bg-white rounded-[18px] border border-[#EADBCC] p-4 sm:p-5 mb-8 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4">
-            
-            <!-- Left: Total Items Count & Title -->
-            <div class="flex items-center space-x-3">
-                <h1 class="text-lg sm:text-xl font-black font-heading text-[#121212]">
-                    {{ $collection->title }}
-                </h1>
-                <span class="text-xs font-semibold text-gray-400">
-                    ({{ $products->total() }} {{ Str::plural('item', $products->total()) }})
-                </span>
-            </div>
+        <!-- ========================================================================= -->
+        <!-- TOP FILTER & SORT BAR (Exact Replica of Reference Screenshots)            -->
+        <!-- ========================================================================= -->
+        @php
+            $activeAvail = (array) request('availability', []);
+            $availSelectedCount = count($activeAvail);
+            $hasPriceFilter = request()->filled('price_min') || request()->filled('price_max');
+        @endphp
 
-            <!-- Right: Sort Dropdown -->
-            <div class="flex items-center space-x-3 w-full sm:w-auto justify-end">
-                <label for="sort-select" class="text-xs font-bold uppercase tracking-wider text-gray-500 whitespace-nowrap font-heading">
-                    Sort by:
-                </label>
-                <form method="GET" action="{{ url()->current() }}" id="sort-form" class="m-0">
-                    <div class="relative">
-                        <select 
-                            id="sort-select" 
-                            name="sort_by" 
-                            onchange="this.form.submit()"
-                            class="px-4 py-2 pr-8 bg-[#FAF7F2] border border-[#EADBCC] text-xs sm:text-sm font-semibold text-[#121212] focus:outline-none focus:border-[#D38928] rounded-[10px] cursor-pointer shadow-2xs appearance-none"
+        <form id="collection-filter-form" method="GET" action="{{ url()->current() }}" class="w-full mb-8">
+            @if(request('search'))
+                <input type="hidden" name="search" value="{{ request('search') }}">
+            @endif
+
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 py-2">
+                
+                <!-- Left: Filter Buttons (Availability & Price) -->
+                <div class="flex items-center space-x-3 text-sm flex-wrap gap-y-2">
+                    <span class="text-[#121212] font-normal text-sm sm:text-base mr-1">Filter:</span>
+
+                    <!-- 1. Availability Dropdown -->
+                    <div class="relative inline-block text-left" id="availability-dropdown-wrapper">
+                        <button 
+                            type="button" 
+                            id="availability-toggle-btn"
+                            class="px-4 py-2 bg-[#FAF5EE] hover:bg-[#F3ECE0] rounded-[10px] text-xs sm:text-sm text-[#1F1F1F] font-medium flex items-center gap-1.5 transition-colors cursor-pointer border border-[#EADBCC]/50"
                         >
-                            <option value="featured" {{ $sortBy === 'featured' ? 'selected' : '' }}>Featured</option>
-                            <option value="best_selling" {{ $sortBy === 'best_selling' ? 'selected' : '' }}>Best Selling</option>
-                            <option value="price_low_high" {{ $sortBy === 'price_low_high' ? 'selected' : '' }}>Price: Low to High</option>
-                            <option value="price_high_low" {{ $sortBy === 'price_high_low' ? 'selected' : '' }}>Price: High to Low</option>
-                            <option value="title_asc" {{ $sortBy === 'title_asc' ? 'selected' : '' }}>Alphabetically: A-Z</option>
-                            <option value="title_desc" {{ $sortBy === 'title_desc' ? 'selected' : '' }}>Alphabetically: Z-A</option>
-                            <option value="newest" {{ $sortBy === 'newest' ? 'selected' : '' }}>Newest</option>
-                        </select>
-                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2.5 text-gray-500">
-                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                            <span class="{{ $availSelectedCount > 0 ? 'underline underline-offset-4 decoration-2 decoration-[#121212] font-semibold' : '' }}">Availability</span>
+                            <svg class="w-3.5 h-3.5 text-gray-500 transition-transform duration-200" id="availability-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+
+                        <!-- Popover Card (Availability) -->
+                        <div 
+                            id="availability-popover" 
+                            class="hidden absolute top-full left-0 mt-2 w-64 bg-white rounded-[12px] shadow-[0_10px_30px_rgba(0,0,0,0.12)] border border-[#EADBCC] z-50 p-4 font-body"
+                        >
+                            <div class="flex items-center justify-between pb-3 border-b border-gray-200 text-xs sm:text-sm">
+                                <span class="text-gray-600">{{ $availSelectedCount }} selected</span>
+                                <a 
+                                    href="{{ request()->fullUrlWithQuery(['availability' => null, 'page' => null]) }}" 
+                                    class="text-gray-700 underline hover:text-[#D38928] cursor-pointer"
+                                >
+                                    Reset
+                                </a>
+                            </div>
+                            <div class="space-y-3 pt-3">
+                                <label class="flex items-center space-x-3 cursor-pointer text-xs sm:text-sm text-gray-800 hover:text-black select-none">
+                                    <input 
+                                        type="checkbox" 
+                                        name="availability[]" 
+                                        value="in_stock" 
+                                        onchange="document.getElementById('collection-filter-form').submit()"
+                                        {{ in_array('in_stock', $activeAvail) ? 'checked' : '' }}
+                                        class="w-4 h-4 rounded border-gray-300 text-[#D38928] focus:ring-[#D38928] cursor-pointer"
+                                    >
+                                    <span>In stock ({{ $inStockCount }})</span>
+                                </label>
+                                <label class="flex items-center space-x-3 cursor-pointer text-xs sm:text-sm text-gray-800 hover:text-black select-none">
+                                    <input 
+                                        type="checkbox" 
+                                        name="availability[]" 
+                                        value="out_of_stock" 
+                                        onchange="document.getElementById('collection-filter-form').submit()"
+                                        {{ in_array('out_of_stock', $activeAvail) ? 'checked' : '' }}
+                                        class="w-4 h-4 rounded border-gray-300 text-[#D38928] focus:ring-[#D38928] cursor-pointer"
+                                    >
+                                    <span>Out of stock ({{ $outOfStockCount }})</span>
+                                </label>
+                            </div>
                         </div>
                     </div>
-                </form>
-            </div>
 
-        </div>
+                    <!-- 2. Price Dropdown -->
+                    <div class="relative inline-block text-left" id="price-dropdown-wrapper">
+                        <button 
+                            type="button" 
+                            id="price-toggle-btn"
+                            class="px-4 py-2 bg-[#FAF5EE] hover:bg-[#F3ECE0] rounded-[10px] text-xs sm:text-sm text-[#1F1F1F] font-medium flex items-center gap-1.5 transition-colors cursor-pointer border border-[#EADBCC]/50"
+                        >
+                            <span class="{{ $hasPriceFilter ? 'underline underline-offset-4 decoration-2 decoration-[#121212] font-semibold' : '' }}">Price</span>
+                            <svg class="w-3.5 h-3.5 text-gray-500 transition-transform duration-200" id="price-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+
+                        <!-- Popover Card (Price) -->
+                        <div 
+                            id="price-popover" 
+                            class="hidden absolute top-full left-0 mt-2 w-72 bg-white rounded-[12px] shadow-[0_10px_30px_rgba(0,0,0,0.12)] border border-[#EADBCC] z-50 p-4 font-body"
+                        >
+                            <div class="flex items-center justify-between pb-3 border-b border-gray-200 text-xs sm:text-sm">
+                                <span class="text-gray-600">The highest price is ₹{{ number_format($maxProductPrice, 2) }}</span>
+                                <a 
+                                    href="{{ request()->fullUrlWithQuery(['price_min' => null, 'price_max' => null, 'page' => null]) }}" 
+                                    class="text-gray-700 underline hover:text-[#D38928] cursor-pointer"
+                                >
+                                    Reset
+                                </a>
+                            </div>
+                            <div class="grid grid-cols-2 gap-3 pt-3">
+                                <div class="flex items-center border border-gray-300 rounded-[6px] px-2.5 py-1.5 focus-within:border-black focus-within:ring-1 focus-within:ring-black">
+                                    <span class="text-xs text-gray-500 mr-1.5 font-medium">₹</span>
+                                    <input 
+                                        type="number" 
+                                        name="price_min" 
+                                        placeholder="From" 
+                                        value="{{ request('price_min') }}" 
+                                        onkeydown="if(event.key === 'Enter'){ event.preventDefault(); document.getElementById('collection-filter-form').submit(); }"
+                                        onchange="document.getElementById('collection-filter-form').submit();"
+                                        class="w-full text-xs outline-none bg-transparent" 
+                                    />
+                                </div>
+                                <div class="flex items-center border border-gray-300 rounded-[6px] px-2.5 py-1.5 focus-within:border-black focus-within:ring-1 focus-within:ring-black">
+                                    <span class="text-xs text-gray-500 mr-1.5 font-medium">₹</span>
+                                    <input 
+                                        type="number" 
+                                        name="price_max" 
+                                        placeholder="To" 
+                                        value="{{ request('price_max') }}" 
+                                        onkeydown="if(event.key === 'Enter'){ event.preventDefault(); document.getElementById('collection-filter-form').submit(); }"
+                                        onchange="document.getElementById('collection-filter-form').submit();"
+                                        class="w-full text-xs outline-none bg-transparent" 
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right: Sort By Dropdown & Product Count -->
+                <div class="flex items-center space-x-4 w-full md:w-auto justify-between md:justify-end text-xs sm:text-sm">
+                    <div class="flex items-center space-x-2">
+                        <label for="sort-select" class="text-gray-600 font-normal whitespace-nowrap">
+                            Sort by:
+                        </label>
+                        <div class="relative">
+                            <select 
+                                id="sort-select" 
+                                name="sort_by" 
+                                onchange="document.getElementById('collection-filter-form').submit()"
+                                class="bg-transparent text-xs sm:text-sm font-medium text-[#121212] pr-6 py-1 focus:outline-none cursor-pointer appearance-none"
+                            >
+                                <option value="featured" {{ $sortBy === 'featured' ? 'selected' : '' }}>Featured</option>
+                                <option value="best_selling" {{ $sortBy === 'best_selling' ? 'selected' : '' }}>Best Selling</option>
+                                <option value="price_low_high" {{ $sortBy === 'price_low_high' ? 'selected' : '' }}>Price: Low to High</option>
+                                <option value="price_high_low" {{ $sortBy === 'price_high_low' ? 'selected' : '' }}>Price: High to Low</option>
+                                <option value="title_asc" {{ $sortBy === 'title_asc' ? 'selected' : '' }}>Alphabetically: A-Z</option>
+                                <option value="title_desc" {{ $sortBy === 'title_desc' ? 'selected' : '' }}>Alphabetically: Z-A</option>
+                                <option value="newest" {{ $sortBy === 'newest' ? 'selected' : '' }}>Newest</option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center text-gray-500">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <span class="text-gray-500 whitespace-nowrap pl-2">
+                        {{ $products->total() }} {{ Str::plural('product', $products->total()) }}
+                    </span>
+                </div>
+
+            </div>
+        </form>
 
         <!-- Full-Width Clean Product Grid (4 Columns on Desktop, 2 Columns on Mobile) -->
         <div class="w-full">
@@ -236,3 +356,75 @@
     </div>
 </div>
 @endsection
+
+@push('scripts')
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const availBtn = document.getElementById('availability-toggle-btn');
+        const availPopover = document.getElementById('availability-popover');
+        const availChevron = document.getElementById('availability-chevron');
+
+        const priceBtn = document.getElementById('price-toggle-btn');
+        const pricePopover = document.getElementById('price-popover');
+        const priceChevron = document.getElementById('price-chevron');
+
+        const togglePopover = (btn, popover, chevron, otherPopover, otherChevron) => {
+            if (popover.classList.contains('hidden')) {
+                popover.classList.remove('hidden');
+                chevron.classList.add('rotate-180');
+                if (otherPopover) {
+                    otherPopover.classList.add('hidden');
+                    otherChevron.classList.remove('rotate-180');
+                }
+            } else {
+                popover.classList.add('hidden');
+                chevron.classList.remove('rotate-180');
+            }
+        };
+
+        if (availBtn && availPopover) {
+            availBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                togglePopover(availBtn, availPopover, availChevron, pricePopover, priceChevron);
+            });
+            availPopover.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+        }
+
+        if (priceBtn && pricePopover) {
+            priceBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                togglePopover(priceBtn, pricePopover, priceChevron, availPopover, availChevron);
+            });
+            pricePopover.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+        }
+
+        document.addEventListener('click', () => {
+            if (availPopover && !availPopover.classList.contains('hidden')) {
+                availPopover.classList.add('hidden');
+                availChevron.classList.remove('rotate-180');
+            }
+            if (pricePopover && !pricePopover.classList.contains('hidden')) {
+                pricePopover.classList.add('hidden');
+                priceChevron.classList.remove('rotate-180');
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                if (availPopover) {
+                    availPopover.classList.add('hidden');
+                    availChevron.classList.remove('rotate-180');
+                }
+                if (pricePopover) {
+                    pricePopover.classList.add('hidden');
+                    priceChevron.classList.remove('rotate-180');
+                }
+            }
+        });
+    });
+</script>
+@endpush

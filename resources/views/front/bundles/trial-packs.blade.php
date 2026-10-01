@@ -109,30 +109,32 @@
 </div>
 
 <!-- ========================================================================= -->
-<!-- 3. STICKY FLOATING BUNDLE BUILDER BAR (Exact Match to User Screenshot)   -->
+<!-- 3. STICKY FLOATING BUNDLE BUILDER BAR (Prominent High-Contrast)            -->
 <!-- ========================================================================= -->
-<div class="fixed bottom-0 inset-x-0 z-40 bg-white/98 backdrop-blur-md border-t-2 border-[#D38928] shadow-2xl py-3.5 px-4 sm:px-8 font-body">
+<div class="fixed bottom-0 inset-x-0 z-40 bg-white border-t-2 border-[#D38928] shadow-[0_-12px_35px_rgba(0,0,0,0.15)] py-4 px-4 sm:px-8 font-body">
     <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
         
         <!-- Left: Status Header & 5 Slots Container -->
-        <div class="flex flex-col sm:flex-row items-center sm:items-start gap-3 w-full sm:w-auto">
-            <div class="text-center sm:text-left">
-                <span id="bundle-status-msg" class="text-xs sm:text-sm font-bold text-[#1F1F1F] font-heading block">
+        <div class="flex flex-col sm:flex-row items-center sm:items-start gap-4 w-full sm:w-auto">
+            <div class="text-center sm:text-left space-y-0.5">
+                <span id="bundle-status-msg" class="text-xs sm:text-sm font-black text-[#121212] font-heading block">
                     Select 5 more item(s) to get the bundle at ₹799
                 </span>
-                <span class="text-[11px] text-gray-500 font-medium hidden sm:block">
-                    Total: ₹799.00 <span class="line-through text-gray-400">₹1,375.00</span> (Save ₹576)
-                </span>
+                <div class="text-[11px] text-gray-600 font-medium hidden sm:flex items-center space-x-1.5 pt-0.5">
+                    <span>Total: <strong class="text-[#121212] font-bold text-xs">₹799.00</strong></span>
+                    <span class="line-through text-gray-400">₹1,375.00</span>
+                    <span class="text-emerald-700 bg-emerald-50 border border-emerald-200 text-[10px] font-bold px-2 py-0.2 rounded-full">Save ₹576</span>
+                </div>
             </div>
 
             <!-- 5 Slots Container -->
-            <div class="flex items-center space-x-2" id="bundle-slots-container">
+            <div class="flex items-center space-x-2.5" id="bundle-slots-container">
                 @for($i = 0; $i < 5; $i++)
-                    <div class="bundle-slot relative w-11 h-11 sm:w-12 sm:h-12 rounded-[10px] border-2 border-dashed border-gray-300 bg-[#FAF7F2] flex items-center justify-center text-gray-400 font-bold text-lg transition-all" data-slot="{{ $i }}">
-                        <span class="slot-plus">+</span>
-                        <div class="slot-content hidden w-full h-full relative rounded-[8px] overflow-hidden group">
+                    <div class="bundle-slot relative w-12 h-12 sm:w-13 sm:h-13 rounded-[12px] border-2 border-dashed border-[#D38928]/60 bg-[#FAF7F2] hover:border-[#D38928] flex items-center justify-center text-[#D38928] font-black text-xl transition-all shadow-2xs cursor-default" data-slot="{{ $i }}">
+                        <span class="slot-plus font-bold">+</span>
+                        <div class="slot-content hidden w-full h-full relative rounded-[10px] overflow-hidden group">
                             <img src="" alt="" class="slot-img w-full h-full object-cover">
-                            <button type="button" class="slot-remove-btn absolute -top-1 -right-1 w-4 h-4 rounded-full bg-[#831F2E] text-white text-[10px] font-bold flex items-center justify-center shadow-xs cursor-pointer leading-none">×</button>
+                            <button type="button" class="slot-remove-btn absolute top-0.5 right-0.5 w-4 h-4 rounded-full bg-[#831F2E] text-white text-[11px] font-bold flex items-center justify-center shadow-xs cursor-pointer leading-none">×</button>
                         </div>
                     </div>
                 @endfor
@@ -145,7 +147,7 @@
                 type="button" 
                 id="add-bundle-to-cart-btn"
                 disabled
-                class="w-full sm:w-auto px-8 py-3.5 bg-gray-200 text-gray-400 text-xs sm:text-sm font-bold uppercase tracking-wider rounded-[10px] transition-all font-heading cursor-not-allowed shadow-none"
+                class="w-full sm:w-auto px-8 py-3.5 bg-[#FAF3EA] border border-[#EADBCC] text-[#8C6239] text-xs sm:text-sm font-bold uppercase tracking-wider rounded-[10px] transition-all font-heading cursor-not-allowed shadow-2xs"
             >
                 <span id="bundle-btn-text">Add 5 More Item(s)</span>
             </button>
@@ -202,8 +204,8 @@
                 const removeBtn = slot.querySelector('.slot-remove-btn');
 
                 if (selectedItems[index]) {
-                    slot.classList.remove('border-dashed', 'border-gray-300', 'bg-[#FAF7F2]');
-                    slot.classList.add('border-solid', 'border-[#D38928]', 'bg-white');
+                    slot.classList.remove('border-dashed', 'border-[#D38928]/60', 'bg-[#FAF7F2]');
+                    slot.classList.add('border-solid', 'border-[#D38928]', 'bg-white', 'shadow-xs');
                     plus.classList.add('hidden');
                     content.classList.remove('hidden');
                     img.src = selectedItems[index].image;
@@ -214,8 +216,8 @@
                         removeItem(index);
                     };
                 } else {
-                    slot.classList.add('border-dashed', 'border-gray-300', 'bg-[#FAF7F2]');
-                    slot.classList.remove('border-solid', 'border-[#D38928]', 'bg-white');
+                    slot.classList.add('border-dashed', 'border-[#D38928]/60', 'bg-[#FAF7F2]');
+                    slot.classList.remove('border-solid', 'border-[#D38928]', 'bg-white', 'shadow-xs');
                     plus.classList.remove('hidden');
                     content.classList.add('hidden');
                     img.src = '';
@@ -227,7 +229,7 @@
                 statusMsg.textContent = `Select ${remaining} more item(s) to get the bundle at ₹${BUNDLE_PRICE}`;
                 bundleBtnText.textContent = `Add ${remaining} More Item(s)`;
                 addBundleBtn.disabled = true;
-                addBundleBtn.className = "w-full sm:w-auto px-8 py-3.5 bg-gray-200 text-gray-400 text-xs sm:text-sm font-bold uppercase tracking-wider rounded-[10px] transition-all font-heading cursor-not-allowed shadow-none";
+                addBundleBtn.className = "w-full sm:w-auto px-8 py-3.5 bg-[#FAF3EA] border border-[#EADBCC] text-[#8C6239] text-xs sm:text-sm font-bold uppercase tracking-wider rounded-[10px] transition-all font-heading cursor-not-allowed shadow-2xs";
             } else {
                 statusMsg.innerHTML = `🎉 <span class="text-emerald-700 font-bold">5 Sacred Trial Packs Selected! Ready at ₹${BUNDLE_PRICE}</span>`;
                 bundleBtnText.textContent = `Proceed to Checkout @ ₹${BUNDLE_PRICE} ➔`;

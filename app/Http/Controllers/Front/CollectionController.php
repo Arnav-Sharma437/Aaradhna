@@ -68,9 +68,10 @@ class CollectionController extends Controller
 
         // Availability Filter
         if ($request->filled('availability')) {
-            if ($request->availability === 'in_stock') {
+            $avail = is_array($request->availability) ? $request->availability : [$request->availability];
+            if (in_array('in_stock', $avail) && !in_array('out_of_stock', $avail)) {
                 $query->where('stock_quantity', '>', 0);
-            } elseif ($request->availability === 'out_of_stock') {
+            } elseif (in_array('out_of_stock', $avail) && !in_array('in_stock', $avail)) {
                 $query->where('stock_quantity', '<=', 0);
             }
         }
