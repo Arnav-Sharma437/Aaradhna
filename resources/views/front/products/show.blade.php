@@ -635,69 +635,104 @@
         @endif
 
         <!-- ========================================================================= -->
-        <!-- 5. CUSTOMER REVIEWS & RATINGS                                             -->
+        <!-- 5. CUSTOMER REVIEWS & RATINGS (Compact & Contained Section)              -->
         <!-- ========================================================================= -->
-        <div id="customer-reviews" class="mt-16 sm:mt-24 bg-white rounded-[24px] border border-[#EADBCC] p-6 sm:p-10 lg:p-14 shadow-xs">
+        <div id="customer-reviews" class="mt-10 sm:mt-14 max-w-3xl mx-auto bg-white rounded-[18px] border border-[#EADBCC] p-5 sm:p-7 shadow-xs font-body">
             
-            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-8 border-b border-[#EADBCC]">
+            <!-- Compact Header -->
+            <div class="flex items-center justify-between gap-3 pb-5 border-b border-[#EADBCC]">
                 <div>
-                    <h2 class="text-2xl sm:text-3xl font-black text-[#121212] font-heading tracking-tight">
+                    <h3 class="text-lg sm:text-xl font-bold text-[#121212] font-heading tracking-tight">
                         Customer Reviews
-                    </h2>
-                    <p class="text-xs sm:text-sm text-gray-500 mt-1">Verified devotees sharing their sacred experiences</p>
+                    </h3>
+                    <p class="text-[11px] sm:text-xs text-gray-500 mt-0.5">Verified devotees sharing their sacred experiences</p>
                 </div>
 
                 <button 
                     type="button" 
-                    class="px-6 py-3 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-[10px] shadow-sm transition-all font-heading"
-                    onclick="alert('Thank you for your devotion! Review submission form will open.');"
+                    id="write-review-toggle-btn"
+                    class="px-3.5 py-1.5 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs font-bold rounded-[8px] shadow-xs hover:shadow transition-all font-heading cursor-pointer shrink-0"
+                    onclick="const form = document.getElementById('inline-review-form'); form.classList.toggle('hidden');"
                 >
                     Write a Review
                 </button>
             </div>
 
-            <!-- Review Summary Histogram -->
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 my-8 pb-8 border-b border-[#EADBCC] items-center">
-                <!-- Average Rating Box -->
-                <div class="md:col-span-4 text-center md:border-r border-[#EADBCC] pr-0 md:pr-6 space-y-1">
-                    <div class="text-5xl sm:text-6xl font-black text-[#121212] font-heading">4.9</div>
-                    <div class="flex justify-center text-[#D38928] text-lg my-1">
+            <!-- Inline Compact Review Submission Form (Toggled by Button) -->
+            <div id="inline-review-form" class="hidden my-4 p-4 rounded-[12px] bg-[#FAF8F5] border border-[#EADBCC] space-y-3 transition-all duration-200">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-bold text-[#121212] font-heading uppercase tracking-wider">✦ Share Your Experience</span>
+                    <button type="button" class="text-xs text-gray-400 hover:text-gray-700 font-bold cursor-pointer" onclick="document.getElementById('inline-review-form').classList.add('hidden');">✕ Close</button>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+                    <div>
+                        <label class="block text-gray-600 font-medium mb-1">Your Sacred Name *</label>
+                        <input type="text" placeholder="e.g. Rameshwar Sharma" class="w-full px-3 py-1.5 rounded-[8px] border border-[#EADBCC] bg-white text-xs focus:border-[#D38928] focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-gray-600 font-medium mb-1">Your City / State *</label>
+                        <input type="text" placeholder="e.g. Varanasi, UP" class="w-full px-3 py-1.5 rounded-[8px] border border-[#EADBCC] bg-white text-xs focus:border-[#D38928] focus:outline-none">
+                    </div>
+                </div>
+                <div class="text-xs">
+                    <label class="block text-gray-600 font-medium mb-1">Your Rating *</label>
+                    <div class="flex items-center space-x-1 text-base text-[#D38928] cursor-pointer">
                         <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                     </div>
-                    <p class="text-xs text-gray-500 font-medium">Based on {{ $reviewCount }} authentic reviews</p>
+                </div>
+                <div class="text-xs">
+                    <label class="block text-gray-600 font-medium mb-1">Your Sacred Review *</label>
+                    <textarea rows="2" placeholder="Share how this pure fragrance elevated your daily pooja or meditation..." class="w-full px-3 py-1.5 rounded-[8px] border border-[#EADBCC] bg-white text-xs focus:border-[#D38928] focus:outline-none"></textarea>
+                </div>
+                <div class="flex justify-end">
+                    <button type="button" class="px-4 py-1.5 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs font-bold rounded-[8px] shadow-xs cursor-pointer font-heading" onclick="alert('Dhanyawad! Your review has been submitted for Vedic verification.'); document.getElementById('inline-review-form').classList.add('hidden');">
+                        Submit Review
+                    </button>
+                </div>
+            </div>
+
+            <!-- Compact Rating Summary Histogram -->
+            <div class="grid grid-cols-1 sm:grid-cols-12 gap-5 my-5 pb-5 border-b border-[#EADBCC] items-center">
+                <!-- Average Rating Box -->
+                <div class="sm:col-span-4 text-center sm:border-r border-[#EADBCC] pr-0 sm:pr-4 space-y-0.5">
+                    <div class="text-3xl sm:text-4xl font-black text-[#121212] font-heading leading-none">4.9</div>
+                    <div class="flex justify-center text-[#D38928] text-sm my-1">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="text-[11px] text-gray-500 font-medium">Based on {{ $reviewCount }} authentic reviews</p>
                 </div>
 
-                <!-- Rating Bars -->
-                <div class="md:col-span-8 space-y-2 text-xs">
-                    <div class="flex items-center space-x-3">
-                        <span class="w-12 text-[#121212] font-bold">5 ★</span>
-                        <div class="flex-1 h-2.5 bg-gray-100 rounded-full overflow-hidden">
-                            <div class="h-full bg-[#D38928]" style="width: 92%;"></div>
+                <!-- Compact Rating Bars -->
+                <div class="sm:col-span-8 space-y-1.5 text-xs">
+                    <div class="flex items-center space-x-2.5">
+                        <span class="w-7 text-[11px] font-bold text-gray-700">5 ★</span>
+                        <div class="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-[#D38928] rounded-full" style="width: 92%;"></div>
                         </div>
-                        <span class="w-10 text-right text-gray-400">92%</span>
+                        <span class="w-8 text-right text-[11px] text-gray-400">92%</span>
                     </div>
-                    <div class="flex items-center space-x-3">
-                        <span class="w-12 text-[#121212] font-bold">4 ★</span>
-                        <div class="flex-1 h-2.5 bg-gray-100 rounded-full overflow-hidden">
-                            <div class="h-full bg-[#D38928]" style="width: 6%;"></div>
+                    <div class="flex items-center space-x-2.5">
+                        <span class="w-7 text-[11px] font-bold text-gray-700">4 ★</span>
+                        <div class="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-[#D38928] rounded-full" style="width: 6%;"></div>
                         </div>
-                        <span class="w-10 text-right text-gray-400">6%</span>
+                        <span class="w-8 text-right text-[11px] text-gray-400">6%</span>
                     </div>
-                    <div class="flex items-center space-x-3">
-                        <span class="w-12 text-[#121212] font-bold">3 ★</span>
-                        <div class="flex-1 h-2.5 bg-gray-100 rounded-full overflow-hidden">
-                            <div class="h-full bg-[#D38928]" style="width: 2%;"></div>
+                    <div class="flex items-center space-x-2.5">
+                        <span class="w-7 text-[11px] font-bold text-gray-700">3 ★</span>
+                        <div class="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-[#D38928] rounded-full" style="width: 2%;"></div>
                         </div>
-                        <span class="w-10 text-right text-gray-400">2%</span>
+                        <span class="w-8 text-right text-[11px] text-gray-400">2%</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Reviews List -->
-            <div class="space-y-6">
+            <!-- Compact Reviews List -->
+            <div class="space-y-3">
                 @if(isset($product->approvedReviews) && $product->approvedReviews->count() > 0)
                     @foreach($product->approvedReviews as $rev)
-                        <div class="p-5 sm:p-6 bg-transparent rounded-[16px] border border-[#EADBCC] space-y-2.5">
+                        <div class="p-3.5 sm:p-4 rounded-[12px] border border-[#EAE3D9] bg-white space-y-1.5 shadow-2xs">
                             <div class="flex items-center justify-between">
                                 <div class="flex items-center space-x-2">
                                     <div class="flex text-[#D38928] text-xs">
@@ -707,50 +742,50 @@
                                     </div>
                                     <span class="text-xs font-bold text-[#121212] font-heading">{{ $rev->reviewer_name ?? 'Devotee' }}</span>
                                     @if($rev->is_verified_buyer ?? true)
-                                        <span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 text-[10px] font-bold rounded-full">Verified Buyer</span>
+                                        <span class="px-2 py-0.5 bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px] font-bold rounded-full">Verified Buyer</span>
                                     @endif
                                 </div>
                                 <span class="text-[11px] text-gray-400">{{ $rev->created_at ? $rev->created_at->diffForHumans() : 'Recently' }}</span>
                             </div>
                             @if(!empty($rev->title))
-                                <h4 class="text-sm font-bold text-[#121212] font-heading">{{ $rev->title }}</h4>
+                                <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading pt-0.5">{{ $rev->title }}</h4>
                             @endif
-                            <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                            <p class="text-xs text-gray-600 leading-relaxed">
                                 {{ $rev->review_text ?? $rev->comment ?? '' }}
                             </p>
                         </div>
                     @endforeach
                 @else
-                    <div class="p-5 sm:p-6 bg-transparent rounded-[16px] border border-[#EADBCC] space-y-2.5">
+                    <div class="p-3.5 sm:p-4 rounded-[12px] border border-[#EAE3D9] bg-white space-y-1.5 shadow-2xs">
                         <div class="flex items-center justify-between">
                             <div class="flex items-center space-x-2">
                                 <div class="flex text-[#D38928] text-xs">
                                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                                 </div>
                                 <span class="text-xs font-bold text-[#121212] font-heading">Pandit Rameshwar Mishra</span>
-                                <span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 text-[10px] font-bold rounded-full">Verified Buyer</span>
+                                <span class="px-2 py-0.5 bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px] font-bold rounded-full">Verified Buyer</span>
                             </div>
                             <span class="text-[11px] text-gray-400">2 days ago</span>
                         </div>
-                        <h4 class="text-sm font-bold text-[#121212] font-heading">Genuine Vedic Purity & Zero Charcoal</h4>
-                        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                        <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading pt-0.5">Genuine Vedic Purity &amp; Zero Charcoal</h4>
+                        <p class="text-xs text-gray-600 leading-relaxed">
                             I perform daily Chandi Path and Sandhya Vandana. Finding completely bambooless agarbatti with authentic Bhimseni camphor notes is rare. It cleanses the whole home atmosphere without producing any suffocating dark smoke.
                         </p>
                     </div>
 
-                    <div class="p-5 sm:p-6 bg-transparent rounded-[16px] border border-[#EADBCC] space-y-2.5">
+                    <div class="p-3.5 sm:p-4 rounded-[12px] border border-[#EAE3D9] bg-white space-y-1.5 shadow-2xs">
                         <div class="flex items-center justify-between">
                             <div class="flex items-center space-x-2">
                                 <div class="flex text-[#D38928] text-xs">
                                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                                 </div>
                                 <span class="text-xs font-bold text-[#121212] font-heading">Sunita Aggarwal</span>
-                                <span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 text-[10px] font-bold rounded-full">Verified Buyer</span>
+                                <span class="px-2 py-0.5 bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px] font-bold rounded-full">Verified Buyer</span>
                             </div>
                             <span class="text-[11px] text-gray-400">5 days ago</span>
                         </div>
-                        <h4 class="text-sm font-bold text-[#121212] font-heading">The Free Ceramic Stand is So Beautiful!</h4>
-                        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                        <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading pt-0.5">The Free Ceramic Stand is So Beautiful!</h4>
+                        <p class="text-xs text-gray-600 leading-relaxed">
                             Ordered the pack of 100 sticks and received the terracotta stand inside. The packaging is pure luxury and the fragrance fills our pooja mandir throughout the morning. Will definitely repurchase!
                         </p>
                     </div>
