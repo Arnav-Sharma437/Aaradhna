@@ -53,18 +53,9 @@
                     </a>
                 </div>
             </div>
-            <div class="pt-1">
-                <div class="py-1 text-xs font-bold tracking-wider text-[#831F2E] uppercase">Best Seller Combo</div>
-                <div class="pl-2 mt-1 space-y-1.5">
-                    <a href="{{ route('products.show', 'pack-of-six') }}" class="flex items-center justify-between py-1 text-sm font-medium text-[#2B1810] hover:text-[#831F2E]">
-                        <span>Pack of Six Grand Combo</span>
-                        <span class="text-[9px] font-bold text-white bg-[#831F2E] px-1.5 py-0.5 rounded">₹1199</span>
-                    </a>
-                    <a href="{{ route('collections.show', 'best-seller-combo') }}" class="block py-1 text-xs font-bold text-[#831F2E] hover:underline">
-                        View All Combos &rarr;
-                    </a>
-                </div>
-            </div>
+            <a href="{{ route('products.show', 'pack-of-six') }}" class="block py-1 text-[#1F1F1F] hover:text-[#831F2E] transition-colors">
+                Best Seller Combo
+            </a>
 
             <!-- Pitambara Havan (Attached Coming Soon Badge) -->
             <div class="pt-2">

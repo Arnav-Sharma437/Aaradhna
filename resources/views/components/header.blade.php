@@ -53,7 +53,7 @@
                     Dhoop Cones
                 </a>
 
-                <!-- 4. Super Save Offers (Natural Clean Shopify Dropdown) -->
+                <!-- 4. Super Save Offers (Interactive Mega Menu with Hover Image Preview) -->
                 <div class="relative group py-2 xl:py-3 flex items-center">
                     <button 
                         type="button"
@@ -65,85 +65,78 @@
                         </svg>
                     </button>
                     
-                    <!-- Clean Shopify Style Dropdown Menu -->
-                    <div class="absolute left-0 top-full -mt-0.5 w-72 bg-white rounded-xl shadow-xl border border-[#EAE3D9] py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top group-hover:translate-y-0 translate-y-1 pointer-events-none group-hover:pointer-events-auto divide-y divide-stone-100">
-                        <div class="py-1">
-                            <a 
-                                href="{{ route('bundles.trial-packs') }}" 
-                                class="group/item flex items-center justify-between px-4 py-2.5 hover:bg-[#FAF7F2] transition-colors"
-                            >
-                                <div>
-                                    <div class="text-[13.5px] font-medium text-[#1F1F1F] group-hover/item:text-[#831F2E] transition-colors">
-                                        Buy any 5 Trial Pack @ 799
+                    <!-- Mega Menu with Dynamic Image Preview -->
+                    <div class="absolute -left-12 top-full -mt-0.5 w-[540px] bg-white rounded-2xl shadow-2xl border border-[#EAE3D9] p-4 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top group-hover:translate-y-0 translate-y-1 pointer-events-none group-hover:pointer-events-auto">
+                        <div class="grid grid-cols-12 gap-4 items-center">
+                            
+                            <!-- Left: 2 Offer Items (7 Cols) -->
+                            <div class="col-span-7 space-y-1.5">
+                                <a 
+                                    href="{{ route('bundles.trial-packs') }}" 
+                                    class="group/item flex items-center justify-between p-2.5 rounded-xl hover:bg-[#FAF7F2] transition-colors cursor-pointer"
+                                    onmouseenter="document.getElementById('mega-preview-trial').classList.remove('opacity-0', 'pointer-events-none'); document.getElementById('mega-preview-b2g1').classList.add('opacity-0', 'pointer-events-none');"
+                                >
+                                    <div>
+                                        <div class="text-[13.5px] font-semibold text-[#1F1F1F] group-hover/item:text-[#831F2E] transition-colors">
+                                            Buy any 5 Trial Pack @ 799
+                                        </div>
+                                        <div class="text-[11px] text-[#7B7B7B]">5 Sacred Vedic Fragrances</div>
                                     </div>
-                                    <div class="text-[11px] text-[#7B7B7B]">5 Sacred Vedic Fragrances</div>
-                                </div>
-                                <span class="text-[10px] font-bold bg-[#D38928]/15 text-[#965A15] px-2 py-0.5 rounded-full shrink-0 ml-2">₹799</span>
-                            </a>
-                            <a 
-                                href="{{ route('bundles.buy2get1') }}" 
-                                class="group/item flex items-center justify-between px-4 py-2.5 hover:bg-[#FAF7F2] transition-colors"
-                            >
-                                <div>
-                                    <div class="text-[13.5px] font-medium text-[#1F1F1F] group-hover/item:text-[#831F2E] transition-colors">
-                                        Buy 2 Get 1 FREE
+                                    <span class="text-[10px] font-bold bg-[#D38928]/15 text-[#965A15] px-2 py-0.5 rounded-full shrink-0 ml-2">₹799</span>
+                                </a>
+
+                                <a 
+                                    href="{{ route('bundles.buy2get1') }}" 
+                                    class="group/item flex items-center justify-between p-2.5 rounded-xl hover:bg-[#FAF7F2] transition-colors cursor-pointer"
+                                    onmouseenter="document.getElementById('mega-preview-b2g1').classList.remove('opacity-0', 'pointer-events-none'); document.getElementById('mega-preview-trial').classList.add('opacity-0', 'pointer-events-none');"
+                                >
+                                    <div>
+                                        <div class="text-[13.5px] font-semibold text-[#1F1F1F] group-hover/item:text-[#831F2E] transition-colors">
+                                            Buy 2 Get 1 FREE
+                                        </div>
+                                        <div class="text-[11px] text-[#7B7B7B]">Free Chandan pack included</div>
                                     </div>
-                                    <div class="text-[11px] text-[#7B7B7B]">Free Chandan pack included</div>
+                                    <span class="text-[10px] font-bold bg-[#831F2E]/10 text-[#831F2E] px-2 py-0.5 rounded-full shrink-0 ml-2">FREE GIFT</span>
+                                </a>
+
+                                <div class="pt-2 px-2.5 border-t border-stone-100">
+                                    <a 
+                                        href="{{ route('collections.show', 'super-save-offers') }}" 
+                                        class="flex items-center justify-between text-xs font-semibold text-[#831F2E] hover:text-[#6E1724] transition-colors"
+                                    >
+                                        <span>View All Offers</span>
+                                        <span>&rarr;</span>
+                                    </a>
                                 </div>
-                                <span class="text-[10px] font-bold bg-[#831F2E]/10 text-[#831F2E] px-2 py-0.5 rounded-full shrink-0 ml-2">FREE GIFT</span>
-                            </a>
-                        </div>
-                        <div class="pt-1.5 px-4 pb-1">
-                            <a 
-                                href="{{ route('collections.show', 'super-save-offers') }}" 
-                                class="flex items-center justify-between text-xs font-semibold text-[#831F2E] hover:text-[#6E1724] py-1 transition-colors"
-                            >
-                                <span>View All Offers</span>
-                                <span>&rarr;</span>
-                            </a>
+                            </div>
+
+                            <!-- Right: Dynamic Hover Image Preview Box (5 Cols) -->
+                            <div class="col-span-5 relative w-full h-[155px] rounded-xl overflow-hidden bg-stone-100 border border-[#EAE3D9] shadow-inner">
+                                <img 
+                                    id="mega-preview-trial" 
+                                    src="{{ asset('assets/images/banner-5-trial-packs.jpg') }}" 
+                                    alt="Buy 5 Trial Packs @ ₹799"
+                                    class="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 opacity-100"
+                                >
+                                <img 
+                                    id="mega-preview-b2g1" 
+                                    src="{{ asset('assets/images/banner-buy2-get1-free.jpg') }}" 
+                                    alt="Buy 2 Get 1 FREE"
+                                    class="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 opacity-0 pointer-events-none"
+                                >
+                            </div>
+
                         </div>
                     </div>
                 </div>
 
-                <!-- 5. Best Seller Combo (Natural Clean Shopify Dropdown) -->
-                <div class="relative group py-2 xl:py-3 flex items-center">
-                    <button 
-                        type="button"
-                        class="nav-link-hover flex items-center space-x-1 text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-medium text-[#1F1F1F] group-hover:text-[#831F2E] transition-colors whitespace-nowrap tracking-normal cursor-pointer focus:outline-none"
-                    >
-                        <span>Best Seller Combo</span>
-                        <svg class="w-3.5 h-3.5 text-[#8C827A] group-hover:text-[#831F2E] group-hover:rotate-180 transition-transform duration-200 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                        </svg>
-                    </button>
-                    
-                    <!-- Clean Shopify Style Dropdown Menu -->
-                    <div class="absolute left-0 top-full -mt-0.5 w-76 bg-white rounded-xl shadow-xl border border-[#EAE3D9] py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top group-hover:translate-y-0 translate-y-1 pointer-events-none group-hover:pointer-events-auto divide-y divide-stone-100">
-                        <div class="py-1">
-                            <a 
-                                href="{{ route('products.show', 'pack-of-six') }}" 
-                                class="group/item flex items-center justify-between px-4 py-2.5 hover:bg-[#FAF7F2] transition-colors"
-                            >
-                                <div>
-                                    <div class="text-[13.5px] font-medium text-[#1F1F1F] group-hover/item:text-[#831F2E] transition-colors">
-                                        Pack of Six Grand Combo
-                                    </div>
-                                    <div class="text-[11px] text-[#7B7B7B]">6 divine fragrances collection</div>
-                                </div>
-                                <span class="text-[10px] font-bold bg-[#D38928]/15 text-[#965A15] px-2 py-0.5 rounded-full shrink-0 ml-2">₹1199</span>
-                            </a>
-                        </div>
-                        <div class="pt-1.5 px-4 pb-1">
-                            <a 
-                                href="{{ route('collections.show', 'best-seller-combo') }}" 
-                                class="flex items-center justify-between text-xs font-semibold text-[#831F2E] hover:text-[#6E1724] py-1 transition-colors"
-                            >
-                                <span>View All Combos</span>
-                                <span>&rarr;</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                <!-- 5. Best Seller Combo (Direct Product Link - No Dropdown) -->
+                <a 
+                    href="{{ route('products.show', 'pack-of-six') }}" 
+                    class="nav-link-hover text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-medium text-[#1F1F1F] hover:text-[#831F2E] transition-colors py-2 xl:py-3 whitespace-nowrap tracking-normal"
+                >
+                    Best Seller Combo
+                </a>
 
                 <!-- 6. Pitambara Havan (Attached Centered Coming Soon Badge with Pointer) -->
                 <div class="relative py-2 xl:py-3 flex items-center justify-center">
@@ -190,9 +183,6 @@
                     <svg class="w-5 h-5 {{ auth()->check() ? 'text-[#D38928]' : '' }}" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
                     </svg>
-                    @if(auth()->check())
-                        <span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-emerald-500 ring-2 ring-white"></span>
-                    @endif
                 </a>
 
                 <!-- 3. Wishlist with live badge -->
