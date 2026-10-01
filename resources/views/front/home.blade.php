@@ -11,7 +11,7 @@
 <section class="relative w-full bg-[#FAF5EE] overflow-hidden select-none border-b border-[#EAE3D9] font-body" id="hero-banner-carousel">
     
     <!-- Slides Wrapper (Larger, High-Impact Hero Banner for Desktop & Mobile) -->
-    <div class="relative w-full min-h-[460px] sm:min-h-[540px] md:min-h-[600px] lg:min-h-[660px] xl:min-h-[720px] overflow-hidden">
+    <div class="relative w-full h-[520px] sm:h-[580px] md:h-[640px] lg:h-[700px] xl:h-[740px] overflow-hidden" style="min-height: 520px;">
         
         <!-- SLIDE 1: SACRED INCENSE CONE COLLECTION (SEAMLESS FULL-BLEED PANORAMIC) -->
         <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-100 z-10 flex items-center bg-[#FAF4EB]" data-slide="0">
