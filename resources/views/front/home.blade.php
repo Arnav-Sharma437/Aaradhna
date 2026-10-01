@@ -675,13 +675,16 @@
 <!-- ========================================================================= -->
 <section class="w-full bg-white border-b border-[#EADBCC] overflow-hidden select-none py-2 sm:py-4">
     <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
-        <a href="{{ route('bundles.trial-packs') }}" class="block w-full group focus:outline-none rounded-[16px] sm:rounded-[20px] overflow-hidden shadow-xs">
-            <img 
-                src="{{ asset('assets/images/banner-5-trial-packs.jpg') }}" 
-                alt="Festive Collection - 5 Divine Essentials at just ₹799 - Mangalam" 
-                class="w-full h-auto block object-cover group-hover:opacity-95 group-hover:scale-[1.01] transition-all duration-300"
-                loading="lazy"
-            >
+        <a href="{{ route('bundles.trial-packs') }}" class="block w-full group focus:outline-none rounded-[16px] sm:rounded-[20px] overflow-hidden shadow-xs border border-[#EADBCC]">
+            <picture class="block w-full">
+                <source media="(max-width: 640px)" srcset="{{ asset('assets/images/trial-pack-mobile.jpg') }}">
+                <img 
+                    src="{{ asset('assets/images/trial-pack-desktop.jpg') }}" 
+                    alt="Festive Collection - 5 Divine Essentials at just ₹799 - Mangalam" 
+                    class="w-full h-auto block object-cover group-hover:opacity-95 group-hover:scale-[1.01] transition-all duration-300"
+                    loading="lazy"
+                >
+            </picture>
         </a>
     </div>
 </section>

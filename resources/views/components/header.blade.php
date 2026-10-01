@@ -120,7 +120,7 @@
                             <div class="col-span-5 relative w-full h-[215px] rounded-2xl overflow-hidden bg-stone-100 border border-[#EAE3D9] shadow-inner">
                                 <img 
                                     id="mega-preview-trial" 
-                                    src="{{ asset('assets/images/banner-5-trial-packs.jpg') }}" 
+                                    src="{{ asset('assets/images/trial-pack-desktop.jpg') }}" 
                                     alt="Buy 5 Trial Packs @ ₹799"
                                     class="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 opacity-100"
                                 >

@@ -64,7 +64,7 @@
     }
 @endphp
 
-<div class="bg-white min-h-screen py-6 lg:py-10 font-body">
+<div class="bg-white min-h-screen py-6 lg:py-10 pb-24 sm:pb-36 font-body">
     <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
 
         <!-- Breadcrumbs -->
@@ -637,7 +637,7 @@
         <!-- ========================================================================= -->
         <!-- 5. CUSTOMER REVIEWS & RATINGS (Compact & Contained Section)              -->
         <!-- ========================================================================= -->
-        <div id="customer-reviews" class="mt-10 sm:mt-14 max-w-3xl mx-auto bg-white rounded-[18px] border border-[#EADBCC] p-5 sm:p-7 shadow-xs font-body">
+        <div id="customer-reviews" class="mt-10 sm:mt-14 mb-12 sm:mb-20 max-w-3xl mx-auto bg-white rounded-[18px] border border-[#EADBCC] p-5 sm:p-7 shadow-xs font-body">
             
             <!-- Compact Header -->
             <div class="flex items-center justify-between gap-3 pb-5 border-b border-[#EADBCC]">

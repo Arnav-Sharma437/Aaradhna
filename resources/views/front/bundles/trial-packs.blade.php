@@ -4,45 +4,49 @@
 @section('meta_description', 'Choose any 5 sacred trial packs at just ₹799. 100% Bambooless & Charcoal Free Vedic Agarbatti.')
 
 @section('content')
-<div class="bg-[#FAF7F2] min-h-screen pb-36 font-body">
+<div class="bg-white min-h-screen pb-36 font-body">
 
     <!-- ========================================================================= -->
-    <!-- 1. FULL-WIDTH HERO FESTIVE BANNER (Uncut Original Ratio, Edge-to-Edge)     -->
+    <!-- 1. HERO FESTIVE BANNER & NOTICE STRIP (Inside 1440px Container)           -->
     <!-- ========================================================================= -->
-    <div class="w-full bg-[#FAF4EB]">
-        <div class="w-full">
-            <img 
-                src="{{ asset('assets/images/banner-5-trial-packs.jpg') }}" 
-                alt="5 Divine Essentials at just ₹799 - Mangalam" 
-                class="w-full h-auto block object-contain"
-            >
+    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px] pt-4 sm:pt-6 space-y-4">
+        
+        <!-- Festive Banner with Rounded Corners matching Home Standard -->
+        <div class="w-full rounded-[16px] sm:rounded-[20px] overflow-hidden shadow-xs border border-[#EADBCC]">
+            <picture class="block w-full">
+                <source media="(max-width: 640px)" srcset="{{ asset('assets/images/trial-pack-mobile.jpg') }}">
+                <img 
+                    src="{{ asset('assets/images/trial-pack-desktop.jpg') }}" 
+                    alt="5 Divine Essentials at just ₹799 - Mangalam" 
+                    class="w-full h-auto block object-cover"
+                >
+            </picture>
         </div>
 
-        <!-- Festive Notice Strip (Full Width Container matching Home standard) -->
-        <div class="w-full py-3.5 px-4 sm:px-8 lg:px-[40px] bg-[#FFFDF9] border-y border-[#EADBCC]">
-            <div class="w-full max-w-[1440px] mx-auto rounded-[14px] border border-[#C27E27]/40 bg-[#FAF3EA] p-3.5 sm:p-4 flex flex-col sm:flex-row items-center justify-between gap-3 shadow-2xs">
-                <div class="flex items-center space-x-3 text-center sm:text-left">
-                    <div class="w-9 h-9 rounded-full bg-[#831F2E] text-white flex items-center justify-center font-bold text-base shrink-0 shadow-xs">
-                        i
-                    </div>
-                    <div>
-                        <h4 class="text-xs sm:text-sm font-black text-[#831F2E] font-heading leading-snug">
-                            This is a Festive Offer – Best Price Already Applied!
-                        </h4>
-                        <p class="text-[11px] sm:text-xs text-gray-700 font-medium">
-                            Festive items cannot be combined with any coupon codes, cart offers, or free gift eligibility.
-                        </p>
-                    </div>
+        <!-- Festive Notice Strip inside Container -->
+        <div class="rounded-[14px] border border-[#C27E27]/40 bg-[#FAF3EA] p-3.5 sm:p-4 flex flex-col sm:flex-row items-center justify-between gap-3 shadow-2xs">
+            <div class="flex items-center space-x-3 text-center sm:text-left">
+                <div class="w-9 h-9 rounded-full bg-[#831F2E] text-white flex items-center justify-center font-bold text-base shrink-0 shadow-xs">
+                    i
                 </div>
-                <div class="shrink-0 flex items-center justify-center w-9 h-9 rounded-[8px] border border-[#C27E27]/40 bg-white/70 text-[#C27E27] font-bold text-base">
-                    %
+                <div>
+                    <h4 class="text-xs sm:text-sm font-black text-[#831F2E] font-heading leading-snug">
+                        This is a Festive Offer – Best Price Already Applied!
+                    </h4>
+                    <p class="text-[11px] sm:text-xs text-gray-700 font-medium">
+                        Festive items cannot be combined with any coupon codes, cart offers, or free gift eligibility.
+                    </p>
                 </div>
             </div>
+            <div class="shrink-0 flex items-center justify-center w-9 h-9 rounded-[8px] border border-[#C27E27]/40 bg-white/70 text-[#C27E27] font-bold text-base">
+                %
+            </div>
         </div>
+
     </div>
 
     <!-- Main Container -->
-    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px] pt-8 space-y-8">
+    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px] pt-6 sm:pt-8 space-y-8">
 
         <!-- Section Title -->
         <div class="text-center space-y-1">
@@ -276,7 +280,7 @@
                 title: `5 Divine Essentials Bundle (Custom Box)`,
                 slug: 'super-save-offers',
                 price: BUNDLE_PRICE,
-                image: '{{ asset("assets/images/banner-5-trial-packs.jpg") }}',
+                image: '{{ asset("assets/images/trial-pack-desktop.jpg") }}',
                 quantity: 1,
                 packInfo: `5 Trial Packs @ ₹799 (${bundleTitles})`,
                 subtitle: `Included: ${bundleTitles}`
