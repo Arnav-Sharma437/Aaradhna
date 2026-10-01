@@ -129,4 +129,26 @@ class ProductController extends Controller
     {
         return $this->show('pitambara-havan');
     }
+
+    /**
+     * Handle VIP Pre-Booking reservation form submission.
+     */
+    public function storePreBooking(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'phone' => 'required|string|max:25',
+            'email' => 'nullable|email|max:255',
+            'city' => 'nullable|string|max:255',
+            'pack_preference' => 'nullable|string|max:255',
+            'notes' => 'nullable|string|max:500',
+        ]);
+
+        $validated['product_name'] = 'Mangalam Pitambara Havan';
+        $validated['status'] = 'confirmed';
+
+        \App\Models\PreBooking::create($validated);
+
+        return back()->with('prebooking_success', 'धन्यवाद! Your VIP Pre-booking for Mangalam Pitambara Havan is confirmed. Our Vedic care team will notify you with priority invitation before the public launch.');
+    }
 }

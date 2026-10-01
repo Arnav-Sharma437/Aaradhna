@@ -19,6 +19,7 @@ Route::get('/collections/{slug}', [CollectionController::class, 'show'])->name('
 
 // Product Detail Routes
 Route::get('/pitambara-havan', [ProductController::class, 'showPitambara'])->name('products.pitambara');
+Route::post('/pitambara-havan/pre-book', [ProductController::class, 'storePreBooking'])->name('pitambara.prebook');
 Route::get('/products/{slug}', [ProductController::class, 'show'])->name('products.show');
 
 // Bundle Builder Offers (Super Save Offers)
