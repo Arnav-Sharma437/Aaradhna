@@ -97,7 +97,7 @@ header nav button,
 .nav-link-hover::after {
     content: '';
     position: absolute;
-    bottom: -2px;
+    bottom: 2px;
     left: 0;
     width: 0;
     height: 2px;
@@ -108,6 +108,23 @@ header nav button,
 
 .nav-link-hover:hover::after {
     width: 100%;
+}
+
+.nav-link-always-underlined {
+    position: relative;
+    color: #831F2E !important;
+    transition: color 0.2s ease-in-out;
+}
+
+.nav-link-always-underlined::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    width: 100% !important;
+    height: 2px;
+    background-color: #831F2E;
+    border-radius: 2px;
 }
 
 @keyframes marquee {

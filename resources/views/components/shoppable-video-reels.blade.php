@@ -188,7 +188,7 @@
 
                             <!-- Centered Subtle Play Button Overlay -->
                             <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-                                <div class="w-13 h-13 rounded-full bg-black/45 backdrop-blur-xs border border-white/30 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#D38928] transition-all duration-300 shadow-lg">
+                                <div class="w-13 h-13 rounded-full bg-black/45 backdrop-blur-xs border border-white/30 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#831F2E] transition-all duration-300 shadow-lg">
                                     <svg class="w-6 h-6 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M8 5v14l11-7z"/>
                                     </svg>
@@ -441,7 +441,7 @@
         <button 
             type="button" 
             id="modal-next-arrow"
-            class="absolute right-2 sm:right-0 top-1/2 -translate-y-1/2 z-40 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white text-[#121212] hover:bg-[#D38928] hover:text-white flex items-center justify-center shadow-2xl transition-all duration-200 transform hover:scale-110 active:scale-95 cursor-pointer border border-black/10 focus:outline-none"
+            class="absolute right-2 sm:right-0 top-1/2 -translate-y-1/2 z-40 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white text-[#121212] hover:bg-[#831F2E] hover:text-white flex items-center justify-center shadow-2xl transition-all duration-200 transform hover:scale-110 active:scale-95 cursor-pointer border border-black/10 focus:outline-none"
             aria-label="Next Reel"
         >
             <svg class="w-6 h-6 sm:w-7 sm:h-7 ml-0.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">

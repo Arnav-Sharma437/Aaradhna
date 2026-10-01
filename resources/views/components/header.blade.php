@@ -138,10 +138,10 @@
                     Best Seller Combo
                 </a>
 
-                <!-- 6. Pitambara Havan (Underline Hover Link) -->
+                <!-- 6. Pitambara Havan (Always Underlined Link) -->
                 <a 
                     href="{{ route('products.pitambara') }}" 
-                    class="nav-link-hover text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-bold text-[#831F2E] hover:text-[#6E1724] transition-colors py-2 xl:py-3 whitespace-nowrap"
+                    class="nav-link-always-underlined text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-bold text-[#831F2E] hover:text-[#6E1724] transition-colors py-2 xl:py-3 whitespace-nowrap"
                 >
                     Pitambara Havan
                 </a>

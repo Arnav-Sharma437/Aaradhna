@@ -10,11 +10,11 @@
 <!-- ========================================================================= -->
 <section class="relative w-full bg-[#FAF5EE] overflow-hidden select-none border-b border-[#EAE3D9] font-body" id="hero-banner-carousel">
     
-    <!-- Slides Wrapper (High-Impact Clean Visual Hero Banner for Desktop & Mobile) -->
-    <div class="relative w-full h-[420px] sm:h-[540px] md:h-[620px] lg:h-[700px] xl:h-[740px] overflow-hidden">
+    <!-- Slides Wrapper (Fixed High-Resolution Aspect Ratio for all Screens & Zoom levels) -->
+    <div class="relative w-full aspect-[16/7] sm:aspect-[21/9] md:aspect-[2.4/1] lg:aspect-[2.5/1] max-h-[720px] min-h-[380px] sm:min-h-[460px] md:min-h-[520px] lg:min-h-[600px] overflow-hidden bg-[#FAF4EB]">
         
         <!-- SLIDE 1: SACRED BAMBOOLEES COLLECTION (RESPONSIVE DESKTOP & MOBILE BANNER) -->
-        <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-100 pointer-events-auto z-10 flex items-center bg-[#FAF4EB]" data-slide="0">
+        <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-100 pointer-events-auto z-10 flex items-center justify-center bg-[#FAF4EB]" data-slide="0">
             <a href="{{ route('collections.show', 'bambooless') }}" class="block w-full h-full relative cursor-pointer" aria-label="Explore Sacred Bambooless Incense Collection">
                 <picture class="w-full h-full block">
                     <source media="(max-width: 768px)" srcset="{{ asset('assets/images/hero-sacred-mobile.jpg') }}">
@@ -28,7 +28,7 @@
         </div>
 
         <!-- SLIDE 2: SACRED HAVAN CUPS COLLECTION (RESPONSIVE DESKTOP & MOBILE BANNER) -->
-        <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 pointer-events-none z-0 flex items-center bg-[#FAF4EB]" data-slide="1">
+        <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 pointer-events-none z-0 flex items-center justify-center bg-[#FAF4EB]" data-slide="1">
             <a href="{{ route('collections.show', 'havan-cups') }}" class="block w-full h-full relative cursor-pointer" aria-label="Explore Sacred Havan Cups Collection">
                 <picture class="w-full h-full block">
                     <source media="(max-width: 768px)" srcset="{{ asset('assets/images/hero-sacred-hawan-cups-mobile.jpg') }}">
@@ -42,7 +42,7 @@
         </div>
 
         <!-- SLIDE 3: SACRED DHOOP CONES COLLECTION (RESPONSIVE DESKTOP & MOBILE BANNER) -->
-        <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 pointer-events-none z-0 flex items-center bg-[#FAF4EB]" data-slide="2">
+        <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 pointer-events-none z-0 flex items-center justify-center bg-[#FAF4EB]" data-slide="2">
             <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block w-full h-full relative cursor-pointer" aria-label="Explore Sacred Dhoop Cones Collection">
                 <picture class="w-full h-full block">
                     <source media="(max-width: 768px)" srcset="{{ asset('assets/images/hera-sacred-dhoop-cones-mobile.jpg') }}">
@@ -116,7 +116,7 @@
                 </div>
                 <!-- Image -->
                 <div class="p-2 sm:p-3.5 pb-0">
-                    <div class="relative w-full aspect-square rounded-[12px] sm:rounded-[16px] overflow-hidden bg-[#FAF7F2]">
+                    <div class="relative w-full aspect-[4/4.6] sm:aspect-[4/4.8] rounded-[12px] sm:rounded-[16px] overflow-hidden bg-[#FAF7F2]">
                         <a href="{{ route('products.show', 'swarna-pushpa') }}" class="block w-full h-full">
                             <img src="{{ asset('assets/images/oudh-pack-card.jpg') }}" alt="Swarna Pushpa Bambooless" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105"><img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Swarna Pushpa (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                         </a>
@@ -163,7 +163,7 @@
                 </div>
                 <!-- Image -->
                 <div class="p-2 sm:p-3.5 pb-0">
-                    <div class="relative w-full aspect-square rounded-[12px] sm:rounded-[16px] overflow-hidden bg-[#FAF7F2]">
+                    <div class="relative w-full aspect-[4/4.6] sm:aspect-[4/4.8] rounded-[12px] sm:rounded-[16px] overflow-hidden bg-[#FAF7F2]">
                         <a href="{{ route('products.show', 'chandan-saanjh') }}" class="block w-full h-full">
                             <img src="{{ asset('assets/images/incense-pack.jpg') }}" alt="Chandan Saanjh Incense" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105"><img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Chandan Saanjh (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                         </a>
@@ -210,7 +210,7 @@
                 </div>
                 <!-- Image -->
                 <div class="p-2 sm:p-3.5 pb-0">
-                    <div class="relative w-full aspect-square rounded-[12px] sm:rounded-[16px] overflow-hidden bg-[#FAF7F2]">
+                    <div class="relative w-full aspect-[4/4.6] sm:aspect-[4/4.8] rounded-[12px] sm:rounded-[16px] overflow-hidden bg-[#FAF7F2]">
                         <a href="{{ route('products.show', 'royal-oudh') }}" class="block w-full h-full">
                             <img src="{{ asset('assets/images/oudh-pack-card.jpg') }}" alt="Royal Oudh Incense" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105"><img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Royal Oudh (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                         </a>
@@ -257,7 +257,7 @@
                 </div>
                 <!-- Image -->
                 <div class="p-2 sm:p-3.5 pb-0">
-                    <div class="relative w-full aspect-square rounded-[12px] sm:rounded-[16px] overflow-hidden bg-[#FAF7F2]">
+                    <div class="relative w-full aspect-[4/4.6] sm:aspect-[4/4.8] rounded-[12px] sm:rounded-[16px] overflow-hidden bg-[#FAF7F2]">
                         <a href="{{ route('products.show', 'google-dhoop') }}" class="block w-full h-full">
                             <img src="{{ asset('assets/images/havan-cup.jpg') }}" alt="Google Dhoop Havan Cup" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105"><img src="{{ asset('assets/images/single-havan-cup.jpg') }}" alt="Google Dhoop (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                         </a>
@@ -296,14 +296,14 @@
 
         </div>
 
-        <!-- View All Button -->
-        <div class="mt-14 text-center">
+        <!-- View All Button (Compact Small Size) -->
+        <div class="mt-10 sm:mt-12 text-center">
             <a 
                 href="{{ route('collections.show', 'all') }}" 
-                class="inline-flex items-center justify-center px-12 py-3.5 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-bold uppercase tracking-widest rounded-[10px] shadow-md hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 font-heading"
+                class="inline-flex items-center justify-center px-6 py-2.5 bg-[#831F2E] hover:bg-[#6E1724] text-white text-xs font-semibold rounded-lg shadow-sm hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 font-heading"
             >
                 <span>View All Products</span>
-                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                <svg class="w-3.5 h-3.5 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
             </a>
         </div>
 
@@ -497,7 +497,7 @@
                     </span>
                 </div>
                 <div class="p-2 sm:p-3.5 pb-0">
-                    <div class="relative w-full aspect-square rounded-[12px] sm:rounded-[16px] overflow-hidden bg-[#FAF7F2]">
+                    <div class="relative w-full aspect-[4/4.6] sm:aspect-[4/4.8] rounded-[12px] sm:rounded-[16px] overflow-hidden bg-[#FAF7F2]">
                         <a href="{{ route('products.show', 'swarna-pushpa') }}" class="block w-full h-full">
                             <img src="{{ asset('assets/images/devi-refill-pack-card.jpg') }}" alt="Swarna Pushpa Refill Pack" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105"><img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Swarna Pushpa Refill Pack (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                         </a>
@@ -517,7 +517,7 @@
                 <div class="p-3 sm:p-5 pt-2 sm:pt-4 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3.5">
                     <div class="space-y-1">
                         <h3 class="text-[15px] sm:text-xl font-bold font-serif text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
-                            <a href="{{ route('products.show', 'swarna-pushpa') }}">Swarna Pushpa <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">Refill (100)</span></a>
+                            <a href="{{ route('products.show', 'swarna-pushpa') }}">Swarna Pushpa <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(Refill 100)</span></a>
                         </h3>
                         <div class="flex items-center space-x-1 text-[#D38928] text-xs">
                             <div class="flex text-xs"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
@@ -544,7 +544,7 @@
                     </span>
                 </div>
                 <div class="p-2 sm:p-3.5 pb-0">
-                    <div class="relative w-full aspect-square rounded-[12px] sm:rounded-[16px] overflow-hidden bg-[#FAF7F2]">
+                    <div class="relative w-full aspect-[4/4.6] sm:aspect-[4/4.8] rounded-[12px] sm:rounded-[16px] overflow-hidden bg-[#FAF7F2]">
                         <a href="{{ route('products.show', 'divya-naagchampa') }}" class="block w-full h-full">
                             <img src="{{ asset('assets/images/camphor-refill-pack-card.jpg') }}" alt="Divya Naagchampa Refill Pack" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105"><img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Divya Naagchampa Refill Pack (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                         </a>
@@ -591,7 +591,7 @@
                     </span>
                 </div>
                 <div class="p-2 sm:p-3.5 pb-0">
-                    <div class="relative w-full aspect-square rounded-[12px] sm:rounded-[16px] overflow-hidden bg-[#FAF7F2]">
+                    <div class="relative w-full aspect-[4/4.6] sm:aspect-[4/4.8] rounded-[12px] sm:rounded-[16px] overflow-hidden bg-[#FAF7F2]">
                         <a href="{{ route('products.show', 'royal-oudh') }}" class="block w-full h-full">
                             <img src="{{ asset('assets/images/oudh-pack-card.jpg') }}" alt="Royal Oudh Bambooless Sticks" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105"><img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Royal Oudh Bambooless Sticks (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                         </a>
@@ -638,7 +638,7 @@
                     </span>
                 </div>
                 <div class="p-2 sm:p-3.5 pb-0">
-                    <div class="relative w-full aspect-square rounded-[12px] sm:rounded-[16px] overflow-hidden bg-[#FAF7F2]">
+                    <div class="relative w-full aspect-[4/4.6] sm:aspect-[4/4.8] rounded-[12px] sm:rounded-[16px] overflow-hidden bg-[#FAF7F2]">
                         <a href="{{ route('products.show', 'chandan-saanjh') }}" class="block w-full h-full">
                             <img src="{{ asset('assets/images/chandan-cones-card.jpg') }}" alt="Chandan Saanjh Sticks" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105"><img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Chandan Saanjh Sticks (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                         </a>
