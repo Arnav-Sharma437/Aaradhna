@@ -891,13 +891,13 @@
 </section>
 
 <!-- ========================================================================= -->
-<!-- 5. DEVOTEE TESTIMONIALS (3D Interactive Coverflow Slider)                 -->
+<!-- 5. DEVOTEE TESTIMONIALS (2-Row Continuous Smooth Marquee Ticker)         -->
 <!-- ========================================================================= -->
-<section class="py-18 sm:py-24 bg-white border-b border-[#EAE3D9] overflow-hidden select-none" id="testimonial-3d-section">
-    <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
+<section class="py-14 sm:py-20 bg-white border-b border-[#EAE3D9] overflow-hidden select-none" id="testimonials-marquee-section">
+    <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px] mb-8 sm:mb-12">
         
         <!-- Header -->
-        <div class="text-center max-w-2xl mx-auto mb-12 space-y-2">
+        <div class="text-center max-w-2xl mx-auto space-y-2">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ 50,000+ BLESSED HOMES ✦</span>
             <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#121212] font-heading tracking-tight leading-tight">
                 Devotee Experiences
@@ -907,189 +907,281 @@
             </p>
         </div>
 
-        <!-- 3D Perspective Stage Container -->
-        <div class="relative w-full max-w-4xl mx-auto h-[380px] sm:h-[400px] flex items-center justify-center" id="testimonial-3d-stage" style="perspective: 1200px;">
-            
-            <!-- Card 0: Pandit Radhe Shyam -->
-            <div 
-                class="testimonial-card absolute w-[310px] sm:w-[380px] md:w-[420px] bg-white rounded-[16px] p-6 sm:p-7 shadow-xl transition-all duration-500 ease-out flex flex-col justify-between"
-                data-index="0"
-                style="transform-style: preserve-3d;"
-            >
-                <div class="space-y-3">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center space-x-1 text-[#D38928] text-sm">
-                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                        </div>
-                        <span class="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
-                            Temple Priest
-                        </span>
-                    </div>
-                    <p class="text-sm sm:text-base text-[#121212] leading-relaxed italic font-medium pt-1">
-                        "I am a regular devotee of Mangalam products since 2 years. Very pure havan cups and sambrani. In temples, we strictly avoid toxic bamboo, and Mangalam is 100% compliant with sacred Agamas."
-                    </p>
-                </div>
-                <div class="flex items-center space-x-3 pt-4 border-t border-[#D38928]/30 mt-4">
-                    <div class="w-11 h-11 rounded-full bg-[#D38928] text-white flex items-center justify-center font-bold text-sm shadow-sm font-heading">
-                        PR
-                    </div>
-                    <div>
-                        <h4 class="text-sm sm:text-base font-bold text-[#121212] font-heading">Pandit Radhe Shyam</h4>
-                        <p class="text-xs text-[#D38928] font-semibold">Vrindavan Dham</p>
-                    </div>
-                </div>
-            </div>
+    </div>
 
-            <!-- Card 1: Ramesh Joshi -->
-            <div 
-                class="testimonial-card absolute w-[310px] sm:w-[380px] md:w-[420px] bg-white rounded-[16px] p-6 sm:p-7 shadow-xl transition-all duration-500 ease-out flex flex-col justify-between"
-                data-index="1"
-                style="transform-style: preserve-3d;"
-            >
-                <div class="space-y-3">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center space-x-1 text-[#D38928] text-sm">
-                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                        </div>
-                        <span class="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
-                            Verified Devotee
-                        </span>
-                    </div>
-                    <p class="text-sm sm:text-base text-[#333] leading-relaxed italic pt-1">
-                        "Thank you so much for this pure product. Everyone in my family loves the sacred fragrance of the camphor sticks. Zero smoke irritation in eyes during morning aarti!"
-                    </p>
-                </div>
-                <div class="flex items-center space-x-3 pt-4 border-t border-[#EAE3D9] mt-4">
-                    <div class="w-11 h-11 rounded-full bg-[#F6DAA8] text-[#121212] flex items-center justify-center font-bold text-sm shadow-sm font-heading">
-                        RJ
-                    </div>
-                    <div>
-                        <h4 class="text-sm sm:text-base font-bold text-[#121212] font-heading">Ramesh Joshi</h4>
-                        <p class="text-xs text-gray-500">Varanasi, UP</p>
-                    </div>
-                </div>
-            </div>
+    <!-- 2 Continuous Scrolling Rows with Left & Right Gradient Fade Masks -->
+    <div class="relative w-full space-y-4 sm:space-y-6 overflow-hidden marquee-track-pause [mask-image:linear-gradient(to_right,transparent,black_3%,black_97%,transparent)]">
+        
+        <!-- ========================================== -->
+        <!-- ROW 1: RIGHT TO LEFT (Continuous Scroll)   -->
+        <!-- ========================================== -->
+        <div class="flex overflow-hidden">
+            <div class="animate-marquee-left flex space-x-4 sm:space-x-6 py-2">
+                
+                @php
+                    $row1Testimonials = [
+                        [
+                            'name' => 'Pandit Radhe Shyam',
+                            'city' => 'Vrindavan Dham',
+                            'role' => 'Temple Priest',
+                            'initials' => 'PR',
+                            'avatar_bg' => 'bg-[#D38928]',
+                            'product' => 'Pitambara Havan Cups',
+                            'quote' => 'I am a regular devotee of Mangalam products since 2 years. Very pure havan cups and sambrani. In temples, we strictly avoid toxic bamboo, and Mangalam is 100% compliant with sacred Agamas.'
+                        ],
+                        [
+                            'name' => 'Ananya Deshmukh',
+                            'city' => 'Pune, Maharashtra',
+                            'role' => 'Daily Sadhak',
+                            'initials' => 'AD',
+                            'avatar_bg' => 'bg-[#831F2E]',
+                            'product' => 'Camphor Agarbatti',
+                            'quote' => 'We do daily morning Sandhya Aarti. Standard market incense sticks always gave us headaches and black soot. Mangalam agarbatti is 100% pure, natural, and creates a serene temple ambience.'
+                        ],
+                        [
+                            'name' => 'Ramesh Joshi',
+                            'city' => 'Varanasi, UP',
+                            'role' => 'Verified Devotee',
+                            'initials' => 'RJ',
+                            'avatar_bg' => 'bg-[#3E2314]',
+                            'product' => 'Devi Bambooless Pack',
+                            'quote' => 'Thank you so much for this pure product. Everyone in my family loves the sacred fragrance of the camphor sticks. Zero smoke irritation in eyes during morning aarti!'
+                        ],
+                        [
+                            'name' => 'Dr. Meenakshi Sundaram',
+                            'city' => 'Chennai, Tamil Nadu',
+                            'role' => 'Vedic Scholar',
+                            'initials' => 'MS',
+                            'avatar_bg' => 'bg-[#D38928]',
+                            'product' => 'Swarna Pushpa 100 Refill',
+                            'quote' => 'Knowing that bamboo burning is strictly forbidden in Sanatan scriptures, I was looking for authentic bambooless agarbatti. Mangalam delivers unmatched purity and ethical devotion.'
+                        ],
+                        [
+                            'name' => 'Gaurav Tandon',
+                            'city' => 'Lucknow, UP',
+                            'role' => 'Verified Devotee',
+                            'initials' => 'GT',
+                            'avatar_bg' => 'bg-[#831F2E]',
+                            'product' => 'Chandan Saanjh Sticks',
+                            'quote' => 'The sandalwood fragrance is so calming. It fills our entire 3-story house with natural temple serenity within 15 minutes of lighting. Truly remarkable quality.'
+                        ],
+                        [
+                            'name' => 'Sunita Singhania',
+                            'city' => 'Kolkata, WB',
+                            'role' => 'Devotional Homemaker',
+                            'initials' => 'SS',
+                            'avatar_bg' => 'bg-[#3E2314]',
+                            'product' => 'Sacred Guggul Dhoop',
+                            'quote' => 'Purchased the Festive Havan Combo for Navratri pooja. The smoke is pure white and holy, smelling of real cow ghee, camphor, and guggul. Will never buy chemical sticks again.'
+                        ]
+                    ];
+                @endphp
 
-            <!-- Card 2: Pooja Mishra -->
-            <div 
-                class="testimonial-card absolute w-[310px] sm:w-[380px] md:w-[420px] bg-white rounded-[16px] p-6 sm:p-7 shadow-xl transition-all duration-500 ease-out flex flex-col justify-between"
-                data-index="2"
-                style="transform-style: preserve-3d;"
-            >
-                <div class="space-y-3">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center space-x-1 text-[#D38928] text-sm">
-                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                <!-- First Pass -->
+                @foreach($row1Testimonials as $t)
+                    <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[400px] bg-white rounded-[18px] p-5 sm:p-6 border border-[#EADBCC] shadow-xs hover:shadow-xl hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-1 text-[#D38928] text-xs sm:text-sm">
+                                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                </div>
+                                <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+                                    {{ $t['role'] }}
+                                </span>
+                            </div>
+                            <p class="text-xs sm:text-[13px] text-[#2B1810] leading-relaxed italic font-medium pt-0.5">
+                                "{{ $t['quote'] }}"
+                            </p>
                         </div>
-                        <span class="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
-                            Verified Devotee
-                        </span>
-                    </div>
-                    <p class="text-sm sm:text-base text-[#333] leading-relaxed italic pt-1">
-                        "Excellent aroma. I didn't feel like burning any other regular chemical stick after experiencing this. The luxury gift boxes are also perfect for festive gifting!"
-                    </p>
-                </div>
-                <div class="flex items-center space-x-3 pt-4 border-t border-[#EAE3D9] mt-4">
-                    <div class="w-11 h-11 rounded-full bg-[#F6DAA8] text-[#121212] flex items-center justify-center font-bold text-sm shadow-sm font-heading">
-                        PM
-                    </div>
-                    <div>
-                        <h4 class="text-sm sm:text-base font-bold text-[#121212] font-heading">Pooja Mishra</h4>
-                        <p class="text-xs text-gray-500">Ayodhya, UP</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 3: Virendra Sharma -->
-            <div 
-                class="testimonial-card absolute w-[310px] sm:w-[380px] md:w-[420px] bg-white rounded-[16px] p-6 sm:p-7 shadow-xl transition-all duration-500 ease-out flex flex-col justify-between"
-                data-index="3"
-                style="transform-style: preserve-3d;"
-            >
-                <div class="space-y-3">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center space-x-1 text-[#D38928] text-sm">
-                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        <div class="flex items-center justify-between pt-4 border-t border-[#EAE3D9] mt-4">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 rounded-full {{ $t['avatar_bg'] }} text-white flex items-center justify-center font-bold text-xs sm:text-sm shadow-xs font-heading shrink-0">
+                                    {{ $t['initials'] }}
+                                </div>
+                                <div>
+                                    <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading leading-tight">{{ $t['name'] }}</h4>
+                                    <p class="text-[11px] text-gray-500">{{ $t['city'] }}</p>
+                                </div>
+                            </div>
+                            <div class="text-right hidden sm:block">
+                                <span class="text-[10px] uppercase tracking-wider text-[#965A15] font-semibold block">{{ $t['product'] }}</span>
+                                <span class="text-[10px] text-emerald-600 font-bold block">✓ Verified Devotee</span>
+                            </div>
                         </div>
-                        <span class="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
-                            Dhyan Devotee
-                        </span>
                     </div>
-                    <p class="text-sm sm:text-base text-[#333] leading-relaxed italic pt-1">
-                        "The Bambooless Oudh and Chandan agarbatti create an instant meditative vibration in my morning meditation. Pure natural resins without any burning charcoal smell."
-                    </p>
-                </div>
-                <div class="flex items-center space-x-3 pt-4 border-t border-[#EAE3D9] mt-4">
-                    <div class="w-11 h-11 rounded-full bg-[#F6DAA8] text-[#121212] flex items-center justify-center font-bold text-sm shadow-sm font-heading">
-                        VS
-                    </div>
-                    <div>
-                        <h4 class="text-sm sm:text-base font-bold text-[#121212] font-heading">Virendra Sharma</h4>
-                        <p class="text-xs text-gray-500">Haridwar, Uttarakhand</p>
-                    </div>
-                </div>
-            </div>
+                @endforeach
 
-            <!-- Card 4: Geeta Agarwal -->
-            <div 
-                class="testimonial-card absolute w-[310px] sm:w-[380px] md:w-[420px] bg-white rounded-[16px] p-6 sm:p-7 shadow-xl transition-all duration-500 ease-out flex flex-col justify-between"
-                data-index="4"
-                style="transform-style: preserve-3d;"
-            >
-                <div class="space-y-3">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center space-x-1 text-[#D38928] text-sm">
-                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                <!-- Second Duplicate Pass for Infinite Seamless Marquee -->
+                @foreach($row1Testimonials as $t)
+                    <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[400px] bg-white rounded-[18px] p-5 sm:p-6 border border-[#EADBCC] shadow-xs hover:shadow-xl hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between" aria-hidden="true">
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-1 text-[#D38928] text-xs sm:text-sm">
+                                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                </div>
+                                <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+                                    {{ $t['role'] }}
+                                </span>
+                            </div>
+                            <p class="text-xs sm:text-[13px] text-[#2B1810] leading-relaxed italic font-medium pt-0.5">
+                                "{{ $t['quote'] }}"
+                            </p>
                         </div>
-                        <span class="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
-                            Verified Devotee
-                        </span>
+                        <div class="flex items-center justify-between pt-4 border-t border-[#EAE3D9] mt-4">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 rounded-full {{ $t['avatar_bg'] }} text-white flex items-center justify-center font-bold text-xs sm:text-sm shadow-xs font-heading shrink-0">
+                                    {{ $t['initials'] }}
+                                </div>
+                                <div>
+                                    <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading leading-tight">{{ $t['name'] }}</h4>
+                                    <p class="text-[11px] text-gray-500">{{ $t['city'] }}</p>
+                                </div>
+                            </div>
+                            <div class="text-right hidden sm:block">
+                                <span class="text-[10px] uppercase tracking-wider text-[#965A15] font-semibold block">{{ $t['product'] }}</span>
+                                <span class="text-[10px] text-emerald-600 font-bold block">✓ Verified Devotee</span>
+                            </div>
+                        </div>
                     </div>
-                    <p class="text-sm sm:text-base text-[#333] leading-relaxed italic pt-1">
-                        "Very easy to place order with pure natural aroma. The Havan cups are so convenient for our daily evening aarti. Highly recommend to every Hindu home!"
-                    </p>
-                </div>
-                <div class="flex items-center space-x-3 pt-4 border-t border-[#EAE3D9] mt-4">
-                    <div class="w-11 h-11 rounded-full bg-[#F6DAA8] text-[#121212] flex items-center justify-center font-bold text-sm shadow-sm font-heading">
-                        GA
-                    </div>
-                    <div>
-                        <h4 class="text-sm sm:text-base font-bold text-[#121212] font-heading">Geeta Agarwal</h4>
-                        <p class="text-xs text-gray-500">Jaipur, Rajasthan</p>
-                    </div>
-                </div>
-            </div>
+                @endforeach
 
+            </div>
         </div>
 
-        <!-- 3D Slider Controls & Dots -->
-        <div class="mt-8 flex items-center justify-center space-x-6">
-            <button 
-                type="button" 
-                id="testimonial-prev-btn"
-                class="w-11 h-11 rounded-[10px] bg-white hover:bg-[#D38928] text-[#121212] hover:text-white border border-[#EAE3D9] flex items-center justify-center shadow-md transition-all duration-200 transform hover:scale-105 focus:outline-none"
-                aria-label="Previous Testimonial"
-            >
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg>
-            </button>
+        <!-- ========================================== -->
+        <!-- ROW 2: LEFT TO RIGHT (Continuous Scroll)   -->
+        <!-- ========================================== -->
+        <div class="flex overflow-hidden">
+            <div class="animate-marquee-right flex space-x-4 sm:space-x-6 py-2">
+                
+                @php
+                    $row2Testimonials = [
+                        [
+                            'name' => 'Pooja Mishra',
+                            'city' => 'Ayodhya, UP',
+                            'role' => 'Verified Devotee',
+                            'initials' => 'PM',
+                            'avatar_bg' => 'bg-[#831F2E]',
+                            'product' => 'Divya Naagchampa',
+                            'quote' => 'Excellent aroma. I didn\'t feel like burning any other regular chemical stick after experiencing this. The luxury gift boxes are also perfect for festive gifting!'
+                        ],
+                        [
+                            'name' => 'Vikramaditya Rathore',
+                            'city' => 'Udaipur, Rajasthan',
+                            'role' => 'Meditation Sadhak',
+                            'initials' => 'VR',
+                            'avatar_bg' => 'bg-[#D38928]',
+                            'product' => '5-Fragrance Trial Pack',
+                            'quote' => 'Ordered the trial pack first and immediately subscribed for refill packs. Every fragrance—especially Camphor and Sandalwood—is ethereal and authentic.'
+                        ],
+                        [
+                            'name' => 'Virendra Sharma',
+                            'city' => 'Haridwar, Uttarakhand',
+                            'role' => 'Dhyan Practitioner',
+                            'initials' => 'VS',
+                            'avatar_bg' => 'bg-[#3E2314]',
+                            'product' => 'Bambooless Oudh Sticks',
+                            'quote' => 'The Bambooless Oudh and Chandan agarbatti create an instant meditative vibration in my morning meditation. Pure natural resins without any burning charcoal smell.'
+                        ],
+                        [
+                            'name' => 'Geeta Agarwal',
+                            'city' => 'Jaipur, Rajasthan',
+                            'role' => 'Verified Devotee',
+                            'initials' => 'GA',
+                            'avatar_bg' => 'bg-[#831F2E]',
+                            'product' => 'Sambrani Cow Dung Cups',
+                            'quote' => 'Very easy to place order with pure natural aroma. The Havan cups are so convenient for our daily evening aarti. Highly recommend to every Hindu home!'
+                        ],
+                        [
+                            'name' => 'Acharya Keshav Das',
+                            'city' => 'Mathura, UP',
+                            'role' => 'Gaushala Sevak',
+                            'initials' => 'AK',
+                            'avatar_bg' => 'bg-[#D38928]',
+                            'product' => 'Desi Gomaya Dhoop',
+                            'quote' => 'Knowing that indigenous Gaushalas are supported with every single purchase makes lighting these sticks a holy karma. Vedic purity combined with sacred seva.'
+                        ],
+                        [
+                            'name' => 'Shalini Iyer',
+                            'city' => 'Bengaluru, Karnataka',
+                            'role' => 'Yoga Acharya',
+                            'initials' => 'SI',
+                            'avatar_bg' => 'bg-[#3E2314]',
+                            'product' => 'Kasturi Amber Incense',
+                            'quote' => 'During our daily morning Pranayama classes, we only light Mangalam pure agarbatti. Zero irritation to the respiratory tract and creates deep mental clarity.'
+                        ]
+                    ];
+                @endphp
 
-            <!-- Dots -->
-            <div class="flex space-x-2" id="testimonial-dots">
-                <button type="button" class="w-8 h-2 rounded-[10px] bg-[#D38928] transition-all duration-300" data-index="0" aria-label="Slide 1"></button>
-                <button type="button" class="w-2.5 h-2 rounded-[10px] bg-[#D38928]/30 hover:bg-[#D38928]/60 transition-all duration-300" data-index="1" aria-label="Slide 2"></button>
-                <button type="button" class="w-2.5 h-2 rounded-[10px] bg-[#D38928]/30 hover:bg-[#D38928]/60 transition-all duration-300" data-index="2" aria-label="Slide 3"></button>
-                <button type="button" class="w-2.5 h-2 rounded-[10px] bg-[#D38928]/30 hover:bg-[#D38928]/60 transition-all duration-300" data-index="3" aria-label="Slide 4"></button>
-                <button type="button" class="w-2.5 h-2 rounded-[10px] bg-[#D38928]/30 hover:bg-[#D38928]/60 transition-all duration-300" data-index="4" aria-label="Slide 5"></button>
+                <!-- First Pass -->
+                @foreach($row2Testimonials as $t)
+                    <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[400px] bg-white rounded-[18px] p-5 sm:p-6 border border-[#EADBCC] shadow-xs hover:shadow-xl hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-1 text-[#D38928] text-xs sm:text-sm">
+                                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                </div>
+                                <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+                                    {{ $t['role'] }}
+                                </span>
+                            </div>
+                            <p class="text-xs sm:text-[13px] text-[#2B1810] leading-relaxed italic font-medium pt-0.5">
+                                "{{ $t['quote'] }}"
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-[#EAE3D9] mt-4">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 rounded-full {{ $t['avatar_bg'] }} text-white flex items-center justify-center font-bold text-xs sm:text-sm shadow-xs font-heading shrink-0">
+                                    {{ $t['initials'] }}
+                                </div>
+                                <div>
+                                    <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading leading-tight">{{ $t['name'] }}</h4>
+                                    <p class="text-[11px] text-gray-500">{{ $t['city'] }}</p>
+                                </div>
+                            </div>
+                            <div class="text-right hidden sm:block">
+                                <span class="text-[10px] uppercase tracking-wider text-[#965A15] font-semibold block">{{ $t['product'] }}</span>
+                                <span class="text-[10px] text-emerald-600 font-bold block">✓ Verified Devotee</span>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+
+                <!-- Second Duplicate Pass for Infinite Seamless Marquee -->
+                @foreach($row2Testimonials as $t)
+                    <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[400px] bg-white rounded-[18px] p-5 sm:p-6 border border-[#EADBCC] shadow-xs hover:shadow-xl hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between" aria-hidden="true">
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-1 text-[#D38928] text-xs sm:text-sm">
+                                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                </div>
+                                <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+                                    {{ $t['role'] }}
+                                </span>
+                            </div>
+                            <p class="text-xs sm:text-[13px] text-[#2B1810] leading-relaxed italic font-medium pt-0.5">
+                                "{{ $t['quote'] }}"
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-[#EAE3D9] mt-4">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 rounded-full {{ $t['avatar_bg'] }} text-white flex items-center justify-center font-bold text-xs sm:text-sm shadow-xs font-heading shrink-0">
+                                    {{ $t['initials'] }}
+                                </div>
+                                <div>
+                                    <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading leading-tight">{{ $t['name'] }}</h4>
+                                    <p class="text-[11px] text-gray-500">{{ $t['city'] }}</p>
+                                </div>
+                            </div>
+                            <div class="text-right hidden sm:block">
+                                <span class="text-[10px] uppercase tracking-wider text-[#965A15] font-semibold block">{{ $t['product'] }}</span>
+                                <span class="text-[10px] text-emerald-600 font-bold block">✓ Verified Devotee</span>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+
             </div>
-
-            <button 
-                type="button" 
-                id="testimonial-next-btn"
-                class="w-11 h-11 rounded-[10px] bg-white hover:bg-[#D38928] text-[#121212] hover:text-white border border-[#EAE3D9] flex items-center justify-center shadow-md transition-all duration-200 transform hover:scale-105 focus:outline-none"
-                aria-label="Next Testimonial"
-            >
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
-            </button>
         </div>
 
     </div>
@@ -1567,123 +1659,7 @@
             startTimer();
         }
 
-        // -------------------------------------------------------------
-        // 2. 3D COVERFLOW TESTIMONIAL SLIDER LOGIC
-        // -------------------------------------------------------------
-        const testSection = document.getElementById('testimonial-3d-section');
-        if (testSection) {
-            const cards = testSection.querySelectorAll('.testimonial-card');
-            const dots = testSection.querySelectorAll('#testimonial-dots button');
-            const prevBtn = document.getElementById('testimonial-prev-btn');
-            const nextBtn = document.getElementById('testimonial-next-btn');
-            let activeIndex = 0;
-            let testTimer = null;
-            const total = cards.length;
 
-            function update3DPositions() {
-                cards.forEach((card, i) => {
-                    let offset = (i - activeIndex + total) % total;
-                    if (offset > total / 2) offset -= total;
-
-                    card.style.transition = 'all 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
-
-                    if (offset === 0) {
-                        card.style.transform = 'translateX(0px) scale(1.05) translateZ(80px) rotateY(0deg)';
-                        card.style.opacity = '1';
-                        card.style.zIndex = '30';
-                        card.style.border = '2px solid #D38928';
-                        card.style.pointerEvents = 'auto';
-                        card.style.cursor = 'default';
-                        card.style.boxShadow = '0 25px 50px -12px rgba(211, 137, 40, 0.25)';
-                    } else if (offset === -1 || (offset === total - 1 && total === 2)) {
-                        const isMobile = window.innerWidth < 640;
-                        const dist = isMobile ? -140 : -260;
-                        card.style.transform = `translateX(${dist}px) scale(0.88) translateZ(0px) rotateY(18deg)`;
-                        card.style.opacity = '0.65';
-                        card.style.zIndex = '20';
-                        card.style.border = '1px solid #EAE3D9';
-                        card.style.pointerEvents = 'auto';
-                        card.style.cursor = 'pointer';
-                        card.style.boxShadow = '0 10px 25px -5px rgba(0,0,0,0.08)';
-                    } else if (offset === 1) {
-                        const isMobile = window.innerWidth < 640;
-                        const dist = isMobile ? 140 : 260;
-                        card.style.transform = `translateX(${dist}px) scale(0.88) translateZ(0px) rotateY(-18deg)`;
-                        card.style.opacity = '0.65';
-                        card.style.zIndex = '20';
-                        card.style.border = '1px solid #EAE3D9';
-                        card.style.pointerEvents = 'auto';
-                        card.style.cursor = 'pointer';
-                        card.style.boxShadow = '0 10px 25px -5px rgba(0,0,0,0.08)';
-                    } else {
-                        card.style.transform = offset < 0 ? 'translateX(-400px) scale(0.7) translateZ(-100px)' : 'translateX(400px) scale(0.7) translateZ(-100px)';
-                        card.style.opacity = '0';
-                        card.style.zIndex = '0';
-                        card.style.pointerEvents = 'none';
-                    }
-                });
-
-                dots.forEach((dot, idx) => {
-                    if (idx === activeIndex) {
-                        dot.className = 'w-8 h-2 rounded-[10px] bg-[#D38928] transition-all duration-300';
-                    } else {
-                        dot.className = 'w-2.5 h-2 rounded-[10px] bg-[#D38928]/30 hover:bg-[#D38928]/60 transition-all duration-300';
-                    }
-                });
-            }
-
-            function setTestimonial(index) {
-                activeIndex = (index + total) % total;
-                update3DPositions();
-            }
-
-            function startTestTimer() {
-                clearInterval(testTimer);
-                testTimer = setInterval(() => {
-                    setTestimonial(activeIndex + 1);
-                }, 4500);
-            }
-
-            function stopTestTimer() {
-                clearInterval(testTimer);
-            }
-
-            cards.forEach((card, i) => {
-                card.addEventListener('click', () => {
-                    if (i !== activeIndex) {
-                        setTestimonial(i);
-                        startTestTimer();
-                    }
-                });
-            });
-
-            if (nextBtn) {
-                nextBtn.addEventListener('click', () => {
-                    setTestimonial(activeIndex + 1);
-                    startTestTimer();
-                });
-            }
-
-            if (prevBtn) {
-                prevBtn.addEventListener('click', () => {
-                    setTestimonial(activeIndex - 1);
-                    startTestTimer();
-                });
-            }
-
-            dots.forEach((dot, idx) => {
-                dot.addEventListener('click', () => {
-                    setTestimonial(idx);
-                    startTestTimer();
-                });
-            });
-
-            testSection.addEventListener('mouseenter', stopTestTimer);
-            testSection.addEventListener('mouseleave', startTestTimer);
-
-            update3DPositions();
-            startTestTimer();
-        }
 
         // -------------------------------------------------------------
         // 3. TOAST NOTIFICATION UTILITY

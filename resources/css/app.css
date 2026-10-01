@@ -259,3 +259,35 @@ header nav button,
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
+
+@keyframes marquee-left {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes marquee-right {
+    0% { transform: translate3d(-50%, 0, 0); }
+    100% { transform: translate3d(0, 0, 0); }
+}
+
+.animate-marquee-left {
+    display: flex;
+    width: max-content;
+    animation: marquee-left 40s linear infinite;
+    will-change: transform;
+}
+
+.animate-marquee-right {
+    display: flex;
+    width: max-content;
+    animation: marquee-right 40s linear infinite;
+    will-change: transform;
+}
+
+.animate-marquee-left:hover,
+.animate-marquee-right:hover,
+.marquee-track-pause:hover .animate-marquee-left,
+.marquee-track-pause:hover .animate-marquee-right {
+    animation-play-state: paused;
+}
+
