@@ -102,10 +102,10 @@ header nav button,
     bottom: -3px;
     left: 0;
     width: 0;
-    height: 2px;
+    height: 1px;
     background-color: #831F2E;
     transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    border-radius: 2px;
+    border-radius: 1px;
 }
 
 .nav-link-hover:hover::after {
@@ -126,9 +126,9 @@ header nav button,
     bottom: -3px;
     left: 0;
     width: 100% !important;
-    height: 2px;
+    height: 1px;
     background-color: #831F2E;
-    border-radius: 2px;
+    border-radius: 1px;
 }
 
 @keyframes marquee {

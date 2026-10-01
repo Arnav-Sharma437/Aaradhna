@@ -186,9 +186,9 @@
                                 <span>{{ $reel['views'] }}</span>
                             </div>
 
-                            <!-- Centered Subtle Play Button Overlay -->
-                            <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-                                <div class="w-13 h-13 rounded-full bg-black/45 backdrop-blur-xs border border-white/30 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#831F2E] transition-all duration-300 shadow-lg">
+                            <!-- Centered Subtle Play Button Overlay (Visible only on hover, soft transparent) -->
+                            <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-95 group-hover:scale-100">
+                                <div class="w-13 h-13 rounded-full bg-black/30 backdrop-blur-xs border border-white/30 text-white flex items-center justify-center group-hover:bg-[#831F2E]/85 transition-all duration-300 shadow-md">
                                     <svg class="w-6 h-6 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M8 5v14l11-7z"/>
                                     </svg>

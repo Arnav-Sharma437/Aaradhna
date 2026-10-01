@@ -71,44 +71,44 @@
                         </svg>
                     </button>
                     
-                    <!-- Mega Menu with Dynamic Image Preview -->
-                    <div class="absolute -left-12 top-full -mt-0.5 w-[540px] bg-white rounded-2xl shadow-2xl border border-[#EAE3D9] p-4 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top group-hover:translate-y-0 translate-y-1 pointer-events-none group-hover:pointer-events-auto">
-                        <div class="grid grid-cols-12 gap-4 items-center">
+                    <!-- Mega Menu with Dynamic Image Preview (Enlarged Luxury Dimensions) -->
+                    <div class="absolute -left-20 top-full -mt-0.5 w-[680px] bg-white rounded-2xl shadow-2xl border border-[#EAE3D9] p-5 sm:p-6 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top group-hover:translate-y-0 translate-y-1 pointer-events-none group-hover:pointer-events-auto">
+                        <div class="grid grid-cols-12 gap-5 items-center">
                             
                             <!-- Left: 2 Offer Items (7 Cols) -->
-                            <div class="col-span-7 space-y-1.5">
+                            <div class="col-span-7 space-y-2.5">
                                 <a 
                                     href="{{ route('bundles.trial-packs') }}" 
-                                    class="group/item flex items-center justify-between p-2.5 rounded-xl hover:bg-[#FAF7F2] transition-colors cursor-pointer"
+                                    class="group/item flex items-center justify-between p-3.5 rounded-xl hover:bg-[#FAF7F2] transition-colors cursor-pointer"
                                     onmouseenter="document.getElementById('mega-preview-trial').classList.remove('opacity-0', 'pointer-events-none'); document.getElementById('mega-preview-b2g1').classList.add('opacity-0', 'pointer-events-none');"
                                 >
                                     <div>
-                                        <div class="text-[13.5px] font-semibold text-[#1F1F1F] group-hover/item:text-[#831F2E] transition-colors">
+                                        <div class="text-[15px] font-bold text-[#1F1F1F] group-hover/item:text-[#831F2E] transition-colors">
                                             Buy any 5 Trial Pack @ 799
                                         </div>
-                                        <div class="text-[11px] text-[#7B7B7B]">5 Sacred Vedic Fragrances</div>
+                                        <div class="text-xs text-[#7B7B7B] mt-0.5">5 Sacred Vedic Fragrances</div>
                                     </div>
-                                    <span class="text-[10px] font-bold bg-[#D38928]/15 text-[#965A15] px-2 py-0.5 rounded-full shrink-0 ml-2">₹799</span>
+                                    <span class="text-xs font-bold bg-[#D38928]/15 text-[#965A15] px-2.5 py-1 rounded-full shrink-0 ml-2">₹799</span>
                                 </a>
 
                                 <a 
                                     href="{{ route('bundles.buy2get1') }}" 
-                                    class="group/item flex items-center justify-between p-2.5 rounded-xl hover:bg-[#FAF7F2] transition-colors cursor-pointer"
+                                    class="group/item flex items-center justify-between p-3.5 rounded-xl hover:bg-[#FAF7F2] transition-colors cursor-pointer"
                                     onmouseenter="document.getElementById('mega-preview-b2g1').classList.remove('opacity-0', 'pointer-events-none'); document.getElementById('mega-preview-trial').classList.add('opacity-0', 'pointer-events-none');"
                                 >
                                     <div>
-                                        <div class="text-[13.5px] font-semibold text-[#1F1F1F] group-hover/item:text-[#831F2E] transition-colors">
+                                        <div class="text-[15px] font-bold text-[#1F1F1F] group-hover/item:text-[#831F2E] transition-colors">
                                             Buy 2 Get 1 FREE
                                         </div>
-                                        <div class="text-[11px] text-[#7B7B7B]">Free Chandan pack included</div>
+                                        <div class="text-xs text-[#7B7B7B] mt-0.5">Free Chandan pack included</div>
                                     </div>
-                                    <span class="text-[10px] font-bold bg-[#831F2E]/10 text-[#831F2E] px-2 py-0.5 rounded-full shrink-0 ml-2">FREE GIFT</span>
+                                    <span class="text-xs font-bold bg-[#831F2E]/10 text-[#831F2E] px-2.5 py-1 rounded-full shrink-0 ml-2">FREE GIFT</span>
                                 </a>
 
-                                <div class="pt-2 px-2.5 border-t border-stone-100">
+                                <div class="pt-3 px-3.5 border-t border-stone-100">
                                     <a 
                                         href="{{ route('collections.show', 'super-save-offers') }}" 
-                                        class="flex items-center justify-between text-xs font-semibold text-[#831F2E] hover:text-[#6E1724] transition-colors"
+                                        class="flex items-center justify-between text-xs sm:text-sm font-semibold text-[#831F2E] hover:text-[#6E1724] transition-colors"
                                     >
                                         <span>View All Offers</span>
                                         <span>&rarr;</span>
@@ -117,7 +117,7 @@
                             </div>
 
                             <!-- Right: Dynamic Hover Image Preview Box (5 Cols) -->
-                            <div class="col-span-5 relative w-full h-[155px] rounded-xl overflow-hidden bg-stone-100 border border-[#EAE3D9] shadow-inner">
+                            <div class="col-span-5 relative w-full h-[215px] rounded-2xl overflow-hidden bg-stone-100 border border-[#EAE3D9] shadow-inner">
                                 <img 
                                     id="mega-preview-trial" 
                                     src="{{ asset('assets/images/banner-5-trial-packs.jpg') }}" 
@@ -127,7 +127,7 @@
                                 <img 
                                     id="mega-preview-b2g1" 
                                     src="{{ asset('assets/images/banner-buy2-get1-free.jpg') }}" 
-                                    alt="Buy 2 Get 1 FREE"
+                                    alt="Buy 2 Get 1 FREE" 
                                     class="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 opacity-0 pointer-events-none"
                                 >
                             </div>

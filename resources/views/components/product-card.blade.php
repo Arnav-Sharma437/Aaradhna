@@ -87,8 +87,8 @@
         </span>
     </div>
 
-    <!-- Product Image Box with Smooth Hover Transition (Taller Aspect Ratio) -->
-    <div class="p-2 sm:p-3.5 pb-0">
+    <!-- Product Image Box with Smooth Hover Transition (5px border gap) -->
+    <div class="p-[5px] pb-0">
         <div class="relative w-full aspect-[4/4.6] sm:aspect-[4/4.8] rounded-[12px] sm:rounded-[16px] overflow-hidden bg-[#FAF7F2]">
             <a href="{{ route('products.show', $product->slug) }}" class="block w-full h-full relative overflow-hidden">
                 <!-- Primary Image -->
