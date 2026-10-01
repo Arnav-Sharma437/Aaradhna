@@ -503,11 +503,12 @@
             <div class="group flex flex-col items-center text-center space-y-4 sm:space-y-5">
                 <!-- Large Rounded Circle with Single Stick Focus -->
                 <a href="{{ route('collections.show', 'bambooless') }}" class="block relative w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72 xl:w-76 xl:h-76 rounded-full p-2.5 bg-white shadow-xl hover:shadow-2xl border-2 border-[#EADBCC] hover:border-[#D38928] group-hover:scale-105 transition-all duration-500 cursor-pointer">
-                    <div class="w-full h-full rounded-full overflow-hidden bg-[#FAF7F2] flex items-center justify-center p-3">
+                    <div class="w-full h-full rounded-full overflow-hidden bg-gradient-to-br from-[#FFFDF9] via-[#FAF3E8] to-[#F3E7D5] p-3 shadow-[inset_0_0_24px_rgba(211,137,40,0.12)] flex items-center justify-center relative">
+                        <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(211,137,40,0.12),transparent_70%)] pointer-events-none rounded-full"></div>
                         <img 
                             src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" 
                             alt="Bamboo-less Dhoop Stick" 
-                            class="w-full h-full object-contain rounded-full group-hover:scale-110 transition-transform duration-500"
+                            class="w-full h-full object-contain rounded-full group-hover:scale-110 transition-transform duration-500 relative z-10"
                         >
                     </div>
                 </a>
@@ -568,11 +569,12 @@
             <div class="group flex flex-col items-center text-center space-y-4 sm:space-y-5">
                 <!-- Large Rounded Circle with Single Cup Focus -->
                 <a href="{{ route('collections.show', 'havan-cups') }}" class="block relative w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72 xl:w-76 xl:h-76 rounded-full p-2.5 bg-white shadow-xl hover:shadow-2xl border-2 border-[#EADBCC] hover:border-[#D38928] group-hover:scale-105 transition-all duration-500 cursor-pointer">
-                    <div class="w-full h-full rounded-full overflow-hidden bg-[#FAF7F2] flex items-center justify-center p-3">
+                    <div class="w-full h-full rounded-full overflow-hidden bg-gradient-to-br from-[#FFFDF9] via-[#FAF3E8] to-[#F3E7D5] p-3 shadow-[inset_0_0_24px_rgba(211,137,40,0.12)] flex items-center justify-center relative">
+                        <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(211,137,40,0.12),transparent_70%)] pointer-events-none rounded-full"></div>
                         <img 
                             src="{{ asset('assets/images/single-havan-cup.jpg') }}" 
                             alt="100% Organic Havan Cups" 
-                            class="w-full h-full object-contain rounded-full group-hover:scale-110 transition-transform duration-500"
+                            class="w-full h-full object-contain rounded-full group-hover:scale-110 transition-transform duration-500 relative z-10"
                         >
                     </div>
                 </a>
