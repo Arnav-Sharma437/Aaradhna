@@ -34,12 +34,12 @@
             <span class="text-xs font-bold font-heading">Search</span>
         </button>
 
-        <!-- 4. Sacred Wishlist -->
-        <a href="{{ route('wishlist.index') }}" class="flex flex-col items-center justify-center space-y-1 py-1 text-xs {{ request()->routeIs('wishlist.index') ? 'text-[#D38928]' : 'text-gray-500 hover:text-[#121212]' }} transition-colors relative">
+        <!-- 4. Account -->
+        <a href="{{ auth()->check() ? route('account.index') : route('account.login') }}" class="flex flex-col items-center justify-center space-y-1 py-1 text-xs {{ request()->routeIs('account.*') ? 'text-[#D38928]' : 'text-gray-500 hover:text-[#121212]' }} transition-colors">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
             </svg>
-            <span class="text-xs font-bold font-heading">Wishlist</span>
+            <span class="text-xs font-bold font-heading">Account</span>
         </a>
 
         <!-- 5. Cart Drawer Opener -->

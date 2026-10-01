@@ -96,11 +96,6 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('wishlist.index') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
-                            My Wishlist
-                        </a>
-                    </li>
-                    <li>
                         <a href="{{ auth()->check() ? route('account.index') : route('account.login') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
                             Devotee Account
                         </a>

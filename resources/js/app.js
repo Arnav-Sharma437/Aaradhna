@@ -141,72 +141,11 @@ export const isInWishlist = (titleOrSlug) => {
 // -------------------------------------------------------------------------
 function updateHeaderBadges() {
     const cart = getCart();
-    const wishlist = getWishlist();
-
     const totalCartCount = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
     const cartBadge = document.getElementById('header-cart-badge');
     if (cartBadge) {
         cartBadge.textContent = totalCartCount;
     }
-
-    const wishBadge = document.getElementById('header-wishlist-badge');
-    if (wishBadge) {
-        wishBadge.textContent = wishlist.length;
-    }
-}
-
-// Persistent Green State for Add to Cart Buttons
-function updateCartButtonStates() {
-    const cart = getCart();
-    const inCartTitles = new Set(cart.map(item => item.title));
-    const inCartSlugs = new Set(cart.filter(item => item.slug).map(item => item.slug));
-
-    document.querySelectorAll('.quick-add-to-cart-btn, #main-add-to-cart-btn, #sticky-atc-btn').forEach(btn => {
-        const title = btn.dataset.productTitle || btn.dataset.title || '';
-        const slug = btn.dataset.productSlug || '';
-        const isInCart = inCartTitles.has(title) || (slug && inCartSlugs.has(slug));
-
-        if (isInCart) {
-            btn.classList.add('bg-emerald-700', 'hover:bg-emerald-800', 'text-white');
-            btn.classList.remove('bg-[#D38928]', 'hover:bg-[#B8741E]');
-            const span = btn.querySelector('span');
-            if (span) {
-                span.textContent = '✓ Added in Cart';
-            }
-        } else {
-            btn.classList.remove('bg-emerald-700', 'hover:bg-emerald-800');
-            btn.classList.add('bg-[#D38928]', 'hover:bg-[#B8741E]', 'text-white');
-            const span = btn.querySelector('span');
-            if (span) {
-                span.textContent = (btn.id === 'main-add-to-cart-btn' || btn.id === 'sticky-atc-btn') ? 'Add to Cart' : 'Move to Cart';
-            }
-        }
-    });
-}
-
-function updateWishlistHeartIcons() {
-    document.querySelectorAll('.wishlist-toggle-btn').forEach(btn => {
-        const title = btn.dataset.productTitle || '';
-        const slug = btn.dataset.productSlug || '';
-        const active = isInWishlist(title) || (slug && isInWishlist(slug));
-        const icon = btn.querySelector('svg');
-
-        if (active) {
-            btn.classList.add('text-[#9B1C31]');
-            btn.classList.remove('text-gray-400');
-            if (icon) {
-                icon.setAttribute('fill', 'currentColor');
-                icon.classList.add('fill-current');
-            }
-        } else {
-            btn.classList.remove('text-[#9B1C31]');
-            btn.classList.add('text-gray-400');
-            if (icon) {
-                icon.setAttribute('fill', 'none');
-                icon.classList.remove('fill-current');
-            }
-        }
-    });
 }
 
 function renderCartDrawer() {
@@ -284,82 +223,7 @@ function renderCartDrawer() {
     }
 }
 
-function renderWishlistPage() {
-    const grid = document.getElementById('wishlist-grid');
-    if (!grid) return;
 
-    const wishlist = getWishlist();
-
-    if (wishlist.length === 0) {
-        grid.className = 'w-full';
-        grid.innerHTML = `
-            <div class="bg-white rounded-[24px] border border-[#EADBCC] p-12 sm:p-16 text-center space-y-4 max-w-xl mx-auto shadow-xs font-body">
-                <div class="w-16 h-16 mx-auto bg-[#FAF7F2] rounded-full flex items-center justify-center text-[#D38928] text-3xl">
-                    🤍
-                </div>
-                <h3 class="text-2xl font-bold font-heading text-[#121212]">Your Wishlist is Currently Empty</h3>
-                <p class="text-xs sm:text-sm text-gray-500 max-w-md mx-auto">
-                    Save your favorite spiritual fragrances, havan cups, and sacred temple samagri to access them anytime.
-                </p>
-                <div class="pt-2">
-                    <a href="/collections/bambooless" class="inline-block px-8 py-3.5 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-[10px] shadow-md transition-all font-heading">
-                        Discover Sacred Samagri
-                    </a>
-                </div>
-            </div>
-        `;
-    } else {
-        grid.className = 'grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 lg:gap-8';
-        grid.innerHTML = wishlist.map(item => {
-            const title = typeof item === 'string' ? item : item.title;
-            const price = typeof item === 'object' && item.price ? item.price : 489;
-            const image = typeof item === 'object' && item.image ? item.image : '/assets/images/devi-refill-pack-card.jpg';
-            const slug = typeof item === 'object' && item.slug ? item.slug : 'devi-refill-pack';
-            const mrp = (price * 1.8).toFixed(2);
-
-            return `
-                <div class="product-card group relative flex flex-col bg-[#FFFDF9] rounded-[20px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 h-full font-body">
-                    <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
-                        <span class="inline-block bg-white px-4 py-0.5 rounded-full border border-[#D38928] text-[10px] sm:text-[11px] font-bold tracking-widest text-[#965A15] uppercase shadow-xs whitespace-nowrap font-heading">
-                            ✨ SAVED ✨
-                        </span>
-                    </div>
-                    <div class="p-3.5 pb-0">
-                        <div class="relative w-full aspect-square rounded-[16px] overflow-hidden bg-[#FAF7F2]">
-                            <a href="/products/${slug}" class="block w-full h-full relative overflow-hidden">
-                                <img src="${image}" alt="${title}" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
-                                <img src="/assets/images/single-bambooless-stick.jpg" alt="${title} (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
-                            </a>
-                            <button type="button" class="wishlist-toggle-btn absolute top-3 left-3 z-10 w-8 h-8 rounded-full bg-white text-[#9B1C31] flex items-center justify-center shadow-md transition-all duration-200" data-product-title="${title}" data-product-slug="${slug}" data-product-price="${price}" data-product-image="${image}" aria-label="Remove from Wishlist">
-                                <svg class="w-4 h-4 fill-current text-[#9B1C31]" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="p-5 pt-4 flex flex-col justify-between flex-grow space-y-3.5">
-                        <div class="space-y-1.5">
-                            <h3 class="text-lg sm:text-xl font-bold font-serif text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
-                                <a href="/products/${slug}">${title}</a>
-                            </h3>
-                            <div class="flex items-center space-x-1.5 text-[#D38928] text-xs">
-                                <div class="flex"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                                <span class="text-[11px] text-gray-500 font-medium">(250+ reviews)</span>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex items-baseline space-x-2 pt-1 pb-3.5">
-                                <span class="text-xs sm:text-sm text-gray-400 line-through">₹${mrp}</span>
-                                <span class="text-lg sm:text-xl font-black font-heading text-[#C87A1E]">₹${price.toFixed(2)}</span>
-                            </div>
-                            <button type="button" class="quick-add-to-cart-btn w-full py-3 px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-semibold rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-2 font-heading cursor-pointer" data-product-title="${title}" data-product-slug="${slug}" data-product-price="${price}" data-product-image="${image}">
-                                <span>Move to Cart</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }).join('');
-    }
-}
 
 function renderCartPage() {
     const container = document.getElementById('cart-items-container');
@@ -459,9 +323,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initial Render
     updateHeaderBadges();
-    updateWishlistHeartIcons();
     renderCartDrawer();
-    renderWishlistPage();
     renderCartPage();
 
     // Listen to custom store events
@@ -469,12 +331,6 @@ document.addEventListener('DOMContentLoaded', () => {
         updateHeaderBadges();
         renderCartDrawer();
         renderCartPage();
-    });
-
-    window.addEventListener('mangalam:wishlist-updated', () => {
-        updateHeaderBadges();
-        updateWishlistHeartIcons();
-        renderWishlistPage();
     });
 
     // Delegated click handler for Add-To-Cart across all pages
@@ -499,23 +355,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Directly open the luxury Cart Drawer immediately
             openCartDrawer();
-        }
-
-        // Delegated Wishlist Toggle
-        const wishBtn = e.target.closest('.wishlist-toggle-btn');
-        if (wishBtn) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            const product = {
-                id: wishBtn.dataset.productId || Date.now(),
-                title: wishBtn.dataset.productTitle || 'Sacred Item',
-                slug: wishBtn.dataset.productSlug || '',
-                price: parseFloat(wishBtn.dataset.productPrice) || 489.00,
-                image: wishBtn.dataset.productImage || '/assets/images/devi-refill-pack-card.jpg',
-            };
-
-            toggleWishlistItem(product);
         }
 
         // Drawer Controls
