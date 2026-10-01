@@ -61,23 +61,25 @@
                         <span class="text-[9px] font-bold text-white bg-[#831F2E] px-1.5 py-0.5 rounded">₹1199</span>
                     </a>
                     <a href="{{ route('collections.show', 'best-seller-combo') }}" class="block py-1 text-xs font-bold text-[#831F2E] hover:underline">
-                        View All Combos ➔
+                        View All Combos &rarr;
                     </a>
                 </div>
             </div>
 
-            <!-- Pitambara Havan (Small Coming Soon Badge Positioned ON TOP) -->
+            <!-- Pitambara Havan (Attached Coming Soon Badge) -->
             <div class="pt-2">
                 <a 
                     href="{{ route('products.pitambara') }}" 
                     class="flex flex-col items-start p-3 rounded-xl bg-gradient-to-r from-[#FAF0DE] to-[#FFFDF9] border border-[#E8CBA3] shadow-xs group"
                 >
-                    <span class="text-[8px] font-black uppercase tracking-wider bg-gradient-to-r from-[#831F2E] to-[#B24E2B] text-white px-2 py-0.5 rounded-full shadow-2xs leading-none mb-1.5 animate-pulse">
-                        COMING SOON 🔥
-                    </span>
-                    <div class="flex items-center space-x-2 text-[#831F2E] font-bold text-sm">
-                        <span class="text-amber-600">🪷</span>
-                        <span>Pitambara Havan</span>
+                    <div class="flex flex-col items-start mb-1.5">
+                        <span class="text-[7.5px] font-bold uppercase tracking-wider bg-[#831F2E] text-white px-1.5 py-[2px] rounded-[3px] leading-none whitespace-nowrap">
+                            COMING SOON
+                        </span>
+                        <span class="w-0 h-0 border-x-[3px] border-x-transparent border-t-[3px] border-t-[#831F2E] ml-2 -mt-[0.5px]"></span>
+                    </div>
+                    <div class="text-[#831F2E] font-bold text-sm">
+                        Pitambara Havan
                     </div>
                 </a>
             </div>

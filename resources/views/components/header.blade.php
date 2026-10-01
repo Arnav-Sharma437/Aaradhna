@@ -99,7 +99,7 @@
                                 class="flex items-center justify-between text-xs font-semibold text-[#831F2E] hover:text-[#6E1724] py-1 transition-colors"
                             >
                                 <span>View All Offers</span>
-                                <span>➔</span>
+                                <span>&rarr;</span>
                             </a>
                         </div>
                     </div>
@@ -139,18 +139,21 @@
                                 class="flex items-center justify-between text-xs font-semibold text-[#831F2E] hover:text-[#6E1724] py-1 transition-colors"
                             >
                                 <span>View All Combos</span>
-                                <span>➔</span>
+                                <span>&rarr;</span>
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- 6. Pitambara Havan (Aligned on exact same baseline + Floating Badge Above) -->
-                <div class="relative py-2 xl:py-3 flex items-center">
-                    <!-- Floating badge strictly on top, no baseline displacement -->
-                    <span class="absolute -top-1 lg:-top-1.5 left-1/2 -translate-x-1/2 text-[8px] font-black uppercase tracking-wider bg-[#831F2E] text-white px-2 py-0.5 rounded-full shadow-2xs leading-none whitespace-nowrap pointer-events-none animate-pulse z-10">
-                        COMING SOON 🔥
-                    </span>
+                <!-- 6. Pitambara Havan (Attached Centered Coming Soon Badge with Pointer) -->
+                <div class="relative py-2 xl:py-3 flex items-center justify-center">
+                    <!-- Attached Badge on Top with Connector Pointer -->
+                    <div class="absolute -top-1.5 lg:-top-2 left-1/2 -translate-x-1/2 flex flex-col items-center pointer-events-none z-10">
+                        <span class="text-[7.5px] lg:text-[8px] font-bold uppercase tracking-wider bg-[#831F2E] text-white px-2 py-[2px] rounded-[3px] shadow-2xs leading-none whitespace-nowrap">
+                            COMING SOON
+                        </span>
+                        <span class="w-0 h-0 border-x-[3px] border-x-transparent border-t-[3px] border-t-[#831F2E] -mt-[0.5px]"></span>
+                    </div>
                     <a 
                         href="{{ route('products.pitambara') }}" 
                         class="nav-link-hover text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-bold text-[#831F2E] hover:text-[#6E1724] transition-colors whitespace-nowrap"
