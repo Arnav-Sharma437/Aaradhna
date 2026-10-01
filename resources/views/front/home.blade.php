@@ -1096,61 +1096,174 @@
 <!-- ========================================================================= -->
 <!-- 6. ROOTED IN PURITY (4 Pillars of Vedic Dharma)                           -->
 <!-- ========================================================================= -->
-<section class="py-16 sm:py-20 bg-[#FDFBF7] border-b border-[#EAE3D9]">
-    <div class="w-full mx-auto px-5 sm:px-8 lg:px-[40px]">
+<section class="py-16 sm:py-24 bg-gradient-to-b from-[#FAF7F2] via-[#FFFDF9] to-[#FAF7F2] border-b border-[#EADBCC] relative overflow-hidden font-body select-none">
+    
+    <!-- Ambient Warm Golden Glow in Background -->
+    <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[260px] bg-[#D38928]/8 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px] relative z-10">
         
-        <div class="text-center max-w-2xl mx-auto mb-12 space-y-2">
-            <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ SACRED PROMISES ✦</span>
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#121212] font-heading tracking-tight leading-tight">
+        <!-- Section Header -->
+        <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-14 space-y-3">
+            <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#FFF5E5] border border-[#F3CCA0] text-[#965A15] text-[11px] font-bold uppercase tracking-[0.22em] font-heading shadow-2xs">
+                <span>✦ SACRED PROMISES ✦</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl md:text-[44px] font-black text-[#1F1F1F] font-heading tracking-tight leading-tight">
                 Rooted in Purity
             </h2>
-            <p class="text-sm sm:text-base text-gray-600">
+            <p class="text-sm sm:text-base text-[#5A5047] leading-relaxed max-w-xl mx-auto">
                 Crafted the way incense was made for centuries — with zero compromises on holy vidhi.
             </p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- 4 Pillars Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-6">
             
-            <div class="bg-white rounded-[14px] border border-[#EAE3D9] p-6 text-center space-y-3 shadow-xs hover:shadow-lg hover:border-[#D38928]/40 transition-all duration-300">
-                <div class="w-14 h-14 rounded-full bg-[#FDF5EB] border border-[#D38928]/40 text-[#D38928] flex items-center justify-center mx-auto text-2xl shadow-xs">
-                    🌿
+            <!-- Pillar 1: 100% Bamboo-Free -->
+            <div class="relative bg-white rounded-[22px] border border-[#EADBCC] p-7 sm:p-8 text-center flex flex-col items-center justify-between group hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(131,31,46,0.12)] hover:border-[#831F2E]/40 transition-all duration-300 overflow-hidden shadow-xs">
+                <!-- Top Accent Hover Bar -->
+                <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-[#831F2E] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                <!-- Devanagari Watermark -->
+                <span class="absolute top-3 right-4 text-4xl font-black font-serif text-[#831F2E]/6 select-none pointer-events-none">०१</span>
+
+                <div class="w-full space-y-4 flex flex-col items-center">
+                    <!-- Icon Badge -->
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#FFF5E5] to-[#FDE8CA] border border-[#F3CCA0] text-[#831F2E] flex items-center justify-center shadow-xs group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
+                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+                            <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+                        </svg>
+                    </div>
+
+                    <!-- Title & Tag -->
+                    <div class="space-y-1.5">
+                        <h3 class="text-lg sm:text-xl font-bold font-serif text-[#1F1F1F] group-hover:text-[#831F2E] transition-colors leading-snug">
+                            100% Bamboo-Free
+                        </h3>
+                        <span class="inline-block px-2.5 py-0.5 rounded-full bg-[#FAF7F2] text-[#831F2E] text-[10px] font-bold uppercase tracking-wider font-heading border border-[#EADBCC]/60">
+                            No Vamsha Wood
+                        </span>
+                    </div>
+
+                    <!-- Description -->
+                    <p class="text-xs sm:text-[13px] text-[#5A5047] leading-relaxed">
+                        According to Hindu scriptures, burning bamboo (Vamsha) is prohibited. We use only pure herbal cores and dried temple petals.
+                    </p>
                 </div>
-                <h3 class="text-base sm:text-lg font-bold font-heading text-[#121212]">100% Bamboo-Free</h3>
-                <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                    According to Hindu scriptures, burning bamboo (Vamsha) is prohibited. We use only pure herb cores.
-                </p>
             </div>
 
-            <div class="bg-white rounded-[14px] border border-[#EAE3D9] p-6 text-center space-y-3 shadow-xs hover:shadow-lg hover:border-[#D38928]/40 transition-all duration-300">
-                <div class="w-14 h-14 rounded-full bg-[#FDF5EB] border border-[#D38928]/40 text-[#D38928] flex items-center justify-center mx-auto text-2xl shadow-xs">
-                    🪵
+            <!-- Pillar 2: Zero Charcoal or Coal -->
+            <div class="relative bg-white rounded-[22px] border border-[#EADBCC] p-7 sm:p-8 text-center flex flex-col items-center justify-between group hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(131,31,46,0.12)] hover:border-[#831F2E]/40 transition-all duration-300 overflow-hidden shadow-xs">
+                <!-- Top Accent Hover Bar -->
+                <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-[#831F2E] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                <!-- Devanagari Watermark -->
+                <span class="absolute top-3 right-4 text-4xl font-black font-serif text-[#831F2E]/6 select-none pointer-events-none">०२</span>
+
+                <div class="w-full space-y-4 flex flex-col items-center">
+                    <!-- Icon Badge -->
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#FFF5E5] to-[#FDE8CA] border border-[#F3CCA0] text-[#831F2E] flex items-center justify-center shadow-xs group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
+                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+                            <path d="M12 18a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+                        </svg>
+                    </div>
+
+                    <!-- Title & Tag -->
+                    <div class="space-y-1.5">
+                        <h3 class="text-lg sm:text-xl font-bold font-serif text-[#1F1F1F] group-hover:text-[#831F2E] transition-colors leading-snug">
+                            Zero Charcoal or Coal
+                        </h3>
+                        <span class="inline-block px-2.5 py-0.5 rounded-full bg-[#FAF7F2] text-[#831F2E] text-[10px] font-bold uppercase tracking-wider font-heading border border-[#EADBCC]/60">
+                            100% Non-Toxic Smoke
+                        </span>
+                    </div>
+
+                    <!-- Description -->
+                    <p class="text-xs sm:text-[13px] text-[#5A5047] leading-relaxed">
+                        No toxic black coal smoke or eye-burning chemicals. Only dried sacred temple flowers and pure organic tree resins.
+                    </p>
                 </div>
-                <h3 class="text-base sm:text-lg font-bold font-heading text-[#121212]">Zero Charcoal or Coal</h3>
-                <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                    No toxic black coal smoke or eye-burning chemicals. Only dried sacred temple flowers and pure natural resins.
-                </p>
             </div>
 
-            <div class="bg-white rounded-[14px] border border-[#EAE3D9] p-6 text-center space-y-3 shadow-xs hover:shadow-lg hover:border-[#D38928]/40 transition-all duration-300">
-                <div class="w-14 h-14 rounded-full bg-[#FDF5EB] border border-[#D38928]/40 text-[#D38928] flex items-center justify-center mx-auto text-2xl shadow-xs">
-                    🛕
+            <!-- Pillar 3: Vedic Agamas Compliant -->
+            <div class="relative bg-white rounded-[22px] border border-[#EADBCC] p-7 sm:p-8 text-center flex flex-col items-center justify-between group hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(131,31,46,0.12)] hover:border-[#831F2E]/40 transition-all duration-300 overflow-hidden shadow-xs">
+                <!-- Top Accent Hover Bar -->
+                <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-[#831F2E] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                <!-- Devanagari Watermark -->
+                <span class="absolute top-3 right-4 text-4xl font-black font-serif text-[#831F2E]/6 select-none pointer-events-none">०३</span>
+
+                <div class="w-full space-y-4 flex flex-col items-center">
+                    <!-- Icon Badge -->
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#FFF5E5] to-[#FDE8CA] border border-[#F3CCA0] text-[#831F2E] flex items-center justify-center shadow-xs group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
+                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 21h16M7 21V11M17 21V11M10 21v-4a2 2 0 0 1 4 0v4M3 11l9-7 9 7M12 4V2"/>
+                            <circle cx="12" cy="2" r="1" fill="currentColor"/>
+                        </svg>
+                    </div>
+
+                    <!-- Title & Tag -->
+                    <div class="space-y-1.5">
+                        <h3 class="text-lg sm:text-xl font-bold font-serif text-[#1F1F1F] group-hover:text-[#831F2E] transition-colors leading-snug">
+                            Vedic Agamas Compliant
+                        </h3>
+                        <span class="inline-block px-2.5 py-0.5 rounded-full bg-[#FAF7F2] text-[#831F2E] text-[10px] font-bold uppercase tracking-wider font-heading border border-[#EADBCC]/60">
+                            Traditional Scripture Vidhi
+                        </span>
+                    </div>
+
+                    <!-- Description -->
+                    <p class="text-xs sm:text-[13px] text-[#5A5047] leading-relaxed">
+                        Hand-rolled and blended strictly following holy vidhi and natural formulations described in traditional Ayurveda shastras.
+                    </p>
                 </div>
-                <h3 class="text-base sm:text-lg font-bold font-heading text-[#121212]">Vedic Agamas Compliant</h3>
-                <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                    Hand-rolled and blended strictly following the formulations described in traditional Ayurveda texts.
-                </p>
             </div>
 
-            <div class="bg-white rounded-[14px] border border-[#EAE3D9] p-6 text-center space-y-3 shadow-xs hover:shadow-lg hover:border-[#D38928]/40 transition-all duration-300">
-                <div class="w-14 h-14 rounded-full bg-[#FDF5EB] border border-[#D38928]/40 text-[#D38928] flex items-center justify-center mx-auto text-2xl shadow-xs">
-                    ✨
+            <!-- Pillar 4: Desi Cow Ghee & Camphor -->
+            <div class="relative bg-white rounded-[22px] border border-[#EADBCC] p-7 sm:p-8 text-center flex flex-col items-center justify-between group hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(131,31,46,0.12)] hover:border-[#831F2E]/40 transition-all duration-300 overflow-hidden shadow-xs">
+                <!-- Top Accent Hover Bar -->
+                <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-[#831F2E] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                <!-- Devanagari Watermark -->
+                <span class="absolute top-3 right-4 text-4xl font-black font-serif text-[#831F2E]/6 select-none pointer-events-none">०४</span>
+
+                <div class="w-full space-y-4 flex flex-col items-center">
+                    <!-- Icon Badge -->
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#FFF5E5] to-[#FDE8CA] border border-[#F3CCA0] text-[#831F2E] flex items-center justify-center shadow-xs group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
+                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 3c-1.2 1.8-1.8 3-1.8 4.2a1.8 1.8 0 0 0 3.6 0c0-1.2-.6-2.4-1.8-4.2z" fill="#D38928" stroke="#831F2E"/>
+                            <path d="M4 14c0 4 3.5 7 8 7s8-3 8-7c0-1.5-1-2.5-2-2.5H6c-1 0-2 1-2 2.5z"/>
+                            <path d="M6 11.5c1.5 1 3.5 1.5 6 1.5s4.5-.5 6-1.5"/>
+                        </svg>
+                    </div>
+
+                    <!-- Title & Tag -->
+                    <div class="space-y-1.5">
+                        <h3 class="text-lg sm:text-xl font-bold font-serif text-[#1F1F1F] group-hover:text-[#831F2E] transition-colors leading-snug">
+                            Desi Cow Ghee &amp; Camphor
+                        </h3>
+                        <span class="inline-block px-2.5 py-0.5 rounded-full bg-[#FAF7F2] text-[#831F2E] text-[10px] font-bold uppercase tracking-wider font-heading border border-[#EADBCC]/60">
+                            Pure Bhimseni Aura
+                        </span>
+                    </div>
+
+                    <!-- Description -->
+                    <p class="text-xs sm:text-[13px] text-[#5A5047] leading-relaxed">
+                        Infused with pure Gir cow dung, organic Desi ghee, and original Bhimseni camphor to generate positive spiritual vibrations.
+                    </p>
                 </div>
-                <h3 class="text-base sm:text-lg font-bold font-heading text-[#121212]">Desi Cow Ghee &amp; Camphor</h3>
-                <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                    Infused with organic cow dung, pure Desi ghee, and authentic Bhimseni camphor for positive spiritual energy.
-                </p>
             </div>
 
+        </div>
+
+        <!-- Bottom Trust Banner / Assurance Strip -->
+        <div class="mt-10 sm:mt-12 max-w-2xl mx-auto text-center">
+            <div class="inline-flex items-center justify-center gap-2 sm:gap-3 px-5 py-2.5 rounded-full bg-white border border-[#EADBCC] text-xs font-semibold text-[#5A5047] shadow-xs">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span>100% Lab Tested Smoke Safe for Daily Home Pooja, Asthmatics &amp; Children</span>
+            </div>
         </div>
 
     </div>
