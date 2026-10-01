@@ -41,18 +41,6 @@
                     Havan Cups
                 </a>
 
-                <!-- 2.1 Pitambara Havan (Highlighted New Product Launch) -->
-                <a 
-                    href="{{ route('products.pitambara') }}" 
-                    class="relative inline-flex items-center space-x-1.5 text-[14px] xl:text-[15px] font-bold text-[#965A15] hover:text-[#D38928] transition-all py-4 whitespace-nowrap tracking-wide group"
-                >
-                    <span class="text-amber-500 animate-pulse text-xs">✦</span>
-                    <span class="font-heading">Pitambara Havan</span>
-                    <span class="text-[9px] font-black uppercase tracking-wider bg-gradient-to-r from-[#D38928] to-[#B8741E] text-white px-2 py-0.5 rounded-full shadow-xs ring-1 ring-[#D38928]/40 animate-pulse">
-                        NEW 🔥
-                    </span>
-                </a>
-
                 <!-- 3. Dhoop Cones -->
                 <a 
                     href="{{ route('collections.show', 'dhoop-cones') }}" 
@@ -106,31 +94,13 @@
                     
                     <!-- Dropdown Content for 3 Combo Products -->
                     <div class="absolute left-0 top-full -mt-1 w-72 bg-white rounded-xl shadow-xl border border-[#EAE3D9] py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top group-hover:translate-y-0 translate-y-1 pointer-events-none group-hover:pointer-events-auto">
-                        <!-- Combo 1: Bambooless Combo -->
+                        <!-- Combo 1: Pack of Six -->
                         <a 
-                            href="{{ route('products.show', 'bambooless-2-combo-pack') }}" 
+                            href="{{ route('products.show', 'pack-of-six') }}" 
                             class="flex items-center justify-between px-4 py-2.5 text-sm font-normal text-[#2B1810] hover:bg-[#FAF7F2] hover:text-[#D38928] transition-colors"
                         >
-                            <span>Bambooless Combo Pack</span>
-                            <span class="text-[10px] font-bold bg-[#D38928]/10 text-[#965A15] px-1.5 py-0.5 rounded">SAVE 30%</span>
-                        </a>
-
-                        <!-- Combo 2: Havan Cups Combo -->
-                        <a 
-                            href="{{ route('products.show', 'havan-cups-2-combo-pack') }}" 
-                            class="flex items-center justify-between px-4 py-2.5 text-sm font-normal text-[#2B1810] hover:bg-[#FAF7F2] hover:text-[#D38928] transition-colors"
-                        >
-                            <span>Havan Cups Combo Pack</span>
-                            <span class="text-[10px] font-bold bg-[#D38928]/10 text-[#965A15] px-1.5 py-0.5 rounded">SAVE 35%</span>
-                        </a>
-
-                        <!-- Combo 3: Dhoop Cones Combo -->
-                        <a 
-                            href="{{ route('products.show', 'dhoop-cones-2-combo-pack') }}" 
-                            class="flex items-center justify-between px-4 py-2.5 text-sm font-normal text-[#2B1810] hover:bg-[#FAF7F2] hover:text-[#D38928] transition-colors"
-                        >
-                            <span>Dhoop Cones Combo Pack</span>
-                            <span class="text-[10px] font-bold bg-[#D38928]/10 text-[#965A15] px-1.5 py-0.5 rounded">SAVE 25%</span>
+                            <span>Pack of Six Grand Combo</span>
+                            <span class="text-[10px] font-bold bg-[#D38928]/10 text-[#965A15] px-1.5 py-0.5 rounded">₹1199</span>
                         </a>
 
                         <!-- View All Combos Link -->
@@ -145,6 +115,18 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- 6. Pitambara Havan (At the End of the Menu) -->
+                <a 
+                    href="{{ route('products.pitambara') }}" 
+                    class="relative inline-flex items-center space-x-1.5 text-[14px] xl:text-[15px] font-bold text-[#965A15] hover:text-[#D38928] transition-all py-4 whitespace-nowrap tracking-wide group"
+                >
+                    <span class="text-amber-500 animate-pulse text-xs">✦</span>
+                    <span class="font-heading">Pitambara Havan</span>
+                    <span class="text-[9px] font-black uppercase tracking-wider bg-gradient-to-r from-[#D38928] to-[#B8741E] text-white px-2 py-0.5 rounded-full shadow-xs ring-1 ring-[#D38928]/40 animate-pulse">
+                        COMING SOON 🔥
+                    </span>
+                </a>
 
             </nav>
 

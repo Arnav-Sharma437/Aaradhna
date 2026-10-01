@@ -31,20 +31,6 @@
         
         <!-- Direct Nav Links (No Dropdowns) -->
         <div class="p-4 space-y-3 text-base font-medium">
-            <!-- Featured: Pitambara Havan -->
-            <a 
-                href="{{ route('products.pitambara') }}" 
-                class="flex items-center justify-between p-2.5 rounded-[12px] bg-gradient-to-r from-[#FAF0DE] to-[#FFFDF9] border border-[#E8CBA3] text-[#965A15] font-black font-heading shadow-2xs"
-            >
-                <div class="flex items-center space-x-2">
-                    <span class="text-amber-600 text-sm">🪷</span>
-                    <span>Pitambara Havan</span>
-                </div>
-                <span class="text-[9px] font-black uppercase tracking-wider bg-[#D38928] text-white px-2 py-0.5 rounded-full shadow-xs">
-                    NEW LAUNCH 🔥
-                </span>
-            </a>
-
             <a href="{{ route('collections.show', 'bambooless') }}" class="block py-1 text-[#2B1810] hover:text-[#D38928] transition-colors font-semibold">
                 Bambooless
             </a>
@@ -70,22 +56,30 @@
             <div>
                 <div class="py-1 text-xs font-bold tracking-wider text-[#965A15] uppercase">Best Seller Combo</div>
                 <div class="pl-2 mt-1 space-y-1">
-                    <a href="{{ route('products.show', 'bambooless-2-combo-pack') }}" class="flex items-center justify-between py-1 text-sm font-medium text-[#2B1810] hover:text-[#D38928]">
-                        <span>Bambooless Combo Pack</span>
-                        <span class="text-[9px] font-bold text-white bg-[#D38928] px-1.5 py-0.5 rounded">SAVE 30%</span>
-                    </a>
-                    <a href="{{ route('products.show', 'havan-cups-2-combo-pack') }}" class="flex items-center justify-between py-1 text-sm font-medium text-[#2B1810] hover:text-[#D38928]">
-                        <span>Havan Cups Combo Pack</span>
-                        <span class="text-[9px] font-bold text-white bg-[#D38928] px-1.5 py-0.5 rounded">SAVE 35%</span>
-                    </a>
-                    <a href="{{ route('products.show', 'dhoop-cones-2-combo-pack') }}" class="flex items-center justify-between py-1 text-sm font-medium text-[#2B1810] hover:text-[#D38928]">
-                        <span>Dhoop Cones Combo Pack</span>
-                        <span class="text-[9px] font-bold text-white bg-[#D38928] px-1.5 py-0.5 rounded">SAVE 25%</span>
+                    <a href="{{ route('products.show', 'pack-of-six') }}" class="flex items-center justify-between py-1 text-sm font-medium text-[#2B1810] hover:text-[#D38928]">
+                        <span>Pack of Six Grand Combo</span>
+                        <span class="text-[9px] font-bold text-white bg-[#D38928] px-1.5 py-0.5 rounded">₹1199</span>
                     </a>
                     <a href="{{ route('collections.show', 'best-seller-combo') }}" class="block py-1 text-xs font-bold text-[#D38928] hover:text-[#B8741E]">
                         View All Combos ➔
                     </a>
                 </div>
+            </div>
+
+            <!-- Pitambara Havan (Placed at the End of Mobile Menu) -->
+            <div class="pt-2">
+                <a 
+                    href="{{ route('products.pitambara') }}" 
+                    class="flex items-center justify-between p-2.5 rounded-[12px] bg-gradient-to-r from-[#FAF0DE] to-[#FFFDF9] border border-[#E8CBA3] text-[#965A15] font-black font-heading shadow-2xs"
+                >
+                    <div class="flex items-center space-x-2">
+                        <span class="text-amber-600 text-sm">🪷</span>
+                        <span>Pitambara Havan</span>
+                    </div>
+                    <span class="text-[9px] font-black uppercase tracking-wider bg-[#D38928] text-white px-2 py-0.5 rounded-full shadow-xs">
+                        COMING SOON 🔥
+                    </span>
+                </a>
             </div>
         </div>
 

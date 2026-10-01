@@ -486,10 +486,10 @@ class DatabaseSeeder extends Seeder
             ],
 
             // =========================================================================
-            // MANGALAM PITAMBARA HAVAN PACK (COMING SOON)
+            // MANGALAM PITAMBARA HAVAN PACK (DEDICATED LANDING PAGE ONLY - NOT IN BAMBOOLESS)
             // =========================================================================
             [
-                'category_slug' => 'bambooless',
+                'category_slug' => null,
                 'title' => 'Mangalam Pitambara Havan Pack',
                 'hindi_title' => 'मंगलम पीताम्बरा हवन पैक',
                 'slug' => 'pitambara-havan',
@@ -500,13 +500,13 @@ class DatabaseSeeder extends Seeder
                 'sale_price' => 1499.00,
                 'stock_quantity' => 100,
                 'burn_time' => '45 mins yajna',
-                'is_featured' => true,
-                'is_bestseller' => true,
+                'is_featured' => false,
+                'is_bestseller' => false,
                 'status' => 'active',
                 'meta_title' => 'Mangalam Pitambara Havan Pack | Authentic Vedic Yajna Kit',
                 'meta_description' => 'Experience divine protection and peace with Mangalam Pitambara Havan Pack. Pre-book now.',
                 'image' => 'assets/images/banner-pitambara-havan.jpg',
-                'collections' => ['all', 'bambooless', 'best-seller-combo'],
+                'collections' => [],
                 'variants' => [
                     ['title' => 'Complete Pitambara Havan Pack', 'sku' => 'MNG-HV-PITAMBARA', 'price' => 1499.00, 'compare_at_price' => 2499.00, 'stock' => 100, 'is_default' => true],
                 ],
@@ -526,13 +526,12 @@ class DatabaseSeeder extends Seeder
         }
 
         foreach ($productsData as $pData) {
-            $category = $categories[$pData['category_slug']] ?? null;
-            if (!$category) continue;
+            $category = !empty($pData['category_slug']) ? ($categories[$pData['category_slug']] ?? null) : null;
 
             $product = Product::updateOrCreate(
                 ['slug' => $pData['slug']],
                 [
-                    'category_id' => $category->id,
+                    'category_id' => $category ? $category->id : null,
                     'title' => $pData['title'],
                     'hindi_title' => $pData['hindi_title'],
                     'sku' => $pData['sku'],
