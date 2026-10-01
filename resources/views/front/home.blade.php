@@ -39,8 +39,8 @@
                             <span>100% Pure &amp; Organic</span>
                             <span>✦</span>
                         </div>
-                        <h1 class="text-2xl sm:text-3xl lg:text-[36px] xl:text-[40px] font-normal text-[#2B1810] tracking-tight leading-snug lg:leading-[1.25]">
-                            Discover <span class="italic font-normal text-[#8B4513]">Mangalam’s</span><br class="hidden sm:inline">
+                        <h1 class="text-2xl sm:text-3xl lg:text-[36px] xl:text-[40px] font-bold text-[#2B1810] tracking-tight leading-snug lg:leading-[1.25]">
+                            Discover <span class="not-italic font-bold text-[#8B4513]">Mangalam’s</span><br class="hidden sm:inline">
                             Incense Cone Collection
                         </h1>
                         <p class="text-sm sm:text-base lg:text-lg font-medium text-[#8B4513] tracking-normal">
@@ -143,8 +143,8 @@
                             <span>100% Pure &amp; Organic</span>
                             <span>✦</span>
                         </div>
-                        <h2 class="text-2xl sm:text-3xl lg:text-[36px] xl:text-[40px] font-normal text-[#2B1810] tracking-tight leading-snug lg:leading-[1.25]">
-                            Discover <span class="italic font-normal text-[#8B4513]">Mangalam’s</span><br class="hidden sm:inline">
+                        <h2 class="text-2xl sm:text-3xl lg:text-[36px] xl:text-[40px] font-bold text-[#2B1810] tracking-tight leading-snug lg:leading-[1.25]">
+                            Discover <span class="not-italic font-bold text-[#8B4513]">Mangalam’s</span><br class="hidden sm:inline">
                             Bambooless Incense Sticks
                         </h2>
                         <p class="text-sm sm:text-base lg:text-lg font-medium text-[#8B4513] tracking-normal">

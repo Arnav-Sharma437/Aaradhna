@@ -6,7 +6,7 @@
 
 <aside 
     id="mobile-drawer"
-    class="fixed top-0 left-0 w-4/5 max-w-sm h-full bg-white z-50 shadow-2xl -translate-x-full transition-transform duration-300 ease-in-out flex flex-col font-recoleta"
+    class="fixed top-0 left-0 w-4/5 max-w-sm h-full bg-white z-50 shadow-2xl -translate-x-full transition-transform duration-300 ease-in-out flex flex-col font-body"
     aria-label="Mobile Navigation"
 >
     <!-- Drawer Header -->
@@ -17,7 +17,7 @@
         <button 
             type="button" 
             id="mobile-drawer-close"
-            class="p-2 text-gray-500 hover:text-[#2B1810] focus:outline-none"
+            class="p-2 text-gray-500 hover:text-[#831F2E] focus:outline-none"
             aria-label="Close Mobile Menu"
         >
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -27,58 +27,58 @@
     </div>
 
     <!-- Drawer Navigation Content (Scrollable) -->
-    <div class="flex-1 overflow-y-auto divide-y divide-[#EAE3D9]/60 font-recoleta">
+    <div class="flex-1 overflow-y-auto divide-y divide-[#EAE3D9]/60 font-body">
         
-        <!-- Direct Nav Links (No Dropdowns) -->
-        <div class="p-4 space-y-3 text-base font-medium font-recoleta">
-            <a href="{{ route('collections.show', 'bambooless') }}" class="block py-1 text-[#2B1810] hover:text-[#D38928] transition-colors font-semibold">
+        <!-- Direct Nav Links -->
+        <div class="p-4 space-y-3 text-base font-semibold">
+            <a href="{{ route('collections.show', 'bambooless') }}" class="block py-1 text-[#1F1F1F] hover:text-[#831F2E] transition-colors">
                 Bambooless
             </a>
-            <a href="{{ route('collections.show', 'havan-cups') }}" class="block py-1 text-[#2B1810] hover:text-[#D38928] transition-colors font-semibold">
+            <a href="{{ route('collections.show', 'havan-cups') }}" class="block py-1 text-[#1F1F1F] hover:text-[#831F2E] transition-colors">
                 Havan Cups
             </a>
-            <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block py-1 text-[#2B1810] hover:text-[#D38928] transition-colors font-semibold">
+            <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block py-1 text-[#1F1F1F] hover:text-[#831F2E] transition-colors">
                 Dhoop Cones
             </a>
-            <div>
-                <div class="py-1 text-xs font-bold tracking-wider text-[#965A15] uppercase">Super Save Offers</div>
-                <div class="pl-2 mt-1 space-y-1">
-                    <a href="{{ route('bundles.trial-packs') }}" class="flex items-center justify-between py-1 text-sm font-medium text-[#2B1810] hover:text-[#D38928]">
+            <div class="pt-1">
+                <div class="py-1 text-xs font-bold tracking-wider text-[#831F2E] uppercase">Super Save Offers</div>
+                <div class="pl-2 mt-1 space-y-1.5">
+                    <a href="{{ route('bundles.trial-packs') }}" class="flex items-center justify-between py-1 text-sm font-medium text-[#2B1810] hover:text-[#831F2E]">
                         <span>Buy any 5 Trial Pack @ 799</span>
-                        <span class="text-[9px] font-bold text-white bg-[#D38928] px-1.5 py-0.5 rounded">₹799</span>
+                        <span class="text-[9px] font-bold text-white bg-[#831F2E] px-1.5 py-0.5 rounded">₹799</span>
                     </a>
-                    <a href="{{ route('bundles.buy2get1') }}" class="flex items-center justify-between py-1 text-sm font-medium text-[#2B1810] hover:text-[#D38928]">
+                    <a href="{{ route('bundles.buy2get1') }}" class="flex items-center justify-between py-1 text-sm font-medium text-[#2B1810] hover:text-[#831F2E]">
                         <span>Buy 2 get 1 free</span>
-                        <span class="text-[9px] font-bold text-white bg-[#B24E2B] px-1.5 py-0.5 rounded">Offer</span>
+                        <span class="text-[9px] font-bold text-white bg-[#B24E2B] px-1.5 py-0.5 rounded">FREE GIFT</span>
                     </a>
                 </div>
             </div>
-            <div>
-                <div class="py-1 text-xs font-bold tracking-wider text-[#965A15] uppercase">Best Seller Combo</div>
-                <div class="pl-2 mt-1 space-y-1">
-                    <a href="{{ route('products.show', 'pack-of-six') }}" class="flex items-center justify-between py-1 text-sm font-medium text-[#2B1810] hover:text-[#D38928]">
+            <div class="pt-1">
+                <div class="py-1 text-xs font-bold tracking-wider text-[#831F2E] uppercase">Best Seller Combo</div>
+                <div class="pl-2 mt-1 space-y-1.5">
+                    <a href="{{ route('products.show', 'pack-of-six') }}" class="flex items-center justify-between py-1 text-sm font-medium text-[#2B1810] hover:text-[#831F2E]">
                         <span>Pack of Six Grand Combo</span>
-                        <span class="text-[9px] font-bold text-white bg-[#D38928] px-1.5 py-0.5 rounded">₹1199</span>
+                        <span class="text-[9px] font-bold text-white bg-[#831F2E] px-1.5 py-0.5 rounded">₹1199</span>
                     </a>
-                    <a href="{{ route('collections.show', 'best-seller-combo') }}" class="block py-1 text-xs font-bold text-[#D38928] hover:text-[#B8741E]">
+                    <a href="{{ route('collections.show', 'best-seller-combo') }}" class="block py-1 text-xs font-bold text-[#831F2E] hover:underline">
                         View All Combos ➔
                     </a>
                 </div>
             </div>
 
-            <!-- Pitambara Havan (Placed at the End of Mobile Menu) -->
+            <!-- Pitambara Havan (Small Coming Soon Badge Positioned ON TOP) -->
             <div class="pt-2">
                 <a 
                     href="{{ route('products.pitambara') }}" 
-                    class="flex items-center justify-between p-2.5 rounded-[12px] bg-gradient-to-r from-[#FAF0DE] to-[#FFFDF9] border border-[#E8CBA3] text-[#965A15] font-black font-heading shadow-2xs"
+                    class="flex flex-col items-start p-3 rounded-xl bg-gradient-to-r from-[#FAF0DE] to-[#FFFDF9] border border-[#E8CBA3] shadow-xs group"
                 >
-                    <div class="flex items-center space-x-2">
-                        <span class="text-amber-600 text-sm">🪷</span>
-                        <span>Pitambara Havan</span>
-                    </div>
-                    <span class="text-[9px] font-black uppercase tracking-wider bg-[#D38928] text-white px-2 py-0.5 rounded-full shadow-xs">
+                    <span class="text-[8px] font-black uppercase tracking-wider bg-gradient-to-r from-[#831F2E] to-[#B24E2B] text-white px-2 py-0.5 rounded-full shadow-2xs leading-none mb-1.5 animate-pulse">
                         COMING SOON 🔥
                     </span>
+                    <div class="flex items-center space-x-2 text-[#831F2E] font-bold text-sm">
+                        <span class="text-amber-600">🪷</span>
+                        <span>Pitambara Havan</span>
+                    </div>
                 </a>
             </div>
         </div>
@@ -87,7 +87,7 @@
         <div class="p-4 bg-[#FAF7F2]">
             <a 
                 href="{{ route('pages.show', 'contact') }}" 
-                class="w-full flex items-center justify-center space-x-2 py-3 px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-sm font-bold uppercase tracking-wider rounded-[12px] shadow-sm font-heading transition-colors"
+                class="w-full flex items-center justify-center space-x-2 py-3 px-4 bg-[#831F2E] hover:bg-[#6E1724] text-white text-sm font-bold uppercase tracking-wider rounded-[12px] shadow-sm font-body transition-colors"
             >
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                 <span>Contact Us</span>

@@ -57,26 +57,45 @@
         color: var(--color-primary);
         background-color: #ffffff;
     }
+
+    h1, h2, h3, h4, h5, h6, .font-heading {
+        font-weight: 700 !important;
+    }
 }
 
-/* Recoleta font for Menus and Banner section */
+/* Recoleta font for Banner section titles & decorative elements */
 .font-recoleta,
 .recoleta,
-header nav a,
-header nav button,
-header nav span,
-#mobile-drawer,
-#mobile-drawer a,
-#mobile-drawer button,
-#mobile-drawer span,
-#hero-banner-carousel,
 #hero-banner-carousel h1,
 #hero-banner-carousel h2,
-#hero-banner-carousel h3,
-#hero-banner-carousel p,
-#hero-banner-carousel span,
-#hero-banner-carousel a {
-    font-family: 'Recoleta', Georgia, serif !important;
+#hero-banner-carousel h3 {
+    font-family: 'Recoleta', Georgia, serif;
+}
+
+/* Menu Hover Underline Effect with Announcement Bar Color (#831F2E) */
+.nav-link-hover {
+    position: relative;
+    transition: color 0.2s ease-in-out;
+}
+
+.nav-link-hover:hover {
+    color: #831F2E !important;
+}
+
+.nav-link-hover::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #831F2E;
+    transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 2px;
+}
+
+.nav-link-hover:hover::after {
+    width: 100%;
 }
 
 @keyframes marquee {
