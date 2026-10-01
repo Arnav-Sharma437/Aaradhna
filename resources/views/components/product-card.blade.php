@@ -2,58 +2,41 @@
 
 @php
     $imageMap = [
-        'kesar-chandan' => 'assets/images/oudh-pack-card.jpg',
-        'gulab' => 'assets/images/incense-pack.jpg',
-        'naagchampa' => 'assets/images/incense-pack.jpg',
-        'chandan' => 'assets/images/incense-pack.jpg',
-        'havan-bambooless' => 'assets/images/incense-pack.jpg',
-        'oudh' => 'assets/images/oudh-pack-card.jpg',
-        'mongra' => 'assets/images/incense-pack.jpg',
-        'bambooless-2-combo-pack' => 'assets/images/incense-pack.jpg',
-        'bambooless-3-combo-pack' => 'assets/images/oudh-pack-card.jpg',
-        'google-dhoop' => 'assets/images/havan-cup.jpg',
-        'loban' => 'assets/images/havan-cup.jpg',
-        'havan-cup' => 'assets/images/havan-cup.jpg',
-        'havan-cups-2-combo-pack' => 'assets/images/havan-cup.jpg',
-        'havan-cups-3-combo-pack' => 'assets/images/havan-cup.jpg',
-        'rooh-rose' => 'assets/images/dhoop-cones.jpg',
-        'jasmine' => 'assets/images/dhoop-cones.jpg',
-        'sandalwood-dhoop-cones' => 'assets/images/chandan-cones-card.jpg',
-        'forest-wood' => 'assets/images/dhoop-cones.jpg',
-        'lavender' => 'assets/images/dhoop-cones.jpg',
-        'patchouli' => 'assets/images/dhoop-cones.jpg',
-        'dhoop-cones-2-combo-pack' => 'assets/images/dhoop-cones.jpg',
-        'dhoop-cones-3-combo-pack' => 'assets/images/chandan-cones-card.jpg',
+        'swarna-pushpa' => 'assets/images/oudh-pack-card.jpg',
+        'swarna-pushpa-100' => 'assets/images/devi-refill-pack-card.jpg',
+        'divya-naagchampa' => 'assets/images/incense-pack.jpg',
+        'divya-naagchampa-100' => 'assets/images/camphor-refill-pack-card.jpg',
+        'chandan-saanjh' => 'assets/images/incense-pack.jpg',
+        'chandan-saanjh-100' => 'assets/images/devi-refill-pack-card.jpg',
+        'royal-oudh' => 'assets/images/oudh-pack-card.jpg',
+        'royal-oudh-100' => 'assets/images/oudh-pack-card.jpg',
+        'mogra-noor' => 'assets/images/incense-pack.jpg',
+        'mogra-noor-100' => 'assets/images/incense-pack.jpg',
+        'gulab-rooh' => 'assets/images/incense-pack.jpg',
+        'gulab-rooh-100' => 'assets/images/devi-refill-pack-card.jpg',
+        'lavender-veda' => 'assets/images/incense-pack.jpg',
+        'lavender-veda-100' => 'assets/images/camphor-refill-pack-card.jpg',
+        'pack-of-six' => 'assets/images/oudh-pack-card.jpg',
+        'pitambara-havan' => 'assets/images/banner-pitambara-havan.jpg',
     ];
 
     $hoverImageMap = [
-        // Bambooless products -> single stick / lifestyle hover
-        'kesar-chandan' => 'assets/images/single-bambooless-stick.jpg',
-        'gulab' => 'assets/images/single-bambooless-stick.jpg',
-        'naagchampa' => 'assets/images/single-bambooless-stick.jpg',
-        'chandan' => 'assets/images/single-bambooless-stick.jpg',
-        'havan-bambooless' => 'assets/images/single-bambooless-stick.jpg',
-        'oudh' => 'assets/images/single-bambooless-stick.jpg',
-        'mongra' => 'assets/images/single-bambooless-stick.jpg',
-        'bambooless-2-combo-pack' => 'assets/images/single-bambooless-stick.jpg',
-        'bambooless-3-combo-pack' => 'assets/images/single-bambooless-stick.jpg',
-
-        // Havan Cups products -> single havan cup hover
-        'google-dhoop' => 'assets/images/single-havan-cup.jpg',
-        'loban' => 'assets/images/single-havan-cup.jpg',
-        'havan-cup' => 'assets/images/single-havan-cup.jpg',
-        'havan-cups-2-combo-pack' => 'assets/images/single-havan-cup.jpg',
-        'havan-cups-3-combo-pack' => 'assets/images/single-havan-cup.jpg',
-
-        // Dhoop Cones products -> single dhoop cone hover
-        'rooh-rose' => 'assets/images/single-dhoop-cone.jpg',
-        'jasmine' => 'assets/images/single-dhoop-cone.jpg',
-        'sandalwood-dhoop-cones' => 'assets/images/single-dhoop-cone.jpg',
-        'forest-wood' => 'assets/images/single-dhoop-cone.jpg',
-        'lavender' => 'assets/images/single-dhoop-cone.jpg',
-        'patchouli' => 'assets/images/single-dhoop-cone.jpg',
-        'dhoop-cones-2-combo-pack' => 'assets/images/single-dhoop-cone.jpg',
-        'dhoop-cones-3-combo-pack' => 'assets/images/single-dhoop-cone.jpg',
+        'swarna-pushpa' => 'assets/images/single-bambooless-stick.jpg',
+        'swarna-pushpa-100' => 'assets/images/single-bambooless-stick.jpg',
+        'divya-naagchampa' => 'assets/images/single-bambooless-stick.jpg',
+        'divya-naagchampa-100' => 'assets/images/single-bambooless-stick.jpg',
+        'chandan-saanjh' => 'assets/images/single-bambooless-stick.jpg',
+        'chandan-saanjh-100' => 'assets/images/single-bambooless-stick.jpg',
+        'royal-oudh' => 'assets/images/single-bambooless-stick.jpg',
+        'royal-oudh-100' => 'assets/images/single-bambooless-stick.jpg',
+        'mogra-noor' => 'assets/images/single-bambooless-stick.jpg',
+        'mogra-noor-100' => 'assets/images/single-bambooless-stick.jpg',
+        'gulab-rooh' => 'assets/images/single-bambooless-stick.jpg',
+        'gulab-rooh-100' => 'assets/images/single-bambooless-stick.jpg',
+        'lavender-veda' => 'assets/images/single-bambooless-stick.jpg',
+        'lavender-veda-100' => 'assets/images/single-bambooless-stick.jpg',
+        'pack-of-six' => 'assets/images/single-bambooless-stick.jpg',
+        'pitambara-havan' => 'assets/images/banner-pitambara-havan.jpg',
     ];
 
     $primaryDbImage = $product->primaryImage ? $product->primaryImage->image_path : ($product->images->first() ? $product->images->first()->image_path : null);
@@ -67,18 +50,29 @@
     
     // Top border pill badges
     $topBadges = [
-        'devi-refill-pack' => '✨ FESTIVE ✨',
-        'camphor-bambooless-incense-sticks' => 'TOP PICKS',
-        'oudh-bambooless-incense-sticks' => "FOUNDER'S FAVORITE",
-        'sandalwood-havan-cup' => 'TOP PICKS',
-        'kesar-chandan-dhoop-cones' => 'TOP PICKS',
+        'swarna-pushpa' => 'BUY 2 GET 1 FREE',
+        'swarna-pushpa-100' => 'BUY 2 GET 1 FREE',
+        'divya-naagchampa' => 'BUY 2 GET 1 FREE',
+        'divya-naagchampa-100' => 'BUY 2 GET 1 FREE',
+        'chandan-saanjh' => 'BUY 2 GET 1 FREE',
+        'chandan-saanjh-100' => 'BUY 2 GET 1 FREE',
+        'royal-oudh' => 'BUY 2 GET 1 FREE',
+        'royal-oudh-100' => 'BUY 2 GET 1 FREE',
+        'mogra-noor' => 'BUY 2 GET 1 FREE',
+        'mogra-noor-100' => 'BUY 2 GET 1 FREE',
+        'gulab-rooh' => 'BUY 2 GET 1 FREE',
+        'gulab-rooh-100' => 'BUY 2 GET 1 FREE',
+        'lavender-veda' => 'BUY 2 GET 1 FREE',
+        'lavender-veda-100' => 'BUY 2 GET 1 FREE',
+        'pack-of-six' => 'COMBO (240 STICKS)',
+        'pitambara-havan' => 'COMING SOON 🔥',
     ];
     $topBadge = $topBadges[$product->slug] ?? ($product->is_bestseller ? 'TOP PICKS' : 'SACRED VEDIC');
 
     // Pack labels
-    $packCount = str_contains($product->slug, 'refill') ? '100' : (str_contains($product->slug, 'havan') ? '12' : '40');
-    $packUnit = str_contains($product->slug, 'havan') ? 'cups' : (str_contains($product->slug, 'cones') ? 'cones' : 'sticks');
-    $packColor = str_contains($product->slug, 'devi') ? 'text-[#8B2626]' : (str_contains($product->slug, 'oudh') ? 'text-[#7A3A22]' : 'text-[#3E2D22]');
+    $packCount = str_contains($product->slug, '100') || str_contains($product->slug, 'refill') ? '100' : (str_contains($product->slug, 'six') || str_contains($product->slug, '240') ? '240' : (str_contains($product->slug, 'pitambara') ? '1' : '40'));
+    $packUnit = str_contains($product->slug, 'pitambara') ? 'pack' : 'sticks';
+    $packColor = str_contains($product->slug, '100') ? 'text-[#8B2626]' : (str_contains($product->slug, 'oudh') ? 'text-[#7A3A22]' : 'text-[#3E2D22]');
 
     $reviewCount = $product->approvedReviews->count() ?: (200 + (abs(crc32($product->slug)) % 90));
     $mrpPrice = $product->base_price > $product->active_price ? $product->base_price : ($product->active_price * 1.4);
