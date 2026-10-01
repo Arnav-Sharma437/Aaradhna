@@ -7,10 +7,10 @@
             'price' => 399,
             'mrp' => 499,
             'discount' => '20% OFF',
-            'views' => '1.2k',
+            'views' => '2.4k',
             'thumbnail' => 'assets/images/incense-pack.jpg',
             'poster' => 'assets/images/incense-pack.jpg',
-            'video_url' => 'https://assets.mixkit.co/videos/preview/mixkit-smoke-coming-out-of-an-incense-stick-41473-large.mp4'
+            'video_url' => 'assets/videos/reel-video-1.mp4'
         ],
         [
             'id' => 2,
@@ -19,10 +19,10 @@
             'price' => 399,
             'mrp' => 499,
             'discount' => '20% OFF',
-            'views' => '1.3k',
+            'views' => '3.1k',
             'thumbnail' => 'assets/images/havan-cup.jpg',
             'poster' => 'assets/images/havan-cup.jpg',
-            'video_url' => 'https://assets.mixkit.co/videos/preview/mixkit-incense-stick-burning-in-a-dark-room-41474-large.mp4'
+            'video_url' => 'assets/videos/reel-video-2.mp4'
         ],
         [
             'id' => 3,
@@ -31,10 +31,10 @@
             'price' => 399,
             'mrp' => 499,
             'discount' => '20% OFF',
-            'views' => '2.6k',
+            'views' => '4.6k',
             'thumbnail' => 'assets/images/incense-pack.jpg',
             'poster' => 'assets/images/incense-pack.jpg',
-            'video_url' => 'https://assets.mixkit.co/videos/preview/mixkit-incense-smoke-rising-in-the-dark-41472-large.mp4'
+            'video_url' => 'assets/videos/reel-video-3.mp4'
         ],
         [
             'id' => 4,
@@ -43,10 +43,10 @@
             'price' => 399,
             'mrp' => 499,
             'discount' => '20% OFF',
-            'views' => '1.8k',
+            'views' => '2.8k',
             'thumbnail' => 'assets/images/oudh-pack-card.jpg',
             'poster' => 'assets/images/oudh-pack-card.jpg',
-            'video_url' => 'https://assets.mixkit.co/videos/preview/mixkit-burning-incense-with-white-smoke-41475-large.mp4'
+            'video_url' => 'assets/videos/reel-video-1.mp4'
         ],
         [
             'id' => 5,
@@ -55,10 +55,10 @@
             'price' => 399,
             'mrp' => 499,
             'discount' => '20% OFF',
-            'views' => '3.2k',
+            'views' => '5.2k',
             'thumbnail' => 'assets/images/incense-pack.jpg',
             'poster' => 'assets/images/incense-pack.jpg',
-            'video_url' => 'https://assets.mixkit.co/videos/preview/mixkit-incense-stick-smoke-illuminated-by-warm-light-41471-large.mp4'
+            'video_url' => 'assets/videos/reel-video-2.mp4'
         ],
         [
             'id' => 6,
@@ -67,10 +67,10 @@
             'price' => 399,
             'mrp' => 499,
             'discount' => '20% OFF',
-            'views' => '4.1k',
+            'views' => '4.9k',
             'thumbnail' => 'assets/images/havan-cup.jpg',
             'poster' => 'assets/images/havan-cup.jpg',
-            'video_url' => 'https://assets.mixkit.co/videos/preview/mixkit-smoke-coming-out-of-an-incense-stick-41473-large.mp4'
+            'video_url' => 'assets/videos/reel-video-3.mp4'
         ],
         [
             'id' => 7,
@@ -79,10 +79,10 @@
             'price' => 499,
             'mrp' => 999,
             'discount' => '50% OFF',
-            'views' => '5.8k',
+            'views' => '6.8k',
             'thumbnail' => 'assets/images/devi-refill-pack-card.jpg',
             'poster' => 'assets/images/devi-refill-pack-card.jpg',
-            'video_url' => 'https://assets.mixkit.co/videos/preview/mixkit-burning-incense-with-white-smoke-41475-large.mp4'
+            'video_url' => 'assets/videos/reel-video-1.mp4'
         ],
         [
             'id' => 8,
@@ -91,10 +91,10 @@
             'price' => 1199,
             'mrp' => 1799,
             'discount' => '33% OFF',
-            'views' => '3.9k',
+            'views' => '5.9k',
             'thumbnail' => 'assets/images/chandan-cones-card.jpg',
             'poster' => 'assets/images/chandan-cones-card.jpg',
-            'video_url' => 'https://assets.mixkit.co/videos/preview/mixkit-incense-stick-burning-in-a-dark-room-41474-large.mp4'
+            'video_url' => 'assets/videos/reel-video-2.mp4'
         ]
     ];
 @endphp
@@ -149,7 +149,7 @@
                     <div 
                         class="reel-card shrink-0 w-[220px] sm:w-[250px] md:w-[265px] lg:w-[280px] flex flex-col justify-between group cursor-pointer"
                         data-index="{{ $index }}"
-                        data-video="{{ $reel['video_url'] }}"
+                        data-video="{{ asset($reel['video_url']) }}"
                         data-poster="{{ asset($reel['poster']) }}"
                         data-title="{{ $reel['title'] }}"
                         data-price="{{ $reel['price'] }}"
@@ -166,7 +166,7 @@
                             <!-- Video Element (Autoplay Muted Preview) -->
                             <video 
                                 class="reel-preview-video w-full h-full object-cover pointer-events-none"
-                                src="{{ $reel['video_url'] }}"
+                                src="{{ asset($reel['video_url']) }}"
                                 poster="{{ asset($reel['poster']) }}"
                                 loop
                                 muted
