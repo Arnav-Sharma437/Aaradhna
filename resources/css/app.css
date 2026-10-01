@@ -87,6 +87,8 @@ header nav button,
 /* Menu Hover Underline Effect with Announcement Bar Color (#831F2E) */
 .nav-link-hover {
     position: relative;
+    display: inline-flex;
+    align-items: center;
     transition: color 0.2s ease-in-out;
 }
 
@@ -97,7 +99,7 @@ header nav button,
 .nav-link-hover::after {
     content: '';
     position: absolute;
-    bottom: 2px;
+    bottom: -3px;
     left: 0;
     width: 0;
     height: 2px;
@@ -112,6 +114,8 @@ header nav button,
 
 .nav-link-always-underlined {
     position: relative;
+    display: inline-flex;
+    align-items: center;
     color: #831F2E !important;
     transition: color 0.2s ease-in-out;
 }
@@ -119,7 +123,7 @@ header nav button,
 .nav-link-always-underlined::after {
     content: '';
     position: absolute;
-    bottom: 2px;
+    bottom: -3px;
     left: 0;
     width: 100% !important;
     height: 2px;

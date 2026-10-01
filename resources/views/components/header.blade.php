@@ -30,28 +30,34 @@
             <nav class="hidden lg:flex items-center justify-center flex-1 min-w-0 space-x-2.5 lg:space-x-4 xl:space-x-6 2xl:space-x-7 px-1 xl:px-3 font-body">
                 
                 <!-- 1. Bambooless -->
-                <a 
-                    href="{{ route('collections.show', 'bambooless') }}" 
-                    class="nav-link-hover text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-medium text-[#1F1F1F] hover:text-[#831F2E] transition-colors py-2 xl:py-3 whitespace-nowrap tracking-normal"
-                >
-                    Bambooless
-                </a>
+                <div class="py-2 xl:py-3 flex items-center">
+                    <a 
+                        href="{{ route('collections.show', 'bambooless') }}" 
+                        class="nav-link-hover text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-medium text-[#1F1F1F] hover:text-[#831F2E] transition-colors whitespace-nowrap tracking-normal"
+                    >
+                        Bambooless
+                    </a>
+                </div>
 
                 <!-- 2. Havan Cups -->
-                <a 
-                    href="{{ route('collections.show', 'havan-cups') }}" 
-                    class="nav-link-hover text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-medium text-[#1F1F1F] hover:text-[#831F2E] transition-colors py-2 xl:py-3 whitespace-nowrap tracking-normal"
-                >
-                    Havan Cups
-                </a>
+                <div class="py-2 xl:py-3 flex items-center">
+                    <a 
+                        href="{{ route('collections.show', 'havan-cups') }}" 
+                        class="nav-link-hover text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-medium text-[#1F1F1F] hover:text-[#831F2E] transition-colors whitespace-nowrap tracking-normal"
+                    >
+                        Havan Cups
+                    </a>
+                </div>
 
                 <!-- 3. Dhoop Cones -->
-                <a 
-                    href="{{ route('collections.show', 'dhoop-cones') }}" 
-                    class="nav-link-hover text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-medium text-[#1F1F1F] hover:text-[#831F2E] transition-colors py-2 xl:py-3 whitespace-nowrap tracking-normal"
-                >
-                    Dhoop Cones
-                </a>
+                <div class="py-2 xl:py-3 flex items-center">
+                    <a 
+                        href="{{ route('collections.show', 'dhoop-cones') }}" 
+                        class="nav-link-hover text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-medium text-[#1F1F1F] hover:text-[#831F2E] transition-colors whitespace-nowrap tracking-normal"
+                    >
+                        Dhoop Cones
+                    </a>
+                </div>
 
                 <!-- 4. Super Save Offers (Interactive Mega Menu with Hover Image Preview) -->
                 <div class="relative group py-2 xl:py-3 flex items-center">
@@ -130,21 +136,25 @@
                     </div>
                 </div>
 
-                <!-- 5. Best Seller Combo (Direct Product Link - No Dropdown) -->
-                <a 
-                    href="{{ route('products.show', 'pack-of-six') }}" 
-                    class="nav-link-hover text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-medium text-[#1F1F1F] hover:text-[#831F2E] transition-colors py-2 xl:py-3 whitespace-nowrap tracking-normal"
-                >
-                    Best Seller Combo
-                </a>
+                <!-- 5. Best Seller Combo -->
+                <div class="py-2 xl:py-3 flex items-center">
+                    <a 
+                        href="{{ route('products.show', 'pack-of-six') }}" 
+                        class="nav-link-hover text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-medium text-[#1F1F1F] hover:text-[#831F2E] transition-colors whitespace-nowrap tracking-normal"
+                    >
+                        Best Seller Combo
+                    </a>
+                </div>
 
                 <!-- 6. Pitambara Havan (Always Underlined Link) -->
-                <a 
-                    href="{{ route('products.pitambara') }}" 
-                    class="nav-link-always-underlined text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-bold text-[#831F2E] hover:text-[#6E1724] transition-colors py-2 xl:py-3 whitespace-nowrap"
-                >
-                    Pitambara Havan
-                </a>
+                <div class="py-2 xl:py-3 flex items-center">
+                    <a 
+                        href="{{ route('products.pitambara') }}" 
+                        class="nav-link-always-underlined text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-bold text-[#831F2E] hover:text-[#6E1724] transition-colors whitespace-nowrap"
+                    >
+                        Pitambara Havan
+                    </a>
+                </div>
 
             </nav>
 
