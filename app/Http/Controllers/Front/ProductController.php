@@ -110,7 +110,9 @@ class ProductController extends Controller
         // Default variant or first variant
         $defaultVariant = $product->variants->firstWhere('is_default', true) ?? $product->variants->first();
 
-        return view('front.products.show', compact(
+        $viewName = ($product->slug === 'pitambara-havan' || $slug === 'pitambara-havan') ? 'front.products.pitambara-havan' : 'front.products.show';
+
+        return view($viewName, compact(
             'product',
             'defaultVariant',
             'relatedProducts',
@@ -118,5 +120,13 @@ class ProductController extends Controller
             'avgRating',
             'ratingCounts'
         ));
+    }
+
+    /**
+     * Dedicated direct route for Pitambara Havan landing page.
+     */
+    public function showPitambara(): View
+    {
+        return $this->show('pitambara-havan');
     }
 }

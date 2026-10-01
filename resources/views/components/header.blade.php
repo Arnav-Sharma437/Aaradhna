@@ -41,6 +41,18 @@
                     Havan Cups
                 </a>
 
+                <!-- 2.1 Pitambara Havan (Highlighted New Product Launch) -->
+                <a 
+                    href="{{ route('products.pitambara') }}" 
+                    class="relative inline-flex items-center space-x-1.5 text-[14px] xl:text-[15px] font-bold text-[#965A15] hover:text-[#D38928] transition-all py-4 whitespace-nowrap tracking-wide group"
+                >
+                    <span class="text-amber-500 animate-pulse text-xs">✦</span>
+                    <span class="font-heading">Pitambara Havan</span>
+                    <span class="text-[9px] font-black uppercase tracking-wider bg-gradient-to-r from-[#D38928] to-[#B8741E] text-white px-2 py-0.5 rounded-full shadow-xs ring-1 ring-[#D38928]/40 animate-pulse">
+                        NEW 🔥
+                    </span>
+                </a>
+
                 <!-- 3. Dhoop Cones -->
                 <a 
                     href="{{ route('collections.show', 'dhoop-cones') }}" 

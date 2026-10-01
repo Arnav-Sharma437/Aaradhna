@@ -18,6 +18,7 @@ Route::get('/api/search/predictive', [SearchController::class, 'predictive'])->n
 Route::get('/collections/{slug}', [CollectionController::class, 'show'])->name('collections.show');
 
 // Product Detail Routes
+Route::get('/pitambara-havan', [ProductController::class, 'showPitambara'])->name('products.pitambara');
 Route::get('/products/{slug}', [ProductController::class, 'show'])->name('products.show');
 
 // Bundle Builder Offers (Super Save Offers)

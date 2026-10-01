@@ -31,6 +31,20 @@
         
         <!-- Direct Nav Links (No Dropdowns) -->
         <div class="p-4 space-y-3 text-base font-medium">
+            <!-- Featured: Pitambara Havan -->
+            <a 
+                href="{{ route('products.pitambara') }}" 
+                class="flex items-center justify-between p-2.5 rounded-[12px] bg-gradient-to-r from-[#FAF0DE] to-[#FFFDF9] border border-[#E8CBA3] text-[#965A15] font-black font-heading shadow-2xs"
+            >
+                <div class="flex items-center space-x-2">
+                    <span class="text-amber-600 text-sm">🪷</span>
+                    <span>Pitambara Havan</span>
+                </div>
+                <span class="text-[9px] font-black uppercase tracking-wider bg-[#D38928] text-white px-2 py-0.5 rounded-full shadow-xs">
+                    NEW LAUNCH 🔥
+                </span>
+            </a>
+
             <a href="{{ route('collections.show', 'bambooless') }}" class="block py-1 text-[#2B1810] hover:text-[#D38928] transition-colors font-semibold">
                 Bambooless
             </a>
