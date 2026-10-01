@@ -209,7 +209,7 @@
         <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 pointer-events-none z-0 flex items-center bg-[#FAF4EB]" data-slide="2">
             <a href="{{ route('collections.show', 'bambooless') }}" class="block w-full h-full relative cursor-pointer" aria-label="Explore Bambooless Incense Collection">
                 <img 
-                    src="{{ asset('assets/images/hero-sacred-bambooless.jpg') }}" 
+                    src="{{ asset('assets/images/hero-sacred-bambooless.png') }}" 
                     alt="Mangalam Sacred Bambooless Collection" 
                     class="absolute inset-0 w-full h-full object-cover object-center"
                 >
