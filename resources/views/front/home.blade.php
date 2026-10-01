@@ -10,8 +10,8 @@
 <!-- ========================================================================= -->
 <section class="relative w-full bg-[#FAF5EE] overflow-hidden select-none border-b border-[#EAE3D9] font-body" id="hero-banner-carousel">
     
-    <!-- Slides Wrapper (Fixed High-Resolution Aspect Ratio for all Screens & Zoom levels) -->
-    <div class="relative w-full aspect-[16/7] sm:aspect-[21/9] md:aspect-[2.4/1] lg:aspect-[2.5/1] max-h-[720px] min-h-[380px] sm:min-h-[460px] md:min-h-[520px] lg:min-h-[600px] overflow-hidden bg-[#FAF4EB]">
+    <!-- Slides Wrapper (Fixed Height for all Screens & Zoom levels) -->
+    <div class="relative w-full h-[340px] sm:h-[420px] md:h-[480px] lg:h-[540px] xl:h-[580px] overflow-hidden bg-[#FAF4EB]">
         
         <!-- SLIDE 1: SACRED BAMBOOLEES COLLECTION (RESPONSIVE DESKTOP & MOBILE BANNER) -->
         <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-100 pointer-events-auto z-10 flex items-center justify-center bg-[#FAF4EB]" data-slide="0">
@@ -319,7 +319,7 @@
                 <!-- ================================================================= -->
 
                 <!-- Card 5: Divya Naagchampa (Sticks) -->
-                <div class="bestseller-extra-card hidden product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group flex-col bg-[#FFFDF9] rounded-[16px] sm:rounded-[20px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 h-full font-body">
+                <div class="bestseller-extra-card hidden product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[16px] sm:rounded-[20px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 h-full font-body">
                     <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
                         <span class="inline-block bg-white px-2.5 sm:px-4 py-0.5 rounded-full border border-[#D38928] text-[11px] sm:text-xs font-bold tracking-widest text-[#965A15] uppercase shadow-xs whitespace-nowrap font-heading">
                             BUY 2 GET 1 FREE
@@ -363,7 +363,7 @@
                 </div>
 
                 <!-- Card 6: Mogra Noor (Sticks) -->
-                <div class="bestseller-extra-card hidden product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group flex-col bg-[#FFFDF9] rounded-[16px] sm:rounded-[20px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 h-full font-body">
+                <div class="bestseller-extra-card hidden product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[16px] sm:rounded-[20px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 h-full font-body">
                     <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
                         <span class="inline-block bg-white px-2.5 sm:px-4 py-0.5 rounded-full border border-[#D38928] text-[11px] sm:text-xs font-bold tracking-widest text-[#965A15] uppercase shadow-xs whitespace-nowrap font-heading">
                             BUY 2 GET 1 FREE
@@ -407,7 +407,7 @@
                 </div>
 
                 <!-- Card 7: Gulab Rooh (Sticks) -->
-                <div class="bestseller-extra-card hidden product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group flex-col bg-[#FFFDF9] rounded-[16px] sm:rounded-[20px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 h-full font-body">
+                <div class="bestseller-extra-card hidden product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[16px] sm:rounded-[20px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 h-full font-body">
                     <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
                         <span class="inline-block bg-white px-2.5 sm:px-4 py-0.5 rounded-full border border-[#D38928] text-[11px] sm:text-xs font-bold tracking-widest text-[#965A15] uppercase shadow-xs whitespace-nowrap font-heading">
                             BUY 2 GET 1 FREE
@@ -451,7 +451,7 @@
                 </div>
 
                 <!-- Card 8: Lavender Veda (Sticks) -->
-                <div class="bestseller-extra-card hidden product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group flex-col bg-[#FFFDF9] rounded-[16px] sm:rounded-[20px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 h-full font-body">
+                <div class="bestseller-extra-card hidden product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[16px] sm:rounded-[20px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 h-full font-body">
                     <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
                         <span class="inline-block bg-white px-2.5 sm:px-4 py-0.5 rounded-full border border-[#D38928] text-[11px] sm:text-xs font-bold tracking-widest text-[#965A15] uppercase shadow-xs whitespace-nowrap font-heading">
                             BUY 2 GET 1 FREE
@@ -497,26 +497,27 @@
             </div>
         </div>
 
-        <!-- Dynamic Action Button: Load More -> then View All Products (Only Desktop) -->
-        <div class="mt-10 sm:mt-12 text-center hidden sm:block">
-            <!-- 1. Load More Button -->
+        <!-- Dynamic Action: Simple Load More Text -> Changes to View All Products Button (Only Desktop) -->
+        <div class="mt-8 sm:mt-10 text-center hidden sm:block">
+            <!-- 1. Simple Load More Text Action -->
             <button 
                 type="button" 
                 id="bestseller-load-more-btn"
-                class="inline-flex items-center justify-center px-8 py-3 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-[10px] shadow-md hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 font-heading cursor-pointer"
+                class="inline-flex items-center space-x-1.5 text-xs sm:text-sm font-bold text-[#D38928] hover:text-[#965A15] border-b-2 border-[#D38928] hover:border-[#965A15] pb-0.5 tracking-wider transition-all duration-200 cursor-pointer font-heading uppercase group"
             >
                 <span>Load More Products</span>
-                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+                <svg class="w-3.5 h-3.5 group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
             </button>
 
-            <!-- 2. View All Products Button (Appears after Load More is clicked) -->
+            <!-- 2. Small View All Products Button (Appears after Load More is clicked) -->
             <a 
                 href="{{ route('collections.show', 'all') }}" 
                 id="bestseller-view-all-btn"
-                class="hidden inline-flex items-center justify-center px-8 py-3 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-[10px] shadow-md hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 font-heading"
+                style="display: none;"
+                class="inline-flex items-center justify-center px-6 py-2.5 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs font-bold uppercase tracking-wider rounded-[8px] shadow-sm hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 font-heading"
             >
                 <span>View All Products</span>
-                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                <svg class="w-3.5 h-3.5 ml-1.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
             </a>
         </div>
 
@@ -536,10 +537,9 @@
             loadMoreBtn.addEventListener('click', () => {
                 extraCards.forEach(card => {
                     card.classList.remove('hidden');
-                    card.classList.add('flex');
                 });
-                loadMoreBtn.classList.add('hidden');
-                viewAllBtn.classList.remove('hidden');
+                loadMoreBtn.style.display = 'none';
+                viewAllBtn.style.display = 'inline-flex';
             });
         }
 
