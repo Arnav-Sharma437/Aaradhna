@@ -58,12 +58,12 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2m0 14v2m8-8h-2M6 12H4m12.364-6.364l-1.414 1.414M7.05 16.95l-1.414 1.414m12.728 0l-1.414-1.414M7.05 7.05L5.636 5.636M12 8a4 4 0 100 8 4 4 0 000-8z"/>
                                 </svg>
                             </div>
-                            <span class="text-xs sm:text-[13px] font-semibold text-[#1F1F1F] leading-tight">
+                            <span class="text-xs sm:text-[15px] font-semibold text-[#1F1F1F] leading-tight">
                                 100% Charcoal Free
                             </span>
-                            <span class="text-[10px] sm:text-[11px] text-[#965A15] font-medium hidden sm:block">
+                            <!-- <span class="text-[10px] sm:text-[11px] text-[#965A15] font-medium hidden sm:block">
                                 Zero Black Soot
-                            </span>
+                            </span> -->
                         </div>
 
                         <!-- Badge 2: Crafted By Hand -->
@@ -74,12 +74,12 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 11.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
                                 </svg>
                             </div>
-                            <span class="text-xs sm:text-[13px] font-semibold text-[#1F1F1F] leading-tight">
+                            <span class="text-xs sm:text-[15px] font-semibold text-[#1F1F1F] leading-tight">
                                 Crafted By Hand
                             </span>
-                            <span class="text-[10px] sm:text-[11px] text-[#965A15] font-medium hidden sm:block">
+                            <!-- <span class="text-[10px] sm:text-[11px] text-[#965A15] font-medium hidden sm:block">
                                 Sacred Temple Flowers
-                            </span>
+                            </span> -->
                         </div>
 
                         <!-- Badge 3: Zero Chemicals -->
@@ -89,12 +89,12 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
                                 </svg>
                             </div>
-                            <span class="text-xs sm:text-[13px] font-semibold text-[#1F1F1F] leading-tight">
+                            <span class="text-xs sm:text-[15px] font-semibold text-[#1F1F1F] leading-tight">
                                 Zero Harmful Toxins
                             </span>
-                            <span class="text-[10px] sm:text-[11px] text-[#965A15] font-medium hidden sm:block">
+                            <!-- <span class="text-[10px] sm:text-[11px] text-[#965A15] font-medium hidden sm:block">
                                 Pure Vedic Herbs
-                            </span>
+                            </span> -->
                         </div>
 
                     </div>
