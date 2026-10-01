@@ -478,9 +478,9 @@
 </section>
 
 <!-- ========================================================================= -->
-<!-- 3. PRODUCTS CATEGORY (Clean Large Single-Item Circles on Pure Soft Cream) -->
+<!-- 3. PRODUCTS CATEGORY (Clean Large Single-Item Circles on Pure White)      -->
 <!-- ========================================================================= -->
-<section class="py-16 sm:py-24 bg-[#FFFDF9] border-b border-[#EAE3D9] font-body select-none">
+<section class="py-16 sm:py-24 bg-white border-b border-[#EAE3D9] font-body select-none">
     <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
         
         <!-- Section Header -->
