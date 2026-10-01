@@ -8,13 +8,13 @@
 <!-- ========================================================================= -->
 <!-- 1. FULL-WIDTH CLEAN LUXURY HERO BANNER                                     -->
 <!-- ========================================================================= -->
-<section class="relative w-full bg-[#FAF5EE] overflow-hidden select-none border-b border-[#EAE3D9] font-body" id="hero-banner-carousel">
+<section class="relative w-full bg-white overflow-hidden select-none border-b border-[#EAE3D9] font-body" id="hero-banner-carousel">
     
     <!-- Slides Wrapper (Fixed Height for all Screens & Zoom levels) -->
-    <div class="relative w-full h-[340px] sm:h-[420px] md:h-[480px] lg:h-[540px] xl:h-[580px] overflow-hidden bg-[#FAF4EB]">
+    <div class="relative w-full h-[340px] sm:h-[420px] md:h-[480px] lg:h-[540px] xl:h-[580px] overflow-hidden bg-white">
         
         <!-- SLIDE 1: SACRED BAMBOOLEES COLLECTION (RESPONSIVE DESKTOP & MOBILE BANNER) -->
-        <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-100 pointer-events-auto z-10 flex items-center justify-center bg-[#FAF4EB]" data-slide="0">
+        <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-100 pointer-events-auto z-10 flex items-center justify-center bg-white" data-slide="0">
             <a href="{{ route('collections.show', 'bambooless') }}" class="block w-full h-full relative cursor-pointer" aria-label="Explore Sacred Bambooless Incense Collection">
                 <picture class="w-full h-full block">
                     <source media="(max-width: 768px)" srcset="{{ asset('assets/images/hero-sacred-mobile.jpg') }}">
@@ -28,7 +28,7 @@
         </div>
 
         <!-- SLIDE 2: SACRED HAVAN CUPS COLLECTION (RESPONSIVE DESKTOP & MOBILE BANNER) -->
-        <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 pointer-events-none z-0 flex items-center justify-center bg-[#FAF4EB]" data-slide="1">
+        <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 pointer-events-none z-0 flex items-center justify-center bg-white" data-slide="1">
             <a href="{{ route('collections.show', 'havan-cups') }}" class="block w-full h-full relative cursor-pointer" aria-label="Explore Sacred Havan Cups Collection">
                 <picture class="w-full h-full block">
                     <source media="(max-width: 768px)" srcset="{{ asset('assets/images/hero-sacred-hawan-cups-mobile.jpg') }}">
@@ -42,7 +42,7 @@
         </div>
 
         <!-- SLIDE 3: SACRED DHOOP CONES COLLECTION (RESPONSIVE DESKTOP & MOBILE BANNER) -->
-        <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 pointer-events-none z-0 flex items-center justify-center bg-[#FAF4EB]" data-slide="2">
+        <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 pointer-events-none z-0 flex items-center justify-center bg-white" data-slide="2">
             <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block w-full h-full relative cursor-pointer" aria-label="Explore Sacred Dhoop Cones Collection">
                 <picture class="w-full h-full block">
                     <source media="(max-width: 768px)" srcset="{{ asset('assets/images/hera-sacred-dhoop-cones-mobile.jpg') }}">
@@ -89,7 +89,7 @@
 <!-- ========================================================================= -->
 <!-- 2. BESTSELLER OF THE MONTH (Mobile Horizontal Slider + 4+4 Load More)     -->
 <!-- ========================================================================= -->
-<section class="py-14 sm:py-20 bg-[#FAF7F2] border-b border-[#EAE3D9] overflow-hidden">
+<section class="py-14 sm:py-20 bg-white border-b border-[#EAE3D9] overflow-hidden">
     <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
         
         <!-- Section Header with Subtitle -->
@@ -673,7 +673,7 @@
 <!-- ========================================================================= -->
 <!-- 4. STANDALONE PROMO BANNER: BUY 5 TRIAL PACKS @ 799                       -->
 <!-- ========================================================================= -->
-<section class="w-full bg-[#FAF4EB] border-b border-[#EADBCC] overflow-hidden select-none py-2 sm:py-4">
+<section class="w-full bg-white border-b border-[#EADBCC] overflow-hidden select-none py-2 sm:py-4">
     <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
         <a href="{{ route('bundles.trial-packs') }}" class="block w-full group focus:outline-none rounded-[16px] sm:rounded-[20px] overflow-hidden shadow-xs">
             <img 
@@ -893,7 +893,7 @@
 <!-- ========================================================================= -->
 <!-- 5. DEVOTEE TESTIMONIALS (3D Interactive Coverflow Slider)                 -->
 <!-- ========================================================================= -->
-<section class="py-18 sm:py-24 bg-[#FDFBF7] border-b border-[#EAE3D9] overflow-hidden select-none" id="testimonial-3d-section">
+<section class="py-18 sm:py-24 bg-white border-b border-[#EAE3D9] overflow-hidden select-none" id="testimonial-3d-section">
     <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
         
         <!-- Header -->
@@ -1098,7 +1098,7 @@
 <!-- ========================================================================= -->
 <!-- 6. ROOTED IN PURITY (4 Pillars of Vedic Dharma)                           -->
 <!-- ========================================================================= -->
-<section class="py-16 sm:py-24 bg-gradient-to-b from-[#FAF7F2] via-[#FFFDF9] to-[#FAF7F2] border-b border-[#EADBCC] relative overflow-hidden font-body select-none">
+<section class="py-16 sm:py-24 bg-white border-b border-[#EADBCC] relative overflow-hidden font-body select-none">
     
     <!-- Ambient Warm Golden Glow in Background -->
     <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[260px] bg-[#D38928]/8 rounded-full blur-3xl pointer-events-none"></div>
@@ -1274,7 +1274,7 @@
 <!-- ========================================================================= -->
 <!-- 7. STANDALONE PROMO BANNER: BUY 2 GET 1 FREE (Above FAQ)                  -->
 <!-- ========================================================================= -->
-<section class="w-full bg-[#FAF4EB] border-b border-[#EADBCC] overflow-hidden select-none py-2 sm:py-4">
+<section class="w-full bg-white border-b border-[#EADBCC] overflow-hidden select-none py-2 sm:py-4">
     <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
         <a href="{{ route('bundles.buy2get1') }}" class="block w-full group focus:outline-none rounded-[16px] sm:rounded-[20px] overflow-hidden shadow-xs">
             <img 
@@ -1290,7 +1290,7 @@
 <!-- ========================================================================= -->
 <!-- 8. FREQUENTLY ASKED QUESTIONS (Luxury Modern Accordions)                  -->
 <!-- ========================================================================= -->
-<section class="py-16 sm:py-24 bg-[#FAF7F2]/60 border-b border-[#EADBCC] select-none">
+<section class="py-16 sm:py-24 bg-white border-b border-[#EADBCC] select-none">
     <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
         <div class="max-w-4xl mx-auto space-y-10">
         
@@ -1414,7 +1414,7 @@
 <!-- ========================================================================= -->
 <!-- 9. CERTIFIED TRUST & PURITY RECOGNITION (Luxury Seals)                    -->
 <!-- ========================================================================= -->
-<section class="py-14 sm:py-16 bg-[#FDFBF7] border-b border-[#EAE3D9]">
+<section class="py-14 sm:py-16 bg-white border-b border-[#EAE3D9]">
     <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
         
         <div class="text-center mb-8">

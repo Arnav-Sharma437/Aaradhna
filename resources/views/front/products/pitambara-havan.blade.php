@@ -688,7 +688,7 @@
     <!-- ========================================================================= -->
     <!-- 6. FREQUENTLY ASKED QUESTIONS (Accordion)                                 -->
     <!-- ========================================================================= -->
-    <section class="py-20 sm:py-28 bg-[#FAF7F2]">
+    <section class="py-20 sm:py-28 bg-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-8 space-y-8">
             
             <div class="text-center space-y-2">

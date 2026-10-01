@@ -4,7 +4,7 @@
 @section('meta_description', 'Get in touch with Mangalam Seva Kendra. Inquiries for daily pooja samagri, temple bulk orders, and devotee assistance in Vrindavan Dham.')
 
 @section('content')
-<div class="bg-[#FFFDF9] min-h-screen font-body select-none">
+<div class="bg-white min-h-screen font-body select-none">
 
     <!-- ========================================================================= -->
     <!-- 1. SPIRITUAL CONTACT HERO BANNER                                          -->
@@ -127,7 +127,7 @@
                 </div>
 
                 <!-- RIGHT COLUMN: Interactive Contact Form (7 Cols) -->
-                <div class="lg:col-span-7 bg-[#FFFDF9] border border-[#EADBCC] rounded-[24px] p-6 sm:p-10 shadow-md space-y-6">
+                <div class="lg:col-span-7 bg-white border border-[#EADBCC] rounded-[24px] p-6 sm:p-10 shadow-md space-y-6">
                     
                     <div class="space-y-1">
                         <h3 class="text-xl sm:text-2xl font-normal text-[#121212] font-heading tracking-tight">

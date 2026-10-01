@@ -4,7 +4,7 @@
 @section('meta_description', 'Your saved sacred pooja essentials and devotional fragrances.')
 
 @section('content')
-<div class="bg-[#FAF7F2] min-h-screen py-10 sm:py-16 font-body">
+<div class="bg-white min-h-screen py-10 sm:py-16 font-body">
     <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
         
         <!-- Header -->

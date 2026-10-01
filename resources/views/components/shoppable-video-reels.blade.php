@@ -102,7 +102,7 @@
 <!-- ========================================================================= -->
 <!-- SHOPPABLE VIDEO REELS SECTION (Infinite Loop Slider + Video Modal)        -->
 <!-- ========================================================================= -->
-<section class="py-12 sm:py-18 bg-[#FDFBF7] border-b border-[#EAE3D9] overflow-hidden font-body select-none relative" id="shoppable-reels-section">
+<section class="py-12 sm:py-18 bg-white border-b border-[#EAE3D9] overflow-hidden font-body select-none relative" id="shoppable-reels-section">
     <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
         
         <!-- Section Header -->

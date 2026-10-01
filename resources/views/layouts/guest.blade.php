@@ -15,7 +15,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('styles')
 </head>
-<body class="antialiased text-[#2B1810] bg-[#FAF5EE] min-h-screen flex items-center justify-center p-4 font-body">
+<body class="antialiased text-[#2B1810] bg-white min-h-screen flex items-center justify-center p-4 font-body">
     <div class="w-full max-w-md">
         @yield('content')
     </div>

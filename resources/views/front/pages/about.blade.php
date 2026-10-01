@@ -4,7 +4,7 @@
 @section('meta_description', 'Discover the sacred story of Mangalam.co™ — 100% Bamboo-free, zero-charcoal pooja samagri handcrafted from temple flowers by Vedic artisans in Vrindavan.')
 
 @section('content')
-<div class="bg-[#FFFDF9] min-h-screen font-body select-none">
+<div class="bg-white min-h-screen font-body select-none">
 
     <!-- ========================================================================= -->
     <!-- 1. SPIRITUAL HERITAGE HERO BANNER                                         -->
@@ -125,7 +125,7 @@
     <!-- ========================================================================= -->
     <!-- 3. THE 4 SACRED PILLARS OF MANGALAM                                       -->
     <!-- ========================================================================= -->
-    <section class="py-16 sm:py-24 bg-[#FAF7F2] border-b border-[#EAE3D9]">
+    <section class="py-16 sm:py-24 bg-white border-b border-[#EAE3D9]">
         <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
             
             <div class="text-center max-w-2xl mx-auto mb-14 space-y-2">

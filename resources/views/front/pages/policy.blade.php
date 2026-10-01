@@ -4,7 +4,7 @@
 @section('meta_description', "Official {$title} of Mangalam.co™ — 100% Pure Vedic Pooja Essentials.")
 
 @section('content')
-<div class="bg-[#FFFDF9] min-h-screen font-body select-none py-12 sm:py-16">
+<div class="bg-white min-h-screen font-body select-none py-12 sm:py-16">
     <div class="w-full max-w-4xl mx-auto px-5 sm:px-8">
         
         <!-- Breadcrumbs -->
