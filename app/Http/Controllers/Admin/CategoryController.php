@@ -129,6 +129,14 @@ class CategoryController extends Controller
     }
 
     /**
+     * Display the specified category (redirects to edit).
+     */
+    public function show(Category $category): RedirectResponse
+    {
+        return redirect()->route('admin.categories.edit', $category);
+    }
+
+    /**
      * Show the form for editing the specified category.
      */
     public function edit(Category $category): View

@@ -55,6 +55,14 @@ class BannerController extends Controller
     }
 
     /**
+     * Display the specified banner (redirects to edit).
+     */
+    public function show(HomepageBanner $banner)
+    {
+        return redirect()->route('admin.banners.edit', $banner);
+    }
+
+    /**
      * Show banner edit form.
      */
     public function edit(HomepageBanner $banner): View

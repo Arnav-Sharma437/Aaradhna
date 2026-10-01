@@ -66,6 +66,14 @@ class BlogController extends Controller
     }
 
     /**
+     * Display the specified blog (redirects to edit).
+     */
+    public function show(BlogPost $blog)
+    {
+        return redirect()->route('admin.blogs.edit', $blog);
+    }
+
+    /**
      * Show blog edit form.
      */
     public function edit(BlogPost $blog): View

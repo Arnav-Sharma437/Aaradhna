@@ -137,6 +137,14 @@ class CollectionController extends Controller
     }
 
     /**
+     * Display the specified collection (redirects to edit).
+     */
+    public function show(Collection $collection): RedirectResponse
+    {
+        return redirect()->route('admin.collections.edit', $collection);
+    }
+
+    /**
      * Show the form for editing the specified collection.
      */
     public function edit(Collection $collection): View

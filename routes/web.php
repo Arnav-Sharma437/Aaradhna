@@ -115,7 +115,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         // 1. Orders Management Module
         Route::patch('/orders/{order}/status', [AdminOrderController::class, 'updateStatus'])->name('orders.update-status');
         Route::patch('/orders/{order}/tracking', [AdminOrderController::class, 'updateTracking'])->name('orders.update-tracking');
-        Route::resource('orders', AdminOrderController::class)->only(['index', 'show', 'destroy']);
+        Route::resource('orders', AdminOrderController::class)->only(['index', 'show', 'update', 'destroy']);
 
         // 2. Products Module
         Route::patch('/products/{product}/toggle-status', [AdminProductController::class, 'toggleStatus'])->name('products.toggle-status');

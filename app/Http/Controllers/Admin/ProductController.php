@@ -280,6 +280,14 @@ class ProductController extends Controller
     }
 
     /**
+     * Display the specified product (redirects to edit).
+     */
+    public function show(Product $product): RedirectResponse
+    {
+        return redirect()->route('admin.products.edit', $product);
+    }
+
+    /**
      * Show the form for editing the specified product.
      */
     public function edit(Product $product): View

@@ -63,6 +63,14 @@ class CouponController extends Controller
     }
 
     /**
+     * Display the specified coupon (redirects to edit).
+     */
+    public function show(Coupon $coupon)
+    {
+        return redirect()->route('admin.coupons.edit', $coupon);
+    }
+
+    /**
      * Show coupon edit form.
      */
     public function edit(Coupon $coupon): View
