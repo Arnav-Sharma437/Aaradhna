@@ -1,4 +1,3 @@
-# Diagnostic connection and discovery test run with updated SSH_PRIVATE_KEY
 name: Hostinger SSH Connection & Path Discovery Test
 
 on:
@@ -15,10 +14,31 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Setup SSH Agent with Private Key
-        uses: webfactory/ssh-agent@v0.9.0
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: Decode and Configure SSH Key (Base64)
+        env:
+          SSH_PRIVATE_KEY_B64: ${{ secrets.SSH_PRIVATE_KEY_B64 }}
+          SERVER_HOST: ${{ secrets.SERVER_HOST }}
+          SERVER_PORT: ${{ secrets.SERVER_PORT }}
+        run: |
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          
+          # Decode base64 secret directly into clean OpenSSH key file
+          echo "$SSH_PRIVATE_KEY_B64" | tr -d '\r\n ' | base64 -d > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          
+          # Ensure trailing newline
+          sed -i -e '$a\' ~/.ssh/id_ed25519
+
+          # Validate key structure locally without printing secret
+          ssh-keygen -l -f ~/.ssh/id_ed25519 || echo "Warning: Key validation check completed"
+
+          # Port handling: default to Hostinger SSH port 65002
+          PORT="${SERVER_PORT:-65002}"
+          
+          # Add remote server to known_hosts
+          ssh-keyscan -p "$PORT" -H "${SERVER_HOST}" >> ~/.ssh/known_hosts 2>/dev/null || true
+          chmod 644 ~/.ssh/known_hosts
 
       - name: Test SSH & Check Aaradhna Path
         env:
@@ -27,9 +47,11 @@ jobs:
           SERVER_USER: ${{ secrets.SERVER_USER }}
         run: |
           PORT="${SERVER_PORT:-65002}"
-          echo "Initiating safe diagnostic SSH session to ${SERVER_USER}@${SERVER_HOST}:${PORT}..."
+          echo "Initiating safe diagnostic SSH session to ${SERVER_USER}@${SERVER_HOST}:${PORT} using decoded ED25519 key..."
 
-          ssh -o StrictHostKeyChecking=accept-new \
+          ssh -i ~/.ssh/id_ed25519 \
+              -o IdentitiesOnly=yes \
+              -o StrictHostKeyChecking=accept-new \
               -p "$PORT" \
               "${SERVER_USER}@${SERVER_HOST}" 'bash -s' << 'EOF'
             set -e
