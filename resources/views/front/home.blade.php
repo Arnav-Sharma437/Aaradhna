@@ -637,16 +637,13 @@
                 </a>
 
                 <!-- Category Details -->
-                <div class="space-y-1 max-w-xs flex flex-col items-center">
-                    <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading block">
-                        Dhoop Stick
-                    </span>
-                    <h3 class="text-xs sm:text-sm lg:text-base font-semibold text-[#1F1F1F]">
-                        <a href="{{ route('collections.show', 'bambooless') }}" class="hover:text-[#D38928] transition-colors">Bamboo-less Dhoop Stick</a>
+                <div class="space-y-0.5 max-w-xs flex flex-col items-center">
+                    <h3 class="text-sm sm:text-base lg:text-[17px] font-bold capitalize tracking-wide text-[#D38928] hover:text-[#965A15] transition-colors font-heading block">
+                        <a href="{{ route('collections.show', 'bambooless') }}">Dhoop Stick</a>
                     </h3>
-                    <!-- <p class="text-[10px] sm:text-[11px] text-gray-500 leading-normal font-normal line-clamp-2">
-                        Dhoop Sticks fill your space with soothing fragrance and divine calm.
-                    </p> -->
+                    <p class="text-[11px] sm:text-xs text-[#7A7A7A] font-medium leading-tight">
+                        Bamboo-less Dhoop Stick
+                    </p>
                 </div>
             </div>
 
@@ -663,16 +660,13 @@
                 </a>
 
                 <!-- Category Details -->
-                <div class="space-y-1 max-w-xs flex flex-col items-center">
-                    <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading block">
-                        Dhoop Cones
-                    </span>
-                    <h3 class="text-xs sm:text-sm lg:text-base font-semibold text-[#1F1F1F]">
-                        <a href="{{ route('collections.show', 'dhoop-cones') }}" class="hover:text-[#D38928] transition-colors">Easy to Use Dhoop Cone</a>
+                <div class="space-y-0.5 max-w-xs flex flex-col items-center">
+                    <h3 class="text-sm sm:text-base lg:text-[17px] font-bold capitalize tracking-wide text-[#D38928] hover:text-[#965A15] transition-colors font-heading block">
+                        <a href="{{ route('collections.show', 'dhoop-cones') }}">Dhoop Cones</a>
                     </h3>
-                    <!-- <p class="text-[10px] sm:text-[11px] text-gray-500 leading-normal font-normal line-clamp-2">
-                        Dhoop Cones release a rich, long-lasting aroma that purifies the air.
-                    </p> -->
+                    <p class="text-[11px] sm:text-xs text-[#7A7A7A] font-medium leading-tight">
+                        Easy to Use Dhoop Cone
+                    </p>
                 </div>
             </div>
 
@@ -689,16 +683,13 @@
                 </a>
 
                 <!-- Category Details -->
-                <div class="space-y-1 max-w-xs flex flex-col items-center">
-                    <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading block">
-                        Havan Cup
-                    </span>
-                    <h3 class="text-xs sm:text-sm lg:text-base font-semibold text-[#1F1F1F]">
-                        <a href="{{ route('collections.show', 'havan-cups') }}" class="hover:text-[#D38928] transition-colors">100% Organic Havan Cups</a>
+                <div class="space-y-0.5 max-w-xs flex flex-col items-center">
+                    <h3 class="text-sm sm:text-base lg:text-[17px] font-bold capitalize tracking-wide text-[#D38928] hover:text-[#965A15] transition-colors font-heading block">
+                        <a href="{{ route('collections.show', 'havan-cups') }}">Havan Cup</a>
                     </h3>
-                    <!-- <p class="text-[10px] sm:text-[11px] text-gray-500 leading-normal font-normal line-clamp-2">
-                        Organic Havan Cups made with pure natural ingredients and herbs.
-                    </p> -->
+                    <p class="text-[11px] sm:text-xs text-[#7A7A7A] font-medium leading-tight">
+                        100% Organic Havan Cups
+                    </p>
                 </div>
             </div>
 
@@ -715,16 +706,13 @@
                 </a>
 
                 <!-- Category Details -->
-                <div class="space-y-1 max-w-xs flex flex-col items-center">
-                    <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading block">
-                        Pitambara Havan Pack
-                    </span>
-                    <h3 class="text-xs sm:text-sm lg:text-base font-semibold text-[#1F1F1F]">
-                        <a href="{{ route('products.pitambara') }}" class="hover:text-[#D38928] transition-colors">Pitambara Havan Pack</a>
+                <div class="space-y-0.5 max-w-xs flex flex-col items-center">
+                    <h3 class="text-sm sm:text-base lg:text-[17px] font-bold capitalize tracking-wide text-[#D38928] hover:text-[#965A15] transition-colors font-heading block">
+                        <a href="{{ route('products.pitambara') }}">Pitambara Havan Pack</a>
                     </h3>
-                    <!-- <p class="text-[10px] sm:text-[11px] text-gray-500 leading-normal font-normal line-clamp-2">
-                        Sacred Vedic blend with fresh mango wood sticks. VIP Pre-booking open.
-                    </p> -->
+                    <p class="text-[11px] sm:text-xs text-[#7A7A7A] font-medium leading-tight">
+                        Sacred Vedic Samagri
+                    </p>
                 </div>
             </div>
 
