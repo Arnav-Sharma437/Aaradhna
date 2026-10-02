@@ -129,7 +129,7 @@ header nav button,
 }
 
 /* ========================================================================= */
-/* MANGLAM METALLIC GOLD CTA BUTTON (Ribbon-Folded Ends & Maroon Dots)      */
+/* MANGLAM METALLIC GOLD CTA BUTTON (Exact Replica of Uploaded Design)      */
 /* ========================================================================= */
 .manglam-btn,
 #bestseller-view-all-btn {
@@ -137,204 +137,257 @@ header nav button,
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    padding: 13px 46px !important;
 
     background: linear-gradient(
         180deg,
-        #f4ce78 0%,
-        #e9b84f 35%,
-        #d89a32 65%,
-        #b87316 100%
-    );
+        #FCE69B 0%,
+        #F5CB5C 26%,
+        #E5A82E 64%,
+        #C27C15 100%
+    ) !important;
 
-    color: #24170a !important;
-    border: 1px solid #d29a3b !important;
-    border-radius: 5px;
+    color: #1E1205 !important;
+    font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif !important;
+    font-size: 14.5px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.18em !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+
+    border: 1px solid #D69E32 !important;
+    border-radius: 6px !important;
 
     box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.45),
-        inset 0 -2px 4px rgba(120,75,15,0.18),
-        0 3px 8px rgba(100,60,10,0.20);
+        inset 0 1px 1px rgba(255, 255, 255, 0.8),
+        inset 0 -2px 3px rgba(120, 65, 8, 0.35),
+        0 4px 12px rgba(80, 40, 5, 0.22) !important;
 
     overflow: visible !important;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    cursor: pointer;
+    transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    user-select: none;
+    z-index: 1;
 }
 
-/* Ensure inner text and elements stay above ribbon ends */
+/* Ensure inner text and SVG icons stay centered and above pseudo elements */
 .manglam-btn > *,
 #bestseller-view-all-btn > * {
     position: relative;
     z-index: 2;
+    color: #1E1205 !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.18em !important;
 }
 
-/* LEFT FOLDED END */
+/* LEFT FOLDED 3D WING (Pointed Arrowhead Ribbon with Horizontal Crease) */
 .manglam-btn::before,
 #bestseller-view-all-btn::before {
     content: "";
     position: absolute;
-    left: -13px;
-    top: 0;
-    width: 15px;
-    height: 100%;
+    left: -17px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: calc(100% - 6px);
 
     background: linear-gradient(
         180deg,
-        #e9b84f 0%,
-        #d89a32 55%,
-        #b87316 100%
+        #FBE089 0%,
+        #E2A028 48%,
+        #A35E09 52%,
+        #753E02 100%
     );
 
     clip-path: polygon(
-        100% 0,
-        100% 100%,
-        0 100%,
-        55% 50%,
-        0 0
+        100% 6%,
+        0% 50%,
+        100% 94%
     );
 
-    z-index: 0;
+    filter: drop-shadow(-1.5px 2px 2.5px rgba(70, 35, 5, 0.35));
+    z-index: -1;
+    pointer-events: none;
 }
 
-/* RIGHT FOLDED END */
+/* RIGHT FOLDED 3D WING (Pointed Arrowhead Ribbon with Horizontal Crease) */
 .manglam-btn::after,
 .manglam-btn .right-fold,
 #bestseller-view-all-btn::after,
 #bestseller-view-all-btn .right-fold {
     content: "";
     position: absolute;
-    right: -13px;
-    top: 0;
-    width: 15px;
-    height: 100%;
+    right: -17px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: calc(100% - 6px);
 
     background: linear-gradient(
         180deg,
-        #e9b84f 0%,
-        #d89a32 55%,
-        #b87316 100%
+        #FBE089 0%,
+        #E2A028 48%,
+        #A35E09 52%,
+        #753E02 100%
     );
 
     clip-path: polygon(
-        0 0,
-        100% 0,
-        45% 50%,
-        100% 100%,
-        0 100%
+        0% 6%,
+        100% 50%,
+        0% 94%
     );
 
-    z-index: 0;
+    filter: drop-shadow(1.5px 2px 2.5px rgba(70, 35, 5, 0.35));
+    z-index: -1;
+    pointer-events: none;
 }
 
-/* MAROON DOTS VIA CLASS */
-.manglam-btn .fold-dot,
-#bestseller-view-all-btn .fold-dot {
+/* 3D RUBY GEMSTONES (Positioned on the Left and Right Edges with Gold Bezel & Specular Glint) */
+.manglam-btn > span::before,
+.manglam-btn .fold-dot.left,
+#bestseller-view-all-btn > span::before,
+#bestseller-view-all-btn .fold-dot.left {
+    content: "";
     position: absolute;
-    width: 14px;
-    height: 14px;
-    background: #7d1625;
-    border: 2px solid #e8b84f;
-    border-radius: 50%;
+    left: -8px;
     top: 50%;
     transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle at 35% 28%,
+        #FF8A96 0%,
+        #D4162B 28%,
+        #870817 65%,
+        #3F0208 100%
+    );
+
+    border: 2px solid #E5B343;
+
     box-shadow:
-        0 1px 3px rgba(80,20,20,0.35),
-        inset 0 1px 1px rgba(255,255,255,0.25);
-    z-index: 3;
+        inset 0 1px 1.5px rgba(255, 255, 255, 0.75),
+        inset 0 -1px 2px rgba(0, 0, 0, 0.6),
+        0 2px 5px rgba(50, 8, 8, 0.45);
+
+    z-index: 5;
+    pointer-events: none;
 }
 
-.manglam-btn .fold-dot.left,
-#bestseller-view-all-btn .fold-dot.left {
-    left: -7px;
-}
-
+.manglam-btn > span::after,
 .manglam-btn .fold-dot.right,
+#bestseller-view-all-btn > span::after,
 #bestseller-view-all-btn .fold-dot.right {
-    right: -7px;
+    content: "";
+    position: absolute;
+    right: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle at 35% 28%,
+        #FF8A96 0%,
+        #D4162B 28%,
+        #870817 65%,
+        #3F0208 100%
+    );
+
+    border: 2px solid #E5B343;
+
+    box-shadow:
+        inset 0 1px 1.5px rgba(255, 255, 255, 0.75),
+        inset 0 -1px 2px rgba(0, 0, 0, 0.6),
+        0 2px 5px rgba(50, 8, 8, 0.45);
+
+    z-index: 5;
+    pointer-events: none;
 }
 
-/* AUTOMATIC MAROON OVERLAPPING DOTS (Pure CSS for clean buttons without extra HTML) */
-.manglam-btn:not(:has(.fold-dot)),
-#bestseller-view-all-btn:not(:has(.fold-dot)) {
+/* Fallback Ruby Gemstones via Radial Gradient for single-element buttons without span */
+.manglam-btn:not(:has(span)),
+#bestseller-view-all-btn:not(:has(span)) {
     background:
-        radial-gradient(circle 6.5px at 0% 50%, #7d1625 0, #7d1625 4px, #e8b84f 4.5px, #e8b84f 6px, transparent 6.5px),
-        radial-gradient(circle 6.5px at 100% 50%, #7d1625 0, #7d1625 4px, #e8b84f 4.5px, #e8b84f 6px, transparent 6.5px),
+        radial-gradient(circle 7px at 0% 50%, #FF8A96 0%, #D4162B 30%, #870817 65%, #E5B343 70%, transparent 7.5px),
+        radial-gradient(circle 7px at 100% 50%, #FF8A96 0%, #D4162B 30%, #870817 65%, #E5B343 70%, transparent 7.5px),
         linear-gradient(
             180deg,
-            #f4ce78 0%,
-            #e9b84f 35%,
-            #d89a32 65%,
-            #b87316 100%
-        );
+            #FCE69B 0%,
+            #F5CB5C 26%,
+            #E5A82E 64%,
+            #C27C15 100%
+        ) !important;
 }
 
-/* HOVER */
+/* HOVER & ACTIVE STATES */
 .manglam-btn:hover,
 #bestseller-view-all-btn:hover {
     background: linear-gradient(
         180deg,
-        #f8d98a 0%,
-        #edbd55 40%,
-        #d99a31 70%,
-        #bd7818 100%
-    );
+        #FFF0B3 0%,
+        #F8D572 26%,
+        #EDB33F 64%,
+        #D1881E 100%
+    ) !important;
 
     box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.5),
-        0 5px 12px rgba(100,60,10,0.25) !important;
+        inset 0 1px 1px rgba(255, 255, 255, 0.9),
+        inset 0 -2px 3px rgba(120, 65, 8, 0.3),
+        0 6px 16px rgba(80, 40, 5, 0.28) !important;
 
-    transform: translateY(-1px);
+    transform: translateY(-1.5px);
 }
 
-.manglam-btn:not(:has(.fold-dot)):hover,
-#bestseller-view-all-btn:not(:has(.fold-dot)):hover {
-    background:
-        radial-gradient(circle 6.5px at 0% 50%, #8f1b2c 0, #8f1b2c 4px, #f8d98a 4.5px, #f8d98a 6px, transparent 6.5px),
-        radial-gradient(circle 6.5px at 100% 50%, #8f1b2c 0, #8f1b2c 4px, #f8d98a 4.5px, #f8d98a 6px, transparent 6.5px),
-        linear-gradient(
-            180deg,
-            #f8d98a 0%,
-            #edbd55 40%,
-            #d99a31 70%,
-            #bd7818 100%
-        ) !important;
+.manglam-btn:active,
+#bestseller-view-all-btn:active {
+    transform: translateY(0.5px);
+    box-shadow:
+        inset 0 1px 2px rgba(80, 40, 5, 0.35),
+        0 2px 6px rgba(80, 40, 5, 0.2) !important;
 }
 
-/* MOBILE RESPONSIVE */
+/* MOBILE RESPONSIVE (Graceful scaling for smaller screens) */
 @media (max-width: 640px) {
-    .manglam-btn::before,
-    .manglam-btn::after,
-    .manglam-btn .right-fold,
-    #bestseller-view-all-btn::before,
-    #bestseller-view-all-btn::after,
-    #bestseller-view-all-btn .right-fold {
-        width: 11px;
+    .manglam-btn,
+    #bestseller-view-all-btn {
+        padding: 11px 32px !important;
+        font-size: 13px !important;
+        letter-spacing: 0.14em !important;
     }
 
     .manglam-btn::before,
     #bestseller-view-all-btn::before {
-        left: -9px;
+        width: 14px;
+        left: -12px;
     }
 
     .manglam-btn::after,
     .manglam-btn .right-fold,
     #bestseller-view-all-btn::after,
     #bestseller-view-all-btn .right-fold {
-        right: -9px;
+        width: 14px;
+        right: -12px;
     }
 
-    .manglam-btn .fold-dot,
-    #bestseller-view-all-btn .fold-dot {
-        width: 11px;
-        height: 11px;
-    }
-
+    .manglam-btn > span::before,
     .manglam-btn .fold-dot.left,
+    #bestseller-view-all-btn > span::before,
     #bestseller-view-all-btn .fold-dot.left {
-        left: -5px;
+        width: 13px;
+        height: 13px;
+        left: -6.5px;
     }
 
+    .manglam-btn > span::after,
     .manglam-btn .fold-dot.right,
+    #bestseller-view-all-btn > span::after,
     #bestseller-view-all-btn .fold-dot.right {
-        right: -5px;
+        width: 13px;
+        height: 13px;
+        right: -6.5px;
     }
 }
 
