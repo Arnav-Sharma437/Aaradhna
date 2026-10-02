@@ -1,3 +1,4 @@
+# Trigger SSH connection test with SSH_PRIVATE_KEY_B64
 name: Hostinger SSH Connection & Path Discovery Test
 
 on:
