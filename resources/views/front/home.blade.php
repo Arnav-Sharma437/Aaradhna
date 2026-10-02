@@ -104,9 +104,9 @@
 
     <!-- Carousel Pagination Dots (Below Banner on both Mobile & Desktop) -->
     @php
-        $slideCount = (isset($banners) && $banners->isNotEmpty()) ? $banners->count() : 4;
+        $slideCount = (isset($banners) && $banners->isNotEmpty()) ? $banners->count() : 3;
     @endphp
-    <div class="flex py-3 sm:py-3.5 bg-white justify-center items-center space-x-2 sm:space-x-2.5" id="hero-slider-dots">
+    <div class="flex py-3 sm:py-3.5 bg-white justify-center items-center space-x-2 sm:space-x-2.5 relative z-20" id="hero-slider-dots">
         @for($i = 0; $i < $slideCount; $i++)
             <button type="button" class="{{ $i === 0 ? 'w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-black' : 'w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-[#D1D5DB] hover:bg-black/40' }} transition-all duration-300 cursor-pointer" data-index="{{ $i }}" aria-label="Slide {{ $i + 1 }}"></button>
         @endfor
@@ -1484,9 +1484,9 @@
 
                 dots.forEach((dot, idx) => {
                     if (idx === currentSlide) {
-                        dot.className = 'w-7 sm:w-8 h-2 rounded-[10px] bg-[#D38928] transition-all duration-300 cursor-pointer';
+                        dot.className = 'w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-black transition-all duration-300 cursor-pointer';
                     } else {
-                        dot.className = 'w-2.5 h-2 rounded-[10px] bg-[#1F1F1F]/25 hover:bg-[#1F1F1F]/60 transition-all duration-300 cursor-pointer';
+                        dot.className = 'w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-[#D1D5DB] hover:bg-black/40 transition-all duration-300 cursor-pointer';
                     }
                 });
             }

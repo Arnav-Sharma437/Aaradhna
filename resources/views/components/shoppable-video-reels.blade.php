@@ -8,7 +8,7 @@
             'price' => 399,
             'mrp' => 499,
             'discount' => '20% OFF',
-            'views' => '1.2k',
+            'views' => '2.4k',
             'likes' => '380 Likes',
             'rating' => '4.9 (1,240 Reviews)',
             'thumbnail' => 'assets/images/incense-pack.jpg',
@@ -34,11 +34,11 @@
             'price' => 399,
             'mrp' => 499,
             'discount' => '20% OFF',
-            'views' => '2.4k',
+            'views' => '3.1k',
             'likes' => '492 Likes',
             'rating' => '4.9 (980 Reviews)',
-            'thumbnail' => 'assets/images/devi-refill-pack-card.jpg',
-            'poster' => 'assets/images/devi-refill-pack-card.jpg',
+            'thumbnail' => 'assets/images/havan-cup.jpg',
+            'poster' => 'assets/images/havan-cup.jpg',
             'video_url' => 'assets/videos/reel-video-2.mp4',
             'why_choose' => [
                 'Crafted with Sacred Temple Flowers',
@@ -60,7 +60,7 @@
             'price' => 399,
             'mrp' => 499,
             'discount' => '20% OFF',
-            'views' => '3.8k',
+            'views' => '4.6k',
             'likes' => '610 Likes',
             'rating' => '4.8 (850 Reviews)',
             'thumbnail' => 'assets/images/single-bambooless-stick.jpg',
@@ -86,7 +86,7 @@
             'price' => 399,
             'mrp' => 499,
             'discount' => '20% OFF',
-            'views' => '4.1k',
+            'views' => '2.8k',
             'likes' => '725 Likes',
             'rating' => '5.0 (1,450 Reviews)',
             'thumbnail' => 'assets/images/oudh-pack-card.jpg',
@@ -103,18 +103,122 @@
                 'Welcoming Honored Guests & Festivities',
                 'Creating a Sacred Sanctuary at Home'
             ]
+        ],
+        [
+            'id' => 5,
+            'title' => 'Mogra Noor Sticks',
+            'subtitle' => 'Pure Jasmine & Floral Herbs',
+            'slug' => 'mogra-noor',
+            'price' => 399,
+            'mrp' => 499,
+            'discount' => '20% OFF',
+            'views' => '5.2k',
+            'likes' => '540 Likes',
+            'rating' => '4.9 (780 Reviews)',
+            'thumbnail' => 'assets/images/incense-pack.jpg',
+            'poster' => 'assets/images/incense-pack.jpg',
+            'video_url' => 'assets/videos/reel-video-2.mp4',
+            'why_choose' => [
+                'Fresh White Mogra Essential Oils',
+                'Sweet Uplifting Floral Scent',
+                'Charcoal-Free Safe Burning',
+                'Cleanses Negative Air'
+            ],
+            'perfect_for' => [
+                'Morning Prayers & Pooja',
+                'Calming Anxiety & Uplifting Mood',
+                'Home Freshening naturally'
+            ]
+        ],
+        [
+            'id' => 6,
+            'title' => 'Gulab Rooh Sticks',
+            'subtitle' => 'Kannauj Rose Flower Essence',
+            'slug' => 'gulab-rooh',
+            'price' => 399,
+            'mrp' => 499,
+            'discount' => '20% OFF',
+            'views' => '4.9k',
+            'likes' => '430 Likes',
+            'rating' => '4.8 (690 Reviews)',
+            'thumbnail' => 'assets/images/havan-cup.jpg',
+            'poster' => 'assets/images/havan-cup.jpg',
+            'video_url' => 'assets/videos/reel-video-3.mp4',
+            'why_choose' => [
+                'Authentic Desi Gulab Petals',
+                'Sweet Devotional Aroma',
+                '100% Bamboo-Free Core',
+                'Pure Vedic Formulation'
+            ],
+            'perfect_for' => [
+                'Devi Lakshmi Worship & Aarti',
+                'Creating Sacred Romance & Serenity',
+                'Meditation & Gratitude'
+            ]
+        ],
+        [
+            'id' => 7,
+            'title' => 'Swarna Pushpa 100 Refill',
+            'subtitle' => 'Economy Sacred Box (100 Sticks)',
+            'slug' => 'swarna-pushpa',
+            'price' => 499,
+            'mrp' => 999,
+            'discount' => '50% OFF',
+            'views' => '6.8k',
+            'likes' => '890 Likes',
+            'rating' => '5.0 (2,100 Reviews)',
+            'thumbnail' => 'assets/images/devi-refill-pack-card.jpg',
+            'poster' => 'assets/images/devi-refill-pack-card.jpg',
+            'video_url' => 'assets/videos/reel-video-1.mp4',
+            'why_choose' => [
+                'Bulk 100 Long Burning Sticks',
+                'Unbeatable 50% Savings Value',
+                'Same Pure Natural Formula',
+                'Recyclable Sacred Packaging'
+            ],
+            'perfect_for' => [
+                'Daily Long-Term Pooja Use',
+                'Ashram & Mandir Offerings',
+                'Family Gifting'
+            ]
+        ],
+        [
+            'id' => 8,
+            'title' => 'Pack of Six Combo (240)',
+            'subtitle' => 'The Grand 6-Fragrance Assortment',
+            'slug' => 'pack-of-six',
+            'price' => 1199,
+            'mrp' => 1799,
+            'discount' => '33% OFF',
+            'views' => '5.9k',
+            'likes' => '940 Likes',
+            'rating' => '5.0 (3,400 Reviews)',
+            'thumbnail' => 'assets/images/chandan-cones-card.jpg',
+            'poster' => 'assets/images/chandan-cones-card.jpg',
+            'video_url' => 'assets/videos/reel-video-2.mp4',
+            'why_choose' => [
+                'Includes All 6 Master Blends',
+                '240 High Grade Dhoop Sticks',
+                'Brass Holder Stand Included',
+                'Luxury Gift Box Presentation'
+            ],
+            'perfect_for' => [
+                'Exploring Every Sacred Scent',
+                'Housewarming & Spiritual Gifting',
+                'Year-Round Devotion'
+            ]
         ]
     ];
 @endphp
 
 <!-- ========================================================================= -->
-<!-- SHOPPABLE VIDEO REELS SECTION (Responsive Desktop Grid & Mobile Coverflow) -->
+<!-- SHOPPABLE VIDEO REELS SECTION                                             -->
 <!-- ========================================================================= -->
-<section class="py-12 sm:py-20 bg-white border-b border-[#EAE3D9] overflow-hidden font-body select-none relative" id="shoppable-reels-section">
+<section class="py-12 sm:py-18 bg-white border-b border-[#EAE3D9] overflow-hidden font-body select-none relative" id="shoppable-reels-section">
     <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
         
-        <!-- Section Header (Clean Heading, No Paragraph) -->
-        <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-14 space-y-1.5">
+        <!-- Section Header -->
+        <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12 space-y-2">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#831F2E] font-heading">✦ SACRED UNBOXING &amp; RITUALS ✦</span>
             <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#121212] font-heading tracking-tight leading-tight">
                 Experience Divine Fragrance
@@ -122,7 +226,7 @@
         </div>
 
         <!-- ================================================================= -->
-        <!-- 1. MOBILE ONLY: 3D COVERFLOW (Matches Reference Screenshot)        -->
+        <!-- 1. MOBILE ONLY: 3D COVERFLOW                                      -->
         <!-- ================================================================= -->
         <div class="sm:hidden relative w-full flex items-center justify-center min-h-[380px] py-4" id="coverflow-mobile-stage">
             
@@ -141,7 +245,6 @@
                 class="relative z-30 w-[230px] aspect-[9/16] rounded-[24px] overflow-hidden bg-black shadow-2xl border-2 border-[#D38928]/50 scale-100 transition-all duration-500 transform cursor-pointer group"
                 title="Tap to watch full reel"
             >
-                <!-- Video Player -->
                 <video class="w-full h-full object-cover pointer-events-none" id="coverflow-center-video" src="{{ asset($reels[0]['video_url']) }}" poster="{{ asset($reels[0]['poster']) }}" autoplay loop muted playsinline></video>
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 pointer-events-none"></div>
 
@@ -149,7 +252,7 @@
                 <div class="absolute top-3 left-3 pointer-events-none z-10">
                     <span class="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-[11px] font-bold border border-white/20">
                         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
-                        <span id="coverflow-views-badge">1.2k</span>
+                        <span id="coverflow-views-badge">{{ $reels[0]['views'] }}</span>
                     </span>
                 </div>
 
@@ -180,94 +283,135 @@
         </div>
 
         <!-- ================================================================= -->
-        <!-- 2. DESKTOP ONLY: 4-CARD REEL GRID / CAROUSEL                      -->
+        <!-- 2. DESKTOP ONLY: ORIGINAL CAROUSEL TRACK WITH ARROWS              -->
         <!-- ================================================================= -->
-        <div class="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
-            @foreach($reels as $idx => $reel)
-                <div 
-                    class="desktop-reel-card group relative aspect-[9/16] rounded-[24px] overflow-hidden bg-black shadow-xl border border-[#EADBCC] hover:border-[#D38928] hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:-translate-y-1"
-                    data-reel-index="{{ $idx }}"
-                >
-                    <!-- Background Video -->
-                    <video class="w-full h-full object-cover pointer-events-none" src="{{ asset($reel['video_url']) }}" poster="{{ asset($reel['poster']) }}" autoplay loop muted playsinline></video>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-black/30 pointer-events-none"></div>
+        <div class="hidden sm:block relative group/reel-container">
+            
+            <!-- Left Arrow Button -->
+            <button 
+                type="button" 
+                id="reel-scroll-prev"
+                class="absolute -left-3 lg:-left-5 top-[40%] -translate-y-1/2 z-30 w-11 h-11 lg:w-13 lg:h-13 rounded-full bg-white/95 hover:bg-[#831F2E] text-[#121212] hover:text-white border border-[#EADBCC] shadow-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 active:scale-95 cursor-pointer focus:outline-none"
+                aria-label="Previous Videos"
+            >
+                <svg class="w-5 h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+            </button>
 
-                    <!-- Top Left Views -->
-                    <div class="absolute top-3.5 left-3.5 z-10 pointer-events-none">
-                        <span class="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-black/50 backdrop-blur-md text-white text-xs font-bold border border-white/20">
-                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
-                            <span>{{ $reel['views'] }}</span>
-                        </span>
-                    </div>
+            <!-- Right Arrow Button -->
+            <button 
+                type="button" 
+                id="reel-scroll-next"
+                class="absolute -right-3 lg:-right-5 top-[40%] -translate-y-1/2 z-30 w-11 h-11 lg:w-13 lg:h-13 rounded-full bg-white/95 hover:bg-[#831F2E] text-[#121212] hover:text-white border border-[#EADBCC] shadow-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 active:scale-95 cursor-pointer focus:outline-none"
+                aria-label="Next Videos"
+            >
+                <svg class="w-5 h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+            </button>
 
-                    <!-- Center Play Button Overlay -->
-                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-                        <div class="w-13 h-13 rounded-full bg-black/40 backdrop-blur-md border border-white/30 text-white flex items-center justify-center transform group-hover:scale-110 transition-transform shadow-xl">
-                            <svg class="w-6 h-6 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            <!-- Horizontal Scrollable Rail -->
+            <div 
+                id="reels-track"
+                class="flex space-x-4 lg:space-x-5 overflow-x-auto scrollbar-none pb-4 pt-1 px-1 cursor-grab active:cursor-grabbing select-none scroll-smooth"
+            >
+                @foreach($reels as $index => $reel)
+                    <div 
+                        class="reel-card shrink-0 w-[240px] md:w-[265px] lg:w-[280px] flex flex-col justify-between group cursor-pointer"
+                        data-reel-index="{{ $index }}"
+                    >
+                        <!-- 9:16 Video Preview Container -->
+                        <div class="relative w-full aspect-[9/16] rounded-[20px] overflow-hidden bg-neutral-900 border border-[#EADBCC] shadow-xs group-hover:shadow-xl group-hover:border-[#D38928] transition-all duration-300 transform group-hover:-translate-y-1">
+                            <video 
+                                class="reel-preview-video w-full h-full object-cover pointer-events-none"
+                                src="{{ asset($reel['video_url']) }}"
+                                poster="{{ asset($reel['poster']) }}"
+                                autoplay
+                                loop
+                                muted
+                                playsinline
+                                preload="auto"
+                            ></video>
+
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-black/30 pointer-events-none"></div>
+
+                            <!-- Top Right View Counter Pill -->
+                            <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/45 backdrop-blur-md border border-white/20 text-white text-[11px] font-bold tracking-wide flex items-center space-x-1.5 pointer-events-none select-none">
+                                <svg class="w-3.5 h-3.5 text-white/90" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                </svg>
+                                <span>{{ $reel['views'] }}</span>
+                            </div>
+
+                            <!-- Bottom Watch Video Text -->
+                            <div class="absolute bottom-3 inset-x-3 text-center pointer-events-none">
+                                <span class="inline-block bg-black/50 backdrop-blur-xs px-3 py-1 rounded-full text-white text-[11px] font-semibold border border-white/15">
+                                    ▶ Tap to Watch
+                                </span>
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Bottom Shoppable Peek Bar -->
-                    <div class="absolute bottom-3.5 inset-x-3.5 z-10 pointer-events-none">
-                        <div class="bg-black/60 backdrop-blur-md p-2.5 rounded-[16px] border border-white/20 flex items-center justify-between">
-                            <div class="flex items-center space-x-2.5 min-w-0">
-                                <div class="w-9 h-9 rounded-[8px] bg-white overflow-hidden shrink-0 border border-white/40">
-                                    <img src="{{ asset($reel['thumbnail']) }}" alt="{{ $reel['title'] }}" class="w-full h-full object-cover">
+                        <!-- Bottom Product Card Row -->
+                        <div class="mt-3 bg-white p-2.5 sm:p-3 rounded-[14px] border border-[#EADBCC] shadow-xs space-y-2">
+                            <div class="flex items-center space-x-2.5">
+                                <div class="w-11 h-11 rounded-[8px] border border-[#EADBCC] p-0.5 bg-[#FAF7F2] shrink-0 overflow-hidden flex items-center justify-center">
+                                    <img src="{{ asset($reel['thumbnail']) }}" alt="{{ $reel['title'] }}" class="w-full h-full object-cover rounded-[6px]">
                                 </div>
-                                <div class="min-w-0">
-                                    <h4 class="text-xs font-bold text-white truncate">{{ $reel['title'] }}</h4>
-                                    <span class="text-xs font-bold text-[#F6DAA8]">₹{{ $reel['price'] }}</span>
+                                <div class="min-w-0 flex-1">
+                                    <h4 class="text-xs sm:text-[13px] font-bold font-body text-[#1F1F1F] truncate leading-tight">
+                                        {{ $reel['title'] }}
+                                    </h4>
+                                    <div class="flex items-baseline space-x-1.5 pt-0.5 font-body">
+                                        <span class="text-xs sm:text-sm font-bold text-[#C87A1E]">₹{{ $reel['price'] }}.00</span>
+                                        <span class="text-[11px] text-gray-400 line-through">₹{{ $reel['mrp'] }}</span>
+                                    </div>
                                 </div>
                             </div>
-                            <span class="text-[10px] font-bold uppercase bg-white/20 text-white px-2 py-1 rounded-full shrink-0">Watch</span>
+
+                            <button 
+                                type="button" 
+                                class="quick-add-to-cart-btn w-full py-2 px-3 bg-[#FAF5EE] hover:bg-[#D38928] text-[#831F2E] hover:text-white border border-[#EADBCC] hover:border-[#D38928] text-xs font-bold rounded-[8px] transition-all flex items-center justify-center space-x-1 font-heading cursor-pointer"
+                                data-product-id="{{ $reel['id'] }}"
+                                data-product-title="{{ $reel['title'] }}"
+                                data-product-slug="{{ $reel['slug'] }}"
+                                data-product-price="{{ $reel['price'] }}"
+                                data-product-image="{{ asset($reel['thumbnail']) }}"
+                            >
+                                <span>Add to Cart</span>
+                            </button>
                         </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
 
     </div>
 </section>
 
 <!-- ========================================================================= -->
-<!-- FULL REEL LIGHTBOX MODAL (Full 9:16 Video + Inside Bottom Shoppable Bar)   -->
+<!-- FULL-SCREEN REEL LIGHTBOX MODAL (100% Full Screen on Mobile, Swipe Reels) -->
 <!-- ========================================================================= -->
 <div 
     id="reel-video-modal" 
-    class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center opacity-0 pointer-events-none transition-all duration-300 font-body select-none overflow-hidden"
+    class="fixed inset-0 z-50 bg-black sm:bg-black/90 sm:backdrop-blur-md hidden items-center justify-center opacity-0 pointer-events-none transition-all duration-300 font-body select-none overflow-hidden"
 >
-    <!-- Modal Backdrop Click Area -->
-    <div class="absolute inset-0" id="reel-modal-backdrop"></div>
-
-    <!-- Top Right Floating Close Button -->
+    <!-- Top Right Close Button (Always visible on top right) -->
     <button 
         type="button" 
         id="reel-modal-close"
-        class="absolute top-4 right-4 sm:top-6 sm:right-8 z-40 w-11 h-11 rounded-full bg-white/20 hover:bg-white text-white hover:text-black flex items-center justify-center backdrop-blur-md border border-white/30 transition-all duration-200 cursor-pointer shadow-2xl focus:outline-none"
+        class="fixed top-3.5 right-3.5 sm:top-6 sm:right-8 z-50 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black/60 hover:bg-white text-white hover:text-black flex items-center justify-center backdrop-blur-md border border-white/30 transition-all duration-200 cursor-pointer shadow-2xl focus:outline-none"
         aria-label="Close Reel"
     >
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
     </button>
 
-    <!-- Modal Reel Stage Container -->
-    <div class="relative z-20 w-full max-w-md h-full max-h-[92vh] flex items-center justify-center px-2 sm:px-4">
+    <!-- Modal Stage (Full Screen Edge-to-Edge on Mobile, Centered 9:16 Card on Desktop) -->
+    <div class="relative z-20 w-full h-full sm:max-w-md sm:h-[92vh] flex items-center justify-center p-0 sm:px-4">
         
-        <!-- Left Nav Arrow in Modal -->
-        <button 
-            type="button" 
-            id="modal-prev-arrow"
-            class="absolute -left-3 sm:-left-12 top-1/2 -translate-y-1/2 z-40 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/90 text-[#121212] hover:bg-[#831F2E] hover:text-white flex items-center justify-center shadow-xl transition-all cursor-pointer focus:outline-none"
-            aria-label="Previous Reel"
-        >
-            <svg class="w-5 h-5 sm:w-6 sm:h-6 mr-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
-        </button>
-
-        <!-- Main Playing Reel Card (9:16 aspect ratio) -->
+        <!-- Main Playing Reel Card -->
         <div 
             id="modal-card-active"
-            class="relative z-30 w-full aspect-[9/16] bg-black rounded-[24px] overflow-hidden border border-white/20 shadow-2xl flex flex-col justify-between"
+            class="relative z-30 w-full h-full sm:aspect-[9/16] bg-black sm:rounded-[24px] overflow-hidden sm:border sm:border-white/20 shadow-2xl flex flex-col justify-between"
         >
-            <!-- Video Player -->
+            <!-- Video Player (Full Coverage) -->
             <video 
                 id="modal-reel-video"
                 class="absolute inset-0 w-full h-full object-cover cursor-pointer"
@@ -276,15 +420,15 @@
                 loop
             ></video>
 
-            <!-- Gradient Shadow for Text Legibility -->
+            <!-- Gradient Shadow Overlay -->
             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/40 pointer-events-none z-10"></div>
 
-            <!-- Top Header & Mute Button -->
-            <div class="relative z-20 p-4 flex items-center justify-between">
+            <!-- Top Header & Mute Button (Left) -->
+            <div class="relative z-20 p-4 pt-4 sm:pt-4 flex items-center justify-between">
                 <button 
                     type="button" 
                     id="modal-mute-btn"
-                    class="px-3.5 py-1.5 rounded-full bg-black/50 backdrop-blur-md border border-white/25 text-white text-xs font-bold flex items-center space-x-1.5 cursor-pointer shadow-lg hover:bg-black/70 transition-colors"
+                    class="px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/25 text-white text-xs font-bold flex items-center space-x-1.5 cursor-pointer shadow-lg hover:bg-black/80 transition-colors"
                 >
                     <svg id="modal-volume-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/>
@@ -323,8 +467,8 @@
                 </button>
             </div>
 
-            <!-- Bottom Floating Product Preview Bar (Tapping opens Slide-Up Drawer) -->
-            <div class="relative z-20 p-3.5 pb-4 mt-auto">
+            <!-- Bottom Floating Product Preview Bar (Tapping opens Slide-Up Details) -->
+            <div class="relative z-20 p-3.5 pb-6 sm:pb-4 mt-auto">
                 <div 
                     id="modal-open-drawer-trigger"
                     class="bg-white/95 backdrop-blur-md rounded-[16px] p-2.5 shadow-2xl border border-white flex items-center justify-between cursor-pointer hover:bg-white transition-all transform active:scale-[0.99] group"
@@ -368,7 +512,7 @@
             </div>
 
             <!-- ============================================================= -->
-            <!-- SLIDE-UP PRODUCT DETAILS DRAWER (Matches media_1790947252216) -->
+            <!-- SLIDE-UP PRODUCT DETAILS DRAWER                               -->
             <!-- ============================================================= -->
             <div 
                 id="modal-product-drawer"
@@ -389,7 +533,6 @@
 
                 <!-- Scrollable Product Content -->
                 <div class="p-4 overflow-y-auto space-y-4 flex-1">
-                    
                     <!-- Product Header Row -->
                     <div class="flex items-start space-x-3.5">
                         <div class="w-16 h-16 rounded-[12px] bg-white border border-[#EADBCC] p-1 shrink-0 overflow-hidden shadow-xs">
@@ -432,7 +575,6 @@
                             <!-- Injected dynamically -->
                         </ul>
                     </div>
-
                 </div>
 
                 <!-- Sticky Bottom Add to Cart Button -->
@@ -455,27 +597,31 @@
 
         </div>
 
-        <!-- Right Nav Arrow in Modal -->
-        <button 
-            type="button" 
-            id="modal-next-arrow"
-            class="absolute -right-3 sm:-right-12 top-1/2 -translate-y-1/2 z-40 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/90 text-[#121212] hover:bg-[#831F2E] hover:text-white flex items-center justify-center shadow-xl transition-all cursor-pointer focus:outline-none"
-            aria-label="Next Reel"
-        >
-            <svg class="w-5 h-5 sm:w-6 sm:h-6 ml-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-        </button>
-
     </div>
 </div>
 
 <!-- ========================================================================= -->
-<!-- JAVASCRIPT LOGIC (Coverflow, Modal Player & Bottom Details Drawer)          -->
+<!-- JAVASCRIPT LOGIC (Desktop Rail, Mobile Coverflow, Full-Screen Reel & Vertical Swipe) -->
 <!-- ========================================================================= -->
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const reelsData = @json($reels);
         let currentIndex = 0;
         const totalReels = reelsData.length;
+
+        // Desktop Track Navigation
+        const track = document.getElementById('reels-track');
+        const scrollPrev = document.getElementById('reel-scroll-prev');
+        const scrollNext = document.getElementById('reel-scroll-next');
+
+        if (track && scrollPrev && scrollNext) {
+            scrollPrev.addEventListener('click', () => {
+                track.scrollBy({ left: -300, behavior: 'smooth' });
+            });
+            scrollNext.addEventListener('click', () => {
+                track.scrollBy({ left: 300, behavior: 'smooth' });
+            });
+        }
 
         // Mobile Coverflow Elements
         const leftCard = document.getElementById('coverflow-left-card');
@@ -489,7 +635,6 @@
 
         // Modal Elements
         const modal = document.getElementById('reel-video-modal');
-        const modalBackdrop = document.getElementById('reel-modal-backdrop');
         const modalClose = document.getElementById('reel-modal-close');
         const modalVideo = document.getElementById('modal-reel-video');
         const modalImg = document.getElementById('modal-product-img');
@@ -503,8 +648,6 @@
         const modalLikeBtn = document.getElementById('modal-like-btn');
         const modalHeartIcon = document.getElementById('modal-heart-icon');
         const modalLikesCount = document.getElementById('modal-likes-count');
-        const modalPrevArrow = document.getElementById('modal-prev-arrow');
-        const modalNextArrow = document.getElementById('modal-next-arrow');
 
         // Drawer Elements inside Modal
         const drawerTrigger = document.getElementById('modal-open-drawer-trigger');
@@ -557,9 +700,10 @@
         if (rightCard) rightCard.addEventListener('click', () => updateCoverflow(currentIndex + 1));
         if (centerCard) centerCard.addEventListener('click', () => openModal(currentIndex));
 
-        // Desktop Cards Click
-        document.querySelectorAll('.desktop-reel-card').forEach(card => {
-            card.addEventListener('click', () => {
+        // Desktop Reel Cards Click
+        document.querySelectorAll('.reel-card').forEach(card => {
+            card.addEventListener('click', (e) => {
+                if (e.target.closest('button')) return;
                 const idx = parseInt(card.getAttribute('data-reel-index') || '0', 10);
                 openModal(idx);
             });
@@ -614,7 +758,7 @@
             if (drawerWhyChoose && item.why_choose) {
                 drawerWhyChoose.innerHTML = item.why_choose.map(point => `
                     <li class="flex items-center space-x-2">
-                        <span class="text-[#D38928] text-xs">✓</span>
+                        <span class="text-[#D38928] text-xs font-bold">✓</span>
                         <span>${point}</span>
                     </li>
                 `).join('');
@@ -623,7 +767,7 @@
             if (drawerPerfectFor && item.perfect_for) {
                 drawerPerfectFor.innerHTML = item.perfect_for.map(point => `
                     <li class="flex items-center space-x-2">
-                        <span class="text-[#831F2E] text-xs">✦</span>
+                        <span class="text-[#831F2E] text-xs font-bold">✦</span>
                         <span>${point}</span>
                     </li>
                 `).join('');
@@ -668,15 +812,10 @@
         }
 
         if (modalClose) modalClose.addEventListener('click', closeModal);
-        if (modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
-
-        if (modalPrevArrow) modalPrevArrow.addEventListener('click', () => openModal(currentIndex - 1));
-        if (modalNextArrow) modalNextArrow.addEventListener('click', () => openModal(currentIndex + 1));
 
         // Toggle Drawer
         if (drawerTrigger && drawer) {
             drawerTrigger.addEventListener('click', (e) => {
-                // If quick add button was clicked, don't toggle drawer
                 if (e.target.closest('#modal-quick-add-cart')) return;
                 drawer.classList.remove('translate-y-full');
             });
@@ -713,7 +852,58 @@
             });
         }
 
-        // Mobile Coverflow Swipe Support
+        // Mobile & Desktop Reel Vertical Swipe / Scroll (Reel-Style Navigation without Arrows)
+        let modalTouchStartY = 0;
+        let modalTouchStartX = 0;
+        if (modal) {
+            modal.addEventListener('touchstart', (e) => {
+                modalTouchStartY = e.touches[0].clientY;
+                modalTouchStartX = e.touches[0].clientX;
+            }, { passive: true });
+
+            modal.addEventListener('touchend', (e) => {
+                // If drawer is open, don't trigger reel swipe
+                if (drawer && !drawer.classList.contains('translate-y-full')) return;
+
+                const diffY = modalTouchStartY - e.changedTouches[0].clientY;
+                const diffX = modalTouchStartX - e.changedTouches[0].clientX;
+
+                // Vertical swipe detection (more vertical than horizontal)
+                if (Math.abs(diffY) > 50 && Math.abs(diffY) > Math.abs(diffX)) {
+                    if (diffY > 0) {
+                        // Swipe Up -> Next Reel
+                        openModal(currentIndex + 1);
+                    } else {
+                        // Swipe Down -> Previous Reel
+                        openModal(currentIndex - 1);
+                    }
+                }
+            }, { passive: true });
+
+            // Mouse wheel scroll support for desktop full view
+            let wheelTimeout = null;
+            modal.addEventListener('wheel', (e) => {
+                if (drawer && !drawer.classList.contains('translate-y-full')) return;
+                if (wheelTimeout) return;
+                
+                if (Math.abs(e.deltaY) > 40) {
+                    wheelTimeout = setTimeout(() => { wheelTimeout = null; }, 500);
+                    if (e.deltaY > 0) openModal(currentIndex + 1);
+                    else openModal(currentIndex - 1);
+                }
+            }, { passive: true });
+        }
+
+        // Keyboard Arrow Keys (Up/Down for reels)
+        document.addEventListener('keydown', (e) => {
+            if (modal && !modal.classList.contains('pointer-events-none')) {
+                if (e.key === 'Escape') closeModal();
+                if (e.key === 'ArrowDown' || e.key === 'ArrowRight') openModal(currentIndex + 1);
+                if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') openModal(currentIndex - 1);
+            }
+        });
+
+        // Mobile Coverflow Swipe Support on main page
         const mobileStage = document.getElementById('coverflow-mobile-stage');
         if (mobileStage) {
             let touchStartX = 0;
