@@ -1430,9 +1430,6 @@
     </div>
 </section>
 
-<!-- ========================================================================= -->
-<!-- 9. CERTIFIED TRUST & PURITY RECOGNITION (Luxury Seals)                    -->
-<!-- ========================================================================= -->
 <section class="py-14 sm:py-16 bg-white border-b border-[#EAE3D9]">
     <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
         
@@ -1443,47 +1440,23 @@
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             
             <!-- Make in India -->
-            <div class="bg-white rounded-[14px] border border-[#EAE3D9] p-4 sm:p-5 flex items-center space-x-3.5 shadow-xs hover:border-[#D38928]/40 hover:shadow-md transition-all">
-                <div class="w-14 h-12 flex items-center justify-center shrink-0">
-                    <img src="{{ asset('assets/images/trust/make-in-india.png') }}" alt="Make in India" class="w-full h-full object-contain">
-                </div>
-                <div>
-                    <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading leading-tight">Make in India</h4>
-                    <p class="text-[10px] sm:text-[11px] text-gray-500">100% Indigenous Craft</p>
-                </div>
+            <div class="bg-white rounded-[16px] border border-[#EAE3D9] p-5 sm:p-6 flex items-center justify-center shadow-xs hover:border-[#D38928]/40 hover:shadow-md transition-all h-28 sm:h-32">
+                <img src="{{ asset('assets/images/trust/make-in-india.png') }}" alt="Make in India" class="max-h-16 sm:max-h-20 w-auto object-contain">
             </div>
 
             <!-- MSME Certified -->
-            <div class="bg-white rounded-[14px] border border-[#EAE3D9] p-4 sm:p-5 flex items-center space-x-3.5 shadow-xs hover:border-[#D38928]/40 hover:shadow-md transition-all">
-                <div class="w-14 h-12 flex items-center justify-center shrink-0">
-                    <img src="{{ asset('assets/images/trust/msme.png') }}" alt="MSME Ministry Govt of India" class="w-full h-full object-contain">
-                </div>
-                <div>
-                    <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading leading-tight">MSME Certified</h4>
-                    <p class="text-[10px] sm:text-[11px] text-gray-500">Govt. of India Recognized</p>
-                </div>
+            <div class="bg-white rounded-[16px] border border-[#EAE3D9] p-5 sm:p-6 flex items-center justify-center shadow-xs hover:border-[#D38928]/40 hover:shadow-md transition-all h-28 sm:h-32">
+                <img src="{{ asset('assets/images/trust/msme.png') }}" alt="MSME Ministry Govt of India" class="max-h-16 sm:max-h-20 w-auto object-contain">
             </div>
 
             <!-- Razorpay Secure -->
-            <div class="bg-white rounded-[14px] border border-[#EAE3D9] p-4 sm:p-5 flex items-center space-x-3.5 shadow-xs hover:border-[#D38928]/40 hover:shadow-md transition-all">
-                <div class="w-14 h-12 flex items-center justify-center shrink-0">
-                    <img src="{{ asset('assets/images/trust/razorpay.png') }}" alt="Razorpay Secure Payments" class="w-full h-full object-contain">
-                </div>
-                <div>
-                    <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading leading-tight">Razorpay Secure</h4>
-                    <p class="text-[10px] sm:text-[11px] text-gray-500">256-Bit Encrypted UPI</p>
-                </div>
+            <div class="bg-white rounded-[16px] border border-[#EAE3D9] p-5 sm:p-6 flex items-center justify-center shadow-xs hover:border-[#D38928]/40 hover:shadow-md transition-all h-28 sm:h-32">
+                <img src="{{ asset('assets/images/trust/razorpay.png') }}" alt="Razorpay Secure Payments" class="max-h-16 sm:max-h-20 w-auto object-contain">
             </div>
 
             <!-- Amazon / Trusted Delivery -->
-            <div class="bg-white rounded-[14px] border border-[#EAE3D9] p-4 sm:p-5 flex items-center space-x-3.5 shadow-xs hover:border-[#D38928]/40 hover:shadow-md transition-all">
-                <div class="w-14 h-12 flex items-center justify-center shrink-0">
-                    <img src="{{ asset('assets/images/trust/amazon.png') }}" alt="Available on Amazon" class="w-full h-full object-contain">
-                </div>
-                <div>
-                    <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading leading-tight">Amazon Trusted</h4>
-                    <p class="text-[10px] sm:text-[11px] text-gray-500">Fast Express Delivery</p>
-                </div>
+            <div class="bg-white rounded-[16px] border border-[#EAE3D9] p-5 sm:p-6 flex items-center justify-center shadow-xs hover:border-[#D38928]/40 hover:shadow-md transition-all h-28 sm:h-32">
+                <img src="{{ asset('assets/images/trust/amazon.png') }}" alt="Available on Amazon" class="max-h-16 sm:max-h-20 w-auto object-contain">
             </div>
 
         </div>
