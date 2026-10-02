@@ -2,18 +2,18 @@
     $reels = [
         [
             'id' => 1,
-            'title' => 'Chandan Saanjh Sticks',
+            'title' => 'Sandalwood (चंदन)',
             'subtitle' => 'Sacred Mysore Sandalwood Dhoop',
             'slug' => 'chandan-saanjh',
-            'price' => 399,
-            'mrp' => 499,
-            'discount' => '20% OFF',
-            'views' => '2.4k',
+            'price' => 289,
+            'mrp' => 375,
+            'discount' => '23% OFF',
+            'views' => '2.6k',
             'likes' => '380 Likes',
             'rating' => '4.9 (1,240 Reviews)',
-            'thumbnail' => 'assets/images/incense-pack.jpg',
-            'poster' => 'assets/images/incense-pack.jpg',
-            'video_url' => 'assets/videos/reel-video-1.mp4',
+            'thumbnail' => asset('assets/images/incense-pack.jpg'),
+            'poster' => asset('assets/images/incense-pack.jpg'),
+            'video_url' => asset('assets/videos/reel-video-1.mp4'),
             'why_choose' => [
                 '100% Charcoal-Free & Bamboo-Less',
                 'Pure Mysore Sandalwood & Natural Herbs',
@@ -28,44 +28,18 @@
         ],
         [
             'id' => 2,
-            'title' => 'Swarna Pushpa Sticks',
-            'subtitle' => 'Divine Marigold & Rose Fusion',
-            'slug' => 'swarna-pushpa',
-            'price' => 399,
-            'mrp' => 499,
-            'discount' => '20% OFF',
-            'views' => '3.1k',
-            'likes' => '492 Likes',
-            'rating' => '4.9 (980 Reviews)',
-            'thumbnail' => 'assets/images/havan-cup.jpg',
-            'poster' => 'assets/images/havan-cup.jpg',
-            'video_url' => 'assets/videos/reel-video-2.mp4',
-            'why_choose' => [
-                'Crafted with Sacred Temple Flowers',
-                'No Synthetic Charcoal or Chemicals',
-                'Calming Floral Vedic Aroma',
-                'Long-lasting Fragrance Residue'
-            ],
-            'perfect_for' => [
-                'Daily Temple & Home Deity Worship',
-                'Festive Havans & Ceremonies',
-                'Elevating Peace and Positive Vibes'
-            ]
-        ],
-        [
-            'id' => 3,
-            'title' => 'Divya Naagchampa',
+            'title' => 'Nagchampa Refill Pack',
             'subtitle' => 'Authentic Sacred Floral Woods',
             'slug' => 'divya-naagchampa',
-            'price' => 399,
-            'mrp' => 499,
-            'discount' => '20% OFF',
-            'views' => '4.6k',
-            'likes' => '610 Likes',
-            'rating' => '4.8 (850 Reviews)',
-            'thumbnail' => 'assets/images/single-bambooless-stick.jpg',
-            'poster' => 'assets/images/single-bambooless-stick.jpg',
-            'video_url' => 'assets/videos/reel-video-3.mp4',
+            'price' => 489,
+            'mrp' => 700,
+            'discount' => '30% OFF',
+            'views' => '2.6k',
+            'likes' => '492 Likes',
+            'rating' => '4.8 (980 Reviews)',
+            'thumbnail' => asset('assets/images/devi-refill-pack-card.jpg'),
+            'poster' => asset('assets/images/devi-refill-pack-card.jpg'),
+            'video_url' => asset('assets/videos/reel-video-2.mp4'),
             'why_choose' => [
                 'Original Naagchampa Resin & Essential Oils',
                 'Deep, Grounding Earthy Fragrance',
@@ -79,19 +53,19 @@
             ]
         ],
         [
-            'id' => 4,
-            'title' => 'Royal Oudh Sticks',
+            'id' => 3,
+            'title' => 'Oudh Refill Pack',
             'subtitle' => 'Pure Assam Agarwood Essence',
             'slug' => 'royal-oudh',
-            'price' => 399,
-            'mrp' => 499,
-            'discount' => '20% OFF',
-            'views' => '2.8k',
-            'likes' => '725 Likes',
+            'price' => 489,
+            'mrp' => 700,
+            'discount' => '30% OFF',
+            'views' => '1.8k',
+            'likes' => '204 Likes',
             'rating' => '5.0 (1,450 Reviews)',
-            'thumbnail' => 'assets/images/oudh-pack-card.jpg',
-            'poster' => 'assets/images/oudh-pack-card.jpg',
-            'video_url' => 'assets/videos/reel-video-1.mp4',
+            'thumbnail' => asset('assets/images/oudh-pack-card.jpg'),
+            'poster' => asset('assets/images/oudh-pack-card.jpg'),
+            'video_url' => asset('assets/videos/reel-video-3.mp4'),
             'why_choose' => [
                 'Pure Rich Assam Agarwood Extract',
                 'Opulent Long-lasting Royalty Aroma',
@@ -105,19 +79,19 @@
             ]
         ],
         [
-            'id' => 5,
-            'title' => 'Mogra Noor Sticks',
+            'id' => 4,
+            'title' => 'Mogra Refill Pack',
             'subtitle' => 'Pure Jasmine & Floral Herbs',
             'slug' => 'mogra-noor',
-            'price' => 399,
-            'mrp' => 499,
-            'discount' => '20% OFF',
-            'views' => '5.2k',
-            'likes' => '540 Likes',
+            'price' => 489,
+            'mrp' => 700,
+            'discount' => '30% OFF',
+            'views' => '3.2k',
+            'likes' => '610 Likes',
             'rating' => '4.9 (780 Reviews)',
-            'thumbnail' => 'assets/images/incense-pack.jpg',
-            'poster' => 'assets/images/incense-pack.jpg',
-            'video_url' => 'assets/videos/reel-video-2.mp4',
+            'thumbnail' => asset('assets/images/single-bambooless-stick.jpg'),
+            'poster' => asset('assets/images/single-bambooless-stick.jpg'),
+            'video_url' => asset('assets/videos/reel-video-1.mp4'),
             'why_choose' => [
                 'Fresh White Mogra Essential Oils',
                 'Sweet Uplifting Floral Scent',
@@ -131,7 +105,59 @@
             ]
         ],
         [
+            'id' => 5,
+            'title' => 'Loban Havan Cup',
+            'subtitle' => '100% Organic Sacred Cow Dung Cups',
+            'slug' => 'havan-cups',
+            'price' => 499,
+            'mrp' => 649,
+            'discount' => '23% OFF',
+            'views' => '2.8k',
+            'likes' => '725 Likes',
+            'rating' => '5.0 (1,890 Reviews)',
+            'thumbnail' => asset('assets/images/havan-cup.jpg'),
+            'poster' => asset('assets/images/havan-cup.jpg'),
+            'video_url' => asset('assets/videos/reel-video-2.mp4'),
+            'why_choose' => [
+                'Purifying Sambrani & Guggul Resin',
+                'Natural Desi Cow Dung Cup Base',
+                'Eliminates Vastu Dosha & Negativity',
+                'Complete Mini Havan in 15 Minutes'
+            ],
+            'perfect_for' => [
+                'Daily Home Havan & Purification',
+                'Tuesday & Saturday Hanuman Puja',
+                'Festivals, Navratri & Diwali'
+            ]
+        ],
+        [
             'id' => 6,
+            'title' => 'Swarna Pushpa Sticks',
+            'subtitle' => 'Divine Marigold & Rose Fusion',
+            'slug' => 'swarna-pushpa',
+            'price' => 399,
+            'mrp' => 499,
+            'discount' => '20% OFF',
+            'views' => '3.1k',
+            'likes' => '492 Likes',
+            'rating' => '4.9 (980 Reviews)',
+            'thumbnail' => asset('assets/images/devi-refill-pack-card.jpg'),
+            'poster' => asset('assets/images/devi-refill-pack-card.jpg'),
+            'video_url' => asset('assets/videos/reel-video-3.mp4'),
+            'why_choose' => [
+                'Crafted with Sacred Temple Flowers',
+                'No Synthetic Charcoal or Chemicals',
+                'Calming Floral Vedic Aroma',
+                'Long-lasting Fragrance Residue'
+            ],
+            'perfect_for' => [
+                'Daily Temple & Home Deity Worship',
+                'Festive Havans & Ceremonies',
+                'Elevating Peace and Positive Vibes'
+            ]
+        ],
+        [
+            'id' => 7,
             'title' => 'Gulab Rooh Sticks',
             'subtitle' => 'Kannauj Rose Flower Essence',
             'slug' => 'gulab-rooh',
@@ -141,9 +167,9 @@
             'views' => '4.9k',
             'likes' => '430 Likes',
             'rating' => '4.8 (690 Reviews)',
-            'thumbnail' => 'assets/images/havan-cup.jpg',
-            'poster' => 'assets/images/havan-cup.jpg',
-            'video_url' => 'assets/videos/reel-video-3.mp4',
+            'thumbnail' => asset('assets/images/havan-cup.jpg'),
+            'poster' => asset('assets/images/havan-cup.jpg'),
+            'video_url' => asset('assets/videos/reel-video-1.mp4'),
             'why_choose' => [
                 'Authentic Desi Gulab Petals',
                 'Sweet Devotional Aroma',
@@ -157,32 +183,6 @@
             ]
         ],
         [
-            'id' => 7,
-            'title' => 'Swarna Pushpa 100 Refill',
-            'subtitle' => 'Economy Sacred Box (100 Sticks)',
-            'slug' => 'swarna-pushpa',
-            'price' => 499,
-            'mrp' => 999,
-            'discount' => '50% OFF',
-            'views' => '6.8k',
-            'likes' => '890 Likes',
-            'rating' => '5.0 (2,100 Reviews)',
-            'thumbnail' => 'assets/images/devi-refill-pack-card.jpg',
-            'poster' => 'assets/images/devi-refill-pack-card.jpg',
-            'video_url' => 'assets/videos/reel-video-1.mp4',
-            'why_choose' => [
-                'Bulk 100 Long Burning Sticks',
-                'Unbeatable 50% Savings Value',
-                'Same Pure Natural Formula',
-                'Recyclable Sacred Packaging'
-            ],
-            'perfect_for' => [
-                'Daily Long-Term Pooja Use',
-                'Ashram & Mandir Offerings',
-                'Family Gifting'
-            ]
-        ],
-        [
             'id' => 8,
             'title' => 'Pack of Six Combo (240)',
             'subtitle' => 'The Grand 6-Fragrance Assortment',
@@ -193,9 +193,9 @@
             'views' => '5.9k',
             'likes' => '940 Likes',
             'rating' => '5.0 (3,400 Reviews)',
-            'thumbnail' => 'assets/images/chandan-cones-card.jpg',
-            'poster' => 'assets/images/chandan-cones-card.jpg',
-            'video_url' => 'assets/videos/reel-video-2.mp4',
+            'thumbnail' => asset('assets/images/chandan-cones-card.jpg'),
+            'poster' => asset('assets/images/chandan-cones-card.jpg'),
+            'video_url' => asset('assets/videos/reel-video-2.mp4'),
             'why_choose' => [
                 'Includes All 6 Master Blends',
                 '240 High Grade Dhoop Sticks',
@@ -226,29 +226,29 @@
         </div>
 
         <!-- ================================================================= -->
-        <!-- 1. MOBILE ONLY: 3D COVERFLOW                                      -->
+        <!-- 1. MOBILE ONLY: 3D COVERFLOW (Swipeable)                          -->
         <!-- ================================================================= -->
         <div class="sm:hidden relative w-full flex items-center justify-center min-h-[380px] py-4" id="coverflow-mobile-stage">
             
-            <!-- Left Flanking Card (Blurred & Scaled Down) -->
+            <!-- Left Flanking Card -->
             <div 
                 id="coverflow-left-card" 
                 class="absolute left-1 z-10 w-[145px] aspect-[9/16] rounded-[20px] overflow-hidden bg-black shadow-lg opacity-50 filter blur-[2px] scale-85 transition-all duration-500 transform -translate-x-2 cursor-pointer"
             >
-                <video class="w-full h-full object-cover pointer-events-none" id="coverflow-left-video" src="{{ asset($reels[count($reels)-1]['video_url']) }}" poster="{{ asset($reels[count($reels)-1]['poster']) }}" autoplay loop muted playsinline></video>
+                <video class="w-full h-full object-cover pointer-events-none" id="coverflow-left-video" src="{{ $reels[count($reels)-1]['video_url'] }}" poster="{{ $reels[count($reels)-1]['poster'] }}" autoplay loop muted playsinline></video>
                 <div class="absolute inset-0 bg-black/40 pointer-events-none"></div>
             </div>
 
-            <!-- Center Active Video Card (Crisp, Eye Badge at Top, Product Thumbnail Badge at Bottom Center) -->
+            <!-- Center Active Video Card -->
             <div 
                 id="coverflow-center-card" 
                 class="relative z-30 w-[230px] aspect-[9/16] rounded-[24px] overflow-hidden bg-black shadow-2xl border-2 border-[#D38928]/50 scale-100 transition-all duration-500 transform cursor-pointer group"
                 title="Tap to watch full reel"
             >
-                <video class="w-full h-full object-cover pointer-events-none" id="coverflow-center-video" src="{{ asset($reels[0]['video_url']) }}" poster="{{ asset($reels[0]['poster']) }}" autoplay loop muted playsinline></video>
+                <video class="w-full h-full object-cover pointer-events-none" id="coverflow-center-video" src="{{ $reels[0]['video_url'] }}" poster="{{ $reels[0]['poster'] }}" autoplay loop muted playsinline></video>
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 pointer-events-none"></div>
 
-                <!-- Top Left Views Badge (👁 1.2k) -->
+                <!-- Top Left Views Badge -->
                 <div class="absolute top-3 left-3 pointer-events-none z-10">
                     <span class="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-[11px] font-bold border border-white/20">
                         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
@@ -263,27 +263,27 @@
                     </div>
                 </div>
 
-                <!-- Bottom Product Thumbnail Badge (Overlapping Bottom Center) -->
+                <!-- Bottom Product Thumbnail Badge -->
                 <div class="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
                     <div class="w-13 h-13 rounded-full bg-white p-1 shadow-2xl border-2 border-[#D38928] overflow-hidden flex items-center justify-center">
-                        <img id="coverflow-center-thumb" src="{{ asset($reels[0]['thumbnail']) }}" alt="Product Badge" class="w-full h-full object-cover rounded-full">
+                        <img id="coverflow-center-thumb" src="{{ $reels[0]['thumbnail'] }}" alt="Product Badge" class="w-full h-full object-cover rounded-full">
                     </div>
                 </div>
             </div>
 
-            <!-- Right Flanking Card (Blurred & Scaled Down) -->
+            <!-- Right Flanking Card -->
             <div 
                 id="coverflow-right-card" 
                 class="absolute right-1 z-10 w-[145px] aspect-[9/16] rounded-[20px] overflow-hidden bg-black shadow-lg opacity-50 filter blur-[2px] scale-85 transition-all duration-500 transform translate-x-2 cursor-pointer"
             >
-                <video class="w-full h-full object-cover pointer-events-none" id="coverflow-right-video" src="{{ asset($reels[1]['video_url']) }}" poster="{{ asset($reels[1]['poster']) }}" autoplay loop muted playsinline></video>
+                <video class="w-full h-full object-cover pointer-events-none" id="coverflow-right-video" src="{{ $reels[1]['video_url'] }}" poster="{{ $reels[1]['poster'] }}" autoplay loop muted playsinline></video>
                 <div class="absolute inset-0 bg-black/40 pointer-events-none"></div>
             </div>
 
         </div>
 
         <!-- ================================================================= -->
-        <!-- 2. DESKTOP ONLY: ORIGINAL CAROUSEL TRACK WITH ARROWS              -->
+        <!-- 2. DESKTOP ONLY: 5-CARD CAROUSEL TRACK (Matches media_1790948401085)-->
         <!-- ================================================================= -->
         <div class="hidden sm:block relative group/reel-container">
             
@@ -291,7 +291,7 @@
             <button 
                 type="button" 
                 id="reel-scroll-prev"
-                class="absolute -left-3 lg:-left-5 top-[40%] -translate-y-1/2 z-30 w-11 h-11 lg:w-13 lg:h-13 rounded-full bg-white/95 hover:bg-[#831F2E] text-[#121212] hover:text-white border border-[#EADBCC] shadow-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 active:scale-95 cursor-pointer focus:outline-none"
+                class="absolute -left-3 lg:-left-5 top-[38%] -translate-y-1/2 z-30 w-11 h-11 lg:w-12 lg:h-12 rounded-full bg-white hover:bg-[#831F2E] text-[#121212] hover:text-white border border-[#EADBCC] shadow-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 active:scale-95 cursor-pointer focus:outline-none"
                 aria-label="Previous Videos"
             >
                 <svg class="w-5 h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
@@ -301,28 +301,28 @@
             <button 
                 type="button" 
                 id="reel-scroll-next"
-                class="absolute -right-3 lg:-right-5 top-[40%] -translate-y-1/2 z-30 w-11 h-11 lg:w-13 lg:h-13 rounded-full bg-white/95 hover:bg-[#831F2E] text-[#121212] hover:text-white border border-[#EADBCC] shadow-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 active:scale-95 cursor-pointer focus:outline-none"
+                class="absolute -right-3 lg:-right-5 top-[38%] -translate-y-1/2 z-30 w-11 h-11 lg:w-12 lg:h-12 rounded-full bg-white hover:bg-[#831F2E] text-[#121212] hover:text-white border border-[#EADBCC] shadow-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 active:scale-95 cursor-pointer focus:outline-none"
                 aria-label="Next Videos"
             >
                 <svg class="w-5 h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
             </button>
 
-            <!-- Horizontal Scrollable Rail -->
+            <!-- Horizontal Scrollable Rail (5 cards visible in view) -->
             <div 
                 id="reels-track"
-                class="flex space-x-4 lg:space-x-5 overflow-x-auto scrollbar-none pb-4 pt-1 px-1 cursor-grab active:cursor-grabbing select-none scroll-smooth"
+                class="flex space-x-3.5 lg:space-x-4 overflow-x-auto scrollbar-none pb-4 pt-1 px-1 cursor-grab active:cursor-grabbing select-none scroll-smooth"
             >
                 @foreach($reels as $index => $reel)
                     <div 
-                        class="reel-card shrink-0 w-[240px] md:w-[265px] lg:w-[280px] flex flex-col justify-between group cursor-pointer"
+                        class="reel-card shrink-0 w-[215px] md:w-[230px] lg:w-[245px] xl:w-[255px] flex flex-col justify-between group cursor-pointer"
                         data-reel-index="{{ $index }}"
                     >
                         <!-- 9:16 Video Preview Container -->
-                        <div class="relative w-full aspect-[9/16] rounded-[20px] overflow-hidden bg-neutral-900 border border-[#EADBCC] shadow-xs group-hover:shadow-xl group-hover:border-[#D38928] transition-all duration-300 transform group-hover:-translate-y-1">
+                        <div class="relative w-full aspect-[9/16] rounded-[16px] overflow-hidden bg-neutral-900 border border-[#EADBCC] shadow-xs group-hover:shadow-xl group-hover:border-[#D38928] transition-all duration-300 transform group-hover:-translate-y-1">
                             <video 
                                 class="reel-preview-video w-full h-full object-cover pointer-events-none"
-                                src="{{ asset($reel['video_url']) }}"
-                                poster="{{ asset($reel['poster']) }}"
+                                src="{{ $reel['video_url'] }}"
+                                poster="{{ $reel['poster'] }}"
                                 autoplay
                                 loop
                                 muted
@@ -330,50 +330,45 @@
                                 preload="auto"
                             ></video>
 
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-black/30 pointer-events-none"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 pointer-events-none"></div>
 
                             <!-- Top Right View Counter Pill -->
-                            <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/45 backdrop-blur-md border border-white/20 text-white text-[11px] font-bold tracking-wide flex items-center space-x-1.5 pointer-events-none select-none">
-                                <svg class="w-3.5 h-3.5 text-white/90" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <div class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-full bg-black/50 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold tracking-wide flex items-center space-x-1 pointer-events-none select-none">
+                                <svg class="w-3 h-3 text-white/90" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
                                 </svg>
                                 <span>{{ $reel['views'] }}</span>
                             </div>
-
-                            <!-- Bottom Watch Video Text -->
-                            <div class="absolute bottom-3 inset-x-3 text-center pointer-events-none">
-                                <span class="inline-block bg-black/50 backdrop-blur-xs px-3 py-1 rounded-full text-white text-[11px] font-semibold border border-white/15">
-                                    ▶ Tap to Watch
-                                </span>
-                            </div>
                         </div>
 
-                        <!-- Bottom Product Card Row -->
-                        <div class="mt-3 bg-white p-2.5 sm:p-3 rounded-[14px] border border-[#EADBCC] shadow-xs space-y-2">
-                            <div class="flex items-center space-x-2.5">
-                                <div class="w-11 h-11 rounded-[8px] border border-[#EADBCC] p-0.5 bg-[#FAF7F2] shrink-0 overflow-hidden flex items-center justify-center">
-                                    <img src="{{ asset($reel['thumbnail']) }}" alt="{{ $reel['title'] }}" class="w-full h-full object-cover rounded-[6px]">
+                        <!-- Bottom Product Card Row (Matches Reference media_1790948401085) -->
+                        <div class="mt-2.5 bg-white p-2 sm:p-2.5 rounded-[12px] border border-[#EADBCC] shadow-2xs space-y-2">
+                            <div class="flex items-center space-x-2">
+                                <div class="w-10 h-10 rounded-[6px] border border-[#EADBCC] p-0.5 bg-[#FAF7F2] shrink-0 overflow-hidden flex items-center justify-center">
+                                    <img src="{{ $reel['thumbnail'] }}" alt="{{ $reel['title'] }}" class="w-full h-full object-cover rounded-[4px]">
                                 </div>
                                 <div class="min-w-0 flex-1">
-                                    <h4 class="text-xs sm:text-[13px] font-bold font-body text-[#1F1F1F] truncate leading-tight">
+                                    <h4 class="text-[12px] font-medium font-body text-[#1F1F1F] truncate leading-tight">
                                         {{ $reel['title'] }}
                                     </h4>
-                                    <div class="flex items-baseline space-x-1.5 pt-0.5 font-body">
-                                        <span class="text-xs sm:text-sm font-bold text-[#C87A1E]">₹{{ $reel['price'] }}.00</span>
-                                        <span class="text-[11px] text-gray-400 line-through">₹{{ $reel['mrp'] }}</span>
+                                    <div class="flex items-baseline space-x-1 pt-0.5 font-body">
+                                        <span class="text-xs font-bold text-[#2B1810]">₹{{ $reel['price'] }}</span>
+                                        <span class="text-[10px] text-gray-400 line-through">₹{{ $reel['mrp'] }}</span>
+                                        <span class="text-[10px] font-bold text-[#16A34A]">{{ $reel['discount'] }}</span>
                                     </div>
                                 </div>
                             </div>
 
+                            <!-- Brand Red/Maroon Add To Cart Button (User: "button ka color red bala rakhna hmare vala!") -->
                             <button 
                                 type="button" 
-                                class="quick-add-to-cart-btn w-full py-2 px-3 bg-[#FAF5EE] hover:bg-[#D38928] text-[#831F2E] hover:text-white border border-[#EADBCC] hover:border-[#D38928] text-xs font-bold rounded-[8px] transition-all flex items-center justify-center space-x-1 font-heading cursor-pointer"
+                                class="quick-add-to-cart-btn w-full py-2 px-3 bg-[#831F2E] hover:bg-[#6E1724] text-white text-xs font-bold rounded-[8px] transition-all flex items-center justify-center space-x-1 font-heading cursor-pointer shadow-xs active:scale-95"
                                 data-product-id="{{ $reel['id'] }}"
                                 data-product-title="{{ $reel['title'] }}"
                                 data-product-slug="{{ $reel['slug'] }}"
                                 data-product-price="{{ $reel['price'] }}"
-                                data-product-image="{{ asset($reel['thumbnail']) }}"
+                                data-product-image="{{ $reel['thumbnail'] }}"
                             >
                                 <span>Add to Cart</span>
                             </button>
@@ -387,31 +382,65 @@
 </section>
 
 <!-- ========================================================================= -->
-<!-- FULL-SCREEN REEL LIGHTBOX MODAL (100% Full Screen on Mobile, Swipe Reels) -->
+<!-- FULL-SCREEN REEL LIGHTBOX MODAL                                           -->
+<!-- Desktop: Lightbox with peeking cards & arrows (media_1790948411635)        -->
+<!-- Mobile: 100% Full Screen vertical reel swipe player, NO arrows            -->
 <!-- ========================================================================= -->
 <div 
     id="reel-video-modal" 
-    class="fixed inset-0 z-50 bg-black sm:bg-black/90 sm:backdrop-blur-md hidden items-center justify-center opacity-0 pointer-events-none transition-all duration-300 font-body select-none overflow-hidden"
+    class="fixed inset-0 z-50 bg-black sm:bg-black/85 sm:backdrop-blur-md hidden items-center justify-center opacity-0 pointer-events-none transition-all duration-300 font-body select-none overflow-hidden"
 >
-    <!-- Top Right Close Button (Always visible on top right) -->
+    <!-- Modal Backdrop -->
+    <div class="absolute inset-0 hidden sm:block" id="reel-modal-backdrop"></div>
+
+    <!-- Top Right Close Button -->
     <button 
         type="button" 
         id="reel-modal-close"
-        class="fixed top-3.5 right-3.5 sm:top-6 sm:right-8 z-50 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black/60 hover:bg-white text-white hover:text-black flex items-center justify-center backdrop-blur-md border border-white/30 transition-all duration-200 cursor-pointer shadow-2xl focus:outline-none"
+        class="fixed top-3.5 right-3.5 sm:top-6 sm:right-8 z-50 flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-black/60 sm:bg-white/20 hover:bg-white text-white hover:text-black backdrop-blur-md border border-white/30 transition-all duration-200 cursor-pointer shadow-2xl focus:outline-none"
         aria-label="Close Reel"
     >
-        <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        <span class="text-xs font-bold hidden sm:inline">Close</span>
     </button>
 
-    <!-- Modal Stage (Full Screen Edge-to-Edge on Mobile, Centered 9:16 Card on Desktop) -->
-    <div class="relative z-20 w-full h-full sm:max-w-md sm:h-[92vh] flex items-center justify-center p-0 sm:px-4">
+    <!-- Desktop Navigation Arrow: PREV (Desktop only, hidden on mobile) -->
+    <button 
+        type="button" 
+        id="modal-desktop-prev-btn"
+        class="hidden sm:flex absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-40 w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-white text-[#121212] hover:bg-[#831F2E] hover:text-white items-center justify-center shadow-2xl transition-all duration-200 cursor-pointer focus:outline-none transform hover:scale-105"
+        aria-label="Previous Reel"
+    >
+        <svg class="w-6 h-6 mr-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+    </button>
+
+    <!-- Desktop Navigation Arrow: NEXT (Desktop only, hidden on mobile) -->
+    <button 
+        type="button" 
+        id="modal-desktop-next-btn"
+        class="hidden sm:flex absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-40 w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-white text-[#121212] hover:bg-[#831F2E] hover:text-white items-center justify-center shadow-2xl transition-all duration-200 cursor-pointer focus:outline-none transform hover:scale-105"
+        aria-label="Next Reel"
+    >
+        <svg class="w-6 h-6 ml-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+    </button>
+
+    <!-- Desktop Flanking Card Left (Peek Preview) -->
+    <div 
+        id="modal-desktop-flank-left"
+        class="hidden lg:block absolute left-[12%] xl:left-[16%] top-1/2 -translate-y-1/2 z-20 w-[200px] xl:w-[230px] aspect-[9/16] rounded-[20px] overflow-hidden bg-black shadow-2xl opacity-60 filter blur-[1px] scale-90 cursor-pointer hover:opacity-85 transition-all"
+    >
+        <video class="w-full h-full object-cover pointer-events-none" id="modal-flank-left-video" loop muted playsinline></video>
+        <div class="absolute inset-0 bg-black/40"></div>
+    </div>
+
+    <!-- Main Active Reel Stage -->
+    <div class="relative z-30 w-full h-full sm:max-w-[340px] md:max-w-[370px] sm:h-[88vh] flex items-center justify-center p-0 sm:px-0">
         
-        <!-- Main Playing Reel Card -->
         <div 
             id="modal-card-active"
             class="relative z-30 w-full h-full sm:aspect-[9/16] bg-black sm:rounded-[24px] overflow-hidden sm:border sm:border-white/20 shadow-2xl flex flex-col justify-between"
         >
-            <!-- Video Player (Full Coverage) -->
+            <!-- Video Player (Full View) -->
             <video 
                 id="modal-reel-video"
                 class="absolute inset-0 w-full h-full object-cover cursor-pointer"
@@ -423,8 +452,8 @@
             <!-- Gradient Shadow Overlay -->
             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/40 pointer-events-none z-10"></div>
 
-            <!-- Top Header & Mute Button (Left) -->
-            <div class="relative z-20 p-4 pt-4 sm:pt-4 flex items-center justify-between">
+            <!-- Top Left Mute Button -->
+            <div class="relative z-20 p-4 pt-4 flex items-center justify-between">
                 <button 
                     type="button" 
                     id="modal-mute-btn"
@@ -467,11 +496,11 @@
                 </button>
             </div>
 
-            <!-- Bottom Floating Product Preview Bar (Tapping opens Slide-Up Details) -->
-            <div class="relative z-20 p-3.5 pb-6 sm:pb-4 mt-auto">
+            <!-- Bottom Floating Product Preview Bar -->
+            <div class="relative z-20 p-3.5 pb-6 sm:pb-3.5 mt-auto">
                 <div 
                     id="modal-open-drawer-trigger"
-                    class="bg-white/95 backdrop-blur-md rounded-[16px] p-2.5 shadow-2xl border border-white flex items-center justify-between cursor-pointer hover:bg-white transition-all transform active:scale-[0.99] group"
+                    class="bg-white rounded-[16px] p-2.5 shadow-2xl border border-white/80 flex items-center justify-between cursor-pointer hover:bg-stone-50 transition-all transform active:scale-[0.99] group"
                     title="Tap to see full product details"
                 >
                     <!-- Left Product Info -->
@@ -487,9 +516,9 @@
                                 <span class="text-[10px] text-[#831F2E] font-bold">▲ Details</span>
                             </div>
                             <div class="flex items-baseline space-x-1.5 pt-0.5">
-                                <span id="modal-product-price" class="text-xs sm:text-sm font-black text-[#121212] font-heading">₹399</span>
-                                <span id="modal-product-mrp" class="text-[10px] text-gray-400 line-through">₹499</span>
-                                <span id="modal-product-discount" class="text-[10px] font-bold text-[#16A34A]">20% OFF</span>
+                                <span id="modal-product-price" class="text-xs sm:text-sm font-black text-[#121212] font-heading">₹289</span>
+                                <span id="modal-product-mrp" class="text-[10px] text-gray-400 line-through">₹375</span>
+                                <span id="modal-product-discount" class="text-[10px] font-bold text-[#16A34A]">23% OFF</span>
                             </div>
                         </div>
                     </div>
@@ -498,7 +527,7 @@
                     <button 
                         type="button" 
                         id="modal-quick-add-cart"
-                        class="quick-add-to-cart-btn shrink-0 ml-2 py-2 px-3 bg-[#D38928] hover:bg-[#B8741E] text-white font-bold text-xs rounded-[10px] shadow-sm transition-all flex items-center space-x-1 font-heading cursor-pointer focus:outline-none"
+                        class="quick-add-to-cart-btn shrink-0 ml-2 py-2 px-3.5 bg-[#831F2E] hover:bg-[#6E1724] text-white font-bold text-xs rounded-[10px] shadow-sm transition-all flex items-center space-x-1 font-heading cursor-pointer focus:outline-none"
                         data-product-id="1"
                         data-product-title=""
                         data-product-slug=""
@@ -511,14 +540,11 @@
                 </div>
             </div>
 
-            <!-- ============================================================= -->
-            <!-- SLIDE-UP PRODUCT DETAILS DRAWER                               -->
-            <!-- ============================================================= -->
+            <!-- Slide-Up Product Details Drawer -->
             <div 
                 id="modal-product-drawer"
                 class="absolute inset-x-0 bottom-0 z-40 bg-[#FFFDF9] rounded-t-[24px] shadow-2xl border-t border-[#EADBCC] max-h-[82%] flex flex-col transform translate-y-full transition-transform duration-300 ease-out font-body text-left overflow-hidden"
             >
-                <!-- Drag Handle Bar & Close Icon -->
                 <div class="p-3 pb-1 flex items-center justify-between border-b border-[#F0EBE4] shrink-0 bg-white">
                     <div class="w-10 h-1 bg-stone-300 rounded-full mx-auto -mr-6"></div>
                     <button 
@@ -531,9 +557,7 @@
                     </button>
                 </div>
 
-                <!-- Scrollable Product Content -->
                 <div class="p-4 overflow-y-auto space-y-4 flex-1">
-                    <!-- Product Header Row -->
                     <div class="flex items-start space-x-3.5">
                         <div class="w-16 h-16 rounded-[12px] bg-white border border-[#EADBCC] p-1 shrink-0 overflow-hidden shadow-xs">
                             <img id="drawer-product-img" src="" alt="Product" class="w-full h-full object-cover rounded-[8px]">
@@ -547,42 +571,35 @@
                                 <span id="drawer-product-rating" class="text-gray-500 font-medium">4.9 (1,240 Reviews)</span>
                             </div>
                             <div class="flex items-baseline space-x-2 pt-1">
-                                <span id="drawer-product-price" class="text-base sm:text-lg font-black text-[#831F2E] font-heading">₹399.00</span>
-                                <span id="drawer-product-mrp" class="text-xs text-gray-400 line-through">₹499</span>
-                                <span id="drawer-product-discount" class="text-xs font-bold text-[#16A34A]">20% OFF</span>
+                                <span id="drawer-product-price" class="text-base sm:text-lg font-black text-[#831F2E] font-heading">₹289.00</span>
+                                <span id="drawer-product-mrp" class="text-xs text-gray-400 line-through">₹375</span>
+                                <span id="drawer-product-discount" class="text-xs font-bold text-[#16A34A]">23% OFF</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Bullet Section 1: Why Choose -->
                     <div class="bg-white rounded-[14px] p-3 border border-[#EADBCC]/70 space-y-2">
                         <h4 class="text-xs font-bold text-[#831F2E] font-heading uppercase tracking-wide flex items-center space-x-1.5">
                             <span>🌿</span>
                             <span>Why Choose this Sacred Blend?</span>
                         </h4>
-                        <ul id="drawer-why-choose" class="space-y-1.5 text-xs text-[#444444]">
-                            <!-- Injected dynamically -->
-                        </ul>
+                        <ul id="drawer-why-choose" class="space-y-1.5 text-xs text-[#444444]"></ul>
                     </div>
 
-                    <!-- Bullet Section 2: Perfect For -->
                     <div class="bg-white rounded-[14px] p-3 border border-[#EADBCC]/70 space-y-2">
                         <h4 class="text-xs font-bold text-[#D38928] font-heading uppercase tracking-wide flex items-center space-x-1.5">
                             <span>🧘</span>
                             <span>Perfect For:</span>
                         </h4>
-                        <ul id="drawer-perfect-for" class="space-y-1.5 text-xs text-[#444444]">
-                            <!-- Injected dynamically -->
-                        </ul>
+                        <ul id="drawer-perfect-for" class="space-y-1.5 text-xs text-[#444444]"></ul>
                     </div>
                 </div>
 
-                <!-- Sticky Bottom Add to Cart Button -->
                 <div class="p-3 bg-white border-t border-[#F0EBE4] shrink-0">
                     <button 
                         type="button" 
                         id="drawer-add-to-cart-btn"
-                        class="quick-add-to-cart-btn w-full py-3 px-4 bg-[#D38928] hover:bg-[#B8741E] text-white font-black text-sm rounded-[12px] shadow-md hover:shadow-lg transition-all transform active:scale-95 flex items-center justify-center space-x-2 font-heading cursor-pointer focus:outline-none"
+                        class="quick-add-to-cart-btn w-full py-3 px-4 bg-[#831F2E] hover:bg-[#6E1724] text-white font-black text-sm rounded-[12px] shadow-md hover:shadow-lg transition-all transform active:scale-95 flex items-center justify-center space-x-2 font-heading cursor-pointer focus:outline-none"
                         data-product-id="1"
                         data-product-title=""
                         data-product-slug=""
@@ -590,7 +607,7 @@
                         data-product-image=""
                     >
                         <span>Add to Cart • </span>
-                        <span id="drawer-btn-price">₹399.00</span>
+                        <span id="drawer-btn-price">₹289.00</span>
                     </button>
                 </div>
             </div>
@@ -598,10 +615,19 @@
         </div>
 
     </div>
+
+    <!-- Desktop Flanking Card Right (Peek Preview) -->
+    <div 
+        id="modal-desktop-flank-right"
+        class="hidden lg:block absolute right-[12%] xl:right-[16%] top-1/2 -translate-y-1/2 z-20 w-[200px] xl:w-[230px] aspect-[9/16] rounded-[20px] overflow-hidden bg-black shadow-2xl opacity-60 filter blur-[1px] scale-90 cursor-pointer hover:opacity-85 transition-all"
+    >
+        <video class="w-full h-full object-cover pointer-events-none" id="modal-flank-right-video" loop muted playsinline></video>
+        <div class="absolute inset-0 bg-black/40"></div>
+    </div>
 </div>
 
 <!-- ========================================================================= -->
-<!-- JAVASCRIPT LOGIC (Desktop Rail, Mobile Coverflow, Full-Screen Reel & Vertical Swipe) -->
+<!-- JAVASCRIPT LOGIC                                                          -->
 <!-- ========================================================================= -->
 <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -616,10 +642,10 @@
 
         if (track && scrollPrev && scrollNext) {
             scrollPrev.addEventListener('click', () => {
-                track.scrollBy({ left: -300, behavior: 'smooth' });
+                track.scrollBy({ left: -260, behavior: 'smooth' });
             });
             scrollNext.addEventListener('click', () => {
-                track.scrollBy({ left: 300, behavior: 'smooth' });
+                track.scrollBy({ left: 260, behavior: 'smooth' });
             });
         }
 
@@ -635,6 +661,7 @@
 
         // Modal Elements
         const modal = document.getElementById('reel-video-modal');
+        const modalBackdrop = document.getElementById('reel-modal-backdrop');
         const modalClose = document.getElementById('reel-modal-close');
         const modalVideo = document.getElementById('modal-reel-video');
         const modalImg = document.getElementById('modal-product-img');
@@ -648,6 +675,14 @@
         const modalLikeBtn = document.getElementById('modal-like-btn');
         const modalHeartIcon = document.getElementById('modal-heart-icon');
         const modalLikesCount = document.getElementById('modal-likes-count');
+
+        // Desktop Modal Navigation & Flanks
+        const modalDesktopPrev = document.getElementById('modal-desktop-prev-btn');
+        const modalDesktopNext = document.getElementById('modal-desktop-next-btn');
+        const flankLeft = document.getElementById('modal-desktop-flank-left');
+        const flankRight = document.getElementById('modal-desktop-flank-right');
+        const flankLeftVideo = document.getElementById('modal-flank-left-video');
+        const flankRightVideo = document.getElementById('modal-flank-right-video');
 
         // Drawer Elements inside Modal
         const drawerTrigger = document.getElementById('modal-open-drawer-trigger');
@@ -664,7 +699,7 @@
         const drawerAddCartBtn = document.getElementById('drawer-add-to-cart-btn');
         const drawerBtnPrice = document.getElementById('drawer-btn-price');
 
-        let isMuted = false;
+        let isMuted = true;
         let isLiked = false;
 
         function updateCoverflow(index) {
@@ -677,22 +712,22 @@
             const next = reelsData[nextIndex];
 
             if (leftVideo && prev) {
-                leftVideo.src = '/' + prev.video_url;
-                leftVideo.poster = '/' + prev.poster;
+                leftVideo.src = prev.video_url;
+                leftVideo.poster = prev.poster;
                 leftVideo.play().catch(() => {});
             }
             if (centerVideo && curr) {
-                centerVideo.src = '/' + curr.video_url;
-                centerVideo.poster = '/' + curr.poster;
+                centerVideo.src = curr.video_url;
+                centerVideo.poster = curr.poster;
                 centerVideo.play().catch(() => {});
             }
             if (rightVideo && next) {
-                rightVideo.src = '/' + next.video_url;
-                rightVideo.poster = '/' + next.poster;
+                rightVideo.src = next.video_url;
+                rightVideo.poster = next.poster;
                 rightVideo.play().catch(() => {});
             }
 
-            if (centerThumb && curr) centerThumb.src = '/' + curr.thumbnail;
+            if (centerThumb && curr) centerThumb.src = curr.thumbnail;
             if (viewsBadge && curr) viewsBadge.textContent = curr.views;
         }
 
@@ -711,15 +746,20 @@
 
         function openModal(index) {
             currentIndex = (index + totalReels) % totalReels;
+            const prevIndex = (currentIndex - 1 + totalReels) % totalReels;
+            const nextIndex = (currentIndex + 1) % totalReels;
+
             const item = reelsData[currentIndex];
+            const prevItem = reelsData[prevIndex];
+            const nextItem = reelsData[nextIndex];
             if (!item) return;
 
             // Close Drawer if open
             if (drawer) drawer.classList.add('translate-y-full');
 
             if (modalVideo) {
-                modalVideo.src = '/' + item.video_url;
-                modalVideo.poster = '/' + item.poster;
+                modalVideo.src = item.video_url;
+                modalVideo.poster = item.poster;
                 modalVideo.muted = isMuted;
                 modalVideo.currentTime = 0;
                 modalVideo.play().catch(() => {
@@ -730,8 +770,18 @@
                 });
             }
 
+            // Desktop Flanking Videos
+            if (flankLeftVideo && prevItem) {
+                flankLeftVideo.src = prevItem.video_url;
+                flankLeftVideo.play().catch(() => {});
+            }
+            if (flankRightVideo && nextItem) {
+                flankRightVideo.src = nextItem.video_url;
+                flankRightVideo.play().catch(() => {});
+            }
+
             // Populate Modal Bar
-            if (modalImg) modalImg.src = '/' + item.thumbnail;
+            if (modalImg) modalImg.src = item.thumbnail;
             if (modalTitle) modalTitle.textContent = item.title;
             if (modalPrice) modalPrice.textContent = '₹' + item.price;
             if (modalMrp) modalMrp.textContent = '₹' + item.mrp;
@@ -743,11 +793,11 @@
                 modalQuickAddBtn.setAttribute('data-product-title', item.title);
                 modalQuickAddBtn.setAttribute('data-product-slug', item.slug);
                 modalQuickAddBtn.setAttribute('data-product-price', item.price);
-                modalQuickAddBtn.setAttribute('data-product-image', '/' + item.thumbnail);
+                modalQuickAddBtn.setAttribute('data-product-image', item.thumbnail);
             }
 
             // Populate Drawer Sheet
-            if (drawerImg) drawerImg.src = '/' + item.thumbnail;
+            if (drawerImg) drawerImg.src = item.thumbnail;
             if (drawerTitle) drawerTitle.textContent = item.title + ' - ' + (item.subtitle || 'Vedic Dhoop');
             if (drawerPrice) drawerPrice.textContent = '₹' + item.price + '.00';
             if (drawerMrp) drawerMrp.textContent = '₹' + item.mrp;
@@ -778,7 +828,7 @@
                 drawerAddCartBtn.setAttribute('data-product-title', item.title);
                 drawerAddCartBtn.setAttribute('data-product-slug', item.slug);
                 drawerAddCartBtn.setAttribute('data-product-price', item.price);
-                drawerAddCartBtn.setAttribute('data-product-image', '/' + item.thumbnail);
+                drawerAddCartBtn.setAttribute('data-product-image', item.thumbnail);
             }
 
             if (modal) {
@@ -812,6 +862,12 @@
         }
 
         if (modalClose) modalClose.addEventListener('click', closeModal);
+        if (modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
+
+        if (modalDesktopPrev) modalDesktopPrev.addEventListener('click', () => openModal(currentIndex - 1));
+        if (modalDesktopNext) modalDesktopNext.addEventListener('click', () => openModal(currentIndex + 1));
+        if (flankLeft) flankLeft.addEventListener('click', () => openModal(currentIndex - 1));
+        if (flankRight) flankRight.addEventListener('click', () => openModal(currentIndex + 1));
 
         // Toggle Drawer
         if (drawerTrigger && drawer) {
@@ -852,7 +908,7 @@
             });
         }
 
-        // Mobile & Desktop Reel Vertical Swipe / Scroll (Reel-Style Navigation without Arrows)
+        // Mobile Reel Vertical Swipe (Reel-Style Navigation)
         let modalTouchStartY = 0;
         let modalTouchStartX = 0;
         if (modal) {
@@ -862,14 +918,13 @@
             }, { passive: true });
 
             modal.addEventListener('touchend', (e) => {
-                // If drawer is open, don't trigger reel swipe
                 if (drawer && !drawer.classList.contains('translate-y-full')) return;
 
                 const diffY = modalTouchStartY - e.changedTouches[0].clientY;
                 const diffX = modalTouchStartX - e.changedTouches[0].clientX;
 
-                // Vertical swipe detection (more vertical than horizontal)
-                if (Math.abs(diffY) > 50 && Math.abs(diffY) > Math.abs(diffX)) {
+                // Vertical swipe detection
+                if (Math.abs(diffY) > 40 && Math.abs(diffY) > Math.abs(diffX)) {
                     if (diffY > 0) {
                         // Swipe Up -> Next Reel
                         openModal(currentIndex + 1);
@@ -880,7 +935,7 @@
                 }
             }, { passive: true });
 
-            // Mouse wheel scroll support for desktop full view
+            // Mouse wheel scroll support for desktop
             let wheelTimeout = null;
             modal.addEventListener('wheel', (e) => {
                 if (drawer && !drawer.classList.contains('translate-y-full')) return;
@@ -894,7 +949,7 @@
             }, { passive: true });
         }
 
-        // Keyboard Arrow Keys (Up/Down for reels)
+        // Keyboard Arrow Keys
         document.addEventListener('keydown', (e) => {
             if (modal && !modal.classList.contains('pointer-events-none')) {
                 if (e.key === 'Escape') closeModal();
@@ -919,5 +974,16 @@
                 }
             }, { passive: true });
         }
+
+        // Autoplay loop all card preview videos on page
+        const startCardVideos = () => {
+            document.querySelectorAll('.reel-preview-video').forEach(video => {
+                video.muted = true;
+                video.play().catch(() => {});
+            });
+        };
+        startCardVideos();
+        window.addEventListener('scroll', startCardVideos, { once: true, passive: true });
+        window.addEventListener('touchstart', startCardVideos, { once: true, passive: true });
     });
 </script>
