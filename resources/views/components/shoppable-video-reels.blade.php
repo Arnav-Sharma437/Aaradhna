@@ -226,7 +226,7 @@
         </div>
 
         <!-- ================================================================= -->
-        <!-- 1. MOBILE ONLY: 3D COVERFLOW (Smooth Touch Swipe)                 -->
+        <!-- 1. MOBILE ONLY: 3D COVERFLOW (Swipeable)                          -->
         <!-- ================================================================= -->
         <div class="sm:hidden relative w-full flex items-center justify-center min-h-[380px] py-4" id="coverflow-mobile-stage">
             
@@ -307,7 +307,7 @@
                 <svg class="w-5 h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
             </button>
 
-            <!-- Horizontal Scrollable Rail -->
+            <!-- Horizontal Scrollable Rail (5 cards visible) -->
             <div 
                 id="reels-track"
                 class="flex space-x-3.5 lg:space-x-4 overflow-x-auto scrollbar-none pb-4 pt-1 px-1 cursor-grab active:cursor-grabbing select-none scroll-smooth"
@@ -382,7 +382,7 @@
 </section>
 
 <!-- ========================================================================= -->
-<!-- FULL-SCREEN REEL LIGHTBOX MODAL WITH SMOOTH NATIVE SLIDE ANIMATION        -->
+<!-- FULL-SCREEN CONTINUOUS VERTICAL SCROLL-SNAP REEL FEED (Instagram Style)   -->
 <!-- ========================================================================= -->
 <div 
     id="reel-video-modal" 
@@ -431,125 +431,127 @@
         <div class="absolute inset-0 bg-black/40"></div>
     </div>
 
-    <!-- Main Active Reel Stage -->
+    <!-- Main Active Reel Stage Container -->
     <div class="relative z-30 w-full h-full sm:max-w-[340px] md:max-w-[370px] sm:h-[88vh] flex items-center justify-center p-0 sm:px-0">
         
         <div 
             id="modal-card-active"
             class="relative z-30 w-full h-full sm:aspect-[9/16] bg-black sm:rounded-[24px] overflow-hidden sm:border sm:border-white/20 shadow-2xl flex flex-col justify-between"
         >
-            <!-- Smooth Vertical Dual-Slide Reel Container -->
-            <div id="modal-reel-viewport" class="absolute inset-0 w-full h-full overflow-hidden bg-black">
-                <!-- Layer A (Active Player) -->
-                <video 
-                    id="modal-reel-video-a"
-                    class="absolute inset-0 w-full h-full object-cover cursor-pointer transition-transform duration-350 ease-out z-0"
-                    autoplay
-                    playsinline
-                    loop
-                ></video>
-
-                <!-- Layer B (Incoming Slide Player) -->
-                <video 
-                    id="modal-reel-video-b"
-                    class="absolute inset-0 w-full h-full object-cover cursor-pointer transition-transform duration-350 ease-out translate-y-full z-0 pointer-events-none"
-                    playsinline
-                    loop
-                ></video>
-            </div>
-
-            <!-- Gradient Shadow Overlay -->
-            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/40 pointer-events-none z-10"></div>
-
-            <!-- Top Left Mute Button -->
-            <div class="relative z-20 p-4 pt-4 flex items-center justify-between">
-                <button 
-                    type="button" 
-                    id="modal-mute-btn"
-                    class="px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/25 text-white text-xs font-bold flex items-center space-x-1.5 cursor-pointer shadow-lg hover:bg-black/80 transition-colors"
-                >
-                    <svg id="modal-volume-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/>
-                    </svg>
-                    <span id="modal-mute-label">Mute</span>
-                </button>
-            </div>
-
-            <!-- Right Social Column (Like & Menu) -->
-            <div class="absolute right-3.5 bottom-28 z-20 flex flex-col items-center space-y-3.5">
-                <!-- Like Button -->
-                <button 
-                    type="button" 
-                    id="modal-like-btn"
-                    class="flex flex-col items-center space-y-1 text-white cursor-pointer group"
-                    aria-label="Like Video"
-                >
-                    <div class="w-10 h-10 rounded-full bg-black/50 backdrop-blur-md border border-white/25 flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <svg id="modal-heart-icon" class="w-5 h-5 text-white transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-                        </svg>
-                    </div>
-                    <span id="modal-likes-count" class="text-[10px] font-bold drop-shadow">380 Likes</span>
-                </button>
-
-                <!-- Options Button -->
-                <button 
-                    type="button" 
-                    id="modal-more-btn"
-                    class="w-10 h-10 rounded-full bg-black/50 backdrop-blur-md border border-white/25 flex items-center justify-center text-white cursor-pointer hover:scale-110 transition-transform"
-                    aria-label="Options"
-                >
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="19" r="1.5"/>
-                    </svg>
-                </button>
-            </div>
-
-            <!-- Bottom Floating Product Preview Bar -->
-            <div class="relative z-20 p-3.5 pb-6 sm:pb-3.5 mt-auto transition-all duration-300" id="modal-bottom-bar-container">
-                <div 
-                    id="modal-open-drawer-trigger"
-                    class="bg-white rounded-[16px] p-2.5 shadow-2xl border border-white/80 flex items-center justify-between cursor-pointer hover:bg-stone-50 transition-all transform active:scale-[0.99] group"
-                    title="Tap to see full product details"
-                >
-                    <!-- Left Product Info -->
-                    <div class="flex items-center space-x-2.5 min-w-0 flex-1">
-                        <div class="w-11 h-11 rounded-[10px] bg-stone-100 overflow-hidden shrink-0 border border-stone-200">
-                            <img id="modal-product-img" src="" alt="Product Thumbnail" class="w-full h-full object-cover">
-                        </div>
-                        <div class="min-w-0 flex-1 text-left">
-                            <div class="flex items-center space-x-1.5">
-                                <h4 id="modal-product-title" class="text-xs sm:text-[13px] font-bold text-[#121212] truncate font-heading">
-                                    Product Title
-                                </h4>
-                                <span class="text-[10px] text-[#831F2E] font-bold">▲ Details</span>
-                            </div>
-                            <div class="flex items-baseline space-x-1.5 pt-0.5">
-                                <span id="modal-product-price" class="text-xs sm:text-sm font-black text-[#121212] font-heading">₹289</span>
-                                <span id="modal-product-mrp" class="text-[10px] text-gray-400 line-through">₹375</span>
-                                <span id="modal-product-discount" class="text-[10px] font-bold text-[#16A34A]">23% OFF</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Quick Add To Cart Button on Bar -->
-                    <button 
-                        type="button" 
-                        id="modal-quick-add-cart"
-                        class="quick-add-to-cart-btn shrink-0 ml-2 py-2 px-3.5 bg-[#831F2E] hover:bg-[#6E1724] text-white font-bold text-xs rounded-[10px] shadow-sm transition-all flex items-center space-x-1 font-heading cursor-pointer focus:outline-none"
-                        data-product-id="1"
-                        data-product-title=""
-                        data-product-slug=""
-                        data-product-price=""
-                        data-product-image=""
+            <!-- Native Vertical Scroll Snap Reel Feed (Matches media_1790949417539.png) -->
+            <div 
+                id="reel-feed-track"
+                class="w-full h-full overflow-y-scroll snap-y snap-mandatory scrollbar-none scroll-smooth flex flex-col relative"
+                style="-webkit-overflow-scrolling: touch;"
+            >
+                @foreach($reels as $idx => $item)
+                    <div 
+                        class="reel-feed-item snap-start snap-always w-full h-full relative shrink-0 flex flex-col justify-between overflow-hidden bg-black"
+                        data-index="{{ $idx }}"
                     >
-                        <span>Add</span>
-                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
-                    </button>
-                </div>
+                        <!-- Reel Video Element -->
+                        <video 
+                            class="reel-feed-video absolute inset-0 w-full h-full object-cover cursor-pointer z-0"
+                            src="{{ $item['video_url'] }}"
+                            poster="{{ $item['poster'] }}"
+                            playsinline
+                            loop
+                            muted
+                            preload="auto"
+                        ></video>
+
+                        <!-- Gradient Shadow Overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/40 pointer-events-none z-10"></div>
+
+                        <!-- Top Left Mute Button -->
+                        <div class="relative z-20 p-4 pt-4 flex items-center justify-between">
+                            <button 
+                                type="button" 
+                                class="feed-mute-btn px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/25 text-white text-xs font-bold flex items-center space-x-1.5 cursor-pointer shadow-lg hover:bg-black/80 transition-colors"
+                            >
+                                <svg class="feed-vol-icon w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/>
+                                </svg>
+                                <span class="feed-mute-label">Mute</span>
+                            </button>
+                        </div>
+
+                        <!-- Right Social Column (Like & Menu) -->
+                        <div class="absolute right-3.5 bottom-28 z-20 flex flex-col items-center space-y-3.5">
+                            <!-- Like Button -->
+                            <button 
+                                type="button" 
+                                class="feed-like-btn flex flex-col items-center space-y-1 text-white cursor-pointer group"
+                                aria-label="Like Video"
+                            >
+                                <div class="w-10 h-10 rounded-full bg-black/50 backdrop-blur-md border border-white/25 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                    <svg class="feed-heart-icon w-5 h-5 text-white transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                    </svg>
+                                </div>
+                                <span class="feed-likes-count text-[10px] font-bold drop-shadow">{{ $item['likes'] }}</span>
+                            </button>
+
+                            <!-- Options Button -->
+                            <button 
+                                type="button" 
+                                class="w-10 h-10 rounded-full bg-black/50 backdrop-blur-md border border-white/25 flex items-center justify-center text-white cursor-pointer hover:scale-110 transition-transform"
+                                aria-label="Options"
+                            >
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="19" r="1.5"/>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <!-- Bottom Floating Product Preview Bar -->
+                        <div class="relative z-20 p-3.5 pb-6 sm:pb-3.5 mt-auto">
+                            <div 
+                                class="feed-open-drawer-btn bg-white rounded-[16px] p-2.5 shadow-2xl border border-white/80 flex items-center justify-between cursor-pointer hover:bg-stone-50 transition-all transform active:scale-[0.99] group"
+                                title="Tap to see full product details"
+                                data-index="{{ $idx }}"
+                            >
+                                <!-- Left Product Info -->
+                                <div class="flex items-center space-x-2.5 min-w-0 flex-1 pointer-events-none">
+                                    <div class="w-11 h-11 rounded-[10px] bg-stone-100 overflow-hidden shrink-0 border border-stone-200">
+                                        <img src="{{ $item['thumbnail'] }}" alt="{{ $item['title'] }}" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="min-w-0 flex-1 text-left">
+                                        <div class="flex items-center space-x-1.5">
+                                            <h4 class="text-xs sm:text-[13px] font-bold text-[#121212] truncate font-heading">
+                                                {{ $item['title'] }}
+                                            </h4>
+                                            <span class="text-[10px] text-[#831F2E] font-bold">▲ Details</span>
+                                        </div>
+                                        <div class="flex items-baseline space-x-1.5 pt-0.5">
+                                            <span class="text-xs sm:text-sm font-black text-[#121212] font-heading">₹{{ $item['price'] }}</span>
+                                            <span class="text-[10px] text-gray-400 line-through">₹{{ $item['mrp'] }}</span>
+                                            <span class="text-[10px] font-bold text-[#16A34A]">{{ $item['discount'] }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Quick Add To Cart Button on Bar -->
+                                <button 
+                                    type="button" 
+                                    class="quick-add-to-cart-btn shrink-0 ml-2 py-2 px-3.5 bg-[#831F2E] hover:bg-[#6E1724] text-white font-bold text-xs rounded-[10px] shadow-sm transition-all flex items-center space-x-1 font-heading cursor-pointer focus:outline-none"
+                                    data-product-id="{{ $item['id'] }}"
+                                    data-product-title="{{ $item['title'] }}"
+                                    data-product-slug="{{ $item['slug'] }}"
+                                    data-product-price="{{ $item['price'] }}"
+                                    data-product-image="{{ $item['thumbnail'] }}"
+                                >
+                                    <span>Add</span>
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                @endforeach
             </div>
 
-            <!-- Slide-Up Product Details Drawer -->
+            <!-- Slide-Up Product Details Drawer (Overlays Feed) -->
             <div 
                 id="modal-product-drawer"
                 class="absolute inset-x-0 bottom-0 z-40 bg-[#FFFDF9] rounded-t-[24px] shadow-2xl border-t border-[#EADBCC] max-h-[82%] flex flex-col transform translate-y-full transition-transform duration-300 ease-out font-body text-left overflow-hidden"
@@ -573,7 +575,7 @@
                         </div>
                         <div class="min-w-0 flex-1">
                             <h3 id="drawer-product-title" class="text-sm sm:text-base font-bold text-[#121212] font-heading leading-snug">
-                                Chandan Saanjh - Bamboo-less Dhoop Sticks
+                                Product Title
                             </h3>
                             <div class="flex items-center space-x-1.5 pt-1 text-xs">
                                 <div class="text-[#D38928] text-xs">★★★★★</div>
@@ -636,14 +638,13 @@
 </div>
 
 <!-- ========================================================================= -->
-<!-- JAVASCRIPT LOGIC (Silky Smooth Reel Sliding Transitions)                  -->
+<!-- JAVASCRIPT LOGIC (Native Continuous Vertical Scroll Snap Feed)             -->
 <!-- ========================================================================= -->
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const reelsData = @json($reels);
         let currentIndex = 0;
         const totalReels = reelsData.length;
-        let isSliding = false;
 
         // Desktop Track Navigation
         const track = document.getElementById('reels-track');
@@ -673,22 +674,9 @@
         const modal = document.getElementById('reel-video-modal');
         const modalBackdrop = document.getElementById('reel-modal-backdrop');
         const modalClose = document.getElementById('reel-modal-close');
-        
-        // Dual Slide Video Elements for native slide animation
-        let activeVideoEl = document.getElementById('modal-reel-video-a');
-        let standbyVideoEl = document.getElementById('modal-reel-video-b');
-
-        const modalImg = document.getElementById('modal-product-img');
-        const modalTitle = document.getElementById('modal-product-title');
-        const modalPrice = document.getElementById('modal-product-price');
-        const modalMrp = document.getElementById('modal-product-mrp');
-        const modalDiscount = document.getElementById('modal-product-discount');
-        const modalQuickAddBtn = document.getElementById('modal-quick-add-cart');
-        const modalMuteBtn = document.getElementById('modal-mute-btn');
-        const modalMuteLabel = document.getElementById('modal-mute-label');
-        const modalLikeBtn = document.getElementById('modal-like-btn');
-        const modalHeartIcon = document.getElementById('modal-heart-icon');
-        const modalLikesCount = document.getElementById('modal-likes-count');
+        const feedTrack = document.getElementById('reel-feed-track');
+        const feedItems = document.querySelectorAll('.reel-feed-item');
+        const feedVideos = document.querySelectorAll('.reel-feed-video');
 
         // Desktop Modal Navigation & Flanks
         const modalDesktopPrev = document.getElementById('modal-desktop-prev-btn');
@@ -699,7 +687,6 @@
         const flankRightVideo = document.getElementById('modal-flank-right-video');
 
         // Drawer Elements inside Modal
-        const drawerTrigger = document.getElementById('modal-open-drawer-trigger');
         const drawer = document.getElementById('modal-product-drawer');
         const drawerClose = document.getElementById('modal-drawer-close');
         const drawerImg = document.getElementById('drawer-product-img');
@@ -713,8 +700,7 @@
         const drawerAddCartBtn = document.getElementById('drawer-add-to-cart-btn');
         const drawerBtnPrice = document.getElementById('drawer-btn-price');
 
-        let isMuted = true;
-        let isLiked = false;
+        let isGlobalMuted = true;
 
         function updateCoverflow(index) {
             currentIndex = (index + totalReels) % totalReels;
@@ -747,98 +733,22 @@
 
         if (leftCard) leftCard.addEventListener('click', () => updateCoverflow(currentIndex - 1));
         if (rightCard) rightCard.addEventListener('click', () => updateCoverflow(currentIndex + 1));
-        if (centerCard) centerCard.addEventListener('click', () => openModal(currentIndex, 'none'));
+        if (centerCard) centerCard.addEventListener('click', () => openModalAt(currentIndex));
 
         // Desktop Reel Cards Click
         document.querySelectorAll('.reel-card').forEach(card => {
             card.addEventListener('click', (e) => {
                 if (e.target.closest('button')) return;
                 const idx = parseInt(card.getAttribute('data-reel-index') || '0', 10);
-                openModal(idx, 'none');
+                openModalAt(idx);
             });
         });
 
-        // Smooth Slide Transition Function
-        function openModal(index, direction = 'none') {
-            if (isSliding && direction !== 'none') return;
-
-            const targetIndex = (index + totalReels) % totalReels;
-            const prevIndex = (targetIndex - 1 + totalReels) % totalReels;
-            const nextIndex = (targetIndex + 1) % totalReels;
-
-            const item = reelsData[targetIndex];
-            const prevItem = reelsData[prevIndex];
-            const nextItem = reelsData[nextIndex];
-            if (!item) return;
-
-            // Close Drawer if open
+        function openModalAt(index) {
+            currentIndex = index;
             if (drawer) drawer.classList.add('translate-y-full');
 
-            if (direction === 'none' || !activeVideoEl || !standbyVideoEl) {
-                // Direct Load (Initial open)
-                currentIndex = targetIndex;
-                activeVideoEl.src = item.video_url;
-                activeVideoEl.poster = item.poster;
-                activeVideoEl.muted = isMuted;
-                activeVideoEl.currentTime = 0;
-                activeVideoEl.className = 'absolute inset-0 w-full h-full object-cover cursor-pointer z-10 translate-y-0';
-                activeVideoEl.play().catch(() => {
-                    activeVideoEl.muted = true;
-                    isMuted = true;
-                    if (modalMuteLabel) modalMuteLabel.textContent = 'Unmute';
-                    activeVideoEl.play().catch(() => {});
-                });
-                updateReelMeta(item, prevItem, nextItem);
-            } else {
-                // Smooth Reel Vertical Slide Animation
-                isSliding = true;
-                currentIndex = targetIndex;
-
-                const startTranslate = direction === 'up' ? 'translate-y-full' : '-translate-y-full';
-                const exitTranslate = direction === 'up' ? '-translate-y-full' : 'translate-y-full';
-
-                // 1. Prepare Standby Video at starting edge (instantly without transition)
-                standbyVideoEl.style.transition = 'none';
-                standbyVideoEl.className = `absolute inset-0 w-full h-full object-cover cursor-pointer z-10 ${startTranslate}`;
-                standbyVideoEl.src = item.video_url;
-                standbyVideoEl.poster = item.poster;
-                standbyVideoEl.muted = isMuted;
-                standbyVideoEl.currentTime = 0;
-                standbyVideoEl.play().catch(() => {
-                    standbyVideoEl.muted = true;
-                    isMuted = true;
-                    if (modalMuteLabel) modalMuteLabel.textContent = 'Unmute';
-                    standbyVideoEl.play().catch(() => {});
-                });
-
-                // 2. Animate both layers together in next frame
-                requestAnimationFrame(() => {
-                    requestAnimationFrame(() => {
-                        const transitionStyle = 'transform 0.35s cubic-bezier(0.22, 1, 0.36, 1)';
-                        activeVideoEl.style.transition = transitionStyle;
-                        standbyVideoEl.style.transition = transitionStyle;
-
-                        activeVideoEl.className = `absolute inset-0 w-full h-full object-cover cursor-pointer z-0 ${exitTranslate}`;
-                        standbyVideoEl.className = 'absolute inset-0 w-full h-full object-cover cursor-pointer z-10 translate-y-0';
-
-                        updateReelMeta(item, prevItem, nextItem);
-
-                        setTimeout(() => {
-                            activeVideoEl.pause();
-                            activeVideoEl.src = '';
-                            activeVideoEl.style.transition = 'none';
-                            
-                            // Swap pointers
-                            const temp = activeVideoEl;
-                            activeVideoEl = standbyVideoEl;
-                            standbyVideoEl = temp;
-                            isSliding = false;
-                        }, 360);
-                    });
-                });
-            }
-
-            if (modal && modal.classList.contains('hidden')) {
+            if (modal) {
                 modal.classList.remove('hidden');
                 modal.classList.add('flex');
                 requestAnimationFrame(() => {
@@ -847,36 +757,51 @@
                 });
                 document.body.style.overflow = 'hidden';
             }
+
+            // Scroll snap track directly to the selected reel
+            if (feedTrack && feedItems[index]) {
+                feedTrack.scrollTop = feedItems[index].offsetTop;
+            }
+
+            playActiveFeedVideo(index);
         }
 
-        function updateReelMeta(item, prevItem, nextItem) {
-            // Desktop Flanking Videos
-            if (flankLeftVideo && prevItem) {
-                flankLeftVideo.src = prevItem.video_url;
+        function playActiveFeedVideo(index) {
+            currentIndex = index;
+            const prevIndex = (currentIndex - 1 + totalReels) % totalReels;
+            const nextIndex = (currentIndex + 1) % totalReels;
+
+            feedVideos.forEach((vid, idx) => {
+                if (idx === index) {
+                    vid.muted = isGlobalMuted;
+                    vid.currentTime = 0;
+                    vid.play().catch(() => {
+                        vid.muted = true;
+                        isGlobalMuted = true;
+                        updateAllMuteUI();
+                        vid.play().catch(() => {});
+                    });
+                } else {
+                    vid.pause();
+                }
+            });
+
+            // Update Desktop Flanking Videos
+            if (flankLeftVideo && reelsData[prevIndex]) {
+                flankLeftVideo.src = reelsData[prevIndex].video_url;
                 flankLeftVideo.play().catch(() => {});
             }
-            if (flankRightVideo && nextItem) {
-                flankRightVideo.src = nextItem.video_url;
+            if (flankRightVideo && reelsData[nextIndex]) {
+                flankRightVideo.src = reelsData[nextIndex].video_url;
                 flankRightVideo.play().catch(() => {});
             }
 
-            // Populate Modal Bar
-            if (modalImg) modalImg.src = item.thumbnail;
-            if (modalTitle) modalTitle.textContent = item.title;
-            if (modalPrice) modalPrice.textContent = '₹' + item.price;
-            if (modalMrp) modalMrp.textContent = '₹' + item.mrp;
-            if (modalDiscount) modalDiscount.textContent = item.discount;
-            if (modalLikesCount) modalLikesCount.textContent = item.likes;
+            // Update Details Sheet for the active reel
+            updateDrawerData(reelsData[currentIndex]);
+        }
 
-            if (modalQuickAddBtn) {
-                modalQuickAddBtn.setAttribute('data-product-id', item.id);
-                modalQuickAddBtn.setAttribute('data-product-title', item.title);
-                modalQuickAddBtn.setAttribute('data-product-slug', item.slug);
-                modalQuickAddBtn.setAttribute('data-product-price', item.price);
-                modalQuickAddBtn.setAttribute('data-product-image', item.thumbnail);
-            }
-
-            // Populate Drawer Sheet
+        function updateDrawerData(item) {
+            if (!item) return;
             if (drawerImg) drawerImg.src = item.thumbnail;
             if (drawerTitle) drawerTitle.textContent = item.title + ' - ' + (item.subtitle || 'Vedic Dhoop');
             if (drawerPrice) drawerPrice.textContent = '₹' + item.price + '.00';
@@ -912,6 +837,31 @@
             }
         }
 
+        function updateAllMuteUI() {
+            document.querySelectorAll('.feed-mute-label').forEach(label => {
+                label.textContent = isGlobalMuted ? 'Unmute' : 'Mute';
+            });
+        }
+
+        // IntersectionObserver for Native Continuous Scroll-Snap Feed
+        if ('IntersectionObserver' in window && feedTrack) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && entry.intersectionRatio >= 0.55) {
+                        const idx = parseInt(entry.target.getAttribute('data-index') || '0', 10);
+                        if (currentIndex !== idx) {
+                            playActiveFeedVideo(idx);
+                        }
+                    }
+                });
+            }, {
+                root: feedTrack,
+                threshold: [0.55]
+            });
+
+            feedItems.forEach(item => observer.observe(item));
+        }
+
         function closeModal() {
             if (modal) {
                 modal.classList.add('opacity-0', 'pointer-events-none');
@@ -925,31 +875,45 @@
                 }, 300);
                 document.body.style.overflow = '';
             }
-            if (activeVideoEl) {
-                activeVideoEl.pause();
-                activeVideoEl.src = '';
-            }
-            if (standbyVideoEl) {
-                standbyVideoEl.pause();
-                standbyVideoEl.src = '';
-            }
+            feedVideos.forEach(v => v.pause());
         }
 
         if (modalClose) modalClose.addEventListener('click', closeModal);
         if (modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
 
-        if (modalDesktopPrev) modalDesktopPrev.addEventListener('click', () => openModal(currentIndex - 1, 'down'));
-        if (modalDesktopNext) modalDesktopNext.addEventListener('click', () => openModal(currentIndex + 1, 'up'));
-        if (flankLeft) flankLeft.addEventListener('click', () => openModal(currentIndex - 1, 'down'));
-        if (flankRight) flankRight.addEventListener('click', () => openModal(currentIndex + 1, 'up'));
-
-        // Toggle Drawer
-        if (drawerTrigger && drawer) {
-            drawerTrigger.addEventListener('click', (e) => {
-                if (e.target.closest('#modal-quick-add-cart')) return;
-                drawer.classList.remove('translate-y-full');
+        // Desktop Prev/Next Buttons Scroll the Snap Track
+        if (modalDesktopPrev && feedTrack) {
+            modalDesktopPrev.addEventListener('click', () => {
+                feedTrack.scrollBy({ top: -feedTrack.clientHeight, behavior: 'smooth' });
             });
         }
+        if (modalDesktopNext && feedTrack) {
+            modalDesktopNext.addEventListener('click', () => {
+                feedTrack.scrollBy({ top: feedTrack.clientHeight, behavior: 'smooth' });
+            });
+        }
+
+        // Flank clicks
+        if (flankLeft && feedTrack) {
+            flankLeft.addEventListener('click', () => {
+                feedTrack.scrollBy({ top: -feedTrack.clientHeight, behavior: 'smooth' });
+            });
+        }
+        if (flankRight && feedTrack) {
+            flankRight.addEventListener('click', () => {
+                feedTrack.scrollBy({ top: feedTrack.clientHeight, behavior: 'smooth' });
+            });
+        }
+
+        // Drawer Triggers
+        document.querySelectorAll('.feed-open-drawer-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                if (e.target.closest('.quick-add-to-cart-btn')) return;
+                const idx = parseInt(btn.getAttribute('data-index') || '0', 10);
+                updateDrawerData(reelsData[idx]);
+                if (drawer) drawer.classList.remove('translate-y-full');
+            });
+        });
 
         if (drawerClose && drawer) {
             drawerClose.addEventListener('click', () => {
@@ -957,79 +921,39 @@
             });
         }
 
-        // Mute / Unmute Toggle
-        if (modalMuteBtn) {
-            modalMuteBtn.addEventListener('click', () => {
-                isMuted = !isMuted;
-                if (activeVideoEl) activeVideoEl.muted = isMuted;
-                if (standbyVideoEl) standbyVideoEl.muted = isMuted;
-                if (modalMuteLabel) modalMuteLabel.textContent = isMuted ? 'Unmute' : 'Mute';
+        // Mute Buttons in Feed
+        document.querySelectorAll('.feed-mute-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                isGlobalMuted = !isGlobalMuted;
+                feedVideos.forEach(v => v.muted = isGlobalMuted);
+                updateAllMuteUI();
             });
-        }
+        });
 
-        // Like Button Toggle
-        if (modalLikeBtn && modalHeartIcon) {
-            modalLikeBtn.addEventListener('click', () => {
-                isLiked = !isLiked;
-                if (isLiked) {
-                    modalHeartIcon.setAttribute('fill', '#EF4444');
-                    modalHeartIcon.classList.add('text-red-500');
-                    if (modalLikesCount) modalLikesCount.textContent = 'Liked ♥';
+        // Like Buttons in Feed
+        document.querySelectorAll('.feed-like-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const heart = btn.querySelector('.feed-heart-icon');
+                const count = btn.querySelector('.feed-likes-count');
+                const isLiked = heart.getAttribute('fill') === '#EF4444';
+                if (!isLiked) {
+                    heart.setAttribute('fill', '#EF4444');
+                    heart.classList.add('text-red-500');
+                    if (count) count.textContent = 'Liked ♥';
                 } else {
-                    modalHeartIcon.setAttribute('fill', 'none');
-                    modalHeartIcon.classList.remove('text-red-500');
-                    if (modalLikesCount) modalLikesCount.textContent = reelsData[currentIndex].likes;
+                    heart.setAttribute('fill', 'none');
+                    heart.classList.remove('text-red-500');
+                    if (count) count.textContent = reelsData[currentIndex].likes;
                 }
             });
-        }
-
-        // Mobile Reel Vertical Swipe (Silky Smooth Reel Slide)
-        let modalTouchStartY = 0;
-        let modalTouchStartX = 0;
-        if (modal) {
-            modal.addEventListener('touchstart', (e) => {
-                modalTouchStartY = e.touches[0].clientY;
-                modalTouchStartX = e.touches[0].clientX;
-            }, { passive: true });
-
-            modal.addEventListener('touchend', (e) => {
-                if (drawer && !drawer.classList.contains('translate-y-full')) return;
-
-                const diffY = modalTouchStartY - e.changedTouches[0].clientY;
-                const diffX = modalTouchStartX - e.changedTouches[0].clientX;
-
-                // Vertical swipe detection
-                if (Math.abs(diffY) > 40 && Math.abs(diffY) > Math.abs(diffX)) {
-                    if (diffY > 0) {
-                        // Swipe Up -> Next Reel with Slide Up
-                        openModal(currentIndex + 1, 'up');
-                    } else {
-                        // Swipe Down -> Previous Reel with Slide Down
-                        openModal(currentIndex - 1, 'down');
-                    }
-                }
-            }, { passive: true });
-
-            // Mouse wheel scroll support for desktop full view
-            let wheelTimeout = null;
-            modal.addEventListener('wheel', (e) => {
-                if (drawer && !drawer.classList.contains('translate-y-full')) return;
-                if (wheelTimeout) return;
-                
-                if (Math.abs(e.deltaY) > 40) {
-                    wheelTimeout = setTimeout(() => { wheelTimeout = null; }, 500);
-                    if (e.deltaY > 0) openModal(currentIndex + 1, 'up');
-                    else openModal(currentIndex - 1, 'down');
-                }
-            }, { passive: true });
-        }
+        });
 
         // Keyboard Arrow Keys
         document.addEventListener('keydown', (e) => {
-            if (modal && !modal.classList.contains('pointer-events-none')) {
+            if (modal && !modal.classList.contains('pointer-events-none') && feedTrack) {
                 if (e.key === 'Escape') closeModal();
-                if (e.key === 'ArrowDown' || e.key === 'ArrowRight') openModal(currentIndex + 1, 'up');
-                if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') openModal(currentIndex - 1, 'down');
+                if (e.key === 'ArrowDown' || e.key === 'ArrowRight') feedTrack.scrollBy({ top: feedTrack.clientHeight, behavior: 'smooth' });
+                if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') feedTrack.scrollBy({ top: -feedTrack.clientHeight, behavior: 'smooth' });
             }
         });
 
