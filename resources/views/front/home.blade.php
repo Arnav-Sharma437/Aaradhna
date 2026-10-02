@@ -558,11 +558,31 @@
 
         if (loadMoreBtn && viewAllBtn) {
             loadMoreBtn.addEventListener('click', () => {
-                extraCards.forEach(card => {
+                extraCards.forEach((card, index) => {
                     card.classList.remove('hidden');
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(24px)';
+                    card.style.transition = 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+                    
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, index * 90 + 30);
                 });
-                loadMoreBtn.style.display = 'none';
-                viewAllBtn.style.display = 'inline-flex';
+
+                loadMoreBtn.style.transition = 'opacity 0.2s ease-out';
+                loadMoreBtn.style.opacity = '0';
+                setTimeout(() => {
+                    loadMoreBtn.style.display = 'none';
+                    viewAllBtn.style.display = 'inline-flex';
+                    viewAllBtn.style.opacity = '0';
+                    viewAllBtn.style.transform = 'scale(0.95)';
+                    viewAllBtn.style.transition = 'opacity 0.4s ease-out, transform 0.4s ease-out';
+                    setTimeout(() => {
+                        viewAllBtn.style.opacity = '1';
+                        viewAllBtn.style.transform = 'scale(1)';
+                    }, 40);
+                }, 200);
             });
         }
 
@@ -578,9 +598,6 @@
         }
     });
 </script>
-
-    </div>
-</section>
 
 <!-- ========================================================================= -->
 <!-- 3. PRODUCTS CATEGORY (Clean Large Single-Item Circles on Pure White)      -->

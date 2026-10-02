@@ -31,40 +31,17 @@
         
         <!-- Direct Nav Links -->
         <div class="p-4 space-y-3 text-base font-semibold">
-            <a href="{{ route('collections.show', 'bambooless') }}" class="flex items-center space-x-2.5 py-1 text-[#444444] hover:text-[#831F2E] transition-colors">
-                <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none">
-                    <path d="M7 21L11.5 8" stroke="#8C827A" stroke-width="2" stroke-linecap="round"/>
-                    <path d="M12 21V8" stroke="#8C827A" stroke-width="2" stroke-linecap="round"/>
-                    <path d="M17 21L12.5 8" stroke="#8C827A" stroke-width="2" stroke-linecap="round"/>
-                    <circle cx="12" cy="7.5" r="1.5" fill="#EF4444"/>
-                    <circle cx="9.5" cy="8.5" r="1.3" fill="#F59E0B"/>
-                    <circle cx="14.5" cy="8.5" r="1.3" fill="#F59E0B"/>
-                    <path d="M12 5.5C11 4 13 3 12 1.5" stroke="#D38928" stroke-width="1.3" stroke-linecap="round"/>
-                </svg>
+            <a href="{{ route('collections.show', 'bambooless') }}" class="block py-1 text-[#444444] hover:text-[#831F2E] transition-colors">
                 <span>Bambooless</span>
             </a>
-            <a href="{{ route('collections.show', 'havan-cups') }}" class="flex items-center space-x-2.5 py-1 text-[#444444] hover:text-[#831F2E] transition-colors">
-                <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none">
-                    <path d="M5 13H19L17 21H7L5 13Z" fill="#FAF5EE" stroke="#78350F" stroke-width="1.8"/>
-                    <path d="M4 13H20" stroke="#78350F" stroke-width="2" stroke-linecap="round"/>
-                    <path d="M12 2C12 2 15.5 5.5 15.5 8C15.5 10 14 11 12 11C10 11 8.5 10 8.5 8C8.5 5.5 12 2 12 2Z" fill="#F59E0B" stroke="#D97706" stroke-width="1"/>
-                    <path d="M12 5.5C12 5.5 13.5 7.5 13.5 8.8C13.5 9.7 12.8 10.3 12 10.3C11.2 10.3 10.5 9.7 10.5 8.8C10.5 7.5 12 5.5 12 5.5Z" fill="#EF4444"/>
-                </svg>
+            <a href="{{ route('collections.show', 'havan-cups') }}" class="block py-1 text-[#444444] hover:text-[#831F2E] transition-colors">
                 <span>Havan Cups</span>
             </a>
-            <a href="{{ route('collections.show', 'dhoop-cones') }}" class="flex items-center space-x-2.5 py-1 text-[#444444] hover:text-[#831F2E] transition-colors">
-                <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none">
-                    <path d="M6 21L12 8L18 21H6Z" fill="#FAF5EE" stroke="#78350F" stroke-width="1.8" stroke-linejoin="round"/>
-                    <circle cx="12" cy="7.5" r="1.5" fill="#EF4444"/>
-                    <path d="M12 5C11 3.5 13.5 2.5 12.5 1" stroke="#D38928" stroke-width="1.3" stroke-linecap="round"/>
-                </svg>
+            <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block py-1 text-[#444444] hover:text-[#831F2E] transition-colors">
                 <span>Dhoop Cones</span>
             </a>
             <div class="pt-1">
-                <div class="py-1 text-xs font-bold tracking-wider text-[#831F2E] uppercase flex items-center space-x-1.5">
-                    <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none">
-                        <path d="M12 2L14.2 8.5L21 9.2L16 13.8L17.5 20.5L12 17L6.5 20.5L8 13.8L3 9.2L9.8 8.5L12 2Z" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5"/>
-                    </svg>
+                <div class="py-1 text-xs font-bold tracking-wider text-[#831F2E] uppercase">
                     <span>Super Save Offers</span>
                 </div>
                 <div class="pl-2 mt-1 space-y-1.5">
@@ -78,23 +55,15 @@
                     </a>
                 </div>
             </div>
-            <a href="{{ route('products.show', 'pack-of-six') }}" class="flex items-center space-x-2.5 py-1 text-[#444444] hover:text-[#831F2E] transition-colors">
-                <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none">
-                    <path d="M4 18L2 7L7.5 11L12 4L16.5 11L22 7L20 18H4Z" fill="#FEF3C7" stroke="#B45309" stroke-width="1.5" stroke-linejoin="round"/>
-                </svg>
+            <a href="{{ route('products.show', 'pack-of-six') }}" class="block py-1 text-[#444444] hover:text-[#831F2E] transition-colors">
                 <span>Best Seller Combo</span>
             </a>
 
             <!-- Pitambara Havan Link -->
             <a 
                 href="{{ route('products.pitambara') }}" 
-                class="flex items-center space-x-2.5 py-1 text-[#831F2E] font-bold transition-colors"
+                class="block py-1 text-[#831F2E] font-bold transition-colors"
             >
-                <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none">
-                    <path d="M4 14C4 18 7.5 20.5 12 20.5C16.5 20.5 20 18 20 14H4Z" fill="#FDF2E9" stroke="#831F2E" stroke-width="1.8"/>
-                    <path d="M12 2.5C12 2.5 15.5 6 15.5 9C15.5 11 14 12.5 12 12.5C10 12.5 8.5 11 8.5 9C8.5 6 12 2.5 12 2.5Z" fill="#F59E0B" stroke="#B45309" stroke-width="1"/>
-                    <circle cx="12" cy="9" r="1.3" fill="#EF4444"/>
-                </svg>
                 <span>Pitambara Havan</span>
             </a>
         </div>

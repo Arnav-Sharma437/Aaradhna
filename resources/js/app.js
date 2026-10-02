@@ -318,6 +318,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initMegaMenu();
     initMobileDrawer();
     initSearchModal();
+    initScrollReveal();
     initCartDrawerUI();
     initCheckoutModal();
     
@@ -754,5 +755,37 @@ function initSearchModal() {
                 performSearch(text);
             }
         });
+    });
+}
+
+// -------------------------------------------------------------------------
+// 10. Luxury Scroll Reveal & Smooth Loading Effects
+// -------------------------------------------------------------------------
+function initScrollReveal() {
+    const targets = document.querySelectorAll('section:not(#hero-banner-carousel):not(#announcement-bar), .scroll-reveal, .fade-in-up');
+    
+    if (!('IntersectionObserver' in window)) {
+        targets.forEach(el => el.classList.add('is-visible'));
+        return;
+    }
+
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                obs.unobserve(entry.target);
+            }
+        });
+    }, {
+        root: null,
+        rootMargin: '0px 0px -40px 0px',
+        threshold: 0.06
+    });
+
+    targets.forEach(el => {
+        if (!el.classList.contains('scroll-reveal') && !el.classList.contains('fade-in-up')) {
+            el.classList.add('scroll-reveal');
+        }
+        observer.observe(el);
     });
 }

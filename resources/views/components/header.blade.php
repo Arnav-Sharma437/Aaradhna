@@ -27,67 +27,44 @@
             </div>
 
             <!-- CENTER: Navigation Menu (Desktop & Laptop) - Fluid Auto Spacing -->
-            <nav class="hidden lg:flex items-center justify-center flex-1 min-w-0 space-x-2.5 lg:space-x-3.5 xl:space-x-5 2xl:space-x-6 px-1 xl:px-2 font-body">
+            <nav class="hidden lg:flex items-center justify-center flex-1 min-w-0 space-x-3 lg:space-x-4 xl:space-x-6 2xl:space-x-7 px-1 xl:px-2 font-body">
                 
-                <!-- 1. Bambooless (Burning Incense Sticks Bundle Icon) -->
+                <!-- 1. Bambooless -->
                 <div class="py-2 xl:py-3 flex items-center">
                     <a 
                         href="{{ route('collections.show', 'bambooless') }}" 
-                        class="nav-link-hover flex items-center space-x-1.5 text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-medium text-[#444444] hover:text-[#831F2E] transition-colors whitespace-nowrap tracking-normal group"
+                        class="nav-link-hover text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-medium text-[#444444] hover:text-[#831F2E] transition-colors whitespace-nowrap tracking-normal"
                     >
-                        <svg class="w-4 h-4 shrink-0 transition-transform group-hover:scale-110" viewBox="0 0 24 24" fill="none">
-                            <path d="M7 21L11.5 8" stroke="#8C827A" stroke-width="2" stroke-linecap="round"/>
-                            <path d="M12 21V8" stroke="#8C827A" stroke-width="2" stroke-linecap="round"/>
-                            <path d="M17 21L12.5 8" stroke="#8C827A" stroke-width="2" stroke-linecap="round"/>
-                            <circle cx="12" cy="7.5" r="1.5" fill="#EF4444"/>
-                            <circle cx="9.5" cy="8.5" r="1.3" fill="#F59E0B"/>
-                            <circle cx="14.5" cy="8.5" r="1.3" fill="#F59E0B"/>
-                            <path d="M12 5.5C11 4 13 3 12 1.5" stroke="#D38928" stroke-width="1.3" stroke-linecap="round"/>
-                        </svg>
                         <span>Bambooless</span>
                     </a>
                 </div>
 
-                <!-- 2. Havan Cups (Burning Havan Cup Icon with Sacred Fire Flame) -->
+                <!-- 2. Havan Cups -->
                 <div class="py-2 xl:py-3 flex items-center">
                     <a 
                         href="{{ route('collections.show', 'havan-cups') }}" 
-                        class="nav-link-hover flex items-center space-x-1.5 text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-medium text-[#444444] hover:text-[#831F2E] transition-colors whitespace-nowrap tracking-normal group"
+                        class="nav-link-hover text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-medium text-[#444444] hover:text-[#831F2E] transition-colors whitespace-nowrap tracking-normal"
                     >
-                        <svg class="w-4 h-4 shrink-0 transition-transform group-hover:scale-110" viewBox="0 0 24 24" fill="none">
-                            <path d="M5 13H19L17 21H7L5 13Z" fill="#FAF5EE" stroke="#78350F" stroke-width="1.8"/>
-                            <path d="M4 13H20" stroke="#78350F" stroke-width="2" stroke-linecap="round"/>
-                            <path d="M12 2C12 2 15.5 5.5 15.5 8C15.5 10 14 11 12 11C10 11 8.5 10 8.5 8C8.5 5.5 12 2 12 2Z" fill="#F59E0B" stroke="#D97706" stroke-width="1"/>
-                            <path d="M12 5.5C12 5.5 13.5 7.5 13.5 8.8C13.5 9.7 12.8 10.3 12 10.3C11.2 10.3 10.5 9.7 10.5 8.8C10.5 7.5 12 5.5 12 5.5Z" fill="#EF4444"/>
-                        </svg>
                         <span>Havan Cups</span>
                     </a>
                 </div>
 
-                <!-- 3. Dhoop Cones (Burning Dhoop Cone Icon with Sacred Smoke) -->
+                <!-- 3. Dhoop Cones -->
                 <div class="py-2 xl:py-3 flex items-center">
                     <a 
                         href="{{ route('collections.show', 'dhoop-cones') }}" 
-                        class="nav-link-hover flex items-center space-x-1.5 text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-medium text-[#444444] hover:text-[#831F2E] transition-colors whitespace-nowrap tracking-normal group"
+                        class="nav-link-hover text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-medium text-[#444444] hover:text-[#831F2E] transition-colors whitespace-nowrap tracking-normal"
                     >
-                        <svg class="w-4 h-4 shrink-0 transition-transform group-hover:scale-110" viewBox="0 0 24 24" fill="none">
-                            <path d="M6 21L12 8L18 21H6Z" fill="#FAF5EE" stroke="#78350F" stroke-width="1.8" stroke-linejoin="round"/>
-                            <circle cx="12" cy="7.5" r="1.5" fill="#EF4444"/>
-                            <path d="M12 5C11 3.5 13.5 2.5 12.5 1" stroke="#D38928" stroke-width="1.3" stroke-linecap="round"/>
-                        </svg>
                         <span>Dhoop Cones</span>
                     </a>
                 </div>
 
-                <!-- 4. Super Save Offers (Interactive Mega Menu with Sparkle Icon) -->
+                <!-- 4. Super Save Offers (Interactive Mega Menu) -->
                 <div class="relative group py-2 xl:py-3 flex items-center">
                     <button 
                         type="button"
-                        class="nav-link-hover flex items-center space-x-1.5 text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-medium text-[#444444] group-hover:text-[#831F2E] transition-colors whitespace-nowrap tracking-normal cursor-pointer focus:outline-none"
+                        class="nav-link-hover flex items-center space-x-1 text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-medium text-[#444444] group-hover:text-[#831F2E] transition-colors whitespace-nowrap tracking-normal cursor-pointer focus:outline-none"
                     >
-                        <svg class="w-4 h-4 shrink-0 transition-transform group-hover:scale-110" viewBox="0 0 24 24" fill="none">
-                            <path d="M12 2L14.2 8.5L21 9.2L16 13.8L17.5 20.5L12 17L6.5 20.5L8 13.8L3 9.2L9.8 8.5L12 2Z" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5"/>
-                        </svg>
                         <span>Super Save Offers</span>
                         <svg class="w-3.5 h-3.5 text-[#8C827A] group-hover:text-[#831F2E] group-hover:rotate-180 transition-transform duration-200 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
@@ -95,7 +72,7 @@
                     </button>
                     
                     <!-- Mega Menu with Dynamic Image Preview (Enlarged Luxury Dimensions) -->
-                    <div class="absolute -left-20 top-full -mt-0.5 w-[680px] bg-white rounded-2xl shadow-2xl border border-[#EAE3D9] p-5 sm:p-6 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top group-hover:translate-y-0 translate-y-1 pointer-events-none group-hover:pointer-events-auto">
+                    <div class="absolute -left-20 top-full -mt-0.5 w-[680px] bg-white rounded-2xl shadow-2xl border border-[#EADBCC] p-5 sm:p-6 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top group-hover:translate-y-0 translate-y-1 pointer-events-none group-hover:pointer-events-auto">
                         <div class="grid grid-cols-12 gap-5 items-center">
                             
                             <!-- Left: 2 Offer Items (7 Cols) -->
@@ -161,30 +138,22 @@
                     </div>
                 </div>
 
-                <!-- 5. Best Seller Combo (Royal Star Pack Icon) -->
+                <!-- 5. Best Seller Combo -->
                 <div class="py-2 xl:py-3 flex items-center">
                     <a 
                         href="{{ route('products.show', 'pack-of-six') }}" 
-                        class="nav-link-hover flex items-center space-x-1.5 text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-medium text-[#444444] hover:text-[#831F2E] transition-colors whitespace-nowrap tracking-normal group"
+                        class="nav-link-hover text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-medium text-[#444444] hover:text-[#831F2E] transition-colors whitespace-nowrap tracking-normal"
                     >
-                        <svg class="w-4 h-4 shrink-0 transition-transform group-hover:scale-110" viewBox="0 0 24 24" fill="none">
-                            <path d="M4 18L2 7L7.5 11L12 4L16.5 11L22 7L20 18H4Z" fill="#FEF3C7" stroke="#B45309" stroke-width="1.5" stroke-linejoin="round"/>
-                        </svg>
                         <span>Best Seller Combo</span>
                     </a>
                 </div>
 
-                <!-- 6. Pitambara Havan (Sacred Baglamukhi Havan Diya Icon) -->
+                <!-- 6. Pitambara Havan -->
                 <div class="py-2 xl:py-3 flex items-center">
                     <a 
                         href="{{ route('products.pitambara') }}" 
-                        class="nav-link-always-underlined flex items-center space-x-1.5 text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-medium text-[#831F2E] hover:text-[#6E1724] transition-colors whitespace-nowrap tracking-normal group"
+                        class="nav-link-hover text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-medium text-[#831F2E] hover:text-[#6E1724] transition-colors whitespace-nowrap tracking-normal"
                     >
-                        <svg class="w-4 h-4 shrink-0 transition-transform group-hover:scale-110" viewBox="0 0 24 24" fill="none">
-                            <path d="M4 14C4 18 7.5 20.5 12 20.5C16.5 20.5 20 18 20 14H4Z" fill="#FDF2E9" stroke="#831F2E" stroke-width="1.8"/>
-                            <path d="M12 2.5C12 2.5 15.5 6 15.5 9C15.5 11 14 12.5 12 12.5C10 12.5 8.5 11 8.5 9C8.5 6 12 2.5 12 2.5Z" fill="#F59E0B" stroke="#B45309" stroke-width="1"/>
-                            <circle cx="12" cy="9" r="1.3" fill="#EF4444"/>
-                        </svg>
                         <span>Pitambara Havan</span>
                     </a>
                 </div>
