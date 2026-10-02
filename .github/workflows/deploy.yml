@@ -1,21 +1,47 @@
-# Trigger SSH connection test with SSH_PRIVATE_KEY_B64
-name: Hostinger SSH Connection & Path Discovery Test
+name: Deploy Aaradhna to Hostinger
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
   workflow_dispatch:
 
+concurrency:
+  group: deploy-hostinger-aaradhna
+  cancel-in-progress: false
+
 jobs:
-  test-connection:
-    name: Test SSH Connection & Discover Path
+  deploy:
+    name: Build & Safely Deploy to Aaradhna
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Decode and Configure SSH Key (Base64)
+      - name: Setup PHP Environment
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: mbstring, xml, ctype, iconv, intl, pdo_mysql, bcmath, zip, gd
+          coverage: none
+
+      - name: Install Composer Dependencies (Production)
+        run: |
+          composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader --no-progress
+
+      - name: Setup Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install NPM Dependencies & Build Production Assets
+        run: |
+          npm ci
+          npm run build
+
+      - name: Setup SSH Authentication (Base64 Key)
         env:
           SSH_PRIVATE_KEY_B64: ${{ secrets.SSH_PRIVATE_KEY_B64 }}
           SERVER_HOST: ${{ secrets.SERVER_HOST }}
@@ -24,90 +50,121 @@ jobs:
           mkdir -p ~/.ssh
           chmod 700 ~/.ssh
           
-          # Decode base64 secret directly into clean OpenSSH key file
+          # Decode base64 private key into standard OpenSSH file
           echo "$SSH_PRIVATE_KEY_B64" | tr -d '\r\n ' | base64 -d > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
-          
-          # Ensure trailing newline
           sed -i -e '$a\' ~/.ssh/id_ed25519
 
-          # Validate key structure locally without printing secret
-          ssh-keygen -l -f ~/.ssh/id_ed25519 || echo "Warning: Key validation check completed"
-
-          # Port handling: default to Hostinger SSH port 65002
           PORT="${SERVER_PORT:-65002}"
-          
-          # Add remote server to known_hosts
           ssh-keyscan -p "$PORT" -H "${SERVER_HOST}" >> ~/.ssh/known_hosts 2>/dev/null || true
           chmod 644 ~/.ssh/known_hosts
 
-      - name: Test SSH & Check Aaradhna Path
+      - name: Verify Target Directory Safety on Server
         env:
           SERVER_HOST: ${{ secrets.SERVER_HOST }}
           SERVER_PORT: ${{ secrets.SERVER_PORT }}
           SERVER_USER: ${{ secrets.SERVER_USER }}
         run: |
           PORT="${SERVER_PORT:-65002}"
-          echo "Initiating safe diagnostic SSH session to ${SERVER_USER}@${SERVER_HOST}:${PORT} using decoded ED25519 key..."
+          echo "Connecting to verify target path safety..."
 
-          ssh -i ~/.ssh/id_ed25519 \
-              -o IdentitiesOnly=yes \
-              -o StrictHostKeyChecking=accept-new \
-              -p "$PORT" \
-              "${SERVER_USER}@${SERVER_HOST}" 'bash -s' << 'EOF'
+          TARGET_DIR=$(ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new -p "$PORT" "${SERVER_USER}@${SERVER_HOST}" 'bash -s' << 'EOF'
             set -e
-
-            echo "=========================================="
-            echo "✅ SSH Connection: SUCCESSFUL"
-            echo "=========================================="
-            echo "Current Remote User : $(whoami)"
-            echo "Current Working Dir : $(pwd)"
-            echo "Home Directory      : $HOME"
-            echo "Host Architecture   : $(uname -s -m)"
-            echo "------------------------------------------"
-
-            # Check potential locations for public_html/dev/aaradhna
+            # Locate Aaradhna directory
             CANDIDATE_PATHS=(
               "$(pwd)/public_html/dev/aaradhna"
               "$HOME/public_html/dev/aaradhna"
               "/home/$(whoami)/public_html/dev/aaradhna"
-              "$(pwd)/aaradhna"
             )
 
-            FOUND_PATH=""
-            for path in "${CANDIDATE_PATHS[@]}"; do
-              if [ -d "$path" ]; then
-                FOUND_PATH="$(cd "$path" && pwd -P)"
+            FOUND=""
+            for p in "${CANDIDATE_PATHS[@]}"; do
+              if [ -d "$p" ]; then
+                FOUND="$(cd "$p" && pwd -P)"
                 break
               fi
             done
 
-            # Fallback search if direct match not found
-            if [ -z "$FOUND_PATH" ]; then
-              echo "Scanning directory tree for 'aaradhna' under public_html..."
-              FALLBACK_SEARCH=$(find "$HOME" -maxdepth 4 -type d -name "aaradhna" 2>/dev/null | grep -i "public_html/dev/aaradhna" | head -n 1)
-              if [ -n "$FALLBACK_SEARCH" ] && [ -d "$FALLBACK_SEARCH" ]; then
-                FOUND_PATH="$(cd "$FALLBACK_SEARCH" && pwd -P)"
+            if [ -z "$FOUND" ]; then
+              FOUND=$(find "$HOME" -maxdepth 4 -type d -name "aaradhna" 2>/dev/null | grep -i "public_html/dev/aaradhna" | head -n 1)
+              if [ -n "$FOUND" ] && [ -d "$FOUND" ]; then
+                FOUND="$(cd "$FOUND" && pwd -P)"
               fi
             fi
 
-            if [ -n "$FOUND_PATH" ] && [ -d "$FOUND_PATH" ]; then
-              echo "Aaradhna Project Found : YES"
-              echo "Absolute Server Path   : $FOUND_PATH"
-              echo "------------------------------------------"
-              echo "📂 Top-level Directory Listing:"
-              ls -la "$FOUND_PATH"
-              echo "------------------------------------------"
-              echo "✅ Diagnostic complete. Zero changes made on server."
+            # STRICT SAFETY CHECK: Must contain public_html/dev/aaradhna
+            if [[ "$FOUND" =~ public_html/dev/aaradhna$ ]]; then
+              echo "$FOUND"
             else
-              echo "⚠️ Aaradhna Project Found : NO"
-              echo "Checking contents of $(pwd):"
-              ls -la
-              if [ -d "public_html" ]; then
-                echo "Contents of public_html:"
-                ls -la public_html/
-              fi
-              echo "Please verify the directory path in Hostinger File Manager."
+              echo "INVALID_TARGET"
               exit 1
             fi
+          EOF
+          )
+
+          if [ "$TARGET_DIR" == "INVALID_TARGET" ] || [ -z "$TARGET_DIR" ]; then
+            echo "❌ CRITICAL SAFETY FAILURE: Could not safely verify /public_html/dev/aaradhna directory!"
+            exit 1
+          fi
+
+          echo "✅ Target path verified safely: $TARGET_DIR"
+          echo "REMOTE_TARGET_PATH=$TARGET_DIR" >> $GITHUB_ENV
+
+      - name: Deploy Application Files via Rsync (Non-Destructive)
+        env:
+          SERVER_HOST: ${{ secrets.SERVER_HOST }}
+          SERVER_PORT: ${{ secrets.SERVER_PORT }}
+          SERVER_USER: ${{ secrets.SERVER_USER }}
+        run: |
+          PORT="${SERVER_PORT:-65002}"
+          echo "Deploying files to ${SERVER_USER}@${SERVER_HOST}:${REMOTE_TARGET_PATH}/"
+
+          # Rsync without --delete to protect server-only files, storage uploads, and user configs
+          rsync -avz \
+            -e "ssh -i $HOME/.ssh/id_ed25519 -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new -p $PORT" \
+            --exclude='.git/' \
+            --exclude='.github/' \
+            --exclude='.env' \
+            --exclude='.env.*' \
+            --exclude='node_modules/' \
+            --exclude='storage/app/public/*' \
+            --exclude='storage/framework/cache/*' \
+            --exclude='storage/framework/sessions/*' \
+            --exclude='storage/framework/views/*' \
+            --exclude='storage/logs/*' \
+            --exclude='tests/' \
+            --exclude='.editorconfig' \
+            --exclude='.gitattributes' \
+            --exclude='.gitignore' \
+            --exclude='README.md' \
+            ./ "${SERVER_USER}@${SERVER_HOST}:${REMOTE_TARGET_PATH}/"
+
+          echo "✅ Files successfully transferred."
+
+      - name: Run Safe Post-Deployment Maintenance
+        env:
+          SERVER_HOST: ${{ secrets.SERVER_HOST }}
+          SERVER_PORT: ${{ secrets.SERVER_PORT }}
+          SERVER_USER: ${{ secrets.SERVER_USER }}
+        run: |
+          PORT="${SERVER_PORT:-65002}"
+          echo "Executing safe non-destructive post-deployment tasks in ${REMOTE_TARGET_PATH}..."
+
+          ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new -p "$PORT" "${SERVER_USER}@${SERVER_HOST}" "bash -s" << EOF
+            set -e
+            cd "${REMOTE_TARGET_PATH}"
+
+            echo "Ensuring storage directory structure exists..."
+            mkdir -p storage/framework/{sessions,views,cache} storage/logs bootstrap/cache
+            chmod -R 775 storage bootstrap/cache 2>/dev/null || true
+
+            echo "Clearing stale framework cache safely..."
+            php artisan optimize:clear || php artisan view:clear
+
+            echo "Creating storage symlink if not already linked..."
+            php artisan storage:link 2>/dev/null || true
+
+            echo "=================================================="
+            echo "🎉 Aaradhna Deployment Completed Successfully!"
+            echo "=================================================="
           EOF
