@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Collection;
 use App\Models\Product;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -14,7 +15,7 @@ class CollectionController extends Controller
     /**
      * Display the specified collection or all products with full luxury reactive filters and sorting.
      */
-    public function show(Request $request, string $slug = 'all'): View
+    public function show(Request $request, string $slug = 'all'): View|JsonResponse
     {
         // 1. Fetch or synthesize Collection Meta
         $dbCollection = Collection::where('slug', $slug)->where('is_active', true)->first();
@@ -146,6 +147,21 @@ class CollectionController extends Controller
 
         // 4. Paginate Products
         $products = $query->paginate(12)->withQueryString();
+
+        // 4.1 Handle AJAX Infinite Scroll request
+        if ($request->ajax() || $request->wantsJson() || $request->filled('ajax')) {
+            $cardsHtml = '';
+            foreach ($products as $product) {
+                $cardsHtml .= view('components.product-card', ['product' => $product])->render();
+            }
+            return response()->json([
+                'html' => $cardsHtml,
+                'has_more' => $products->hasMorePages(),
+                'next_page_url' => $products->nextPageUrl(),
+                'current_page' => $products->currentPage(),
+                'total' => $products->total(),
+            ]);
+        }
 
         // 5. Facet Counts
         $allCategories = Category::where('is_active', true)->withCount(['products' => function ($pq) {

@@ -149,15 +149,23 @@
         <div class="w-full">
             
             @if($products->count() > 0)
-                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6 lg:gap-7">
+                <div id="products-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6 lg:gap-7">
                     @foreach($products as $product)
                         <x-product-card :product="$product" />
                     @endforeach
                 </div>
 
-                <!-- Pagination Links -->
-                <div class="mt-14 flex justify-center">
-                    {{ $products->links() }}
+                <!-- Infinite Scroll Sentinel & Loading Indicator (Automatic Load on Scroll) -->
+                <div id="infinite-scroll-container" class="mt-12 {{ $products->hasMorePages() ? '' : 'hidden' }}">
+                    <div id="infinite-scroll-sentinel" class="py-6 flex flex-col items-center justify-center space-y-3" data-next-url="{{ $products->nextPageUrl() }}">
+                        <div class="flex items-center space-x-2.5 px-5 py-2.5 bg-[#FAF5EE] rounded-full border border-[#EADBCC] text-xs font-semibold text-[#8C6239] shadow-2xs">
+                            <svg class="animate-spin h-4 w-4 text-[#D38928]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                            <span>Loading more sacred products...</span>
+                        </div>
+                    </div>
                 </div>
             @else
                 <!-- Empty State -->
@@ -400,6 +408,69 @@
                 }
             }
         });
+
+        // =====================================================================
+        // INFINITE SCROLL (Automatically loads more products as you scroll down)
+        // =====================================================================
+        const sentinel = document.getElementById('infinite-scroll-sentinel');
+        const grid = document.getElementById('products-grid');
+        const infiniteContainer = document.getElementById('infinite-scroll-container');
+        let isLoading = false;
+
+        if (sentinel && grid) {
+            const loadMoreProducts = async () => {
+                const nextUrl = sentinel.dataset.nextUrl;
+                if (!nextUrl || isLoading) return;
+
+                isLoading = true;
+                const fetchUrl = nextUrl + (nextUrl.includes('?') ? '&' : '?') + 'ajax=1';
+
+                try {
+                    const response = await fetch(fetchUrl, {
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest',
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        const data = await response.json();
+                        if (data.html && data.html.trim().length > 0) {
+                            grid.insertAdjacentHTML('beforeend', data.html);
+                        }
+
+                        if (data.has_more && data.next_page_url) {
+                            sentinel.dataset.nextUrl = data.next_page_url;
+                            isLoading = false;
+                        } else {
+                            sentinel.dataset.nextUrl = '';
+                            if (infiniteContainer) {
+                                infiniteContainer.classList.add('hidden');
+                            }
+                            observer.disconnect();
+                        }
+                    } else {
+                        isLoading = false;
+                    }
+                } catch (err) {
+                    console.error('Infinite scroll error:', err);
+                    isLoading = false;
+                }
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !isLoading && sentinel.dataset.nextUrl) {
+                        loadMoreProducts();
+                    }
+                });
+            }, {
+                rootMargin: '400px 0px',
+                threshold: 0.05
+            });
+
+            observer.observe(sentinel);
+        }
     });
 </script>
 @endpush
