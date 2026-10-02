@@ -10,8 +10,8 @@
 <!-- ========================================================================= -->
 <section class="relative w-full bg-white overflow-hidden select-none border-b border-[#EAE3D9] font-body" id="hero-banner-carousel">
     
-    <!-- Slides Wrapper (Fixed Proportional Height Locked Across Screen Zooms) -->
-    <div class="relative w-full h-[280px] sm:h-[350px] md:h-[420px] lg:h-[480px] xl:h-[500px] max-h-[500px] overflow-hidden bg-white">
+    <!-- Slides Wrapper (Scaled Across Screen Zooms: 450px on 150%, 500px on 120%, 600px on 110%, 700px normal) -->
+    <div class="relative w-full h-[450px] sm:h-[500px] md:h-[500px] lg:h-[600px] xl:h-[600px] 2xl:h-[700px] overflow-hidden bg-white">
         
         @if(isset($banners) && $banners->isNotEmpty())
             @foreach($banners as $index => $banner)

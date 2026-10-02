@@ -64,7 +64,16 @@
     }
 }
 
-/* Ensure menu items, buttons, paragraphs, and badges use Instrument Sans */
+/* Ensure menu items, buttons, paragraphs, inputs, and badges strictly use Manrope */
+body,
+button,
+input,
+select,
+textarea,
+p,
+a,
+span,
+label,
 header nav a,
 header nav button,
 #mobile-drawer a,
@@ -75,7 +84,7 @@ header nav button,
 #hero-banner-carousel button,
 .font-body,
 .font-sans {
-    font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+    font-family: 'Manrope', ui-sans-serif, system-ui, sans-serif;
 }
 
 #hero-banner-carousel h1,
