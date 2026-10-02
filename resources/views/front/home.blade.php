@@ -180,7 +180,7 @@
                     <!-- Content -->
                     <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
                         <div class="space-y-1">
-                            <h3 class="text-[15px] sm:text-base font-medium text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug font-body">
+                            <h3 class="text-[15px] sm:text-base font-normal font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                                 <a href="{{ route('products.show', 'swarna-pushpa') }}">Swarna Pushpa <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(Marygold)</span></a>
                             </h3>
                             <div class="flex items-center space-x-1 text-[#D38928]">
@@ -227,7 +227,7 @@
                     <!-- Content -->
                     <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
                         <div class="space-y-1">
-                            <h3 class="text-[15px] sm:text-base font-medium text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug font-body">
+                            <h3 class="text-[15px] sm:text-base font-normal font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                                 <a href="{{ route('products.show', 'chandan-saanjh') }}">Chandan Saanjh <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(चंदन)</span></a>
                             </h3>
                             <div class="flex items-center space-x-1 text-[#D38928]">
@@ -274,7 +274,7 @@
                     <!-- Content -->
                     <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
                         <div class="space-y-1">
-                            <h3 class="text-[15px] sm:text-base font-medium text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug font-body">
+                            <h3 class="text-[15px] sm:text-base font-normal font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                                 <a href="{{ route('products.show', 'royal-oudh') }}">Royal Oudh <span class="text-xs font-normal text-gray-500 ml-0.5">(रॉयल ऊद)</span></a>
                             </h3>
                             <div class="flex items-center space-x-1 text-[#D38928]">
@@ -321,7 +321,7 @@
                     <!-- Content -->
                     <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
                         <div class="space-y-1">
-                            <h3 class="text-[15px] sm:text-base font-medium text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug font-body">
+                            <h3 class="text-[15px] sm:text-base font-normal font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                                 <a href="{{ route('products.show', 'google-dhoop') }}">Guggal Dhoop <span class="text-xs font-normal text-gray-500 ml-0.5">Havan Cup</span></a>
                             </h3>
                             <div class="flex items-center space-x-1 text-[#D38928]">
@@ -368,7 +368,7 @@
                     </div>
                     <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
                         <div class="space-y-1">
-                            <h3 class="text-[15px] sm:text-base font-medium text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug font-body">
+                            <h3 class="text-[15px] sm:text-base font-normal font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                                 <a href="{{ route('products.show', 'divya-naagchampa') }}">Divya Naagchampa <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(नागचंपा)</span></a>
                             </h3>
                             <div class="flex items-center space-x-1 text-[#D38928]">
@@ -411,7 +411,7 @@
                     </div>
                     <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
                         <div class="space-y-1">
-                            <h3 class="text-[15px] sm:text-base font-medium text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug font-body">
+                            <h3 class="text-[15px] sm:text-base font-normal font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                                 <a href="{{ route('products.show', 'mogra-noor') }}">Mogra Noor <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(मोगरा)</span></a>
                             </h3>
                             <div class="flex items-center space-x-1 text-[#D38928]">
@@ -454,7 +454,7 @@
                     </div>
                     <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
                         <div class="space-y-1">
-                            <h3 class="text-[15px] sm:text-base font-medium text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug font-body">
+                            <h3 class="text-[15px] sm:text-base font-normal font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                                 <a href="{{ route('products.show', 'gulab-rooh') }}">Gulab Rooh <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(गुलाब)</span></a>
                             </h3>
                             <div class="flex items-center space-x-1 text-[#D38928]">
@@ -497,7 +497,7 @@
                     </div>
                     <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
                         <div class="space-y-1">
-                            <h3 class="text-[15px] sm:text-base font-medium text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug font-body">
+                            <h3 class="text-[15px] sm:text-base font-normal font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                                 <a href="{{ route('products.show', 'lavender-veda') }}">Lavender Veda <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(लैवेंडर)</span></a>
                             </h3>
                             <div class="flex items-center space-x-1 text-[#D38928]">
@@ -794,7 +794,7 @@
                 </div>
                 <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
                     <div class="space-y-1">
-                        <h3 class="text-[15px] sm:text-base font-medium font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
+                        <h3 class="text-[15px] sm:text-base font-normal font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                             <a href="{{ route('products.show', 'swarna-pushpa') }}">Swarna Pushpa <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(Refill 100)</span></a>
                         </h3>
                         <div class="flex items-center space-x-1.5 text-[#D38928] leading-none">
@@ -838,7 +838,7 @@
                 </div>
                 <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
                     <div class="space-y-1">
-                        <h3 class="text-[15px] sm:text-base font-medium font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
+                        <h3 class="text-[15px] sm:text-base font-normal font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                             <a href="{{ route('products.show', 'divya-naagchampa') }}">Divya Naagchampa <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(Refill)</span></a>
                         </h3>
                         <div class="flex items-center space-x-1.5 text-[#D38928] leading-none">
@@ -882,7 +882,7 @@
                 </div>
                 <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
                     <div class="space-y-1">
-                        <h3 class="text-[15px] sm:text-base font-medium font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
+                        <h3 class="text-[15px] sm:text-base font-normal font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                             <a href="{{ route('products.show', 'royal-oudh') }}">Royal Oudh <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(Sticks)</span></a>
                         </h3>
                         <div class="flex items-center space-x-1.5 text-[#D38928] leading-none">
@@ -926,7 +926,7 @@
                 </div>
                 <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
                     <div class="space-y-1">
-                        <h3 class="text-[15px] sm:text-base font-medium font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
+                        <h3 class="text-[15px] sm:text-base font-normal font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                             <a href="{{ route('products.show', 'chandan-saanjh') }}">Chandan Saanjh <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(चंदन)</span></a>
                         </h3>
                         <div class="flex items-center space-x-1.5 text-[#D38928] leading-none">
@@ -1238,10 +1238,10 @@
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto">
             
             <!-- Card 1: Ancient Recipes -->
-            <div class="bg-[#FAF4EB] rounded-[8px] sm:rounded-[12px] py-12 px-6 sm:py-16 sm:px-8 flex flex-col items-center justify-center text-center transition-all duration-300 hover:shadow-sm">
-                <!-- Circular Line-Art Icon -->
-                <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full border-2 border-[#121212] flex items-center justify-center text-[#121212]">
-                    <svg class="w-13 h-13 sm:w-14 sm:h-14" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <div class="bg-[#FAF4EB] rounded-[12px] sm:rounded-[16px] py-12 px-6 sm:py-16 sm:px-8 flex flex-col items-center justify-center text-center transition-all duration-300 hover:shadow-sm">
+                <!-- Circular Line-Art Icon (Enlarged) -->
+                <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-full border-2 border-[#121212] flex items-center justify-center text-[#121212]">
+                    <svg class="w-16 h-16 sm:w-18 sm:h-18" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                         <!-- Mortar Bowl -->
                         <path d="M16 34h32c0 10-7.2 18-16 18s-16-8-16-18Z"/>
                         <path d="M24 52h16"/>
@@ -1254,16 +1254,16 @@
                     </svg>
                 </div>
                 <!-- Clean Label -->
-                <h3 class="text-sm sm:text-base font-serif font-normal text-[#121212] mt-8 tracking-wide">
+                <h3 class="text-base sm:text-lg font-serif font-normal text-[#121212] mt-6 tracking-wide">
                     Ancient Recipes
                 </h3>
             </div>
 
             <!-- Card 2: Purest Ingredients -->
-            <div class="bg-[#FAF4EB] rounded-[8px] sm:rounded-[12px] py-12 px-6 sm:py-16 sm:px-8 flex flex-col items-center justify-center text-center transition-all duration-300 hover:shadow-sm">
-                <!-- Circular Line-Art Icon -->
-                <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full border-2 border-[#121212] flex items-center justify-center text-[#121212]">
-                    <svg class="w-13 h-13 sm:w-14 sm:h-14" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <div class="bg-[#FAF4EB] rounded-[12px] sm:rounded-[16px] py-12 px-6 sm:py-16 sm:px-8 flex flex-col items-center justify-center text-center transition-all duration-300 hover:shadow-sm">
+                <!-- Circular Line-Art Icon (Enlarged) -->
+                <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-full border-2 border-[#121212] flex items-center justify-center text-[#121212]">
+                    <svg class="w-16 h-16 sm:w-18 sm:h-18" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                         <!-- 3 Sacred Botanical Leaves -->
                         <path d="M32 14c-3.5 4.5-3.5 10.5 0 14 3.5-3.5 3.5-9.5 0-14Z"/>
                         <path d="M23 20c-4.5 1-6.5 5.5-4 10 3.5-1 6.5-4.5 4-10Z"/>
@@ -1274,16 +1274,16 @@
                     </svg>
                 </div>
                 <!-- Clean Label -->
-                <h3 class="text-sm sm:text-base font-serif font-normal text-[#121212] mt-8 tracking-wide">
+                <h3 class="text-base sm:text-lg font-serif font-normal text-[#121212] mt-6 tracking-wide">
                     Purest Ingredients
                 </h3>
             </div>
 
             <!-- Card 3: Eco-conscious -->
-            <div class="bg-[#FAF4EB] rounded-[8px] sm:rounded-[12px] py-12 px-6 sm:py-16 sm:px-8 flex flex-col items-center justify-center text-center transition-all duration-300 hover:shadow-sm">
-                <!-- Circular Line-Art Icon -->
-                <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full border-2 border-[#121212] flex items-center justify-center text-[#121212]">
-                    <svg class="w-13 h-13 sm:w-14 sm:h-14" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <div class="bg-[#FAF4EB] rounded-[12px] sm:rounded-[16px] py-12 px-6 sm:py-16 sm:px-8 flex flex-col items-center justify-center text-center transition-all duration-300 hover:shadow-sm">
+                <!-- Circular Line-Art Icon (Enlarged) -->
+                <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-full border-2 border-[#121212] flex items-center justify-center text-[#121212]">
+                    <svg class="w-16 h-16 sm:w-18 sm:h-18" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                         <!-- Open Box -->
                         <path d="M19 35l13 6 13-6"/>
                         <path d="M32 41v13"/>
@@ -1296,7 +1296,7 @@
                     </svg>
                 </div>
                 <!-- Clean Label -->
-                <h3 class="text-sm sm:text-base font-serif font-normal text-[#121212] mt-8 tracking-wide">
+                <h3 class="text-base sm:text-lg font-serif font-normal text-[#121212] mt-6 tracking-wide">
                     Eco-conscious
                 </h3>
             </div>
@@ -1304,20 +1304,6 @@
         </div>
 
     </div>
-</section>
-
-<!-- ========================================================================= -->
-<!-- 7. STANDALONE PROMO BANNER: BUY 2 GET 1 FREE (Full Width Edge-to-Edge)   -->
-<!-- ========================================================================= -->
-<section class="w-full bg-white overflow-hidden select-none">
-    <a href="{{ route('bundles.buy2get1') }}" class="block w-full group focus:outline-none">
-        <img 
-            src="{{ asset('assets/images/banner-buy2-get1-free.jpg') }}" 
-            alt="Buy 2 Get 1 FREE + Chandan Pack FREE @ ₹999 - Mangalam" 
-            class="w-full h-auto block object-cover group-hover:opacity-95 transition-opacity duration-300"
-            loading="lazy"
-        >
-    </a>
 </section>
 
 <!-- ========================================================================= -->

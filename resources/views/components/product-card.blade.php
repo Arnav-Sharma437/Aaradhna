@@ -159,7 +159,7 @@
     <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
         
         <div class="space-y-1">
-            <h3 class="text-[15px] sm:text-base font-medium text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug font-body">
+            <h3 class="text-[15px] sm:text-base font-normal text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug font-body">
                 <a href="{{ route('products.show', $product->slug) }}">
                     {{ $product->title }}
                 </a>
