@@ -116,20 +116,20 @@
                                 </div>
                             </div>
 
-                            <!-- Right: Dynamic Hover Image Preview Box (Matching Product Card Padding, Border & Radius) -->
-                            <div class="col-span-5 p-2.5 sm:p-3 bg-[#FFFDF9] border border-[#EADBCC] rounded-[20px] shadow-2xs">
-                                <div class="relative w-full h-[195px] rounded-[16px] overflow-hidden bg-[#FAF7F2] border border-[#EADBCC]/70 shadow-inner">
+                            <!-- Right: Dynamic Hover Image Preview Box (5px Padding & Subtle Border) -->
+                            <div class="col-span-5 p-[5px] bg-[#FFFDF9] border border-[#EADBCC] rounded-[18px] shadow-2xs">
+                                <div class="relative w-full h-[205px] rounded-[14px] overflow-hidden bg-[#FAF7F2] border border-[#EADBCC]/60 shadow-inner">
                                     <img 
                                         id="mega-preview-trial" 
                                         src="{{ asset('assets/images/trial-pack-desktop.jpg') }}" 
                                         alt="Buy 5 Trial Packs @ ₹799"
-                                        class="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 opacity-100 rounded-[15px]"
+                                        class="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 opacity-100 rounded-[13px]"
                                     >
                                     <img 
                                         id="mega-preview-b2g1" 
                                         src="{{ asset('assets/images/banner-buy2-get1-free.jpg') }}" 
                                         alt="Buy 2 Get 1 FREE" 
-                                        class="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 opacity-0 pointer-events-none rounded-[15px]"
+                                        class="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 opacity-0 pointer-events-none rounded-[13px]"
                                     >
                                 </div>
                             </div>
