@@ -84,11 +84,11 @@
 
     </div>
 
-    <!-- Luxury Premium Carousel Arrow Controls -->
+    <!-- Luxury Premium Carousel Arrow Controls (Desktop only - hidden on mobile) -->
     <button 
         type="button" 
         id="hero-slider-prev"
-        class="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/80 hover:bg-[#D38928] text-[#1F1F1F] hover:text-white flex items-center justify-center backdrop-blur-md border border-[#D38928]/40 hover:border-[#F6DAA8] shadow-lg transition-all duration-300 transform hover:scale-105 active:scale-95 focus:outline-none cursor-pointer group"
+        class="hidden md:flex absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/85 hover:bg-[#D38928] text-[#1F1F1F] hover:text-white items-center justify-center backdrop-blur-md border border-[#D38928]/40 hover:border-[#F6DAA8] shadow-lg transition-all duration-300 transform hover:scale-105 active:scale-95 focus:outline-none cursor-pointer group"
         aria-label="Previous Slide"
     >
         <svg class="w-5 h-5 group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
@@ -96,19 +96,19 @@
     <button 
         type="button" 
         id="hero-slider-next"
-        class="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/80 hover:bg-[#D38928] text-[#1F1F1F] hover:text-white flex items-center justify-center backdrop-blur-md border border-[#D38928]/40 hover:border-[#F6DAA8] shadow-lg transition-all duration-300 transform hover:scale-105 active:scale-95 focus:outline-none cursor-pointer group"
+        class="hidden md:flex absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/85 hover:bg-[#D38928] text-[#1F1F1F] hover:text-white items-center justify-center backdrop-blur-md border border-[#D38928]/40 hover:border-[#F6DAA8] shadow-lg transition-all duration-300 transform hover:scale-105 active:scale-95 focus:outline-none cursor-pointer group"
         aria-label="Next Slide"
     >
         <svg class="w-5 h-5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
     </button>
 
-    <!-- Carousel Pagination Dots -->
+    <!-- Carousel Pagination Dots (Mobile inside banner at bottom, Desktop below banner) -->
     @php
         $slideCount = (isset($banners) && $banners->isNotEmpty()) ? $banners->count() : 3;
     @endphp
-    <div class="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-20 flex space-x-2.5" id="hero-slider-dots">
+    <div class="absolute bottom-3.5 left-1/2 -translate-x-1/2 z-20 flex md:static md:translate-x-0 md:py-3.5 md:bg-white justify-center items-center space-x-2 sm:space-x-2.5" id="hero-slider-dots">
         @for($i = 0; $i < $slideCount; $i++)
-            <button type="button" class="{{ $i === 0 ? 'w-8 h-2 rounded-[10px] bg-[#D38928]' : 'w-2.5 h-2 rounded-[10px] bg-[#1F1F1F]/30 hover:bg-[#1F1F1F]/60' }} transition-all duration-300" data-index="{{ $i }}" aria-label="Slide {{ $i + 1 }}"></button>
+            <button type="button" class="{{ $i === 0 ? 'w-7 sm:w-8 h-2 rounded-[10px] bg-[#D38928]' : 'w-2.5 h-2 rounded-[10px] bg-[#1F1F1F]/25 hover:bg-[#1F1F1F]/60' }} transition-all duration-300 cursor-pointer" data-index="{{ $i }}" aria-label="Slide {{ $i + 1 }}"></button>
         @endfor
     </div>
 
@@ -1492,9 +1492,9 @@
 
                 dots.forEach((dot, idx) => {
                     if (idx === currentSlide) {
-                        dot.className = 'w-8 h-2 rounded-[10px] bg-[#D38928] transition-all duration-300';
+                        dot.className = 'w-7 sm:w-8 h-2 rounded-[10px] bg-[#D38928] transition-all duration-300 cursor-pointer';
                     } else {
-                        dot.className = 'w-2.5 h-2 rounded-[10px] bg-white/40 hover:bg-white/70 transition-all duration-300';
+                        dot.className = 'w-2.5 h-2 rounded-[10px] bg-[#1F1F1F]/25 hover:bg-[#1F1F1F]/60 transition-all duration-300 cursor-pointer';
                     }
                 });
             }

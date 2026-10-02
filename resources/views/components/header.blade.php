@@ -1,14 +1,14 @@
 <header class="sticky top-0 z-40 bg-white/98 backdrop-blur-md border-b border-[#EAE3D9] transition-all duration-200 shadow-xs font-body">
     <div class="w-full max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8 xl:px-10">
-        <div class="flex items-center justify-between h-18 sm:h-20 lg:h-22 gap-2 sm:gap-4">
+        <div class="relative flex items-center justify-between h-18 sm:h-20 lg:h-22 gap-2 sm:gap-4">
             
-            <!-- LEFT: Mobile Menu Button (Mobile only) + Brand Logo -->
+            <!-- LEFT: Mobile Menu Button (Mobile only) + Desktop Brand Logo -->
             <div class="flex items-center space-x-2 sm:space-x-3 shrink-0">
                 <!-- Mobile Menu Button (Mobile / Tablet Only) -->
                 <button 
                     type="button" 
                     id="mobile-menu-trigger"
-                    class="lg:hidden p-2 -ml-1.5 text-[#121212] hover:text-[#D38928] focus:outline-none transition-colors rounded-lg hover:bg-stone-100/60 cursor-pointer"
+                    class="lg:hidden p-2 -ml-1.5 text-[#121212] hover:text-[#D38928] focus:outline-none transition-colors rounded-lg hover:bg-stone-100/60 cursor-pointer z-10"
                     aria-label="Open Mobile Menu"
                 >
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -16,12 +16,23 @@
                     </svg>
                 </button>
 
-                <!-- Brand Logo (Left-aligned) -->
-                <a href="{{ route('home') }}" class="group flex items-center py-1" aria-label="Mangalam - Pure Sacred Rituals">
+                <!-- Brand Logo (Desktop Left-aligned) -->
+                <a href="{{ route('home') }}" class="hidden lg:flex group items-center py-1" aria-label="Mangalam - Pure Sacred Rituals">
                     <img 
                         src="{{ asset('assets/images/mangalam-logo.png') }}" 
                         alt="Mangalam" 
                         class="h-10 sm:h-13 lg:h-15 w-auto max-w-[130px] sm:max-w-[160px] lg:max-w-[190px] xl:max-w-[210px] object-contain transition-transform group-hover:scale-102"
+                    >
+                </a>
+            </div>
+
+            <!-- CENTER: Brand Logo (Mobile Centered) -->
+            <div class="lg:hidden absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-auto">
+                <a href="{{ route('home') }}" class="group flex items-center py-1" aria-label="Mangalam - Pure Sacred Rituals">
+                    <img 
+                        src="{{ asset('assets/images/mangalam-logo.png') }}" 
+                        alt="Mangalam" 
+                        class="h-9 sm:h-11 w-auto max-w-[130px] sm:max-w-[150px] object-contain transition-transform group-hover:scale-102"
                     >
                 </a>
             </div>
