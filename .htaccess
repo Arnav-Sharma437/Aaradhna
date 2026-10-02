@@ -1,3 +1,5 @@
+DirectoryIndex index.php
+
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes
@@ -6,7 +8,12 @@
     RewriteEngine On
     RewriteBase /dev/aaradhna/
 
-    # Prevent loop if already targeting public/
-    RewriteRule ^$ public/index.php [L]
-    RewriteRule ^((?!public/).*)$ public/$1 [L,NC]
+    # If requested file exists in public/, rewrite directly to it
+    RewriteCond %{DOCUMENT_ROOT}/dev/aaradhna/public/$1 -f
+    RewriteRule ^(.*)$ public/$1 [L]
+
+    # Route all other URLs to index.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.php [L]
 </IfModule>
