@@ -35,16 +35,28 @@ class CollectionController extends Controller
             $query = $collection->products()->where('status', 'active');
         } else {
             // If slug matches a category directly
-            $category = Category::where('slug', $slug)->where('is_active', true)->firstOrFail();
-            $collection = (object) [
-                'title' => $category->name,
-                'slug' => $category->slug,
-                'description' => $category->description ?? $category->subtitle,
-                'banner_path' => $category->banner_path,
-                'meta_title' => $category->meta_title ?? "{$category->name} — 100% Pure & Vedic | Mangalam.co",
-                'meta_description' => $category->meta_description ?? $category->description,
-            ];
-            $query = Product::where('category_id', $category->id)->where('status', 'active');
+            $category = Category::where('slug', $slug)->where('is_active', true)->first();
+            if ($category) {
+                $collection = (object) [
+                    'title' => $category->name,
+                    'slug' => $category->slug,
+                    'description' => $category->description ?? $category->subtitle,
+                    'banner_path' => $category->banner_path,
+                    'meta_title' => $category->meta_title ?? "{$category->name} — 100% Pure & Vedic | Mangalam.co",
+                    'meta_description' => $category->meta_description ?? $category->description,
+                ];
+                $query = Product::where('category_id', $category->id)->where('status', 'active');
+            } else {
+                $collection = (object) [
+                    'title' => ucwords(str_replace('-', ' ', $slug)),
+                    'slug' => $slug,
+                    'description' => 'Explore our 100% pure Vedic pooja essentials, bambooless incense and havan cups.',
+                    'banner_path' => null,
+                    'meta_title' => ucwords(str_replace('-', ' ', $slug)) . ' — 100% Pure & Vedic | Mangalam.co',
+                    'meta_description' => 'Explore pure Vedic pooja essentials crafted without bamboo or synthetic aromas.',
+                ];
+                $query = Product::where('status', 'active');
+            }
         }
 
         // Eager load necessary relationships
