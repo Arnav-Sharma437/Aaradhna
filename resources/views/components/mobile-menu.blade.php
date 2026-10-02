@@ -31,13 +31,13 @@
         
         <!-- Direct Nav Links -->
         <div class="p-4 space-y-3 text-base font-semibold">
-            <a href="{{ route('collections.show', 'bambooless') }}" class="block py-1 text-[#1F1F1F] hover:text-[#831F2E] transition-colors">
+            <a href="{{ route('collections.show', 'bambooless') }}" class="block py-1 text-[#444444] hover:text-[#831F2E] transition-colors">
                 Bambooless
             </a>
-            <a href="{{ route('collections.show', 'havan-cups') }}" class="block py-1 text-[#1F1F1F] hover:text-[#831F2E] transition-colors">
+            <a href="{{ route('collections.show', 'havan-cups') }}" class="block py-1 text-[#444444] hover:text-[#831F2E] transition-colors">
                 Havan Cups
             </a>
-            <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block py-1 text-[#1F1F1F] hover:text-[#831F2E] transition-colors">
+            <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block py-1 text-[#444444] hover:text-[#831F2E] transition-colors">
                 Dhoop Cones
             </a>
             <div class="pt-1">
@@ -53,7 +53,7 @@
                     </a>
                 </div>
             </div>
-            <a href="{{ route('products.show', 'pack-of-six') }}" class="block py-1 text-[#1F1F1F] hover:text-[#831F2E] transition-colors">
+            <a href="{{ route('products.show', 'pack-of-six') }}" class="block py-1 text-[#444444] hover:text-[#831F2E] transition-colors">
                 Best Seller Combo
             </a>
 

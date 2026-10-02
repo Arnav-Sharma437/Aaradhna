@@ -33,7 +33,7 @@
                 <div class="py-2 xl:py-3 flex items-center">
                     <a 
                         href="{{ route('collections.show', 'bambooless') }}" 
-                        class="nav-link-hover text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-medium text-[#1F1F1F] hover:text-[#831F2E] transition-colors whitespace-nowrap tracking-normal"
+                        class="nav-link-hover text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-medium text-[#444444] hover:text-[#831F2E] transition-colors whitespace-nowrap tracking-normal"
                     >
                         Bambooless
                     </a>
@@ -43,7 +43,7 @@
                 <div class="py-2 xl:py-3 flex items-center">
                     <a 
                         href="{{ route('collections.show', 'havan-cups') }}" 
-                        class="nav-link-hover text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-medium text-[#1F1F1F] hover:text-[#831F2E] transition-colors whitespace-nowrap tracking-normal"
+                        class="nav-link-hover text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-medium text-[#444444] hover:text-[#831F2E] transition-colors whitespace-nowrap tracking-normal"
                     >
                         Havan Cups
                     </a>
@@ -53,7 +53,7 @@
                 <div class="py-2 xl:py-3 flex items-center">
                     <a 
                         href="{{ route('collections.show', 'dhoop-cones') }}" 
-                        class="nav-link-hover text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-medium text-[#1F1F1F] hover:text-[#831F2E] transition-colors whitespace-nowrap tracking-normal"
+                        class="nav-link-hover text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-medium text-[#444444] hover:text-[#831F2E] transition-colors whitespace-nowrap tracking-normal"
                     >
                         Dhoop Cones
                     </a>
@@ -63,7 +63,7 @@
                 <div class="relative group py-2 xl:py-3 flex items-center">
                     <button 
                         type="button"
-                        class="nav-link-hover flex items-center space-x-1 text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-medium text-[#1F1F1F] group-hover:text-[#831F2E] transition-colors whitespace-nowrap tracking-normal cursor-pointer focus:outline-none"
+                        class="nav-link-hover flex items-center space-x-1 text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-medium text-[#444444] group-hover:text-[#831F2E] transition-colors whitespace-nowrap tracking-normal cursor-pointer focus:outline-none"
                     >
                         <span>Super Save Offers</span>
                         <svg class="w-3.5 h-3.5 text-[#8C827A] group-hover:text-[#831F2E] group-hover:rotate-180 transition-transform duration-200 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -140,7 +140,7 @@
                 <div class="py-2 xl:py-3 flex items-center">
                     <a 
                         href="{{ route('products.show', 'pack-of-six') }}" 
-                        class="nav-link-hover text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-medium text-[#1F1F1F] hover:text-[#831F2E] transition-colors whitespace-nowrap tracking-normal"
+                        class="nav-link-hover text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-medium text-[#444444] hover:text-[#831F2E] transition-colors whitespace-nowrap tracking-normal"
                     >
                         Best Seller Combo
                     </a>
