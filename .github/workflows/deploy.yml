@@ -1,3 +1,4 @@
+# Diagnostic connection and discovery test run with updated SSH_PRIVATE_KEY
 name: Hostinger SSH Connection & Path Discovery Test
 
 on:
