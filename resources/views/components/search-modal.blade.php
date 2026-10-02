@@ -27,7 +27,6 @@
                             placeholder="Search pure pooja samagri, camphor, havan cups, attar..."
                             class="w-full text-sm sm:text-base text-[#121212] placeholder-gray-400 focus:outline-none border-none bg-transparent"
                             autocomplete="off"
-                            autofocus
                         >
                     </div>
 

@@ -646,7 +646,9 @@ function initSearchModal() {
         document.body.classList.add('overflow-hidden');
         if (input) {
             setTimeout(() => {
-                input.focus();
+                if (window.innerWidth >= 768) {
+                    input.focus();
+                }
                 if (!input.value.trim()) {
                     performSearch('');
                 }
