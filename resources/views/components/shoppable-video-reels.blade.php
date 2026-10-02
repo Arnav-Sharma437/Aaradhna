@@ -277,6 +277,18 @@
     <!-- 3D Carousel Stage Container -->
     <div class="relative z-20 w-full max-w-5xl h-full max-h-[90vh] flex items-center justify-center px-4 sm:px-12">
         
+        <!-- Left Navigation Arrow Button -->
+        <button 
+            type="button" 
+            id="modal-prev-arrow"
+            class="absolute left-2 sm:left-0 top-1/2 -translate-y-1/2 z-40 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white text-[#121212] hover:bg-[#831F2E] hover:text-white flex items-center justify-center shadow-2xl transition-all duration-200 transform hover:scale-110 active:scale-95 cursor-pointer border border-black/10 focus:outline-none"
+            aria-label="Previous Reel"
+        >
+            <svg class="w-6 h-6 sm:w-7 sm:h-7 mr-0.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+            </svg>
+        </button>
+
         <!-- Left Flanking Card (Previous Reel Preview) -->
         <div 
             id="modal-card-prev"
@@ -472,6 +484,7 @@
         const modalLikeBtn = document.getElementById('modal-like-btn');
         const modalHeartIcon = document.getElementById('modal-heart-icon');
         const modalLikeCount = document.getElementById('modal-like-count');
+        const modalPrevArrow = document.getElementById('modal-prev-arrow');
         const modalNextArrow = document.getElementById('modal-next-arrow');
         const modalCardPrev = document.getElementById('modal-card-prev');
         const modalCardNext = document.getElementById('modal-card-next');
@@ -737,6 +750,13 @@
             modalNextArrow.addEventListener('click', (e) => {
                 e.stopPropagation();
                 openReelModal(currentReelIndex + 1);
+            });
+        }
+
+        if (modalPrevArrow) {
+            modalPrevArrow.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openReelModal(currentReelIndex - 1);
             });
         }
 

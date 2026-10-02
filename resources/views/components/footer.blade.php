@@ -169,8 +169,21 @@
 
         </div>
 
+        <!-- Sacred Vishnu Mangalam Devotional Mantra Banner -->
+        <div class="my-8 py-4 px-5 sm:px-8 rounded-2xl bg-black/30 border border-[#F6DAA8]/30 shadow-inner text-center relative overflow-hidden backdrop-blur-xs">
+            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-[#F6DAA8]/10 to-transparent pointer-events-none"></div>
+            <div class="relative z-10 flex flex-col items-center justify-center space-y-1.5">
+                <div class="text-[#F6DAA8] text-xs sm:text-sm md:text-base font-serif tracking-wider sm:tracking-widest leading-relaxed font-semibold">
+                    ॥ मङ्गलं भगवान विष्णुः, मङ्गलम् गरुणध्वजः । मङ्गलम् पुण्डरी काक्षः, मङ्गलाय तनो हरिः ॥
+                </div>
+                <div class="text-[9px] sm:text-[10px] uppercase tracking-[0.25em] text-[#F6DAA8]/70 font-heading font-medium">
+                    ✦ परम पावन मङ्गल स्तुति • मङ्गलमय जीवन की प्रार्थना ✦
+                </div>
+            </div>
+        </div>
+
         <!-- Bottom Row: Policies & Devotional Copyright -->
-        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 text-[11px] sm:text-xs text-white/75">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 text-[11px] sm:text-xs text-white/75">
             
             <!-- Policy Links -->
             <div class="flex flex-wrap items-center justify-center sm:justify-start gap-x-4 sm:gap-x-6 gap-y-1">
@@ -185,7 +198,7 @@
 
             <!-- Devotional Chant & Copyright -->
             <div class="text-center text-[#F6DAA8] font-serif text-xs">
-                <span>© {{ date('Y') }} Manglam.co™ • ॐ शान्तिः शान्तिः शान्तिः</span>
+                <span>© {{ date('Y') }} Manglam.co™ • सर्वमङ्गलमाङ्गल्ये शिवे सर्वार्थसाधिके</span>
             </div>
 
         </div>

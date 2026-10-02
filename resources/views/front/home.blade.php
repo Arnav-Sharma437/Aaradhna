@@ -1031,18 +1031,18 @@
 
                 <!-- First Pass -->
                 @foreach($row1Testimonials as $t)
-                    <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[400px] bg-white rounded-[18px] p-5 sm:p-6 border border-[#EADBCC] shadow-xs hover:shadow-xl hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between">
-                        <div class="space-y-3">
-                            <div class="flex items-center space-x-1.5 text-[#D38928] text-xl sm:text-2xl leading-none">
+                    <div class="shrink-0 w-[280px] sm:w-[350px] md:w-[380px] bg-white rounded-[16px] p-4 sm:p-5 border border-[#EADBCC] shadow-xs hover:shadow-lg hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between">
+                        <div class="space-y-2">
+                            <div class="flex items-center space-x-1 text-[#D38928] text-lg sm:text-xl leading-none">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                             </div>
-                            <p class="text-xs sm:text-[13px] text-[#2B1810] leading-relaxed font-normal pt-0.5">
+                            <p class="text-xs sm:text-[13px] text-[#2B1810] leading-snug font-normal">
                                 "{{ $t['quote'] }}"
                             </p>
                         </div>
-                        <div class="flex items-center justify-between pt-4 border-t border-[#EAE3D9] mt-4">
-                            <div class="flex items-center space-x-3">
-                                <div class="w-10 h-10 rounded-full {{ $t['avatar_bg'] }} text-white flex items-center justify-center font-bold text-xs sm:text-sm shadow-xs font-heading shrink-0">
+                        <div class="flex items-center justify-between pt-3 border-t border-[#EAE3D9] mt-3">
+                            <div class="flex items-center space-x-2.5">
+                                <div class="w-9 h-9 rounded-full {{ $t['avatar_bg'] }} text-white flex items-center justify-center font-bold text-xs shadow-xs font-heading shrink-0">
                                     {{ $t['initials'] }}
                                 </div>
                                 <div>
@@ -1056,18 +1056,18 @@
 
                 <!-- Second Duplicate Pass for Infinite Seamless Marquee -->
                 @foreach($row1Testimonials as $t)
-                    <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[400px] bg-white rounded-[18px] p-5 sm:p-6 border border-[#EADBCC] shadow-xs hover:shadow-xl hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between" aria-hidden="true">
-                        <div class="space-y-3">
-                            <div class="flex items-center space-x-1.5 text-[#D38928] text-xl sm:text-2xl leading-none">
+                    <div class="shrink-0 w-[280px] sm:w-[350px] md:w-[380px] bg-white rounded-[16px] p-4 sm:p-5 border border-[#EADBCC] shadow-xs hover:shadow-lg hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between" aria-hidden="true">
+                        <div class="space-y-2">
+                            <div class="flex items-center space-x-1 text-[#D38928] text-lg sm:text-xl leading-none">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                             </div>
-                            <p class="text-xs sm:text-[13px] text-[#2B1810] leading-relaxed font-normal pt-0.5">
+                            <p class="text-xs sm:text-[13px] text-[#2B1810] leading-snug font-normal">
                                 "{{ $t['quote'] }}"
                             </p>
                         </div>
-                        <div class="flex items-center justify-between pt-4 border-t border-[#EAE3D9] mt-4">
-                            <div class="flex items-center space-x-3">
-                                <div class="w-10 h-10 rounded-full {{ $t['avatar_bg'] }} text-white flex items-center justify-center font-bold text-xs sm:text-sm shadow-xs font-heading shrink-0">
+                        <div class="flex items-center justify-between pt-3 border-t border-[#EAE3D9] mt-3">
+                            <div class="flex items-center space-x-2.5">
+                                <div class="w-9 h-9 rounded-full {{ $t['avatar_bg'] }} text-white flex items-center justify-center font-bold text-xs shadow-xs font-heading shrink-0">
                                     {{ $t['initials'] }}
                                 </div>
                                 <div>
@@ -1086,7 +1086,7 @@
         <!-- ROW 2: LEFT TO RIGHT (Continuous Scroll)   -->
         <!-- ========================================== -->
         <div class="flex overflow-hidden">
-            <div class="animate-marquee-right flex space-x-4 sm:space-x-6 py-2">
+            <div class="animate-marquee-right flex space-x-4 sm:space-x-5 py-1.5">
                 
                 @php
                     $row2Testimonials = [
@@ -1137,18 +1137,18 @@
 
                 <!-- First Pass -->
                 @foreach($row2Testimonials as $t)
-                    <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[400px] bg-white rounded-[18px] p-5 sm:p-6 border border-[#EADBCC] shadow-xs hover:shadow-xl hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between">
-                        <div class="space-y-3">
-                            <div class="flex items-center space-x-1.5 text-[#D38928] text-xl sm:text-2xl leading-none">
+                    <div class="shrink-0 w-[280px] sm:w-[350px] md:w-[380px] bg-white rounded-[16px] p-4 sm:p-5 border border-[#EADBCC] shadow-xs hover:shadow-lg hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between">
+                        <div class="space-y-2">
+                            <div class="flex items-center space-x-1 text-[#D38928] text-lg sm:text-xl leading-none">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                             </div>
-                            <p class="text-xs sm:text-[13px] text-[#2B1810] leading-relaxed font-normal pt-0.5">
+                            <p class="text-xs sm:text-[13px] text-[#2B1810] leading-snug font-normal">
                                 "{{ $t['quote'] }}"
                             </p>
                         </div>
-                        <div class="flex items-center justify-between pt-4 border-t border-[#EAE3D9] mt-4">
-                            <div class="flex items-center space-x-3">
-                                <div class="w-10 h-10 rounded-full {{ $t['avatar_bg'] }} text-white flex items-center justify-center font-bold text-xs sm:text-sm shadow-xs font-heading shrink-0">
+                        <div class="flex items-center justify-between pt-3 border-t border-[#EAE3D9] mt-3">
+                            <div class="flex items-center space-x-2.5">
+                                <div class="w-9 h-9 rounded-full {{ $t['avatar_bg'] }} text-white flex items-center justify-center font-bold text-xs shadow-xs font-heading shrink-0">
                                     {{ $t['initials'] }}
                                 </div>
                                 <div>
@@ -1162,18 +1162,18 @@
 
                 <!-- Second Duplicate Pass for Infinite Seamless Marquee -->
                 @foreach($row2Testimonials as $t)
-                    <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[400px] bg-white rounded-[18px] p-5 sm:p-6 border border-[#EADBCC] shadow-xs hover:shadow-xl hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between" aria-hidden="true">
-                        <div class="space-y-3">
-                            <div class="flex items-center space-x-1.5 text-[#D38928] text-xl sm:text-2xl leading-none">
+                    <div class="shrink-0 w-[280px] sm:w-[350px] md:w-[380px] bg-white rounded-[16px] p-4 sm:p-5 border border-[#EADBCC] shadow-xs hover:shadow-lg hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between" aria-hidden="true">
+                        <div class="space-y-2">
+                            <div class="flex items-center space-x-1 text-[#D38928] text-lg sm:text-xl leading-none">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                             </div>
-                            <p class="text-xs sm:text-[13px] text-[#2B1810] leading-relaxed font-normal pt-0.5">
+                            <p class="text-xs sm:text-[13px] text-[#2B1810] leading-snug font-normal">
                                 "{{ $t['quote'] }}"
                             </p>
                         </div>
-                        <div class="flex items-center justify-between pt-4 border-t border-[#EAE3D9] mt-4">
-                            <div class="flex items-center space-x-3">
-                                <div class="w-10 h-10 rounded-full {{ $t['avatar_bg'] }} text-white flex items-center justify-center font-bold text-xs sm:text-sm shadow-xs font-heading shrink-0">
+                        <div class="flex items-center justify-between pt-3 border-t border-[#EAE3D9] mt-3">
+                            <div class="flex items-center space-x-2.5">
+                                <div class="w-9 h-9 rounded-full {{ $t['avatar_bg'] }} text-white flex items-center justify-center font-bold text-xs shadow-xs font-heading shrink-0">
                                     {{ $t['initials'] }}
                                 </div>
                                 <div>
@@ -1193,50 +1193,34 @@
 </section>
 
 <!-- ========================================================================= -->
-<!-- 6. ROOTED IN PURITY (Clean & Minimalist 3-Card Layout with BG Illustrations)-->
+<!-- 6. ROOTED IN PURITY (Rich Vedic Patterned Section & 3 Crisp Premium Cards)-->
 <!-- ========================================================================= -->
-<section class="py-16 sm:py-24 bg-white border-b border-[#EAE3D9] select-none font-body relative overflow-hidden">
+<section class="py-14 sm:py-20 border-b border-[#EAE3D9] select-none font-body relative overflow-hidden bg-[#C85A17] bg-repeat" style="background-image: url('{{ asset('assets/images/rooted-in-purity-bg.png') }}'); background-size: 260px;">
     
-    <!-- Background Botanical Line Illustrations (Left & Right) -->
-    <div class="absolute -left-10 top-1/2 -translate-y-1/2 w-64 h-64 sm:w-80 sm:h-80 pointer-events-none opacity-[0.08] text-[#121212]">
-        <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full">
-            <path d="M20 180C60 140 100 80 180 20"/>
-            <path d="M70 130C60 115 65 95 80 90C90 105 85 125 70 130Z"/>
-            <path d="M100 100C90 85 95 65 110 60C120 75 115 95 100 100Z"/>
-            <path d="M130 70C120 55 125 35 140 30C150 45 145 65 130 70Z"/>
-            <path d="M110 115C125 120 135 135 130 150C115 145 105 130 110 115Z"/>
-            <path d="M140 85C155 90 165 105 160 120C145 115 135 100 140 85Z"/>
-        </svg>
-    </div>
-    
-    <div class="absolute -right-10 top-1/2 -translate-y-1/2 w-64 h-64 sm:w-80 sm:h-80 pointer-events-none opacity-[0.08] text-[#121212] rotate-180">
-        <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full">
-            <path d="M20 180C60 140 100 80 180 20"/>
-            <path d="M70 130C60 115 65 95 80 90C90 105 85 125 70 130Z"/>
-            <path d="M100 100C90 85 95 65 110 60C120 75 115 95 100 100Z"/>
-            <path d="M130 70C120 55 125 35 140 30C150 45 145 65 130 70Z"/>
-            <path d="M110 115C125 120 135 135 130 150C115 145 105 130 110 115Z"/>
-            <path d="M140 85C155 90 165 105 160 120C145 115 135 100 140 85Z"/>
-        </svg>
-    </div>
+    <!-- Subtle Warm Gradient Overlay for Depth -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/30 pointer-events-none"></div>
 
     <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px] relative z-10">
         
-        <!-- Clean Title Exactly Like Reference -->
-        <div class="text-center max-w-xl mx-auto mb-10 sm:mb-14">
-            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-normal text-[#121212] font-heading tracking-tight">
+        <!-- Clean Luxury Header -->
+        <div class="text-center max-w-xl mx-auto mb-8 sm:mb-12">
+            <div class="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-white/90 backdrop-blur-xs border border-white/40 text-[#831F2E] shadow-sm mb-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#831F2E]"></span>
+                <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.2em] font-heading">✦ 100% SATTVIK SAMAGRI ✦</span>
+            </div>
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white font-heading tracking-tight drop-shadow-md">
                 Rooted in Purity
             </h2>
         </div>
 
-        <!-- 3 Rectangular Cards Exactly Like Reference -->
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto">
+        <!-- 3 Elegant Rectangular Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-7 max-w-4xl mx-auto">
             
             <!-- Card 1: Ancient Recipes -->
-            <div class="bg-[#FAF4EB] rounded-[12px] sm:rounded-[16px] py-12 px-6 sm:py-16 sm:px-8 flex flex-col items-center justify-center text-center transition-all duration-300 hover:shadow-sm">
-                <!-- Circular Line-Art Icon (Enlarged) -->
-                <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-full border-2 border-[#121212] flex items-center justify-center text-[#121212]">
-                    <svg class="w-16 h-16 sm:w-18 sm:h-18" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <div class="bg-white rounded-[16px] sm:rounded-[20px] py-10 px-6 sm:py-12 sm:px-8 flex flex-col items-center justify-center text-center shadow-lg hover:shadow-2xl border border-white/60 hover:-translate-y-1 transition-all duration-300 group">
+                <!-- Circular Line-Art Icon (Preserved & Enhanced) -->
+                <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full border-2 border-[#121212] bg-[#FAF5EE] group-hover:bg-[#FFF] flex items-center justify-center text-[#121212] shadow-xs transition-colors">
+                    <svg class="w-14 h-14 sm:w-16 sm:h-16" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                         <!-- Mortar Bowl -->
                         <path d="M16 34h32c0 10-7.2 18-16 18s-16-8-16-18Z"/>
                         <path d="M24 52h16"/>
@@ -1249,16 +1233,16 @@
                     </svg>
                 </div>
                 <!-- Clean Label -->
-                <h3 class="text-base sm:text-lg font-serif font-normal text-[#121212] mt-6 tracking-wide">
+                <h3 class="text-base sm:text-lg font-serif font-bold text-[#121212] mt-5 tracking-wide">
                     Ancient Recipes
                 </h3>
             </div>
 
             <!-- Card 2: Purest Ingredients -->
-            <div class="bg-[#FAF4EB] rounded-[12px] sm:rounded-[16px] py-12 px-6 sm:py-16 sm:px-8 flex flex-col items-center justify-center text-center transition-all duration-300 hover:shadow-sm">
-                <!-- Circular Line-Art Icon (Enlarged) -->
-                <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-full border-2 border-[#121212] flex items-center justify-center text-[#121212]">
-                    <svg class="w-16 h-16 sm:w-18 sm:h-18" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <div class="bg-white rounded-[16px] sm:rounded-[20px] py-10 px-6 sm:py-12 sm:px-8 flex flex-col items-center justify-center text-center shadow-lg hover:shadow-2xl border border-white/60 hover:-translate-y-1 transition-all duration-300 group">
+                <!-- Circular Line-Art Icon (Preserved & Enhanced) -->
+                <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full border-2 border-[#121212] bg-[#FAF5EE] group-hover:bg-[#FFF] flex items-center justify-center text-[#121212] shadow-xs transition-colors">
+                    <svg class="w-14 h-14 sm:w-16 sm:h-16" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                         <!-- 3 Sacred Botanical Leaves -->
                         <path d="M32 14c-3.5 4.5-3.5 10.5 0 14 3.5-3.5 3.5-9.5 0-14Z"/>
                         <path d="M23 20c-4.5 1-6.5 5.5-4 10 3.5-1 6.5-4.5 4-10Z"/>
@@ -1269,16 +1253,16 @@
                     </svg>
                 </div>
                 <!-- Clean Label -->
-                <h3 class="text-base sm:text-lg font-serif font-normal text-[#121212] mt-6 tracking-wide">
+                <h3 class="text-base sm:text-lg font-serif font-bold text-[#121212] mt-5 tracking-wide">
                     Purest Ingredients
                 </h3>
             </div>
 
             <!-- Card 3: Eco-conscious -->
-            <div class="bg-[#FAF4EB] rounded-[12px] sm:rounded-[16px] py-12 px-6 sm:py-16 sm:px-8 flex flex-col items-center justify-center text-center transition-all duration-300 hover:shadow-sm">
-                <!-- Circular Line-Art Icon (Enlarged) -->
-                <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-full border-2 border-[#121212] flex items-center justify-center text-[#121212]">
-                    <svg class="w-16 h-16 sm:w-18 sm:h-18" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <div class="bg-white rounded-[16px] sm:rounded-[20px] py-10 px-6 sm:py-12 sm:px-8 flex flex-col items-center justify-center text-center shadow-lg hover:shadow-2xl border border-white/60 hover:-translate-y-1 transition-all duration-300 group">
+                <!-- Circular Line-Art Icon (Preserved & Enhanced) -->
+                <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full border-2 border-[#121212] bg-[#FAF5EE] group-hover:bg-[#FFF] flex items-center justify-center text-[#121212] shadow-xs transition-colors">
+                    <svg class="w-14 h-14 sm:w-16 sm:h-16" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                         <!-- Open Box -->
                         <path d="M19 35l13 6 13-6"/>
                         <path d="M32 41v13"/>
@@ -1291,7 +1275,7 @@
                     </svg>
                 </div>
                 <!-- Clean Label -->
-                <h3 class="text-base sm:text-lg font-serif font-normal text-[#121212] mt-6 tracking-wide">
+                <h3 class="text-base sm:text-lg font-serif font-bold text-[#121212] mt-5 tracking-wide">
                     Eco-conscious
                 </h3>
             </div>
@@ -1302,48 +1286,42 @@
 </section>
 
 <!-- ========================================================================= -->
+<!-- 8. FREQUENTLY ASKED QUESTIONS (Compact Seamless Accordion - 7 Items)      -->
 <!-- ========================================================================= -->
-<!-- 8. FREQUENTLY ASKED QUESTIONS (Luxury Modern Accordions - 7 Items)        -->
-<!-- ========================================================================= -->
-<section class="py-16 sm:py-24 bg-white border-b border-[#EADBCC] select-none">
-    <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
-        <div class="max-w-5xl mx-auto space-y-10">
+<section class="py-14 sm:py-20 bg-[#FAF7F2] border-b border-[#EADBCC] select-none">
+    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
+        <div class="max-w-4xl mx-auto space-y-8 sm:space-y-10">
         
         <!-- Section Header -->
-        <div class="text-center max-w-3xl mx-auto space-y-3">
-            <div class="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-white border border-[#EADBCC] text-[#C87A1E] shadow-2xs">
+        <div class="text-center max-w-2xl mx-auto space-y-2.5">
+            <div class="inline-flex items-center space-x-2 px-3 py-0.5 rounded-full bg-white border border-[#EADBCC] text-[#C87A1E] shadow-2xs">
                 <span class="w-1.5 h-1.5 rounded-full bg-[#D38928]"></span>
-                <span class="text-[11px] font-bold uppercase tracking-[0.2em] font-heading">Clarity &amp; Vidhi</span>
+                <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.2em] font-heading">Clarity &amp; Vidhi</span>
             </div>
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#121212] font-heading tracking-tight leading-tight">
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#121212] font-heading tracking-tight">
                 Frequently Asked Questions
             </h2>
-            <p class="text-xs sm:text-sm text-gray-600 leading-relaxed max-w-2xl mx-auto">
+            <p class="text-xs sm:text-sm text-gray-600 leading-normal max-w-xl mx-auto">
                 Everything you need to know about our authentic Vedic ingredients, burning times, and door-step delivery.
             </p>
         </div>
 
-        <!-- Accordion Cards List (7 Items) -->
-        <div class="space-y-3.5 sm:space-y-4">
+        <!-- Seamless Accordion Container (Single continuous card with divide-y) -->
+        <div class="bg-white rounded-[16px] sm:rounded-[20px] border border-[#EADBCC] shadow-xs divide-y divide-[#EADBCC] overflow-hidden">
             
             <!-- FAQ 1 -->
-            <div class="faq-card bg-white rounded-[16px] border border-[#EADBCC] shadow-xs hover:border-[#D38928]/50 transition-all duration-200 overflow-hidden">
-                <button type="button" class="faq-toggle w-full p-4 sm:p-5 flex items-center justify-between text-left focus:outline-none cursor-pointer group">
-                    <div class="flex items-center space-x-3.5 sm:space-x-4 pr-4">
-                        <span class="w-8 h-8 rounded-[10px] bg-[#FAF5EE] text-[#D38928] text-xs font-black font-heading flex items-center justify-center shrink-0 border border-[#D38928]/20 group-hover:bg-[#D38928] group-hover:text-white transition-colors">
-                            01
-                        </span>
-                        <span class="text-sm sm:text-base font-bold text-[#121212] font-heading group-hover:text-[#D38928] transition-colors leading-snug">
-                            What makes Manglam bambooless incense sticks and havan cups unique?
-                        </span>
-                    </div>
-                    <div class="w-8 h-8 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
-                        <svg class="faq-icon w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <div class="faq-item">
+                <button type="button" class="faq-toggle w-full py-3.5 sm:py-4 px-4 sm:px-6 flex items-center justify-between text-left focus:outline-none cursor-pointer group hover:bg-[#FAF7F2]/60 transition-colors">
+                    <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
+                        What makes Manglam bambooless incense sticks and havan cups unique?
+                    </span>
+                    <div class="w-7 h-7 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                        <svg class="faq-icon w-3.5 h-3.5 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                         </svg>
                     </div>
                 </button>
-                <div class="faq-content hidden px-5 pb-5 pt-1 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100">
+                <div class="faq-content hidden px-4 sm:px-6 pb-4 pt-1 text-xs sm:text-[13px] text-gray-600 leading-relaxed bg-[#FAF7F2]/30">
                     <p>
                         Our incense is <strong>100% bamboo-free</strong> (compliant with Vedic and Vastu scriptures) and <strong>0% toxic charcoal</strong>. Handcrafted using upcycled temple flower powders, pure Bhimseni camphor, natural Loban, and Guggal resins, it produces a soothing herbal aroma that leaves behind clean, auspicious white ash without causing any eye irritation or coughing.
                     </p>
@@ -1351,23 +1329,18 @@
             </div>
 
             <!-- FAQ 2 -->
-            <div class="faq-card bg-white rounded-[16px] border border-[#EADBCC] shadow-xs hover:border-[#D38928]/50 transition-all duration-200 overflow-hidden">
-                <button type="button" class="faq-toggle w-full p-4 sm:p-5 flex items-center justify-between text-left focus:outline-none cursor-pointer group">
-                    <div class="flex items-center space-x-3.5 sm:space-x-4 pr-4">
-                        <span class="w-8 h-8 rounded-[10px] bg-[#FAF5EE] text-[#D38928] text-xs font-black font-heading flex items-center justify-center shrink-0 border border-[#D38928]/20 group-hover:bg-[#D38928] group-hover:text-white transition-colors">
-                            02
-                        </span>
-                        <span class="text-sm sm:text-base font-bold text-[#121212] font-heading group-hover:text-[#D38928] transition-colors leading-snug">
-                            How long do they burn, and does the temple fragrance linger in the room?
-                        </span>
-                    </div>
-                    <div class="w-8 h-8 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
-                        <svg class="faq-icon w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <div class="faq-item">
+                <button type="button" class="faq-toggle w-full py-3.5 sm:py-4 px-4 sm:px-6 flex items-center justify-between text-left focus:outline-none cursor-pointer group hover:bg-[#FAF7F2]/60 transition-colors">
+                    <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
+                        How long do they burn, and does the temple fragrance linger in the room?
+                    </span>
+                    <div class="w-7 h-7 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                        <svg class="faq-icon w-3.5 h-3.5 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                         </svg>
                     </div>
                 </button>
-                <div class="faq-content hidden px-5 pb-5 pt-1 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100">
+                <div class="faq-content hidden px-4 sm:px-6 pb-4 pt-1 text-xs sm:text-[13px] text-gray-600 leading-relaxed bg-[#FAF7F2]/30">
                     <p>
                         Each 9-inch Bambooless Stick burns continuously for <strong>45 to 50 minutes</strong>, while our organic Sambrani Havan Cups burn intensely for <strong>25 to 30 minutes</strong>. Due to our rich botanical essential oil concentration, the uplifting sacred fragrance lingers throughout your home for <strong>4 to 6 hours</strong> after burning.
                     </p>
@@ -1375,23 +1348,18 @@
             </div>
 
             <!-- FAQ 3 -->
-            <div class="faq-card bg-white rounded-[16px] border border-[#EADBCC] shadow-xs hover:border-[#D38928]/50 transition-all duration-200 overflow-hidden">
-                <button type="button" class="faq-toggle w-full p-4 sm:p-5 flex items-center justify-between text-left focus:outline-none cursor-pointer group">
-                    <div class="flex items-center space-x-3.5 sm:space-x-4 pr-4">
-                        <span class="w-8 h-8 rounded-[10px] bg-[#FAF5EE] text-[#D38928] text-xs font-black font-heading flex items-center justify-center shrink-0 border border-[#D38928]/20 group-hover:bg-[#D38928] group-hover:text-white transition-colors">
-                            03
-                        </span>
-                        <span class="text-sm sm:text-base font-bold text-[#121212] font-heading group-hover:text-[#D38928] transition-colors leading-snug">
-                            Are Manglam products safe to use around babies, elders, and pets?
-                        </span>
-                    </div>
-                    <div class="w-8 h-8 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
-                        <svg class="faq-icon w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <div class="faq-item">
+                <button type="button" class="faq-toggle w-full py-3.5 sm:py-4 px-4 sm:px-6 flex items-center justify-between text-left focus:outline-none cursor-pointer group hover:bg-[#FAF7F2]/60 transition-colors">
+                    <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
+                        Are Manglam products safe to use around babies, elders, and pets?
+                    </span>
+                    <div class="w-7 h-7 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                        <svg class="faq-icon w-3.5 h-3.5 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                         </svg>
                     </div>
                 </button>
-                <div class="faq-content hidden px-5 pb-5 pt-1 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100">
+                <div class="faq-content hidden px-4 sm:px-6 pb-4 pt-1 text-xs sm:text-[13px] text-gray-600 leading-relaxed bg-[#FAF7F2]/30">
                     <p>
                         Yes, 100% safe. Because we never use toxic black charcoal, synthetic dipping chemicals, or artificial scent binders, our incense emits gentle herbal aroma rather than suffocating carbon monoxide, making it completely safe for daily pooja in closed or air-conditioned rooms with elders and toddlers.
                     </p>
@@ -1399,23 +1367,18 @@
             </div>
 
             <!-- FAQ 4 -->
-            <div class="faq-card bg-white rounded-[16px] border border-[#EADBCC] shadow-xs hover:border-[#D38928]/50 transition-all duration-200 overflow-hidden">
-                <button type="button" class="faq-toggle w-full p-4 sm:p-5 flex items-center justify-between text-left focus:outline-none cursor-pointer group">
-                    <div class="flex items-center space-x-3.5 sm:space-x-4 pr-4">
-                        <span class="w-8 h-8 rounded-[10px] bg-[#FAF5EE] text-[#D38928] text-xs font-black font-heading flex items-center justify-center shrink-0 border border-[#D38928]/20 group-hover:bg-[#D38928] group-hover:text-white transition-colors">
-                            04
-                        </span>
-                        <span class="text-sm sm:text-base font-bold text-[#121212] font-heading group-hover:text-[#D38928] transition-colors leading-snug">
-                            What is the spiritual significance of burning 100% Bamboo-Free Agarbatti?
-                        </span>
-                    </div>
-                    <div class="w-8 h-8 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
-                        <svg class="faq-icon w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <div class="faq-item">
+                <button type="button" class="faq-toggle w-full py-3.5 sm:py-4 px-4 sm:px-6 flex items-center justify-between text-left focus:outline-none cursor-pointer group hover:bg-[#FAF7F2]/60 transition-colors">
+                    <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
+                        What is the spiritual significance of burning 100% Bamboo-Free Agarbatti?
+                    </span>
+                    <div class="w-7 h-7 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                        <svg class="faq-icon w-3.5 h-3.5 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                         </svg>
                     </div>
                 </button>
-                <div class="faq-content hidden px-5 pb-5 pt-1 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100">
+                <div class="faq-content hidden px-4 sm:px-6 pb-4 pt-1 text-xs sm:text-[13px] text-gray-600 leading-relaxed bg-[#FAF7F2]/30">
                     <p>
                         In Sanatana Dharma and ancient Vedic scriptures, bamboo (Vamsha) is revered as a sacred symbol of family lineage and ancestral continuity. Burning bamboo is strictly forbidden in sacred yagnas and daily poojas because it creates negative energies and emits toxic heavy-metal vapors. Manglam adheres strictly to traditional Vidhi by crafting pure bambooless incense.
                     </p>
@@ -1423,23 +1386,18 @@
             </div>
 
             <!-- FAQ 5 -->
-            <div class="faq-card bg-white rounded-[16px] border border-[#EADBCC] shadow-xs hover:border-[#D38928]/50 transition-all duration-200 overflow-hidden">
-                <button type="button" class="faq-toggle w-full p-4 sm:p-5 flex items-center justify-between text-left focus:outline-none cursor-pointer group">
-                    <div class="flex items-center space-x-3.5 sm:space-x-4 pr-4">
-                        <span class="w-8 h-8 rounded-[10px] bg-[#FAF5EE] text-[#D38928] text-xs font-black font-heading flex items-center justify-center shrink-0 border border-[#D38928]/20 group-hover:bg-[#D38928] group-hover:text-white transition-colors">
-                            05
-                        </span>
-                        <span class="text-sm sm:text-base font-bold text-[#121212] font-heading group-hover:text-[#D38928] transition-colors leading-snug">
-                            How do I properly ignite and use organic Sambrani Havan Cups &amp; Dhoop Cones?
-                        </span>
-                    </div>
-                    <div class="w-8 h-8 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
-                        <svg class="faq-icon w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <div class="faq-item">
+                <button type="button" class="faq-toggle w-full py-3.5 sm:py-4 px-4 sm:px-6 flex items-center justify-between text-left focus:outline-none cursor-pointer group hover:bg-[#FAF7F2]/60 transition-colors">
+                    <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
+                        How do I properly ignite and use organic Sambrani Havan Cups &amp; Dhoop Cones?
+                    </span>
+                    <div class="w-7 h-7 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                        <svg class="faq-icon w-3.5 h-3.5 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                         </svg>
                     </div>
                 </button>
-                <div class="faq-content hidden px-5 pb-5 pt-1 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100">
+                <div class="faq-content hidden px-4 sm:px-6 pb-4 pt-1 text-xs sm:text-[13px] text-gray-600 leading-relaxed bg-[#FAF7F2]/30">
                     <p>
                         Hold the top rim of the Sambrani Havan Cup or the pointed tip of the Dhoop Cone over a diya flame or lighter for 10–15 seconds until it glows with an active ember. Gently blow out the active flame and place the cup/cone onto the complimentary heat-resistant ceramic coaster included in your package. Let the sacred herbal sambrani purify your home and altar.
                     </p>
@@ -1447,23 +1405,18 @@
             </div>
 
             <!-- FAQ 6 -->
-            <div class="faq-card bg-white rounded-[16px] border border-[#EADBCC] shadow-xs hover:border-[#D38928]/50 transition-all duration-200 overflow-hidden">
-                <button type="button" class="faq-toggle w-full p-4 sm:p-5 flex items-center justify-between text-left focus:outline-none cursor-pointer group">
-                    <div class="flex items-center space-x-3.5 sm:space-x-4 pr-4">
-                        <span class="w-8 h-8 rounded-[10px] bg-[#FAF5EE] text-[#D38928] text-xs font-black font-heading flex items-center justify-center shrink-0 border border-[#D38928]/20 group-hover:bg-[#D38928] group-hover:text-white transition-colors">
-                            06
-                        </span>
-                        <span class="text-sm sm:text-base font-bold text-[#121212] font-heading group-hover:text-[#D38928] transition-colors leading-snug">
-                            What sacred ingredients and temple flowers are used in handcrafting?
-                        </span>
-                    </div>
-                    <div class="w-8 h-8 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
-                        <svg class="faq-icon w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <div class="faq-item">
+                <button type="button" class="faq-toggle w-full py-3.5 sm:py-4 px-4 sm:px-6 flex items-center justify-between text-left focus:outline-none cursor-pointer group hover:bg-[#FAF7F2]/60 transition-colors">
+                    <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
+                        What sacred ingredients and temple flowers are used in handcrafting?
+                    </span>
+                    <div class="w-7 h-7 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                        <svg class="faq-icon w-3.5 h-3.5 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                         </svg>
                     </div>
                 </button>
-                <div class="faq-content hidden px-5 pb-5 pt-1 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100">
+                <div class="faq-content hidden px-4 sm:px-6 pb-4 pt-1 text-xs sm:text-[13px] text-gray-600 leading-relaxed bg-[#FAF7F2]/30">
                     <p>
                         Every batch of Manglam incense is lovingly handcrafted by Vedic artisans using dried consecrated flowers collected from sacred shrines, combined with pure Desi cow dung powder, organic Guggal, natural Sambrani Loban resin, Jatamansi, and natural therapeutic-grade essential oils.
                     </p>
@@ -1471,23 +1424,18 @@
             </div>
 
             <!-- FAQ 7 -->
-            <div class="faq-card bg-white rounded-[16px] border border-[#EADBCC] shadow-xs hover:border-[#D38928]/50 transition-all duration-200 overflow-hidden">
-                <button type="button" class="faq-toggle w-full p-4 sm:p-5 flex items-center justify-between text-left focus:outline-none cursor-pointer group">
-                    <div class="flex items-center space-x-3.5 sm:space-x-4 pr-4">
-                        <span class="w-8 h-8 rounded-[10px] bg-[#FAF5EE] text-[#D38928] text-xs font-black font-heading flex items-center justify-center shrink-0 border border-[#D38928]/20 group-hover:bg-[#D38928] group-hover:text-white transition-colors">
-                            07
-                        </span>
-                        <span class="text-sm sm:text-base font-bold text-[#121212] font-heading group-hover:text-[#D38928] transition-colors leading-snug">
-                            Do you offer nationwide shipping, COD, and complimentary ceramic holders?
-                        </span>
-                    </div>
-                    <div class="w-8 h-8 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
-                        <svg class="faq-icon w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <div class="faq-item">
+                <button type="button" class="faq-toggle w-full py-3.5 sm:py-4 px-4 sm:px-6 flex items-center justify-between text-left focus:outline-none cursor-pointer group hover:bg-[#FAF7F2]/60 transition-colors">
+                    <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
+                        Do you offer nationwide shipping, COD, and complimentary ceramic holders?
+                    </span>
+                    <div class="w-7 h-7 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                        <svg class="faq-icon w-3.5 h-3.5 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                         </svg>
                     </div>
                 </button>
-                <div class="faq-content hidden px-5 pb-5 pt-1 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100">
+                <div class="faq-content hidden px-4 sm:px-6 pb-4 pt-1 text-xs sm:text-[13px] text-gray-600 leading-relaxed bg-[#FAF7F2]/30">
                     <p>
                         We deliver across 19,000+ pin codes across Bharat within 2–4 business days. <strong>Free shipping</strong> is provided on orders above ₹499. We support <strong>Cash on Delivery (COD)</strong>, 1-Click GoKwik UPI checkout, and include an artisan ceramic holder FREE inside every pack.
                     </p>
@@ -1495,40 +1443,6 @@
             </div>
 
         </div>
-    </div>
-</section>
-
-<section class="py-14 sm:py-16 bg-white border-b border-[#EAE3D9]">
-    <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
-        
-        <div class="text-center mb-8">
-            <span class="text-[11px] font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ CERTIFIED VEDIC STANDARDS ✦</span>
-        </div>
-
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-            
-            <!-- Make in India -->
-            <div class="bg-white rounded-[16px] border border-[#EAE3D9] p-5 sm:p-6 flex items-center justify-center shadow-xs hover:border-[#D38928]/40 hover:shadow-md transition-all h-28 sm:h-32">
-                <img src="{{ asset('assets/images/trust/make-in-india.png') }}" alt="Make in India" class="max-h-16 sm:max-h-20 w-auto object-contain">
-            </div>
-
-            <!-- MSME Certified -->
-            <div class="bg-white rounded-[16px] border border-[#EAE3D9] p-5 sm:p-6 flex items-center justify-center shadow-xs hover:border-[#D38928]/40 hover:shadow-md transition-all h-28 sm:h-32">
-                <img src="{{ asset('assets/images/trust/msme.png') }}" alt="MSME Ministry Govt of India" class="max-h-16 sm:max-h-20 w-auto object-contain">
-            </div>
-
-            <!-- Razorpay Secure -->
-            <div class="bg-white rounded-[16px] border border-[#EAE3D9] p-5 sm:p-6 flex items-center justify-center shadow-xs hover:border-[#D38928]/40 hover:shadow-md transition-all h-28 sm:h-32">
-                <img src="{{ asset('assets/images/trust/razorpay.png') }}" alt="Razorpay Secure Payments" class="max-h-16 sm:max-h-20 w-auto object-contain">
-            </div>
-
-            <!-- Amazon / Trusted Delivery -->
-            <div class="bg-white rounded-[16px] border border-[#EAE3D9] p-5 sm:p-6 flex items-center justify-center shadow-xs hover:border-[#D38928]/40 hover:shadow-md transition-all h-28 sm:h-32">
-                <img src="{{ asset('assets/images/trust/amazon.png') }}" alt="Available on Amazon" class="max-h-16 sm:max-h-20 w-auto object-contain">
-            </div>
-
-        </div>
-
     </div>
 </section>
 
@@ -1631,8 +1545,6 @@
             startTimer();
         }
 
-
-
         // -------------------------------------------------------------
         // 3. TOAST NOTIFICATION UTILITY
         // -------------------------------------------------------------
@@ -1667,22 +1579,24 @@
         }
 
         // -------------------------------------------------------------
-        // 4. FAQ ACCORDION LOGIC
+        // 4. FAQ ACCORDION LOGIC (Exclusive Single Open Behavior)
         // -------------------------------------------------------------
         const faqToggles = document.querySelectorAll('.faq-toggle');
         faqToggles.forEach(toggle => {
             toggle.addEventListener('click', () => {
-                const content = toggle.nextElementSibling;
+                const item = toggle.closest('.faq-item');
+                const content = item.querySelector('.faq-content');
                 const icon = toggle.querySelector('.faq-icon');
-                if (content) {
-                    const isHidden = content.classList.contains('hidden');
-                    if (isHidden) {
-                        content.classList.remove('hidden');
-                        if (icon) icon.classList.add('rotate-180');
-                    } else {
-                        content.classList.add('hidden');
-                        if (icon) icon.classList.remove('rotate-180');
-                    }
+                const isHidden = content.classList.contains('hidden');
+
+                // Close all items first
+                document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+                document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('rotate-180'));
+
+                // Open clicked item if it was closed
+                if (isHidden) {
+                    content.classList.remove('hidden');
+                    if (icon) icon.classList.add('rotate-180');
                 }
             });
         });
