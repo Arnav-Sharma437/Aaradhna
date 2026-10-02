@@ -54,21 +54,21 @@
             <div class="absolute inset-0 bg-gradient-to-r from-transparent via-[#F6DAA8]/15 to-transparent pointer-events-none"></div>
             <div class="relative z-10 flex flex-col items-center justify-center space-y-2">
                 <div class="text-[#F6DAA8] text-base sm:text-xl md:text-2xl lg:text-[26px] font-serif tracking-wide sm:tracking-widest leading-relaxed sm:leading-snug font-bold drop-shadow-md">
-                    ॥ मङ्गलं भगवान विष्णुः, मङ्गलम् गरुणध्वजः । मङ्गलम् पुण्डरी काक्षः, मङ्गलाय तनो हरिः ॥
+                    ॥ मङ्गलं भगवान विष्णुः, मङ्गलम् गरुणध्वजः । मङ्गलं पुण्डरी काक्षः, मङ्गलाय तनो हरिः ॥
                 </div>
                 <div class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-[#F6DAA8]/80 font-heading font-semibold flex items-center justify-center gap-2">
                     <span>✦</span>
-                    <span>परम पावन मङ्गल स्तुति • मङ्गलमय जीवन की प्रार्थना</span>
+                    <span>परम पावन मङ्गल स्तुति • शुद्धं समर्पयामि</span>
                     <span>✦</span>
                 </div>
             </div>
         </div>
 
-        <!-- Top Main Grid (Brand + 3 Clean Columns: SHOP, ABOUT, NEED HELP) -->
-        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-12 gap-8 lg:gap-10 pb-12 border-b border-white/15">
+        <!-- Main Grid (Brand + 3 Dedicated Non-Duplicate Columns: SHOP, ABOUT, NEED HELP) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 pb-12 border-b border-white/15">
             
-            <!-- Col 1: Brand Info & Devotional Mission (3.5 Cols) -->
-            <div class="col-span-2 md:col-span-4 lg:col-span-3 space-y-4">
+            <!-- Col 1: Brand Info & Sanctuary (4 Cols) -->
+            <div class="lg:col-span-4 space-y-4">
                 <a href="{{ route('home') }}" class="inline-block bg-white/95 backdrop-blur-xs p-2.5 sm:p-3 rounded-2xl shadow-md border border-[#F6DAA8]/40">
                     <img src="{{ asset('assets/images/mangalam-logo.png') }}" alt="Manglam" class="h-9 sm:h-11 w-auto max-w-[150px] object-contain">
                 </a>
@@ -79,7 +79,7 @@
                         <span>शुद्धं समर्पयामि • 100% BAMBOO-FREE</span>
                     </p>
                     <p class="text-xs sm:text-[13px] text-white/80 leading-relaxed font-normal">
-                        Handcrafted with sacred temple flowers and pure herbal ingredients for serene daily morning and evening pooja rituals. Free from toxic charcoal &amp; synthetic chemicals.
+                        Handcrafted with sacred temple flowers and pure herbal ingredients for serene daily pooja &amp; meditation. Free from toxic charcoal &amp; artificial chemicals.
                     </p>
                 </div>
 
@@ -97,118 +97,78 @@
                 </div>
             </div>
 
-            <!-- Col 2: SHOP (3 Cols) -->
-            <div class="col-span-1 md:col-span-1 lg:col-span-3 space-y-3">
-                <h4 class="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#F6DAA8] font-heading">
+            <!-- Col 2: SHOP (2.5 Cols) -->
+            <div class="lg:col-span-2 space-y-3.5">
+                <h4 class="text-xs sm:text-sm font-bold uppercase tracking-[0.15em] text-[#F6DAA8] font-heading">
                     SHOP
                 </h4>
-                <ul class="space-y-2 text-xs sm:text-[13px] text-white/80">
-                    <li>
-                        <a href="{{ route('home') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
-                            Home
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('pages.about') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
-                            About
-                        </a>
-                    </li>
+                <ul class="space-y-2.5 text-xs sm:text-[13px] text-white/85">
                     <li>
                         <a href="{{ route('collections.show', 'bambooless') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
-                            Products
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('collections.show', 'bambooless') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
-                            Bambooless Incense
+                            Bambooless Agarbatti
                         </a>
                     </li>
                     <li>
                         <a href="{{ route('collections.show', 'havan-cups') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
-                            Havan Cups
+                            Sacred Havan Cups
                         </a>
                     </li>
                     <li>
                         <a href="{{ route('collections.show', 'dhoop-cones') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
-                            Dhoop Cones
+                            Organic Dhoop Cones
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('products.pitambara') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5 text-[#F6DAA8] font-medium">
+                            Pitambara Special
                         </a>
                     </li>
                     <li>
                         <a href="{{ route('collections.show', 'super-save-offers') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
-                            Collection Offers
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ auth()->check() ? route('account.index', ['tab' => 'orders']) : route('account.login') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
-                            Track Your Order
+                            Super Save Offers
                         </a>
                     </li>
                 </ul>
             </div>
 
-            <!-- Col 3: ABOUT (3 Cols) -->
-            <div class="col-span-1 md:col-span-1 lg:col-span-3 space-y-3">
-                <h4 class="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#F6DAA8] font-heading">
+            <!-- Col 3: ABOUT (2.5 Cols) -->
+            <div class="lg:col-span-3 space-y-3.5">
+                <h4 class="text-xs sm:text-sm font-bold uppercase tracking-[0.15em] text-[#F6DAA8] font-heading">
                     ABOUT
                 </h4>
-                <ul class="space-y-2 text-xs sm:text-[13px] text-white/80">
+                <ul class="space-y-2.5 text-xs sm:text-[13px] text-white/85">
                     <li>
                         <a href="{{ route('pages.about') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
-                            About Us
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('collections.show', 'bambooless') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
-                            Our Products
+                            Our Story &amp; Heritage
                         </a>
                     </li>
                     <li>
                         <a href="{{ route('pages.about') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
-                            Vedic Heritage
+                            Temple Flower Seva
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('pages.show', 'refund-policy') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
-                            Returns Center
+                        <a href="{{ route('pages.show', 'faqs') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
+                            Sacred Pooja Vidhi
                         </a>
                     </li>
                     <li>
                         <a href="{{ route('pages.contact') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
-                            Contact Us
+                            Contact &amp; Support
                         </a>
                     </li>
                 </ul>
             </div>
 
             <!-- Col 4: NEED HELP (3 Cols) -->
-            <div class="col-span-1 md:col-span-2 lg:col-span-3 space-y-3">
-                <h4 class="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#F6DAA8] font-heading">
+            <div class="lg:col-span-3 space-y-3.5">
+                <h4 class="text-xs sm:text-sm font-bold uppercase tracking-[0.15em] text-[#F6DAA8] font-heading">
                     NEED HELP
                 </h4>
-                <ul class="space-y-2 text-xs sm:text-[13px] text-white/80">
-                    <li>
-                        <a href="{{ route('pages.show', 'shipping-policy') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
-                            Shipping Information
-                        </a>
-                    </li>
+                <ul class="space-y-2.5 text-xs sm:text-[13px] text-white/85">
                     <li>
                         <a href="{{ auth()->check() ? route('account.index', ['tab' => 'orders']) : route('account.login') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
                             Track Your Order
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('pages.show', 'refund-policy') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
-                            Returns &amp; Exchange
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('pages.show', 'terms-of-service') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
-                            Terms &amp; Conditions
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('pages.show', 'privacy-policy') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
-                            Privacy Policy
                         </a>
                     </li>
                     <li>
@@ -217,8 +177,18 @@
                         </a>
                     </li>
                     <li>
+                        <a href="{{ route('pages.show', 'shipping-policy') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
+                            Shipping &amp; Delivery Policy
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('pages.show', 'refund-policy') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
+                            Returns &amp; Refund Policy
+                        </a>
+                    </li>
+                    <li>
                         <a href="{{ route('pages.show', 'faqs') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
-                            Pooja FAQs
+                            Frequently Asked Questions
                         </a>
                     </li>
                 </ul>
@@ -226,21 +196,19 @@
 
         </div>
 
-        <!-- Bottom Row: Policies & Devotional Copyright -->
+        <!-- Bottom Row: Clean Policies & Devotional Copyright -->
         <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 text-[11px] sm:text-xs text-white/75">
             
-            <!-- Policy Links -->
-            <div class="flex flex-wrap items-center justify-center sm:justify-start gap-x-4 sm:gap-x-6 gap-y-1">
+            <!-- Legal Policy Links (Privacy & Terms only) -->
+            <div class="flex items-center space-x-3">
                 <a href="{{ route('pages.show', 'privacy-policy') }}" class="hover:text-[#F6DAA8] transition-colors">Privacy Policy</a>
                 <span class="text-white/30">•</span>
                 <a href="{{ route('pages.show', 'terms-of-service') }}" class="hover:text-[#F6DAA8] transition-colors">Terms of Service</a>
                 <span class="text-white/30">•</span>
-                <a href="{{ route('pages.show', 'shipping-policy') }}" class="hover:text-[#F6DAA8] transition-colors">Shipping Policy</a>
-                <span class="text-white/30">•</span>
-                <a href="{{ route('pages.show', 'refund-policy') }}" class="hover:text-[#F6DAA8] transition-colors">Refund Policy</a>
+                <span class="text-white/60">Crafted in Bharat 🇮🇳</span>
             </div>
 
-            <!-- Devotional Chant & Copyright -->
+            <!-- Devotional Copyright -->
             <div class="text-center text-[#F6DAA8] font-serif text-xs">
                 <span>© {{ date('Y') }} Manglam.co™ • All Rights Reserved</span>
             </div>
