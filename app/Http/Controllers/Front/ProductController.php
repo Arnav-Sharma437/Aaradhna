@@ -47,6 +47,10 @@ class ProductController extends Controller
             'havan-cup' => 'pitambara-havan',
         ];
 
+        if ($slug === 'pitambara-havan' || $targetSlug === 'pitambara-havan') {
+            return $this->showPitambara();
+        }
+
         $targetSlug = $aliases[$slug] ?? $slug;
 
         $product = Product::where('status', 'active')
@@ -130,9 +134,7 @@ class ProductController extends Controller
         // Default variant or first variant
         $defaultVariant = $product->variants->firstWhere('is_default', true) ?? $product->variants->first();
 
-        $viewName = ($product->slug === 'pitambara-havan' || $slug === 'pitambara-havan') ? 'front.products.pitambara-havan' : 'front.products.show';
-
-        return view($viewName, compact(
+        return view('front.products.show', compact(
             'product',
             'defaultVariant',
             'relatedProducts',
@@ -147,7 +149,35 @@ class ProductController extends Controller
      */
     public function showPitambara(): View
     {
-        return $this->show('pitambara-havan');
+        $product = Product::where('status', 'active')
+            ->where(function ($q) {
+                $q->where('slug', 'pitambara-havan')
+                  ->orWhere('slug', 'LIKE', '%pitambara%');
+            })
+            ->with(['variants', 'primaryImage', 'images', 'category', 'faqs', 'approvedReviews'])
+            ->first();
+
+        $relatedProducts = Product::where('status', 'active')
+            ->when($product, fn($q) => $q->where('id', '!=', $product->id))
+            ->with(['variants', 'primaryImage', 'images', 'category', 'approvedReviews'])
+            ->inRandomOrder()
+            ->take(4)
+            ->get();
+
+        $defaultVariant = $product ? ($product->variants->firstWhere('is_default', true) ?? $product->variants->first()) : null;
+        $reviews = $product ? $product->approvedReviews : collect();
+        $totalReviews = $reviews->count();
+        $avgRating = $totalReviews > 0 ? round($reviews->avg('rating'), 1) : 5.0;
+        $ratingCounts = [5 => 0, 4 => 0, 3 => 0, 2 => 0, 1 => 0];
+
+        return view('front.products.pitambara-havan', compact(
+            'product',
+            'defaultVariant',
+            'relatedProducts',
+            'totalReviews',
+            'avgRating',
+            'ratingCounts'
+        ));
     }
 
     /**
@@ -167,7 +197,11 @@ class ProductController extends Controller
         $validated['product_name'] = 'Mangalam Pitambara Havan';
         $validated['status'] = 'confirmed';
 
-        \App\Models\PreBooking::create($validated);
+        try {
+            \App\Models\PreBooking::create($validated);
+        } catch (\Throwable $e) {
+            \Illuminate\Support\Facades\Log::warning('PreBooking create notice: ' . $e->getMessage());
+        }
 
         return back()->with('prebooking_success', 'धन्यवाद! Your VIP Pre-booking for Mangalam Pitambara Havan is confirmed. Our Vedic care team will notify you with priority invitation before the public launch.');
     }
