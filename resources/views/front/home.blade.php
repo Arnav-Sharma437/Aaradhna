@@ -42,11 +42,14 @@
             <!-- SLIDE 1: SACRED BAMBOOLEES COLLECTION -->
             <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-100 pointer-events-auto z-10 flex items-center justify-center bg-white" data-slide="0">
                 <a href="{{ route('collections.show', 'bambooless') }}" class="block w-full h-full relative cursor-pointer" aria-label="Explore Sacred Bambooless Incense Collection">
-                    <img 
-                        src="{{ asset('assets/images/hero-sacred.jpg') }}" 
-                        alt="Mangalam Sacred Bambooless Collection" 
-                        class="w-full h-full object-cover object-center"
-                    >
+                    <picture class="w-full h-full block">
+                        <source media="(max-width: 768px)" srcset="{{ asset('assets/images/hero-sacred-mobile.jpg') }}">
+                        <img 
+                            src="{{ asset('assets/images/hero-sacred.jpg') }}" 
+                            alt="Mangalam Sacred Bambooless Collection" 
+                            class="w-full h-full object-cover object-center"
+                        >
+                    </picture>
                 </a>
             </div>
 

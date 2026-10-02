@@ -129,55 +129,48 @@ header nav button,
 }
 
 /* ========================================================================= */
-/* RESPONSIVE HERO BANNER HEIGHT (Handles 100%, 110%, 125%, 150% Zoom & Mac) */
+/* RESPONSIVE HERO BANNER (Smooth natural aspect-ratio like sadhna.co)      */
 /* ========================================================================= */
 .hero-banner-wrapper {
-    height: 360px;
+    width: 100%;
+    position: relative;
+    aspect-ratio: 16 / 10;
+    min-height: 360px;
 }
 
 @media (min-width: 640px) {
     .hero-banner-wrapper {
-        height: 440px;
+        aspect-ratio: 16 / 8;
+        min-height: 420px;
     }
 }
 
 @media (min-width: 768px) {
     .hero-banner-wrapper {
-        height: 480px;
+        aspect-ratio: 1920 / 700;
+        min-height: 480px;
     }
 }
 
 @media (min-width: 1024px) {
     .hero-banner-wrapper {
-        height: 520px;
+        aspect-ratio: 1920 / 700;
+        min-height: 520px;
     }
 }
 
-/* Laptop & 125% - 150% zoom screens */
-@media (min-width: 1280px) {
-    .hero-banner-wrapper {
-        height: min(580px, 60vh);
-    }
-}
-
-/* 110% zoom / Mac screens */
 @media (min-width: 1440px) {
     .hero-banner-wrapper {
-        height: min(640px, 65vh);
+        aspect-ratio: 1920 / 700;
+        min-height: 580px;
+        max-height: 700px;
     }
 }
 
-/* 100% standard 1080p full screens */
-@media (min-width: 1600px) {
-    .hero-banner-wrapper {
-        height: min(700px, 70vh);
-    }
-}
-
-/* Large 2K/4K displays */
 @media (min-width: 1920px) {
     .hero-banner-wrapper {
         height: 700px;
+        aspect-ratio: 1920 / 700;
     }
 }
 
