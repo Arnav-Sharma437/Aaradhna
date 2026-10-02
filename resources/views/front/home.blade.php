@@ -638,7 +638,7 @@
 
                 <!-- Category Details -->
                 <div class="space-y-0.5 max-w-xs flex flex-col items-center">
-                    <h3 class="text-sm sm:text-base lg:text-[17px] font-bold capitalize tracking-wide text-[#D38928] hover:text-[#965A15] transition-colors font-heading block">
+                    <h3 class="text-sm sm:text-base lg:text-[17px] font-bold capitalize tracking-wide text-[#121212] hover:text-[#D38928] transition-colors font-heading block">
                         <a href="{{ route('collections.show', 'bambooless') }}">Dhoop Stick</a>
                     </h3>
                     <p class="text-[11px] sm:text-xs text-[#7A7A7A] font-medium leading-tight">
@@ -661,7 +661,7 @@
 
                 <!-- Category Details -->
                 <div class="space-y-0.5 max-w-xs flex flex-col items-center">
-                    <h3 class="text-sm sm:text-base lg:text-[17px] font-bold capitalize tracking-wide text-[#D38928] hover:text-[#965A15] transition-colors font-heading block">
+                    <h3 class="text-sm sm:text-base lg:text-[17px] font-bold capitalize tracking-wide text-[#121212] hover:text-[#D38928] transition-colors font-heading block">
                         <a href="{{ route('collections.show', 'dhoop-cones') }}">Dhoop Cones</a>
                     </h3>
                     <p class="text-[11px] sm:text-xs text-[#7A7A7A] font-medium leading-tight">
@@ -684,7 +684,7 @@
 
                 <!-- Category Details -->
                 <div class="space-y-0.5 max-w-xs flex flex-col items-center">
-                    <h3 class="text-sm sm:text-base lg:text-[17px] font-bold capitalize tracking-wide text-[#D38928] hover:text-[#965A15] transition-colors font-heading block">
+                    <h3 class="text-sm sm:text-base lg:text-[17px] font-bold capitalize tracking-wide text-[#121212] hover:text-[#D38928] transition-colors font-heading block">
                         <a href="{{ route('collections.show', 'havan-cups') }}">Havan Cup</a>
                     </h3>
                     <p class="text-[11px] sm:text-xs text-[#7A7A7A] font-medium leading-tight">
@@ -707,7 +707,7 @@
 
                 <!-- Category Details -->
                 <div class="space-y-0.5 max-w-xs flex flex-col items-center">
-                    <h3 class="text-sm sm:text-base lg:text-[17px] font-bold capitalize tracking-wide text-[#D38928] hover:text-[#965A15] transition-colors font-heading block">
+                    <h3 class="text-sm sm:text-base lg:text-[17px] font-bold capitalize tracking-wide text-[#121212] hover:text-[#D38928] transition-colors font-heading block">
                         <a href="{{ route('products.pitambara') }}">Pitambara Havan Pack</a>
                     </h3>
                     <p class="text-[11px] sm:text-xs text-[#7A7A7A] font-medium leading-tight">
