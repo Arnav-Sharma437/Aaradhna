@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login — Mangalam.co™</title>
+    <title>Admin Login — Manglam.co™</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,10 +19,10 @@
         <!-- Brand Header / Logo -->
         <div class="text-center mb-8 space-y-3">
             <div class="inline-flex items-center justify-center p-3.5 rounded-[16px] bg-white shadow-2xl border border-white/20 mb-2">
-                <img src="{{ asset('assets/images/mangalam-logo.png') }}" alt="Mangalam Logo" class="h-10 w-auto object-contain">
+                <img src="{{ asset('assets/images/mangalam-logo.png') }}" alt="Manglam Logo" class="h-10 w-auto object-contain">
             </div>
             <h1 class="text-2xl sm:text-3xl font-black font-heading tracking-tight text-white">
-                Mangalam Admin
+                Manglam Admin
             </h1>
             <p class="text-xs sm:text-sm text-white/60">
                 Authorized administrative portal &amp; store controls
@@ -60,11 +60,11 @@
                         type="email" 
                         id="email" 
                         name="email" 
-                        value="{{ old('email', 'admin@mangalam.co') }}" 
+                        value="{{ old('email', 'admin@manglam.co') }}" 
                         required 
                         autofocus
                         class="w-full px-4 py-3 bg-black/50 border {{ $errors->has('email') ? 'border-rose-500' : 'border-white/15' }} focus:border-[#D38928] rounded-[12px] text-sm text-white placeholder-white/30 focus:outline-none transition-colors"
-                        placeholder="admin@mangalam.co"
+                        placeholder="admin@manglam.co"
                     >
                     @error('email')
                         <p class="text-[11px] font-bold text-rose-400 mt-1">{{ $message }}</p>
@@ -121,7 +121,7 @@
         <!-- Back to Storefront Link -->
         <div class="text-center mt-6">
             <a href="{{ route('home') }}" class="text-xs text-white/50 hover:text-[#D38928] transition-colors">
-                ← Return to Mangalam Storefront
+                ← Return to Manglam Storefront
             </a>
         </div>
 

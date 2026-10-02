@@ -32,7 +32,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                     <label class="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-1">Store Name</label>
-                    <input type="text" name="store_name" value="{{ $settings['store_name'] ?? 'Mangalam Camphor & Puja Essentials' }}" class="w-full px-3.5 py-2.5 rounded-[8px] border border-gray-300 text-xs focus:ring-[#D38928] focus:border-[#D38928]" placeholder="Mangalam.co">
+                    <input type="text" name="store_name" value="{{ $settings['store_name'] ?? 'Manglam Camphor & Puja Essentials' }}" class="w-full px-3.5 py-2.5 rounded-[8px] border border-gray-300 text-xs focus:ring-[#D38928] focus:border-[#D38928]" placeholder="Manglam.co">
                 </div>
 
                 <div>
@@ -42,7 +42,7 @@
 
                 <div>
                     <label class="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-1">Support Email</label>
-                    <input type="email" name="support_email" value="{{ $settings['support_email'] ?? 'care@mangalamcamphor.com' }}" class="w-full px-3.5 py-2.5 rounded-[8px] border border-gray-300 text-xs focus:ring-[#D38928] focus:border-[#D38928]">
+                    <input type="email" name="support_email" value="{{ $settings['support_email'] ?? 'care@manglam.co' }}" class="w-full px-3.5 py-2.5 rounded-[8px] border border-gray-300 text-xs focus:ring-[#D38928] focus:border-[#D38928]">
                 </div>
 
                 <div>
@@ -170,22 +170,22 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                     <label class="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-1">Instagram Profile URL</label>
-                    <input type="url" name="instagram_url" value="{{ $settings['instagram_url'] ?? 'https://instagram.com/mangalamcamphor' }}" class="w-full px-3.5 py-2.5 rounded-[8px] border border-gray-300 text-xs focus:ring-[#D38928] focus:border-[#D38928]">
+                    <input type="url" name="instagram_url" value="{{ $settings['instagram_url'] ?? 'https://instagram.com/manglam' }}" class="w-full px-3.5 py-2.5 rounded-[8px] border border-gray-300 text-xs focus:ring-[#D38928] focus:border-[#D38928]">
                 </div>
 
                 <div>
                     <label class="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-1">Facebook Page URL</label>
-                    <input type="url" name="facebook_url" value="{{ $settings['facebook_url'] ?? 'https://facebook.com/mangalamcamphor' }}" class="w-full px-3.5 py-2.5 rounded-[8px] border border-gray-300 text-xs focus:ring-[#D38928] focus:border-[#D38928]">
+                    <input type="url" name="facebook_url" value="{{ $settings['facebook_url'] ?? 'https://facebook.com/manglam' }}" class="w-full px-3.5 py-2.5 rounded-[8px] border border-gray-300 text-xs focus:ring-[#D38928] focus:border-[#D38928]">
                 </div>
 
                 <div>
                     <label class="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-1">YouTube Channel URL</label>
-                    <input type="url" name="youtube_url" value="{{ $settings['youtube_url'] ?? 'https://youtube.com/@mangalamcamphor' }}" class="w-full px-3.5 py-2.5 rounded-[8px] border border-gray-300 text-xs focus:ring-[#D38928] focus:border-[#D38928]">
+                    <input type="url" name="youtube_url" value="{{ $settings['youtube_url'] ?? 'https://youtube.com/@manglam' }}" class="w-full px-3.5 py-2.5 rounded-[8px] border border-gray-300 text-xs focus:ring-[#D38928] focus:border-[#D38928]">
                 </div>
 
                 <div>
                     <label class="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-1">Twitter / X Profile URL</label>
-                    <input type="url" name="twitter_url" value="{{ $settings['twitter_url'] ?? 'https://x.com/mangalamcamphor' }}" class="w-full px-3.5 py-2.5 rounded-[8px] border border-gray-300 text-xs focus:ring-[#D38928] focus:border-[#D38928]">
+                    <input type="url" name="twitter_url" value="{{ $settings['twitter_url'] ?? 'https://x.com/manglam' }}" class="w-full px-3.5 py-2.5 rounded-[8px] border border-gray-300 text-xs focus:ring-[#D38928] focus:border-[#D38928]">
                 </div>
             </div>
         </div>

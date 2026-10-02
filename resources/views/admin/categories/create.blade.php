@@ -176,7 +176,7 @@
                             name="meta_title" 
                             id="meta_title" 
                             value="{{ old('meta_title') }}" 
-                            placeholder="Buy Handcrafted Incense Sticks Online | Mangalam" 
+                            placeholder="Buy Handcrafted Incense Sticks Online | Manglam" 
                             class="w-full px-3.5 py-2 bg-white border border-[#D2D5D8] rounded-[8px] text-xs text-[#202223] placeholder-gray-400 focus:outline-none focus:border-[#D38928]"
                         >
                     </div>

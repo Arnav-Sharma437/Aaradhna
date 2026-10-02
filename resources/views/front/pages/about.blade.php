@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'About Us — The Sacred Heritage of Mangalam.co™')
-@section('meta_description', 'Discover the sacred story of Mangalam.co™ — 100% Bamboo-free, zero-charcoal pooja samagri handcrafted from temple flowers by Vedic artisans in Vrindavan.')
+@section('title', 'About Us — The Sacred Heritage of Manglam.co™')
+@section('meta_description', 'Discover the sacred story of Manglam.co™ — 100% Bamboo-free, zero-charcoal pooja samagri handcrafted from temple flowers by Vedic artisans in Vrindavan.')
 
 @section('content')
 <div class="bg-white min-h-screen font-body select-none">
@@ -37,7 +37,7 @@
 
             <!-- Subtitle -->
             <p class="text-sm sm:text-base lg:text-lg text-stone-300 max-w-2xl mx-auto leading-relaxed pt-2">
-                Mangalam was founded with a single divine prayer: to restore the purity of daily Indian worship through 100% bamboo-free, zero-charcoal sacred samagri handcrafted from sacred temple flowers.
+                Manglam was founded with a single divine prayer: to restore the purity of daily Indian worship through 100% bamboo-free, zero-charcoal sacred samagri handcrafted from sacred temple flowers.
             </p>
 
             <!-- Breadcrumbs -->
@@ -64,7 +64,7 @@
                     <div class="relative aspect-[4/3] rounded-[24px] overflow-hidden border-2 border-[#D38928]/40 shadow-2xl bg-[#FAF7F2]">
                         <img 
                             src="{{ asset('assets/images/hero-incense-banner.jpg') }}" 
-                            alt="Traditional Vedic Pooja with Mangalam Incense" 
+                            alt="Traditional Vedic Pooja with Manglam Incense" 
                             class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700"
                         >
                         <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
@@ -100,7 +100,7 @@
                     </p>
 
                     <p class="text-sm sm:text-base text-gray-700 leading-relaxed">
-                        At <strong class="text-[#8B4513]">Mangalam</strong>, we took an unconditional pledge never to use bamboo or harmful black coal. Every single stick and havan cup is crafted strictly using <strong>pure dried temple flowers, Desi cow dung, organic Guggal, pure Loban, and rare essential oils</strong>.
+                        At <strong class="text-[#8B4513]">Manglam</strong>, we took an unconditional pledge never to use bamboo or harmful black coal. Every single stick and havan cup is crafted strictly using <strong>pure dried temple flowers, Desi cow dung, organic Guggal, pure Loban, and rare essential oils</strong>.
                     </p>
 
                     <div class="grid grid-cols-2 gap-4 pt-2">
@@ -123,7 +123,7 @@
     </section>
 
     <!-- ========================================================================= -->
-    <!-- 3. THE 4 SACRED PILLARS OF MANGALAM                                       -->
+    <!-- 3. THE 4 SACRED PILLARS OF MANGLAM                                        -->
     <!-- ========================================================================= -->
     <section class="py-16 sm:py-24 bg-white border-b border-[#EAE3D9]">
         <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">

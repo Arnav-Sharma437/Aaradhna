@@ -1,5 +1,5 @@
 <!-- ========================================================================= -->
-<!-- LUXURY SACRED MAROON FOOTER — MANGALAM.CO™                                 -->
+<!-- LUXURY SACRED MAROON FOOTER — MANGLAM.CO™                                 -->
 <!-- ========================================================================= -->
 <footer class="text-white font-body relative overflow-hidden bg-[#831F2E] border-t-2 border-[#D38928]/40 select-none">
     
@@ -55,7 +55,7 @@
             <!-- Col 1: Brand Info & Devotional Mission (5 Cols) -->
             <div class="lg:col-span-5 space-y-4">
                 <a href="{{ route('home') }}" class="inline-block bg-white/95 backdrop-blur-xs p-2.5 sm:p-3 rounded-2xl shadow-md border border-[#F6DAA8]/40 hover:scale-102 transition-transform">
-                    <img src="{{ asset('assets/images/mangalam-logo.png') }}" alt="Mangalam" class="h-9 sm:h-11 w-auto max-w-[150px] object-contain">
+                    <img src="{{ asset('assets/images/mangalam-logo.png') }}" alt="Manglam" class="h-9 sm:h-11 w-auto max-w-[150px] object-contain">
                 </a>
                 
                 <div class="space-y-2 max-w-sm">
@@ -126,7 +126,7 @@
                 <ul class="space-y-2.5 text-xs sm:text-[13px] text-white/85">
                     <li>
                         <a href="{{ route('pages.about') }}" class="hover:text-[#F6DAA8] hover:translate-x-1 transition-all inline-block py-0.5">
-                            About Mangalam
+                            About Manglam
                         </a>
                     </li>
                     <li>
@@ -185,7 +185,7 @@
 
             <!-- Devotional Chant & Copyright -->
             <div class="text-center text-[#F6DAA8] font-serif text-xs">
-                <span>© {{ date('Y') }} Mangalam.co™ • ॐ शान्तिः शान्तिः शान्तिः</span>
+                <span>© {{ date('Y') }} Manglam.co™ • ॐ शान्तिः शान्तिः शान्तिः</span>
             </div>
 
         </div>

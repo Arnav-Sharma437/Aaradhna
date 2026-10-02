@@ -12,7 +12,7 @@
     <!-- Drawer Header -->
     <div class="p-4 border-b border-stone-200 flex items-center justify-between bg-[#FAF7F2]">
         <a href="{{ route('home') }}" class="flex items-center">
-            <img src="{{ asset('assets/images/mangalam-logo.png') }}" alt="Mangalam" class="h-10 sm:h-12 w-auto object-contain">
+            <img src="{{ asset('assets/images/mangalam-logo.png') }}" alt="Manglam" class="h-10 sm:h-12 w-auto object-contain">
         </a>
         <button 
             type="button" 
@@ -92,7 +92,7 @@
                 </a>
             @endif
             <a href="{{ route('pages.about') }}" class="block py-1 hover:text-[#2B1810]">
-                About Mangalam.co
+                About Manglam.co
             </a>
             <a href="{{ route('pages.show', 'faqs') }}" class="block py-1 hover:text-[#2B1810]">
                 Frequently Asked Questions

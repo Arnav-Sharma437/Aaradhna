@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Order #' . $order->order_number . ' - Mangalam')
+@section('title', 'Order #' . $order->order_number . ' - Manglam')
 
 @section('content')
 <div class="bg-[#FAF7F2] min-h-screen py-8 sm:py-12">

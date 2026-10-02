@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $product->meta_title ?? "{$product->title} — Mangalam.co™")
+@section('title', $product->meta_title ?? "{$product->title} — Manglam.co™")
 @section('meta_description', $product->meta_description ?? ($product->short_description ?? Str::limit(strip_tags($product->description), 150)))
 
 @section('content')
@@ -169,7 +169,7 @@
 
                     <!-- Visual 2: Artisanal Pooja Altar & Burning Incense -->
                     <div class="relative aspect-[3/4] rounded-[20px] overflow-hidden bg-[#FAF7F2] border border-gray-200 shadow-xs group">
-                        <img src="{{ $galleryImages[1] ?? asset('assets/images/hero-incense-banner.jpg') }}" alt="Mangalam Sacred Altar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="{{ $galleryImages[1] ?? asset('assets/images/hero-incense-banner.jpg') }}" alt="Manglam Sacred Altar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute bottom-3.5 left-3.5 right-3.5 bg-black/60 backdrop-blur-xs py-2 px-3 rounded-[10px] text-center text-white text-xs font-bold tracking-wider shadow-sm">
                             100% BAMBOO FREE &amp; VEDIC
                         </div>
@@ -193,7 +193,7 @@
 
                 </div>
 
-                <!-- Fragrance Notes Pyramid & Why Choose Mangalam Infographics -->
+                <!-- Fragrance Notes Pyramid & Why Choose Manglam Infographics -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
                     
                     <!-- Card 1: Fragrance Notes Pyramid -->
@@ -222,11 +222,11 @@
                         </div>
                     </div>
 
-                    <!-- Card 2: Why Choose Mangalam -->
+                    <!-- Card 2: Why Choose Manglam -->
                     <div class="bg-[#FFFDF9] border border-gray-200 p-6 rounded-[16px] shadow-sm flex flex-col justify-between">
                         <div>
                             <span class="text-[10px] font-extrabold uppercase tracking-widest text-[#D38928] font-heading block mb-1">PURITY GUARANTEE</span>
-                            <h3 class="text-xl sm:text-2xl font-normal font-heading mb-4 text-[#121212]">Why Choose Mangalam</h3>
+                            <h3 class="text-xl sm:text-2xl font-normal font-heading mb-4 text-[#121212]">Why Choose Manglam</h3>
                             
                             <ul class="space-y-3 text-xs text-gray-700">
                                 <li class="flex items-start">
@@ -428,7 +428,7 @@
                     Specification &amp; Purity Comparison
                 </h2>
                 <p class="text-xs sm:text-sm text-gray-500 leading-relaxed">
-                    Why spiritual seekers and temple priests trust Mangalam over ordinary commercial incense.
+                    Why spiritual seekers and temple priests trust Manglam over ordinary commercial incense.
                 </p>
             </div>
 
@@ -484,7 +484,7 @@
                                 Features
                             </div>
                             <div class="col-span-3 text-center font-bold text-xs uppercase tracking-wider text-[#D38928] font-heading">
-                                Mangalam™
+                                Manglam™
                             </div>
                             <div class="col-span-3 text-center font-bold text-xs uppercase tracking-wider text-gray-400 font-heading">
                                 Others
@@ -590,17 +590,17 @@
                         <span class="faq-icon ml-4 text-[#D38928] text-xl font-bold">+</span>
                     </button>
                     <div class="faq-answer hidden mt-3 text-xs sm:text-sm text-gray-600 leading-relaxed">
-                        In Vedic traditions and Sanatana Dharma, bamboo (Vamsha) is considered a symbol of ancestry and sacred lineage. Burning bamboo generates harmful heavy-metal residue and is strictly avoided during poojas and havan. Mangalam uses 100% bamboo-free organic binders.
+                        In Vedic traditions and Sanatana Dharma, bamboo (Vamsha) is considered a symbol of ancestry and sacred lineage. Burning bamboo generates harmful heavy-metal residue and is strictly avoided during poojas and havan. Manglam uses 100% bamboo-free organic binders.
                     </div>
                 </div>
 
                 <div class="faq-item p-5 sm:p-6">
                     <button type="button" class="faq-toggle flex justify-between items-center w-full text-left font-bold text-sm sm:text-base text-[#121212] hover:text-[#D38928] transition-colors focus:outline-none font-heading">
-                        <span>What makes Mangalam incense smoke charcoal-free and non-toxic?</span>
+                        <span>What makes Manglam incense smoke charcoal-free and non-toxic?</span>
                         <span class="faq-icon ml-4 text-[#D38928] text-xl font-bold">+</span>
                     </button>
                     <div class="faq-answer hidden mt-3 text-xs sm:text-sm text-gray-600 leading-relaxed">
-                        Commercial incense uses black industrial charcoal powder which creates suffocating black smoke and eye irritation. Mangalam uses sacred temple flower powders, natural resins (Guggal, Loban), and botanical bark that burns into pure white soothing ash.
+                        Commercial incense uses black industrial charcoal powder which creates suffocating black smoke and eye irritation. Manglam uses sacred temple flower powders, natural resins (Guggal, Loban), and botanical bark that burns into pure white soothing ash.
                     </div>
                 </div>
 
@@ -810,7 +810,7 @@
                         </div>
                         <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading pt-0.5">No coughing or throat irritation in cold weather</h4>
                         <p class="text-xs text-gray-600 leading-relaxed">
-                            In Chamba during winter months, burning ordinary incense used to cause coughing. Mangalam bambooless sticks are pure bliss! Subtle, premium fragrance that lasts all evening.
+                            In Chamba during winter months, burning ordinary incense used to cause coughing. Manglam bambooless sticks are pure bliss! Subtle, premium fragrance that lasts all evening.
                         </p>
                     </div>
 
@@ -1009,10 +1009,10 @@
 
         // 6. Share Functionality (Native Web Share API + Clipboard Copy fallback with Toast)
         const showShareToast = (message) => {
-            let toast = document.getElementById('mangalam-share-toast');
+            let toast = document.getElementById('manglam-share-toast');
             if (!toast) {
                 toast = document.createElement('div');
-                toast.id = 'mangalam-share-toast';
+                toast.id = 'manglam-share-toast';
                 toast.className = 'fixed bottom-6 right-6 z-50 bg-[#1A1A1A] text-white px-5 py-3 rounded-[12px] border border-[#D38928] shadow-2xl text-xs sm:text-sm font-semibold flex items-center space-x-2 transition-all duration-300 transform translate-y-20 opacity-0 font-body';
                 document.body.appendChild(toast);
             }
@@ -1048,7 +1048,7 @@
         document.querySelectorAll('.product-share-trigger').forEach(btn => {
             btn.addEventListener('click', () => {
                 const title = btn.dataset.title || document.title;
-                const text = btn.dataset.text || 'Check out this sacred Vedic incense on Mangalam.co!';
+                const text = btn.dataset.text || 'Check out this sacred Vedic incense on Manglam.co!';
                 const url = btn.dataset.url || window.location.href;
                 executeShare(title, text, url);
             });

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $collection->meta_title ?? "{$collection->title} — Mangalam.co™")
+@section('title', $collection->meta_title ?? "{$collection->title} — Manglam.co™")
 @section('meta_description', $collection->meta_description ?? $collection->description)
 
 @section('content')

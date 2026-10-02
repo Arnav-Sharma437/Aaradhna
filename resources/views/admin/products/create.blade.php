@@ -190,7 +190,7 @@
                                 type="text" 
                                 id="sku" 
                                 name="sku" 
-                                value="{{ old('sku', 'MANGALAM-' . strtoupper(Str::random(6))) }}" 
+                                value="{{ old('sku', 'MANGLAM-' . strtoupper(Str::random(6))) }}" 
                                 required
                                 class="w-full px-3.5 py-2.5 bg-white border {{ $errors->has('sku') ? 'border-rose-500' : 'border-[#D2D5D8]' }} focus:border-[#D38928] rounded-[8px] text-xs font-mono font-bold text-[#202223] focus:outline-none uppercase"
                             >
@@ -292,7 +292,7 @@
 
                     <div class="space-y-1.5">
                         <label for="meta_title" class="block text-xs font-bold text-gray-700 uppercase">Page Title (Meta)</label>
-                        <input type="text" id="meta_title" name="meta_title" value="{{ old('meta_title') }}" placeholder="e.g. Buy Pure Bhimseni Camphor Agarbatti Online | Mangalam" class="w-full px-3.5 py-2 bg-white border border-[#D2D5D8] rounded-[8px] text-xs focus:outline-none focus:border-[#D38928]">
+                        <input type="text" id="meta_title" name="meta_title" value="{{ old('meta_title') }}" placeholder="e.g. Buy Pure Bhimseni Camphor Agarbatti Online | Manglam" class="w-full px-3.5 py-2 bg-white border border-[#D2D5D8] rounded-[8px] text-xs focus:outline-none focus:border-[#D38928]">
                     </div>
 
                     <div class="space-y-1.5">

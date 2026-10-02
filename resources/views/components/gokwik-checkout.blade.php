@@ -53,7 +53,7 @@
             <div class="bg-[#FAF7F2] rounded-[16px] border border-[#EADBCC] p-3.5 space-y-2.5">
                 <div class="flex items-center justify-between text-xs font-bold text-[#121212] font-heading">
                     <span class="flex items-center gap-1.5">
-                        <img src="{{ asset('assets/images/mangalam-logo.png') }}" alt="Mangalam" class="h-4 w-auto object-contain inline">
+                        <img src="{{ asset('assets/images/mangalam-logo.png') }}" alt="Manglam" class="h-4 w-auto object-contain inline">
                         <span>Order Summary</span>
                     </span>
                     <span id="gokwik-items-count" class="text-gray-500 font-normal">2 Items in Cart</span>
@@ -211,7 +211,7 @@
                     <span class="text-xs font-bold text-emerald-700 uppercase tracking-widest font-heading">GoKwik Express Verified ⚡</span>
                     <h4 class="text-2xl font-black font-heading text-[#121212]">Order Confirmed!</h4>
                     <p class="text-xs sm:text-sm text-gray-600 max-w-sm mx-auto">
-                        Your sacred Mangalam order <strong id="gokwik-order-num" class="font-mono text-[#D38928]">#GK-948214</strong> has been placed successfully.
+                        Your sacred Manglam order <strong id="gokwik-order-num" class="font-mono text-[#D38928]">#GK-948214</strong> has been placed successfully.
                     </p>
                 </div>
 

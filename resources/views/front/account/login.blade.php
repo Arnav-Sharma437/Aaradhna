@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Devotee Sign In - Mangalam')
+@section('title', 'Devotee Sign In - Manglam')
 
 @section('content')
 <div class="min-h-[80vh] bg-[#FAF7F2] py-12 sm:py-16 flex items-center justify-center px-4 sm:px-6 lg:px-8">
@@ -73,7 +73,7 @@
                             name="email" 
                             id="email" 
                             required 
-                            value="{{ old('email', 'devotee@mangalam.co') }}" 
+                            value="{{ old('email', 'devotee@manglam.co') }}" 
                             placeholder="Enter email or 10-digit mobile"
                             class="w-full px-4 py-3 bg-[#FAF7F2] border border-[#EADBCC] rounded-[10px] text-sm text-[#121212] focus:outline-none focus:border-[#D38928] focus:bg-white transition-colors"
                         >
@@ -115,7 +115,7 @@
 
             <!-- Sign Up Link -->
             <div class="text-center pt-2 border-t border-[#EADBCC] text-xs text-gray-600">
-                <span>New to Mangalam? </span>
+                <span>New to Manglam? </span>
                 <a href="{{ route('account.register') }}" class="font-bold text-[#D38928] hover:underline font-heading">
                     Create Devotee Account
                 </a>

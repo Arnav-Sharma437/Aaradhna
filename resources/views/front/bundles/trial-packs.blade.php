@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Buy Any 5 Trial Packs @ ₹799 — Mangalam.co™')
+@section('title', 'Buy Any 5 Trial Packs @ ₹799 — Manglam.co™')
 @section('meta_description', 'Choose any 5 sacred trial packs at just ₹799. 100% Bambooless & Charcoal Free Vedic Agarbatti.')
 
 @section('content')
@@ -14,7 +14,7 @@
             <source media="(max-width: 640px)" srcset="{{ asset('assets/images/trial-pack-mobile.jpg') }}">
             <img 
                 src="{{ asset('assets/images/trial-pack-desktop.jpg') }}" 
-                alt="5 Divine Essentials at just ₹799 - Mangalam" 
+                alt="5 Divine Essentials at just ₹799 - Manglam" 
                 class="w-full h-auto block object-cover"
             >
         </picture>

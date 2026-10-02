@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Mangalam.co™ — 100% Pure Bambooless Agarbatti & Vedic Pooja Samagri')
+@section('title', 'Manglam.co™ — 100% Pure Bambooless Agarbatti & Vedic Pooja Samagri')
 @section('meta_description', 'Shri Ram Uphaar, Bambooless Incense Sticks, Havan Cups, Dhoop Cones, and Natural Attar Sprays crafted as per Vedic Vidhi.')
 
 @section('content')
@@ -46,7 +46,7 @@
                         <source media="(max-width: 768px)" srcset="{{ asset('assets/images/hero-sacred-mobile.jpg') }}">
                         <img 
                             src="{{ asset('assets/images/hero-sacred.jpg') }}" 
-                            alt="Mangalam Sacred Bambooless Collection" 
+                            alt="Manglam Sacred Bambooless Collection" 
                             class="w-full h-full object-cover object-center"
                         >
                     </picture>
@@ -60,7 +60,7 @@
                         <source media="(max-width: 768px)" srcset="{{ asset('assets/images/hero-sacred-hawan-cups-mobile.jpg') }}">
                         <img 
                             src="{{ asset('assets/images/hero-sacred-hawan-cups.jpg') }}" 
-                            alt="Mangalam Sacred Havan Cups Collection" 
+                            alt="Manglam Sacred Havan Cups Collection" 
                             class="w-full h-full object-cover object-center"
                         >
                     </picture>
@@ -74,7 +74,7 @@
                         <source media="(max-width: 768px)" srcset="{{ asset('assets/images/hera-sacred-dhoop-cones-mobile.jpg') }}">
                         <img 
                             src="{{ asset('assets/images/hera-sacred-dhoop-cones.jpg') }}" 
-                            alt="Mangalam Sacred Dhoop Cones Collection" 
+                            alt="Manglam Sacred Dhoop Cones Collection" 
                             class="w-full h-full object-cover object-center"
                         >
                     </picture>
@@ -697,7 +697,7 @@
                 </div>
             </div>
 
-            <!-- Category 4: Mangalam Pitambara Havan Pack -->
+            <!-- Category 4: Manglam Pitambara Havan Pack -->
             <div class="group flex flex-col items-center text-center space-y-3 sm:space-y-4">
                 <a href="{{ route('products.pitambara') }}" class="block relative w-full max-w-[200px] sm:max-w-[250px] lg:max-w-[280px] aspect-square rounded-full p-2 bg-white border border-[#EADBCC] hover:border-[#D38928] group-hover:scale-105 transition-all duration-500 cursor-pointer">
                     <div class="w-full h-full rounded-full overflow-hidden bg-white p-1 sm:p-2 flex items-center justify-center relative">
@@ -734,7 +734,7 @@
             <source media="(max-width: 640px)" srcset="{{ asset('assets/images/trial-pack-mobile.jpg') }}">
             <img 
                 src="{{ asset('assets/images/trial-pack-desktop.jpg') }}" 
-                alt="Festive Collection - 5 Divine Essentials at just ₹799 - Mangalam" 
+                alt="Festive Collection - 5 Divine Essentials at just ₹799 - Manglam" 
                 class="w-full h-auto block object-cover group-hover:opacity-95 transition-opacity duration-300"
                 loading="lazy"
             >
@@ -1024,7 +1024,7 @@
                             'initials' => 'SK',
                             'avatar_bg' => 'bg-[#3E2314]',
                             'product' => 'Pitambara Havan Cups',
-                            'quote' => 'Being from Kangra, I always prefer clean, organic products for home prayer. Mangalam bambooless sticks emit gentle white smoke that keeps our living room fragrant and tranquil.'
+                            'quote' => 'Being from Kangra, I always prefer clean, organic products for home prayer. Manglam bambooless sticks emit gentle white smoke that keeps our living room fragrant and tranquil.'
                         ]
                     ];
                 @endphp
@@ -1302,14 +1302,15 @@
 </section>
 
 <!-- ========================================================================= -->
-<!-- 8. FREQUENTLY ASKED QUESTIONS (Luxury Modern Accordions)                  -->
+<!-- ========================================================================= -->
+<!-- 8. FREQUENTLY ASKED QUESTIONS (Luxury Modern Accordions - 7 Items)        -->
 <!-- ========================================================================= -->
 <section class="py-16 sm:py-24 bg-white border-b border-[#EADBCC] select-none">
     <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
-        <div class="max-w-4xl mx-auto space-y-10">
+        <div class="max-w-5xl mx-auto space-y-10">
         
         <!-- Section Header -->
-        <div class="text-center max-w-2xl mx-auto space-y-3">
+        <div class="text-center max-w-3xl mx-auto space-y-3">
             <div class="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-white border border-[#EADBCC] text-[#C87A1E] shadow-2xs">
                 <span class="w-1.5 h-1.5 rounded-full bg-[#D38928]"></span>
                 <span class="text-[11px] font-bold uppercase tracking-[0.2em] font-heading">Clarity &amp; Vidhi</span>
@@ -1317,12 +1318,12 @@
             <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#121212] font-heading tracking-tight leading-tight">
                 Frequently Asked Questions
             </h2>
-            <p class="text-xs sm:text-sm text-gray-600 leading-relaxed max-w-xl mx-auto">
-                Everything you need to know about our authentic Vedic ingredients, burning times, and delivery.
+            <p class="text-xs sm:text-sm text-gray-600 leading-relaxed max-w-2xl mx-auto">
+                Everything you need to know about our authentic Vedic ingredients, burning times, and door-step delivery.
             </p>
         </div>
 
-        <!-- Accordion Cards List -->
+        <!-- Accordion Cards List (7 Items) -->
         <div class="space-y-3.5 sm:space-y-4">
             
             <!-- FAQ 1 -->
@@ -1333,7 +1334,7 @@
                             01
                         </span>
                         <span class="text-sm sm:text-base font-bold text-[#121212] font-heading group-hover:text-[#D38928] transition-colors leading-snug">
-                            What makes Mangalam bambooless incense sticks and havan cups unique?
+                            What makes Manglam bambooless incense sticks and havan cups unique?
                         </span>
                     </div>
                     <div class="w-8 h-8 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
@@ -1344,7 +1345,7 @@
                 </button>
                 <div class="faq-content hidden px-5 pb-5 pt-1 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100">
                     <p>
-                        Our incense is <strong>100% bamboo-free</strong> (compliant with Vedic and Vastu scriptures) and <strong>0% toxic charcoal</strong>. Handcrafted using upcycled temple flower powders, pure Bhimseni camphor, natural Loban, and Guggal resins, it produces soothing herbal aroma that leaves behind clean, auspicious white ash without causing any eye irritation or coughing.
+                        Our incense is <strong>100% bamboo-free</strong> (compliant with Vedic and Vastu scriptures) and <strong>0% toxic charcoal</strong>. Handcrafted using upcycled temple flower powders, pure Bhimseni camphor, natural Loban, and Guggal resins, it produces a soothing herbal aroma that leaves behind clean, auspicious white ash without causing any eye irritation or coughing.
                     </p>
                 </div>
             </div>
@@ -1368,7 +1369,7 @@
                 </button>
                 <div class="faq-content hidden px-5 pb-5 pt-1 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100">
                     <p>
-                        Each 9-inch Bambooless Stick burns continuously for <strong>45 to 50 minutes</strong>, while our organic Sambrani Havan Cups burn intensely for <strong>25 to 30 minutes</strong>. Due to high botanical essential oil concentration, the uplifting sacred fragrance lingers throughout your home for <strong>4 to 6 hours</strong> after burning.
+                        Each 9-inch Bambooless Stick burns continuously for <strong>45 to 50 minutes</strong>, while our organic Sambrani Havan Cups burn intensely for <strong>25 to 30 minutes</strong>. Due to our rich botanical essential oil concentration, the uplifting sacred fragrance lingers throughout your home for <strong>4 to 6 hours</strong> after burning.
                     </p>
                 </div>
             </div>
@@ -1381,7 +1382,7 @@
                             03
                         </span>
                         <span class="text-sm sm:text-base font-bold text-[#121212] font-heading group-hover:text-[#D38928] transition-colors leading-snug">
-                            Are Mangalam products safe to use around babies, elders, and pets?
+                            Are Manglam products safe to use around babies, elders, and pets?
                         </span>
                     </div>
                     <div class="w-8 h-8 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
@@ -1405,7 +1406,79 @@
                             04
                         </span>
                         <span class="text-sm sm:text-base font-bold text-[#121212] font-heading group-hover:text-[#D38928] transition-colors leading-snug">
-                            Do you offer nationwide shipping, COD, and complimentary gifts?
+                            What is the spiritual significance of burning 100% Bamboo-Free Agarbatti?
+                        </span>
+                    </div>
+                    <div class="w-8 h-8 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                        <svg class="faq-icon w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                </button>
+                <div class="faq-content hidden px-5 pb-5 pt-1 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100">
+                    <p>
+                        In Sanatana Dharma and ancient Vedic scriptures, bamboo (Vamsha) is revered as a sacred symbol of family lineage and ancestral continuity. Burning bamboo is strictly forbidden in sacred yagnas and daily poojas because it creates negative energies and emits toxic heavy-metal vapors. Manglam adheres strictly to traditional Vidhi by crafting pure bambooless incense.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="faq-card bg-white rounded-[16px] border border-[#EADBCC] shadow-xs hover:border-[#D38928]/50 transition-all duration-200 overflow-hidden">
+                <button type="button" class="faq-toggle w-full p-4 sm:p-5 flex items-center justify-between text-left focus:outline-none cursor-pointer group">
+                    <div class="flex items-center space-x-3.5 sm:space-x-4 pr-4">
+                        <span class="w-8 h-8 rounded-[10px] bg-[#FAF5EE] text-[#D38928] text-xs font-black font-heading flex items-center justify-center shrink-0 border border-[#D38928]/20 group-hover:bg-[#D38928] group-hover:text-white transition-colors">
+                            05
+                        </span>
+                        <span class="text-sm sm:text-base font-bold text-[#121212] font-heading group-hover:text-[#D38928] transition-colors leading-snug">
+                            How do I properly ignite and use organic Sambrani Havan Cups &amp; Dhoop Cones?
+                        </span>
+                    </div>
+                    <div class="w-8 h-8 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                        <svg class="faq-icon w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                </button>
+                <div class="faq-content hidden px-5 pb-5 pt-1 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100">
+                    <p>
+                        Hold the top rim of the Sambrani Havan Cup or the pointed tip of the Dhoop Cone over a diya flame or lighter for 10–15 seconds until it glows with an active ember. Gently blow out the active flame and place the cup/cone onto the complimentary heat-resistant ceramic coaster included in your package. Let the sacred herbal sambrani purify your home and altar.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ 6 -->
+            <div class="faq-card bg-white rounded-[16px] border border-[#EADBCC] shadow-xs hover:border-[#D38928]/50 transition-all duration-200 overflow-hidden">
+                <button type="button" class="faq-toggle w-full p-4 sm:p-5 flex items-center justify-between text-left focus:outline-none cursor-pointer group">
+                    <div class="flex items-center space-x-3.5 sm:space-x-4 pr-4">
+                        <span class="w-8 h-8 rounded-[10px] bg-[#FAF5EE] text-[#D38928] text-xs font-black font-heading flex items-center justify-center shrink-0 border border-[#D38928]/20 group-hover:bg-[#D38928] group-hover:text-white transition-colors">
+                            06
+                        </span>
+                        <span class="text-sm sm:text-base font-bold text-[#121212] font-heading group-hover:text-[#D38928] transition-colors leading-snug">
+                            What sacred ingredients and temple flowers are used in handcrafting?
+                        </span>
+                    </div>
+                    <div class="w-8 h-8 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                        <svg class="faq-icon w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                </button>
+                <div class="faq-content hidden px-5 pb-5 pt-1 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100">
+                    <p>
+                        Every batch of Manglam incense is lovingly handcrafted by Vedic artisans using dried consecrated flowers collected from sacred shrines, combined with pure Desi cow dung powder, organic Guggal, natural Sambrani Loban resin, Jatamansi, and natural therapeutic-grade essential oils.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ 7 -->
+            <div class="faq-card bg-white rounded-[16px] border border-[#EADBCC] shadow-xs hover:border-[#D38928]/50 transition-all duration-200 overflow-hidden">
+                <button type="button" class="faq-toggle w-full p-4 sm:p-5 flex items-center justify-between text-left focus:outline-none cursor-pointer group">
+                    <div class="flex items-center space-x-3.5 sm:space-x-4 pr-4">
+                        <span class="w-8 h-8 rounded-[10px] bg-[#FAF5EE] text-[#D38928] text-xs font-black font-heading flex items-center justify-center shrink-0 border border-[#D38928]/20 group-hover:bg-[#D38928] group-hover:text-white transition-colors">
+                            07
+                        </span>
+                        <span class="text-sm sm:text-base font-bold text-[#121212] font-heading group-hover:text-[#D38928] transition-colors leading-snug">
+                            Do you offer nationwide shipping, COD, and complimentary ceramic holders?
                         </span>
                     </div>
                     <div class="w-8 h-8 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
@@ -1564,10 +1637,10 @@
         // 3. TOAST NOTIFICATION UTILITY
         // -------------------------------------------------------------
         function showNotification(title, message, iconType = 'cart') {
-            let toast = document.getElementById('mangalam-live-toast');
+            let toast = document.getElementById('manglam-live-toast');
             if (!toast) {
                 toast = document.createElement('div');
-                toast.id = 'mangalam-live-toast';
+                toast.id = 'manglam-live-toast';
                 toast.className = 'fixed bottom-6 right-6 z-50 bg-[#121212] text-white px-5 py-3.5 rounded-[12px] shadow-2xl border border-[#D38928]/50 flex items-center space-x-3 transition-all duration-300 transform translate-y-20 opacity-0 font-body';
                 document.body.appendChild(toast);
             }

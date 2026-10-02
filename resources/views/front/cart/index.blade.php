@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Shopping Cart — Mangalam.co™')
+@section('title', 'Shopping Cart — Manglam.co™')
 @section('meta_description', 'Review your sacred pooja samagri essentials before secure checkout.')
 
 @section('content')
@@ -77,7 +77,7 @@
                             Promo / Festive Coupon
                         </label>
                         <div class="flex space-x-2">
-                            <input type="text" id="coupon-code-input" placeholder="Try: MANGALAM10" class="flex-1 px-3.5 py-2.5 bg-[#FAF7F2] border border-[#EADBCC] rounded-[10px] text-xs font-medium focus:outline-none focus:border-[#D38928] uppercase">
+                            <input type="text" id="coupon-code-input" placeholder="Try: MANGLAM10" class="flex-1 px-3.5 py-2.5 bg-[#FAF7F2] border border-[#EADBCC] rounded-[10px] text-xs font-medium focus:outline-none focus:border-[#D38928] uppercase">
                             <button type="button" id="apply-coupon-btn" class="px-4 py-2.5 bg-[#121212] hover:bg-[#D38928] text-white text-xs font-bold rounded-[10px] transition-colors font-heading cursor-pointer">
                                 Apply
                             </button>
@@ -231,7 +231,7 @@
             </div>
             <h4 class="text-2xl font-black font-heading text-[#121212]">Order Placed Successfully!</h4>
             <p class="text-xs sm:text-sm text-gray-600 max-w-sm mx-auto">
-                Thank you for choosing <strong>Mangalam.co™</strong>. Your sacred pooja samagri order <span id="success-order-id" class="font-mono font-bold text-[#D38928]">#MGLM-78241</span> has been placed.
+                Thank you for choosing <strong>Manglam.co™</strong>. Your sacred pooja samagri order <span id="success-order-id" class="font-mono font-bold text-[#D38928]">#MGLM-78241</span> has been placed.
             </p>
             <div class="pt-4">
                 <a href="{{ route('home') }}" class="inline-block px-8 py-3 bg-[#121212] hover:bg-[#D38928] text-white text-xs font-bold uppercase tracking-wider rounded-[10px] transition-colors font-heading">

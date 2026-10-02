@@ -430,7 +430,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (applyCouponBtn && couponInput) {
         applyCouponBtn.addEventListener('click', () => {
             const code = couponInput.value.trim().toUpperCase();
-            if (code === 'MANGALAM10' || code === 'FESTIVE10' || code === 'SAVE10') {
+            if (code === 'MANGLAM10' || code === 'MANGALAM10' || code === 'FESTIVE10' || code === 'SAVE10') {
                 activeCouponDiscount = 0.10;
                 if (couponFeedback) {
                     couponFeedback.textContent = `✓ Code ${code} applied: Extra 10% Festive Discount!`;

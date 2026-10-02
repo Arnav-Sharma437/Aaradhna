@@ -40,13 +40,13 @@
                             <option value="hindu-rituals" {{ old('category_slug') === 'hindu-rituals' ? 'selected' : '' }}>Hindu Rituals &amp; Vidhi</option>
                             <option value="fragrances" {{ old('category_slug') === 'fragrances' ? 'selected' : '' }}>Sacred Fragrances &amp; Herbs</option>
                             <option value="festivals-and-events" {{ old('category_slug') === 'festivals-and-events' ? 'selected' : '' }}>Festivals &amp; Havans</option>
-                            <option value="news" {{ old('category_slug') === 'news' ? 'selected' : '' }}>Mangalam Updates</option>
+                            <option value="news" {{ old('category_slug') === 'news' ? 'selected' : '' }}>Manglam Updates</option>
                         </select>
                     </div>
 
                     <div>
                         <label class="block font-bold text-gray-700 uppercase tracking-wider mb-1 font-heading">Author Name *</label>
-                        <input type="text" name="author_name" required value="{{ old('author_name', 'Acharya Mangalam Team') }}" class="w-full px-3.5 py-2.5 bg-white border border-[#D2D5D8] rounded-[8px] text-xs focus:border-[#D38928] focus:outline-none">
+                        <input type="text" name="author_name" required value="{{ old('author_name', 'Acharya Manglam Team') }}" class="w-full px-3.5 py-2.5 bg-white border border-[#D2D5D8] rounded-[8px] text-xs focus:border-[#D38928] focus:outline-none">
                     </div>
                 </div>
 

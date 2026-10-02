@@ -41,7 +41,7 @@
                             <option value="hindu-rituals" {{ old('category_slug', $blog->category_slug) === 'hindu-rituals' ? 'selected' : '' }}>Hindu Rituals &amp; Vidhi</option>
                             <option value="fragrances" {{ old('category_slug', $blog->category_slug) === 'fragrances' ? 'selected' : '' }}>Sacred Fragrances &amp; Herbs</option>
                             <option value="festivals-and-events" {{ old('category_slug', $blog->category_slug) === 'festivals-and-events' ? 'selected' : '' }}>Festivals &amp; Havans</option>
-                            <option value="news" {{ old('category_slug', $blog->category_slug) === 'news' ? 'selected' : '' }}>Mangalam Updates</option>
+                            <option value="news" {{ old('category_slug', $blog->category_slug) === 'news' ? 'selected' : '' }}>Manglam Updates</option>
                         </select>
                     </div>
 

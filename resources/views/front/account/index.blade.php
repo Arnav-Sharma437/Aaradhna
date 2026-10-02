@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'My Devotee Account - Mangalam')
+@section('title', 'My Devotee Account - Manglam')
 
 @section('content')
 <div class="bg-[#FAF7F2] min-h-screen py-8 sm:py-12">
@@ -137,7 +137,7 @@
                         For ritual queries, order dispatch status or bulk mandir samagri orders, connect directly with our Seva Kendra team.
                     </p>
                     <a href="{{ route('pages.contact') }}" class="inline-block font-bold text-[#121212] hover:text-[#D38928] underline pt-1">
-                        Contact Mangalam Support ➔
+                        Contact Manglam Support ➔
                     </a>
                 </div>
 

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Mangalam Pitambara Havan — A Sacred Blend for a Calmer, Lighter & More Positive Life')
+@section('title', 'Manglam Pitambara Havan — A Sacred Blend for a Calmer, Lighter & More Positive Life')
 @section('meta_description', '100% Natural, Cow Dung based Pitambara Havan with fresh mango wood sticks. Inspired by Maa Baglamukhi as your sacred shield against negativity. VIP Pre-Booking Open.')
 
 @push('styles')
@@ -63,7 +63,7 @@
                 <nav class="flex items-center space-x-2 text-white/70 font-medium">
                     <a href="{{ route('home') }}" class="hover:text-[#FAD961] transition-colors">Home</a>
                     <span>/</span>
-                    <span class="text-[#FAD961] font-semibold">Mangalam Pitambara Havan</span>
+                    <span class="text-[#FAD961] font-semibold">Manglam Pitambara Havan</span>
                 </nav>
 
                 <div class="inline-flex items-center space-x-2 text-[11px] font-bold text-[#FAD961] bg-black/60 backdrop-blur-md px-4 py-1.5 rounded-full border border-[#D38928]/40 font-heading">
@@ -101,7 +101,7 @@
                 <!-- Brand & Product Title -->
                 <div class="space-y-2 pt-1">
                     <p class="text-xs sm:text-sm uppercase tracking-[0.35em] text-[#F5CE7A] font-bold font-heading">
-                        MANGALAM PRESENTS
+                        MANGLAM PRESENTS
                     </p>
                     
                     <h1 class="text-5xl sm:text-7xl lg:text-8xl font-normal text-white font-heading tracking-tight leading-[1.02] drop-shadow-2xl">
@@ -207,7 +207,7 @@
         
         <!-- Decorative Ambient Background Watermark -->
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[260px] font-cinzel font-black text-[#D38928]/[0.03] select-none pointer-events-none">
-            MANGALAM
+            MANGLAM
         </div>
 
         <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px] space-y-16 sm:space-y-20 relative z-10">
@@ -702,7 +702,7 @@
                 
                 <div class="p-5 sm:p-6">
                     <button type="button" class="faq-toggle flex justify-between items-center w-full text-left font-bold text-sm sm:text-base text-[#121212] hover:text-[#D38928] transition-colors focus:outline-none font-heading cursor-pointer">
-                        <span>When should I light Mangalam Pitambara Havan in my home?</span>
+                        <span>When should I light Manglam Pitambara Havan in my home?</span>
                         <span class="faq-icon ml-4 text-[#D38928] text-xl font-bold">+</span>
                     </button>
                     <div class="faq-answer hidden mt-3 text-xs sm:text-sm text-gray-600 leading-relaxed font-sans">
@@ -756,7 +756,7 @@
             </div>
 
             <h3 class="text-3xl sm:text-4xl lg:text-5xl font-black font-heading tracking-tight pitambara-gold-gradient">
-                Mangalam Pitambara Havan
+                Manglam Pitambara Havan
             </h3>
 
             <p class="text-sm sm:text-base text-white/80 max-w-xl mx-auto font-serif italic">

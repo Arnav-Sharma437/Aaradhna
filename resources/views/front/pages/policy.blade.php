@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', "{$title} — Mangalam.co™")
-@section('meta_description', "Official {$title} of Mangalam.co™ — 100% Pure Vedic Pooja Essentials.")
+@section('title', "{$title} — Manglam.co™")
+@section('meta_description', "Official {$title} of Manglam.co™ — 100% Pure Vedic Pooja Essentials.")
 
 @section('content')
 <div class="bg-white min-h-screen font-body select-none py-12 sm:py-16">
@@ -17,24 +17,24 @@
         <div class="bg-white border border-[#EADBCC] rounded-[24px] p-6 sm:p-12 shadow-sm space-y-6">
             
             <div class="border-b border-[#EADBCC] pb-6 space-y-2">
-                <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ MANGALAM POLICIES ✦</span>
+                <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ MANGLAM POLICIES ✦</span>
                 <h1 class="text-2xl sm:text-4xl font-normal text-[#121212] font-heading tracking-tight">
                     {{ $title }}
                 </h1>
-                <p class="text-xs text-gray-500">Last updated: {{ date('F Y') }} • Mangalam.co™ Vedic Samagri</p>
+                <p class="text-xs text-gray-500">Last updated: {{ date('F Y') }} • Manglam.co™ Vedic Samagri</p>
             </div>
 
             <div class="prose prose-stone max-w-none text-xs sm:text-sm text-gray-700 leading-relaxed space-y-5">
                 @if($slug === 'privacy-policy')
-                    <p>At Mangalam.co™, we hold the trust of our devotees with paramount sanctity. This Privacy Policy outlines how your personal information is gathered, protected, and honored across our platform.</p>
+                    <p>At Manglam.co™, we hold the trust of our devotees with paramount sanctity. This Privacy Policy outlines how your personal information is gathered, protected, and honored across our platform.</p>
                     <h3 class="text-base sm:text-lg font-bold text-[#121212] font-heading">1. Information We Collect</h3>
                     <p>When you place an order for pooja samagri or subscribe to our newsletter, we securely collect your name, shipping address, contact phone number, and email address solely to fulfill your delivery and provide customer assistance.</p>
                     <h3 class="text-base sm:text-lg font-bold text-[#121212] font-heading">2. Data Security &amp; Encryption</h3>
                     <p>All online payment transactions are encrypted using industry-standard 256-bit SSL encryption. We do not store full credit/debit card numbers or UPI PINs on our servers.</p>
                 @elseif($slug === 'terms-of-service')
-                    <p>Welcome to Mangalam.co™. By accessing or ordering from our website, you agree to be bound by these Terms of Service.</p>
+                    <p>Welcome to Manglam.co™. By accessing or ordering from our website, you agree to be bound by these Terms of Service.</p>
                     <h3 class="text-base sm:text-lg font-bold text-[#121212] font-heading">1. Authentic Vedic Ingredients</h3>
-                    <p>All products listed on Mangalam.co™ are guaranteed to be 100% bamboo-free, zero-charcoal, and crafted using dried temple flowers and pure natural resins.</p>
+                    <p>All products listed on Manglam.co™ are guaranteed to be 100% bamboo-free, zero-charcoal, and crafted using dried temple flowers and pure natural resins.</p>
                     <h3 class="text-base sm:text-lg font-bold text-[#121212] font-heading">2. Orders &amp; Delivery</h3>
                     <p>Orders are dispatched from our Vrindavan and partner logistics hubs within 24 to 48 working hours. Expected delivery timelines range between 3 to 6 business days across Bharat.</p>
                 @elseif($slug === 'shipping-policy')
@@ -50,7 +50,7 @@
                     <h3 class="text-base sm:text-lg font-bold text-[#121212] font-heading">2. Refund Processing</h3>
                     <p>Approved refunds are credited directly back to the original payment method within 3 to 5 business days.</p>
                 @else
-                    <p>Welcome to Mangalam.co™. For any specific inquiries regarding this section, please contact our Seva desk at <a href="{{ route('pages.contact') }}" class="text-[#D38928] underline">seva@mangalam.co</a>.</p>
+                    <p>Welcome to Manglam.co™. For any specific inquiries regarding this section, please contact our Seva desk at <a href="{{ route('pages.contact') }}" class="text-[#D38928] underline">seva@manglam.co</a>.</p>
                 @endif
             </div>
 
