@@ -129,48 +129,48 @@ header nav button,
 }
 
 /* ========================================================================= */
-/* RESPONSIVE HERO BANNER (Smooth natural aspect-ratio like sadhna.co)      */
+/* Hero Banner - Fixed Responsive Ratio                                      */
 /* ========================================================================= */
-.hero-banner-wrapper {
+#hero-banner-carousel,
+#hero-banner-carousel .hero-banner-wrapper {
     width: 100%;
+    height: auto;
+    aspect-ratio: 1920 / 650;
+    overflow: hidden;
     position: relative;
-    aspect-ratio: 16 / 10;
-    min-height: 360px;
 }
 
-@media (min-width: 640px) {
-    .hero-banner-wrapper {
-        aspect-ratio: 16 / 8;
-        min-height: 420px;
+/* Slider */
+#hero-banner-carousel .hero-slide,
+#hero-banner-carousel .hero-slide a,
+#hero-banner-carousel .hero-slide picture {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Banner Image */
+#hero-banner-carousel .hero-slide img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: fill;
+    object-position: center;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    #hero-banner-carousel,
+    #hero-banner-carousel .hero-banner-wrapper {
+        aspect-ratio: 1920 / 650;
     }
 }
 
-@media (min-width: 768px) {
-    .hero-banner-wrapper {
-        aspect-ratio: 1920 / 700;
-        min-height: 480px;
-    }
-}
-
-@media (min-width: 1024px) {
-    .hero-banner-wrapper {
-        aspect-ratio: 1920 / 700;
-        min-height: 520px;
-    }
-}
-
-@media (min-width: 1440px) {
-    .hero-banner-wrapper {
-        aspect-ratio: 1920 / 700;
-        min-height: 580px;
-        max-height: 700px;
-    }
-}
-
-@media (min-width: 1920px) {
-    .hero-banner-wrapper {
-        height: 700px;
-        aspect-ratio: 1920 / 700;
+/* Mobile */
+@media (max-width: 767px) {
+    #hero-banner-carousel,
+    #hero-banner-carousel .hero-banner-wrapper {
+        aspect-ratio: 1920 / 650;
     }
 }
 
