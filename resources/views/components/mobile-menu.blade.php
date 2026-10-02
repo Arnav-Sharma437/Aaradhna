@@ -65,13 +65,13 @@
         </div>
     </div>
 
-    <!-- Scrollable Body with Warm Brown Sandalwood Background (Matches Reference Style) -->
+    <!-- Scrollable Body with Warm Brown Sandalwood Background -->
     <div class="relative flex-1 overflow-y-auto bg-gradient-to-b from-[#8C5220] via-[#7B4415] to-[#6A370E] text-white font-body flex flex-col justify-between">
         
         <!-- Main Navigation Links List -->
         <div class="divide-y divide-white/15 text-white font-body">
             
-            <!-- 1. Bambooless -->
+            <!-- 1. Bambooless (Direct Link - No Arrow) -->
             <a 
                 href="{{ route('collections.show', 'bambooless') }}" 
                 class="w-full py-4 px-5 flex items-center justify-between hover:bg-black/15 transition-colors text-left group cursor-pointer"
@@ -82,12 +82,9 @@
                         100% Natural
                     </span>
                 </div>
-                <svg class="w-5 h-5 text-white/80 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-                </svg>
             </a>
 
-            <!-- 2. Havan Cups -->
+            <!-- 2. Havan Cups (Direct Link - No Arrow) -->
             <a 
                 href="{{ route('collections.show', 'havan-cups') }}" 
                 class="w-full py-4 px-5 flex items-center justify-between hover:bg-black/15 transition-colors text-left group cursor-pointer"
@@ -98,12 +95,9 @@
                         Cow Dung Based
                     </span>
                 </div>
-                <svg class="w-5 h-5 text-white/80 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-                </svg>
             </a>
 
-            <!-- 3. Dhoop Cones -->
+            <!-- 3. Dhoop Cones (Direct Link - No Arrow) -->
             <a 
                 href="{{ route('collections.show', 'dhoop-cones') }}" 
                 class="w-full py-4 px-5 flex items-center justify-between hover:bg-black/15 transition-colors text-left group cursor-pointer"
@@ -114,12 +108,9 @@
                         6 Fragrances
                     </span>
                 </div>
-                <svg class="w-5 h-5 text-white/80 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-                </svg>
             </a>
 
-            <!-- 4. Super Save Offers (Expandable Accordion) -->
+            <!-- 4. Super Save Offers (Dropdown Accordion - Has Arrow!) -->
             <div class="w-full">
                 <button 
                     type="button" 
@@ -132,6 +123,7 @@
                             Offers
                         </span>
                     </div>
+                    <!-- Dropdown Arrow -->
                     <svg id="mobile-drawer-offers-arrow" class="w-5 h-5 text-white/80 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                     </svg>
@@ -148,18 +140,15 @@
                 </div>
             </div>
 
-            <!-- 5. Best Seller Combo -->
+            <!-- 5. Best Seller Combo (Direct Link - No Arrow) -->
             <a 
                 href="{{ route('products.show', 'pack-of-six') }}" 
                 class="w-full py-4 px-5 flex items-center justify-between hover:bg-black/15 transition-colors text-left group cursor-pointer"
             >
                 <span class="text-base sm:text-lg font-bold font-serif tracking-wide text-white">Best Seller Combo</span>
-                <svg class="w-5 h-5 text-white/80 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-                </svg>
             </a>
 
-            <!-- 6. Shri Ram Pitambara Havan -->
+            <!-- 6. Shri Ram Pitambara Havan (Direct Link - No Arrow) -->
             <a 
                 href="{{ route('products.pitambara') }}" 
                 class="w-full py-4 px-5 flex items-center justify-between hover:bg-black/15 transition-colors text-left group cursor-pointer"
@@ -170,20 +159,14 @@
                         Gifting Special
                     </span>
                 </div>
-                <svg class="w-5 h-5 text-white/80 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-                </svg>
             </a>
 
-            <!-- 7. Contact Us -->
+            <!-- 7. Contact Us (Direct Link - No Arrow) -->
             <a 
                 href="{{ route('pages.contact') }}" 
                 class="w-full py-4 px-5 flex items-center justify-between hover:bg-black/15 transition-colors text-left group cursor-pointer"
             >
                 <span class="text-base sm:text-lg font-bold font-serif tracking-wide text-white">Contact Us</span>
-                <svg class="w-5 h-5 text-white/80 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-                </svg>
             </a>
 
         </div>
@@ -216,7 +199,7 @@
             @endif
         </div>
 
-        <!-- Sacred Vedic Bottom Card (Exact match to Reference Screenshot media_1790948532499.png) -->
+        <!-- Sacred Vedic Bottom Card -->
         <div class="p-5 text-center space-y-2.5 bg-black/25 backdrop-blur-xs border-t border-white/15">
             <div class="space-y-0.5">
                 <h4 class="text-lg font-serif font-bold text-[#F6DAA8] tracking-wide">

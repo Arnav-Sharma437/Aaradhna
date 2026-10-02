@@ -226,7 +226,7 @@
         </div>
 
         <!-- ================================================================= -->
-        <!-- 1. MOBILE ONLY: 3D COVERFLOW (Swipeable)                          -->
+        <!-- 1. MOBILE ONLY: 3D COVERFLOW (Smooth Touch Swipe)                 -->
         <!-- ================================================================= -->
         <div class="sm:hidden relative w-full flex items-center justify-center min-h-[380px] py-4" id="coverflow-mobile-stage">
             
@@ -307,7 +307,7 @@
                 <svg class="w-5 h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
             </button>
 
-            <!-- Horizontal Scrollable Rail (5 cards visible in view) -->
+            <!-- Horizontal Scrollable Rail -->
             <div 
                 id="reels-track"
                 class="flex space-x-3.5 lg:space-x-4 overflow-x-auto scrollbar-none pb-4 pt-1 px-1 cursor-grab active:cursor-grabbing select-none scroll-smooth"
@@ -342,7 +342,7 @@
                             </div>
                         </div>
 
-                        <!-- Bottom Product Card Row (Matches Reference media_1790948401085) -->
+                        <!-- Bottom Product Card Row -->
                         <div class="mt-2.5 bg-white p-2 sm:p-2.5 rounded-[12px] border border-[#EADBCC] shadow-2xs space-y-2">
                             <div class="flex items-center space-x-2">
                                 <div class="w-10 h-10 rounded-[6px] border border-[#EADBCC] p-0.5 bg-[#FAF7F2] shrink-0 overflow-hidden flex items-center justify-center">
@@ -360,7 +360,7 @@
                                 </div>
                             </div>
 
-                            <!-- Brand Red/Maroon Add To Cart Button (User: "button ka color red bala rakhna hmare vala!") -->
+                            <!-- Brand Red/Maroon Add To Cart Button -->
                             <button 
                                 type="button" 
                                 class="quick-add-to-cart-btn w-full py-2 px-3 bg-[#831F2E] hover:bg-[#6E1724] text-white text-xs font-bold rounded-[8px] transition-all flex items-center justify-center space-x-1 font-heading cursor-pointer shadow-xs active:scale-95"
@@ -382,15 +382,13 @@
 </section>
 
 <!-- ========================================================================= -->
-<!-- FULL-SCREEN REEL LIGHTBOX MODAL                                           -->
-<!-- Desktop: Lightbox with peeking cards & arrows (media_1790948411635)        -->
-<!-- Mobile: 100% Full Screen vertical reel swipe player, NO arrows            -->
+<!-- FULL-SCREEN REEL LIGHTBOX MODAL WITH SMOOTH NATIVE SLIDE ANIMATION        -->
 <!-- ========================================================================= -->
 <div 
     id="reel-video-modal" 
-    class="fixed inset-0 z-50 bg-black sm:bg-black/85 sm:backdrop-blur-md hidden items-center justify-center opacity-0 pointer-events-none transition-all duration-300 font-body select-none overflow-hidden"
+    class="fixed inset-0 z-50 bg-black sm:bg-black/85 sm:backdrop-blur-md hidden items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 font-body select-none overflow-hidden"
 >
-    <!-- Modal Backdrop -->
+    <!-- Modal Backdrop (Desktop) -->
     <div class="absolute inset-0 hidden sm:block" id="reel-modal-backdrop"></div>
 
     <!-- Top Right Close Button -->
@@ -424,7 +422,7 @@
         <svg class="w-6 h-6 ml-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
     </button>
 
-    <!-- Desktop Flanking Card Left (Peek Preview) -->
+    <!-- Desktop Flanking Card Left -->
     <div 
         id="modal-desktop-flank-left"
         class="hidden lg:block absolute left-[12%] xl:left-[16%] top-1/2 -translate-y-1/2 z-20 w-[200px] xl:w-[230px] aspect-[9/16] rounded-[20px] overflow-hidden bg-black shadow-2xl opacity-60 filter blur-[1px] scale-90 cursor-pointer hover:opacity-85 transition-all"
@@ -440,14 +438,25 @@
             id="modal-card-active"
             class="relative z-30 w-full h-full sm:aspect-[9/16] bg-black sm:rounded-[24px] overflow-hidden sm:border sm:border-white/20 shadow-2xl flex flex-col justify-between"
         >
-            <!-- Video Player (Full View) -->
-            <video 
-                id="modal-reel-video"
-                class="absolute inset-0 w-full h-full object-cover cursor-pointer"
-                autoplay
-                playsinline
-                loop
-            ></video>
+            <!-- Smooth Vertical Dual-Slide Reel Container -->
+            <div id="modal-reel-viewport" class="absolute inset-0 w-full h-full overflow-hidden bg-black">
+                <!-- Layer A (Active Player) -->
+                <video 
+                    id="modal-reel-video-a"
+                    class="absolute inset-0 w-full h-full object-cover cursor-pointer transition-transform duration-350 ease-out z-0"
+                    autoplay
+                    playsinline
+                    loop
+                ></video>
+
+                <!-- Layer B (Incoming Slide Player) -->
+                <video 
+                    id="modal-reel-video-b"
+                    class="absolute inset-0 w-full h-full object-cover cursor-pointer transition-transform duration-350 ease-out translate-y-full z-0 pointer-events-none"
+                    playsinline
+                    loop
+                ></video>
+            </div>
 
             <!-- Gradient Shadow Overlay -->
             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/40 pointer-events-none z-10"></div>
@@ -483,7 +492,7 @@
                     <span id="modal-likes-count" class="text-[10px] font-bold drop-shadow">380 Likes</span>
                 </button>
 
-                <!-- Options / Share Button -->
+                <!-- Options Button -->
                 <button 
                     type="button" 
                     id="modal-more-btn"
@@ -497,7 +506,7 @@
             </div>
 
             <!-- Bottom Floating Product Preview Bar -->
-            <div class="relative z-20 p-3.5 pb-6 sm:pb-3.5 mt-auto">
+            <div class="relative z-20 p-3.5 pb-6 sm:pb-3.5 mt-auto transition-all duration-300" id="modal-bottom-bar-container">
                 <div 
                     id="modal-open-drawer-trigger"
                     class="bg-white rounded-[16px] p-2.5 shadow-2xl border border-white/80 flex items-center justify-between cursor-pointer hover:bg-stone-50 transition-all transform active:scale-[0.99] group"
@@ -616,7 +625,7 @@
 
     </div>
 
-    <!-- Desktop Flanking Card Right (Peek Preview) -->
+    <!-- Desktop Flanking Card Right -->
     <div 
         id="modal-desktop-flank-right"
         class="hidden lg:block absolute right-[12%] xl:right-[16%] top-1/2 -translate-y-1/2 z-20 w-[200px] xl:w-[230px] aspect-[9/16] rounded-[20px] overflow-hidden bg-black shadow-2xl opacity-60 filter blur-[1px] scale-90 cursor-pointer hover:opacity-85 transition-all"
@@ -627,13 +636,14 @@
 </div>
 
 <!-- ========================================================================= -->
-<!-- JAVASCRIPT LOGIC                                                          -->
+<!-- JAVASCRIPT LOGIC (Silky Smooth Reel Sliding Transitions)                  -->
 <!-- ========================================================================= -->
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const reelsData = @json($reels);
         let currentIndex = 0;
         const totalReels = reelsData.length;
+        let isSliding = false;
 
         // Desktop Track Navigation
         const track = document.getElementById('reels-track');
@@ -663,7 +673,11 @@
         const modal = document.getElementById('reel-video-modal');
         const modalBackdrop = document.getElementById('reel-modal-backdrop');
         const modalClose = document.getElementById('reel-modal-close');
-        const modalVideo = document.getElementById('modal-reel-video');
+        
+        // Dual Slide Video Elements for native slide animation
+        let activeVideoEl = document.getElementById('modal-reel-video-a');
+        let standbyVideoEl = document.getElementById('modal-reel-video-b');
+
         const modalImg = document.getElementById('modal-product-img');
         const modalTitle = document.getElementById('modal-product-title');
         const modalPrice = document.getElementById('modal-product-price');
@@ -733,23 +747,26 @@
 
         if (leftCard) leftCard.addEventListener('click', () => updateCoverflow(currentIndex - 1));
         if (rightCard) rightCard.addEventListener('click', () => updateCoverflow(currentIndex + 1));
-        if (centerCard) centerCard.addEventListener('click', () => openModal(currentIndex));
+        if (centerCard) centerCard.addEventListener('click', () => openModal(currentIndex, 'none'));
 
         // Desktop Reel Cards Click
         document.querySelectorAll('.reel-card').forEach(card => {
             card.addEventListener('click', (e) => {
                 if (e.target.closest('button')) return;
                 const idx = parseInt(card.getAttribute('data-reel-index') || '0', 10);
-                openModal(idx);
+                openModal(idx, 'none');
             });
         });
 
-        function openModal(index) {
-            currentIndex = (index + totalReels) % totalReels;
-            const prevIndex = (currentIndex - 1 + totalReels) % totalReels;
-            const nextIndex = (currentIndex + 1) % totalReels;
+        // Smooth Slide Transition Function
+        function openModal(index, direction = 'none') {
+            if (isSliding && direction !== 'none') return;
 
-            const item = reelsData[currentIndex];
+            const targetIndex = (index + totalReels) % totalReels;
+            const prevIndex = (targetIndex - 1 + totalReels) % totalReels;
+            const nextIndex = (targetIndex + 1) % totalReels;
+
+            const item = reelsData[targetIndex];
             const prevItem = reelsData[prevIndex];
             const nextItem = reelsData[nextIndex];
             if (!item) return;
@@ -757,19 +774,82 @@
             // Close Drawer if open
             if (drawer) drawer.classList.add('translate-y-full');
 
-            if (modalVideo) {
-                modalVideo.src = item.video_url;
-                modalVideo.poster = item.poster;
-                modalVideo.muted = isMuted;
-                modalVideo.currentTime = 0;
-                modalVideo.play().catch(() => {
-                    modalVideo.muted = true;
+            if (direction === 'none' || !activeVideoEl || !standbyVideoEl) {
+                // Direct Load (Initial open)
+                currentIndex = targetIndex;
+                activeVideoEl.src = item.video_url;
+                activeVideoEl.poster = item.poster;
+                activeVideoEl.muted = isMuted;
+                activeVideoEl.currentTime = 0;
+                activeVideoEl.className = 'absolute inset-0 w-full h-full object-cover cursor-pointer z-10 translate-y-0';
+                activeVideoEl.play().catch(() => {
+                    activeVideoEl.muted = true;
                     isMuted = true;
                     if (modalMuteLabel) modalMuteLabel.textContent = 'Unmute';
-                    modalVideo.play().catch(() => {});
+                    activeVideoEl.play().catch(() => {});
+                });
+                updateReelMeta(item, prevItem, nextItem);
+            } else {
+                // Smooth Reel Vertical Slide Animation
+                isSliding = true;
+                currentIndex = targetIndex;
+
+                const startTranslate = direction === 'up' ? 'translate-y-full' : '-translate-y-full';
+                const exitTranslate = direction === 'up' ? '-translate-y-full' : 'translate-y-full';
+
+                // 1. Prepare Standby Video at starting edge (instantly without transition)
+                standbyVideoEl.style.transition = 'none';
+                standbyVideoEl.className = `absolute inset-0 w-full h-full object-cover cursor-pointer z-10 ${startTranslate}`;
+                standbyVideoEl.src = item.video_url;
+                standbyVideoEl.poster = item.poster;
+                standbyVideoEl.muted = isMuted;
+                standbyVideoEl.currentTime = 0;
+                standbyVideoEl.play().catch(() => {
+                    standbyVideoEl.muted = true;
+                    isMuted = true;
+                    if (modalMuteLabel) modalMuteLabel.textContent = 'Unmute';
+                    standbyVideoEl.play().catch(() => {});
+                });
+
+                // 2. Animate both layers together in next frame
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        const transitionStyle = 'transform 0.35s cubic-bezier(0.22, 1, 0.36, 1)';
+                        activeVideoEl.style.transition = transitionStyle;
+                        standbyVideoEl.style.transition = transitionStyle;
+
+                        activeVideoEl.className = `absolute inset-0 w-full h-full object-cover cursor-pointer z-0 ${exitTranslate}`;
+                        standbyVideoEl.className = 'absolute inset-0 w-full h-full object-cover cursor-pointer z-10 translate-y-0';
+
+                        updateReelMeta(item, prevItem, nextItem);
+
+                        setTimeout(() => {
+                            activeVideoEl.pause();
+                            activeVideoEl.src = '';
+                            activeVideoEl.style.transition = 'none';
+                            
+                            // Swap pointers
+                            const temp = activeVideoEl;
+                            activeVideoEl = standbyVideoEl;
+                            standbyVideoEl = temp;
+                            isSliding = false;
+                        }, 360);
+                    });
                 });
             }
 
+            if (modal && modal.classList.contains('hidden')) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                requestAnimationFrame(() => {
+                    modal.classList.remove('opacity-0', 'pointer-events-none');
+                    modal.classList.add('opacity-100', 'pointer-events-auto');
+                });
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function updateReelMeta(item, prevItem, nextItem) {
             // Desktop Flanking Videos
             if (flankLeftVideo && prevItem) {
                 flankLeftVideo.src = prevItem.video_url;
@@ -830,16 +910,6 @@
                 drawerAddCartBtn.setAttribute('data-product-price', item.price);
                 drawerAddCartBtn.setAttribute('data-product-image', item.thumbnail);
             }
-
-            if (modal) {
-                modal.classList.remove('hidden');
-                modal.classList.add('flex');
-                requestAnimationFrame(() => {
-                    modal.classList.remove('opacity-0', 'pointer-events-none');
-                    modal.classList.add('opacity-100', 'pointer-events-auto');
-                });
-                document.body.style.overflow = 'hidden';
-            }
         }
 
         function closeModal() {
@@ -855,19 +925,23 @@
                 }, 300);
                 document.body.style.overflow = '';
             }
-            if (modalVideo) {
-                modalVideo.pause();
-                modalVideo.src = '';
+            if (activeVideoEl) {
+                activeVideoEl.pause();
+                activeVideoEl.src = '';
+            }
+            if (standbyVideoEl) {
+                standbyVideoEl.pause();
+                standbyVideoEl.src = '';
             }
         }
 
         if (modalClose) modalClose.addEventListener('click', closeModal);
         if (modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
 
-        if (modalDesktopPrev) modalDesktopPrev.addEventListener('click', () => openModal(currentIndex - 1));
-        if (modalDesktopNext) modalDesktopNext.addEventListener('click', () => openModal(currentIndex + 1));
-        if (flankLeft) flankLeft.addEventListener('click', () => openModal(currentIndex - 1));
-        if (flankRight) flankRight.addEventListener('click', () => openModal(currentIndex + 1));
+        if (modalDesktopPrev) modalDesktopPrev.addEventListener('click', () => openModal(currentIndex - 1, 'down'));
+        if (modalDesktopNext) modalDesktopNext.addEventListener('click', () => openModal(currentIndex + 1, 'up'));
+        if (flankLeft) flankLeft.addEventListener('click', () => openModal(currentIndex - 1, 'down'));
+        if (flankRight) flankRight.addEventListener('click', () => openModal(currentIndex + 1, 'up'));
 
         // Toggle Drawer
         if (drawerTrigger && drawer) {
@@ -883,11 +957,12 @@
             });
         }
 
-        // Mute / Unmute
-        if (modalMuteBtn && modalVideo) {
+        // Mute / Unmute Toggle
+        if (modalMuteBtn) {
             modalMuteBtn.addEventListener('click', () => {
                 isMuted = !isMuted;
-                modalVideo.muted = isMuted;
+                if (activeVideoEl) activeVideoEl.muted = isMuted;
+                if (standbyVideoEl) standbyVideoEl.muted = isMuted;
                 if (modalMuteLabel) modalMuteLabel.textContent = isMuted ? 'Unmute' : 'Mute';
             });
         }
@@ -908,7 +983,7 @@
             });
         }
 
-        // Mobile Reel Vertical Swipe (Reel-Style Navigation)
+        // Mobile Reel Vertical Swipe (Silky Smooth Reel Slide)
         let modalTouchStartY = 0;
         let modalTouchStartX = 0;
         if (modal) {
@@ -926,16 +1001,16 @@
                 // Vertical swipe detection
                 if (Math.abs(diffY) > 40 && Math.abs(diffY) > Math.abs(diffX)) {
                     if (diffY > 0) {
-                        // Swipe Up -> Next Reel
-                        openModal(currentIndex + 1);
+                        // Swipe Up -> Next Reel with Slide Up
+                        openModal(currentIndex + 1, 'up');
                     } else {
-                        // Swipe Down -> Previous Reel
-                        openModal(currentIndex - 1);
+                        // Swipe Down -> Previous Reel with Slide Down
+                        openModal(currentIndex - 1, 'down');
                     }
                 }
             }, { passive: true });
 
-            // Mouse wheel scroll support for desktop
+            // Mouse wheel scroll support for desktop full view
             let wheelTimeout = null;
             modal.addEventListener('wheel', (e) => {
                 if (drawer && !drawer.classList.contains('translate-y-full')) return;
@@ -943,8 +1018,8 @@
                 
                 if (Math.abs(e.deltaY) > 40) {
                     wheelTimeout = setTimeout(() => { wheelTimeout = null; }, 500);
-                    if (e.deltaY > 0) openModal(currentIndex + 1);
-                    else openModal(currentIndex - 1);
+                    if (e.deltaY > 0) openModal(currentIndex + 1, 'up');
+                    else openModal(currentIndex - 1, 'down');
                 }
             }, { passive: true });
         }
@@ -953,8 +1028,8 @@
         document.addEventListener('keydown', (e) => {
             if (modal && !modal.classList.contains('pointer-events-none')) {
                 if (e.key === 'Escape') closeModal();
-                if (e.key === 'ArrowDown' || e.key === 'ArrowRight') openModal(currentIndex + 1);
-                if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') openModal(currentIndex - 1);
+                if (e.key === 'ArrowDown' || e.key === 'ArrowRight') openModal(currentIndex + 1, 'up');
+                if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') openModal(currentIndex - 1, 'down');
             }
         });
 
