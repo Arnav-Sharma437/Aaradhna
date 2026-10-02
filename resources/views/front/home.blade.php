@@ -104,11 +104,11 @@
 
     <!-- Carousel Pagination Dots (Below Banner on both Mobile & Desktop) -->
     @php
-        $slideCount = (isset($banners) && $banners->isNotEmpty()) ? $banners->count() : 3;
+        $slideCount = (isset($banners) && $banners->isNotEmpty()) ? $banners->count() : 4;
     @endphp
     <div class="flex py-3 sm:py-3.5 bg-white justify-center items-center space-x-2 sm:space-x-2.5" id="hero-slider-dots">
         @for($i = 0; $i < $slideCount; $i++)
-            <button type="button" class="{{ $i === 0 ? 'w-7 sm:w-8 h-2 rounded-[10px] bg-[#D38928]' : 'w-2.5 h-2 rounded-[10px] bg-[#1F1F1F]/25 hover:bg-[#1F1F1F]/60' }} transition-all duration-300 cursor-pointer" data-index="{{ $i }}" aria-label="Slide {{ $i + 1 }}"></button>
+            <button type="button" class="{{ $i === 0 ? 'w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-black' : 'w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-[#D1D5DB] hover:bg-black/40' }} transition-all duration-300 cursor-pointer" data-index="{{ $i }}" aria-label="Slide {{ $i + 1 }}"></button>
         @endfor
     </div>
 
@@ -342,7 +342,7 @@
                 </div>
 
                 <!-- Card 5: Divya Naagchampa (Sticks) -->
-                <div class="product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
+                <div class="bestseller-extra-card sm:hidden product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
                     <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
                         <span class="inline-flex items-center space-x-1 bg-white px-3 sm:px-4 py-0.5 rounded-full border border-[#D38928] text-[10px] sm:text-[11px] font-bold tracking-widest text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading">
                             <span class="text-[#D38928] text-xs">✨</span>
@@ -385,7 +385,7 @@
                 </div>
 
                 <!-- Card 6: Mogra Noor (Sticks) -->
-                <div class="product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
+                <div class="bestseller-extra-card sm:hidden product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
                     <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
                         <span class="inline-flex items-center space-x-1 bg-white px-3 sm:px-4 py-0.5 rounded-full border border-[#D38928] text-[10px] sm:text-[11px] font-bold tracking-widest text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading">
                             <span class="text-[#D38928] text-xs">✨</span>
@@ -428,7 +428,7 @@
                 </div>
 
                 <!-- Card 7: Gulab Rooh (Sticks) -->
-                <div class="product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
+                <div class="bestseller-extra-card sm:hidden product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
                     <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
                         <span class="inline-flex items-center space-x-1 bg-white px-3 sm:px-4 py-0.5 rounded-full border border-[#D38928] text-[10px] sm:text-[11px] font-bold tracking-widest text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading">
                             <span class="text-[#D38928] text-xs">✨</span>
@@ -471,7 +471,7 @@
                 </div>
 
                 <!-- Card 8: Lavender Veda (Sticks) -->
-                <div class="product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
+                <div class="bestseller-extra-card sm:hidden product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
                     <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
                         <span class="inline-flex items-center space-x-1 bg-white px-3 sm:px-4 py-0.5 rounded-full border border-[#D38928] text-[10px] sm:text-[11px] font-bold tracking-widest text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading">
                             <span class="text-[#D38928] text-xs">✨</span>
@@ -516,11 +516,24 @@
             </div>
         </div>
 
-        <!-- Dynamic Action: View All Products Button -->
-        <div class="mt-8 sm:mt-10 text-center">
+        <!-- Dynamic Action: Simple Load More Text -> Changes to View All Products Button (Only Desktop) -->
+        <div class="mt-8 sm:mt-10 text-center hidden sm:block">
+            <!-- 1. Simple Load More Text Action -->
+            <button 
+                type="button" 
+                id="bestseller-load-more-btn"
+                class="inline-flex items-center space-x-1.5 text-xs sm:text-sm font-bold text-[#D38928] hover:text-[#965A15] border-b-2 border-[#D38928] hover:border-[#965A15] pb-0.5 tracking-wider transition-all duration-200 cursor-pointer font-heading capitalize group"
+            >
+                <span>Load More</span>
+                <svg class="w-3.5 h-3.5 group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+
+            <!-- 2. View All Products Button (Appears after Load More is clicked) -->
             <a 
                 href="{{ route('collections.show', 'all') }}" 
-                class="hover:opacity-95 active:scale-95 transition-all duration-200 transform hover:-translate-y-0.5 cursor-pointer max-w-[180px] sm:max-w-[200px] mx-auto text-center inline-block"
+                id="bestseller-view-all-btn"
+                style="display: none;"
+                class="hover:opacity-95 active:scale-95 transition-all duration-200 transform hover:-translate-y-0.5 cursor-pointer max-w-[180px] sm:max-w-[200px] mx-auto text-center"
                 aria-label="Shop All Products"
             >
                 <img 
@@ -546,7 +559,7 @@
         if (loadMoreBtn && viewAllBtn) {
             loadMoreBtn.addEventListener('click', () => {
                 extraCards.forEach((card, index) => {
-                    card.classList.remove('hidden');
+                    card.classList.remove('sm:hidden');
                     card.style.opacity = '0';
                     card.style.transform = 'translateY(24px)';
                     card.style.transition = 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
@@ -583,6 +596,20 @@
                 bestsellerGrid.scrollBy({ left: 270, behavior: 'smooth' });
             });
         }
+
+        // Product Categories Mobile Scroll Indicator
+        const catSlider = document.getElementById('category-slider');
+        const catScrollBar = document.getElementById('category-scroll-bar');
+        if (catSlider && catScrollBar) {
+            catSlider.addEventListener('scroll', () => {
+                const maxScroll = catSlider.scrollWidth - catSlider.clientWidth;
+                if (maxScroll > 0) {
+                    const scrollPercent = catSlider.scrollLeft / maxScroll;
+                    const maxTranslate = 112 - 40; // 28*4 (112px) - 10*4 (40px) = 72px
+                    catScrollBar.style.transform = `translateX(${scrollPercent * maxTranslate}px)`;
+                }
+            }, { passive: true });
+        }
     });
 </script>
 
@@ -603,7 +630,7 @@
         </div>
 
         <!-- 4 Big Single-Product Category Circles (Mobile Swipeable Slider + Desktop Grid) -->
-        <div class="flex sm:grid overflow-x-auto sm:overflow-visible scrollbar-none snap-x snap-mandatory sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 pb-3 sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0 w-full">
+        <div id="category-slider" class="flex sm:grid overflow-x-auto sm:overflow-visible scrollbar-none snap-x snap-mandatory sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 pb-3 sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0 w-full">
             
             <!-- Category 1: Single Bamboo-less Dhoop Stick -->
             <div class="w-[160px] sm:w-auto shrink-0 snap-start group flex flex-col items-center text-center space-y-3 sm:space-y-4">
@@ -698,6 +725,16 @@
             </div>
 
         </div>
+
+        <!-- Mobile Scroll Indicator Line (media_1790947081514.png) -->
+        <div class="sm:hidden flex justify-center mt-5">
+            <div class="w-28 h-1 bg-[#EADBCC] rounded-full overflow-hidden relative">
+                <div id="category-scroll-bar" class="w-10 h-full bg-[#D38928] rounded-full transition-transform duration-75"></div>
+            </div>
+        </div>
+
+    </div>
+</section>
 
     </div>
 </section>
