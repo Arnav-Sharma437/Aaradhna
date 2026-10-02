@@ -525,15 +525,14 @@
 
         <!-- Dynamic Action: Simple Load More Text -> Changes to View All Products Button (Only Desktop) -->
         <div class="mt-8 sm:mt-10 text-center hidden sm:block">
-            <!-- 1. Load More Button -->
+            <!-- 1. Simple Load More Text Action -->
             <button 
                 type="button" 
                 id="bestseller-load-more-btn"
-                style="padding: 12px 45px;"
-                class="manglam-btn inline-flex items-center justify-center text-xs sm:text-sm font-bold shadow-sm hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center cursor-pointer"
+                class="inline-flex items-center space-x-1.5 text-xs sm:text-sm font-bold text-[#D38928] hover:text-[#965A15] border-b-2 border-[#D38928] hover:border-[#965A15] pb-0.5 tracking-wider transition-all duration-200 cursor-pointer font-heading capitalize group"
             >
                 <span>Load More</span>
-                <svg class="w-3.5 h-3.5 ml-2 group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                <svg class="w-3.5 h-3.5 group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
             </button>
 
             <!-- 2. View All Products Button (Appears after Load More is clicked) -->
@@ -541,7 +540,7 @@
                 href="{{ route('collections.show', 'all') }}" 
                 id="bestseller-view-all-btn"
                 style="display: none; padding: 12px 45px;"
-                class="manglam-btn inline-flex items-center justify-center text-xs sm:text-sm font-bold shadow-sm hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 font-heading text-center cursor-pointer"
+                class="inline-flex items-center justify-center bg-[#831F2E] hover:bg-[#6E1724] active:bg-[#57121C] text-white text-xs sm:text-sm font-bold rounded-[10px] sm:rounded-[12px] shadow-sm hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 font-heading text-center"
             >
                 <span>View All Products</span>
                 <svg class="w-3.5 h-3.5 ml-2" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>

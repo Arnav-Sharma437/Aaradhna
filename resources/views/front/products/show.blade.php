@@ -380,7 +380,7 @@
                         <button 
                             type="button" 
                             id="main-add-to-cart-btn"
-                            class="manglam-btn flex-1 py-3 px-8 text-sm sm:text-base font-bold rounded-[6px] shadow-xs hover:shadow-md transition-all duration-200 text-center flex items-center justify-center cursor-pointer focus:outline-none"
+                            class="flex-1 py-3 px-8 bg-[#D38928] hover:bg-[#B8741E] active:bg-[#965A15] text-white text-sm sm:text-base font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 text-center flex items-center justify-center cursor-pointer focus:outline-none font-heading"
                             data-product-id="{{ $product->id }}"
                             data-product-title="{{ $product->title }}"
                             data-product-slug="{{ $product->slug }}"
@@ -394,9 +394,9 @@
                     <!-- Buy It Now Button -->
                     <a 
                         href="{{ route('cart.index') }}" 
-                        class="manglam-btn block w-full py-3 px-6 text-sm sm:text-base font-bold rounded-[6px] shadow-xs text-center transition-all cursor-pointer"
+                        class="block w-full py-3 px-6 bg-white hover:bg-stone-50 border border-gray-900 text-gray-900 text-sm sm:text-base font-bold rounded-[8px] sm:rounded-[10px] shadow-xs text-center transition-colors font-heading"
                     >
-                        <span>Buy It Now</span>
+                        Buy It Now
                     </a>
                 </div>
 
