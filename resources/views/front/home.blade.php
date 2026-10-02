@@ -964,7 +964,7 @@
         </div>
 
         <!-- 2 Continuous Scrolling Rows with Left & Right Gradient Fade Overlays -->
-        <div class="relative w-full space-y-4 sm:space-y-6 overflow-hidden marquee-track-pause">
+        <div class="relative w-full space-y-4 sm:space-y-5 overflow-hidden marquee-track-pause">
             
             <!-- Left & Right Edge Fade Gradients -->
             <div class="absolute top-0 bottom-0 left-0 w-12 sm:w-28 z-20 pointer-events-none bg-gradient-to-r from-white via-white/90 to-transparent"></div>
@@ -974,7 +974,7 @@
             <!-- ROW 1: RIGHT TO LEFT (Continuous Scroll)   -->
             <!-- ========================================== -->
             <div class="flex overflow-hidden">
-                <div class="animate-marquee-left flex space-x-4 sm:space-x-6 py-2">
+                <div class="animate-marquee-left flex space-x-4 sm:space-x-5 py-0">
                 
                 @php
                     $row1Testimonials = [
@@ -1031,16 +1031,16 @@
 
                 <!-- First Pass -->
                 @foreach($row1Testimonials as $t)
-                    <div class="shrink-0 w-[280px] sm:w-[350px] md:w-[380px] min-h-[175px] sm:min-h-[185px] bg-white rounded-[16px] p-5 border border-[#EADBCC] shadow-xs hover:shadow-lg hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between">
-                        <div class="space-y-2.5">
+                    <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[380px] h-[180px] bg-white rounded-[16px] p-5 border border-[#EADBCC] shadow-xs hover:shadow-lg hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between">
+                        <div class="space-y-2">
                             <div class="flex items-center space-x-1 text-[#D38928] text-lg sm:text-xl leading-none">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                             </div>
-                            <p class="text-xs sm:text-[13px] text-[#2B1810] leading-snug font-normal">
+                            <p class="text-xs sm:text-[13px] text-[#2B1810] leading-snug font-normal line-clamp-3">
                                 "{{ $t['quote'] }}"
                             </p>
                         </div>
-                        <div class="flex items-center justify-between pt-3.5 border-t border-[#EAE3D9] mt-3.5">
+                        <div class="flex items-center justify-between pt-3 border-t border-[#EAE3D9] mt-2">
                             <div class="flex items-center space-x-2.5">
                                 <div class="w-9 h-9 rounded-full {{ $t['avatar_bg'] }} text-white flex items-center justify-center font-bold text-xs shadow-xs font-heading shrink-0">
                                     {{ $t['initials'] }}
@@ -1056,16 +1056,16 @@
 
                 <!-- Second Duplicate Pass for Infinite Seamless Marquee -->
                 @foreach($row1Testimonials as $t)
-                    <div class="shrink-0 w-[280px] sm:w-[350px] md:w-[380px] min-h-[175px] sm:min-h-[185px] bg-white rounded-[16px] p-5 border border-[#EADBCC] shadow-xs hover:shadow-lg hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between" aria-hidden="true">
-                        <div class="space-y-2.5">
+                    <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[380px] h-[180px] bg-white rounded-[16px] p-5 border border-[#EADBCC] shadow-xs hover:shadow-lg hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between" aria-hidden="true">
+                        <div class="space-y-2">
                             <div class="flex items-center space-x-1 text-[#D38928] text-lg sm:text-xl leading-none">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                             </div>
-                            <p class="text-xs sm:text-[13px] text-[#2B1810] leading-snug font-normal">
+                            <p class="text-xs sm:text-[13px] text-[#2B1810] leading-snug font-normal line-clamp-3">
                                 "{{ $t['quote'] }}"
                             </p>
                         </div>
-                        <div class="flex items-center justify-between pt-3.5 border-t border-[#EAE3D9] mt-3.5">
+                        <div class="flex items-center justify-between pt-3 border-t border-[#EAE3D9] mt-2">
                             <div class="flex items-center space-x-2.5">
                                 <div class="w-9 h-9 rounded-full {{ $t['avatar_bg'] }} text-white flex items-center justify-center font-bold text-xs shadow-xs font-heading shrink-0">
                                     {{ $t['initials'] }}
@@ -1086,7 +1086,7 @@
         <!-- ROW 2: LEFT TO RIGHT (Continuous Scroll)   -->
         <!-- ========================================== -->
         <div class="flex overflow-hidden">
-            <div class="animate-marquee-right flex space-x-4 sm:space-x-5 py-1.5">
+            <div class="animate-marquee-right flex space-x-4 sm:space-x-5 py-0">
                 
                 @php
                     $row2Testimonials = [
@@ -1137,16 +1137,16 @@
 
                 <!-- First Pass -->
                 @foreach($row2Testimonials as $t)
-                    <div class="shrink-0 w-[280px] sm:w-[350px] md:w-[380px] min-h-[175px] sm:min-h-[185px] bg-white rounded-[16px] p-5 border border-[#EADBCC] shadow-xs hover:shadow-lg hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between">
-                        <div class="space-y-2.5">
+                    <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[380px] h-[180px] bg-white rounded-[16px] p-5 border border-[#EADBCC] shadow-xs hover:shadow-lg hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between">
+                        <div class="space-y-2">
                             <div class="flex items-center space-x-1 text-[#D38928] text-lg sm:text-xl leading-none">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                             </div>
-                            <p class="text-xs sm:text-[13px] text-[#2B1810] leading-snug font-normal">
+                            <p class="text-xs sm:text-[13px] text-[#2B1810] leading-snug font-normal line-clamp-3">
                                 "{{ $t['quote'] }}"
                             </p>
                         </div>
-                        <div class="flex items-center justify-between pt-3.5 border-t border-[#EAE3D9] mt-3.5">
+                        <div class="flex items-center justify-between pt-3 border-t border-[#EAE3D9] mt-2">
                             <div class="flex items-center space-x-2.5">
                                 <div class="w-9 h-9 rounded-full {{ $t['avatar_bg'] }} text-white flex items-center justify-center font-bold text-xs shadow-xs font-heading shrink-0">
                                     {{ $t['initials'] }}
@@ -1162,16 +1162,16 @@
 
                 <!-- Second Duplicate Pass for Infinite Seamless Marquee -->
                 @foreach($row2Testimonials as $t)
-                    <div class="shrink-0 w-[280px] sm:w-[350px] md:w-[380px] min-h-[175px] sm:min-h-[185px] bg-white rounded-[16px] p-5 border border-[#EADBCC] shadow-xs hover:shadow-lg hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between" aria-hidden="true">
-                        <div class="space-y-2.5">
+                    <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[380px] h-[180px] bg-white rounded-[16px] p-5 border border-[#EADBCC] shadow-xs hover:shadow-lg hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between" aria-hidden="true">
+                        <div class="space-y-2">
                             <div class="flex items-center space-x-1 text-[#D38928] text-lg sm:text-xl leading-none">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                             </div>
-                            <p class="text-xs sm:text-[13px] text-[#2B1810] leading-snug font-normal">
+                            <p class="text-xs sm:text-[13px] text-[#2B1810] leading-snug font-normal line-clamp-3">
                                 "{{ $t['quote'] }}"
                             </p>
                         </div>
-                        <div class="flex items-center justify-between pt-3.5 border-t border-[#EAE3D9] mt-3.5">
+                        <div class="flex items-center justify-between pt-3 border-t border-[#EAE3D9] mt-2">
                             <div class="flex items-center space-x-2.5">
                                 <div class="w-9 h-9 rounded-full {{ $t['avatar_bg'] }} text-white flex items-center justify-center font-bold text-xs shadow-xs font-heading shrink-0">
                                     {{ $t['initials'] }}

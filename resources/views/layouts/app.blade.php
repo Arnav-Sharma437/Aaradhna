@@ -53,9 +53,6 @@
         @yield('content')
     </main>
 
-    <!-- 6. Sacred Gayatri Mantra Ribbon -->
-    <x-gayatri-marquee />
-
     <!-- 7. Comprehensive Footer -->
     <x-footer />
 
