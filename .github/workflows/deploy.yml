@@ -1,6 +1,8 @@
 name: Hostinger SSH Connection & Path Discovery Test
 
 on:
+  push:
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
