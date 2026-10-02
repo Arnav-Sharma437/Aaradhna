@@ -1,0 +1,97 @@
+name: Hostinger SSH Connection & Path Discovery Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-connection:
+    name: Test SSH Connection & Discover Path
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Configure SSH Key
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SERVER_HOST: ${{ secrets.SERVER_HOST }}
+          SERVER_PORT: ${{ secrets.SERVER_PORT }}
+        run: |
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          
+          # Write private key
+          echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          
+          # Add remote server to known hosts safely
+          ssh-keyscan -p "${SERVER_PORT:-22}" -H "${SERVER_HOST}" >> ~/.ssh/known_hosts 2>/dev/null || true
+          chmod 644 ~/.ssh/known_hosts
+
+      - name: Test SSH & Check Aaradhna Path
+        env:
+          SERVER_HOST: ${{ secrets.SERVER_HOST }}
+          SERVER_PORT: ${{ secrets.SERVER_PORT }}
+          SERVER_USER: ${{ secrets.SERVER_USER }}
+        run: |
+          PORT="${SERVER_PORT:-22}"
+          echo "Initiating safe diagnostic SSH session to ${SERVER_USER}@${SERVER_HOST}:${PORT}..."
+
+          ssh -o StrictHostKeyChecking=accept-new -p "$PORT" "${SERVER_USER}@${SERVER_HOST}" 'bash -s' << 'EOF'
+            set -e
+
+            echo "=========================================="
+            echo "✅ SSH Connection: SUCCESSFUL"
+            echo "=========================================="
+            echo "Current Remote User : $(whoami)"
+            echo "Current Working Dir : $(pwd)"
+            echo "Home Directory      : $HOME"
+            echo "Host Architecture   : $(uname -s -m)"
+            echo "------------------------------------------"
+
+            # Check potential locations for public_html/dev/aaradhna
+            CANDIDATE_PATHS=(
+              "$(pwd)/public_html/dev/aaradhna"
+              "$HOME/public_html/dev/aaradhna"
+              "/home/$(whoami)/public_html/dev/aaradhna"
+              "$(pwd)/aaradhna"
+            )
+
+            FOUND_PATH=""
+            for path in "${CANDIDATE_PATHS[@]}"; do
+              if [ -d "$path" ]; then
+                FOUND_PATH="$(cd "$path" && pwd -P)"
+                break
+              fi
+            done
+
+            # Fallback search if direct match not found
+            if [ -z "$FOUND_PATH" ]; then
+              echo "Scanning directory tree for 'aaradhna' under public_html..."
+              FALLBACK_SEARCH=$(find "$HOME" -maxdepth 4 -type d -name "aaradhna" 2>/dev/null | grep -i "public_html/dev/aaradhna" | head -n 1)
+              if [ -n "$FALLBACK_SEARCH" ] && [ -d "$FALLBACK_SEARCH" ]; then
+                FOUND_PATH="$(cd "$FALLBACK_SEARCH" && pwd -P)"
+              fi
+            fi
+
+            if [ -n "$FOUND_PATH" ] && [ -d "$FOUND_PATH" ]; then
+              echo "Aaradhna Project Found : YES"
+              echo "Absolute Server Path   : $FOUND_PATH"
+              echo "------------------------------------------"
+              echo "📂 Top-level Directory Listing:"
+              ls -la "$FOUND_PATH"
+              echo "------------------------------------------"
+              echo "✅ Diagnostic complete. Zero changes made on server."
+            else
+              echo "⚠️ Aaradhna Project Found : NO"
+              echo "Checking contents of $(pwd):"
+              ls -la
+              if [ -d "public_html" ]; then
+                echo "Contents of public_html:"
+                ls -la public_html/
+              fi
+              echo "Please verify the directory path in Hostinger File Manager."
+              exit 1
+            fi
+          EOF
