@@ -13,17 +13,14 @@
     <!-- Slides Wrapper (Fixed Height for all Screens & Zoom levels) -->
     <div class="relative w-full h-[340px] sm:h-[420px] md:h-[480px] lg:h-[540px] xl:h-[580px] overflow-hidden bg-white">
         
-        <!-- SLIDE 1: SACRED BAMBOOLEES COLLECTION (RESPONSIVE DESKTOP & MOBILE BANNER) -->
+        <!-- SLIDE 1: SACRED BAMBOOLEES COLLECTION -->
         <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-100 pointer-events-auto z-10 flex items-center justify-center bg-white" data-slide="0">
             <a href="{{ route('collections.show', 'bambooless') }}" class="block w-full h-full relative cursor-pointer" aria-label="Explore Sacred Bambooless Incense Collection">
-                <picture class="w-full h-full block">
-                    <source media="(max-width: 768px)" srcset="{{ asset('assets/images/hero-sacred-mobile.jpg') }}">
-                    <img 
-                        src="{{ asset('assets/images/hero-sacred.jpg') }}" 
-                        alt="Mangalam Sacred Bambooless Collection" 
-                        class="w-full h-full object-cover object-center"
-                    >
-                </picture>
+                <img 
+                    src="{{ asset('assets/images/hero-sacred.jpg') }}" 
+                    alt="Mangalam Sacred Bambooless Collection" 
+                    class="w-full h-full object-cover object-center"
+                >
             </a>
         </div>
 
@@ -538,11 +535,11 @@
 <!-- ========================================================================= -->
 <!-- 3. PRODUCTS CATEGORY (Clean Large Single-Item Circles on Pure White)      -->
 <!-- ========================================================================= -->
-<section class="py-16 sm:py-24 bg-white border-b border-[#EAE3D9] font-body select-none">
-    <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
+<section class="py-14 sm:py-20 bg-white border-b border-[#EAE3D9] font-body select-none">
+    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
         
         <!-- Section Header -->
-        <div class="text-center max-w-2xl mx-auto mb-14 sm:mb-18 space-y-2">
+        <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16 space-y-2">
             <span class="text-[11px] sm:text-xs font-bold uppercase tracking-[0.3em] text-[#D38928] font-heading">
                 ✦ 100% NATURAL • CHARCOAL FREE ✦
             </span>
@@ -554,13 +551,12 @@
             </p>
         </div>
 
-        <!-- 4 Big Single-Product Category Circles -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 lg:gap-10 max-w-6xl mx-auto">
+        <!-- 4 Big Single-Product Category Circles (Spanning full container width) -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 w-full">
             
             <!-- Category 1: Single Bamboo-less Dhoop Stick -->
-            <div class="group flex flex-col items-center text-center space-y-3.5 sm:space-y-4">
-                <!-- Borderless White Rounded Circle -->
-                <a href="{{ route('collections.show', 'bambooless') }}" class="block relative w-44 h-44 sm:w-56 sm:h-56 lg:w-64 lg:h-64 xl:w-68 xl:h-68 rounded-full p-2 bg-white shadow-md hover:shadow-2xl group-hover:scale-105 transition-all duration-500 cursor-pointer">
+            <div class="group flex flex-col items-center text-center space-y-3 sm:space-y-4">
+                <a href="{{ route('collections.show', 'bambooless') }}" class="block relative w-full max-w-[200px] sm:max-w-[250px] lg:max-w-[280px] aspect-square rounded-full p-2 bg-white shadow-md hover:shadow-2xl group-hover:scale-105 transition-all duration-500 cursor-pointer">
                     <div class="w-full h-full rounded-full overflow-hidden bg-white p-1 sm:p-2 flex items-center justify-center relative">
                         <img 
                             src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" 
@@ -585,9 +581,8 @@
             </div>
 
             <!-- Category 2: Single Dhoop Cone -->
-            <div class="group flex flex-col items-center text-center space-y-3.5 sm:space-y-4">
-                <!-- Borderless White Rounded Circle -->
-                <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block relative w-44 h-44 sm:w-56 sm:h-56 lg:w-64 lg:h-64 xl:w-68 xl:h-68 rounded-full p-2 bg-white shadow-md hover:shadow-2xl group-hover:scale-105 transition-all duration-500 cursor-pointer">
+            <div class="group flex flex-col items-center text-center space-y-3 sm:space-y-4">
+                <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block relative w-full max-w-[200px] sm:max-w-[250px] lg:max-w-[280px] aspect-square rounded-full p-2 bg-white shadow-md hover:shadow-2xl group-hover:scale-105 transition-all duration-500 cursor-pointer">
                     <div class="w-full h-full rounded-full overflow-hidden bg-white p-1 sm:p-2 flex items-center justify-center relative">
                         <img 
                             src="{{ asset('assets/images/single-dhoop-cone.jpg') }}" 
@@ -612,9 +607,8 @@
             </div>
 
             <!-- Category 3: Single 100% Organic Havan Cup -->
-            <div class="group flex flex-col items-center text-center space-y-3.5 sm:space-y-4">
-                <!-- Borderless White Rounded Circle -->
-                <a href="{{ route('collections.show', 'havan-cups') }}" class="block relative w-44 h-44 sm:w-56 sm:h-56 lg:w-64 lg:h-64 xl:w-68 xl:h-68 rounded-full p-2 bg-white shadow-md hover:shadow-2xl group-hover:scale-105 transition-all duration-500 cursor-pointer">
+            <div class="group flex flex-col items-center text-center space-y-3 sm:space-y-4">
+                <a href="{{ route('collections.show', 'havan-cups') }}" class="block relative w-full max-w-[200px] sm:max-w-[250px] lg:max-w-[280px] aspect-square rounded-full p-2 bg-white shadow-md hover:shadow-2xl group-hover:scale-105 transition-all duration-500 cursor-pointer">
                     <div class="w-full h-full rounded-full overflow-hidden bg-white p-1 sm:p-2 flex items-center justify-center relative">
                         <img 
                             src="{{ asset('assets/images/single-havan-cup.jpg') }}" 
@@ -639,9 +633,8 @@
             </div>
 
             <!-- Category 4: Mangalam Pitambara Havan Pack -->
-            <div class="group flex flex-col items-center text-center space-y-3.5 sm:space-y-4">
-                <!-- Borderless White Rounded Circle -->
-                <a href="{{ route('products.pitambara') }}" class="block relative w-44 h-44 sm:w-56 sm:h-56 lg:w-64 lg:h-64 xl:w-68 xl:h-68 rounded-full p-2 bg-white shadow-md hover:shadow-2xl group-hover:scale-105 transition-all duration-500 cursor-pointer">
+            <div class="group flex flex-col items-center text-center space-y-3 sm:space-y-4">
+                <a href="{{ route('products.pitambara') }}" class="block relative w-full max-w-[200px] sm:max-w-[250px] lg:max-w-[280px] aspect-square rounded-full p-2 bg-white shadow-md hover:shadow-2xl group-hover:scale-105 transition-all duration-500 cursor-pointer">
                     <div class="w-full h-full rounded-full overflow-hidden bg-white p-1 sm:p-2 flex items-center justify-center relative">
                         <img 
                             src="{{ asset('assets/images/pitambara-pack.jpg') }}" 
@@ -671,22 +664,20 @@
 </section>
 
 <!-- ========================================================================= -->
-<!-- 4. STANDALONE PROMO BANNER: BUY 5 TRIAL PACKS @ 799                       -->
+<!-- 4. STANDALONE PROMO BANNER: BUY 5 TRIAL PACKS @ 799 (Full Width Edge-to-Edge) -->
 <!-- ========================================================================= -->
-<section class="w-full bg-white border-b border-[#EADBCC] overflow-hidden select-none py-2 sm:py-4">
-    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
-        <a href="{{ route('bundles.trial-packs') }}" class="block w-full group focus:outline-none rounded-[16px] sm:rounded-[20px] overflow-hidden shadow-xs border border-[#EADBCC]">
-            <picture class="block w-full">
-                <source media="(max-width: 640px)" srcset="{{ asset('assets/images/trial-pack-mobile.jpg') }}">
-                <img 
-                    src="{{ asset('assets/images/trial-pack-desktop.jpg') }}" 
-                    alt="Festive Collection - 5 Divine Essentials at just ₹799 - Mangalam" 
-                    class="w-full h-auto block object-cover group-hover:opacity-95 group-hover:scale-[1.01] transition-all duration-300"
-                    loading="lazy"
-                >
-            </picture>
-        </a>
-    </div>
+<section class="w-full bg-white overflow-hidden select-none">
+    <a href="{{ route('bundles.trial-packs') }}" class="block w-full group focus:outline-none">
+        <picture class="block w-full">
+            <source media="(max-width: 640px)" srcset="{{ asset('assets/images/trial-pack-mobile.jpg') }}">
+            <img 
+                src="{{ asset('assets/images/trial-pack-desktop.jpg') }}" 
+                alt="Festive Collection - 5 Divine Essentials at just ₹799 - Mangalam" 
+                class="w-full h-auto block object-cover group-hover:opacity-95 transition-opacity duration-300"
+                loading="lazy"
+            >
+        </picture>
+    </a>
 </section>
 
 <!-- ========================================================================= -->
@@ -1267,19 +1258,17 @@
 </section>
 
 <!-- ========================================================================= -->
-<!-- 7. STANDALONE PROMO BANNER: BUY 2 GET 1 FREE (Above FAQ)                  -->
+<!-- 7. STANDALONE PROMO BANNER: BUY 2 GET 1 FREE (Full Width Edge-to-Edge)   -->
 <!-- ========================================================================= -->
-<section class="w-full bg-white border-b border-[#EADBCC] overflow-hidden select-none py-2 sm:py-4">
-    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
-        <a href="{{ route('bundles.buy2get1') }}" class="block w-full group focus:outline-none rounded-[16px] sm:rounded-[20px] overflow-hidden shadow-xs">
-            <img 
-                src="{{ asset('assets/images/banner-buy2-get1-free.jpg') }}" 
-                alt="Buy 2 Get 1 FREE + Chandan Pack FREE @ ₹999 - Mangalam" 
-                class="w-full h-auto block object-cover group-hover:opacity-95 group-hover:scale-[1.01] transition-all duration-300"
-                loading="lazy"
-            >
-        </a>
-    </div>
+<section class="w-full bg-white overflow-hidden select-none">
+    <a href="{{ route('bundles.buy2get1') }}" class="block w-full group focus:outline-none">
+        <img 
+            src="{{ asset('assets/images/banner-buy2-get1-free.jpg') }}" 
+            alt="Buy 2 Get 1 FREE + Chandan Pack FREE @ ₹999 - Mangalam" 
+            class="w-full h-auto block object-cover group-hover:opacity-95 transition-opacity duration-300"
+            loading="lazy"
+        >
+    </a>
 </section>
 
 <!-- ========================================================================= -->

@@ -733,13 +733,13 @@
                             <div class="flex text-[#D38928] text-sm sm:text-base">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                             </div>
-                            <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading">Pooja Sharma, Mandi</span>
+                            <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading">नेहा ठाकुर, मंडी</span>
                         </div>
-                        <span class="text-[11px] text-gray-400">2 days ago</span>
+                        <span class="text-[11px] text-gray-400">1 day ago</span>
                     </div>
-                    <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading pt-0.5">Mandi me itni authentic bambooless agarbatti pehli baar mili</h4>
+                    <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading pt-0.5">प्राकृतिक चंदन और जड़ी-बूटियों की मनमोहक खुशबू</h4>
                     <p class="text-xs text-gray-600 leading-relaxed">
-                        Mandi me subah aarti ke time light karte hain aur pure ghar me shaam tak natural sandalwood aur camphor ki gentle fragrance rehti hai. Sabse achi baat zero dark smoke hai.
+                        मंडी में हमारे घर में रोजाना सुबह पूजा होती है। इस अगरबत्ती का धुआं बिल्कुल भी आंखों में नहीं लगता और 4-5 घंटे तक कमरे में ताजगी बनी रहती है। बहुत ही शांत अनुभव!
                     </p>
                 </div>
 
@@ -749,13 +749,13 @@
                             <div class="flex text-[#D38928] text-sm sm:text-base">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                             </div>
-                            <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading">अनिल डोगरा, कांगड़ा</span>
+                            <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading">Dr. Gaurav Sharma, Kangra</span>
                         </div>
-                        <span class="text-[11px] text-gray-400">4 days ago</span>
+                        <span class="text-[11px] text-gray-400">3 days ago</span>
                     </div>
-                    <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading pt-0.5">बिल्कुल शुद्ध और बिना किसी काले धुएं के</h4>
+                    <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading pt-0.5">True chemical-free &amp; very slow burning</h4>
                     <p class="text-xs text-gray-600 leading-relaxed">
-                        कांगड़ा में हमारे घर में रोजाना पूजा होती है। शास्त्रों के अनुसार बांस जलाना वर्जित है, इसलिए हमने यह बैम्बूलेस मंगवाई। आंखों में कोई जलन नहीं होती और खुशबू बहुत ही दिव्य है।
+                        Being an ayurveda practitioner in Kangra, I check ingredients very strictly. Zero charcoal and pure flower extract make it safe for closed rooms. The ceramic stand included in the box is elegant.
                     </p>
                 </div>
 
@@ -765,13 +765,29 @@
                             <div class="flex text-[#D38928] text-sm sm:text-base">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                             </div>
-                            <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading">Sunil Thakur, Chamba</span>
+                            <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading">सुरेश चंदेल, बिलासपुर</span>
+                        </div>
+                        <span class="text-[11px] text-gray-400">5 days ago</span>
+                    </div>
+                    <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading pt-0.5">बिलासपुर में 3 दिन में सुरक्षित डिलीवरी मिली</h4>
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        100 स्टिक्स वाला पैक मंगाया था। पैकेजिंग बहुत ही सुंदर और मजबूत है। जलने का समय पूरा 50 मिनट रहता है और सफेद शुद्ध भस्म बनती है।
+                    </p>
+                </div>
+
+                <div class="p-4 sm:p-5 rounded-[14px] border border-[#EAE3D9] bg-white space-y-2 shadow-2xs">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <div class="flex text-[#D38928] text-sm sm:text-base">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading">Ritu Mahajan, Chamba</span>
                         </div>
                         <span class="text-[11px] text-gray-400">1 week ago</span>
                     </div>
-                    <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading pt-0.5">Exceptional Quality &amp; Beautiful Ceramic Stand</h4>
+                    <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading pt-0.5">No coughing or throat irritation in cold weather</h4>
                     <p class="text-xs text-gray-600 leading-relaxed">
-                        Ordered the pack of 100 sticks from Chamba. The free artisanal holder is very elegant and the sticks burn for full 50 minutes. Truly chemical-free formulation.
+                        In Chamba during winter months, burning ordinary incense used to cause coughing. Mangalam bambooless sticks are pure bliss! Subtle, premium fragrance that lasts all evening.
                     </p>
                 </div>
 
@@ -781,29 +797,13 @@
                             <div class="flex text-[#D38928] text-sm sm:text-base">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                             </div>
-                            <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading">Meenakshi Verma, Bilaspur</span>
-                        </div>
-                        <span class="text-[11px] text-gray-400">1 week ago</span>
-                    </div>
-                    <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading pt-0.5">Bilaspur me 3 days me delivery aa gayi</h4>
-                    <p class="text-xs text-gray-600 leading-relaxed">
-                        Packaging luxury hai aur packaging kholte hi fresh flowers aur herbs ki natural mehak aati hai. Daily Sandhya Vandana ke liye permanent yahi use karenge.
-                    </p>
-                </div>
-
-                <div class="p-4 sm:p-5 rounded-[14px] border border-[#EAE3D9] bg-white space-y-2 shadow-2xs">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center space-x-2">
-                            <div class="flex text-[#D38928] text-sm sm:text-base">
-                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                            </div>
-                            <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading">राजेश धीमान, हमीरपुर</span>
+                            <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading">अमित कटोच, हमीरपुर</span>
                         </div>
                         <span class="text-[11px] text-gray-400">2 weeks ago</span>
                     </div>
-                    <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading pt-0.5">सिरदर्द से राहत और पवित्र वातावरण</h4>
+                    <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading pt-0.5">शास्त्र सम्मत बिना बांस की असली अगरबत्ती</h4>
                     <p class="text-xs text-gray-600 leading-relaxed">
-                        पहले बाजार वाली चारकोल अगरबत्ती से कमरे में घुटन होती थी। इसमें केवल प्राकृतिक जड़ी-बूटियां और भीमसेनी कपूर है जो मन को शांत करता है।
+                        हमीरपुर से ऑर्डर किया था। पूजा में बांस जलाना हमारे यहां वर्जित मानते हैं। यह पूरी तरह से वेदिक विधि से बनी है। अब हम केवल यही मंगवाते हैं।
                     </p>
                 </div>
             </div>

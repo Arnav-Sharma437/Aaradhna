@@ -78,53 +78,51 @@
     $mrpPrice = $product->base_price > $product->active_price ? $product->base_price : ($product->active_price * 1.4);
 @endphp
 
-<div class="product-card group relative flex flex-col bg-[#FFFDF9] rounded-[16px] sm:rounded-[20px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
+<div class="product-card group relative flex flex-col bg-[#FFFDF9] rounded-[16px] sm:rounded-[20px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden h-full font-body">
     
     <!-- Overlapping Top Border Pill Badge -->
-    <div class="absolute -top-2.5 sm:-top-3.5 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
-        <span class="inline-block bg-white px-2.5 sm:px-4 py-0.5 rounded-full border border-[#D38928] text-[11px] sm:text-xs font-bold tracking-widest text-[#965A15] uppercase shadow-xs whitespace-nowrap font-heading">
+    <div class="absolute top-2.5 sm:top-3 left-3 sm:left-3.5 z-20 pointer-events-none">
+        <span class="inline-block bg-white/95 backdrop-blur-xs px-2.5 sm:px-3.5 py-0.5 rounded-full border border-[#D38928] text-[10px] sm:text-xs font-bold tracking-wider text-[#965A15] uppercase shadow-xs whitespace-nowrap font-heading">
             {{ $topBadge }}
         </span>
     </div>
 
-    <!-- Product Image Box with Smooth Hover Transition (Larger & More Prominent) -->
-    <div class="p-1.5 sm:p-2 pb-0">
-        <div class="relative w-full aspect-square rounded-[14px] sm:rounded-[18px] overflow-hidden bg-[#FAF7F2]">
-            <a href="{{ route('products.show', $product->slug) }}" class="block w-full h-full relative overflow-hidden">
-                <!-- Primary Image -->
-                <img 
-                    src="{{ asset($imageSrc) }}" 
-                    alt="{{ $product->title }}" 
-                    class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105"
-                >
-                <!-- Secondary / Hover Image -->
-                <img 
-                    src="{{ asset($hoverImageSrc) }}" 
-                    alt="{{ $product->title }} (Detail)" 
-                    class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out"
-                    loading="lazy"
-                >
-            </a>
+    <!-- Product Image Box (Full-Width Top, Larger & High Impact) -->
+    <div class="relative w-full aspect-square overflow-hidden bg-[#FAF7F2] shrink-0 border-b border-[#EADBCC]/60">
+        <a href="{{ route('products.show', $product->slug) }}" class="block w-full h-full relative overflow-hidden">
+            <!-- Primary Image -->
+            <img 
+                src="{{ asset($imageSrc) }}" 
+                alt="{{ $product->title }}" 
+                class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105"
+            >
+            <!-- Secondary / Hover Image -->
+            <img 
+                src="{{ asset($hoverImageSrc) }}" 
+                alt="{{ $product->title }} (Detail)" 
+                class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out"
+                loading="lazy"
+            >
+        </a>
 
-            <!-- Top Right Pack Info -->
-            <div class="absolute top-2 right-2 sm:top-2.5 sm:right-2.5 text-right pointer-events-none select-none leading-none z-10">
-                <span class="text-[10px] sm:text-[11px] uppercase font-semibold text-gray-500 block">pack of</span>
-                <span class="text-xl sm:text-2xl font-black font-heading {{ $packColor }} block my-0.5">{{ $packCount }}</span>
-                <span class="text-[10px] sm:text-[11px] uppercase font-semibold text-gray-500 block">{{ $packUnit }}</span>
-            </div>
-
-            <!-- Free Ceramic Stand Banner for Devi / Specials -->
-            @if(str_contains($product->slug, 'devi'))
-                <div class="absolute bottom-1.5 left-1.5 right-1.5 sm:bottom-2 sm:left-2 sm:right-2 bg-black/55 backdrop-blur-xs py-1 sm:py-1.5 px-1.5 sm:px-2 rounded-[5px] sm:rounded-[6px] text-center text-white text-[10px] sm:text-xs font-bold tracking-wider z-10">
-                    FREE STAND <span class="text-[#F6DAA8] font-normal hidden sm:inline">₹150/-</span>
-                </div>
-            @endif
-
+        <!-- Top Right Pack Info -->
+        <div class="absolute top-2 right-2 sm:top-2.5 sm:right-2.5 text-right pointer-events-none select-none leading-none z-10 bg-white/95 backdrop-blur-xs px-2 py-1 rounded-[6px] border border-[#EADBCC] shadow-2xs">
+            <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-gray-500 block">pack of</span>
+            <span class="text-lg sm:text-xl font-black font-heading {{ $packColor }} block my-0.5">{{ $packCount }}</span>
+            <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-gray-500 block">{{ $packUnit }}</span>
         </div>
+
+        <!-- Free Ceramic Stand Banner for Devi / Specials -->
+        @if(str_contains($product->slug, 'devi'))
+            <div class="absolute bottom-1.5 left-1.5 right-1.5 sm:bottom-2 sm:left-2 sm:right-2 bg-black/65 backdrop-blur-xs py-1 sm:py-1.5 px-1.5 sm:px-2 rounded-[5px] sm:rounded-[6px] text-center text-white text-[10px] sm:text-xs font-bold tracking-wider z-10">
+                FREE STAND <span class="text-[#F6DAA8] font-normal hidden sm:inline">₹150/-</span>
+            </div>
+        @endif
+
     </div>
 
     <!-- Product Card Content -->
-    <div class="p-3 sm:p-5 pt-2.5 sm:pt-4 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3.5">
+    <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
         
         <div class="space-y-1">
             <h3 class="text-[15px] sm:text-xl font-bold font-serif text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
