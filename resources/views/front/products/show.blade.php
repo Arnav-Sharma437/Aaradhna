@@ -726,67 +726,86 @@
             </div>
 
             <!-- Compact Reviews List -->
-            <div class="space-y-3">
-                @if(isset($product->approvedReviews) && $product->approvedReviews->count() > 0)
-                    @foreach($product->approvedReviews as $rev)
-                        <div class="p-3.5 sm:p-4 rounded-[12px] border border-[#EAE3D9] bg-white space-y-1.5 shadow-2xs">
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center space-x-2">
-                                    <div class="flex text-[#D38928] text-xs">
-                                        @for($i = 1; $i <= 5; $i++)
-                                            <span>{{ $i <= $rev->rating ? '★' : '☆' }}</span>
-                                        @endfor
-                                    </div>
-                                    <span class="text-xs font-bold text-[#121212] font-heading">{{ $rev->reviewer_name ?? 'Devotee' }}</span>
-                                    @if($rev->is_verified_buyer ?? true)
-                                        <span class="px-2 py-0.5 bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px] font-bold rounded-full">Verified Buyer</span>
-                                    @endif
-                                </div>
-                                <span class="text-[11px] text-gray-400">{{ $rev->created_at ? $rev->created_at->diffForHumans() : 'Recently' }}</span>
+            <div class="space-y-3.5">
+                <div class="p-4 sm:p-5 rounded-[14px] border border-[#EAE3D9] bg-white space-y-2 shadow-2xs">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <div class="flex text-[#D38928] text-sm sm:text-base">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                             </div>
-                            @if(!empty($rev->title))
-                                <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading pt-0.5">{{ $rev->title }}</h4>
-                            @endif
-                            <p class="text-xs text-gray-600 leading-relaxed">
-                                {{ $rev->review_text ?? $rev->comment ?? '' }}
-                            </p>
+                            <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading">Pooja Sharma, Mandi</span>
                         </div>
-                    @endforeach
-                @else
-                    <div class="p-3.5 sm:p-4 rounded-[12px] border border-[#EAE3D9] bg-white space-y-1.5 shadow-2xs">
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center space-x-2">
-                                <div class="flex text-[#D38928] text-xs">
-                                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                                </div>
-                                <span class="text-xs font-bold text-[#121212] font-heading">Pandit Rameshwar Mishra</span>
-                                <span class="px-2 py-0.5 bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px] font-bold rounded-full">Verified Buyer</span>
-                            </div>
-                            <span class="text-[11px] text-gray-400">2 days ago</span>
-                        </div>
-                        <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading pt-0.5">Genuine Vedic Purity &amp; Zero Charcoal</h4>
-                        <p class="text-xs text-gray-600 leading-relaxed">
-                            I perform daily Chandi Path and Sandhya Vandana. Finding completely bambooless agarbatti with authentic Bhimseni camphor notes is rare. It cleanses the whole home atmosphere without producing any suffocating dark smoke.
-                        </p>
+                        <span class="text-[11px] text-gray-400">2 days ago</span>
                     </div>
+                    <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading pt-0.5">Mandi me itni authentic bambooless agarbatti pehli baar mili</h4>
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        Mandi me subah aarti ke time light karte hain aur pure ghar me shaam tak natural sandalwood aur camphor ki gentle fragrance rehti hai. Sabse achi baat zero dark smoke hai.
+                    </p>
+                </div>
 
-                    <div class="p-3.5 sm:p-4 rounded-[12px] border border-[#EAE3D9] bg-white space-y-1.5 shadow-2xs">
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center space-x-2">
-                                <div class="flex text-[#D38928] text-xs">
-                                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                                </div>
-                                <span class="text-xs font-bold text-[#121212] font-heading">Sunita Aggarwal</span>
-                                <span class="px-2 py-0.5 bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px] font-bold rounded-full">Verified Buyer</span>
+                <div class="p-4 sm:p-5 rounded-[14px] border border-[#EAE3D9] bg-white space-y-2 shadow-2xs">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <div class="flex text-[#D38928] text-sm sm:text-base">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                             </div>
-                            <span class="text-[11px] text-gray-400">5 days ago</span>
+                            <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading">अनिल डोगरा, कांगड़ा</span>
                         </div>
-                        <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading pt-0.5">The Free Ceramic Stand is So Beautiful!</h4>
-                        <p class="text-xs text-gray-600 leading-relaxed">
-                            Ordered the pack of 100 sticks and received the terracotta stand inside. The packaging is pure luxury and the fragrance fills our pooja mandir throughout the morning. Will definitely repurchase!
-                        </p>
+                        <span class="text-[11px] text-gray-400">4 days ago</span>
                     </div>
-                @endif
+                    <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading pt-0.5">बिल्कुल शुद्ध और बिना किसी काले धुएं के</h4>
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        कांगड़ा में हमारे घर में रोजाना पूजा होती है। शास्त्रों के अनुसार बांस जलाना वर्जित है, इसलिए हमने यह बैम्बूलेस मंगवाई। आंखों में कोई जलन नहीं होती और खुशबू बहुत ही दिव्य है।
+                    </p>
+                </div>
+
+                <div class="p-4 sm:p-5 rounded-[14px] border border-[#EAE3D9] bg-white space-y-2 shadow-2xs">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <div class="flex text-[#D38928] text-sm sm:text-base">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading">Sunil Thakur, Chamba</span>
+                        </div>
+                        <span class="text-[11px] text-gray-400">1 week ago</span>
+                    </div>
+                    <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading pt-0.5">Exceptional Quality &amp; Beautiful Ceramic Stand</h4>
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        Ordered the pack of 100 sticks from Chamba. The free artisanal holder is very elegant and the sticks burn for full 50 minutes. Truly chemical-free formulation.
+                    </p>
+                </div>
+
+                <div class="p-4 sm:p-5 rounded-[14px] border border-[#EAE3D9] bg-white space-y-2 shadow-2xs">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <div class="flex text-[#D38928] text-sm sm:text-base">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading">Meenakshi Verma, Bilaspur</span>
+                        </div>
+                        <span class="text-[11px] text-gray-400">1 week ago</span>
+                    </div>
+                    <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading pt-0.5">Bilaspur me 3 days me delivery aa gayi</h4>
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        Packaging luxury hai aur packaging kholte hi fresh flowers aur herbs ki natural mehak aati hai. Daily Sandhya Vandana ke liye permanent yahi use karenge.
+                    </p>
+                </div>
+
+                <div class="p-4 sm:p-5 rounded-[14px] border border-[#EAE3D9] bg-white space-y-2 shadow-2xs">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <div class="flex text-[#D38928] text-sm sm:text-base">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading">राजेश धीमान, हमीरपुर</span>
+                        </div>
+                        <span class="text-[11px] text-gray-400">2 weeks ago</span>
+                    </div>
+                    <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading pt-0.5">सिरदर्द से राहत और पवित्र वातावरण</h4>
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        पहले बाजार वाली चारकोल अगरबत्ती से कमरे में घुटन होती थी। इसमें केवल प्राकृतिक जड़ी-बूटियां और भीमसेनी कपूर है जो मन को शांत करता है।
+                    </p>
+                </div>
             </div>
 
         </div>

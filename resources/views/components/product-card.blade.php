@@ -87,9 +87,9 @@
         </span>
     </div>
 
-    <!-- Product Image Box with Smooth Hover Transition (10px border gap) -->
-    <div class="p-2.5 pb-0">
-        <div class="relative w-full aspect-square rounded-[12px] sm:rounded-[16px] overflow-hidden bg-[#FAF7F2]">
+    <!-- Product Image Box with Smooth Hover Transition (Larger & More Prominent) -->
+    <div class="p-1.5 sm:p-2 pb-0">
+        <div class="relative w-full aspect-square rounded-[14px] sm:rounded-[18px] overflow-hidden bg-[#FAF7F2]">
             <a href="{{ route('products.show', $product->slug) }}" class="block w-full h-full relative overflow-hidden">
                 <!-- Primary Image -->
                 <img 
@@ -107,7 +107,7 @@
             </a>
 
             <!-- Top Right Pack Info -->
-            <div class="absolute top-2 right-2 sm:top-3 sm:right-3 text-right pointer-events-none select-none leading-none z-10">
+            <div class="absolute top-2 right-2 sm:top-2.5 sm:right-2.5 text-right pointer-events-none select-none leading-none z-10">
                 <span class="text-[10px] sm:text-[11px] uppercase font-semibold text-gray-500 block">pack of</span>
                 <span class="text-xl sm:text-2xl font-black font-heading {{ $packColor }} block my-0.5">{{ $packCount }}</span>
                 <span class="text-[10px] sm:text-[11px] uppercase font-semibold text-gray-500 block">{{ $packUnit }}</span>
@@ -124,7 +124,7 @@
     </div>
 
     <!-- Product Card Content -->
-    <div class="p-3 sm:p-5 pt-2 sm:pt-4 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3.5">
+    <div class="p-3 sm:p-5 pt-2.5 sm:pt-4 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3.5">
         
         <div class="space-y-1">
             <h3 class="text-[15px] sm:text-xl font-bold font-serif text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
@@ -134,8 +134,8 @@
             </h3>
 
             <!-- 5 Star Golden Rating Strip -->
-            <div class="flex items-center space-x-1.5 text-[#D38928] text-xs">
-                <div class="flex text-xs">
+            <div class="flex items-center space-x-1.5 text-[#D38928]">
+                <div class="flex text-sm sm:text-base leading-none">
                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
                 <span class="text-xs text-gray-500 font-medium">({{ $reviewCount }})</span>

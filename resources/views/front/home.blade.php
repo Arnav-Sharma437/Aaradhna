@@ -926,58 +926,52 @@
                 @php
                     $row1Testimonials = [
                         [
-                            'name' => 'Pandit Radhe Shyam',
-                            'city' => 'Vrindavan Dham',
-                            'role' => 'Temple Priest',
-                            'initials' => 'PR',
+                            'name' => 'Pooja Sharma',
+                            'city' => 'Mandi, Himachal Pradesh',
+                            'initials' => 'PS',
                             'avatar_bg' => 'bg-[#D38928]',
-                            'product' => 'Pitambara Havan Cups',
-                            'quote' => 'I am a regular devotee of Mangalam products since 2 years. Very pure havan cups and sambrani. In temples, we strictly avoid toxic bamboo, and Mangalam is 100% compliant with sacred Agamas.'
+                            'product' => 'Chandan Saanjh',
+                            'quote' => 'Mandi me itni authentic bambooless agarbatti pehli baar try ki. Mandir me subah aarti ke baad shaam tak natural sandalwood aur camphor ki gentle fragrance rehti hai. Pure natural!'
                         ],
                         [
-                            'name' => 'Ananya Deshmukh',
-                            'city' => 'Pune, Maharashtra',
-                            'role' => 'Daily Sadhak',
+                            'name' => 'अनिल डोगरा',
+                            'city' => 'कांगड़ा, हिमाचल प्रदेश',
                             'initials' => 'AD',
                             'avatar_bg' => 'bg-[#831F2E]',
-                            'product' => 'Camphor Agarbatti',
-                            'quote' => 'We do daily morning Sandhya Aarti. Standard market incense sticks always gave us headaches and black soot. Mangalam agarbatti is 100% pure, natural, and creates a serene temple ambience.'
+                            'product' => 'Swarna Pushpa',
+                            'quote' => 'कांगड़ा में हमारे घर में रोजाना पूजा होती है। बिल्कुल शुद्ध धुआं है और आंखों में कोई जलन नहीं होती। शास्त्रों के अनुसार बिना बांस वाली अगरबत्ती से बहुत ही पवित्र अनुभव मिलता है।'
                         ],
                         [
-                            'name' => 'Ramesh Joshi',
-                            'city' => 'Varanasi, UP',
-                            'role' => 'Verified Devotee',
-                            'initials' => 'RJ',
+                            'name' => 'Sunil Thakur',
+                            'city' => 'Chamba, Himachal Pradesh',
+                            'initials' => 'ST',
                             'avatar_bg' => 'bg-[#3E2314]',
                             'product' => 'Devi Bambooless Pack',
-                            'quote' => 'Thank you so much for this pure product. Everyone in my family loves the sacred fragrance of the camphor sticks. Zero smoke irritation in eyes during morning aarti!'
+                            'quote' => 'Ordered the 100 sticks refill cylinder from Chamba. Exceptional quality and true chemical-free formulation. The complimentary handcrafted ceramic stand is very beautiful.'
                         ],
                         [
-                            'name' => 'Dr. Meenakshi Sundaram',
-                            'city' => 'Chennai, Tamil Nadu',
-                            'role' => 'Vedic Scholar',
-                            'initials' => 'MS',
+                            'name' => 'Meenakshi Verma',
+                            'city' => 'Bilaspur, Himachal Pradesh',
+                            'initials' => 'MV',
                             'avatar_bg' => 'bg-[#D38928]',
-                            'product' => 'Swarna Pushpa 100 Refill',
-                            'quote' => 'Knowing that bamboo burning is strictly forbidden in Sanatan scriptures, I was looking for authentic bambooless agarbatti. Mangalam delivers unmatched purity and ethical devotion.'
+                            'product' => 'Mogra Noor & Oudh',
+                            'quote' => 'Bilaspur me delivery 3 din me aa gayi. Packaging aur fragrance dono top notch hain. Bhimseni camphor aur mogra ke notes bilkul original aur calming hain.'
                         ],
                         [
-                            'name' => 'Gaurav Tandon',
-                            'city' => 'Lucknow, UP',
-                            'role' => 'Verified Devotee',
-                            'initials' => 'GT',
+                            'name' => 'राजेश धीमान',
+                            'city' => 'हमीरपुर, हिमाचल प्रदेश',
+                            'initials' => 'RD',
                             'avatar_bg' => 'bg-[#831F2E]',
-                            'product' => 'Chandan Saanjh Sticks',
-                            'quote' => 'The sandalwood fragrance is so calming. It fills our entire 3-story house with natural temple serenity within 15 minutes of lighting. Truly remarkable quality.'
+                            'product' => 'Bambooless Incense',
+                            'quote' => 'हमीरपुर से मंगवाया था। पहले बाजार वाली धूप से कमरे में भारीपन और सिरदर्द होता था, लेकिन इसमें सिर्फ शुद्ध जड़ी-बूटियों की महक है। बहुत ही शांत वातावरण बनता है।'
                         ],
                         [
-                            'name' => 'Sunita Singhania',
-                            'city' => 'Kolkata, WB',
-                            'role' => 'Devotional Homemaker',
-                            'initials' => 'SS',
+                            'name' => 'Dr. Shalini Katoch',
+                            'city' => 'Kangra, Himachal Pradesh',
+                            'initials' => 'SK',
                             'avatar_bg' => 'bg-[#3E2314]',
-                            'product' => 'Sacred Guggul Dhoop',
-                            'quote' => 'Purchased the Festive Havan Combo for Navratri pooja. The smoke is pure white and holy, smelling of real cow ghee, camphor, and guggul. Will never buy chemical sticks again.'
+                            'product' => 'Pitambara Havan Cups',
+                            'quote' => 'Being from Kangra, I always prefer clean, organic products for home prayer. Mangalam bambooless sticks emit gentle white smoke that keeps our living room fragrant and tranquil.'
                         ]
                     ];
                 @endphp
@@ -986,13 +980,8 @@
                 @foreach($row1Testimonials as $t)
                     <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[400px] bg-white rounded-[18px] p-5 sm:p-6 border border-[#EADBCC] shadow-xs hover:shadow-xl hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between">
                         <div class="space-y-3">
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center space-x-1 text-[#D38928] text-xs sm:text-sm">
-                                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                                </div>
-                                <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
-                                    {{ $t['role'] }}
-                                </span>
+                            <div class="flex items-center space-x-1 text-[#D38928] text-base sm:text-lg">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                             </div>
                             <p class="text-xs sm:text-[13px] text-[#2B1810] leading-relaxed italic font-medium pt-0.5">
                                 "{{ $t['quote'] }}"
@@ -1010,7 +999,6 @@
                             </div>
                             <div class="text-right hidden sm:block">
                                 <span class="text-[10px] uppercase tracking-wider text-[#965A15] font-semibold block">{{ $t['product'] }}</span>
-                                <span class="text-[10px] text-emerald-600 font-bold block">✓ Verified Devotee</span>
                             </div>
                         </div>
                     </div>
@@ -1020,13 +1008,8 @@
                 @foreach($row1Testimonials as $t)
                     <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[400px] bg-white rounded-[18px] p-5 sm:p-6 border border-[#EADBCC] shadow-xs hover:shadow-xl hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between" aria-hidden="true">
                         <div class="space-y-3">
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center space-x-1 text-[#D38928] text-xs sm:text-sm">
-                                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                                </div>
-                                <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
-                                    {{ $t['role'] }}
-                                </span>
+                            <div class="flex items-center space-x-1 text-[#D38928] text-base sm:text-lg">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                             </div>
                             <p class="text-xs sm:text-[13px] text-[#2B1810] leading-relaxed italic font-medium pt-0.5">
                                 "{{ $t['quote'] }}"
@@ -1044,7 +1027,6 @@
                             </div>
                             <div class="text-right hidden sm:block">
                                 <span class="text-[10px] uppercase tracking-wider text-[#965A15] font-semibold block">{{ $t['product'] }}</span>
-                                <span class="text-[10px] text-emerald-600 font-bold block">✓ Verified Devotee</span>
                             </div>
                         </div>
                     </div>
@@ -1062,58 +1044,52 @@
                 @php
                     $row2Testimonials = [
                         [
-                            'name' => 'Pooja Mishra',
-                            'city' => 'Ayodhya, UP',
-                            'role' => 'Verified Devotee',
-                            'initials' => 'PM',
+                            'name' => 'दीपक शर्मा',
+                            'city' => 'मंडी, हिमाचल प्रदेश',
+                            'initials' => 'DS',
                             'avatar_bg' => 'bg-[#831F2E]',
                             'product' => 'Divya Naagchampa',
-                            'quote' => 'Excellent aroma. I didn\'t feel like burning any other regular chemical stick after experiencing this. The luxury gift boxes are also perfect for festive gifting!'
+                            'quote' => 'मंडी के हमारे मंदिर में सुबह-शाम यही अगरबत्ती जलती है। घर का वातावरण एकदम शांत और सकारात्मक हो जाता है। बिना बांस के शुद्ध वैदिक खुशबू।'
                         ],
                         [
-                            'name' => 'Vikramaditya Rathore',
-                            'city' => 'Udaipur, Rajasthan',
-                            'role' => 'Meditation Sadhak',
-                            'initials' => 'VR',
+                            'name' => 'Pankaj Rana',
+                            'city' => 'Chamba, Himachal Pradesh',
+                            'initials' => 'PR',
                             'avatar_bg' => 'bg-[#D38928]',
                             'product' => '5-Fragrance Trial Pack',
-                            'quote' => 'Ordered the trial pack first and immediately subscribed for refill packs. Every fragrance—especially Camphor and Sandalwood—is ethereal and authentic.'
+                            'quote' => 'Chamba me thand ke time room me band space me bhi bina kisi suffocation ke itni pyari temple fragrance aati hai. Truly 100% natural and long burning.'
                         ],
                         [
-                            'name' => 'Virendra Sharma',
-                            'city' => 'Haridwar, Uttarakhand',
-                            'role' => 'Dhyan Practitioner',
-                            'initials' => 'VS',
+                            'name' => 'Kavita Sen',
+                            'city' => 'Bilaspur, Himachal Pradesh',
+                            'initials' => 'KS',
                             'avatar_bg' => 'bg-[#3E2314]',
-                            'product' => 'Bambooless Oudh Sticks',
-                            'quote' => 'The Bambooless Oudh and Chandan agarbatti create an instant meditative vibration in my morning meditation. Pure natural resins without any burning charcoal smell.'
+                            'product' => 'Royal Oudh & Chandan',
+                            'quote' => 'Bought the 5-pack festive bundle in Bilaspur. Every fragrance is distinct and long-lasting. Divine quality for daily morning prayers and meditation.'
                         ],
                         [
-                            'name' => 'Geeta Agarwal',
-                            'city' => 'Jaipur, Rajasthan',
-                            'role' => 'Verified Devotee',
-                            'initials' => 'GA',
+                            'name' => 'Vikas Jaswal',
+                            'city' => 'Hamirpur, Himachal Pradesh',
+                            'initials' => 'VJ',
                             'avatar_bg' => 'bg-[#831F2E]',
-                            'product' => 'Sambrani Cow Dung Cups',
-                            'quote' => 'Very easy to place order with pure natural aroma. The Havan cups are so convenient for our daily evening aarti. Highly recommend to every Hindu home!'
+                            'product' => 'Sambrani Havan Cups',
+                            'quote' => 'Hamirpur me daily Sandhya aarti ke liye best incense mila hai. Charcoal-free hone ki wajah se pure white ash banti hai jo mandir ko clean rakhti hai.'
                         ],
                         [
-                            'name' => 'Acharya Keshav Das',
-                            'city' => 'Mathura, UP',
-                            'role' => 'Gaushala Sevak',
-                            'initials' => 'AK',
+                            'name' => 'रोहन गुलेरिया',
+                            'city' => 'कांगड़ा, हिमाचल प्रदेश',
+                            'initials' => 'RG',
                             'avatar_bg' => 'bg-[#D38928]',
-                            'product' => 'Desi Gomaya Dhoop',
-                            'quote' => 'Knowing that indigenous Gaushalas are supported with every single purchase makes lighting these sticks a holy karma. Vedic purity combined with sacred seva.'
+                            'product' => 'Gulab Rooh Refill',
+                            'quote' => 'कांगड़ा धाम के पास रहने के कारण शुद्धता हमारे लिए बहुत जरूरी है। इस अगरबत्ती में प्राकृतिक फूल और चंदन का अर्क है जो मन को तुरंत शांति देता है।'
                         ],
                         [
-                            'name' => 'Shalini Iyer',
-                            'city' => 'Bengaluru, Karnataka',
-                            'role' => 'Yoga Acharya',
-                            'initials' => 'SI',
+                            'name' => 'Suman Lata',
+                            'city' => 'Mandi, Himachal Pradesh',
+                            'initials' => 'SL',
                             'avatar_bg' => 'bg-[#3E2314]',
-                            'product' => 'Kasturi Amber Incense',
-                            'quote' => 'During our daily morning Pranayama classes, we only light Mangalam pure agarbatti. Zero irritation to the respiratory tract and creates deep mental clarity.'
+                            'product' => 'Kasturi & Camphor',
+                            'quote' => 'Mandi se order kiya tha. Trial pack use karne ke baad 100 sticks ka pack re-order kiya. Jo bhi ghar aata hai sabhi puchte hain kaunsi divine agarbatti hai.'
                         ]
                     ];
                 @endphp
@@ -1122,13 +1098,8 @@
                 @foreach($row2Testimonials as $t)
                     <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[400px] bg-white rounded-[18px] p-5 sm:p-6 border border-[#EADBCC] shadow-xs hover:shadow-xl hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between">
                         <div class="space-y-3">
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center space-x-1 text-[#D38928] text-xs sm:text-sm">
-                                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                                </div>
-                                <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
-                                    {{ $t['role'] }}
-                                </span>
+                            <div class="flex items-center space-x-1 text-[#D38928] text-base sm:text-lg">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                             </div>
                             <p class="text-xs sm:text-[13px] text-[#2B1810] leading-relaxed italic font-medium pt-0.5">
                                 "{{ $t['quote'] }}"
@@ -1146,7 +1117,6 @@
                             </div>
                             <div class="text-right hidden sm:block">
                                 <span class="text-[10px] uppercase tracking-wider text-[#965A15] font-semibold block">{{ $t['product'] }}</span>
-                                <span class="text-[10px] text-emerald-600 font-bold block">✓ Verified Devotee</span>
                             </div>
                         </div>
                     </div>
@@ -1156,13 +1126,8 @@
                 @foreach($row2Testimonials as $t)
                     <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[400px] bg-white rounded-[18px] p-5 sm:p-6 border border-[#EADBCC] shadow-xs hover:shadow-xl hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between" aria-hidden="true">
                         <div class="space-y-3">
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center space-x-1 text-[#D38928] text-xs sm:text-sm">
-                                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                                </div>
-                                <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
-                                    {{ $t['role'] }}
-                                </span>
+                            <div class="flex items-center space-x-1 text-[#D38928] text-base sm:text-lg">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                             </div>
                             <p class="text-xs sm:text-[13px] text-[#2B1810] leading-relaxed italic font-medium pt-0.5">
                                 "{{ $t['quote'] }}"
@@ -1180,7 +1145,6 @@
                             </div>
                             <div class="text-right hidden sm:block">
                                 <span class="text-[10px] uppercase tracking-wider text-[#965A15] font-semibold block">{{ $t['product'] }}</span>
-                                <span class="text-[10px] text-emerald-600 font-bold block">✓ Verified Devotee</span>
                             </div>
                         </div>
                     </div>
