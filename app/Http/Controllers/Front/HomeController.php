@@ -17,48 +17,64 @@ class HomeController extends Controller
      */
     public function index(): View
     {
-        // 0. Active Dynamic Homepage Banners
-        $banners = HomepageBanner::where('is_active', true)
-            ->orderBy('sort_order', 'asc')
-            ->get();
+        // 0. Active Dynamic Homepage Banners (Safely guarded)
+        try {
+            $banners = HomepageBanner::where('is_active', true)
+                ->orderBy('sort_order', 'asc')
+                ->get();
+        } catch (\Throwable $e) {
+            $banners = collect();
+        }
 
         // 1. Bestsellers of the Month (Featured Collection)
-        $bestsellers = Product::where('status', 'active')
-            ->where('is_bestseller', true)
-            ->with(['category', 'primaryImage', 'images', 'variants', 'approvedReviews'])
-            ->take(8)
-            ->get();
-
-        if ($bestsellers->count() < 4) {
+        try {
             $bestsellers = Product::where('status', 'active')
+                ->where('is_bestseller', true)
                 ->with(['category', 'primaryImage', 'images', 'variants', 'approvedReviews'])
                 ->take(8)
                 ->get();
+
+            if ($bestsellers->count() < 4) {
+                $bestsellers = Product::where('status', 'active')
+                    ->with(['category', 'primaryImage', 'images', 'variants', 'approvedReviews'])
+                    ->take(8)
+                    ->get();
+            }
+        } catch (\Throwable $e) {
+            $bestsellers = collect();
         }
 
         // 2. Sacred Fragrance Categories
-        $categories = Category::where('is_active', true)
-            ->orderBy('sort_order')
-            ->take(4)
-            ->get();
-
-        // 3. New Launch & Refill Products
-        $newLaunches = Product::where('status', 'active')
-            ->where(function ($q) {
-                $q->where('slug', 'like', '%refill%')
-                  ->orWhere('slug', 'like', '%combo%')
-                  ->orWhere('is_featured', true);
-            })
-            ->with(['category', 'primaryImage', 'images', 'variants', 'approvedReviews'])
-            ->take(4)
-            ->get();
-
-        if ($newLaunches->count() < 4) {
-            $newLaunches = Product::where('status', 'active')
-                ->with(['category', 'primaryImage', 'images', 'variants', 'approvedReviews'])
-                ->inRandomOrder()
+        try {
+            $categories = Category::where('is_active', true)
+                ->orderBy('sort_order')
                 ->take(4)
                 ->get();
+        } catch (\Throwable $e) {
+            $categories = collect();
+        }
+
+        // 3. New Launch & Refill Products
+        try {
+            $newLaunches = Product::where('status', 'active')
+                ->where(function ($q) {
+                    $q->where('slug', 'like', '%refill%')
+                      ->orWhere('slug', 'like', '%combo%')
+                      ->orWhere('is_featured', true);
+                })
+                ->with(['category', 'primaryImage', 'images', 'variants', 'approvedReviews'])
+                ->take(4)
+                ->get();
+
+            if ($newLaunches->count() < 4) {
+                $newLaunches = Product::where('status', 'active')
+                    ->with(['category', 'primaryImage', 'images', 'variants', 'approvedReviews'])
+                    ->inRandomOrder()
+                    ->take(4)
+                    ->get();
+            }
+        } catch (\Throwable $e) {
+            $newLaunches = collect();
         }
 
         // 4. Testimonials (Featured customer reviews)
