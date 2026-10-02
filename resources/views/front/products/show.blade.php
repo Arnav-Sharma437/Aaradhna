@@ -742,7 +742,9 @@
             </div>
 
             <!-- Compact Reviews List -->
+            <!-- Compact Reviews List -->
             <div class="space-y-3.5">
+                <!-- Review 1 -->
                 <div class="p-4 sm:p-5 rounded-[14px] border border-[#EAE3D9] bg-white space-y-2 shadow-2xs">
                     <div class="flex items-center justify-between">
                         <div class="flex items-center space-x-2">
@@ -759,6 +761,7 @@
                     </p>
                 </div>
 
+                <!-- Review 2 -->
                 <div class="p-4 sm:p-5 rounded-[14px] border border-[#EAE3D9] bg-white space-y-2 shadow-2xs">
                     <div class="flex items-center justify-between">
                         <div class="flex items-center space-x-2">
@@ -775,52 +778,74 @@
                     </p>
                 </div>
 
-                <div class="p-4 sm:p-5 rounded-[14px] border border-[#EAE3D9] bg-white space-y-2 shadow-2xs">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center space-x-2">
-                            <div class="flex text-[#D38928] text-sm sm:text-base">
-                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                <!-- Hidden Extra Reviews (Toggled by Read More button) -->
+                <div id="extra-product-reviews" class="hidden space-y-3.5 transition-all duration-300">
+                    <!-- Review 3 -->
+                    <div class="p-4 sm:p-5 rounded-[14px] border border-[#EAE3D9] bg-white space-y-2 shadow-2xs">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <div class="flex text-[#D38928] text-sm sm:text-base">
+                                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading">सुरेश चंदेल, बिलासपुर</span>
                             </div>
-                            <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading">सुरेश चंदेल, बिलासपुर</span>
+                            <span class="text-[11px] text-gray-400">5 days ago</span>
                         </div>
-                        <span class="text-[11px] text-gray-400">5 days ago</span>
+                        <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading pt-0.5">बिलासपुर में 3 दिन में सुरक्षित डिलीवरी मिली</h4>
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            100 स्टिक्स वाला पैक मंगाया था। पैकेजिंग बहुत ही सुंदर और मजबूत है। जलने का समय पूरा 50 मिनट रहता है और सफेद शुद्ध भस्म बनती है।
+                        </p>
                     </div>
-                    <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading pt-0.5">बिलासपुर में 3 दिन में सुरक्षित डिलीवरी मिली</h4>
-                    <p class="text-xs text-gray-600 leading-relaxed">
-                        100 स्टिक्स वाला पैक मंगाया था। पैकेजिंग बहुत ही सुंदर और मजबूत है। जलने का समय पूरा 50 मिनट रहता है और सफेद शुद्ध भस्म बनती है।
-                    </p>
+
+                    <!-- Review 4 -->
+                    <div class="p-4 sm:p-5 rounded-[14px] border border-[#EAE3D9] bg-white space-y-2 shadow-2xs">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <div class="flex text-[#D38928] text-sm sm:text-base">
+                                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading">Ritu Mahajan, Chamba</span>
+                            </div>
+                            <span class="text-[11px] text-gray-400">1 week ago</span>
+                        </div>
+                        <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading pt-0.5">No coughing or throat irritation in cold weather</h4>
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            In Chamba during winter months, burning ordinary incense used to cause coughing. Mangalam bambooless sticks are pure bliss! Subtle, premium fragrance that lasts all evening.
+                        </p>
+                    </div>
+
+                    <!-- Review 5 -->
+                    <div class="p-4 sm:p-5 rounded-[14px] border border-[#EAE3D9] bg-white space-y-2 shadow-2xs">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <div class="flex text-[#D38928] text-sm sm:text-base">
+                                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading">अमित कटोच, हमीरपुर</span>
+                            </div>
+                            <span class="text-[11px] text-gray-400">2 weeks ago</span>
+                        </div>
+                        <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading pt-0.5">शास्त्र सम्मत बिना बांस की असली अगरबत्ती</h4>
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            हमीरपुर से ऑर्डर किया था। पूजा में बांस जलाना हमारे यहां वर्जित मानते हैं। यह पूरी तरह से वेदिक विधि से बनी है। अब हम केवल यही मंगवाते हैं।
+                        </p>
+                    </div>
                 </div>
 
-                <div class="p-4 sm:p-5 rounded-[14px] border border-[#EAE3D9] bg-white space-y-2 shadow-2xs">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center space-x-2">
-                            <div class="flex text-[#D38928] text-sm sm:text-base">
-                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                            </div>
-                            <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading">Ritu Mahajan, Chamba</span>
-                        </div>
-                        <span class="text-[11px] text-gray-400">1 week ago</span>
-                    </div>
-                    <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading pt-0.5">No coughing or throat irritation in cold weather</h4>
-                    <p class="text-xs text-gray-600 leading-relaxed">
-                        In Chamba during winter months, burning ordinary incense used to cause coughing. Mangalam bambooless sticks are pure bliss! Subtle, premium fragrance that lasts all evening.
-                    </p>
-                </div>
-
-                <div class="p-4 sm:p-5 rounded-[14px] border border-[#EAE3D9] bg-white space-y-2 shadow-2xs">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center space-x-2">
-                            <div class="flex text-[#D38928] text-sm sm:text-base">
-                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                            </div>
-                            <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading">अमित कटोच, हमीरपुर</span>
-                        </div>
-                        <span class="text-[11px] text-gray-400">2 weeks ago</span>
-                    </div>
-                    <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading pt-0.5">शास्त्र सम्मत बिना बांस की असली अगरबत्ती</h4>
-                    <p class="text-xs text-gray-600 leading-relaxed">
-                        हमीरपुर से ऑर्डर किया था। पूजा में बांस जलाना हमारे यहां वर्जित मानते हैं। यह पूरी तरह से वेदिक विधि से बनी है। अब हम केवल यही मंगवाते हैं।
-                    </p>
+                <!-- Read More Toggle Button -->
+                <div class="text-center pt-2">
+                    <button 
+                        type="button" 
+                        id="toggle-extra-reviews-btn"
+                        class="inline-flex items-center space-x-1.5 px-5 py-2.5 rounded-full border border-[#D38928] text-[#965A15] bg-[#FAF8F5] hover:bg-[#D38928] hover:text-white transition-all text-xs font-bold font-heading shadow-2xs cursor-pointer"
+                        onclick="
+                            const extra = document.getElementById('extra-product-reviews');
+                            const isHidden = extra.classList.toggle('hidden');
+                            this.innerHTML = isHidden ? 'Read More Reviews (3) ▾' : 'Show Less ▴';
+                        "
+                    >
+                        <span>Read More Reviews (3) ▾</span>
+                    </button>
                 </div>
             </div>
 
