@@ -186,34 +186,35 @@
                     </svg>
                 </button>
 
-                <!-- 2. Customer Account (Hidden on small screens) -->
+                <!-- 2. Customer Account (Visible on all screens) -->
                 <a 
                     href="{{ auth()->check() ? route('account.index') : route('account.login') }}" 
-                    class="p-2 text-[#1F1F1F] hover:text-[#831F2E] transition-colors hidden md:inline-flex items-center justify-center shrink-0 rounded-full hover:bg-stone-50 relative group"
+                    class="p-1.5 sm:p-2 text-[#1F1F1F] hover:text-[#831F2E] transition-colors inline-flex items-center justify-center shrink-0 rounded-full hover:bg-stone-50 relative group"
                     aria-label="Customer Account"
                     title="{{ auth()->check() ? 'My Devotee Account (' . auth()->user()->name . ')' : 'Sign In to Devotee Account' }}"
                 >
-                    <svg class="w-6 h-6 sm:w-[25px] sm:h-[25px] {{ auth()->check() ? 'text-[#831F2E]' : '' }}" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
-                    </svg>
+                    <div class="relative">
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6 {{ auth()->check() ? 'text-[#831F2E]' : '' }}" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                        </svg>
+                        <span class="absolute -top-1 -right-1 text-[#D38928] text-[10px] leading-none font-bold">⚡</span>
+                    </div>
                 </a>
 
-
-
-                <!-- 4. Shopping Bag / Cart with live badge -->
+                <!-- 3. Shopping Bag / Cart with live badge -->
                 <a 
                     href="{{ route('cart.index') }}" 
                     id="cart-drawer-trigger"
-                    class="p-2 text-[#1F1F1F] hover:text-[#831F2E] transition-colors relative inline-flex items-center justify-center shrink-0 cursor-pointer rounded-full hover:bg-stone-50"
+                    class="p-1.5 sm:p-2 text-[#1F1F1F] hover:text-[#831F2E] transition-colors relative inline-flex items-center justify-center shrink-0 cursor-pointer rounded-full hover:bg-stone-50"
                     aria-label="Cart"
                 >
-                    <svg class="w-6 h-6 sm:w-[25px] sm:h-[25px]" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                    <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
                     </svg>
                     
                     <span 
                         id="header-cart-badge"
-                        class="absolute top-1 right-0.5 bg-[#831F2E] text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center leading-none ring-2 ring-white"
+                        class="absolute top-0.5 right-0 bg-[#121212] text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center leading-none ring-1 ring-white"
                     >
                         {{ session('cart_count', 0) }}
                     </span>
@@ -221,6 +222,30 @@
 
             </div>
 
+        </div>
+    </div>
+
+    <!-- Mobile Horizontal Quick Category & Offer Pills Strip (Matches Reference Screenshot) -->
+    <div class="lg:hidden w-full border-t border-[#EAE3D9]/70 bg-[#FFFDF9] py-2 px-3 overflow-x-auto scrollbar-none">
+        <div class="flex items-center space-x-2 whitespace-nowrap text-xs font-semibold">
+            <a href="{{ route('bundles.buy2get1') }}" class="px-3.5 py-1 rounded-full border border-[#D38928] bg-white text-[#965A15] hover:bg-[#D38928] hover:text-white transition-colors shrink-0 shadow-2xs font-heading">
+                Buy 2 Get 1 free
+            </a>
+            <a href="{{ route('collections.show', 'bambooless') }}" class="px-3.5 py-1 rounded-full border border-[#D38928] bg-white text-[#121212] hover:bg-[#D38928] hover:text-white transition-colors shrink-0 shadow-2xs">
+                Premium Incense
+            </a>
+            <a href="{{ route('collections.show', 'dhoop-cones') }}" class="px-3.5 py-1 rounded-full border border-[#D38928] bg-white text-[#121212] hover:bg-[#D38928] hover:text-white transition-colors shrink-0 shadow-2xs">
+                Dhoop Cones
+            </a>
+            <a href="{{ route('bundles.trial-packs') }}" class="px-3.5 py-1 rounded-full border border-[#D38928] bg-white text-[#121212] hover:bg-[#D38928] hover:text-white transition-colors shrink-0 shadow-2xs">
+                Trial Packs @ 799
+            </a>
+            <a href="{{ route('collections.show', 'havan-cups') }}" class="px-3.5 py-1 rounded-full border border-[#D38928] bg-white text-[#121212] hover:bg-[#D38928] hover:text-white transition-colors shrink-0 shadow-2xs">
+                Havan Cups
+            </a>
+            <a href="{{ route('products.pitambara') }}" class="px-3.5 py-1 rounded-full border border-[#831F2E] bg-white text-[#831F2E] hover:bg-[#831F2E] hover:text-white transition-colors shrink-0 shadow-2xs">
+                Pitambara Special
+            </a>
         </div>
     </div>
 </header>

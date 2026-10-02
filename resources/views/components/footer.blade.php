@@ -91,11 +91,14 @@
             </div>
 
             <!-- Col 2: SHOP (Header Menus + Dropdowns) (3 Cols) -->
-            <div class="lg:col-span-3 space-y-3.5">
-                <h4 class="text-xs sm:text-sm font-bold uppercase tracking-[0.15em] text-[#F6DAA8] font-heading">
-                    SHOP
-                </h4>
-                <ul class="space-y-2.5 text-xs sm:text-[13px] text-white/85">
+            <div class="lg:col-span-3 border-b border-white/10 md:border-b-0 pb-3 md:pb-0">
+                <button type="button" class="footer-accordion-btn w-full flex items-center justify-between py-2 md:py-0 text-left focus:outline-none cursor-pointer md:cursor-default" data-target="footer-shop-menu">
+                    <h4 class="text-xs sm:text-sm font-bold uppercase tracking-[0.15em] text-[#F6DAA8] font-heading">
+                        SHOP
+                    </h4>
+                    <span class="footer-accordion-icon text-[#F6DAA8] text-lg font-bold md:hidden leading-none transition-transform duration-200">+</span>
+                </button>
+                <ul id="footer-shop-menu" class="footer-accordion-content hidden md:block space-y-2.5 text-xs sm:text-[13px] text-white/85 pt-2 md:pt-3.5">
                     <li>
                         <a href="{{ route('collections.show', 'bambooless') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
                             Bambooless
@@ -125,11 +128,14 @@
             </div>
 
             <!-- Col 3: ABOUT (About Us & Contact Us only) (2 Cols) -->
-            <div class="lg:col-span-2 space-y-3.5">
-                <h4 class="text-xs sm:text-sm font-bold uppercase tracking-[0.15em] text-[#F6DAA8] font-heading">
-                    ABOUT
-                </h4>
-                <ul class="space-y-2.5 text-xs sm:text-[13px] text-white/85">
+            <div class="lg:col-span-2 border-b border-white/10 md:border-b-0 pb-3 md:pb-0">
+                <button type="button" class="footer-accordion-btn w-full flex items-center justify-between py-2 md:py-0 text-left focus:outline-none cursor-pointer md:cursor-default" data-target="footer-about-menu">
+                    <h4 class="text-xs sm:text-sm font-bold uppercase tracking-[0.15em] text-[#F6DAA8] font-heading">
+                        ABOUT
+                    </h4>
+                    <span class="footer-accordion-icon text-[#F6DAA8] text-lg font-bold md:hidden leading-none transition-transform duration-200">+</span>
+                </button>
+                <ul id="footer-about-menu" class="footer-accordion-content hidden md:block space-y-2.5 text-xs sm:text-[13px] text-white/85 pt-2 md:pt-3.5">
                     <li>
                         <a href="{{ route('pages.about') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
                             About Us
@@ -144,11 +150,14 @@
             </div>
 
             <!-- Col 4: NEED HELP (3 Cols) -->
-            <div class="lg:col-span-3 space-y-3.5">
-                <h4 class="text-xs sm:text-sm font-bold uppercase tracking-[0.15em] text-[#F6DAA8] font-heading">
-                    NEED HELP
-                </h4>
-                <ul class="space-y-2.5 text-xs sm:text-[13px] text-white/85">
+            <div class="lg:col-span-3 border-b border-white/10 md:border-b-0 pb-3 md:pb-0">
+                <button type="button" class="footer-accordion-btn w-full flex items-center justify-between py-2 md:py-0 text-left focus:outline-none cursor-pointer md:cursor-default" data-target="footer-help-menu">
+                    <h4 class="text-xs sm:text-sm font-bold uppercase tracking-[0.15em] text-[#F6DAA8] font-heading">
+                        NEED HELP
+                    </h4>
+                    <span class="footer-accordion-icon text-[#F6DAA8] text-lg font-bold md:hidden leading-none transition-transform duration-200">+</span>
+                </button>
+                <ul id="footer-help-menu" class="footer-accordion-content hidden md:block space-y-2.5 text-xs sm:text-[13px] text-white/85 pt-2 md:pt-3.5">
                     <li>
                         <a href="{{ auth()->check() ? route('account.index', ['tab' => 'orders']) : route('account.login') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
                             Track Your Order
@@ -200,3 +209,27 @@
 
     </div>
 </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const footerBtns = document.querySelectorAll('.footer-accordion-btn');
+        footerBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (window.innerWidth >= 768) return; // Only mobile accordion
+                const targetId = btn.getAttribute('data-target');
+                const content = document.getElementById(targetId);
+                const icon = btn.querySelector('.footer-accordion-icon');
+                if (content) {
+                    const isHidden = content.classList.contains('hidden');
+                    if (isHidden) {
+                        content.classList.remove('hidden');
+                        if (icon) icon.textContent = '−';
+                    } else {
+                        content.classList.add('hidden');
+                        if (icon) icon.textContent = '+';
+                    }
+                }
+            });
+        });
+    });
+</script>

@@ -102,11 +102,11 @@
         <svg class="w-5 h-5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
     </button>
 
-    <!-- Carousel Pagination Dots (Mobile inside banner at bottom, Desktop below banner) -->
+    <!-- Carousel Pagination Dots (Below Banner on both Mobile & Desktop) -->
     @php
         $slideCount = (isset($banners) && $banners->isNotEmpty()) ? $banners->count() : 3;
     @endphp
-    <div class="absolute bottom-3.5 left-1/2 -translate-x-1/2 z-20 flex md:static md:translate-x-0 md:py-3.5 md:bg-white justify-center items-center space-x-2 sm:space-x-2.5" id="hero-slider-dots">
+    <div class="flex py-3 sm:py-3.5 bg-white justify-center items-center space-x-2 sm:space-x-2.5" id="hero-slider-dots">
         @for($i = 0; $i < $slideCount; $i++)
             <button type="button" class="{{ $i === 0 ? 'w-7 sm:w-8 h-2 rounded-[10px] bg-[#D38928]' : 'w-2.5 h-2 rounded-[10px] bg-[#1F1F1F]/25 hover:bg-[#1F1F1F]/60' }} transition-all duration-300 cursor-pointer" data-index="{{ $i }}" aria-label="Slide {{ $i + 1 }}"></button>
         @endfor
@@ -117,20 +117,17 @@
 
 
 <!-- ========================================================================= -->
-<!-- 2. BESTSELLER OF THE MONTH (Mobile Horizontal Slider + 4+4 Load More)     -->
+<!-- 2. BESTSELLER OF THE MONTH (All 8 Products in Mobile Slider & Desktop Grid) -->
 <!-- ========================================================================= -->
-<section class="py-14 sm:py-20 bg-white border-b border-[#EAE3D9] overflow-hidden">
-    <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
+<section class="py-12 sm:py-20 bg-white border-b border-[#EAE3D9] overflow-hidden">
+    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
         
-        <!-- Section Header with Subtitle -->
-        <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-12 space-y-2">
+        <!-- Section Header -->
+        <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12 space-y-1.5">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ PURE VEDIC BLESSINGS ✦</span>
             <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#121212] font-heading tracking-tight leading-tight">
                 Bestseller of the Month
             </h2>
-            <p class="text-sm sm:text-base text-gray-600">
-                Pure and special pooja essentials, carefully made for your <br>everyday morning and evening pooja.
-            </p>
         </div>
 
         <!-- Bestseller Section Container with Mobile Slider Arrows -->
@@ -344,12 +341,8 @@
                     </div>
                 </div>
 
-                <!-- ================================================================= -->
-                <!-- 4 EXTRA PRODUCTS REVEALED UPON CLICKING LOAD MORE                -->
-                <!-- ================================================================= -->
-
                 <!-- Card 5: Divya Naagchampa (Sticks) -->
-                <div class="bestseller-extra-card hidden product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
+                <div class="product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
                     <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
                         <span class="inline-flex items-center space-x-1 bg-white px-3 sm:px-4 py-0.5 rounded-full border border-[#D38928] text-[10px] sm:text-[11px] font-bold tracking-widest text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading">
                             <span class="text-[#D38928] text-xs">✨</span>
@@ -392,7 +385,7 @@
                 </div>
 
                 <!-- Card 6: Mogra Noor (Sticks) -->
-                <div class="bestseller-extra-card hidden product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
+                <div class="product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
                     <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
                         <span class="inline-flex items-center space-x-1 bg-white px-3 sm:px-4 py-0.5 rounded-full border border-[#D38928] text-[10px] sm:text-[11px] font-bold tracking-widest text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading">
                             <span class="text-[#D38928] text-xs">✨</span>
@@ -435,7 +428,7 @@
                 </div>
 
                 <!-- Card 7: Gulab Rooh (Sticks) -->
-                <div class="bestseller-extra-card hidden product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
+                <div class="product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
                     <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
                         <span class="inline-flex items-center space-x-1 bg-white px-3 sm:px-4 py-0.5 rounded-full border border-[#D38928] text-[10px] sm:text-[11px] font-bold tracking-widest text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading">
                             <span class="text-[#D38928] text-xs">✨</span>
@@ -478,7 +471,7 @@
                 </div>
 
                 <!-- Card 8: Lavender Veda (Sticks) -->
-                <div class="bestseller-extra-card hidden product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
+                <div class="product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
                     <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
                         <span class="inline-flex items-center space-x-1 bg-white px-3 sm:px-4 py-0.5 rounded-full border border-[#D38928] text-[10px] sm:text-[11px] font-bold tracking-widest text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading">
                             <span class="text-[#D38928] text-xs">✨</span>
@@ -523,24 +516,11 @@
             </div>
         </div>
 
-        <!-- Dynamic Action: Simple Load More Text -> Changes to View All Products Button (Only Desktop) -->
-        <div class="mt-8 sm:mt-10 text-center hidden sm:block">
-            <!-- 1. Simple Load More Text Action -->
-            <button 
-                type="button" 
-                id="bestseller-load-more-btn"
-                class="inline-flex items-center space-x-1.5 text-xs sm:text-sm font-bold text-[#D38928] hover:text-[#965A15] border-b-2 border-[#D38928] hover:border-[#965A15] pb-0.5 tracking-wider transition-all duration-200 cursor-pointer font-heading capitalize group"
-            >
-                <span>Load More</span>
-                <svg class="w-3.5 h-3.5 group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-            </button>
-
-            <!-- 2. View All Products Button (Appears after Load More is clicked) -->
+        <!-- Dynamic Action: View All Products Button -->
+        <div class="mt-8 sm:mt-10 text-center">
             <a 
                 href="{{ route('collections.show', 'all') }}" 
-                id="bestseller-view-all-btn"
-                style="display: none;"
-                class="hover:opacity-95 active:scale-95 transition-all duration-200 transform hover:-translate-y-0.5 cursor-pointer max-w-[180px] sm:max-w-[200px] mx-auto text-center"
+                class="hover:opacity-95 active:scale-95 transition-all duration-200 transform hover:-translate-y-0.5 cursor-pointer max-w-[180px] sm:max-w-[200px] mx-auto text-center inline-block"
                 aria-label="Shop All Products"
             >
                 <img 
@@ -613,23 +593,20 @@
     <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
         
         <!-- Section Header -->
-        <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16 space-y-2">
+        <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-16 space-y-1.5">
             <span class="text-[11px] sm:text-xs font-bold uppercase tracking-[0.3em] text-[#D38928] font-heading">
                 ✦ 100% NATURAL • CHARCOAL FREE ✦
             </span>
             <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#2B1810] font-heading tracking-tight capitalize leading-tight">
                 Product Categories
             </h2>
-            <p class="text-xs sm:text-sm text-gray-600 max-w-md mx-auto">
-                Handcrafted from sacred temple flowers &amp; pure living resins for divine daily rituals.
-            </p>
         </div>
 
-        <!-- 4 Big Single-Product Category Circles (Spanning full container width) -->
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 w-full">
+        <!-- 4 Big Single-Product Category Circles (Mobile Swipeable Slider + Desktop Grid) -->
+        <div class="flex sm:grid overflow-x-auto sm:overflow-visible scrollbar-none snap-x snap-mandatory sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 pb-3 sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0 w-full">
             
             <!-- Category 1: Single Bamboo-less Dhoop Stick -->
-            <div class="group flex flex-col items-center text-center space-y-3 sm:space-y-4">
+            <div class="w-[160px] sm:w-auto shrink-0 snap-start group flex flex-col items-center text-center space-y-3 sm:space-y-4">
                 <a href="{{ route('collections.show', 'bambooless') }}" class="block relative w-full max-w-[200px] sm:max-w-[250px] lg:max-w-[280px] aspect-square rounded-full p-2 bg-white border border-[#EADBCC] hover:border-[#D38928] group-hover:scale-105 transition-all duration-500 cursor-pointer">
                     <div class="w-full h-full rounded-full overflow-hidden bg-white p-1 sm:p-2 flex items-center justify-center relative">
                         <img 
@@ -652,7 +629,7 @@
             </div>
 
             <!-- Category 2: Single Dhoop Cone -->
-            <div class="group flex flex-col items-center text-center space-y-3 sm:space-y-4">
+            <div class="w-[160px] sm:w-auto shrink-0 snap-start group flex flex-col items-center text-center space-y-3 sm:space-y-4">
                 <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block relative w-full max-w-[200px] sm:max-w-[250px] lg:max-w-[280px] aspect-square rounded-full p-2 bg-white border border-[#EADBCC] hover:border-[#D38928] group-hover:scale-105 transition-all duration-500 cursor-pointer">
                     <div class="w-full h-full rounded-full overflow-hidden bg-white p-1 sm:p-2 flex items-center justify-center relative">
                         <img 
@@ -675,7 +652,7 @@
             </div>
 
             <!-- Category 3: Single 100% Organic Havan Cup -->
-            <div class="group flex flex-col items-center text-center space-y-3 sm:space-y-4">
+            <div class="w-[160px] sm:w-auto shrink-0 snap-start group flex flex-col items-center text-center space-y-3 sm:space-y-4">
                 <a href="{{ route('collections.show', 'havan-cups') }}" class="block relative w-full max-w-[200px] sm:max-w-[250px] lg:max-w-[280px] aspect-square rounded-full p-2 bg-white border border-[#EADBCC] hover:border-[#D38928] group-hover:scale-105 transition-all duration-500 cursor-pointer">
                     <div class="w-full h-full rounded-full overflow-hidden bg-white p-1 sm:p-2 flex items-center justify-center relative">
                         <img 
@@ -698,7 +675,7 @@
             </div>
 
             <!-- Category 4: Manglam Pitambara Havan Pack -->
-            <div class="group flex flex-col items-center text-center space-y-3 sm:space-y-4">
+            <div class="w-[160px] sm:w-auto shrink-0 snap-start group flex flex-col items-center text-center space-y-3 sm:space-y-4">
                 <a href="{{ route('products.pitambara') }}" class="block relative w-full max-w-[200px] sm:max-w-[250px] lg:max-w-[280px] aspect-square rounded-full p-2 bg-white border border-[#EADBCC] hover:border-[#D38928] group-hover:scale-105 transition-all duration-500 cursor-pointer">
                     <div class="w-full h-full rounded-full overflow-hidden bg-white p-1 sm:p-2 flex items-center justify-center relative">
                         <img 
@@ -731,7 +708,7 @@
 <section class="w-full bg-white overflow-hidden select-none">
     <a href="{{ route('bundles.trial-packs') }}" class="block w-full group focus:outline-none">
         <picture class="block w-full">
-            <source media="(max-width: 640px)" srcset="{{ asset('assets/images/Banner 9.jpg') }}">
+            <source media="(max-width: 640px)" srcset="{{ asset('assets/images/festive-offer-mobile-banner.png') }}">
             <img 
                 src="{{ asset('assets/images/Banner 9.jpg') }}" 
                 alt="Festive Collection - 5 Divine Essentials at just ₹799 - Manglam" 
@@ -750,17 +727,14 @@
 <!-- ========================================================================= -->
 <!-- 6. DAILY DEVOTIONAL RITUALS (Exact Match to User Screenshot Standard) -->
 <!-- ========================================================================= -->
-<section class="py-16 sm:py-24 bg-white border-b border-[#EAE3D9]">
+<section class="py-12 sm:py-24 bg-white border-b border-[#EAE3D9]">
     <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
         
-        <div class="text-center max-w-2xl mx-auto mb-12 space-y-2">
+        <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12 space-y-1.5">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ DAILY RITUAL GUIDES ✦</span>
             <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#121212] font-heading tracking-tight leading-tight">
                 Devotional Moments of Peace
             </h2>
-            <p class="text-sm sm:text-base text-gray-600">
-                Tailored sacred blends for every auspicious hour of your day.
-            </p>
         </div>
 
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4 lg:gap-5">
@@ -949,18 +923,15 @@
 <!-- ========================================================================= -->
 <!-- 5. DEVOTEE TESTIMONIALS (2-Row Continuous Smooth Marquee Ticker)         -->
 <!-- ========================================================================= -->
-<section class="py-14 sm:py-20 bg-white border-b border-[#EAE3D9] overflow-hidden select-none" id="testimonials-marquee-section">
+<section class="py-12 sm:py-20 bg-white border-b border-[#EAE3D9] overflow-hidden select-none" id="testimonials-marquee-section">
     <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
         
         <!-- Header -->
-        <div class="text-center max-w-2xl mx-auto space-y-2 mb-8 sm:mb-12">
+        <div class="text-center max-w-2xl mx-auto space-y-1.5 mb-8 sm:mb-12">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ 50,000+ BLESSED HOMES ✦</span>
             <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#121212] font-heading tracking-tight leading-tight">
                 Devotee Experiences
             </h2>
-            <p class="text-sm sm:text-base text-gray-600">
-                Verified reviews from families, yoga practitioners &amp; temple priests across sacred India.
-            </p>
         </div>
 
         <!-- 2 Continuous Scrolling Rows with Left & Right Gradient Fade Overlays -->
@@ -1193,34 +1164,34 @@
 </section>
 
 <!-- ========================================================================= -->
-<!-- 6. ROOTED IN PURITY (Rich Vedic Patterned Section & 3 Crisp Premium Cards)-->
+<!-- 6. ROOTED IN PURITY (Rich Vedic Patterned Section & 3 Compact Cards in Single Row) -->
 <!-- ========================================================================= -->
-<section class="py-14 sm:py-20 border-b border-[#EAE3D9] select-none font-body relative overflow-hidden bg-[#C85A17] bg-cover bg-center" style="background-image: url('{{ asset('assets/images/rooted-in-purity-bg.png') }}'); background-size: cover; background-position: center;">
+<section class="py-10 sm:py-20 border-b border-[#EAE3D9] select-none font-body relative overflow-hidden bg-[#C85A17] bg-cover bg-center" style="background-image: url('{{ asset('assets/images/rooted-in-purity-bg.png') }}'); background-size: cover; background-position: center;">
     
     <!-- Subtle Warm Gradient Overlay for Depth -->
     <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/30 pointer-events-none"></div>
 
-    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px] relative z-10">
+    <div class="w-full max-w-[1440px] mx-auto px-3 sm:px-8 lg:px-[40px] relative z-10">
         
         <!-- Clean Luxury Header -->
-        <div class="text-center max-w-xl mx-auto mb-8 sm:mb-12">
-            <div class="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-white/90 backdrop-blur-xs border border-white/40 text-[#831F2E] shadow-sm mb-3">
+        <div class="text-center max-w-xl mx-auto mb-6 sm:mb-12">
+            <div class="inline-flex items-center space-x-1.5 sm:space-x-2 px-3 py-0.5 sm:px-3.5 sm:py-1 rounded-full bg-white/90 backdrop-blur-xs border border-white/40 text-[#831F2E] shadow-sm mb-2 sm:mb-3">
                 <span class="w-1.5 h-1.5 rounded-full bg-[#831F2E]"></span>
-                <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.2em] font-heading">✦ 100% SATTVIK SAMAGRI ✦</span>
+                <span class="text-[9px] sm:text-[11px] font-bold uppercase tracking-[0.2em] font-heading">✦ 100% SATTVIK SAMAGRI ✦</span>
             </div>
-            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white font-heading tracking-tight drop-shadow-md">
+            <h2 class="text-xl sm:text-3xl lg:text-4xl font-bold text-white font-heading tracking-tight drop-shadow-md">
                 Rooted in Purity
             </h2>
         </div>
 
-        <!-- 3 Elegant Rectangular Cards -->
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-7 max-w-4xl mx-auto">
+        <!-- 3 Elegant Rectangular Cards in Single Row on all screens -->
+        <div class="grid grid-cols-3 gap-2 sm:gap-6 max-w-4xl mx-auto">
             
             <!-- Card 1: Ancient Recipes -->
-            <div class="bg-white rounded-[16px] sm:rounded-[20px] py-10 px-6 sm:py-12 sm:px-8 flex flex-col items-center justify-center text-center shadow-lg hover:shadow-2xl border border-white/60 hover:-translate-y-1 transition-all duration-300 group">
+            <div class="bg-white rounded-[12px] sm:rounded-[20px] py-4 px-2 sm:py-10 sm:px-6 flex flex-col items-center justify-center text-center shadow-md sm:shadow-lg border border-white/60 hover:-translate-y-1 transition-all duration-300 group">
                 <!-- Circular Line-Art Icon (Preserved & Enhanced) -->
-                <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full border-2 border-[#121212] bg-[#FAF5EE] group-hover:bg-[#FFF] flex items-center justify-center text-[#121212] shadow-xs transition-colors">
-                    <svg class="w-14 h-14 sm:w-16 sm:h-16" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <div class="w-12 h-12 sm:w-24 sm:h-24 rounded-full border sm:border-2 border-[#121212] bg-[#FAF5EE] group-hover:bg-[#FFF] flex items-center justify-center text-[#121212] shadow-xs transition-colors">
+                    <svg class="w-6 h-6 sm:w-12 sm:h-12" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                         <!-- Mortar Bowl -->
                         <path d="M16 34h32c0 10-7.2 18-16 18s-16-8-16-18Z"/>
                         <path d="M24 52h16"/>
@@ -1233,16 +1204,16 @@
                     </svg>
                 </div>
                 <!-- Clean Label -->
-                <h3 class="text-base sm:text-lg font-serif font-bold text-[#121212] mt-5 tracking-wide">
+                <h3 class="text-[11px] sm:text-base lg:text-lg font-serif font-bold text-[#121212] mt-2 sm:mt-4 tracking-tight sm:tracking-wide leading-tight">
                     Ancient Recipes
                 </h3>
             </div>
 
             <!-- Card 2: Purest Ingredients -->
-            <div class="bg-white rounded-[16px] sm:rounded-[20px] py-10 px-6 sm:py-12 sm:px-8 flex flex-col items-center justify-center text-center shadow-lg hover:shadow-2xl border border-white/60 hover:-translate-y-1 transition-all duration-300 group">
+            <div class="bg-white rounded-[12px] sm:rounded-[20px] py-4 px-2 sm:py-10 sm:px-6 flex flex-col items-center justify-center text-center shadow-md sm:shadow-lg border border-white/60 hover:-translate-y-1 transition-all duration-300 group">
                 <!-- Circular Line-Art Icon (Preserved & Enhanced) -->
-                <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full border-2 border-[#121212] bg-[#FAF5EE] group-hover:bg-[#FFF] flex items-center justify-center text-[#121212] shadow-xs transition-colors">
-                    <svg class="w-14 h-14 sm:w-16 sm:h-16" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <div class="w-12 h-12 sm:w-24 sm:h-24 rounded-full border sm:border-2 border-[#121212] bg-[#FAF5EE] group-hover:bg-[#FFF] flex items-center justify-center text-[#121212] shadow-xs transition-colors">
+                    <svg class="w-6 h-6 sm:w-12 sm:h-12" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                         <!-- 3 Sacred Botanical Leaves -->
                         <path d="M32 14c-3.5 4.5-3.5 10.5 0 14 3.5-3.5 3.5-9.5 0-14Z"/>
                         <path d="M23 20c-4.5 1-6.5 5.5-4 10 3.5-1 6.5-4.5 4-10Z"/>
@@ -1253,16 +1224,16 @@
                     </svg>
                 </div>
                 <!-- Clean Label -->
-                <h3 class="text-base sm:text-lg font-serif font-bold text-[#121212] mt-5 tracking-wide">
+                <h3 class="text-[11px] sm:text-base lg:text-lg font-serif font-bold text-[#121212] mt-2 sm:mt-4 tracking-tight sm:tracking-wide leading-tight">
                     Purest Ingredients
                 </h3>
             </div>
 
             <!-- Card 3: Eco-conscious -->
-            <div class="bg-white rounded-[16px] sm:rounded-[20px] py-10 px-6 sm:py-12 sm:px-8 flex flex-col items-center justify-center text-center shadow-lg hover:shadow-2xl border border-white/60 hover:-translate-y-1 transition-all duration-300 group">
+            <div class="bg-white rounded-[12px] sm:rounded-[20px] py-4 px-2 sm:py-10 sm:px-6 flex flex-col items-center justify-center text-center shadow-md sm:shadow-lg border border-white/60 hover:-translate-y-1 transition-all duration-300 group">
                 <!-- Circular Line-Art Icon (Preserved & Enhanced) -->
-                <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full border-2 border-[#121212] bg-[#FAF5EE] group-hover:bg-[#FFF] flex items-center justify-center text-[#121212] shadow-xs transition-colors">
-                    <svg class="w-14 h-14 sm:w-16 sm:h-16" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <div class="w-12 h-12 sm:w-24 sm:h-24 rounded-full border sm:border-2 border-[#121212] bg-[#FAF5EE] group-hover:bg-[#FFF] flex items-center justify-center text-[#121212] shadow-xs transition-colors">
+                    <svg class="w-6 h-6 sm:w-12 sm:h-12" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                         <!-- Open Box -->
                         <path d="M19 35l13 6 13-6"/>
                         <path d="M32 41v13"/>
@@ -1275,7 +1246,7 @@
                     </svg>
                 </div>
                 <!-- Clean Label -->
-                <h3 class="text-base sm:text-lg font-serif font-bold text-[#121212] mt-5 tracking-wide">
+                <h3 class="text-[11px] sm:text-base lg:text-lg font-serif font-bold text-[#121212] mt-2 sm:mt-4 tracking-tight sm:tracking-wide leading-tight">
                     Eco-conscious
                 </h3>
             </div>
@@ -1288,12 +1259,12 @@
 <!-- ========================================================================= -->
 <!-- 8. FREQUENTLY ASKED QUESTIONS (Compact Seamless Accordion - 7 Items)      -->
 <!-- ========================================================================= -->
-<section class="py-14 sm:py-20 bg-[#FAF7F2] border-b border-[#EADBCC] select-none">
+<section class="py-12 sm:py-20 bg-[#FAF7F2] border-b border-[#EADBCC] select-none">
     <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
-        <div class="max-w-4xl mx-auto space-y-8 sm:space-y-10">
+        <div class="max-w-4xl mx-auto space-y-6 sm:space-y-10">
         
         <!-- Section Header -->
-        <div class="text-center max-w-2xl mx-auto space-y-2.5">
+        <div class="text-center max-w-2xl mx-auto space-y-1.5">
             <div class="inline-flex items-center space-x-2 px-3 py-0.5 rounded-full bg-white border border-[#EADBCC] text-[#C87A1E] shadow-2xs">
                 <span class="w-1.5 h-1.5 rounded-full bg-[#D38928]"></span>
                 <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.2em] font-heading">Clarity &amp; Vidhi</span>
@@ -1301,9 +1272,6 @@
             <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#121212] font-heading tracking-tight">
                 Frequently Asked Questions
             </h2>
-            <p class="text-xs sm:text-sm text-gray-600 leading-normal max-w-xl mx-auto">
-                Everything you need to know about our authentic Vedic ingredients, burning times, and door-step delivery.
-            </p>
         </div>
 
         <!-- Seamless Accordion Container (Single continuous card with divide-y) -->
@@ -1312,7 +1280,7 @@
             <!-- FAQ 1 -->
             <div class="faq-item">
                 <button type="button" class="faq-toggle w-full py-3.5 sm:py-4 px-4 sm:px-6 flex items-center justify-between text-left focus:outline-none cursor-pointer group hover:bg-[#FAF7F2]/60 transition-colors">
-                    <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
+                    <span class="text-xs sm:text-sm font-normal text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
                         What makes Manglam bambooless incense sticks and havan cups unique?
                     </span>
                     <div class="w-7 h-7 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
@@ -1331,7 +1299,7 @@
             <!-- FAQ 2 -->
             <div class="faq-item">
                 <button type="button" class="faq-toggle w-full py-3.5 sm:py-4 px-4 sm:px-6 flex items-center justify-between text-left focus:outline-none cursor-pointer group hover:bg-[#FAF7F2]/60 transition-colors">
-                    <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
+                    <span class="text-xs sm:text-sm font-normal text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
                         How long do they burn, and does the temple fragrance linger in the room?
                     </span>
                     <div class="w-7 h-7 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
@@ -1350,7 +1318,7 @@
             <!-- FAQ 3 -->
             <div class="faq-item">
                 <button type="button" class="faq-toggle w-full py-3.5 sm:py-4 px-4 sm:px-6 flex items-center justify-between text-left focus:outline-none cursor-pointer group hover:bg-[#FAF7F2]/60 transition-colors">
-                    <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
+                    <span class="text-xs sm:text-sm font-normal text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
                         Are Manglam products safe to use around babies, elders, and pets?
                     </span>
                     <div class="w-7 h-7 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
@@ -1369,7 +1337,7 @@
             <!-- FAQ 4 -->
             <div class="faq-item">
                 <button type="button" class="faq-toggle w-full py-3.5 sm:py-4 px-4 sm:px-6 flex items-center justify-between text-left focus:outline-none cursor-pointer group hover:bg-[#FAF7F2]/60 transition-colors">
-                    <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
+                    <span class="text-xs sm:text-sm font-normal text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
                         What is the spiritual significance of burning 100% Bamboo-Free Agarbatti?
                     </span>
                     <div class="w-7 h-7 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
@@ -1388,7 +1356,7 @@
             <!-- FAQ 5 -->
             <div class="faq-item">
                 <button type="button" class="faq-toggle w-full py-3.5 sm:py-4 px-4 sm:px-6 flex items-center justify-between text-left focus:outline-none cursor-pointer group hover:bg-[#FAF7F2]/60 transition-colors">
-                    <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
+                    <span class="text-xs sm:text-sm font-normal text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
                         How do I properly ignite and use organic Sambrani Havan Cups &amp; Dhoop Cones?
                     </span>
                     <div class="w-7 h-7 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
@@ -1407,7 +1375,7 @@
             <!-- FAQ 6 -->
             <div class="faq-item">
                 <button type="button" class="faq-toggle w-full py-3.5 sm:py-4 px-4 sm:px-6 flex items-center justify-between text-left focus:outline-none cursor-pointer group hover:bg-[#FAF7F2]/60 transition-colors">
-                    <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
+                    <span class="text-xs sm:text-sm font-normal text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
                         What sacred ingredients and temple flowers are used in handcrafting?
                     </span>
                     <div class="w-7 h-7 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
@@ -1426,7 +1394,7 @@
             <!-- FAQ 7 -->
             <div class="faq-item">
                 <button type="button" class="faq-toggle w-full py-3.5 sm:py-4 px-4 sm:px-6 flex items-center justify-between text-left focus:outline-none cursor-pointer group hover:bg-[#FAF7F2]/60 transition-colors">
-                    <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
+                    <span class="text-xs sm:text-sm font-normal text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
                         Do you offer nationwide shipping, COD, and complimentary ceramic holders?
                     </span>
                     <div class="w-7 h-7 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">

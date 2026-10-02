@@ -56,9 +56,6 @@
     <!-- 7. Comprehensive Footer -->
     <x-footer />
 
-    <!-- 8. Mobile App-Like Floating Bottom Bar -->
-    <x-mobile-app-bar />
-
     @stack('scripts')
 </body>
 </html>
