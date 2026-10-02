@@ -107,6 +107,21 @@ header nav button,
     opacity: 0.8 !important;
 }
 
+/* Add to Cart button styles across all product cards */
+.quick-add-to-cart-btn,
+.product-card button.quick-add-to-cart-btn,
+.product-card .quick-add-to-cart-btn {
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+    font-weight: 400 !important;
+}
+
+.quick-add-to-cart-btn span,
+.product-card button.quick-add-to-cart-btn span,
+.product-card .quick-add-to-cart-btn span {
+    font-weight: 400 !important;
+}
+
 #hero-banner-carousel h1,
 #hero-banner-carousel h2 {
     font-family: 'Recoleta', Georgia, serif !important;

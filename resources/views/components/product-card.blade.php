@@ -196,14 +196,14 @@
             @else
                 <button 
                     type="button" 
-                    class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer"
+                    class="quick-add-to-cart-btn w-full py-2 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-normal rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-body cursor-pointer"
                     data-product-id="{{ $product->id }}"
                     data-product-title="{{ $product->title }}"
                     data-product-slug="{{ $product->slug }}"
                     data-product-price="{{ $product->active_price }}"
                     data-product-image="{{ asset($imageSrc) }}"
                 >
-                    <span>Add to cart</span>
+                    <span class="font-normal">Add to cart</span>
                 </button>
             @endif
         </div>

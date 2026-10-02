@@ -193,7 +193,7 @@
                                 <span class="text-xs sm:text-sm text-gray-400 line-through font-medium">₹499</span>
                                 <span class="text-sm sm:text-base font-bold text-[#C87A1E]">₹399.00</span>
                             </div>
-                            <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Swarna Pushpa" data-product-price="399.00">
+                            <button type="button" class="quick-add-to-cart-btn w-full py-2 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-normal rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Swarna Pushpa" data-product-price="399.00">
                                 <span>Add to cart</span>
                             </button>
                         </div>
@@ -240,7 +240,7 @@
                                 <span class="text-xs sm:text-sm text-gray-400 line-through font-medium">₹499</span>
                                 <span class="text-sm sm:text-base font-bold text-[#C87A1E]">₹399.00</span>
                             </div>
-                            <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Chandan Saanjh" data-product-price="399.00">
+                            <button type="button" class="quick-add-to-cart-btn w-full py-2 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-normal rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Chandan Saanjh" data-product-price="399.00">
                                 <span>Add to cart</span>
                             </button>
                         </div>
@@ -287,7 +287,7 @@
                                 <span class="text-xs sm:text-sm text-gray-400 line-through font-medium">₹499</span>
                                 <span class="text-sm sm:text-base font-bold text-[#C87A1E]">₹399.00</span>
                             </div>
-                            <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Royal Oudh" data-product-price="399.00">
+                            <button type="button" class="quick-add-to-cart-btn w-full py-2 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-normal rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Royal Oudh" data-product-price="399.00">
                                 <span>Add to cart</span>
                             </button>
                         </div>
@@ -334,7 +334,7 @@
                                 <span class="text-xs sm:text-sm text-gray-400 line-through font-medium">₹450</span>
                                 <span class="text-sm sm:text-base font-bold text-[#C87A1E]">₹349.00</span>
                             </div>
-                            <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Google Dhoop" data-product-price="349.00">
+                            <button type="button" class="quick-add-to-cart-btn w-full py-2 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-normal rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Google Dhoop" data-product-price="349.00">
                                 <span>Add to cart</span>
                             </button>
                         </div>
@@ -381,7 +381,7 @@
                                 <span class="text-xs sm:text-sm text-gray-400 line-through font-medium">₹499</span>
                                 <span class="text-sm sm:text-base font-bold text-[#C87A1E]">₹399.00</span>
                             </div>
-                            <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Divya Naagchampa" data-product-price="399.00">
+                            <button type="button" class="quick-add-to-cart-btn w-full py-2 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-normal rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Divya Naagchampa" data-product-price="399.00">
                                 <span>Add to cart</span>
                             </button>
                         </div>
@@ -424,7 +424,7 @@
                                 <span class="text-xs sm:text-sm text-gray-400 line-through font-medium">₹499</span>
                                 <span class="text-sm sm:text-base font-bold text-[#C87A1E]">₹399.00</span>
                             </div>
-                            <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Mogra Noor" data-product-price="399.00">
+                            <button type="button" class="quick-add-to-cart-btn w-full py-2 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-normal rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Mogra Noor" data-product-price="399.00">
                                 <span>Add to cart</span>
                             </button>
                         </div>
@@ -467,7 +467,7 @@
                                 <span class="text-xs sm:text-sm text-gray-400 line-through font-medium">₹499</span>
                                 <span class="text-sm sm:text-base font-bold text-[#C87A1E]">₹399.00</span>
                             </div>
-                            <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Gulab Rooh" data-product-price="399.00">
+                            <button type="button" class="quick-add-to-cart-btn w-full py-2 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-normal rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Gulab Rooh" data-product-price="399.00">
                                 <span>Add to cart</span>
                             </button>
                         </div>
@@ -510,7 +510,7 @@
                                 <span class="text-xs sm:text-sm text-gray-400 line-through font-medium">₹499</span>
                                 <span class="text-sm sm:text-base font-bold text-[#C87A1E]">₹399.00</span>
                             </div>
-                            <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Lavender Veda" data-product-price="399.00">
+                            <button type="button" class="quick-add-to-cart-btn w-full py-2 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-normal rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Lavender Veda" data-product-price="399.00">
                                 <span>Add to cart</span>
                             </button>
                         </div>
@@ -807,7 +807,7 @@
                             <span class="text-xs sm:text-sm text-gray-400 line-through font-medium">₹999</span>
                             <span class="text-sm sm:text-base font-bold text-[#C87A1E]">₹499.00</span>
                         </div>
-                        <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Swarna Pushpa Refill Pack" data-product-price="499.00">
+                        <button type="button" class="quick-add-to-cart-btn w-full py-2 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-normal rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Swarna Pushpa Refill Pack" data-product-price="499.00">
                             <span>Add to cart</span>
                         </button>
                     </div>
@@ -851,7 +851,7 @@
                             <span class="text-xs sm:text-sm text-gray-400 line-through font-medium">₹999</span>
                             <span class="text-sm sm:text-base font-bold text-[#C87A1E]">₹499.00</span>
                         </div>
-                        <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Divya Naagchampa Refill Pack" data-product-price="499.00">
+                        <button type="button" class="quick-add-to-cart-btn w-full py-2 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-normal rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Divya Naagchampa Refill Pack" data-product-price="499.00">
                             <span>Add to cart</span>
                         </button>
                     </div>
@@ -895,7 +895,7 @@
                             <span class="text-xs sm:text-sm text-gray-400 line-through font-medium">₹499</span>
                             <span class="text-sm sm:text-base font-bold text-[#C87A1E]">₹399.00</span>
                         </div>
-                        <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Royal Oudh Bambooless Sticks" data-product-price="399.00">
+                        <button type="button" class="quick-add-to-cart-btn w-full py-2 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-normal rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Royal Oudh Bambooless Sticks" data-product-price="399.00">
                             <span>Add to cart</span>
                         </button>
                     </div>
@@ -939,7 +939,7 @@
                             <span class="text-xs sm:text-sm text-gray-400 line-through font-medium">₹499</span>
                             <span class="text-sm sm:text-base font-bold text-[#C87A1E]">₹399.00</span>
                         </div>
-                        <button type="button" class="quick-add-to-cart-btn w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Chandan Saanjh Sticks" data-product-price="399.00">
+                        <button type="button" class="quick-add-to-cart-btn w-full py-2 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-normal rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Chandan Saanjh Sticks" data-product-price="399.00">
                             <span>Add to cart</span>
                         </button>
                     </div>
