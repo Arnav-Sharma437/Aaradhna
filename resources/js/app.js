@@ -707,17 +707,17 @@ function initSearchModal() {
                             <div class="w-16 h-16 bg-[#FAF7F2] rounded-[8px] border border-[#EADBCC] overflow-hidden shrink-0 flex items-center justify-center">
                                 <img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform" onerror="this.src='/assets/images/devi-refill-pack-card.jpg'">
                             </div>
-                            <div class="ml-3.5 flex-1 min-w-0 space-y-1">
-                                <div class="flex items-center justify-between">
-                                    <span class="text-[10px] font-bold text-gray-400 uppercase font-heading truncate">${p.category}</span>
-                                    ${!p.is_in_stock ? '<span class="text-[10px] font-bold text-rose-600 bg-rose-50 px-1.5 py-0.5 rounded">Sold Out</span>' : ''}
+                            <div class="ml-3.5 flex-1 min-w-0 space-y-1 font-body">
+                                <div class="flex items-center justify-between font-body">
+                                    <span class="text-[10px] font-bold text-gray-400 uppercase font-body truncate">${p.category}</span>
+                                    ${!p.is_in_stock ? '<span class="text-[10px] font-bold text-rose-600 bg-rose-50 px-1.5 py-0.5 rounded font-body">Sold Out</span>' : ''}
                                 </div>
-                                <h6 class="text-xs sm:text-sm font-bold font-serif text-[#121212] group-hover:text-[#D38928] truncate">
+                                <h6 class="text-xs sm:text-sm font-bold text-[#121212] group-hover:text-[#D38928] truncate font-body">
                                     ${p.title}
                                 </h6>
-                                <div class="flex items-center space-x-2">
-                                    <span class="text-xs sm:text-sm font-black font-heading text-[#C87A1E]">${p.formatted_price}</span>
-                                    ${p.formatted_compare_price ? `<span class="text-xs text-gray-400 line-through">${p.formatted_compare_price}</span>` : ''}
+                                <div class="flex items-center space-x-2 font-body">
+                                    <span class="text-xs sm:text-sm font-bold text-[#C87A1E] font-body">${p.formatted_price}</span>
+                                    ${p.formatted_compare_price ? `<span class="text-xs text-gray-400 line-through font-medium font-body">${p.formatted_compare_price}</span>` : ''}
                                 </div>
                             </div>
                         </a>

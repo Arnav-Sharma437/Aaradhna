@@ -1307,21 +1307,7 @@
 </section>
 
 <!-- ========================================================================= -->
-<!-- 7. STANDALONE PROMO BANNER: BUY 2 GET 1 FREE (Full Width Edge-to-Edge)   -->
-<!-- ========================================================================= -->
-<section class="w-full bg-white overflow-hidden select-none">
-    <a href="{{ route('bundles.buy2get1') }}" class="block w-full group focus:outline-none">
-        <img 
-            src="{{ asset('assets/images/banner-buy2-get1-free.jpg') }}" 
-            alt="Buy 2 Get 1 FREE + Chandan Pack FREE @ ₹999 - Mangalam" 
-            class="w-full h-auto block object-cover group-hover:opacity-95 transition-opacity duration-300"
-            loading="lazy"
-        >
-    </a>
-</section>
-
-<!-- ========================================================================= -->
-<!-- 8. FREQUENTLY ASKED QUESTIONS (Luxury Modern Accordions)                  -->
+<!-- 7. FREQUENTLY ASKED QUESTIONS (Luxury Modern Accordions)                  -->
 <!-- ========================================================================= -->
 <section class="py-16 sm:py-24 bg-white border-b border-[#EADBCC] select-none">
     <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
@@ -1445,59 +1431,47 @@
 </section>
 
 <!-- ========================================================================= -->
-<!-- 9. CERTIFIED TRUST & PURITY RECOGNITION (Luxury Seals)                    -->
+<!-- 8. CERTIFIED TRUST & PURITY RECOGNITION (Centered Big Logos & Headings)   -->
 <!-- ========================================================================= -->
-<section class="py-14 sm:py-16 bg-white border-b border-[#EAE3D9]">
+<section class="py-14 sm:py-18 bg-white border-b border-[#EAE3D9] select-none">
     <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
         
-        <div class="text-center mb-8">
-            <span class="text-[11px] font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ CERTIFIED VEDIC STANDARDS ✦</span>
+        <div class="text-center mb-8 sm:mb-10">
+            <span class="text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ CERTIFIED VEDIC STANDARDS ✦</span>
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             
             <!-- Make in India -->
-            <div class="bg-white rounded-[14px] border border-[#EAE3D9] p-4 sm:p-5 flex items-center space-x-3.5 shadow-xs hover:border-[#D38928]/40 hover:shadow-md transition-all">
-                <div class="w-14 h-12 flex items-center justify-center shrink-0">
-                    <img src="{{ asset('assets/images/trust/make-in-india.png') }}" alt="Make in India" class="w-full h-full object-contain">
+            <div class="bg-white rounded-[16px] border border-[#EAE3D9] p-5 sm:p-7 flex flex-col items-center justify-center text-center shadow-xs hover:border-[#D38928]/50 hover:shadow-md transition-all duration-300 group">
+                <div class="w-full h-16 sm:h-20 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+                    <img src="{{ asset('assets/images/trust/make-in-india.png') }}" alt="Make in India" class="max-h-full max-w-[130px] sm:max-w-[160px] object-contain">
                 </div>
-                <div>
-                    <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading leading-tight">Make in India</h4>
-                    <p class="text-[10px] sm:text-[11px] text-gray-500">100% Indigenous Craft</p>
-                </div>
+                <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading mt-3 sm:mt-4 leading-tight">Make in India</h4>
             </div>
 
             <!-- MSME Certified -->
-            <div class="bg-white rounded-[14px] border border-[#EAE3D9] p-4 sm:p-5 flex items-center space-x-3.5 shadow-xs hover:border-[#D38928]/40 hover:shadow-md transition-all">
-                <div class="w-14 h-12 flex items-center justify-center shrink-0">
-                    <img src="{{ asset('assets/images/trust/msme.png') }}" alt="MSME Ministry Govt of India" class="w-full h-full object-contain">
+            <div class="bg-white rounded-[16px] border border-[#EAE3D9] p-5 sm:p-7 flex flex-col items-center justify-center text-center shadow-xs hover:border-[#D38928]/50 hover:shadow-md transition-all duration-300 group">
+                <div class="w-full h-16 sm:h-20 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+                    <img src="{{ asset('assets/images/trust/msme.png') }}" alt="MSME Ministry Govt of India" class="max-h-full max-w-[130px] sm:max-w-[160px] object-contain">
                 </div>
-                <div>
-                    <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading leading-tight">MSME Certified</h4>
-                    <p class="text-[10px] sm:text-[11px] text-gray-500">Govt. of India Recognized</p>
-                </div>
+                <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading mt-3 sm:mt-4 leading-tight">MSME Certified</h4>
             </div>
 
             <!-- Razorpay Secure -->
-            <div class="bg-white rounded-[14px] border border-[#EAE3D9] p-4 sm:p-5 flex items-center space-x-3.5 shadow-xs hover:border-[#D38928]/40 hover:shadow-md transition-all">
-                <div class="w-14 h-12 flex items-center justify-center shrink-0">
-                    <img src="{{ asset('assets/images/trust/razorpay.png') }}" alt="Razorpay Secure Payments" class="w-full h-full object-contain">
+            <div class="bg-white rounded-[16px] border border-[#EAE3D9] p-5 sm:p-7 flex flex-col items-center justify-center text-center shadow-xs hover:border-[#D38928]/50 hover:shadow-md transition-all duration-300 group">
+                <div class="w-full h-16 sm:h-20 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+                    <img src="{{ asset('assets/images/trust/razorpay.png') }}" alt="Razorpay Secure Payments" class="max-h-full max-w-[130px] sm:max-w-[160px] object-contain">
                 </div>
-                <div>
-                    <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading leading-tight">Razorpay Secure</h4>
-                    <p class="text-[10px] sm:text-[11px] text-gray-500">256-Bit Encrypted UPI</p>
-                </div>
+                <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading mt-3 sm:mt-4 leading-tight">Razorpay Secure</h4>
             </div>
 
             <!-- Amazon / Trusted Delivery -->
-            <div class="bg-white rounded-[14px] border border-[#EAE3D9] p-4 sm:p-5 flex items-center space-x-3.5 shadow-xs hover:border-[#D38928]/40 hover:shadow-md transition-all">
-                <div class="w-14 h-12 flex items-center justify-center shrink-0">
-                    <img src="{{ asset('assets/images/trust/amazon.png') }}" alt="Available on Amazon" class="w-full h-full object-contain">
+            <div class="bg-white rounded-[16px] border border-[#EAE3D9] p-5 sm:p-7 flex flex-col items-center justify-center text-center shadow-xs hover:border-[#D38928]/50 hover:shadow-md transition-all duration-300 group">
+                <div class="w-full h-16 sm:h-20 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+                    <img src="{{ asset('assets/images/trust/amazon.png') }}" alt="Available on Amazon" class="max-h-full max-w-[130px] sm:max-w-[160px] object-contain">
                 </div>
-                <div>
-                    <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading leading-tight">Amazon Trusted</h4>
-                    <p class="text-[10px] sm:text-[11px] text-gray-500">Fast Express Delivery</p>
-                </div>
+                <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading mt-3 sm:mt-4 leading-tight">Amazon Trusted</h4>
             </div>
 
         </div>

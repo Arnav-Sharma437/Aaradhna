@@ -54,7 +54,7 @@
 
             <!-- Matching Categories Pill Container (hidden when empty) -->
             <div id="search-categories-section" class="hidden space-y-2">
-                <span class="text-[11px] font-bold uppercase tracking-wider text-gray-400 font-heading">Matching Categories:</span>
+                <span class="text-[11px] font-bold uppercase tracking-wider text-gray-400 font-body">Matching Categories:</span>
                 <div id="search-categories-container" class="flex flex-wrap gap-2"></div>
             </div>
 
@@ -63,26 +63,26 @@
                 
                 <!-- Popular Searches Tags (Visible initially or when input empty) -->
                 <div id="popular-searches-box">
-                    <h5 class="text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-2.5 font-heading">
+                    <h5 class="text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-2.5 font-body">
                         Popular Searches
                     </h5>
-                    <div class="flex flex-wrap gap-2">
-                        <button type="button" class="search-tag px-3 py-1.5 bg-[#FAF7F2] text-xs font-semibold text-[#121212] rounded-full border border-[#EADBCC] hover:border-[#D38928] hover:text-[#D38928] hover:bg-white transition-all">
+                    <div class="flex flex-wrap gap-2 font-body">
+                        <button type="button" class="search-tag px-3 py-1.5 bg-[#FAF7F2] text-xs font-semibold text-[#121212] rounded-full border border-[#EADBCC] hover:border-[#D38928] hover:text-[#D38928] hover:bg-white transition-all font-body">
                             Camphor (कपूर)
                         </button>
-                        <button type="button" class="search-tag px-3 py-1.5 bg-[#FAF7F2] text-xs font-semibold text-[#121212] rounded-full border border-[#EADBCC] hover:border-[#D38928] hover:text-[#D38928] hover:bg-white transition-all">
+                        <button type="button" class="search-tag px-3 py-1.5 bg-[#FAF7F2] text-xs font-semibold text-[#121212] rounded-full border border-[#EADBCC] hover:border-[#D38928] hover:text-[#D38928] hover:bg-white transition-all font-body">
                             Sandalwood Havan Cup
                         </button>
-                        <button type="button" class="search-tag px-3 py-1.5 bg-[#FAF7F2] text-xs font-semibold text-[#121212] rounded-full border border-[#EADBCC] hover:border-[#D38928] hover:text-[#D38928] hover:bg-white transition-all">
+                        <button type="button" class="search-tag px-3 py-1.5 bg-[#FAF7F2] text-xs font-semibold text-[#121212] rounded-full border border-[#EADBCC] hover:border-[#D38928] hover:text-[#D38928] hover:bg-white transition-all font-body">
                             Trial Pack Combo
                         </button>
-                        <button type="button" class="search-tag px-3 py-1.5 bg-[#FAF7F2] text-xs font-semibold text-[#121212] rounded-full border border-[#EADBCC] hover:border-[#D38928] hover:text-[#D38928] hover:bg-white transition-all">
+                        <button type="button" class="search-tag px-3 py-1.5 bg-[#FAF7F2] text-xs font-semibold text-[#121212] rounded-full border border-[#EADBCC] hover:border-[#D38928] hover:text-[#D38928] hover:bg-white transition-all font-body">
                             Bambooless Incense
                         </button>
-                        <button type="button" class="search-tag px-3 py-1.5 bg-[#FAF7F2] text-xs font-semibold text-[#121212] rounded-full border border-[#EADBCC] hover:border-[#D38928] hover:text-[#D38928] hover:bg-white transition-all">
+                        <button type="button" class="search-tag px-3 py-1.5 bg-[#FAF7F2] text-xs font-semibold text-[#121212] rounded-full border border-[#EADBCC] hover:border-[#D38928] hover:text-[#D38928] hover:bg-white transition-all font-body">
                             Devi Refill Pack
                         </button>
-                        <button type="button" class="search-tag px-3 py-1.5 bg-[#FAF7F2] text-xs font-semibold text-[#121212] rounded-full border border-[#EADBCC] hover:border-[#D38928] hover:text-[#D38928] hover:bg-white transition-all">
+                        <button type="button" class="search-tag px-3 py-1.5 bg-[#FAF7F2] text-xs font-semibold text-[#121212] rounded-full border border-[#EADBCC] hover:border-[#D38928] hover:text-[#D38928] hover:bg-white transition-all font-body">
                             Natural Attar Spray
                         </button>
                     </div>
@@ -91,10 +91,10 @@
                 <!-- Predictive Search Results Header & List -->
                 <div>
                     <div class="flex items-center justify-between mb-2.5">
-                        <h5 id="results-header-title" class="text-[11px] font-bold text-gray-400 uppercase tracking-widest font-heading">
+                        <h5 id="results-header-title" class="text-[11px] font-bold text-gray-400 uppercase tracking-widest font-body">
                             Featured Products
                         </h5>
-                        <span id="results-count-label" class="text-[11px] font-bold text-[#D38928] hidden"></span>
+                        <span id="results-count-label" class="text-[11px] font-bold text-[#D38928] font-body hidden"></span>
                     </div>
 
                     <!-- Products Grid / Results List -->
@@ -103,15 +103,15 @@
                     </div>
 
                     <!-- Empty State (When no results found) -->
-                    <div id="search-empty-state" class="hidden py-10 text-center space-y-3">
+                    <div id="search-empty-state" class="hidden py-10 text-center space-y-3 font-body">
                         <div class="w-12 h-12 mx-auto bg-[#FAF7F2] rounded-full flex items-center justify-center text-2xl">
                             🔍
                         </div>
-                        <h4 class="text-sm font-bold text-[#121212] font-heading">No sacred products found</h4>
-                        <p class="text-xs text-gray-400 max-w-xs mx-auto">
+                        <h4 class="text-sm font-bold text-[#121212] font-body">No sacred products found</h4>
+                        <p class="text-xs text-gray-400 max-w-xs mx-auto font-body">
                             We couldn't find any products matching your search. Try checking for typos or searching by keyword.
                         </p>
-                        <a href="{{ route('collections.show', 'all') }}" class="inline-block px-4 py-2 bg-[#D38928] text-white text-xs font-bold rounded-[8px] font-heading">
+                        <a href="{{ route('collections.show', 'all') }}" class="inline-block px-4 py-2 bg-[#D38928] text-white text-xs font-bold rounded-[8px] font-body">
                             Browse All Collections
                         </a>
                     </div>
@@ -120,9 +120,9 @@
             </div>
 
             <!-- Modal Bottom Help & All Products Link -->
-            <div class="pt-3 border-t border-[#EADBCC] flex items-center justify-between text-xs text-gray-400">
+            <div class="pt-3 border-t border-[#EADBCC] flex items-center justify-between text-xs text-gray-400 font-body">
                 <span class="hidden sm:inline">Press <kbd class="px-1.5 py-0.5 bg-gray-100 border border-gray-300 rounded text-[10px] font-mono text-gray-700">ESC</kbd> to close</span>
-                <a href="{{ route('collections.show', 'all') }}" class="text-[#D38928] font-bold hover:underline font-heading">View full collection &rarr;</a>
+                <a href="{{ route('collections.show', 'all') }}" class="text-[#D38928] font-bold hover:underline font-body">View full collection &rarr;</a>
             </div>
 
         </div>
