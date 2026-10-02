@@ -256,11 +256,11 @@
             <div class="lg:col-span-5 space-y-5 lg:pl-4 sticky top-28">
                 
                 <!-- 1. Star Rating & Review Count -->
-                <div class="flex items-center space-x-2 text-[#D38928] text-base">
+                <div class="flex items-center space-x-2 text-[#D38928] text-sm sm:text-base leading-none">
                     <div class="flex text-[#D38928]">
                         <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                     </div>
-                    <span class="text-sm text-gray-600 font-normal">{{ $reviewCount }} reviews</span>
+                    <span class="text-xs sm:text-sm text-[#D38928] font-medium leading-none">{{ $reviewCount }} reviews</span>
                 </div>
 
                 <!-- 2. Product Title (Large Headline) -->

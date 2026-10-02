@@ -212,11 +212,11 @@
 
                                 <!-- Title and Pricing -->
                                 <div class="min-w-0 flex-1">
-                                    <h4 class="text-xs sm:text-[13px] font-bold font-serif text-[#1F1F1F] truncate leading-tight">
+                                    <h4 class="text-xs sm:text-[13px] font-medium font-body text-[#1F1F1F] truncate leading-tight">
                                         {{ $reel['title'] }}
                                     </h4>
                                     <div class="flex items-baseline space-x-1.5 pt-0.5 font-body">
-                                        <span class="text-xs sm:text-sm font-bold text-[#1F1F1F]">
+                                        <span class="text-xs sm:text-sm font-bold text-[#C87A1E]">
                                             ₹{{ $reel['price'] }}
                                         </span>
                                         <span class="text-[11px] text-gray-400 line-through font-medium">
@@ -365,7 +365,7 @@
 
                             <!-- Title & Pricing -->
                             <div class="min-w-0 flex-1 text-left">
-                                <h4 id="modal-product-title" class="text-xs sm:text-[13px] font-bold text-white truncate drop-shadow-xs font-serif leading-tight">
+                                <h4 id="modal-product-title" class="text-xs sm:text-[13px] font-medium text-white truncate drop-shadow-xs font-body leading-tight">
                                     Nagchampa Refill Pack
                                 </h4>
                                 <div class="flex items-baseline space-x-1.5 pt-0.5">

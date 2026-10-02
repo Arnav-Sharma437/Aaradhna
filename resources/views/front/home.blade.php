@@ -180,12 +180,12 @@
                     <!-- Content -->
                     <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
                         <div class="space-y-1">
-                            <h3 class="text-[15px] sm:text-xl font-normal font-serif text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
+                            <h3 class="text-[15px] sm:text-base font-medium text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug font-body">
                                 <a href="{{ route('products.show', 'swarna-pushpa') }}">Swarna Pushpa <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(Marygold)</span></a>
                             </h3>
-                            <div class="flex items-center space-x-1.5 text-[#D38928]">
-                                <div class="flex text-sm sm:text-base leading-none"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                                <span class="text-xs text-gray-500 font-medium">(277)</span>
+                            <div class="flex items-center space-x-1 text-[#D38928]">
+                                <div class="flex text-[11px] sm:text-xs leading-none space-x-0.5"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                <span class="text-[11px] sm:text-xs text-[#D38928] font-medium leading-none">(277)</span>
                             </div>
                         </div>
                         <div>
@@ -227,12 +227,12 @@
                     <!-- Content -->
                     <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
                         <div class="space-y-1">
-                            <h3 class="text-[15px] sm:text-xl font-normal font-serif text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
+                            <h3 class="text-[15px] sm:text-base font-medium text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug font-body">
                                 <a href="{{ route('products.show', 'chandan-saanjh') }}">Chandan Saanjh <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(चंदन)</span></a>
                             </h3>
-                            <div class="flex items-center space-x-1.5 text-[#D38928]">
-                                <div class="flex text-sm sm:text-base leading-none"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                                <span class="text-xs text-gray-500 font-medium">(218)</span>
+                            <div class="flex items-center space-x-1 text-[#D38928]">
+                                <div class="flex text-[11px] sm:text-xs leading-none space-x-0.5"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                <span class="text-[11px] sm:text-xs text-[#D38928] font-medium leading-none">(218)</span>
                             </div>
                         </div>
                         <div>
@@ -274,12 +274,12 @@
                     <!-- Content -->
                     <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
                         <div class="space-y-1">
-                            <h3 class="text-[15px] sm:text-xl font-normal font-serif text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
+                            <h3 class="text-[15px] sm:text-base font-medium text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug font-body">
                                 <a href="{{ route('products.show', 'royal-oudh') }}">Royal Oudh <span class="text-xs font-normal text-gray-500 ml-0.5">(रॉयल ऊद)</span></a>
                             </h3>
-                            <div class="flex items-center space-x-1.5 text-[#D38928]">
-                                <div class="flex text-sm sm:text-base leading-none"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                                <span class="text-xs text-gray-500 font-medium">(234)</span>
+                            <div class="flex items-center space-x-1 text-[#D38928]">
+                                <div class="flex text-[11px] sm:text-xs leading-none space-x-0.5"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                <span class="text-[11px] sm:text-xs text-[#D38928] font-medium leading-none">(234)</span>
                             </div>
                         </div>
                         <div>
@@ -321,12 +321,12 @@
                     <!-- Content -->
                     <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
                         <div class="space-y-1">
-                            <h3 class="text-[15px] sm:text-xl font-normal font-serif text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
+                            <h3 class="text-[15px] sm:text-base font-medium text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug font-body">
                                 <a href="{{ route('products.show', 'google-dhoop') }}">Guggal Dhoop <span class="text-xs font-normal text-gray-500 ml-0.5">Havan Cup</span></a>
                             </h3>
-                            <div class="flex items-center space-x-1.5 text-[#D38928]">
-                                <div class="flex text-sm sm:text-base leading-none"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                                <span class="text-xs text-gray-500 font-medium">(210)</span>
+                            <div class="flex items-center space-x-1 text-[#D38928]">
+                                <div class="flex text-[11px] sm:text-xs leading-none space-x-0.5"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                <span class="text-[11px] sm:text-xs text-[#D38928] font-medium leading-none">(210)</span>
                             </div>
                         </div>
                         <div>
@@ -368,12 +368,12 @@
                     </div>
                     <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
                         <div class="space-y-1">
-                            <h3 class="text-[15px] sm:text-xl font-normal font-serif text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
+                            <h3 class="text-[15px] sm:text-base font-medium text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug font-body">
                                 <a href="{{ route('products.show', 'divya-naagchampa') }}">Divya Naagchampa <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(नागचंपा)</span></a>
                             </h3>
-                            <div class="flex items-center space-x-1.5 text-[#D38928]">
-                                <div class="flex text-sm sm:text-base leading-none"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                                <span class="text-xs text-gray-500 font-medium">(219)</span>
+                            <div class="flex items-center space-x-1 text-[#D38928]">
+                                <div class="flex text-[11px] sm:text-xs leading-none space-x-0.5"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                <span class="text-[11px] sm:text-xs text-[#D38928] font-medium leading-none">(219)</span>
                             </div>
                         </div>
                         <div>
@@ -411,12 +411,12 @@
                     </div>
                     <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
                         <div class="space-y-1">
-                            <h3 class="text-[15px] sm:text-xl font-normal font-serif text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
+                            <h3 class="text-[15px] sm:text-base font-medium text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug font-body">
                                 <a href="{{ route('products.show', 'mogra-noor') }}">Mogra Noor <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(मोगरा)</span></a>
                             </h3>
-                            <div class="flex items-center space-x-1.5 text-[#D38928]">
-                                <div class="flex text-sm sm:text-base leading-none"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                                <span class="text-xs text-gray-500 font-medium">(194)</span>
+                            <div class="flex items-center space-x-1 text-[#D38928]">
+                                <div class="flex text-[11px] sm:text-xs leading-none space-x-0.5"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                <span class="text-[11px] sm:text-xs text-[#D38928] font-medium leading-none">(194)</span>
                             </div>
                         </div>
                         <div>
@@ -454,12 +454,12 @@
                     </div>
                     <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
                         <div class="space-y-1">
-                            <h3 class="text-[15px] sm:text-xl font-normal font-serif text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
+                            <h3 class="text-[15px] sm:text-base font-medium text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug font-body">
                                 <a href="{{ route('products.show', 'gulab-rooh') }}">Gulab Rooh <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(गुलाब)</span></a>
                             </h3>
-                            <div class="flex items-center space-x-1.5 text-[#D38928]">
-                                <div class="flex text-sm sm:text-base leading-none"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                                <span class="text-xs text-gray-500 font-medium">(212)</span>
+                            <div class="flex items-center space-x-1 text-[#D38928]">
+                                <div class="flex text-[11px] sm:text-xs leading-none space-x-0.5"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                <span class="text-[11px] sm:text-xs text-[#D38928] font-medium leading-none">(212)</span>
                             </div>
                         </div>
                         <div>
@@ -497,12 +497,12 @@
                     </div>
                     <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
                         <div class="space-y-1">
-                            <h3 class="text-[15px] sm:text-xl font-normal font-serif text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
+                            <h3 class="text-[15px] sm:text-base font-medium text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug font-body">
                                 <a href="{{ route('products.show', 'lavender-veda') }}">Lavender Veda <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(लैवेंडर)</span></a>
                             </h3>
-                            <div class="flex items-center space-x-1.5 text-[#D38928]">
-                                <div class="flex text-sm sm:text-base leading-none"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                                <span class="text-xs text-gray-500 font-medium">(178)</span>
+                            <div class="flex items-center space-x-1 text-[#D38928]">
+                                <div class="flex text-[11px] sm:text-xs leading-none space-x-0.5"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                <span class="text-[11px] sm:text-xs text-[#D38928] font-medium leading-none">(178)</span>
                             </div>
                         </div>
                         <div>
@@ -794,12 +794,12 @@
                 </div>
                 <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
                     <div class="space-y-1">
-                        <h3 class="text-[15px] sm:text-xl font-bold font-serif text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
+                        <h3 class="text-[15px] sm:text-base font-medium font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                             <a href="{{ route('products.show', 'swarna-pushpa') }}">Swarna Pushpa <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(Refill 100)</span></a>
                         </h3>
-                        <div class="flex items-center space-x-1.5 text-[#D38928]">
-                            <div class="flex text-sm sm:text-base leading-none"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            <span class="text-xs text-gray-500 font-medium">(277)</span>
+                        <div class="flex items-center space-x-1.5 text-[#D38928] leading-none">
+                            <div class="flex text-[11px] sm:text-xs leading-none"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                            <span class="text-[11px] sm:text-xs text-[#D38928] font-medium leading-none">(277)</span>
                         </div>
                     </div>
                     <div>
@@ -838,12 +838,12 @@
                 </div>
                 <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
                     <div class="space-y-1">
-                        <h3 class="text-[15px] sm:text-xl font-bold font-serif text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
+                        <h3 class="text-[15px] sm:text-base font-medium font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                             <a href="{{ route('products.show', 'divya-naagchampa') }}">Divya Naagchampa <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(Refill)</span></a>
                         </h3>
-                        <div class="flex items-center space-x-1.5 text-[#D38928]">
-                            <div class="flex text-sm sm:text-base leading-none"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            <span class="text-xs text-gray-500 font-medium">(219)</span>
+                        <div class="flex items-center space-x-1.5 text-[#D38928] leading-none">
+                            <div class="flex text-[11px] sm:text-xs leading-none"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                            <span class="text-[11px] sm:text-xs text-[#D38928] font-medium leading-none">(219)</span>
                         </div>
                     </div>
                     <div>
@@ -882,12 +882,12 @@
                 </div>
                 <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
                     <div class="space-y-1">
-                        <h3 class="text-[15px] sm:text-xl font-bold font-serif text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
+                        <h3 class="text-[15px] sm:text-base font-medium font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                             <a href="{{ route('products.show', 'royal-oudh') }}">Royal Oudh <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(Sticks)</span></a>
                         </h3>
-                        <div class="flex items-center space-x-1.5 text-[#D38928]">
-                            <div class="flex text-sm sm:text-base leading-none"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            <span class="text-xs text-gray-500 font-medium">(184)</span>
+                        <div class="flex items-center space-x-1.5 text-[#D38928] leading-none">
+                            <div class="flex text-[11px] sm:text-xs leading-none"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                            <span class="text-[11px] sm:text-xs text-[#D38928] font-medium leading-none">(184)</span>
                         </div>
                     </div>
                     <div>
@@ -926,12 +926,12 @@
                 </div>
                 <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
                     <div class="space-y-1">
-                        <h3 class="text-[15px] sm:text-xl font-bold font-serif text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
+                        <h3 class="text-[15px] sm:text-base font-medium font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                             <a href="{{ route('products.show', 'chandan-saanjh') }}">Chandan Saanjh <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(चंदन)</span></a>
                         </h3>
-                        <div class="flex items-center space-x-1.5 text-[#D38928]">
-                            <div class="flex text-sm sm:text-base leading-none"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            <span class="text-xs text-gray-500 font-medium">(162)</span>
+                        <div class="flex items-center space-x-1.5 text-[#D38928] leading-none">
+                            <div class="flex text-[11px] sm:text-xs leading-none"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                            <span class="text-[11px] sm:text-xs text-[#D38928] font-medium leading-none">(162)</span>
                         </div>
                     </div>
                     <div>

@@ -159,27 +159,28 @@
     <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
         
         <div class="space-y-1">
-            <h3 class="text-[15px] sm:text-xl font-bold font-serif text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
+            <h3 class="text-[15px] sm:text-base font-medium text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug font-body">
                 <a href="{{ route('products.show', $product->slug) }}">
                     {{ $product->title }}
                 </a>
             </h3>
 
-            <!-- 5 Star Golden Rating Strip -->
-            <div class="flex items-center space-x-1.5 text-[#D38928]">
-                <div class="flex text-sm sm:text-base leading-none">
+            <!-- 5 Star Golden Rating Strip with Matching Gold Subtle Count -->
+            <div class="flex items-center space-x-1 text-[#D38928]">
+                <div class="flex text-[11px] sm:text-xs leading-none space-x-0.5">
                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
-                <span class="text-xs text-gray-500 font-medium">({{ $reviewCount }})</span>
+                <span class="text-[11px] sm:text-xs text-[#D38928] font-medium leading-none">({{ $reviewCount }})</span>
             </div>
         </div>
 
         <!-- Pricing & Add to Cart -->
-            <div class="flex items-baseline space-x-1.5 pt-0.5 pb-2 sm:pb-3.5 font-body">
+        <div>
+            <div class="flex items-baseline space-x-1.5 pt-0.5 pb-2 sm:pb-3 font-body">
                 <span class="text-xs sm:text-sm text-gray-400 line-through font-medium">
                     ₹{{ number_format($mrpPrice, 0) }}
                 </span>
-                <span class="text-base sm:text-xl font-bold text-[#C87A1E]">
+                <span class="text-sm sm:text-base font-bold text-[#C87A1E]">
                     ₹{{ number_format($product->active_price, 2) }}
                 </span>
             </div>

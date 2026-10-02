@@ -8,6 +8,51 @@
     <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
 
         <!-- ========================================================================= -->
+        <!-- COLLECTION HERO HEADER & BREADCRUMBS                                      -->
+        <!-- ========================================================================= -->
+        <div class="mb-8 sm:mb-10">
+            <!-- Breadcrumbs -->
+            <nav class="flex items-center space-x-2 text-xs text-gray-500 mb-3 sm:mb-4">
+                <a href="{{ route('home') }}" class="hover:text-[#D38928] transition-colors">Home</a>
+                <span>/</span>
+                <a href="{{ route('collections.show', 'all') }}" class="hover:text-[#D38928] transition-colors">Collections</a>
+                <span>/</span>
+                <span class="text-[#1F1F1F] font-medium">{{ $collection->title }}</span>
+            </nav>
+
+            <!-- Title & Description -->
+            <div class="space-y-2 mb-6">
+                <h1 class="text-2xl sm:text-3xl lg:text-4xl font-serif text-[#1F1F1F] font-normal leading-tight">
+                    {{ $collection->title }}
+                </h1>
+                @if(!empty($collection->description))
+                    <p class="text-xs sm:text-sm text-gray-600 max-w-3xl leading-relaxed">
+                        {{ $collection->description }}
+                    </p>
+                @endif
+            </div>
+
+            <!-- Quick Category Navigation Pills -->
+            <div class="flex items-center gap-2 sm:gap-2.5 overflow-x-auto pb-2 scrollbar-none text-xs sm:text-sm">
+                <a href="{{ route('collections.show', 'all') }}" class="px-4 py-2 rounded-full whitespace-nowrap transition-all font-medium {{ ($collection->slug ?? '') === 'all' ? 'bg-[#1F1F1F] text-white shadow-sm' : 'bg-[#FAF5EE] text-[#1F1F1F] hover:bg-[#F3ECE0] border border-[#EADBCC]/60' }}">
+                    All Products
+                </a>
+                <a href="{{ route('collections.show', 'bambooless') }}" class="px-4 py-2 rounded-full whitespace-nowrap transition-all font-medium {{ ($collection->slug ?? '') === 'bambooless' ? 'bg-[#1F1F1F] text-white shadow-sm' : 'bg-[#FAF5EE] text-[#1F1F1F] hover:bg-[#F3ECE0] border border-[#EADBCC]/60' }}">
+                    Bambooless Sticks
+                </a>
+                <a href="{{ route('collections.show', 'havan-cups') }}" class="px-4 py-2 rounded-full whitespace-nowrap transition-all font-medium {{ ($collection->slug ?? '') === 'havan-cups' ? 'bg-[#1F1F1F] text-white shadow-sm' : 'bg-[#FAF5EE] text-[#1F1F1F] hover:bg-[#F3ECE0] border border-[#EADBCC]/60' }}">
+                    Havan Cups
+                </a>
+                <a href="{{ route('collections.show', 'dhoop-cones') }}" class="px-4 py-2 rounded-full whitespace-nowrap transition-all font-medium {{ ($collection->slug ?? '') === 'dhoop-cones' ? 'bg-[#1F1F1F] text-white shadow-sm' : 'bg-[#FAF5EE] text-[#1F1F1F] hover:bg-[#F3ECE0] border border-[#EADBCC]/60' }}">
+                    Dhoop Cones
+                </a>
+                <a href="{{ route('collections.show', 'super-save-offers') }}" class="px-4 py-2 rounded-full whitespace-nowrap transition-all font-medium {{ ($collection->slug ?? '') === 'super-save-offers' ? 'bg-[#1F1F1F] text-white shadow-sm' : 'bg-[#FAF5EE] text-[#1F1F1F] hover:bg-[#F3ECE0] border border-[#EADBCC]/60' }}">
+                    Super Saver Offers
+                </a>
+            </div>
+        </div>
+
+        <!-- ========================================================================= -->
         <!-- TOP FILTER & SORT BAR (Exact Replica of Reference Screenshots)            -->
         <!-- ========================================================================= -->
         @php

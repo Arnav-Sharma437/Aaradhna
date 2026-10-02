@@ -147,10 +147,10 @@
 
                         <!-- Product Title & Price -->
                         <div class="space-y-1 text-left">
-                            <h4 class="text-xs sm:text-[13px] font-bold font-serif text-[#121212] group-hover:text-[#D38928] transition-colors truncate">
+                            <h4 class="text-xs sm:text-[13px] font-medium font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors truncate">
                                 {{ $item->title }}
                             </h4>
-                            <div class="text-xs sm:text-sm font-bold font-body text-[#121212]">
+                            <div class="text-xs sm:text-sm font-bold font-body text-[#C87A1E]">
                                 ₹{{ number_format($item->active_price, 2) }}
                             </div>
                         </div>
