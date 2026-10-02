@@ -58,9 +58,9 @@
         background-color: #ffffff;
     }
 
+    /* Headings font family default */
     h1, h2, h3, h4, h5, h6, .font-heading, .font-serif, .font-spiritual, .font-cinzel, .font-recoleta {
-        font-family: 'Recoleta', Georgia, serif !important;
-        font-weight: 700 !important;
+        font-family: 'Recoleta', Georgia, serif;
     }
 }
 
@@ -90,11 +90,21 @@ header nav button,
 .price,
 [class*="price"],
 [id*="price"],
-.line-through,
 .active-price,
 .original-price,
 .sale-price {
     font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif !important;
+}
+
+/* High-contrast, clearly visible strikethrough price styling in black/charcoal */
+.line-through,
+[class*="line-through"] {
+    font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif !important;
+    color: #1F1F1F !important;
+    text-decoration: line-through !important;
+    text-decoration-color: #1F1F1F !important;
+    text-decoration-thickness: 1.5px !important;
+    opacity: 0.8 !important;
 }
 
 #hero-banner-carousel h1,
