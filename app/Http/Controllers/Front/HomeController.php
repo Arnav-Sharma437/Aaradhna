@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Product;
 use App\Models\Review;
 use App\Models\Faq;
+use App\Models\HomepageBanner;
 use Illuminate\View\View;
 
 class HomeController extends Controller
@@ -16,6 +17,11 @@ class HomeController extends Controller
      */
     public function index(): View
     {
+        // 0. Active Dynamic Homepage Banners
+        $banners = HomepageBanner::where('is_active', true)
+            ->orderBy('sort_order', 'asc')
+            ->get();
+
         // 1. Bestsellers of the Month (Featured Collection)
         $bestsellers = Product::where('status', 'active')
             ->where('is_bestseller', true)
@@ -116,6 +122,7 @@ class HomeController extends Controller
         ];
 
         return view('front.home', compact(
+            'banners',
             'bestsellers',
             'categories',
             'newLaunches',

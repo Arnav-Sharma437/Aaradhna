@@ -13,44 +13,71 @@
     <!-- Slides Wrapper (Fixed Height for all Screens & Zoom levels) -->
     <div class="relative w-full h-[340px] sm:h-[420px] md:h-[480px] lg:h-[540px] xl:h-[580px] overflow-hidden bg-white">
         
-        <!-- SLIDE 1: SACRED BAMBOOLEES COLLECTION -->
-        <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-100 pointer-events-auto z-10 flex items-center justify-center bg-white" data-slide="0">
-            <a href="{{ route('collections.show', 'bambooless') }}" class="block w-full h-full relative cursor-pointer" aria-label="Explore Sacred Bambooless Incense Collection">
-                <img 
-                    src="{{ asset('assets/images/hero-sacred.jpg') }}" 
-                    alt="Mangalam Sacred Bambooless Collection" 
-                    class="w-full h-full object-cover object-center"
-                >
-            </a>
-        </div>
-
-        <!-- SLIDE 2: SACRED HAVAN CUPS COLLECTION (RESPONSIVE DESKTOP & MOBILE BANNER) -->
-        <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 pointer-events-none z-0 flex items-center justify-center bg-white" data-slide="1">
-            <a href="{{ route('collections.show', 'havan-cups') }}" class="block w-full h-full relative cursor-pointer" aria-label="Explore Sacred Havan Cups Collection">
-                <picture class="w-full h-full block">
-                    <source media="(max-width: 768px)" srcset="{{ asset('assets/images/hero-sacred-hawan-cups-mobile.jpg') }}">
+        @if(isset($banners) && $banners->isNotEmpty())
+            @foreach($banners as $index => $banner)
+                <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out {{ $index === 0 ? 'opacity-100 pointer-events-auto z-10' : 'opacity-0 pointer-events-none z-0' }} flex items-center justify-center bg-white" data-slide="{{ $index }}">
+                    <a href="{{ $banner->button_link ?: route('collections.show', 'bambooless') }}" class="block w-full h-full relative cursor-pointer" aria-label="{{ $banner->title }}">
+                        @if($banner->mobile_image_path)
+                            <picture class="w-full h-full block">
+                                <source media="(max-width: 768px)" srcset="{{ asset($banner->mobile_image_path) }}">
+                                <img 
+                                    src="{{ asset($banner->desktop_image_path) }}" 
+                                    alt="{{ $banner->title }}" 
+                                    class="w-full h-full object-cover object-center"
+                                    {{ $index > 0 ? 'loading=lazy' : '' }}
+                                >
+                            </picture>
+                        @else
+                            <img 
+                                src="{{ asset($banner->desktop_image_path) }}" 
+                                alt="{{ $banner->title }}" 
+                                class="w-full h-full object-cover object-center"
+                                {{ $index > 0 ? 'loading=lazy' : '' }}
+                            >
+                        @endif
+                    </a>
+                </div>
+            @endforeach
+        @else
+            <!-- SLIDE 1: SACRED BAMBOOLEES COLLECTION -->
+            <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-100 pointer-events-auto z-10 flex items-center justify-center bg-white" data-slide="0">
+                <a href="{{ route('collections.show', 'bambooless') }}" class="block w-full h-full relative cursor-pointer" aria-label="Explore Sacred Bambooless Incense Collection">
                     <img 
-                        src="{{ asset('assets/images/hero-sacred-hawan-cups.jpg') }}" 
-                        alt="Mangalam Sacred Havan Cups Collection" 
+                        src="{{ asset('assets/images/hero-sacred.jpg') }}" 
+                        alt="Mangalam Sacred Bambooless Collection" 
                         class="w-full h-full object-cover object-center"
                     >
-                </picture>
-            </a>
-        </div>
+                </a>
+            </div>
 
-        <!-- SLIDE 3: SACRED DHOOP CONES COLLECTION (RESPONSIVE DESKTOP & MOBILE BANNER) -->
-        <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 pointer-events-none z-0 flex items-center justify-center bg-white" data-slide="2">
-            <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block w-full h-full relative cursor-pointer" aria-label="Explore Sacred Dhoop Cones Collection">
-                <picture class="w-full h-full block">
-                    <source media="(max-width: 768px)" srcset="{{ asset('assets/images/hera-sacred-dhoop-cones-mobile.jpg') }}">
-                    <img 
-                        src="{{ asset('assets/images/hera-sacred-dhoop-cones.jpg') }}" 
-                        alt="Mangalam Sacred Dhoop Cones Collection" 
-                        class="w-full h-full object-cover object-center"
-                    >
-                </picture>
-            </a>
-        </div>
+            <!-- SLIDE 2: SACRED HAVAN CUPS COLLECTION (RESPONSIVE DESKTOP & MOBILE BANNER) -->
+            <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 pointer-events-none z-0 flex items-center justify-center bg-white" data-slide="1">
+                <a href="{{ route('collections.show', 'havan-cups') }}" class="block w-full h-full relative cursor-pointer" aria-label="Explore Sacred Havan Cups Collection">
+                    <picture class="w-full h-full block">
+                        <source media="(max-width: 768px)" srcset="{{ asset('assets/images/hero-sacred-hawan-cups-mobile.jpg') }}">
+                        <img 
+                            src="{{ asset('assets/images/hero-sacred-hawan-cups.jpg') }}" 
+                            alt="Mangalam Sacred Havan Cups Collection" 
+                            class="w-full h-full object-cover object-center"
+                        >
+                    </picture>
+                </a>
+            </div>
+
+            <!-- SLIDE 3: SACRED DHOOP CONES COLLECTION (RESPONSIVE DESKTOP & MOBILE BANNER) -->
+            <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 pointer-events-none z-0 flex items-center justify-center bg-white" data-slide="2">
+                <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block w-full h-full relative cursor-pointer" aria-label="Explore Sacred Dhoop Cones Collection">
+                    <picture class="w-full h-full block">
+                        <source media="(max-width: 768px)" srcset="{{ asset('assets/images/hera-sacred-dhoop-cones-mobile.jpg') }}">
+                        <img 
+                            src="{{ asset('assets/images/hera-sacred-dhoop-cones.jpg') }}" 
+                            alt="Mangalam Sacred Dhoop Cones Collection" 
+                            class="w-full h-full object-cover object-center"
+                        >
+                    </picture>
+                </a>
+            </div>
+        @endif
 
     </div>
 
@@ -73,10 +100,13 @@
     </button>
 
     <!-- Carousel Pagination Dots -->
+    @php
+        $slideCount = (isset($banners) && $banners->isNotEmpty()) ? $banners->count() : 3;
+    @endphp
     <div class="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-20 flex space-x-2.5" id="hero-slider-dots">
-        <button type="button" class="w-8 h-2 rounded-[10px] bg-[#D38928] transition-all duration-300" data-index="0" aria-label="Slide 1"></button>
-        <button type="button" class="w-2.5 h-2 rounded-[10px] bg-[#1F1F1F]/30 hover:bg-[#1F1F1F]/60 transition-all duration-300" data-index="1" aria-label="Slide 2"></button>
-        <button type="button" class="w-2.5 h-2 rounded-[10px] bg-[#1F1F1F]/30 hover:bg-[#1F1F1F]/60 transition-all duration-300" data-index="2" aria-label="Slide 3"></button>
+        @for($i = 0; $i < $slideCount; $i++)
+            <button type="button" class="{{ $i === 0 ? 'w-8 h-2 rounded-[10px] bg-[#D38928]' : 'w-2.5 h-2 rounded-[10px] bg-[#1F1F1F]/30 hover:bg-[#1F1F1F]/60' }} transition-all duration-300" data-index="{{ $i }}" aria-label="Slide {{ $i + 1 }}"></button>
+        @endfor
     </div>
 
 </section>

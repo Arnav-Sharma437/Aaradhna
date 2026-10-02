@@ -37,7 +37,9 @@ class BannerController extends Controller
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'subtitle' => 'nullable|string|max:500',
-            'desktop_image_path' => 'required|string|max:255',
+            'desktop_image_file' => 'nullable|image|mimes:jpeg,png,jpg,webp,svg,gif|max:5120',
+            'mobile_image_file' => 'nullable|image|mimes:jpeg,png,jpg,webp,svg,gif|max:5120',
+            'desktop_image_path' => 'nullable|string|max:255',
             'mobile_image_path' => 'nullable|string|max:255',
             'button_text' => 'nullable|string|max:100',
             'button_link' => 'nullable|string|max:255',
@@ -45,13 +47,38 @@ class BannerController extends Controller
             'is_active' => 'nullable|boolean',
         ]);
 
+        $uploadDir = public_path('assets/images/banners');
+        if (!file_exists($uploadDir)) {
+            mkdir($uploadDir, 0755, true);
+        }
+
+        // Process Desktop Image Upload
+        if ($request->hasFile('desktop_image_file')) {
+            $file = $request->file('desktop_image_file');
+            $filename = 'banner-desktop-' . time() . '-' . uniqid() . '.' . $file->getClientOriginalExtension();
+            $file->move($uploadDir, $filename);
+            $validated['desktop_image_path'] = 'assets/images/banners/' . $filename;
+        } elseif (empty($validated['desktop_image_path'])) {
+            $validated['desktop_image_path'] = 'assets/images/hero-sacred.jpg';
+        }
+
+        // Process Mobile Image Upload
+        if ($request->hasFile('mobile_image_file')) {
+            $file = $request->file('mobile_image_file');
+            $filename = 'banner-mobile-' . time() . '-' . uniqid() . '.' . $file->getClientOriginalExtension();
+            $file->move($uploadDir, $filename);
+            $validated['mobile_image_path'] = 'assets/images/banners/' . $filename;
+        }
+
         $validated['sort_order'] = $validated['sort_order'] ?? 0;
         $validated['is_active'] = $request->boolean('is_active', true);
+
+        unset($validated['desktop_image_file'], $validated['mobile_image_file']);
 
         HomepageBanner::create($validated);
 
         return redirect()->route('admin.banners.index')
-            ->with('success', 'Homepage banner created successfully.');
+            ->with('success', 'Homepage banner created and uploaded successfully.');
     }
 
     /**
@@ -78,7 +105,9 @@ class BannerController extends Controller
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'subtitle' => 'nullable|string|max:500',
-            'desktop_image_path' => 'required|string|max:255',
+            'desktop_image_file' => 'nullable|image|mimes:jpeg,png,jpg,webp,svg,gif|max:5120',
+            'mobile_image_file' => 'nullable|image|mimes:jpeg,png,jpg,webp,svg,gif|max:5120',
+            'desktop_image_path' => 'nullable|string|max:255',
             'mobile_image_path' => 'nullable|string|max:255',
             'button_text' => 'nullable|string|max:100',
             'button_link' => 'nullable|string|max:255',
@@ -86,13 +115,36 @@ class BannerController extends Controller
             'is_active' => 'nullable|boolean',
         ]);
 
+        $uploadDir = public_path('assets/images/banners');
+        if (!file_exists($uploadDir)) {
+            mkdir($uploadDir, 0755, true);
+        }
+
+        // Process Desktop Image Upload
+        if ($request->hasFile('desktop_image_file')) {
+            $file = $request->file('desktop_image_file');
+            $filename = 'banner-desktop-' . time() . '-' . uniqid() . '.' . $file->getClientOriginalExtension();
+            $file->move($uploadDir, $filename);
+            $validated['desktop_image_path'] = 'assets/images/banners/' . $filename;
+        }
+
+        // Process Mobile Image Upload
+        if ($request->hasFile('mobile_image_file')) {
+            $file = $request->file('mobile_image_file');
+            $filename = 'banner-mobile-' . time() . '-' . uniqid() . '.' . $file->getClientOriginalExtension();
+            $file->move($uploadDir, $filename);
+            $validated['mobile_image_path'] = 'assets/images/banners/' . $filename;
+        }
+
         $validated['sort_order'] = $validated['sort_order'] ?? 0;
         $validated['is_active'] = $request->boolean('is_active', true);
+
+        unset($validated['desktop_image_file'], $validated['mobile_image_file']);
 
         $banner->update($validated);
 
         return redirect()->route('admin.banners.index')
-            ->with('success', 'Banner updated successfully.');
+            ->with('success', 'Banner updated and image saved successfully.');
     }
 
     /**

@@ -116,20 +116,22 @@
                                 </div>
                             </div>
 
-                            <!-- Right: Dynamic Hover Image Preview Box (5 Cols) -->
-                            <div class="col-span-5 relative w-full h-[215px] rounded-2xl overflow-hidden bg-stone-100 border border-[#EAE3D9] shadow-inner">
-                                <img 
-                                    id="mega-preview-trial" 
-                                    src="{{ asset('assets/images/trial-pack-desktop.jpg') }}" 
-                                    alt="Buy 5 Trial Packs @ ₹799"
-                                    class="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 opacity-100"
-                                >
-                                <img 
-                                    id="mega-preview-b2g1" 
-                                    src="{{ asset('assets/images/banner-buy2-get1-free.jpg') }}" 
-                                    alt="Buy 2 Get 1 FREE" 
-                                    class="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 opacity-0 pointer-events-none"
-                                >
+                            <!-- Right: Dynamic Hover Image Preview Box (Matching Product Card Padding, Border & Radius) -->
+                            <div class="col-span-5 p-2.5 sm:p-3 bg-[#FFFDF9] border border-[#EADBCC] rounded-[20px] shadow-2xs">
+                                <div class="relative w-full h-[195px] rounded-[16px] overflow-hidden bg-[#FAF7F2] border border-[#EADBCC]/70 shadow-inner">
+                                    <img 
+                                        id="mega-preview-trial" 
+                                        src="{{ asset('assets/images/trial-pack-desktop.jpg') }}" 
+                                        alt="Buy 5 Trial Packs @ ₹799"
+                                        class="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 opacity-100 rounded-[15px]"
+                                    >
+                                    <img 
+                                        id="mega-preview-b2g1" 
+                                        src="{{ asset('assets/images/banner-buy2-get1-free.jpg') }}" 
+                                        alt="Buy 2 Get 1 FREE" 
+                                        class="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 opacity-0 pointer-events-none rounded-[15px]"
+                                    >
+                                </div>
                             </div>
 
                         </div>
@@ -146,11 +148,11 @@
                     </a>
                 </div>
 
-                <!-- 6. Pitambara Havan (Always Underlined Link) -->
+                <!-- 6. Pitambara Havan (Same Font Weight & Style as Other Menus, Underlined in #831F2E) -->
                 <div class="py-2 xl:py-3 flex items-center">
                     <a 
                         href="{{ route('products.pitambara') }}" 
-                        class="nav-link-always-underlined text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-bold text-[#831F2E] hover:text-[#6E1724] transition-colors whitespace-nowrap"
+                        class="nav-link-always-underlined text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-medium text-[#831F2E] hover:text-[#6E1724] transition-colors whitespace-nowrap tracking-normal underline decoration-1 underline-offset-4"
                     >
                         Pitambara Havan
                     </a>
