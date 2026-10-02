@@ -17,22 +17,22 @@
                 </button>
 
                 <!-- Brand Logo (Desktop Left-aligned) -->
-                <a href="{{ route('home') }}" class="hidden lg:flex group items-center py-1" aria-label="Manglam - Pure Sacred Rituals">
+                <a href="{{ route('home') }}" class="hidden lg:flex items-center py-1" aria-label="Manglam - Pure Sacred Rituals">
                     <img 
                         src="{{ asset('assets/images/mangalam-logo.png') }}" 
                         alt="Manglam" 
-                        class="h-10 sm:h-13 lg:h-15 w-auto max-w-[130px] sm:max-w-[160px] lg:max-w-[190px] xl:max-w-[210px] object-contain transition-transform group-hover:scale-102"
+                        class="h-10 sm:h-13 lg:h-15 w-auto max-w-[130px] sm:max-w-[160px] lg:max-w-[190px] xl:max-w-[210px] object-contain"
                     >
                 </a>
             </div>
 
             <!-- CENTER: Brand Logo (Mobile Centered) -->
             <div class="lg:hidden absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-auto">
-                <a href="{{ route('home') }}" class="group flex items-center py-1" aria-label="Manglam - Pure Sacred Rituals">
+                <a href="{{ route('home') }}" class="flex items-center py-1" aria-label="Manglam - Pure Sacred Rituals">
                     <img 
                         src="{{ asset('assets/images/mangalam-logo.png') }}" 
                         alt="Manglam" 
-                        class="h-9 sm:h-11 w-auto max-w-[130px] sm:max-w-[150px] object-contain transition-transform group-hover:scale-102"
+                        class="h-9 sm:h-11 w-auto max-w-[130px] sm:max-w-[150px] object-contain"
                     >
                 </a>
             </div>

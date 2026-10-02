@@ -1031,8 +1031,8 @@
 
                 <!-- First Pass -->
                 @foreach($row1Testimonials as $t)
-                    <div class="shrink-0 w-[280px] sm:w-[350px] md:w-[380px] bg-white rounded-[16px] p-4 sm:p-5 border border-[#EADBCC] shadow-xs hover:shadow-lg hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between">
-                        <div class="space-y-2">
+                    <div class="shrink-0 w-[280px] sm:w-[350px] md:w-[380px] min-h-[175px] sm:min-h-[185px] bg-white rounded-[16px] p-5 border border-[#EADBCC] shadow-xs hover:shadow-lg hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between">
+                        <div class="space-y-2.5">
                             <div class="flex items-center space-x-1 text-[#D38928] text-lg sm:text-xl leading-none">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                             </div>
@@ -1040,7 +1040,7 @@
                                 "{{ $t['quote'] }}"
                             </p>
                         </div>
-                        <div class="flex items-center justify-between pt-3 border-t border-[#EAE3D9] mt-3">
+                        <div class="flex items-center justify-between pt-3.5 border-t border-[#EAE3D9] mt-3.5">
                             <div class="flex items-center space-x-2.5">
                                 <div class="w-9 h-9 rounded-full {{ $t['avatar_bg'] }} text-white flex items-center justify-center font-bold text-xs shadow-xs font-heading shrink-0">
                                     {{ $t['initials'] }}
@@ -1056,8 +1056,8 @@
 
                 <!-- Second Duplicate Pass for Infinite Seamless Marquee -->
                 @foreach($row1Testimonials as $t)
-                    <div class="shrink-0 w-[280px] sm:w-[350px] md:w-[380px] bg-white rounded-[16px] p-4 sm:p-5 border border-[#EADBCC] shadow-xs hover:shadow-lg hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between" aria-hidden="true">
-                        <div class="space-y-2">
+                    <div class="shrink-0 w-[280px] sm:w-[350px] md:w-[380px] min-h-[175px] sm:min-h-[185px] bg-white rounded-[16px] p-5 border border-[#EADBCC] shadow-xs hover:shadow-lg hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between" aria-hidden="true">
+                        <div class="space-y-2.5">
                             <div class="flex items-center space-x-1 text-[#D38928] text-lg sm:text-xl leading-none">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                             </div>
@@ -1065,7 +1065,7 @@
                                 "{{ $t['quote'] }}"
                             </p>
                         </div>
-                        <div class="flex items-center justify-between pt-3 border-t border-[#EAE3D9] mt-3">
+                        <div class="flex items-center justify-between pt-3.5 border-t border-[#EAE3D9] mt-3.5">
                             <div class="flex items-center space-x-2.5">
                                 <div class="w-9 h-9 rounded-full {{ $t['avatar_bg'] }} text-white flex items-center justify-center font-bold text-xs shadow-xs font-heading shrink-0">
                                     {{ $t['initials'] }}
@@ -1137,8 +1137,8 @@
 
                 <!-- First Pass -->
                 @foreach($row2Testimonials as $t)
-                    <div class="shrink-0 w-[280px] sm:w-[350px] md:w-[380px] bg-white rounded-[16px] p-4 sm:p-5 border border-[#EADBCC] shadow-xs hover:shadow-lg hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between">
-                        <div class="space-y-2">
+                    <div class="shrink-0 w-[280px] sm:w-[350px] md:w-[380px] min-h-[175px] sm:min-h-[185px] bg-white rounded-[16px] p-5 border border-[#EADBCC] shadow-xs hover:shadow-lg hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between">
+                        <div class="space-y-2.5">
                             <div class="flex items-center space-x-1 text-[#D38928] text-lg sm:text-xl leading-none">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                             </div>
@@ -1146,7 +1146,7 @@
                                 "{{ $t['quote'] }}"
                             </p>
                         </div>
-                        <div class="flex items-center justify-between pt-3 border-t border-[#EAE3D9] mt-3">
+                        <div class="flex items-center justify-between pt-3.5 border-t border-[#EAE3D9] mt-3.5">
                             <div class="flex items-center space-x-2.5">
                                 <div class="w-9 h-9 rounded-full {{ $t['avatar_bg'] }} text-white flex items-center justify-center font-bold text-xs shadow-xs font-heading shrink-0">
                                     {{ $t['initials'] }}
@@ -1162,8 +1162,8 @@
 
                 <!-- Second Duplicate Pass for Infinite Seamless Marquee -->
                 @foreach($row2Testimonials as $t)
-                    <div class="shrink-0 w-[280px] sm:w-[350px] md:w-[380px] bg-white rounded-[16px] p-4 sm:p-5 border border-[#EADBCC] shadow-xs hover:shadow-lg hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between" aria-hidden="true">
-                        <div class="space-y-2">
+                    <div class="shrink-0 w-[280px] sm:w-[350px] md:w-[380px] min-h-[175px] sm:min-h-[185px] bg-white rounded-[16px] p-5 border border-[#EADBCC] shadow-xs hover:shadow-lg hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between" aria-hidden="true">
+                        <div class="space-y-2.5">
                             <div class="flex items-center space-x-1 text-[#D38928] text-lg sm:text-xl leading-none">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                             </div>
@@ -1171,7 +1171,7 @@
                                 "{{ $t['quote'] }}"
                             </p>
                         </div>
-                        <div class="flex items-center justify-between pt-3 border-t border-[#EAE3D9] mt-3">
+                        <div class="flex items-center justify-between pt-3.5 border-t border-[#EAE3D9] mt-3.5">
                             <div class="flex items-center space-x-2.5">
                                 <div class="w-9 h-9 rounded-full {{ $t['avatar_bg'] }} text-white flex items-center justify-center font-bold text-xs shadow-xs font-heading shrink-0">
                                     {{ $t['initials'] }}
@@ -1195,7 +1195,7 @@
 <!-- ========================================================================= -->
 <!-- 6. ROOTED IN PURITY (Rich Vedic Patterned Section & 3 Crisp Premium Cards)-->
 <!-- ========================================================================= -->
-<section class="py-14 sm:py-20 border-b border-[#EAE3D9] select-none font-body relative overflow-hidden bg-[#C85A17] bg-repeat" style="background-image: url('{{ asset('assets/images/rooted-in-purity-bg.png') }}'); background-size: 260px;">
+<section class="py-14 sm:py-20 border-b border-[#EAE3D9] select-none font-body relative overflow-hidden bg-[#C85A17] bg-cover bg-center" style="background-image: url('{{ asset('assets/images/rooted-in-purity-bg.png') }}'); background-size: cover; background-position: center;">
     
     <!-- Subtle Warm Gradient Overlay for Depth -->
     <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/30 pointer-events-none"></div>

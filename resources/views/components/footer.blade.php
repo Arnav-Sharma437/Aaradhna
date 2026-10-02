@@ -47,14 +47,29 @@
     </div>
 
     <!-- Main Footer Container (1440px) -->
-    <div class="w-full max-w-[1440px] mx-auto pt-14 sm:pt-16 pb-8 px-5 sm:px-8 lg:px-[40px] relative z-10">
+    <div class="w-full max-w-[1440px] mx-auto pt-10 sm:pt-14 pb-8 px-5 sm:px-8 lg:px-[40px] relative z-10">
         
+        <!-- Sacred Vishnu Mangalam Devotional Mantra Banner (Prominent & Top of Footer) -->
+        <div class="mb-10 sm:mb-12 py-5 sm:py-6 px-6 sm:px-10 rounded-2xl sm:rounded-3xl bg-black/40 border-2 border-[#F6DAA8]/45 shadow-2xl text-center relative overflow-hidden backdrop-blur-md">
+            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-[#F6DAA8]/15 to-transparent pointer-events-none"></div>
+            <div class="relative z-10 flex flex-col items-center justify-center space-y-2">
+                <div class="text-[#F6DAA8] text-base sm:text-xl md:text-2xl lg:text-[26px] font-serif tracking-wide sm:tracking-widest leading-relaxed sm:leading-snug font-bold drop-shadow-md">
+                    ॥ मङ्गलं भगवान विष्णुः, मङ्गलम् गरुणध्वजः । मङ्गलम् पुण्डरी काक्षः, मङ्गलाय तनो हरिः ॥
+                </div>
+                <div class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-[#F6DAA8]/80 font-heading font-semibold flex items-center justify-center gap-2">
+                    <span>✦</span>
+                    <span>परम पावन मङ्गल स्तुति • मङ्गलमय जीवन की प्रार्थना</span>
+                    <span>✦</span>
+                </div>
+            </div>
+        </div>
+
         <!-- Top Main Grid (Balanced 4 Columns) -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 pb-12 border-b border-white/15">
             
             <!-- Col 1: Brand Info & Devotional Mission (5 Cols) -->
             <div class="lg:col-span-5 space-y-4">
-                <a href="{{ route('home') }}" class="inline-block bg-white/95 backdrop-blur-xs p-2.5 sm:p-3 rounded-2xl shadow-md border border-[#F6DAA8]/40 hover:scale-102 transition-transform">
+                <a href="{{ route('home') }}" class="inline-block bg-white/95 backdrop-blur-xs p-2.5 sm:p-3 rounded-2xl shadow-md border border-[#F6DAA8]/40">
                     <img src="{{ asset('assets/images/mangalam-logo.png') }}" alt="Manglam" class="h-9 sm:h-11 w-auto max-w-[150px] object-contain">
                 </a>
                 
@@ -169,21 +184,8 @@
 
         </div>
 
-        <!-- Sacred Vishnu Mangalam Devotional Mantra Banner -->
-        <div class="my-8 py-4 px-5 sm:px-8 rounded-2xl bg-black/30 border border-[#F6DAA8]/30 shadow-inner text-center relative overflow-hidden backdrop-blur-xs">
-            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-[#F6DAA8]/10 to-transparent pointer-events-none"></div>
-            <div class="relative z-10 flex flex-col items-center justify-center space-y-1.5">
-                <div class="text-[#F6DAA8] text-xs sm:text-sm md:text-base font-serif tracking-wider sm:tracking-widest leading-relaxed font-semibold">
-                    ॥ मङ्गलं भगवान विष्णुः, मङ्गलम् गरुणध्वजः । मङ्गलम् पुण्डरी काक्षः, मङ्गलाय तनो हरिः ॥
-                </div>
-                <div class="text-[9px] sm:text-[10px] uppercase tracking-[0.25em] text-[#F6DAA8]/70 font-heading font-medium">
-                    ✦ परम पावन मङ्गल स्तुति • मङ्गलमय जीवन की प्रार्थना ✦
-                </div>
-            </div>
-        </div>
-
         <!-- Bottom Row: Policies & Devotional Copyright -->
-        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 text-[11px] sm:text-xs text-white/75">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 text-[11px] sm:text-xs text-white/75">
             
             <!-- Policy Links -->
             <div class="flex flex-wrap items-center justify-center sm:justify-start gap-x-4 sm:gap-x-6 gap-y-1">
@@ -198,7 +200,7 @@
 
             <!-- Devotional Chant & Copyright -->
             <div class="text-center text-[#F6DAA8] font-serif text-xs">
-                <span>© {{ date('Y') }} Manglam.co™ • सर्वमङ्गलमाङ्गल्ये शिवे सर्वार्थसाधिके</span>
+                <span>© {{ date('Y') }} Manglam.co™ • All Rights Reserved</span>
             </div>
 
         </div>
