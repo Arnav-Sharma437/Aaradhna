@@ -123,35 +123,38 @@
             <!-- 8-Card Luxury Grid (Mobile Swipeable Slider + Desktop Grid) -->
             <div id="bestseller-grid" class="flex sm:grid overflow-x-auto sm:overflow-visible scrollbar-none snap-x snap-mandatory sm:grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4 lg:gap-5 pb-4 sm:pb-0 -mx-5 px-5 sm:mx-0 sm:px-0 scroll-smooth">
                 
-                <!-- Card 1: Swarna Pushpa (TOP PICKS) -->
-                <div class="product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[16px] sm:rounded-[20px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 h-full font-body">
+                <!-- Card 1: Swarna Pushpa -->
+                <div class="product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
                     <!-- Top Pill Badge -->
                     <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
-                        <span class="inline-block bg-white px-2.5 sm:px-4 py-0.5 rounded-full border border-[#D38928] text-[11px] sm:text-xs font-bold tracking-widest text-[#965A15] uppercase shadow-xs whitespace-nowrap font-heading">
-                            ✨ BUY 2 GET 1 FREE ✨
+                        <span class="inline-flex items-center space-x-1 bg-white px-3 sm:px-4 py-0.5 rounded-full border border-[#D38928] text-[10px] sm:text-[11px] font-bold tracking-widest text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading">
+                            <span class="text-[#D38928] text-xs">✨</span>
+                            <span>BUY 2 GET 1 FREE</span>
+                            <span class="text-[#D38928] text-xs">✨</span>
                         </span>
                     </div>
-                    <!-- Image (10px side gap) -->
-                    <div class="p-2.5 pb-0">
-                        <div class="relative w-full aspect-square rounded-[12px] sm:rounded-[16px] overflow-hidden bg-[#FAF7F2]">
-                            <a href="{{ route('products.show', 'swarna-pushpa') }}" class="block w-full h-full">
-                                <img src="{{ asset('assets/images/oudh-pack-card.jpg') }}" alt="Swarna Pushpa Bambooless" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105"><img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Swarna Pushpa (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
+                    <!-- Image Box (Matching Categories Inner Padding & Radius) -->
+                    <div class="p-2.5 sm:p-3.5 pb-0">
+                        <div class="relative w-full aspect-[4/4.8] rounded-[16px] sm:rounded-[20px] overflow-hidden bg-[#FAF7F2] shadow-2xs">
+                            <a href="{{ route('products.show', 'swarna-pushpa') }}" class="block w-full h-full relative overflow-hidden">
+                                <img src="{{ asset('assets/images/oudh-pack-card.jpg') }}" alt="Swarna Pushpa Bambooless" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
+                                <img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Swarna Pushpa (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                             </a>
-                            <div class="absolute top-2 right-2 sm:top-3 sm:right-3 text-right pointer-events-none select-none leading-none">
-                                <span class="text-[10px] sm:text-[11px] uppercase font-semibold text-gray-500 block">pack of</span>
+                            <div class="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 text-right pointer-events-none select-none leading-none z-10">
+                                <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-gray-500 block tracking-wider">PACK OF</span>
                                 <span class="text-xl sm:text-2xl font-black font-heading text-[#8B2626] block my-0.5">40</span>
-                                <span class="text-[10px] sm:text-[11px] uppercase font-semibold text-gray-500 block">sticks</span>
+                                <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-gray-500 block tracking-wider">STICKS</span>
                             </div>
                         </div>
                     </div>
                     <!-- Content -->
-                    <div class="p-3 sm:p-5 pt-2 sm:pt-4 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3.5">
+                    <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
                         <div class="space-y-1">
                             <h3 class="text-[15px] sm:text-xl font-bold font-serif text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                                 <a href="{{ route('products.show', 'swarna-pushpa') }}">Swarna Pushpa <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(Marygold)</span></a>
                             </h3>
-                            <div class="flex items-center space-x-1 text-[#D38928] text-xs">
-                                <div class="flex text-xs"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                            <div class="flex items-center space-x-1.5 text-[#D38928]">
+                                <div class="flex text-sm sm:text-base leading-none"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
                                 <span class="text-xs text-gray-500 font-medium">(277)</span>
                             </div>
                         </div>
@@ -167,35 +170,38 @@
                     </div>
                 </div>
 
-                <!-- Card 2: Chandan Saanjh (TOP PICKS) -->
-                <div class="product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[16px] sm:rounded-[20px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 h-full font-body">
+                <!-- Card 2: Chandan Saanjh -->
+                <div class="product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
                     <!-- Top Pill Badge -->
                     <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
-                        <span class="inline-block bg-white px-2.5 sm:px-4 py-0.5 rounded-full border border-[#D38928] text-[11px] sm:text-xs font-bold tracking-widest text-[#965A15] uppercase shadow-xs whitespace-nowrap font-heading">
-                            BUY 2 GET 1 FREE
+                        <span class="inline-flex items-center space-x-1 bg-white px-3 sm:px-4 py-0.5 rounded-full border border-[#D38928] text-[10px] sm:text-[11px] font-bold tracking-widest text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading">
+                            <span class="text-[#D38928] text-xs">✨</span>
+                            <span>BUY 2 GET 1 FREE</span>
+                            <span class="text-[#D38928] text-xs">✨</span>
                         </span>
                     </div>
-                    <!-- Image (10px side gap) -->
-                    <div class="p-2.5 pb-0">
-                        <div class="relative w-full aspect-square rounded-[12px] sm:rounded-[16px] overflow-hidden bg-[#FAF7F2]">
-                            <a href="{{ route('products.show', 'chandan-saanjh') }}" class="block w-full h-full">
-                                <img src="{{ asset('assets/images/incense-pack.jpg') }}" alt="Chandan Saanjh Incense" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105"><img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Chandan Saanjh (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
+                    <!-- Image Box (Matching Categories Inner Padding & Radius) -->
+                    <div class="p-2.5 sm:p-3.5 pb-0">
+                        <div class="relative w-full aspect-[4/4.8] rounded-[16px] sm:rounded-[20px] overflow-hidden bg-[#FAF7F2] shadow-2xs">
+                            <a href="{{ route('products.show', 'chandan-saanjh') }}" class="block w-full h-full relative overflow-hidden">
+                                <img src="{{ asset('assets/images/incense-pack.jpg') }}" alt="Chandan Saanjh Incense" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
+                                <img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Chandan Saanjh (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                             </a>
-                            <div class="absolute top-2 right-2 sm:top-3 sm:right-3 text-right pointer-events-none select-none leading-none">
-                                <span class="text-[10px] sm:text-[11px] uppercase font-semibold text-gray-500 block">pack of</span>
+                            <div class="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 text-right pointer-events-none select-none leading-none z-10">
+                                <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-gray-500 block tracking-wider">PACK OF</span>
                                 <span class="text-xl sm:text-2xl font-black font-heading text-[#3E2D22] block my-0.5">40</span>
-                                <span class="text-[10px] sm:text-[11px] uppercase font-semibold text-gray-500 block">sticks</span>
+                                <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-gray-500 block tracking-wider">STICKS</span>
                             </div>
                         </div>
                     </div>
                     <!-- Content -->
-                    <div class="p-3 sm:p-5 pt-2 sm:pt-4 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3.5">
+                    <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
                         <div class="space-y-1">
                             <h3 class="text-[15px] sm:text-xl font-bold font-serif text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                                 <a href="{{ route('products.show', 'chandan-saanjh') }}">Chandan Saanjh <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(चंदन)</span></a>
                             </h3>
-                            <div class="flex items-center space-x-1 text-[#D38928] text-xs">
-                                <div class="flex text-xs"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                            <div class="flex items-center space-x-1.5 text-[#D38928]">
+                                <div class="flex text-sm sm:text-base leading-none"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
                                 <span class="text-xs text-gray-500 font-medium">(218)</span>
                             </div>
                         </div>
@@ -211,35 +217,38 @@
                     </div>
                 </div>
 
-                <!-- Card 3: Royal Oudh (FAVORITE) -->
-                <div class="product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[16px] sm:rounded-[20px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 h-full font-body">
+                <!-- Card 3: Royal Oudh -->
+                <div class="product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
                     <!-- Top Pill Badge -->
                     <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
-                        <span class="inline-block bg-white px-2.5 sm:px-4 py-0.5 rounded-full border border-[#D38928] text-[11px] sm:text-xs font-bold tracking-widest text-[#965A15] uppercase shadow-xs whitespace-nowrap font-heading">
-                            BUY 2 GET 1 FREE
+                        <span class="inline-flex items-center space-x-1 bg-white px-3 sm:px-4 py-0.5 rounded-full border border-[#D38928] text-[10px] sm:text-[11px] font-bold tracking-widest text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading">
+                            <span class="text-[#D38928] text-xs">✨</span>
+                            <span>BUY 2 GET 1 FREE</span>
+                            <span class="text-[#D38928] text-xs">✨</span>
                         </span>
                     </div>
-                    <!-- Image (10px side gap) -->
-                    <div class="p-2.5 pb-0">
-                        <div class="relative w-full aspect-square rounded-[12px] sm:rounded-[16px] overflow-hidden bg-[#FAF7F2]">
-                            <a href="{{ route('products.show', 'royal-oudh') }}" class="block w-full h-full">
-                                <img src="{{ asset('assets/images/oudh-pack-card.jpg') }}" alt="Royal Oudh Incense" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105"><img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Royal Oudh (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
+                    <!-- Image Box (Matching Categories Inner Padding & Radius) -->
+                    <div class="p-2.5 sm:p-3.5 pb-0">
+                        <div class="relative w-full aspect-[4/4.8] rounded-[16px] sm:rounded-[20px] overflow-hidden bg-[#FAF7F2] shadow-2xs">
+                            <a href="{{ route('products.show', 'royal-oudh') }}" class="block w-full h-full relative overflow-hidden">
+                                <img src="{{ asset('assets/images/oudh-pack-card.jpg') }}" alt="Royal Oudh Incense" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
+                                <img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Royal Oudh (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                             </a>
-                            <div class="absolute top-2 right-2 sm:top-3 sm:right-3 text-right pointer-events-none select-none leading-none">
-                                <span class="text-[10px] sm:text-[11px] uppercase font-semibold text-gray-500 block">pack of</span>
+                            <div class="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 text-right pointer-events-none select-none leading-none z-10">
+                                <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-gray-500 block tracking-wider">PACK OF</span>
                                 <span class="text-xl sm:text-2xl font-black font-heading text-[#7A3A22] block my-0.5">40</span>
-                                <span class="text-[10px] sm:text-[11px] uppercase font-semibold text-gray-500 block">sticks</span>
+                                <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-gray-500 block tracking-wider">STICKS</span>
                             </div>
                         </div>
                     </div>
                     <!-- Content -->
-                    <div class="p-3 sm:p-5 pt-2 sm:pt-4 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3.5">
+                    <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
                         <div class="space-y-1">
                             <h3 class="text-[15px] sm:text-xl font-bold font-serif text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                                 <a href="{{ route('products.show', 'royal-oudh') }}">Royal Oudh <span class="text-xs font-normal text-gray-500 ml-0.5">(रॉयल ऊद)</span></a>
                             </h3>
-                            <div class="flex items-center space-x-1 text-[#D38928] text-xs">
-                                <div class="flex text-xs"><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                            <div class="flex items-center space-x-1.5 text-[#D38928]">
+                                <div class="flex text-sm sm:text-base leading-none"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
                                 <span class="text-xs text-gray-500 font-medium">(234)</span>
                             </div>
                         </div>
@@ -255,35 +264,38 @@
                     </div>
                 </div>
 
-                <!-- Card 4: Google Dhoop Havan Cup (TOP PICKS) -->
-                <div class="product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[16px] sm:rounded-[20px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 h-full font-body">
+                <!-- Card 4: Google Dhoop Havan Cup -->
+                <div class="product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
                     <!-- Top Pill Badge -->
                     <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
-                        <span class="inline-block bg-white px-2.5 sm:px-4 py-0.5 rounded-full border border-[#D38928] text-[11px] sm:text-xs font-bold tracking-widest text-[#965A15] uppercase shadow-xs whitespace-nowrap font-heading">
-                            TOP PICKS
+                        <span class="inline-flex items-center space-x-1 bg-white px-3 sm:px-4 py-0.5 rounded-full border border-[#D38928] text-[10px] sm:text-[11px] font-bold tracking-widest text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading">
+                            <span class="text-[#D38928] text-xs">✨</span>
+                            <span>TOP PICKS</span>
+                            <span class="text-[#D38928] text-xs">✨</span>
                         </span>
                     </div>
-                    <!-- Image (10px side gap) -->
-                    <div class="p-2.5 pb-0">
-                        <div class="relative w-full aspect-square rounded-[12px] sm:rounded-[16px] overflow-hidden bg-[#FAF7F2]">
-                            <a href="{{ route('products.show', 'google-dhoop') }}" class="block w-full h-full">
-                                <img src="{{ asset('assets/images/havan-cup.jpg') }}" alt="Google Dhoop Havan Cup" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105"><img src="{{ asset('assets/images/single-havan-cup.jpg') }}" alt="Google Dhoop (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
+                    <!-- Image Box (Matching Categories Inner Padding & Radius) -->
+                    <div class="p-2.5 sm:p-3.5 pb-0">
+                        <div class="relative w-full aspect-[4/4.8] rounded-[16px] sm:rounded-[20px] overflow-hidden bg-[#FAF7F2] shadow-2xs">
+                            <a href="{{ route('products.show', 'google-dhoop') }}" class="block w-full h-full relative overflow-hidden">
+                                <img src="{{ asset('assets/images/havan-cup.jpg') }}" alt="Google Dhoop Havan Cup" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
+                                <img src="{{ asset('assets/images/single-havan-cup.jpg') }}" alt="Google Dhoop (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                             </a>
-                            <div class="absolute top-2 right-2 sm:top-3 sm:right-3 text-right pointer-events-none select-none leading-none">
-                                <span class="text-[10px] sm:text-[11px] uppercase font-semibold text-gray-500 block">box of</span>
+                            <div class="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 text-right pointer-events-none select-none leading-none z-10">
+                                <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-gray-500 block tracking-wider">BOX OF</span>
                                 <span class="text-xl sm:text-2xl font-black font-heading text-[#965A15] block my-0.5">12</span>
-                                <span class="text-[10px] sm:text-[11px] uppercase font-semibold text-gray-500 block">cups</span>
+                                <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-gray-500 block tracking-wider">CUPS</span>
                             </div>
                         </div>
                     </div>
                     <!-- Content -->
-                    <div class="p-3 sm:p-5 pt-2 sm:pt-4 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3.5">
+                    <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
                         <div class="space-y-1">
                             <h3 class="text-[15px] sm:text-xl font-bold font-serif text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                                 <a href="{{ route('products.show', 'google-dhoop') }}">Google Dhoop <span class="text-xs font-normal text-gray-500 ml-0.5">Havan Cup</span></a>
                             </h3>
-                            <div class="flex items-center space-x-1 text-[#D38928] text-xs">
-                                <div class="flex text-xs"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                            <div class="flex items-center space-x-1.5 text-[#D38928]">
+                                <div class="flex text-sm sm:text-base leading-none"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
                                 <span class="text-xs text-gray-500 font-medium">(210)</span>
                             </div>
                         </div>
