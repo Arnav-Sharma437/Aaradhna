@@ -226,64 +226,59 @@
         </div>
 
         <!-- ================================================================= -->
-        <!-- 1. MOBILE ONLY: 3D COVERFLOW (Swipeable)                          -->
+        <!-- 1. MOBILE ONLY: CONTINUOUS SMOOTH SCROLL-SNAP CAROUSEL            -->
         <!-- ================================================================= -->
-        <div class="sm:hidden relative w-full flex items-center justify-center min-h-[380px] py-4" id="coverflow-mobile-stage">
-            
-            <!-- Left Flanking Card -->
+        <div class="sm:hidden relative w-full py-4 overflow-hidden" id="coverflow-mobile-stage">
             <div 
-                id="coverflow-left-card" 
-                class="absolute left-1 z-10 w-[145px] aspect-[9/16] rounded-[20px] overflow-hidden bg-black shadow-lg opacity-50 filter blur-[2px] scale-85 transition-all duration-500 transform -translate-x-2 cursor-pointer"
+                id="mobile-reels-track" 
+                class="flex space-x-4 overflow-x-auto snap-x snap-mandatory scrollbar-none scroll-smooth py-4 items-center"
+                style="padding-left: calc(50% - 110px); padding-right: calc(50% - 110px); -webkit-overflow-scrolling: touch;"
             >
-                <video class="w-full h-full object-cover pointer-events-none" id="coverflow-left-video" src="{{ $reels[count($reels)-1]['video_url'] }}" poster="{{ $reels[count($reels)-1]['poster'] }}" autoplay loop muted playsinline></video>
-                <div class="absolute inset-0 bg-black/40 pointer-events-none"></div>
-            </div>
+                @foreach($reels as $idx => $reel)
+                    <div 
+                        class="mobile-reel-card snap-center snap-always shrink-0 w-[220px] aspect-[9/16] rounded-[24px] overflow-hidden bg-black relative transition-all duration-300 transform cursor-pointer select-none {{ $idx === 0 ? 'scale-100 opacity-100 shadow-2xl border-2 border-[#D38928]/70 z-20' : 'scale-[0.86] opacity-50 filter blur-[1.5px] border-2 border-transparent' }}"
+                        data-index="{{ $idx }}"
+                    >
+                        <video 
+                            class="mobile-reel-vid w-full h-full object-cover pointer-events-none" 
+                            src="{{ $reel['video_url'] }}" 
+                            poster="{{ $reel['poster'] }}" 
+                            autoplay 
+                            loop 
+                            muted 
+                            playsinline 
+                            preload="auto"
+                        ></video>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 pointer-events-none"></div>
 
-            <!-- Center Active Video Card -->
-            <div 
-                id="coverflow-center-card" 
-                class="relative z-30 w-[230px] aspect-[9/16] rounded-[24px] overflow-hidden bg-black shadow-2xl border-2 border-[#D38928]/50 scale-100 transition-all duration-500 transform cursor-pointer group"
-                title="Tap to watch full reel"
-            >
-                <video class="w-full h-full object-cover pointer-events-none" id="coverflow-center-video" src="{{ $reels[0]['video_url'] }}" poster="{{ $reels[0]['poster'] }}" autoplay loop muted playsinline></video>
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 pointer-events-none"></div>
+                        <!-- Top Left Views Badge -->
+                        <div class="absolute top-3 left-3 pointer-events-none z-10">
+                            <span class="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-[11px] font-bold border border-white/20">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                                <span>{{ $reel['views'] }}</span>
+                            </span>
+                        </div>
 
-                <!-- Top Left Views Badge -->
-                <div class="absolute top-3 left-3 pointer-events-none z-10">
-                    <span class="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-[11px] font-bold border border-white/20">
-                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
-                        <span id="coverflow-views-badge">{{ $reels[0]['views'] }}</span>
-                    </span>
-                </div>
+                        <!-- Center Play Indicator -->
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                            <div class="w-12 h-12 rounded-full bg-black/45 backdrop-blur-md border border-white/30 text-white flex items-center justify-center shadow-xl">
+                                <svg class="w-5 h-5 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
 
-                <!-- Center Play Indicator -->
-                <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <div class="w-12 h-12 rounded-full bg-black/45 backdrop-blur-md border border-white/30 text-white flex items-center justify-center transform group-hover:scale-110 transition-transform shadow-xl">
-                        <svg class="w-5 h-5 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        <!-- Bottom Product Thumbnail Badge -->
+                        <div class="absolute bottom-3.5 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
+                            <div class="w-13 h-13 rounded-full bg-white p-1 shadow-2xl border-2 border-[#D38928] overflow-hidden flex items-center justify-center">
+                                <img src="{{ $reel['thumbnail'] }}" alt="{{ $reel['title'] }}" class="w-full h-full object-cover rounded-full">
+                            </div>
+                        </div>
                     </div>
-                </div>
-
-                <!-- Bottom Product Thumbnail Badge -->
-                <div class="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
-                    <div class="w-13 h-13 rounded-full bg-white p-1 shadow-2xl border-2 border-[#D38928] overflow-hidden flex items-center justify-center">
-                        <img id="coverflow-center-thumb" src="{{ $reels[0]['thumbnail'] }}" alt="Product Badge" class="w-full h-full object-cover rounded-full">
-                    </div>
-                </div>
+                @endforeach
             </div>
-
-            <!-- Right Flanking Card -->
-            <div 
-                id="coverflow-right-card" 
-                class="absolute right-1 z-10 w-[145px] aspect-[9/16] rounded-[20px] overflow-hidden bg-black shadow-lg opacity-50 filter blur-[2px] scale-85 transition-all duration-500 transform translate-x-2 cursor-pointer"
-            >
-                <video class="w-full h-full object-cover pointer-events-none" id="coverflow-right-video" src="{{ $reels[1]['video_url'] }}" poster="{{ $reels[1]['poster'] }}" autoplay loop muted playsinline></video>
-                <div class="absolute inset-0 bg-black/40 pointer-events-none"></div>
-            </div>
-
         </div>
 
         <!-- ================================================================= -->
-        <!-- 2. DESKTOP ONLY: 5-CARD CAROUSEL TRACK (Matches media_1790948401085)-->
+        <!-- 2. DESKTOP ONLY: 5-CARD CAROUSEL TRACK                            -->
         <!-- ================================================================= -->
         <div class="hidden sm:block relative group/reel-container">
             
@@ -320,13 +315,13 @@
                         <!-- 9:16 Video Preview Container -->
                         <div class="relative w-full aspect-[9/16] rounded-[16px] overflow-hidden bg-neutral-900 border border-[#EADBCC] shadow-xs group-hover:shadow-xl group-hover:border-[#D38928] transition-all duration-300 transform group-hover:-translate-y-1">
                             <video 
-                                class="reel-preview-video w-full h-full object-cover pointer-events-none"
-                                src="{{ $reel['video_url'] }}"
-                                poster="{{ $reel['poster'] }}"
-                                autoplay
-                                loop
-                                muted
-                                playsinline
+                                class="reel-preview-video w-full h-full object-cover pointer-events-none" 
+                                src="{{ $reel['video_url'] }}" 
+                                poster="{{ $reel['poster'] }}" 
+                                autoplay 
+                                loop 
+                                muted 
+                                playsinline 
                                 preload="auto"
                             ></video>
 
@@ -334,7 +329,7 @@
 
                             <!-- Top Right View Counter Pill -->
                             <div class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-full bg-black/50 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold tracking-wide flex items-center space-x-1 pointer-events-none select-none">
-                                <svg class="w-3 h-3 text-white/90" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <svg class="w-3.5 h-3.5 text-white/90" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
                                 </svg>
@@ -382,14 +377,14 @@
 </section>
 
 <!-- ========================================================================= -->
-<!-- FULL-SCREEN CONTINUOUS VERTICAL SCROLL-SNAP REEL FEED (Instagram Style)   -->
+<!-- FULL-SCREEN CONTINUOUS REEL FEED (Mobile: Vertical; Desktop: Horizontal)  -->
 <!-- ========================================================================= -->
 <div 
     id="reel-video-modal" 
     class="fixed inset-0 z-50 bg-black sm:bg-black/85 sm:backdrop-blur-md hidden items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 font-body select-none overflow-hidden"
 >
     <!-- Modal Backdrop (Desktop) -->
-    <div class="absolute inset-0 hidden sm:block" id="reel-modal-backdrop"></div>
+    <div class="absolute inset-0 hidden sm:block cursor-pointer" id="reel-modal-backdrop"></div>
 
     <!-- Top Right Close Button -->
     <button 
@@ -438,10 +433,10 @@
             id="modal-card-active"
             class="relative z-30 w-full h-full sm:aspect-[9/16] bg-black sm:rounded-[24px] overflow-hidden sm:border sm:border-white/20 shadow-2xl flex flex-col justify-between"
         >
-            <!-- Native Vertical Scroll Snap Reel Feed (Matches media_1790949417539.png) -->
+            <!-- Scroll Snap Reel Feed (Mobile: Vertical Scroll-Snap Feed; Desktop: Horizontal Left/Right Slide) -->
             <div 
                 id="reel-feed-track"
-                class="w-full h-full overflow-y-scroll snap-y snap-mandatory scrollbar-none scroll-smooth flex flex-col relative"
+                class="w-full h-full flex flex-col sm:flex-row overflow-y-scroll sm:overflow-y-hidden sm:overflow-x-scroll snap-y sm:snap-x snap-mandatory scrollbar-none scroll-smooth relative"
                 style="-webkit-overflow-scrolling: touch;"
             >
                 @foreach($reels as $idx => $item)
@@ -638,7 +633,7 @@
 </div>
 
 <!-- ========================================================================= -->
-<!-- JAVASCRIPT LOGIC (Native Continuous Vertical Scroll Snap Feed)             -->
+<!-- JAVASCRIPT LOGIC (Continuous Smooth Scroll Snap Carousel & Lightbox Modal) -->
 <!-- ========================================================================= -->
 <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -646,7 +641,7 @@
         let currentIndex = 0;
         const totalReels = reelsData.length;
 
-        // Desktop Track Navigation
+        // Desktop Outer Rail Navigation
         const track = document.getElementById('reels-track');
         const scrollPrev = document.getElementById('reel-scroll-prev');
         const scrollNext = document.getElementById('reel-scroll-next');
@@ -660,15 +655,57 @@
             });
         }
 
-        // Mobile Coverflow Elements
-        const leftCard = document.getElementById('coverflow-left-card');
-        const centerCard = document.getElementById('coverflow-center-card');
-        const rightCard = document.getElementById('coverflow-right-card');
-        const leftVideo = document.getElementById('coverflow-left-video');
-        const centerVideo = document.getElementById('coverflow-center-video');
-        const rightVideo = document.getElementById('coverflow-right-video');
-        const centerThumb = document.getElementById('coverflow-center-thumb');
-        const viewsBadge = document.getElementById('coverflow-views-badge');
+        // Mobile Smooth Scroll-Snap Track & Cards
+        const mobileTrack = document.getElementById('mobile-reels-track');
+        const mobileCards = document.querySelectorAll('.mobile-reel-card');
+        let mobileActiveIdx = 0;
+
+        function updateMobileActiveCard() {
+            if (!mobileTrack) return;
+            const trackCenter = mobileTrack.scrollLeft + mobileTrack.clientWidth / 2;
+            let closestIdx = 0;
+            let minDistance = Infinity;
+
+            mobileCards.forEach((card, idx) => {
+                const cardCenter = card.offsetLeft + card.clientWidth / 2;
+                const dist = Math.abs(trackCenter - cardCenter);
+                if (dist < minDistance) {
+                    minDistance = dist;
+                    closestIdx = idx;
+                }
+            });
+
+            if (mobileActiveIdx !== closestIdx) {
+                mobileActiveIdx = closestIdx;
+            }
+
+            mobileCards.forEach((card, idx) => {
+                if (idx === mobileActiveIdx) {
+                    card.classList.remove('scale-[0.86]', 'opacity-50', 'blur-[1.5px]', 'border-transparent');
+                    card.classList.add('scale-100', 'opacity-100', 'shadow-2xl', 'border-[#D38928]/70', 'z-20');
+                } else {
+                    card.classList.remove('scale-100', 'opacity-100', 'shadow-2xl', 'border-[#D38928]/70', 'z-20');
+                    card.classList.add('scale-[0.86]', 'opacity-50', 'blur-[1.5px]', 'border-transparent');
+                }
+            });
+        }
+
+        if (mobileTrack) {
+            mobileTrack.addEventListener('scroll', () => {
+                window.requestAnimationFrame(updateMobileActiveCard);
+            }, { passive: true });
+        }
+
+        mobileCards.forEach((card, idx) => {
+            card.addEventListener('click', () => {
+                if (mobileActiveIdx === idx) {
+                    openModalAt(idx);
+                } else {
+                    const scrollTarget = card.offsetLeft - (mobileTrack.clientWidth - card.clientWidth) / 2;
+                    mobileTrack.scrollTo({ left: scrollTarget, behavior: 'smooth' });
+                }
+            });
+        });
 
         // Modal Elements
         const modal = document.getElementById('reel-video-modal');
@@ -702,39 +739,6 @@
 
         let isGlobalMuted = true;
 
-        function updateCoverflow(index) {
-            currentIndex = (index + totalReels) % totalReels;
-            const prevIndex = (currentIndex - 1 + totalReels) % totalReels;
-            const nextIndex = (currentIndex + 1) % totalReels;
-
-            const curr = reelsData[currentIndex];
-            const prev = reelsData[prevIndex];
-            const next = reelsData[nextIndex];
-
-            if (leftVideo && prev) {
-                leftVideo.src = prev.video_url;
-                leftVideo.poster = prev.poster;
-                leftVideo.play().catch(() => {});
-            }
-            if (centerVideo && curr) {
-                centerVideo.src = curr.video_url;
-                centerVideo.poster = curr.poster;
-                centerVideo.play().catch(() => {});
-            }
-            if (rightVideo && next) {
-                rightVideo.src = next.video_url;
-                rightVideo.poster = next.poster;
-                rightVideo.play().catch(() => {});
-            }
-
-            if (centerThumb && curr) centerThumb.src = curr.thumbnail;
-            if (viewsBadge && curr) viewsBadge.textContent = curr.views;
-        }
-
-        if (leftCard) leftCard.addEventListener('click', () => updateCoverflow(currentIndex - 1));
-        if (rightCard) rightCard.addEventListener('click', () => updateCoverflow(currentIndex + 1));
-        if (centerCard) centerCard.addEventListener('click', () => openModalAt(currentIndex));
-
         // Desktop Reel Cards Click
         document.querySelectorAll('.reel-card').forEach(card => {
             card.addEventListener('click', (e) => {
@@ -760,7 +764,11 @@
 
             // Scroll snap track directly to the selected reel
             if (feedTrack && feedItems[index]) {
-                feedTrack.scrollTop = feedItems[index].offsetTop;
+                if (window.innerWidth < 640) {
+                    feedTrack.scrollTop = feedItems[index].offsetTop;
+                } else {
+                    feedTrack.scrollLeft = feedItems[index].offsetLeft;
+                }
             }
 
             playActiveFeedVideo(index);
@@ -881,27 +889,35 @@
         if (modalClose) modalClose.addEventListener('click', closeModal);
         if (modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
 
-        // Desktop Prev/Next Buttons Scroll the Snap Track
+        // Desktop Prev/Next Buttons (Scroll Left/Right horizontally on desktop, up/down on mobile)
         if (modalDesktopPrev && feedTrack) {
             modalDesktopPrev.addEventListener('click', () => {
-                feedTrack.scrollBy({ top: -feedTrack.clientHeight, behavior: 'smooth' });
+                if (window.innerWidth < 640) {
+                    feedTrack.scrollBy({ top: -feedTrack.clientHeight, behavior: 'smooth' });
+                } else {
+                    feedTrack.scrollBy({ left: -feedTrack.clientWidth, behavior: 'smooth' });
+                }
             });
         }
         if (modalDesktopNext && feedTrack) {
             modalDesktopNext.addEventListener('click', () => {
-                feedTrack.scrollBy({ top: feedTrack.clientHeight, behavior: 'smooth' });
+                if (window.innerWidth < 640) {
+                    feedTrack.scrollBy({ top: feedTrack.clientHeight, behavior: 'smooth' });
+                } else {
+                    feedTrack.scrollBy({ left: feedTrack.clientWidth, behavior: 'smooth' });
+                }
             });
         }
 
-        // Flank clicks
+        // Desktop Flank clicks
         if (flankLeft && feedTrack) {
             flankLeft.addEventListener('click', () => {
-                feedTrack.scrollBy({ top: -feedTrack.clientHeight, behavior: 'smooth' });
+                feedTrack.scrollBy({ left: -feedTrack.clientWidth, behavior: 'smooth' });
             });
         }
         if (flankRight && feedTrack) {
             flankRight.addEventListener('click', () => {
-                feedTrack.scrollBy({ top: feedTrack.clientHeight, behavior: 'smooth' });
+                feedTrack.scrollBy({ left: feedTrack.clientWidth, behavior: 'smooth' });
             });
         }
 
@@ -952,31 +968,22 @@
         document.addEventListener('keydown', (e) => {
             if (modal && !modal.classList.contains('pointer-events-none') && feedTrack) {
                 if (e.key === 'Escape') closeModal();
-                if (e.key === 'ArrowDown' || e.key === 'ArrowRight') feedTrack.scrollBy({ top: feedTrack.clientHeight, behavior: 'smooth' });
-                if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') feedTrack.scrollBy({ top: -feedTrack.clientHeight, behavior: 'smooth' });
+                if (e.key === 'ArrowRight') feedTrack.scrollBy({ left: feedTrack.clientWidth, behavior: 'smooth' });
+                if (e.key === 'ArrowLeft') feedTrack.scrollBy({ left: -feedTrack.clientWidth, behavior: 'smooth' });
+                if (e.key === 'ArrowDown') {
+                    if (window.innerWidth < 640) feedTrack.scrollBy({ top: feedTrack.clientHeight, behavior: 'smooth' });
+                    else feedTrack.scrollBy({ left: feedTrack.clientWidth, behavior: 'smooth' });
+                }
+                if (e.key === 'ArrowUp') {
+                    if (window.innerWidth < 640) feedTrack.scrollBy({ top: -feedTrack.clientHeight, behavior: 'smooth' });
+                    else feedTrack.scrollBy({ left: -feedTrack.clientWidth, behavior: 'smooth' });
+                }
             }
         });
 
-        // Mobile Coverflow Swipe Support on main page
-        const mobileStage = document.getElementById('coverflow-mobile-stage');
-        if (mobileStage) {
-            let touchStartX = 0;
-            mobileStage.addEventListener('touchstart', (e) => {
-                touchStartX = e.touches[0].clientX;
-            }, { passive: true });
-
-            mobileStage.addEventListener('touchend', (e) => {
-                const diff = touchStartX - e.changedTouches[0].clientX;
-                if (Math.abs(diff) > 40) {
-                    if (diff > 0) updateCoverflow(currentIndex + 1);
-                    else updateCoverflow(currentIndex - 1);
-                }
-            }, { passive: true });
-        }
-
         // Autoplay loop all card preview videos on page
         const startCardVideos = () => {
-            document.querySelectorAll('.reel-preview-video').forEach(video => {
+            document.querySelectorAll('.reel-preview-video, .mobile-reel-vid').forEach(video => {
                 video.muted = true;
                 video.play().catch(() => {});
             });

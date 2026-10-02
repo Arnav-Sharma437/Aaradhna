@@ -55,6 +55,12 @@
                 <div>मङ्गलं भगवान विष्णुः, मङ्गलम् गरुणध्वजः।</div>
                 <div>मङ्गलं पुण्डरी काक्षः, मङ्गलाय तनो हरिः॥</div>
             </div>
+            
+            <!-- 2 Thin Decorative Vedic Divider Lines on Desktop (One longer, one shorter below it) -->
+            <div class="hidden sm:flex flex-col items-center justify-center space-y-1.5 pt-4">
+                <div class="w-48 md:w-60 lg:w-72 h-[1px] bg-gradient-to-r from-transparent via-[#F6DAA8]/80 to-transparent"></div>
+                <div class="w-24 md:w-32 lg:w-40 h-[1px] bg-gradient-to-r from-transparent via-[#F6DAA8]/60 to-transparent"></div>
+            </div>
         </div>
 
         <!-- Main Grid (Brand + 3 Dedicated Columns: SHOP, ABOUT, NEED HELP) -->
