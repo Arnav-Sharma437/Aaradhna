@@ -17,7 +17,22 @@
         'lavender-veda' => 'assets/images/incense-pack.jpg',
         'lavender-veda-100' => 'assets/images/camphor-refill-pack-card.jpg',
         'pack-of-six' => 'assets/images/oudh-pack-card.jpg',
-        'pitambara-havan' => 'assets/images/banner-pitambara-havan.jpg',
+        'pitambara-havan' => 'assets/images/pitambara-pack.jpg',
+        // Dhoop Cones
+        'rooh-rose' => 'assets/images/dhoop-cones.jpg',
+        'jasmine' => 'assets/images/dhoop-cones.jpg',
+        'sandalwood-dhoop-cones' => 'assets/images/chandan-cones-card.jpg',
+        'forest-wood' => 'assets/images/dhoop-cones.jpg',
+        'lavender' => 'assets/images/dhoop-cones.jpg',
+        'patchouli' => 'assets/images/dhoop-cones.jpg',
+        'dhoop-cones-2-combo-pack' => 'assets/images/dhoop-cones.jpg',
+        'dhoop-cones-3-combo-pack' => 'assets/images/chandan-cones-card.jpg',
+        // Havan Cups
+        'google-dhoop' => 'assets/images/havan-cup.jpg',
+        'loban' => 'assets/images/havan-cup.jpg',
+        'havan-cup' => 'assets/images/havan-cup.jpg',
+        'havan-cups-2-combo-pack' => 'assets/images/havan-cup.jpg',
+        'havan-cups-3-combo-pack' => 'assets/images/havan-cup.jpg',
     ];
 
     $hoverImageMap = [
@@ -36,7 +51,22 @@
         'lavender-veda' => 'assets/images/single-bambooless-stick.jpg',
         'lavender-veda-100' => 'assets/images/single-bambooless-stick.jpg',
         'pack-of-six' => 'assets/images/single-bambooless-stick.jpg',
-        'pitambara-havan' => 'assets/images/banner-pitambara-havan.jpg',
+        'pitambara-havan' => 'assets/images/pitambara-pack.jpg',
+        // Dhoop Cones
+        'rooh-rose' => 'assets/images/single-dhoop-cone.jpg',
+        'jasmine' => 'assets/images/single-dhoop-cone.jpg',
+        'sandalwood-dhoop-cones' => 'assets/images/single-dhoop-cone.jpg',
+        'forest-wood' => 'assets/images/single-dhoop-cone.jpg',
+        'lavender' => 'assets/images/single-dhoop-cone.jpg',
+        'patchouli' => 'assets/images/single-dhoop-cone.jpg',
+        'dhoop-cones-2-combo-pack' => 'assets/images/single-dhoop-cone.jpg',
+        'dhoop-cones-3-combo-pack' => 'assets/images/single-dhoop-cone.jpg',
+        // Havan Cups
+        'google-dhoop' => 'assets/images/single-havan-cup.jpg',
+        'loban' => 'assets/images/single-havan-cup.jpg',
+        'havan-cup' => 'assets/images/single-havan-cup.jpg',
+        'havan-cups-2-combo-pack' => 'assets/images/single-havan-cup.jpg',
+        'havan-cups-3-combo-pack' => 'assets/images/single-havan-cup.jpg',
     ];
 
     $primaryDbImage = $product->primaryImage ? $product->primaryImage->image_path : ($product->images->first() ? $product->images->first()->image_path : null);

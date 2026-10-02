@@ -6,6 +6,22 @@
 @section('content')
 @php
     $imageMap = [
+        'swarna-pushpa' => 'assets/images/oudh-pack-card.jpg',
+        'swarna-pushpa-100' => 'assets/images/devi-refill-pack-card.jpg',
+        'divya-naagchampa' => 'assets/images/incense-pack.jpg',
+        'divya-naagchampa-100' => 'assets/images/camphor-refill-pack-card.jpg',
+        'chandan-saanjh' => 'assets/images/incense-pack.jpg',
+        'chandan-saanjh-100' => 'assets/images/devi-refill-pack-card.jpg',
+        'royal-oudh' => 'assets/images/oudh-pack-card.jpg',
+        'royal-oudh-100' => 'assets/images/oudh-pack-card.jpg',
+        'mogra-noor' => 'assets/images/incense-pack.jpg',
+        'mogra-noor-100' => 'assets/images/incense-pack.jpg',
+        'gulab-rooh' => 'assets/images/incense-pack.jpg',
+        'gulab-rooh-100' => 'assets/images/devi-refill-pack-card.jpg',
+        'lavender-veda' => 'assets/images/incense-pack.jpg',
+        'lavender-veda-100' => 'assets/images/camphor-refill-pack-card.jpg',
+        'pack-of-six' => 'assets/images/oudh-pack-card.jpg',
+        'pitambara-havan' => 'assets/images/pitambara-pack.jpg',
         'kesar-chandan' => 'assets/images/oudh-pack-card.jpg',
         'gulab' => 'assets/images/incense-pack.jpg',
         'naagchampa' => 'assets/images/incense-pack.jpg',

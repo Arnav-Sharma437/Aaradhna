@@ -974,7 +974,7 @@
                             <div class="flex items-center space-x-1.5 text-[#D38928] text-xl sm:text-2xl leading-none">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                             </div>
-                            <p class="text-xs sm:text-[13px] text-[#2B1810] leading-relaxed italic font-medium pt-0.5">
+                            <p class="text-xs sm:text-[13px] text-[#2B1810] leading-relaxed font-normal pt-0.5">
                                 "{{ $t['quote'] }}"
                             </p>
                         </div>
@@ -999,7 +999,7 @@
                             <div class="flex items-center space-x-1.5 text-[#D38928] text-xl sm:text-2xl leading-none">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                             </div>
-                            <p class="text-xs sm:text-[13px] text-[#2B1810] leading-relaxed italic font-medium pt-0.5">
+                            <p class="text-xs sm:text-[13px] text-[#2B1810] leading-relaxed font-normal pt-0.5">
                                 "{{ $t['quote'] }}"
                             </p>
                         </div>
@@ -1080,7 +1080,7 @@
                             <div class="flex items-center space-x-1.5 text-[#D38928] text-xl sm:text-2xl leading-none">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                             </div>
-                            <p class="text-xs sm:text-[13px] text-[#2B1810] leading-relaxed italic font-medium pt-0.5">
+                            <p class="text-xs sm:text-[13px] text-[#2B1810] leading-relaxed font-normal pt-0.5">
                                 "{{ $t['quote'] }}"
                             </p>
                         </div>
@@ -1105,7 +1105,7 @@
                             <div class="flex items-center space-x-1.5 text-[#D38928] text-xl sm:text-2xl leading-none">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                             </div>
-                            <p class="text-xs sm:text-[13px] text-[#2B1810] leading-relaxed italic font-medium pt-0.5">
+                            <p class="text-xs sm:text-[13px] text-[#2B1810] leading-relaxed font-normal pt-0.5">
                                 "{{ $t['quote'] }}"
                             </p>
                         </div>

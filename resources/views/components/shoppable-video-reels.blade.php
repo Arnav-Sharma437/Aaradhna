@@ -187,15 +187,6 @@
                                 <span>{{ $reel['views'] }}</span>
                             </div>
 
-                            <!-- Centered Subtle Play Button Overlay (Clean Transparent White Icon) -->
-                            <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-95 group-hover:scale-100">
-                                <div class="w-16 h-16 bg-transparent text-white flex items-center justify-center">
-                                    <svg class="w-12 h-12 ml-1 text-white/95 drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)]" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M8 5v14l11-7z"/>
-                                    </svg>
-                                </div>
-                            </div>
-
                             <!-- Bottom Watch Video Text -->
                             <div class="absolute bottom-3 inset-x-3 text-center pointer-events-none">
                                 <span class="inline-block bg-black/50 backdrop-blur-xs px-3 py-1 rounded-full text-white text-[11px] font-semibold border border-white/15">
@@ -313,14 +304,6 @@
                 playsinline
                 loop
             ></video>
-
-            <!-- Centered Modal Play/Pause Flash Indicator (Clean Transparent White) -->
-            <div id="modal-play-indicator" class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-0 transition-opacity duration-300 z-20">
-                <div class="w-20 h-20 bg-transparent text-white flex items-center justify-center drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)]">
-                    <svg id="modal-play-icon" class="w-16 h-16 ml-1 text-white/95" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                    <svg id="modal-pause-icon" class="w-16 h-16 hidden text-white/95" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                </div>
-            </div>
 
             <!-- Gradient Shadow for Bottom Text Legibility -->
             <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent pointer-events-none z-10"></div>
