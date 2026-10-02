@@ -733,7 +733,7 @@
         <picture class="block w-full">
             <source media="(max-width: 640px)" srcset="{{ asset('assets/images/Banner 9.jpg') }}">
             <img 
-                src="{{ asset('assets/images/Banner 9.jpg) }}" 
+                src="{{ asset('assets/images/Banner 9.jpg') }}" 
                 alt="Festive Collection - 5 Divine Essentials at just ₹799 - Manglam" 
                 class="w-full h-auto block object-cover group-hover:opacity-95 transition-opacity duration-300"
                 loading="lazy"
