@@ -539,11 +539,15 @@
             <a 
                 href="{{ route('collections.show', 'all') }}" 
                 id="bestseller-view-all-btn"
-                style="display: none; padding: 12px 45px;"
-                class="inline-flex items-center justify-center bg-[#831F2E] hover:bg-[#6E1724] active:bg-[#57121C] text-white text-xs sm:text-sm font-bold rounded-[10px] sm:rounded-[12px] shadow-sm hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 font-heading text-center"
+                style="display: none;"
+                class="hover:opacity-95 active:scale-95 transition-all duration-200 transform hover:-translate-y-0.5 cursor-pointer max-w-[180px] sm:max-w-[200px] mx-auto text-center"
+                aria-label="Shop All Products"
             >
-                <span>View All Products</span>
-                <svg class="w-3.5 h-3.5 ml-2" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                <img 
+                    src="{{ asset('assets/images/btn-shop-now-maroon.png') }}" 
+                    alt="Shop Now" 
+                    class="w-full h-auto object-contain drop-shadow-xs hover:drop-shadow-sm transition-all"
+                >
             </a>
         </div>
 
@@ -577,7 +581,7 @@
                 loadMoreBtn.style.opacity = '0';
                 setTimeout(() => {
                     loadMoreBtn.style.display = 'none';
-                    viewAllBtn.style.display = 'inline-flex';
+                    viewAllBtn.style.display = 'inline-block';
                     viewAllBtn.style.opacity = '0';
                     viewAllBtn.style.transform = 'scale(0.95)';
                     viewAllBtn.style.transition = 'opacity 0.4s ease-out, transform 0.4s ease-out';
@@ -626,7 +630,7 @@
             
             <!-- Category 1: Single Bamboo-less Dhoop Stick -->
             <div class="group flex flex-col items-center text-center space-y-3 sm:space-y-4">
-                <a href="{{ route('collections.show', 'bambooless') }}" class="block relative w-full max-w-[200px] sm:max-w-[250px] lg:max-w-[280px] aspect-square rounded-full p-2 bg-white shadow-md hover:shadow-2xl group-hover:scale-105 transition-all duration-500 cursor-pointer">
+                <a href="{{ route('collections.show', 'bambooless') }}" class="block relative w-full max-w-[200px] sm:max-w-[250px] lg:max-w-[280px] aspect-square rounded-full p-2 bg-white border border-[#EADBCC] hover:border-[#D38928] group-hover:scale-105 transition-all duration-500 cursor-pointer">
                     <div class="w-full h-full rounded-full overflow-hidden bg-white p-1 sm:p-2 flex items-center justify-center relative">
                         <img 
                             src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" 
@@ -649,7 +653,7 @@
 
             <!-- Category 2: Single Dhoop Cone -->
             <div class="group flex flex-col items-center text-center space-y-3 sm:space-y-4">
-                <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block relative w-full max-w-[200px] sm:max-w-[250px] lg:max-w-[280px] aspect-square rounded-full p-2 bg-white shadow-md hover:shadow-2xl group-hover:scale-105 transition-all duration-500 cursor-pointer">
+                <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block relative w-full max-w-[200px] sm:max-w-[250px] lg:max-w-[280px] aspect-square rounded-full p-2 bg-white border border-[#EADBCC] hover:border-[#D38928] group-hover:scale-105 transition-all duration-500 cursor-pointer">
                     <div class="w-full h-full rounded-full overflow-hidden bg-white p-1 sm:p-2 flex items-center justify-center relative">
                         <img 
                             src="{{ asset('assets/images/single-dhoop-cone.jpg') }}" 
@@ -672,7 +676,7 @@
 
             <!-- Category 3: Single 100% Organic Havan Cup -->
             <div class="group flex flex-col items-center text-center space-y-3 sm:space-y-4">
-                <a href="{{ route('collections.show', 'havan-cups') }}" class="block relative w-full max-w-[200px] sm:max-w-[250px] lg:max-w-[280px] aspect-square rounded-full p-2 bg-white shadow-md hover:shadow-2xl group-hover:scale-105 transition-all duration-500 cursor-pointer">
+                <a href="{{ route('collections.show', 'havan-cups') }}" class="block relative w-full max-w-[200px] sm:max-w-[250px] lg:max-w-[280px] aspect-square rounded-full p-2 bg-white border border-[#EADBCC] hover:border-[#D38928] group-hover:scale-105 transition-all duration-500 cursor-pointer">
                     <div class="w-full h-full rounded-full overflow-hidden bg-white p-1 sm:p-2 flex items-center justify-center relative">
                         <img 
                             src="{{ asset('assets/images/single-havan-cup.jpg') }}" 
@@ -695,7 +699,7 @@
 
             <!-- Category 4: Mangalam Pitambara Havan Pack -->
             <div class="group flex flex-col items-center text-center space-y-3 sm:space-y-4">
-                <a href="{{ route('products.pitambara') }}" class="block relative w-full max-w-[200px] sm:max-w-[250px] lg:max-w-[280px] aspect-square rounded-full p-2 bg-white shadow-md hover:shadow-2xl group-hover:scale-105 transition-all duration-500 cursor-pointer">
+                <a href="{{ route('products.pitambara') }}" class="block relative w-full max-w-[200px] sm:max-w-[250px] lg:max-w-[280px] aspect-square rounded-full p-2 bg-white border border-[#EADBCC] hover:border-[#D38928] group-hover:scale-105 transition-all duration-500 cursor-pointer">
                     <div class="w-full h-full rounded-full overflow-hidden bg-white p-1 sm:p-2 flex items-center justify-center relative">
                         <img 
                             src="{{ asset('assets/images/pitambara-pack.jpg') }}" 
