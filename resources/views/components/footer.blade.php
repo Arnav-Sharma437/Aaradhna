@@ -49,17 +49,13 @@
     <!-- Main Footer Container (1440px) -->
     <div class="w-full max-w-[1440px] mx-auto pt-10 sm:pt-14 pb-8 px-5 sm:px-8 lg:px-[40px] relative z-10">
         
-        <!-- Sacred Vishnu Mangalam Devotional Mantra Banner (Prominent & Top of Footer) -->
+        <!-- Sacred Vishnu Mangalam Devotional Mantra Banner (2 Lines & Pure Mantra Only) -->
         <div class="mb-10 sm:mb-12 py-5 sm:py-6 px-6 sm:px-10 rounded-2xl sm:rounded-3xl bg-black/40 border-2 border-[#F6DAA8]/45 shadow-2xl text-center relative overflow-hidden backdrop-blur-md">
             <div class="absolute inset-0 bg-gradient-to-r from-transparent via-[#F6DAA8]/15 to-transparent pointer-events-none"></div>
-            <div class="relative z-10 flex flex-col items-center justify-center space-y-2">
-                <div class="text-[#F6DAA8] text-base sm:text-xl md:text-2xl lg:text-[26px] font-serif tracking-wide sm:tracking-widest leading-relaxed sm:leading-snug font-bold drop-shadow-md">
-                    ॥ मङ्गलं भगवान विष्णुः, मङ्गलम् गरुणध्वजः । मङ्गलं पुण्डरी काक्षः, मङ्गलाय तनो हरिः ॥
-                </div>
-                <div class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-[#F6DAA8]/80 font-heading font-semibold flex items-center justify-center gap-2">
-                    <span>✦</span>
-                    <span>परम पावन मङ्गल स्तुति • शुद्धं समर्पयामि</span>
-                    <span>✦</span>
+            <div class="relative z-10 flex flex-col items-center justify-center">
+                <div class="text-[#F6DAA8] text-base sm:text-xl md:text-2xl lg:text-[26px] font-serif tracking-wide sm:tracking-widest leading-relaxed sm:leading-relaxed font-bold drop-shadow-md space-y-1">
+                    <div>मङ्गलं भगवान विष्णुः, मङ्गलम् गरुणध्वजः।</div>
+                    <div>मङ्गलं पुण्डरी काक्षः, मङ्गलाय तनो हरिः॥</div>
                 </div>
             </div>
         </div>
