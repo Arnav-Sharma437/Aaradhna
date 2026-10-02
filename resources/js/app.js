@@ -379,6 +379,27 @@ document.addEventListener('DOMContentLoaded', () => {
             removeFromCart(title);
         }
 
+        // Full Product Card Clickable Navigation (anywhere on card navigates to product page)
+        const productCard = e.target.closest('.product-card');
+        if (productCard && !e.target.closest('button') && !e.target.closest('input') && !e.target.closest('.quick-add-to-cart-btn')) {
+            const link = productCard.querySelector('a[href]');
+            if (link && link.href) {
+                // If user didn't click directly on the link, navigate to the link's href
+                if (!e.target.closest('a')) {
+                    window.location.href = link.href;
+                }
+            }
+        }
+
+        // Full Category Circle Card Clickable Navigation
+        const categoryCard = e.target.closest('.group');
+        if (categoryCard && !e.target.closest('button') && !e.target.closest('input')) {
+            const link = categoryCard.querySelector('a[href*="/collections/"], a[href*="/products/"]');
+            if (link && link.href && !e.target.closest('a')) {
+                window.location.href = link.href;
+            }
+        }
+
         // Cart Page Controls
         if (e.target.closest('.cart-page-qty-plus')) {
             const title = e.target.closest('.cart-page-qty-plus').dataset.title;

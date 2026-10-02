@@ -122,6 +122,12 @@ header nav button,
     font-weight: 400 !important;
 }
 
+/* Entire card clickable cursor */
+.product-card,
+.category-circle-card {
+    cursor: pointer;
+}
+
 #hero-banner-carousel h1,
 #hero-banner-carousel h2 {
     font-family: 'Recoleta', Georgia, serif !important;
