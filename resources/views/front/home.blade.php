@@ -638,7 +638,7 @@
 
                 <!-- Category Details -->
                 <div class="space-y-1 max-w-xs flex flex-col items-center">
-                    <span class="text-[14px] sm:text-[11px] font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading block">
+                    <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading block">
                         Dhoop Stick
                     </span>
                     <h3 class="text-xs sm:text-sm lg:text-base font-semibold text-[#1F1F1F]">
@@ -716,7 +716,7 @@
 
                 <!-- Category Details -->
                 <div class="space-y-1 max-w-xs flex flex-col items-center">
-                    <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.2em] text-[#965A15] font-heading block">
+                    <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading block">
                         Pitambara Havan Pack
                     </span>
                     <h3 class="text-xs sm:text-sm lg:text-base font-semibold text-[#1F1F1F]">
