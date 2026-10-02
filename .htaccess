@@ -1,0 +1,13 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+    # Prevent rewrite loop if request is already targeting public/
+    RewriteCond %{REQUEST_URI} !/public/ [NC]
+
+    # Rewrite all root and subdirectory requests to public/
+    RewriteRule ^(.*)$ public/$1 [L,QSA]
+</IfModule>
