@@ -87,8 +87,8 @@
         </span>
     </div>
 
-    <!-- Product Image Box (Full-Width Top, Larger & High Impact) -->
-    <div class="relative w-full aspect-square overflow-hidden bg-[#FAF7F2] shrink-0 border-b border-[#EADBCC]/60">
+    <!-- Product Image Box (Full-Width Top, Taller & High Impact) -->
+    <div class="relative w-full aspect-[4/4.8] overflow-hidden bg-[#FAF7F2] shrink-0 border-b border-[#EADBCC]/60">
         <a href="{{ route('products.show', $product->slug) }}" class="block w-full h-full relative overflow-hidden">
             <!-- Primary Image -->
             <img 

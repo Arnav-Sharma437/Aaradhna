@@ -971,7 +971,7 @@
                 @foreach($row1Testimonials as $t)
                     <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[400px] bg-white rounded-[18px] p-5 sm:p-6 border border-[#EADBCC] shadow-xs hover:shadow-xl hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between">
                         <div class="space-y-3">
-                            <div class="flex items-center space-x-1 text-[#D38928] text-base sm:text-lg">
+                            <div class="flex items-center space-x-1.5 text-[#D38928] text-xl sm:text-2xl leading-none">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                             </div>
                             <p class="text-xs sm:text-[13px] text-[#2B1810] leading-relaxed italic font-medium pt-0.5">
@@ -987,9 +987,6 @@
                                     <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading leading-tight">{{ $t['name'] }}</h4>
                                     <p class="text-[11px] text-gray-500">{{ $t['city'] }}</p>
                                 </div>
-                            </div>
-                            <div class="text-right hidden sm:block">
-                                <span class="text-[10px] uppercase tracking-wider text-[#965A15] font-semibold block">{{ $t['product'] }}</span>
                             </div>
                         </div>
                     </div>
@@ -999,7 +996,7 @@
                 @foreach($row1Testimonials as $t)
                     <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[400px] bg-white rounded-[18px] p-5 sm:p-6 border border-[#EADBCC] shadow-xs hover:shadow-xl hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between" aria-hidden="true">
                         <div class="space-y-3">
-                            <div class="flex items-center space-x-1 text-[#D38928] text-base sm:text-lg">
+                            <div class="flex items-center space-x-1.5 text-[#D38928] text-xl sm:text-2xl leading-none">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                             </div>
                             <p class="text-xs sm:text-[13px] text-[#2B1810] leading-relaxed italic font-medium pt-0.5">
@@ -1015,9 +1012,6 @@
                                     <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading leading-tight">{{ $t['name'] }}</h4>
                                     <p class="text-[11px] text-gray-500">{{ $t['city'] }}</p>
                                 </div>
-                            </div>
-                            <div class="text-right hidden sm:block">
-                                <span class="text-[10px] uppercase tracking-wider text-[#965A15] font-semibold block">{{ $t['product'] }}</span>
                             </div>
                         </div>
                     </div>
@@ -1039,7 +1033,6 @@
                             'city' => 'मंडी, हिमाचल प्रदेश',
                             'initials' => 'DS',
                             'avatar_bg' => 'bg-[#831F2E]',
-                            'product' => 'Divya Naagchampa',
                             'quote' => 'मंडी के हमारे मंदिर में सुबह-शाम यही अगरबत्ती जलती है। घर का वातावरण एकदम शांत और सकारात्मक हो जाता है। बिना बांस के शुद्ध वैदिक खुशबू।'
                         ],
                         [
@@ -1047,7 +1040,6 @@
                             'city' => 'Chamba, Himachal Pradesh',
                             'initials' => 'PR',
                             'avatar_bg' => 'bg-[#D38928]',
-                            'product' => '5-Fragrance Trial Pack',
                             'quote' => 'Chamba me thand ke time room me band space me bhi bina kisi suffocation ke itni pyari temple fragrance aati hai. Truly 100% natural and long burning.'
                         ],
                         [
@@ -1055,7 +1047,6 @@
                             'city' => 'Bilaspur, Himachal Pradesh',
                             'initials' => 'KS',
                             'avatar_bg' => 'bg-[#3E2314]',
-                            'product' => 'Royal Oudh & Chandan',
                             'quote' => 'Bought the 5-pack festive bundle in Bilaspur. Every fragrance is distinct and long-lasting. Divine quality for daily morning prayers and meditation.'
                         ],
                         [
@@ -1063,7 +1054,6 @@
                             'city' => 'Hamirpur, Himachal Pradesh',
                             'initials' => 'VJ',
                             'avatar_bg' => 'bg-[#831F2E]',
-                            'product' => 'Sambrani Havan Cups',
                             'quote' => 'Hamirpur me daily Sandhya aarti ke liye best incense mila hai. Charcoal-free hone ki wajah se pure white ash banti hai jo mandir ko clean rakhti hai.'
                         ],
                         [
@@ -1071,7 +1061,6 @@
                             'city' => 'कांगड़ा, हिमाचल प्रदेश',
                             'initials' => 'RG',
                             'avatar_bg' => 'bg-[#D38928]',
-                            'product' => 'Gulab Rooh Refill',
                             'quote' => 'कांगड़ा धाम के पास रहने के कारण शुद्धता हमारे लिए बहुत जरूरी है। इस अगरबत्ती में प्राकृतिक फूल और चंदन का अर्क है जो मन को तुरंत शांति देता है।'
                         ],
                         [
@@ -1079,7 +1068,6 @@
                             'city' => 'Mandi, Himachal Pradesh',
                             'initials' => 'SL',
                             'avatar_bg' => 'bg-[#3E2314]',
-                            'product' => 'Kasturi & Camphor',
                             'quote' => 'Mandi se order kiya tha. Trial pack use karne ke baad 100 sticks ka pack re-order kiya. Jo bhi ghar aata hai sabhi puchte hain kaunsi divine agarbatti hai.'
                         ]
                     ];
@@ -1089,7 +1077,7 @@
                 @foreach($row2Testimonials as $t)
                     <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[400px] bg-white rounded-[18px] p-5 sm:p-6 border border-[#EADBCC] shadow-xs hover:shadow-xl hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between">
                         <div class="space-y-3">
-                            <div class="flex items-center space-x-1 text-[#D38928] text-base sm:text-lg">
+                            <div class="flex items-center space-x-1.5 text-[#D38928] text-xl sm:text-2xl leading-none">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                             </div>
                             <p class="text-xs sm:text-[13px] text-[#2B1810] leading-relaxed italic font-medium pt-0.5">
@@ -1105,9 +1093,6 @@
                                     <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading leading-tight">{{ $t['name'] }}</h4>
                                     <p class="text-[11px] text-gray-500">{{ $t['city'] }}</p>
                                 </div>
-                            </div>
-                            <div class="text-right hidden sm:block">
-                                <span class="text-[10px] uppercase tracking-wider text-[#965A15] font-semibold block">{{ $t['product'] }}</span>
                             </div>
                         </div>
                     </div>
@@ -1117,7 +1102,7 @@
                 @foreach($row2Testimonials as $t)
                     <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[400px] bg-white rounded-[18px] p-5 sm:p-6 border border-[#EADBCC] shadow-xs hover:shadow-xl hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between" aria-hidden="true">
                         <div class="space-y-3">
-                            <div class="flex items-center space-x-1 text-[#D38928] text-base sm:text-lg">
+                            <div class="flex items-center space-x-1.5 text-[#D38928] text-xl sm:text-2xl leading-none">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                             </div>
                             <p class="text-xs sm:text-[13px] text-[#2B1810] leading-relaxed italic font-medium pt-0.5">
@@ -1133,9 +1118,6 @@
                                     <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading leading-tight">{{ $t['name'] }}</h4>
                                     <p class="text-[11px] text-gray-500">{{ $t['city'] }}</p>
                                 </div>
-                            </div>
-                            <div class="text-right hidden sm:block">
-                                <span class="text-[10px] uppercase tracking-wider text-[#965A15] font-semibold block">{{ $t['product'] }}</span>
                             </div>
                         </div>
                     </div>
@@ -1407,43 +1389,47 @@
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             
-            <div class="bg-white rounded-[12px] border border-[#EAE3D9] p-5 flex items-center space-x-4 shadow-xs hover:border-[#D38928]/40 transition-colors">
-                <div class="w-11 h-11 rounded-full bg-[#FDF5EB] border border-[#D38928]/40 flex items-center justify-center text-xl shrink-0">
-                    🇮🇳
+            <!-- Make in India -->
+            <div class="bg-white rounded-[14px] border border-[#EAE3D9] p-4 sm:p-5 flex items-center space-x-3.5 shadow-xs hover:border-[#D38928]/40 hover:shadow-md transition-all">
+                <div class="w-14 h-12 flex items-center justify-center shrink-0">
+                    <img src="{{ asset('assets/images/trust/make-in-india.png') }}" alt="Make in India" class="w-full h-full object-contain">
                 </div>
                 <div>
-                    <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading">Make in India</h4>
-                    <p class="text-[10px] text-gray-500">100% Indigenous Craft</p>
+                    <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading leading-tight">Make in India</h4>
+                    <p class="text-[10px] sm:text-[11px] text-gray-500">100% Indigenous Craft</p>
                 </div>
             </div>
 
-            <div class="bg-white rounded-[12px] border border-[#EAE3D9] p-5 flex items-center space-x-4 shadow-xs hover:border-[#D38928]/40 transition-colors">
-                <div class="w-11 h-11 rounded-full bg-[#FDF5EB] border border-[#D38928]/40 flex items-center justify-center text-xl shrink-0">
-                    🏛️
+            <!-- MSME Certified -->
+            <div class="bg-white rounded-[14px] border border-[#EAE3D9] p-4 sm:p-5 flex items-center space-x-3.5 shadow-xs hover:border-[#D38928]/40 hover:shadow-md transition-all">
+                <div class="w-14 h-12 flex items-center justify-center shrink-0">
+                    <img src="{{ asset('assets/images/trust/msme.png') }}" alt="MSME Ministry Govt of India" class="w-full h-full object-contain">
                 </div>
                 <div>
-                    <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading">MSME Certified</h4>
-                    <p class="text-[10px] text-gray-500">Pure Organic Unit</p>
+                    <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading leading-tight">MSME Certified</h4>
+                    <p class="text-[10px] sm:text-[11px] text-gray-500">Govt. of India Recognized</p>
                 </div>
             </div>
 
-            <div class="bg-white rounded-[12px] border border-[#EAE3D9] p-5 flex items-center space-x-4 shadow-xs hover:border-[#D38928]/40 transition-colors">
-                <div class="w-11 h-11 rounded-full bg-[#FDF5EB] border border-[#D38928]/40 flex items-center justify-center text-xl shrink-0">
-                    ⚡
+            <!-- Razorpay Secure -->
+            <div class="bg-white rounded-[14px] border border-[#EAE3D9] p-4 sm:p-5 flex items-center space-x-3.5 shadow-xs hover:border-[#D38928]/40 hover:shadow-md transition-all">
+                <div class="w-14 h-12 flex items-center justify-center shrink-0">
+                    <img src="{{ asset('assets/images/trust/razorpay.png') }}" alt="Razorpay Secure Payments" class="w-full h-full object-contain">
                 </div>
                 <div>
-                    <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading">Razorpay Secure</h4>
-                    <p class="text-[10px] text-gray-500">256-Bit Encrypted Payments</p>
+                    <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading leading-tight">Razorpay Secure</h4>
+                    <p class="text-[10px] sm:text-[11px] text-gray-500">256-Bit Encrypted UPI</p>
                 </div>
             </div>
 
-            <div class="bg-white rounded-[12px] border border-[#EAE3D9] p-5 flex items-center space-x-4 shadow-xs hover:border-[#D38928]/40 transition-colors">
-                <div class="w-11 h-11 rounded-full bg-[#FDF5EB] border border-[#D38928]/40 flex items-center justify-center text-xl shrink-0">
-                    📦
+            <!-- Amazon / Trusted Delivery -->
+            <div class="bg-white rounded-[14px] border border-[#EAE3D9] p-4 sm:p-5 flex items-center space-x-3.5 shadow-xs hover:border-[#D38928]/40 hover:shadow-md transition-all">
+                <div class="w-14 h-12 flex items-center justify-center shrink-0">
+                    <img src="{{ asset('assets/images/trust/amazon.png') }}" alt="Available on Amazon" class="w-full h-full object-contain">
                 </div>
                 <div>
-                    <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading">Fast Shipping</h4>
-                    <p class="text-[10px] text-gray-500">19,000+ Pin Codes</p>
+                    <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading leading-tight">Amazon Trusted</h4>
+                    <p class="text-[10px] sm:text-[11px] text-gray-500">Fast Express Delivery</p>
                 </div>
             </div>
 
