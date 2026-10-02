@@ -47,11 +47,11 @@ class ProductController extends Controller
             'havan-cup' => 'pitambara-havan',
         ];
 
+        $targetSlug = $aliases[$slug] ?? $slug;
+
         if ($slug === 'pitambara-havan' || $targetSlug === 'pitambara-havan') {
             return $this->showPitambara();
         }
-
-        $targetSlug = $aliases[$slug] ?? $slug;
 
         $product = Product::where('status', 'active')
             ->where(function ($q) use ($slug, $targetSlug) {
