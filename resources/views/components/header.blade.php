@@ -152,7 +152,7 @@
                 <div class="py-2 xl:py-3 flex items-center">
                     <a 
                         href="{{ route('products.pitambara') }}" 
-                        class="nav-link-always-underlined text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-medium text-[#831F2E] hover:text-[#6E1724] transition-colors whitespace-nowrap tracking-normal underline decoration-1 underline-offset-4"
+                        class="nav-link-always-underlined text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-medium text-[#831F2E] hover:text-[#6E1724] transition-colors whitespace-nowrap tracking-normal"
                     >
                         Pitambara Havan
                     </a>
