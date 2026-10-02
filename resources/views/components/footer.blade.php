@@ -49,24 +49,21 @@
     <!-- Main Footer Container (1440px) -->
     <div class="w-full max-w-[1440px] mx-auto pt-10 sm:pt-14 pb-8 px-5 sm:px-8 lg:px-[40px] relative z-10">
         
-        <!-- Sacred Vishnu Mangalam Devotional Mantra Banner (2 Lines & Pure Mantra Only) -->
-        <div class="mb-10 sm:mb-12 py-5 sm:py-6 px-6 sm:px-10 rounded-2xl sm:rounded-3xl bg-black/40 border-2 border-[#F6DAA8]/45 shadow-2xl text-center relative overflow-hidden backdrop-blur-md">
-            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-[#F6DAA8]/15 to-transparent pointer-events-none"></div>
-            <div class="relative z-10 flex flex-col items-center justify-center">
-                <div class="text-[#F6DAA8] text-base sm:text-xl md:text-2xl lg:text-[26px] font-serif tracking-wide sm:tracking-widest leading-relaxed sm:leading-relaxed font-bold drop-shadow-md space-y-1">
-                    <div>मङ्गलं भगवान विष्णुः, मङ्गलम् गरुणध्वजः।</div>
-                    <div>मङ्गलं पुण्डरी काक्षः, मङ्गलाय तनो हरिः॥</div>
-                </div>
+        <!-- Sacred Vishnu Mangalam Devotional Mantra (Clean No-Background 2 Lines in Signature Warm Yellow) -->
+        <div class="mb-10 sm:mb-12 text-center relative z-10">
+            <div class="text-[#F6DAA8] text-base sm:text-xl md:text-2xl lg:text-[26px] font-serif tracking-wide sm:tracking-widest leading-relaxed sm:leading-relaxed font-bold drop-shadow-md space-y-1">
+                <div>मङ्गलं भगवान विष्णुः, मङ्गलम् गरुणध्वजः।</div>
+                <div>मङ्गलं पुण्डरी काक्षः, मङ्गलाय तनो हरिः॥</div>
             </div>
         </div>
 
-        <!-- Main Grid (Brand + 3 Dedicated Non-Duplicate Columns: SHOP, ABOUT, NEED HELP) -->
+        <!-- Main Grid (Brand + 3 Dedicated Columns: SHOP, ABOUT, NEED HELP) -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 pb-12 border-b border-white/15">
             
-            <!-- Col 1: Brand Info & Sanctuary (4 Cols) -->
+            <!-- Col 1: Brand Info & Sanctuary (4.5 Cols) -->
             <div class="lg:col-span-4 space-y-4">
-                <a href="{{ route('home') }}" class="inline-block bg-white/95 backdrop-blur-xs p-2.5 sm:p-3 rounded-2xl shadow-md border border-[#F6DAA8]/40">
-                    <img src="{{ asset('assets/images/mangalam-logo.png') }}" alt="Manglam" class="h-9 sm:h-11 w-auto max-w-[150px] object-contain">
+                <a href="{{ route('home') }}" class="inline-block py-1">
+                    <img src="{{ asset('assets/images/mangalam-logo-white.png') }}" alt="Manglam" class="h-10 sm:h-12 w-auto max-w-[170px] object-contain">
                 </a>
                 
                 <div class="space-y-2 max-w-sm">
@@ -93,64 +90,54 @@
                 </div>
             </div>
 
-            <!-- Col 2: SHOP (2.5 Cols) -->
-            <div class="lg:col-span-2 space-y-3.5">
+            <!-- Col 2: SHOP (Header Menus + Dropdowns) (3 Cols) -->
+            <div class="lg:col-span-3 space-y-3.5">
                 <h4 class="text-xs sm:text-sm font-bold uppercase tracking-[0.15em] text-[#F6DAA8] font-heading">
                     SHOP
                 </h4>
                 <ul class="space-y-2.5 text-xs sm:text-[13px] text-white/85">
                     <li>
                         <a href="{{ route('collections.show', 'bambooless') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
-                            Bambooless Agarbatti
+                            Bambooless
                         </a>
                     </li>
                     <li>
                         <a href="{{ route('collections.show', 'havan-cups') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
-                            Sacred Havan Cups
+                            Havan Cups
                         </a>
                     </li>
                     <li>
                         <a href="{{ route('collections.show', 'dhoop-cones') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
-                            Organic Dhoop Cones
+                            Dhoop Cones
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('products.pitambara') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5 text-[#F6DAA8] font-medium">
-                            Pitambara Special
+                        <a href="{{ route('bundles.trial-packs') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
+                            Buy any 5 Trial Pack @ 799
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('collections.show', 'super-save-offers') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
-                            Super Save Offers
+                        <a href="{{ route('bundles.buy2get1') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
+                            Buy 2 Get 1 FREE
                         </a>
                     </li>
                 </ul>
             </div>
 
-            <!-- Col 3: ABOUT (2.5 Cols) -->
-            <div class="lg:col-span-3 space-y-3.5">
+            <!-- Col 3: ABOUT (About Us & Contact Us only) (2 Cols) -->
+            <div class="lg:col-span-2 space-y-3.5">
                 <h4 class="text-xs sm:text-sm font-bold uppercase tracking-[0.15em] text-[#F6DAA8] font-heading">
                     ABOUT
                 </h4>
                 <ul class="space-y-2.5 text-xs sm:text-[13px] text-white/85">
                     <li>
                         <a href="{{ route('pages.about') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
-                            Our Story &amp; Heritage
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('pages.about') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
-                            Temple Flower Seva
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('pages.show', 'faqs') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
-                            Sacred Pooja Vidhi
+                            About Us
                         </a>
                     </li>
                     <li>
                         <a href="{{ route('pages.contact') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
-                            Contact &amp; Support
+                            Contact Us
                         </a>
                     </li>
                 </ul>
