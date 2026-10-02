@@ -84,9 +84,15 @@ header nav button,
 #hero-banner-carousel button,
 .font-body,
 .font-sans,
+.font-price,
 .price,
-[class*="price"] {
-    font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+[class*="price"],
+[id*="price"],
+.line-through,
+.active-price,
+.original-price,
+.sale-price {
+    font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif !important;
 }
 
 #hero-banner-carousel h1,

@@ -215,11 +215,11 @@
                                     <h4 class="text-xs sm:text-[13px] font-bold font-serif text-[#1F1F1F] truncate leading-tight">
                                         {{ $reel['title'] }}
                                     </h4>
-                                    <div class="flex items-baseline space-x-1.5 pt-0.5">
-                                        <span class="text-xs sm:text-sm font-black font-heading text-[#1F1F1F]">
+                                    <div class="flex items-baseline space-x-1.5 pt-0.5 font-body">
+                                        <span class="text-xs sm:text-sm font-bold text-[#1F1F1F]">
                                             ₹{{ $reel['price'] }}
                                         </span>
-                                        <span class="text-[11px] text-gray-400 line-through">
+                                        <span class="text-[11px] text-gray-400 line-through font-medium">
                                             ₹{{ $reel['mrp'] }}
                                         </span>
                                         <span class="text-[11px] font-bold text-[#15803D]">

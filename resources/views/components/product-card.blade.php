@@ -175,12 +175,11 @@
         </div>
 
         <!-- Pricing & Add to Cart -->
-        <div>
-            <div class="flex items-baseline space-x-1.5 pt-0.5 pb-2 sm:pb-3.5">
-                <span class="text-xs sm:text-sm text-gray-400 line-through">
+            <div class="flex items-baseline space-x-1.5 pt-0.5 pb-2 sm:pb-3.5 font-body">
+                <span class="text-xs sm:text-sm text-gray-400 line-through font-medium">
                     ₹{{ number_format($mrpPrice, 0) }}
                 </span>
-                <span class="text-base sm:text-xl font-black font-heading text-[#C87A1E]">
+                <span class="text-base sm:text-xl font-bold text-[#C87A1E]">
                     ₹{{ number_format($product->active_price, 2) }}
                 </span>
             </div>

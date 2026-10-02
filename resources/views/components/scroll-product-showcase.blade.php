@@ -150,7 +150,7 @@
                             <h4 class="text-xs sm:text-[13px] font-bold font-serif text-[#121212] group-hover:text-[#D38928] transition-colors truncate">
                                 {{ $item->title }}
                             </h4>
-                            <div class="text-xs sm:text-sm font-black font-heading text-[#121212]">
+                            <div class="text-xs sm:text-sm font-bold font-body text-[#121212]">
                                 ₹{{ number_format($item->active_price, 2) }}
                             </div>
                         </div>

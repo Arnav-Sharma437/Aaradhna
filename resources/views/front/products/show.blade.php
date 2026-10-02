@@ -275,14 +275,14 @@
 
                 <!-- 3. Pricing Display & Savings Pill -->
                 <div class="space-y-1.5 pt-1">
-                    <div class="flex flex-wrap items-baseline gap-2.5 sm:gap-3">
-                        <span class="text-base sm:text-lg text-gray-500 line-through">
+                    <div class="flex flex-wrap items-baseline gap-2.5 sm:gap-3 font-body">
+                        <span class="text-base sm:text-lg text-gray-500 line-through font-medium">
                             ₹{{ number_format($mrpPrice, 2) }}
                         </span>
-                        <span id="display-sale-price" class="text-2xl sm:text-3xl font-bold font-heading text-[#C87A1E]">
+                        <span id="display-sale-price" class="text-2xl sm:text-3xl font-bold text-[#C87A1E]">
                             ₹{{ number_format($product->active_price, 2) }}
                         </span>
-                        <span class="px-3 py-1 bg-[#FFF8EE] border border-[#F0D5AA] text-[#C87A1E] text-xs font-semibold rounded-full">
+                        <span class="px-3 py-1 bg-[#FFF8EE] border border-[#F0D5AA] text-[#C87A1E] text-xs font-semibold rounded-full font-body">
                             Save ₹{{ number_format($mrpPrice - $product->active_price, 2) }} ({{ round((($mrpPrice - $product->active_price) / $mrpPrice) * 100) }}%)
                         </span>
                     </div>
@@ -865,15 +865,15 @@
         </div>
         <div class="truncate text-left">
             <div class="text-xs sm:text-base font-bold text-[#121212] font-heading truncate leading-tight">{{ $product->title }}</div>
-            <div class="flex items-baseline space-x-2 pt-0.5 sm:pt-1">
-                <span class="text-sm sm:text-lg font-black font-heading text-[#C87A1E]">
+            <div class="flex items-baseline space-x-2 pt-0.5 sm:pt-1 font-body">
+                <span class="text-sm sm:text-lg font-bold text-[#C87A1E]">
                     ₹{{ number_format($product->active_price, 2) }}
                 </span>
                 @if(isset($mrpPrice) && $mrpPrice > $product->active_price)
-                    <span class="text-xs sm:text-sm text-gray-400 line-through">
+                    <span class="text-xs sm:text-sm text-gray-400 line-through font-medium">
                         ₹{{ number_format($mrpPrice, 2) }}
                     </span>
-                    <span class="hidden sm:inline-block px-2 py-0.5 bg-[#FFF8EE] border border-[#F0D5AA] text-[#C87A1E] text-[10px] font-bold rounded-full">
+                    <span class="hidden sm:inline-block px-2 py-0.5 bg-[#FFF8EE] border border-[#F0D5AA] text-[#C87A1E] text-[10px] font-bold rounded-full font-body">
                         {{ round((($mrpPrice - $product->active_price) / $mrpPrice) * 100) }}% OFF
                     </span>
                 @endif
