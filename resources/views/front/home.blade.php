@@ -621,7 +621,7 @@
         
         <!-- Section Header -->
         <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-16 space-y-1.5">
-            <span class="text-[11px] sm:text-xs font-bold uppercase tracking-[0.3em] text-[#D38928] font-heading">
+            <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">
                 ✦ 100% NATURAL • CHARCOAL FREE ✦
             </span>
             <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#2B1810] font-heading tracking-tight capitalize leading-tight">
@@ -1206,17 +1206,9 @@
 <section class="py-[40px] bg-white border-b border-[#EAE3D9] select-none font-body">
     <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
         
-        <!-- Clean Header (Matching Screenshot) -->
-        <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-14 space-y-2">
-            <div class="flex items-center justify-center space-x-3 text-[#C87A1E] text-xs sm:text-sm font-bold uppercase tracking-[0.22em] font-heading">
-                <div class="w-10 sm:w-18 h-[1px] bg-[#C87A1E]/40"></div>
-                <span class="flex items-center gap-1.5">
-                    <span class="text-[10px]">◆</span>
-                    <span>CRAFTED WITH CARE</span>
-                    <span class="text-[10px]">◆</span>
-                </span>
-                <div class="w-10 sm:w-18 h-[1px] bg-[#C87A1E]/40"></div>
-            </div>
+        <!-- Clean Header (Matching Site Style) -->
+        <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-14 space-y-1.5">
+            <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ CRAFTED WITH CARE ✦</span>
             <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-[#6B1120] tracking-tight leading-tight">
                 Rooted in Purity
             </h2>
@@ -1302,12 +1294,9 @@
         <div class="max-w-5xl lg:max-w-[1100px] mx-auto space-y-6 sm:space-y-8">
         
         <!-- Section Header -->
-        <div class="text-center max-w-2xl mx-auto space-y-1.5">
-            <div class="inline-flex items-center space-x-2 px-3 py-0.5 rounded-full bg-white border border-[#EADBCC] text-[#C87A1E] shadow-2xs">
-                <span class="w-1.5 h-1.5 rounded-full bg-[#D38928]"></span>
-                <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.2em] font-heading">Clarity &amp; Vidhi</span>
-            </div>
-            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#121212] font-heading tracking-tight">
+        <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-10 space-y-1.5">
+            <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ CLARITY &amp; VIDHI ✦</span>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#121212] font-heading tracking-tight leading-tight">
                 Frequently Asked Questions
             </h2>
         </div>
