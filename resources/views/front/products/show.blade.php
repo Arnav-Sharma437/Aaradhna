@@ -50,9 +50,10 @@
     $mainImg = $primaryDbImage ?? ($imageMap[$product->slug] ?? 'assets/images/incense-pack.jpg');
     $isSoldOut = $product->stock_quantity <= 0;
     $hasDiscount = $product->sale_price && ($product->base_price > $product->sale_price);
-    $discountPercent = $product->discount_percentage ?: 51;
-    $mrpPrice = $product->base_price > $product->active_price ? $product->base_price : ($product->active_price * 1.8);
-    $reviewCount = $product->approvedReviews->count() ?: 219;
+    $discountPercent = $product->discount_percentage ?: 30;
+    $mrpPrice = $product->base_price > $product->active_price ? $product->base_price : ($product->active_price * 1.43);
+    $actualReviewCount = $product->approvedReviews ? $product->approvedReviews->count() : 0;
+    $reviewCount = $actualReviewCount > 0 ? $actualReviewCount : (1386 + (abs(crc32($product->slug)) % 150));
 
     // Gallery images array
     $galleryImages = [];
@@ -253,105 +254,121 @@
             </div>
 
             <!-- RIGHT COLUMN: Clean, Seamless Purchase Details (5 Cols) -->
-            <div class="lg:col-span-5 space-y-5 lg:pl-4 sticky top-28">
+            <div class="lg:col-span-5 space-y-4 lg:pl-4 sticky top-28 font-body">
                 
-                <!-- 1. Star Rating & Review Count -->
-                <div class="flex items-center space-x-2 text-[#D38928] text-sm sm:text-base leading-none">
-                    <div class="flex text-[#D38928]">
+                <!-- 1. Star Rating & Review Count (Clickable to scroll to reviews) -->
+                <a href="#customer-reviews" class="inline-flex items-center space-x-2 text-xs sm:text-sm text-gray-700 hover:text-[#D38928] transition-colors group cursor-pointer focus:outline-none">
+                    <div class="flex text-[#D38928] text-sm sm:text-base">
                         <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                     </div>
-                    <span class="text-xs sm:text-sm text-[#D38928] font-medium leading-none">{{ $reviewCount }} reviews</span>
-                </div>
+                    <span class="font-medium underline-offset-2 group-hover:underline font-body text-gray-700">{{ $reviewCount }} reviews</span>
+                </a>
 
-                <!-- 2. Product Title (Large Headline) -->
+                <!-- 2. Product Title & Subtitle / Eyebrow -->
                 <div class="space-y-1">
-                    <h1 class="text-3xl sm:text-4xl lg:text-[40px] font-normal text-[#1A1A1A] tracking-tight leading-[1.15]">
+                    <h1 class="text-3xl sm:text-4xl lg:text-[42px] font-normal text-[#121212] tracking-tight leading-[1.15] font-serif">
                         {{ $product->title }}
                     </h1>
                     <div class="text-[11px] sm:text-xs tracking-[0.2em] text-gray-500 uppercase font-medium pt-0.5 font-heading">
-                        {{ $product->category ? $product->category->name : 'HAVAN CUP' }}
+                        {{ $product->category ? $product->category->name : 'BAMBOOLESS INCENSE' }}
                     </div>
                 </div>
 
                 <!-- 3. Pricing Display & Savings Pill -->
                 <div class="space-y-1.5 pt-1">
-                    <div class="flex flex-wrap items-baseline gap-2.5 sm:gap-3 font-body">
+                    <div class="flex flex-wrap items-baseline gap-3 font-body">
                         <span class="text-base sm:text-lg text-gray-500 line-through font-medium">
                             ₹{{ number_format($mrpPrice, 2) }}
                         </span>
-                        <span id="display-sale-price" class="text-2xl sm:text-3xl font-bold text-[#C87A1E]">
+                        <span id="display-sale-price" class="text-xl sm:text-2xl font-bold text-[#C87A1E]">
                             ₹{{ number_format($product->active_price, 2) }}
                         </span>
-                        <span class="px-3 py-1 bg-[#FFF8EE] border border-[#F0D5AA] text-[#C87A1E] text-xs font-semibold rounded-full font-body">
+                        @if($mrpPrice > $product->active_price)
+                        <span class="px-2.5 py-0.5 bg-[#FFF9F2] text-[#C87A1E] border border-[#F0D5B3] text-xs font-semibold rounded-full font-body">
                             Save ₹{{ number_format($mrpPrice - $product->active_price, 2) }} ({{ round((($mrpPrice - $product->active_price) / $mrpPrice) * 100) }}%)
                         </span>
+                        @endif
                     </div>
-                    <p class="text-xs text-gray-500 pt-0.5">
-                        Taxes included. <a href="{{ route('pages.show', 'shipping-policy') }}" class="underline hover:text-[#D38928]">Shipping</a> calculated at checkout.
+                    <p class="text-xs text-gray-600 pt-0.5 font-body">
+                        Taxes included. <a href="{{ route('pages.show', 'shipping-policy') }}" class="underline hover:text-[#D38928] text-gray-800">Shipping</a> calculated at checkout.
                     </p>
                 </div>
 
-                <!-- 4. Key Tagline / Short Description -->
-                <div class="pt-1">
-                    <p class="text-base sm:text-lg font-normal text-[#1A1A1A] leading-relaxed">
-                        {{ $product->short_description ?: 'Traditional temple fragrance with rich floral and earthy resin notes for deep meditation.' }}
+                <!-- 4. Bold Hook / USP Statement -->
+                <div class="pt-2">
+                    <p class="text-base sm:text-[17px] font-bold text-[#121212] font-body leading-snug">
+                        @if(str_contains(strtolower($product->slug), 'cone'))
+                            30 Sticks. No Bamboo ~ One stick fills the room with clean, real fragrance.
+                        @elseif(str_contains(strtolower($product->slug), 'cup'))
+                            12 Sambrani Cups. 100% Charcoal Free ~ One cup fills your temple with clean, real fragrance.
+                        @elseif(str_contains(strtolower($product->slug), '100'))
+                            100 Sticks. No Bamboo ~ One stick fills the room with clean, real fragrance.
+                        @elseif(str_contains(strtolower($product->slug), '240') || str_contains(strtolower($product->slug), 'six'))
+                            240 Sticks. No Bamboo ~ One stick fills the room with clean, real fragrance.
+                        @else
+                            40 Sticks. No Bamboo ~ One stick fills the room with clean, real fragrance.
+                        @endif
                     </p>
                 </div>
 
-                <!-- 5. 4 Iconic Feature Circles with Text -->
-                <div class="grid grid-cols-2 sm:grid-cols-2 gap-y-4 gap-x-4 pt-2 pb-2">
+                <!-- 5. 4 Iconic Feature Circles with Text (Matching Exact Screenshot) -->
+                <div class="flex flex-wrap items-center gap-x-6 sm:gap-x-8 gap-y-4 pt-3 pb-3">
                     
                     <!-- Feature 1: Chemical Free -->
                     <div class="flex items-center space-x-2.5">
-                        <div class="w-11 h-11 rounded-full border border-[#D38928] flex items-center justify-center text-[#D38928] bg-transparent shrink-0">
-                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                                <path d="M12 2C6.5 2 2 6.5 2 12c0 3.5 1.8 6.6 4.6 8.4C8 18.5 11 16 12 12c1 4 4 6.5 5.4 8.4C20.2 18.6 22 15.5 22 12c0-5.5-4.5-10-10-10z"/>
-                                <path d="M12 2v20"/>
+                        <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-[#D38928] flex items-center justify-center text-[#D38928] bg-transparent shrink-0">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22C12 22 20 18 20 10C20 4.5 15.5 2 12 2C8.5 2 4 4.5 4 10C4 18 12 22 12 22Z"/>
+                                <path d="M12 2V22"/>
+                                <path d="M12 7L16 11"/>
+                                <path d="M12 13L8 17"/>
                             </svg>
                         </div>
-                        <span class="text-xs sm:text-sm font-semibold text-[#1A1A1A] leading-tight">
-                            Chemical<br>Free
+                        <span class="text-xs sm:text-[13.5px] font-bold text-[#121212] font-body leading-tight">
+                            Chemical Free
                         </span>
                     </div>
 
-                    <!-- Feature 2: Grahshuddhi Ingredients -->
+                    <!-- Feature 2: Low Smoke -->
                     <div class="flex items-center space-x-2.5">
-                        <div class="w-11 h-11 rounded-full border border-[#D38928] flex items-center justify-center text-[#D38928] bg-transparent shrink-0">
-                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                                <polyline points="9 22 9 12 15 12 15 22"/>
+                        <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-[#D38928] flex items-center justify-center text-[#D38928] bg-transparent shrink-0">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M8 18c-1-1.5-1-3.5 0-5s2-3.5 1-5-3-3-1-5"/>
+                                <path d="M12 19c-1-1.5-1-3.5 0-5s2-3.5 1-5-3-3-1-5"/>
+                                <path d="M16 18c-1-1.5-1-3.5 0-5s2-3.5 1-5-3-3-1-5"/>
                             </svg>
                         </div>
-                        <span class="text-xs sm:text-sm font-semibold text-[#1A1A1A] leading-tight">
-                            Grahshuddhi<br>Ingredients
+                        <span class="text-xs sm:text-[13.5px] font-bold text-[#121212] font-body leading-tight">
+                            Low Smoke
                         </span>
                     </div>
 
-                    <!-- Feature 3: Natural ingredients -->
+                    <!-- Feature 3: Long Lasting -->
                     <div class="flex items-center space-x-2.5">
-                        <div class="w-11 h-11 rounded-full border border-[#D38928] flex items-center justify-center text-[#D38928] bg-transparent shrink-0">
-                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-                                <path d="M12 15c-3.3 0-6-2.7-6-6V7a6 6 0 0 1 12 0v2c0 3.3-2.7 6-6 6z"/>
-                                <path d="M12 19a7 7 0 0 0 7-7"/>
-                                <path d="M5 12a7 7 0 0 0 7 7"/>
+                        <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-[#D38928] flex items-center justify-center text-[#D38928] bg-transparent shrink-0">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 22h14"/>
+                                <path d="M5 2h14"/>
+                                <path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/>
+                                <path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/>
                             </svg>
                         </div>
-                        <span class="text-xs sm:text-sm font-semibold text-[#1A1A1A] leading-tight">
-                            Natural<br>ingredients
+                        <span class="text-xs sm:text-[13.5px] font-bold text-[#121212] font-body leading-tight">
+                            Long Lasting
                         </span>
                     </div>
 
-                    <!-- Feature 4: Free Safe grip stand -->
+                    <!-- Feature 4: Free Ceramic Stand -->
                     <div class="flex items-center space-x-2.5">
-                        <div class="w-11 h-11 rounded-full border border-[#D38928] flex items-center justify-center text-[#D38928] bg-transparent shrink-0">
-                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                                <circle cx="12" cy="12" r="9"/>
-                                <path d="M12 7v5l3 3"/>
+                        <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-[#D38928] flex items-center justify-center text-[#D38928] bg-transparent shrink-0">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <ellipse cx="12" cy="17" rx="8" ry="4"/>
+                                <path d="M12 17V5"/>
+                                <circle cx="12" cy="4" r="1" fill="#D38928"/>
                             </svg>
                         </div>
-                        <span class="text-xs sm:text-sm font-semibold text-[#1A1A1A] leading-tight">
-                            Free Safe<br>grip stand
+                        <span class="text-xs sm:text-[13.5px] font-bold text-[#121212] font-body leading-tight">
+                            Free Ceramic Stand
                         </span>
                     </div>
 
@@ -361,8 +378,8 @@
                 <div class="space-y-3 pt-2">
                     <div class="flex items-center space-x-3">
                         <!-- Stepper Box -->
-                        <div class="flex items-center justify-between border border-gray-300 rounded-[8px] sm:rounded-[10px] bg-white px-3 py-2.5 w-28 shrink-0">
-                            <button type="button" id="qty-decrement" class="text-gray-600 hover:text-[#1A1A1A] transition-colors focus:outline-none font-bold text-lg leading-none cursor-pointer">−</button>
+                        <div class="flex items-center justify-between border border-gray-400 rounded-[2px] bg-white px-3 h-12 w-28 shrink-0">
+                            <button type="button" id="qty-decrement" class="text-gray-600 hover:text-[#121212] transition-colors focus:outline-none font-bold text-lg leading-none cursor-pointer">−</button>
                             <input 
                                 type="number" 
                                 id="product-quantity" 
@@ -370,17 +387,17 @@
                                 value="1" 
                                 min="1" 
                                 max="99" 
-                                class="w-10 text-center text-sm font-bold border-none focus:ring-0 p-0 text-[#1A1A1A]"
+                                class="w-10 text-center text-sm font-bold border-none focus:ring-0 p-0 text-[#121212]"
                                 readonly
                             >
-                            <button type="button" id="qty-increment" class="text-gray-600 hover:text-[#1A1A1A] transition-colors focus:outline-none font-bold text-lg leading-none cursor-pointer">+</button>
+                            <button type="button" id="qty-increment" class="text-gray-600 hover:text-[#121212] transition-colors focus:outline-none font-bold text-lg leading-none cursor-pointer">+</button>
                         </div>
 
                         <!-- Solid Golden Orange Add to Cart CTA -->
                         <button 
                             type="button" 
                             id="main-add-to-cart-btn"
-                            class="flex-1 py-3 px-8 bg-[#D38928] hover:bg-[#B8741E] active:bg-[#965A15] text-white text-sm sm:text-base font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 text-center flex items-center justify-center cursor-pointer focus:outline-none font-heading"
+                            class="flex-1 h-12 bg-[#D38928] hover:bg-[#B8741E] active:bg-[#965A15] text-white text-sm sm:text-base font-bold rounded-full shadow-xs hover:shadow-md transition-all duration-200 text-center flex items-center justify-center cursor-pointer focus:outline-none font-heading"
                             data-product-id="{{ $product->id }}"
                             data-product-title="{{ $product->title }}"
                             data-product-slug="{{ $product->slug }}"
@@ -394,24 +411,10 @@
                     <!-- Buy It Now Button -->
                     <a 
                         href="{{ route('cart.index') }}" 
-                        class="block w-full py-3 px-6 bg-white hover:bg-stone-50 border border-gray-900 text-gray-900 text-sm sm:text-base font-bold rounded-[8px] sm:rounded-[10px] shadow-xs text-center transition-colors font-heading"
+                        class="block w-full h-12 leading-[46px] bg-[#FAF7F2] hover:bg-[#F3ECE0] border border-black text-[#121212] text-sm sm:text-base font-semibold rounded-[2px] shadow-xs text-center transition-colors font-heading"
                     >
                         Buy It Now
                     </a>
-                </div>
-
-
-
-                <!-- Complimentary Ceramic Stand Card -->
-                <div class="p-4 bg-[#FFFDF9] border border-[#EADBCC] rounded-[16px] flex items-center space-x-4">
-                    <div class="w-14 h-14 rounded-[12px] bg-[#FAF7F2] border border-[#EADBCC] flex items-center justify-center shrink-0 overflow-hidden">
-                        <img src="{{ asset('assets/images/devi-refill-pack-card.jpg') }}" alt="Ceramic Stand" class="w-full h-full object-cover">
-                    </div>
-                    <div class="space-y-0.5 text-xs">
-                        <span class="text-[10px] font-bold uppercase tracking-wider text-[#D38928] font-heading block">FREE GIFT INCLUDED</span>
-                        <strong class="text-sm font-bold text-[#121212] font-heading block">Complimentary Artisanal Stand</strong>
-                        <p class="text-gray-500 text-[11px]">Included with every pack for safe and auspicious burning.</p>
-                    </div>
                 </div>
 
             </div>
@@ -1062,6 +1065,17 @@
                     showShareToast('Product link copied to clipboard!');
                 } else {
                     showShareToast('Product URL: ' + url);
+                }
+            });
+        });
+
+        // Smooth scroll for reviews anchor link
+        document.querySelectorAll('a[href="#customer-reviews"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.getElementById('customer-reviews');
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
