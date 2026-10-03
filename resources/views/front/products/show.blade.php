@@ -751,196 +751,336 @@
         @endif
 
         <!-- ========================================================================= -->
-        <!-- 5. CUSTOMER REVIEWS & RATINGS (Compact & Contained Section)              -->
+        <!-- 5. CUSTOMER REVIEWS & RATINGS (Wide Luxury Section with Photo Upload)     -->
         <!-- ========================================================================= -->
-        <div id="customer-reviews" class="mt-10 sm:mt-14 mb-12 sm:mb-20 max-w-3xl mx-auto bg-white rounded-[18px] border border-[#EADBCC] p-5 sm:p-7 shadow-xs font-body">
+        <div id="customer-reviews" class="mt-14 sm:mt-20 mb-16 sm:mb-24 max-w-7xl mx-auto bg-white rounded-[18px] sm:rounded-[24px] border border-[#EADBCC] p-6 sm:p-8 lg:p-10 shadow-xs font-body">
             
-            <!-- Compact Header -->
-            <div class="flex items-center justify-between gap-3 pb-5 border-b border-[#EADBCC]">
+            <!-- 1. Header Bar: Title, Rating & Write Review Button -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#EADBCC]">
                 <div>
-                    <h3 class="text-lg sm:text-xl font-bold text-[#121212] font-heading tracking-tight">
-                        Customer Reviews
-                    </h3>
-                    <p class="text-[11px] sm:text-xs text-gray-500 mt-0.5">Verified devotees sharing their sacred experiences</p>
+                    <div class="flex items-center gap-3">
+                        <h3 class="text-xl sm:text-2xl lg:text-3xl font-bold text-[#121212] font-heading tracking-tight">
+                            Customer Reviews
+                        </h3>
+                        <span class="px-2.5 py-0.5 rounded-full bg-[#FDF6ED] text-[#8C531B] text-xs font-bold font-heading border border-[#D38928]/40">
+                            ★ 4.9 / 5.0
+                        </span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-gray-500 mt-1">Verified devotees sharing their authentic sacred experiences</p>
                 </div>
 
                 <button 
                     type="button" 
                     id="write-review-toggle-btn"
-                    class="px-3.5 py-1.5 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs font-bold rounded-[8px] shadow-xs hover:shadow transition-all font-heading cursor-pointer shrink-0"
+                    class="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#831F2E] hover:bg-[#6E1724] text-white text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow transition-all font-heading cursor-pointer shrink-0"
                     onclick="const form = document.getElementById('inline-review-form'); form.classList.toggle('hidden');"
                 >
-                    Write a Review
+                    <svg class="w-4 h-4 text-[#F6DAA8]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                    </svg>
+                    <span>Write a Review</span>
                 </button>
             </div>
 
-            <!-- Inline Compact Review Submission Form (Toggled by Button) -->
-            <div id="inline-review-form" class="hidden my-4 p-4 rounded-[12px] bg-[#FAF8F5] border border-[#EADBCC] space-y-3 transition-all duration-200">
-                <div class="flex items-center justify-between">
-                    <span class="text-xs font-bold text-[#121212] font-heading uppercase tracking-wider">✦ Share Your Experience</span>
-                    <button type="button" class="text-xs text-gray-400 hover:text-gray-700 font-bold cursor-pointer" onclick="document.getElementById('inline-review-form').classList.add('hidden');">✕ Close</button>
+            <!-- 2. Customer Uploaded Photos Gallery -->
+            <div class="py-6 border-b border-[#EADBCC]">
+                <div class="flex items-center justify-between mb-3.5">
+                    <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading uppercase tracking-wider flex items-center gap-1.5">
+                        <svg class="w-4 h-4 text-[#D38928]" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M4 4h3l2-2h6l2 2h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm8 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/>
+                        </svg>
+                        Devotee Shared Photos (128+)
+                    </span>
+                    <span class="text-[11px] sm:text-xs text-gray-500 font-medium">Real pooja altar setups</span>
                 </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+                <div class="grid grid-cols-3 sm:grid-cols-6 gap-2 sm:gap-3">
+                    <div class="relative aspect-square rounded-[8px] sm:rounded-[10px] overflow-hidden border border-[#EADBCC] bg-[#FAF7F2] shadow-2xs group cursor-pointer">
+                        <img src="{{ asset('assets/images/hero-incense-banner.jpg') }}" alt="Customer Altar 1" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
+                    </div>
+                    <div class="relative aspect-square rounded-[8px] sm:rounded-[10px] overflow-hidden border border-[#EADBCC] bg-[#FAF7F2] shadow-2xs group cursor-pointer">
+                        <img src="{{ asset('assets/images/camphor-refill-pack-card.jpg') }}" alt="Customer Altar 2" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
+                    </div>
+                    <div class="relative aspect-square rounded-[8px] sm:rounded-[10px] overflow-hidden border border-[#EADBCC] bg-[#FAF7F2] shadow-2xs group cursor-pointer">
+                        <img src="{{ asset('assets/images/hero-ram-uphaar-banner.jpg') }}" alt="Customer Altar 3" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
+                    </div>
+                    <div class="relative aspect-square rounded-[8px] sm:rounded-[10px] overflow-hidden border border-[#EADBCC] bg-[#FAF7F2] shadow-2xs group cursor-pointer">
+                        <img src="{{ asset('assets/images/chandan-cones-card.jpg') }}" alt="Customer Altar 4" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
+                    </div>
+                    <div class="relative aspect-square rounded-[8px] sm:rounded-[10px] overflow-hidden border border-[#EADBCC] bg-[#FAF7F2] shadow-2xs group cursor-pointer">
+                        <img src="{{ asset('assets/images/devi-refill-pack-card.jpg') }}" alt="Customer Altar 5" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
+                    </div>
+                    <div class="relative aspect-square rounded-[8px] sm:rounded-[10px] overflow-hidden border border-[#EADBCC] bg-[#FAF7F2] shadow-2xs group cursor-pointer">
+                        <img src="{{ asset('assets/images/oudh-pack-card.jpg') }}" alt="Customer Altar 6" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center text-white font-bold text-xs sm:text-sm font-heading group-hover:bg-black/20 transition-colors">
+                            +122 More
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Inline Wide Review Submission Form with Image Upload (Toggled by Button) -->
+            <div id="inline-review-form" class="hidden my-6 p-5 sm:p-7 rounded-[14px] bg-[#FAF8F5] border border-[#EADBCC] space-y-4 transition-all duration-300 shadow-xs">
+                <div class="flex items-center justify-between pb-3 border-b border-[#EADBCC]/70">
+                    <span class="text-sm font-bold text-[#121212] font-heading uppercase tracking-wider flex items-center gap-1.5">
+                        <span class="text-[#D38928]">✦</span> Share Your Sacred Experience &amp; Photos
+                    </span>
+                    <button type="button" class="text-xs text-gray-500 hover:text-[#831F2E] font-bold cursor-pointer transition-colors" onclick="document.getElementById('inline-review-form').classList.add('hidden');">✕ Close</button>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs sm:text-sm">
                     <div>
-                        <label class="block text-gray-600 font-medium mb-1">Your Sacred Name *</label>
-                        <input type="text" placeholder="e.g. Rameshwar Sharma" class="w-full px-3 py-1.5 rounded-[8px] border border-[#EADBCC] bg-white text-xs focus:border-[#D38928] focus:outline-none">
+                        <label class="block text-gray-700 font-medium mb-1">Your Full Name *</label>
+                        <input type="text" placeholder="e.g. Rameshwar Sharma" class="w-full px-3.5 py-2.5 rounded-[8px] border border-[#EADBCC] bg-white text-xs sm:text-sm focus:border-[#D38928] focus:outline-none shadow-2xs">
                     </div>
                     <div>
-                        <label class="block text-gray-600 font-medium mb-1">Your City / State *</label>
-                        <input type="text" placeholder="e.g. Varanasi, UP" class="w-full px-3 py-1.5 rounded-[8px] border border-[#EADBCC] bg-white text-xs focus:border-[#D38928] focus:outline-none">
+                        <label class="block text-gray-700 font-medium mb-1">Your City / State *</label>
+                        <input type="text" placeholder="e.g. Varanasi, UP" class="w-full px-3.5 py-2.5 rounded-[8px] border border-[#EADBCC] bg-white text-xs sm:text-sm focus:border-[#D38928] focus:outline-none shadow-2xs">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-1">Your Rating *</label>
+                        <div class="flex items-center space-x-1 text-xl text-[#D38928] py-1 cursor-pointer select-none">
+                            <span class="hover:scale-120 transition-transform">★</span>
+                            <span class="hover:scale-120 transition-transform">★</span>
+                            <span class="hover:scale-120 transition-transform">★</span>
+                            <span class="hover:scale-120 transition-transform">★</span>
+                            <span class="hover:scale-120 transition-transform">★</span>
+                            <span class="text-xs font-bold text-gray-600 pl-2">5 Stars</span>
+                        </div>
                     </div>
                 </div>
-                <div class="text-xs">
-                    <label class="block text-gray-600 font-medium mb-1">Your Rating *</label>
-                    <div class="flex items-center space-x-1 text-base text-[#D38928] cursor-pointer">
-                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+
+                <div class="text-xs sm:text-sm">
+                    <label class="block text-gray-700 font-medium mb-1">Review Headline *</label>
+                    <input type="text" placeholder="e.g. Divine authentic temple fragrance, burns clean without eye burning" class="w-full px-3.5 py-2.5 rounded-[8px] border border-[#EADBCC] bg-white text-xs sm:text-sm focus:border-[#D38928] focus:outline-none shadow-2xs">
+                </div>
+
+                <div class="text-xs sm:text-sm">
+                    <label class="block text-gray-700 font-medium mb-1">Your Sacred Review *</label>
+                    <textarea rows="3" placeholder="Share how this pure fragrance elevated your daily pooja, meditation, or home ambience..." class="w-full px-3.5 py-2.5 rounded-[8px] border border-[#EADBCC] bg-white text-xs sm:text-sm focus:border-[#D38928] focus:outline-none shadow-2xs"></textarea>
+                </div>
+
+                <!-- Image Upload Dropzone -->
+                <div class="text-xs sm:text-sm">
+                    <label class="block text-gray-700 font-medium mb-1">Attach Photos / Videos (Pooja setup, unboxing, stand)</label>
+                    <div class="border-2 border-dashed border-[#D38928]/50 hover:border-[#D38928] rounded-[10px] bg-white p-4 text-center cursor-pointer transition-colors relative">
+                        <input 
+                            type="file" 
+                            id="review-image-upload-input" 
+                            accept="image/*" 
+                            multiple 
+                            class="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                            onchange="
+                                const files = this.files;
+                                const previewContainer = document.getElementById('review-upload-previews');
+                                previewContainer.innerHTML = '';
+                                if (files && files.length > 0) {
+                                    previewContainer.classList.remove('hidden');
+                                    Array.from(files).slice(0, 4).forEach(file => {
+                                        const reader = new FileReader();
+                                        reader.onload = (e) => {
+                                            const div = document.createElement('div');
+                                            div.className = 'w-16 h-16 rounded-[8px] overflow-hidden border border-[#D38928] shadow-xs relative shrink-0';
+                                            div.innerHTML = `<img src='${e.target.result}' class='w-full h-full object-cover'>`;
+                                            previewContainer.appendChild(div);
+                                        };
+                                        reader.readAsDataURL(file);
+                                    });
+                                }
+                            "
+                        >
+                        <div class="flex flex-col items-center justify-center space-y-1">
+                            <svg class="w-7 h-7 text-[#D38928]" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z"/>
+                            </svg>
+                            <span class="text-xs sm:text-sm font-semibold text-gray-800 font-heading">Click or Drag &amp; Drop to Upload Photos</span>
+                            <span class="text-[11px] text-gray-500">Supports JPG, PNG, WEBP (Up to 4 images)</span>
+                        </div>
                     </div>
+
+                    <!-- Live Image Previews Container -->
+                    <div id="review-upload-previews" class="hidden flex items-center gap-2 pt-3"></div>
                 </div>
-                <div class="text-xs">
-                    <label class="block text-gray-600 font-medium mb-1">Your Sacred Review *</label>
-                    <textarea rows="2" placeholder="Share how this pure fragrance elevated your daily pooja or meditation..." class="w-full px-3 py-1.5 rounded-[8px] border border-[#EADBCC] bg-white text-xs focus:border-[#D38928] focus:outline-none"></textarea>
-                </div>
-                <div class="flex justify-end">
-                    <button type="button" class="px-4 py-1.5 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs font-bold rounded-[8px] shadow-xs cursor-pointer font-heading" onclick="alert('Dhanyawad! Your review has been submitted for Vedic verification.'); document.getElementById('inline-review-form').classList.add('hidden');">
+
+                <div class="flex justify-end pt-2">
+                    <button type="button" class="px-6 py-2.5 bg-[#831F2E] hover:bg-[#6E1724] text-white text-xs sm:text-sm font-bold rounded-[8px] shadow-xs cursor-pointer font-heading transition-colors" onclick="alert('Dhanyawad! Your review and photos have been submitted for verification.'); document.getElementById('inline-review-form').classList.add('hidden');">
                         Submit Review
                     </button>
                 </div>
             </div>
 
-            <!-- Compact Rating Summary Histogram -->
-            <div class="grid grid-cols-1 sm:grid-cols-12 gap-5 my-5 pb-5 border-b border-[#EADBCC] items-center">
+            <!-- 4. Wide Rating Summary Histogram -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 my-6 pb-6 border-b border-[#EADBCC] items-center">
                 <!-- Average Rating Box -->
-                <div class="sm:col-span-4 text-center sm:border-r border-[#EADBCC] pr-0 sm:pr-4 space-y-0.5">
-                    <div class="text-3xl sm:text-4xl font-black text-[#121212] font-heading leading-none">4.9</div>
-                    <div class="flex justify-center text-[#D38928] text-sm my-1">
+                <div class="lg:col-span-4 text-center lg:border-r border-[#EADBCC] pr-0 lg:pr-6 space-y-1">
+                    <div class="text-4xl sm:text-5xl font-black text-[#121212] font-heading leading-none">4.9</div>
+                    <div class="flex justify-center text-[#D38928] text-base sm:text-lg my-1.5">
                         <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                     </div>
-                    <p class="text-[11px] text-gray-500 font-medium">Based on {{ $reviewCount }} authentic reviews</p>
+                    <p class="text-xs text-gray-600 font-medium">Based on {{ $reviewCount }} authentic reviews</p>
+                    <div class="inline-flex items-center gap-1 text-[11px] font-bold text-[#1B7F49] bg-[#E8F5E9] px-2.5 py-0.5 rounded-full mt-1">
+                        <span>✓</span> 98% Recommended by Devotees
+                    </div>
                 </div>
 
-                <!-- Compact Rating Bars -->
-                <div class="sm:col-span-8 space-y-1.5 text-xs">
-                    <div class="flex items-center space-x-2.5">
-                        <span class="w-7 text-[11px] font-bold text-gray-700">5 ★</span>
-                        <div class="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden">
+                <!-- Rating Bars -->
+                <div class="lg:col-span-8 space-y-2 text-xs sm:text-sm">
+                    <div class="flex items-center space-x-3">
+                        <span class="w-10 text-xs font-bold text-gray-700">5 Star</span>
+                        <div class="flex-1 h-2.5 bg-gray-100 rounded-full overflow-hidden">
                             <div class="h-full bg-[#D38928] rounded-full" style="width: 92%;"></div>
                         </div>
-                        <span class="w-8 text-right text-[11px] text-gray-400">92%</span>
+                        <span class="w-12 text-right text-xs font-semibold text-gray-600">92%</span>
                     </div>
-                    <div class="flex items-center space-x-2.5">
-                        <span class="w-7 text-[11px] font-bold text-gray-700">4 ★</span>
-                        <div class="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden">
+                    <div class="flex items-center space-x-3">
+                        <span class="w-10 text-xs font-bold text-gray-700">4 Star</span>
+                        <div class="flex-1 h-2.5 bg-gray-100 rounded-full overflow-hidden">
                             <div class="h-full bg-[#D38928] rounded-full" style="width: 6%;"></div>
                         </div>
-                        <span class="w-8 text-right text-[11px] text-gray-400">6%</span>
+                        <span class="w-12 text-right text-xs font-semibold text-gray-600">6%</span>
                     </div>
-                    <div class="flex items-center space-x-2.5">
-                        <span class="w-7 text-[11px] font-bold text-gray-700">3 ★</span>
-                        <div class="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden">
+                    <div class="flex items-center space-x-3">
+                        <span class="w-10 text-xs font-bold text-gray-700">3 Star</span>
+                        <div class="flex-1 h-2.5 bg-gray-100 rounded-full overflow-hidden">
                             <div class="h-full bg-[#D38928] rounded-full" style="width: 2%;"></div>
                         </div>
-                        <span class="w-8 text-right text-[11px] text-gray-400">2%</span>
+                        <span class="w-12 text-right text-xs font-semibold text-gray-600">2%</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Compact Reviews List -->
-            <!-- Compact Reviews List -->
-            <div class="space-y-3.5">
+            <!-- 5. Wide Reviews List with Customer Photo Attachments -->
+            <div class="space-y-4">
+                
                 <!-- Review 1 -->
-                <div class="p-4 sm:p-5 rounded-[14px] border border-[#EAE3D9] bg-white space-y-2 shadow-2xs">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center space-x-2">
+                <div class="p-5 sm:p-6 rounded-[14px] sm:rounded-[16px] border border-[#EAE3D9] bg-white space-y-3 shadow-2xs">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                        <div class="flex items-center space-x-3">
                             <div class="flex text-[#D38928] text-sm sm:text-base">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                             </div>
-                            <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading">नेहा ठाकुर, मंडी</span>
+                            <span class="text-sm sm:text-base font-bold text-[#121212] font-heading">नेहा ठाकुर, मंडी</span>
+                            <span class="inline-flex items-center gap-1 text-[11px] font-bold text-[#1B7F49] bg-[#E8F5E9] px-2 py-0.5 rounded-full">
+                                ✓ Verified Buyer
+                            </span>
                         </div>
-                        <span class="text-[11px] text-gray-400">1 day ago</span>
+                        <span class="text-xs text-gray-400">1 day ago</span>
                     </div>
-                    <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading pt-0.5">प्राकृतिक चंदन और जड़ी-बूटियों की मनमोहक खुशबू</h4>
-                    <p class="text-xs text-gray-600 leading-relaxed">
+                    <h4 class="text-sm sm:text-base font-bold text-[#121212] font-heading">प्राकृतिक चंदन और जड़ी-बूटियों की मनमोहक खुशबू</h4>
+                    <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
                         मंडी में हमारे घर में रोजाना सुबह पूजा होती है। इस अगरबत्ती का धुआं बिल्कुल भी आंखों में नहीं लगता और 4-5 घंटे तक कमरे में ताजगी बनी रहती है। बहुत ही शांत अनुभव!
                     </p>
+                    <!-- Customer Uploaded Photos -->
+                    <div class="flex items-center gap-2 pt-1">
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-[8px] overflow-hidden border border-[#EADBCC] shadow-2xs group cursor-pointer">
+                            <img src="{{ asset('assets/images/hero-incense-banner.jpg') }}" alt="Customer Altar Photo" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-300">
+                        </div>
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-[8px] overflow-hidden border border-[#EADBCC] shadow-2xs group cursor-pointer">
+                            <img src="{{ asset('assets/images/camphor-refill-pack-card.jpg') }}" alt="Customer Stand Photo" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-300">
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Review 2 -->
-                <div class="p-4 sm:p-5 rounded-[14px] border border-[#EAE3D9] bg-white space-y-2 shadow-2xs">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center space-x-2">
+                <div class="p-5 sm:p-6 rounded-[14px] sm:rounded-[16px] border border-[#EAE3D9] bg-white space-y-3 shadow-2xs">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                        <div class="flex items-center space-x-3">
                             <div class="flex text-[#D38928] text-sm sm:text-base">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                             </div>
-                            <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading">Dr. Gaurav Sharma, Kangra</span>
+                            <span class="text-sm sm:text-base font-bold text-[#121212] font-heading">Dr. Gaurav Sharma, Kangra</span>
+                            <span class="inline-flex items-center gap-1 text-[11px] font-bold text-[#1B7F49] bg-[#E8F5E9] px-2 py-0.5 rounded-full">
+                                ✓ Verified Buyer
+                            </span>
                         </div>
-                        <span class="text-[11px] text-gray-400">3 days ago</span>
+                        <span class="text-xs text-gray-400">3 days ago</span>
                     </div>
-                    <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading pt-0.5">True chemical-free &amp; very slow burning</h4>
-                    <p class="text-xs text-gray-600 leading-relaxed">
+                    <h4 class="text-sm sm:text-base font-bold text-[#121212] font-heading">True chemical-free &amp; very slow burning</h4>
+                    <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
                         Being an ayurveda practitioner in Kangra, I check ingredients very strictly. Zero charcoal and pure flower extract make it safe for closed rooms. The ceramic stand included in the box is elegant.
                     </p>
+                    <!-- Customer Uploaded Photos -->
+                    <div class="flex items-center gap-2 pt-1">
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-[8px] overflow-hidden border border-[#EADBCC] shadow-2xs group cursor-pointer">
+                            <img src="{{ asset('assets/images/hero-ram-uphaar-banner.jpg') }}" alt="Customer Photo" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-300">
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Hidden Extra Reviews (Toggled by Read More button) -->
-                <div id="extra-product-reviews" class="hidden space-y-3.5 transition-all duration-300">
+                <div id="extra-product-reviews" class="hidden space-y-4 transition-all duration-300">
                     <!-- Review 3 -->
-                    <div class="p-4 sm:p-5 rounded-[14px] border border-[#EAE3D9] bg-white space-y-2 shadow-2xs">
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center space-x-2">
+                    <div class="p-5 sm:p-6 rounded-[14px] sm:rounded-[16px] border border-[#EAE3D9] bg-white space-y-3 shadow-2xs">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <div class="flex items-center space-x-3">
                                 <div class="flex text-[#D38928] text-sm sm:text-base">
                                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                                 </div>
-                                <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading">सुरेश चंदेल, बिलासपुर</span>
+                                <span class="text-sm sm:text-base font-bold text-[#121212] font-heading">सुरेश चंदेल, बिलासपुर</span>
+                                <span class="inline-flex items-center gap-1 text-[11px] font-bold text-[#1B7F49] bg-[#E8F5E9] px-2 py-0.5 rounded-full">
+                                    ✓ Verified Buyer
+                                </span>
                             </div>
-                            <span class="text-[11px] text-gray-400">5 days ago</span>
+                            <span class="text-xs text-gray-400">5 days ago</span>
                         </div>
-                        <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading pt-0.5">बिलासपुर में 3 दिन में सुरक्षित डिलीवरी मिली</h4>
-                        <p class="text-xs text-gray-600 leading-relaxed">
+                        <h4 class="text-sm sm:text-base font-bold text-[#121212] font-heading">बिलासपुर में 3 दिन में सुरक्षित डिलीवरी मिली</h4>
+                        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
                             100 स्टिक्स वाला पैक मंगाया था। पैकेजिंग बहुत ही सुंदर और मजबूत है। जलने का समय पूरा 50 मिनट रहता है और सफेद शुद्ध भस्म बनती है।
                         </p>
                     </div>
 
                     <!-- Review 4 -->
-                    <div class="p-4 sm:p-5 rounded-[14px] border border-[#EAE3D9] bg-white space-y-2 shadow-2xs">
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center space-x-2">
+                    <div class="p-5 sm:p-6 rounded-[14px] sm:rounded-[16px] border border-[#EAE3D9] bg-white space-y-3 shadow-2xs">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <div class="flex items-center space-x-3">
                                 <div class="flex text-[#D38928] text-sm sm:text-base">
                                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                                 </div>
-                                <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading">Ritu Mahajan, Chamba</span>
+                                <span class="text-sm sm:text-base font-bold text-[#121212] font-heading">Ritu Mahajan, Chamba</span>
+                                <span class="inline-flex items-center gap-1 text-[11px] font-bold text-[#1B7F49] bg-[#E8F5E9] px-2 py-0.5 rounded-full">
+                                    ✓ Verified Buyer
+                                </span>
                             </div>
-                            <span class="text-[11px] text-gray-400">1 week ago</span>
+                            <span class="text-xs text-gray-400">1 week ago</span>
                         </div>
-                        <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading pt-0.5">No coughing or throat irritation in cold weather</h4>
-                        <p class="text-xs text-gray-600 leading-relaxed">
+                        <h4 class="text-sm sm:text-base font-bold text-[#121212] font-heading">No coughing or throat irritation in cold weather</h4>
+                        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
                             In Chamba during winter months, burning ordinary incense used to cause coughing. Manglam bambooless sticks are pure bliss! Subtle, premium fragrance that lasts all evening.
                         </p>
                     </div>
 
                     <!-- Review 5 -->
-                    <div class="p-4 sm:p-5 rounded-[14px] border border-[#EAE3D9] bg-white space-y-2 shadow-2xs">
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center space-x-2">
+                    <div class="p-5 sm:p-6 rounded-[14px] sm:rounded-[16px] border border-[#EAE3D9] bg-white space-y-3 shadow-2xs">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <div class="flex items-center space-x-3">
                                 <div class="flex text-[#D38928] text-sm sm:text-base">
                                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                                 </div>
-                                <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading">अमित कटोच, हमीरपुर</span>
+                                <span class="text-sm sm:text-base font-bold text-[#121212] font-heading">अमित कटोच, हमीरपुर</span>
+                                <span class="inline-flex items-center gap-1 text-[11px] font-bold text-[#1B7F49] bg-[#E8F5E9] px-2 py-0.5 rounded-full">
+                                    ✓ Verified Buyer
+                                </span>
                             </div>
-                            <span class="text-[11px] text-gray-400">2 weeks ago</span>
+                            <span class="text-xs text-gray-400">2 weeks ago</span>
                         </div>
-                        <h4 class="text-xs sm:text-sm font-bold text-[#121212] font-heading pt-0.5">शास्त्र सम्मत बिना बांस की असली अगरबत्ती</h4>
-                        <p class="text-xs text-gray-600 leading-relaxed">
+                        <h4 class="text-sm sm:text-base font-bold text-[#121212] font-heading">शास्त्र सम्मत बिना बांस की असली अगरबत्ती</h4>
+                        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
                             हमीरपुर से ऑर्डर किया था। पूजा में बांस जलाना हमारे यहां वर्जित मानते हैं। यह पूरी तरह से वेदिक विधि से बनी है। अब हम केवल यही मंगवाते हैं।
                         </p>
                     </div>
                 </div>
 
                 <!-- Read More Toggle Button -->
-                <div class="text-center pt-2">
+                <div class="text-center pt-3">
                     <button 
                         type="button" 
                         id="toggle-extra-reviews-btn"
-                        class="inline-flex items-center space-x-1.5 px-5 py-2.5 rounded-full border border-[#D38928] text-[#965A15] bg-[#FAF8F5] hover:bg-[#D38928] hover:text-white transition-all text-xs font-bold font-heading shadow-2xs cursor-pointer"
+                        class="inline-flex items-center space-x-1.5 px-6 py-2.5 rounded-full border border-[#D38928] text-[#965A15] bg-[#FAF8F5] hover:bg-[#D38928] hover:text-white transition-all text-xs sm:text-sm font-bold font-heading shadow-2xs cursor-pointer"
                         onclick="
                             const extra = document.getElementById('extra-product-reviews');
                             const isHidden = extra.classList.toggle('hidden');
