@@ -1212,9 +1212,9 @@
             <h2 class="text-3xl sm:text-4xl lg:text-[46px] font-heading font-normal text-[#5C141E] tracking-tight leading-tight">
                 Rooted in Purity
             </h2>
-            <p class="text-xs sm:text-sm md:text-base text-gray-600 font-normal font-body">
+            <!-- <p class="text-xs sm:text-sm md:text-base text-gray-600 font-normal font-body">
                 Traditional wisdom. Thoughtfully crafted.
-            </p>
+            </p> -->
         </div>
 
         <!-- Slim & Wide Elegant Card Container (8px Radius, Soft Gold Border matching icon borders, Inset Gold Divider Lines) -->
