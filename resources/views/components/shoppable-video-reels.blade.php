@@ -458,8 +458,8 @@
                         <!-- Gradient Shadow Overlay -->
                         <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/40 pointer-events-none z-10"></div>
 
-                        <!-- Top Left Mute Button -->
-                        <div class="relative z-20 p-4 pt-4 flex items-center justify-between">
+                        <!-- Top Left Mute Button (Mobile Only) -->
+                        <div class="relative z-20 p-4 pt-4 flex items-center justify-between sm:hidden">
                             <button 
                                 type="button" 
                                 class="feed-mute-btn px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/25 text-white text-xs font-bold flex items-center space-x-1.5 cursor-pointer shadow-lg hover:bg-black/80 transition-colors"
@@ -471,8 +471,8 @@
                             </button>
                         </div>
 
-                        <!-- Right Social Column (Like & Menu) -->
-                        <div class="absolute right-3.5 bottom-28 z-20 flex flex-col items-center space-y-3.5">
+                        <!-- Right Social Column: Like & Menu (Mobile Only) -->
+                        <div class="absolute right-3.5 bottom-28 z-20 flex flex-col items-center space-y-3.5 sm:hidden">
                             <!-- Like Button -->
                             <button 
                                 type="button" 
@@ -889,35 +889,62 @@
         if (modalClose) modalClose.addEventListener('click', closeModal);
         if (modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
 
+        function goToDesktopReel(idx) {
+            currentIndex = (idx + totalReels) % totalReels;
+            if (feedTrack && feedItems[currentIndex]) {
+                feedTrack.scrollTo({
+                    left: feedItems[currentIndex].offsetLeft,
+                    behavior: 'smooth'
+                });
+            }
+            playActiveFeedVideo(currentIndex);
+        }
+
+        function goToNextDesktop() {
+            goToDesktopReel(currentIndex + 1);
+        }
+
+        function goToPrevDesktop() {
+            goToDesktopReel(currentIndex - 1);
+        }
+
         // Desktop Prev/Next Buttons (Scroll Left/Right horizontally on desktop, up/down on mobile)
-        if (modalDesktopPrev && feedTrack) {
-            modalDesktopPrev.addEventListener('click', () => {
+        if (modalDesktopPrev) {
+            modalDesktopPrev.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
                 if (window.innerWidth < 640) {
-                    feedTrack.scrollBy({ top: -feedTrack.clientHeight, behavior: 'smooth' });
+                    if (feedTrack) feedTrack.scrollBy({ top: -feedTrack.clientHeight, behavior: 'smooth' });
                 } else {
-                    feedTrack.scrollBy({ left: -feedTrack.clientWidth, behavior: 'smooth' });
+                    goToPrevDesktop();
                 }
             });
         }
-        if (modalDesktopNext && feedTrack) {
-            modalDesktopNext.addEventListener('click', () => {
+        if (modalDesktopNext) {
+            modalDesktopNext.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
                 if (window.innerWidth < 640) {
-                    feedTrack.scrollBy({ top: feedTrack.clientHeight, behavior: 'smooth' });
+                    if (feedTrack) feedTrack.scrollBy({ top: feedTrack.clientHeight, behavior: 'smooth' });
                 } else {
-                    feedTrack.scrollBy({ left: feedTrack.clientWidth, behavior: 'smooth' });
+                    goToNextDesktop();
                 }
             });
         }
 
         // Desktop Flank clicks
-        if (flankLeft && feedTrack) {
-            flankLeft.addEventListener('click', () => {
-                feedTrack.scrollBy({ left: -feedTrack.clientWidth, behavior: 'smooth' });
+        if (flankLeft) {
+            flankLeft.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                goToPrevDesktop();
             });
         }
-        if (flankRight && feedTrack) {
-            flankRight.addEventListener('click', () => {
-                feedTrack.scrollBy({ left: feedTrack.clientWidth, behavior: 'smooth' });
+        if (flankRight) {
+            flankRight.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                goToNextDesktop();
             });
         }
 
@@ -966,17 +993,14 @@
 
         // Keyboard Arrow Keys
         document.addEventListener('keydown', (e) => {
-            if (modal && !modal.classList.contains('pointer-events-none') && feedTrack) {
+            if (modal && !modal.classList.contains('pointer-events-none')) {
                 if (e.key === 'Escape') closeModal();
-                if (e.key === 'ArrowRight') feedTrack.scrollBy({ left: feedTrack.clientWidth, behavior: 'smooth' });
-                if (e.key === 'ArrowLeft') feedTrack.scrollBy({ left: -feedTrack.clientWidth, behavior: 'smooth' });
-                if (e.key === 'ArrowDown') {
-                    if (window.innerWidth < 640) feedTrack.scrollBy({ top: feedTrack.clientHeight, behavior: 'smooth' });
-                    else feedTrack.scrollBy({ left: feedTrack.clientWidth, behavior: 'smooth' });
-                }
-                if (e.key === 'ArrowUp') {
-                    if (window.innerWidth < 640) feedTrack.scrollBy({ top: -feedTrack.clientHeight, behavior: 'smooth' });
-                    else feedTrack.scrollBy({ left: -feedTrack.clientWidth, behavior: 'smooth' });
+                if (window.innerWidth >= 640) {
+                    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') goToNextDesktop();
+                    if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') goToPrevDesktop();
+                } else if (feedTrack) {
+                    if (e.key === 'ArrowDown' || e.key === 'ArrowRight') feedTrack.scrollBy({ top: feedTrack.clientHeight, behavior: 'smooth' });
+                    if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') feedTrack.scrollBy({ top: -feedTrack.clientHeight, behavior: 'smooth' });
                 }
             }
         });
