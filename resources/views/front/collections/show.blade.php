@@ -440,10 +440,10 @@
         </div>
 
         <!-- ========================================================================= -->
-        <!-- FREQUENTLY ASKED QUESTIONS (Pure White Background, Matching Design System) -->
+        <!-- FREQUENTLY ASKED QUESTIONS (Pure White Background, Centered Layout)       -->
         <!-- ========================================================================= -->
         <div class="mt-20 sm:mt-24 pt-12 border-t border-[#EADBCC] select-none">
-            <div class="space-y-6 sm:space-y-8">
+            <div class="max-w-5xl lg:max-w-[1100px] mx-auto space-y-6 sm:space-y-8">
             
                 <!-- Section Header -->
                 <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-10 space-y-1.5">
@@ -453,8 +453,8 @@
                     </h2>
                 </div>
 
-                <!-- Seamless Accordion Container (8px Border Radius & 10px Inner Padding) -->
-                <div class="bg-white rounded-[8px] border border-[#EADBCC] shadow-xs divide-y divide-[#EADBCC] overflow-hidden max-w-5xl">
+                <!-- Seamless Accordion Container (8px Border Radius & 10px Inner Padding, Centered) -->
+                <div class="bg-white rounded-[8px] border border-[#EADBCC] shadow-xs divide-y divide-[#EADBCC] overflow-hidden">
                     
                     <!-- FAQ 1 -->
                     <div class="faq-item">
