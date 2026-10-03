@@ -645,65 +645,70 @@
                         </div>
                     </div>
 
-                    <!-- Comparison Rows (Clean Continuous Middle Pillar with matching row dividers, 30px Green Ticks, Transparent Others) -->
+                    <!-- Comparison Rows (Perfect Straight Single Row Lines, 30px Green Ticks, Clean Alignment) -->
                     <div class="p-0 flex-1 flex flex-col justify-between">
                         
-                        <div class="grid grid-cols-12 items-center text-xs sm:text-[13.5px]">
-                            <div class="col-span-6 px-4 sm:px-5 py-2 sm:py-2.5 text-gray-800 font-medium border-b border-[#F1E5D8]/80">
+                        <!-- Row 1 -->
+                        <div class="grid grid-cols-12 items-stretch text-xs sm:text-[13.5px] border-b border-[#F1E5D8]">
+                            <div class="col-span-6 px-4 sm:px-5 py-2.5 flex items-center text-gray-800 font-medium">
                                 100% Bamboo-Free (Scripture Compliant)
                             </div>
-                            <div class="col-span-3 bg-[#FDF6ED] h-full flex items-center justify-center py-2 sm:py-2.5 border-x border-[#EEDBCA]/60 border-b border-[#F1E5D8]/80">
+                            <div class="col-span-3 bg-[#FDF6ED] border-x border-[#EEDBCA]/60 flex items-center justify-center py-2.5">
                                 <span class="w-[30px] h-[30px] rounded-full bg-[#1B7F49] text-white flex items-center justify-center text-sm font-bold shadow-xs">✓</span>
                             </div>
-                            <div class="col-span-3 bg-transparent h-full flex items-center justify-center py-2 sm:py-2.5 border-b border-[#F1E5D8]/80">
+                            <div class="col-span-3 bg-transparent flex items-center justify-center py-2.5">
                                 <span class="w-5 h-5 rounded-full bg-[#D32F2F] text-white flex items-center justify-center text-[11px] font-bold">✕</span>
                             </div>
                         </div>
 
-                        <div class="grid grid-cols-12 items-center text-xs sm:text-[13.5px]">
-                            <div class="col-span-6 px-4 sm:px-5 py-2 sm:py-2.5 text-gray-800 font-medium border-b border-[#F1E5D8]/80">
+                        <!-- Row 2 -->
+                        <div class="grid grid-cols-12 items-stretch text-xs sm:text-[13.5px] border-b border-[#F1E5D8]">
+                            <div class="col-span-6 px-4 sm:px-5 py-2.5 flex items-center text-gray-800 font-medium">
                                 Zero Toxic Charcoal (No Eye Burning)
                             </div>
-                            <div class="col-span-3 bg-[#FDF6ED] h-full flex items-center justify-center py-2 sm:py-2.5 border-x border-[#EEDBCA]/60 border-b border-[#F1E5D8]/80">
+                            <div class="col-span-3 bg-[#FDF6ED] border-x border-[#EEDBCA]/60 flex items-center justify-center py-2.5">
                                 <span class="w-[30px] h-[30px] rounded-full bg-[#1B7F49] text-white flex items-center justify-center text-sm font-bold shadow-xs">✓</span>
                             </div>
-                            <div class="col-span-3 bg-transparent h-full flex items-center justify-center py-2 sm:py-2.5 border-b border-[#F1E5D8]/80">
+                            <div class="col-span-3 bg-transparent flex items-center justify-center py-2.5">
                                 <span class="w-5 h-5 rounded-full bg-[#D32F2F] text-white flex items-center justify-center text-[11px] font-bold">✕</span>
                             </div>
                         </div>
 
-                        <div class="grid grid-cols-12 items-center text-xs sm:text-[13.5px]">
-                            <div class="col-span-6 px-4 sm:px-5 py-2 sm:py-2.5 text-gray-800 font-medium border-b border-[#F1E5D8]/80">
+                        <!-- Row 3 -->
+                        <div class="grid grid-cols-12 items-stretch text-xs sm:text-[13.5px] border-b border-[#F1E5D8]">
+                            <div class="col-span-6 px-4 sm:px-5 py-2.5 flex items-center text-gray-800 font-medium">
                                 Premium Organic Essential Herbs
                             </div>
-                            <div class="col-span-3 bg-[#FDF6ED] h-full flex items-center justify-center py-2 sm:py-2.5 border-x border-[#EEDBCA]/60 border-b border-[#F1E5D8]/80">
+                            <div class="col-span-3 bg-[#FDF6ED] border-x border-[#EEDBCA]/60 flex items-center justify-center py-2.5">
                                 <span class="w-[30px] h-[30px] rounded-full bg-[#1B7F49] text-white flex items-center justify-center text-sm font-bold shadow-xs">✓</span>
                             </div>
-                            <div class="col-span-3 bg-transparent h-full flex items-center justify-center py-2 sm:py-2.5 border-b border-[#F1E5D8]/80">
+                            <div class="col-span-3 bg-transparent flex items-center justify-center py-2.5">
                                 <span class="w-5 h-5 rounded-full bg-[#D32F2F] text-white flex items-center justify-center text-[11px] font-bold">✕</span>
                             </div>
                         </div>
 
-                        <div class="grid grid-cols-12 items-center text-xs sm:text-[13.5px]">
-                            <div class="col-span-6 px-4 sm:px-5 py-2 sm:py-2.5 text-gray-800 font-medium border-b border-[#F1E5D8]/80">
+                        <!-- Row 4 -->
+                        <div class="grid grid-cols-12 items-stretch text-xs sm:text-[13.5px] border-b border-[#F1E5D8]">
+                            <div class="col-span-6 px-4 sm:px-5 py-2.5 flex items-center text-gray-800 font-medium">
                                 Long-Lasting Temple Scent (4+ Hours)
                             </div>
-                            <div class="col-span-3 bg-[#FDF6ED] h-full flex items-center justify-center py-2 sm:py-2.5 border-x border-[#EEDBCA]/60 border-b border-[#F1E5D8]/80">
+                            <div class="col-span-3 bg-[#FDF6ED] border-x border-[#EEDBCA]/60 flex items-center justify-center py-2.5">
                                 <span class="w-[30px] h-[30px] rounded-full bg-[#1B7F49] text-white flex items-center justify-center text-sm font-bold shadow-xs">✓</span>
                             </div>
-                            <div class="col-span-3 bg-transparent h-full flex items-center justify-center py-2 sm:py-2.5 border-b border-[#F1E5D8]/80">
+                            <div class="col-span-3 bg-transparent flex items-center justify-center py-2.5">
                                 <span class="w-5 h-5 rounded-full bg-[#D32F2F] text-white flex items-center justify-center text-[11px] font-bold">✕</span>
                             </div>
                         </div>
 
-                        <div class="grid grid-cols-12 items-center text-xs sm:text-[13.5px]">
-                            <div class="col-span-6 px-4 sm:px-5 py-2 sm:py-2.5 text-gray-800 font-medium">
+                        <!-- Row 5 -->
+                        <div class="grid grid-cols-12 items-stretch text-xs sm:text-[13.5px]">
+                            <div class="col-span-6 px-4 sm:px-5 py-2.5 flex items-center text-gray-800 font-medium">
                                 Complimentary Artisan Terracotta Stand
                             </div>
-                            <div class="col-span-3 bg-[#FDF6ED] h-full flex items-center justify-center py-2 sm:py-2.5 border-x border-[#EEDBCA]/60 rounded-b-lg">
+                            <div class="col-span-3 bg-[#FDF6ED] border-x border-[#EEDBCA]/60 flex items-center justify-center py-2.5 rounded-b-lg">
                                 <span class="w-[30px] h-[30px] rounded-full bg-[#1B7F49] text-white flex items-center justify-center text-sm font-bold shadow-xs">✓</span>
                             </div>
-                            <div class="col-span-3 bg-transparent h-full flex items-center justify-center py-2 sm:py-2.5">
+                            <div class="col-span-3 bg-transparent flex items-center justify-center py-2.5">
                                 <span class="w-5 h-5 rounded-full bg-[#D32F2F] text-white flex items-center justify-center text-[11px] font-bold">✕</span>
                             </div>
                         </div>
