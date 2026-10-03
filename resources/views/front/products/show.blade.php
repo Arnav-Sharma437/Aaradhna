@@ -231,8 +231,8 @@
                 </div>
             </div>
 
-            <!-- RIGHT COLUMN: Compact, Tight Spaced Purchase Details (5 Cols, 8px Spacing) -->
-            <div class="lg:col-span-5 space-y-2 lg:pl-2 sticky top-24 font-body">
+            <!-- RIGHT COLUMN: Compact Purchase Details (5 Cols, 12px Spacing) -->
+            <div class="lg:col-span-5 space-y-3 lg:pl-2 sticky top-24 font-body">
                 
                 <!-- 1. Star Rating & Review Count (Bigger & Clickable to scroll to reviews) -->
                 <a href="#customer-reviews" class="inline-flex items-center space-x-2 text-sm sm:text-[15px] text-gray-700 hover:text-[#D38928] transition-colors group cursor-pointer focus:outline-none">
@@ -645,65 +645,65 @@
                         </div>
                     </div>
 
-                    <!-- Comparison Rows (5px Padding & 20px Icons) -->
-                    <div class="p-0 flex-1 flex flex-col justify-between divide-y divide-[#F1E5D8]">
+                    <!-- Comparison Rows (Clean Continuous Middle Pillar, 30px Green Ticks, Transparent Others) -->
+                    <div class="p-0 flex-1 flex flex-col justify-between">
                         
                         <div class="grid grid-cols-12 items-center text-xs sm:text-[13.5px]">
-                            <div class="col-span-6 px-4 sm:px-5 py-[5px] text-gray-800 font-medium">
+                            <div class="col-span-6 px-4 sm:px-5 py-2 sm:py-2.5 text-gray-800 font-medium border-b border-[#F1E5D8]/80">
                                 100% Bamboo-Free (Scripture Compliant)
                             </div>
-                            <div class="col-span-3 bg-[#FDF6ED] h-full flex items-center justify-center py-[5px] border-x border-[#EEDBCA]/60">
-                                <span class="w-5 h-5 rounded-full bg-[#1B7F49] text-white flex items-center justify-center text-[11px] font-bold">✓</span>
+                            <div class="col-span-3 bg-[#FDF6ED] h-full flex items-center justify-center py-2 sm:py-2.5 border-x border-[#EEDBCA]/60">
+                                <span class="w-[30px] h-[30px] rounded-full bg-[#1B7F49] text-white flex items-center justify-center text-sm font-bold shadow-xs">✓</span>
                             </div>
-                            <div class="col-span-3 bg-[#FBF7F2]/60 h-full flex items-center justify-center py-[5px]">
+                            <div class="col-span-3 bg-transparent h-full flex items-center justify-center py-2 sm:py-2.5 border-b border-[#F1E5D8]/80">
                                 <span class="w-5 h-5 rounded-full bg-[#D32F2F] text-white flex items-center justify-center text-[11px] font-bold">✕</span>
                             </div>
                         </div>
 
                         <div class="grid grid-cols-12 items-center text-xs sm:text-[13.5px]">
-                            <div class="col-span-6 px-4 sm:px-5 py-[5px] text-gray-800 font-medium">
+                            <div class="col-span-6 px-4 sm:px-5 py-2 sm:py-2.5 text-gray-800 font-medium border-b border-[#F1E5D8]/80">
                                 Zero Toxic Charcoal (No Eye Burning)
                             </div>
-                            <div class="col-span-3 bg-[#FDF6ED] h-full flex items-center justify-center py-[5px] border-x border-[#EEDBCA]/60">
-                                <span class="w-5 h-5 rounded-full bg-[#1B7F49] text-white flex items-center justify-center text-[11px] font-bold">✓</span>
+                            <div class="col-span-3 bg-[#FDF6ED] h-full flex items-center justify-center py-2 sm:py-2.5 border-x border-[#EEDBCA]/60">
+                                <span class="w-[30px] h-[30px] rounded-full bg-[#1B7F49] text-white flex items-center justify-center text-sm font-bold shadow-xs">✓</span>
                             </div>
-                            <div class="col-span-3 bg-[#FBF7F2]/60 h-full flex items-center justify-center py-[5px]">
+                            <div class="col-span-3 bg-transparent h-full flex items-center justify-center py-2 sm:py-2.5 border-b border-[#F1E5D8]/80">
                                 <span class="w-5 h-5 rounded-full bg-[#D32F2F] text-white flex items-center justify-center text-[11px] font-bold">✕</span>
                             </div>
                         </div>
 
                         <div class="grid grid-cols-12 items-center text-xs sm:text-[13.5px]">
-                            <div class="col-span-6 px-4 sm:px-5 py-[5px] text-gray-800 font-medium">
+                            <div class="col-span-6 px-4 sm:px-5 py-2 sm:py-2.5 text-gray-800 font-medium border-b border-[#F1E5D8]/80">
                                 Premium Organic Essential Herbs
                             </div>
-                            <div class="col-span-3 bg-[#FDF6ED] h-full flex items-center justify-center py-[5px] border-x border-[#EEDBCA]/60">
-                                <span class="w-5 h-5 rounded-full bg-[#1B7F49] text-white flex items-center justify-center text-[11px] font-bold">✓</span>
+                            <div class="col-span-3 bg-[#FDF6ED] h-full flex items-center justify-center py-2 sm:py-2.5 border-x border-[#EEDBCA]/60">
+                                <span class="w-[30px] h-[30px] rounded-full bg-[#1B7F49] text-white flex items-center justify-center text-sm font-bold shadow-xs">✓</span>
                             </div>
-                            <div class="col-span-3 bg-[#FBF7F2]/60 h-full flex items-center justify-center py-[5px]">
+                            <div class="col-span-3 bg-transparent h-full flex items-center justify-center py-2 sm:py-2.5 border-b border-[#F1E5D8]/80">
                                 <span class="w-5 h-5 rounded-full bg-[#D32F2F] text-white flex items-center justify-center text-[11px] font-bold">✕</span>
                             </div>
                         </div>
 
                         <div class="grid grid-cols-12 items-center text-xs sm:text-[13.5px]">
-                            <div class="col-span-6 px-4 sm:px-5 py-[5px] text-gray-800 font-medium">
+                            <div class="col-span-6 px-4 sm:px-5 py-2 sm:py-2.5 text-gray-800 font-medium border-b border-[#F1E5D8]/80">
                                 Long-Lasting Temple Scent (4+ Hours)
                             </div>
-                            <div class="col-span-3 bg-[#FDF6ED] h-full flex items-center justify-center py-[5px] border-x border-[#EEDBCA]/60">
-                                <span class="w-5 h-5 rounded-full bg-[#1B7F49] text-white flex items-center justify-center text-[11px] font-bold">✓</span>
+                            <div class="col-span-3 bg-[#FDF6ED] h-full flex items-center justify-center py-2 sm:py-2.5 border-x border-[#EEDBCA]/60">
+                                <span class="w-[30px] h-[30px] rounded-full bg-[#1B7F49] text-white flex items-center justify-center text-sm font-bold shadow-xs">✓</span>
                             </div>
-                            <div class="col-span-3 bg-[#FBF7F2]/60 h-full flex items-center justify-center py-[5px]">
+                            <div class="col-span-3 bg-transparent h-full flex items-center justify-center py-2 sm:py-2.5 border-b border-[#F1E5D8]/80">
                                 <span class="w-5 h-5 rounded-full bg-[#D32F2F] text-white flex items-center justify-center text-[11px] font-bold">✕</span>
                             </div>
                         </div>
 
                         <div class="grid grid-cols-12 items-center text-xs sm:text-[13.5px]">
-                            <div class="col-span-6 px-4 sm:px-5 py-[5px] text-gray-800 font-medium">
+                            <div class="col-span-6 px-4 sm:px-5 py-2 sm:py-2.5 text-gray-800 font-medium">
                                 Complimentary Artisan Terracotta Stand
                             </div>
-                            <div class="col-span-3 bg-[#FDF6ED] h-full flex items-center justify-center py-[5px] border-x border-[#EEDBCA]/60 rounded-b-lg">
-                                <span class="w-5 h-5 rounded-full bg-[#1B7F49] text-white flex items-center justify-center text-[11px] font-bold">✓</span>
+                            <div class="col-span-3 bg-[#FDF6ED] h-full flex items-center justify-center py-2 sm:py-2.5 border-x border-[#EEDBCA]/60 rounded-b-lg">
+                                <span class="w-[30px] h-[30px] rounded-full bg-[#1B7F49] text-white flex items-center justify-center text-sm font-bold shadow-xs">✓</span>
                             </div>
-                            <div class="col-span-3 bg-[#FBF7F2]/60 h-full flex items-center justify-center py-[5px]">
+                            <div class="col-span-3 bg-transparent h-full flex items-center justify-center py-2 sm:py-2.5">
                                 <span class="w-5 h-5 rounded-full bg-[#D32F2F] text-white flex items-center justify-center text-[11px] font-bold">✕</span>
                             </div>
                         </div>
@@ -1140,7 +1140,7 @@
             <div class="divide-y divide-[#EADBCC]">
                 @if($approvedReviewsList->count() > 0)
                     @foreach($approvedReviewsList as $rev)
-                        <div class="py-5 sm:py-6 space-y-2.5 bg-transparent">
+                        <div class="py-3.5 sm:py-4 space-y-1.5 bg-transparent">
                             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                                 <div class="flex items-center space-x-3">
                                     <!-- User Profile Avatar Icon -->
