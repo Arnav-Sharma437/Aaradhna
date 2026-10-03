@@ -1225,13 +1225,13 @@
             </p>
         </div>
 
-        <!-- Slim & Wide Elegant Card Container (8px Radius, Wider Container ~1260px, Inset Divider Lines) -->
-        <div class="bg-white rounded-[8px] border border-[#EADBCC] max-w-[1260px] mx-auto shadow-2xs overflow-hidden">
+        <!-- Slim & Wide Elegant Card Container (8px Radius, 2px Brand Gold Border, Inset Gold Divider Lines) -->
+        <div class="bg-white rounded-[8px] border-2 border-[#D38928] max-w-[1260px] mx-auto shadow-2xs overflow-hidden">
             <div class="grid grid-cols-1 md:grid-cols-3 relative">
                 
                 <!-- Column 1: Ancient Recipes -->
                 <div class="relative py-6 sm:py-8 lg:py-9 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center space-y-2.5 sm:space-y-3 group">
-                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#FAF5EE] border border-[#EADBCC] flex items-center justify-center text-[#7B1B29] group-hover:scale-105 transition-transform">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#FAF5EE] border-2 border-[#D38928]/40 flex items-center justify-center text-[#7B1B29] group-hover:scale-105 transition-transform">
                         <svg class="w-8 h-8 sm:w-10 sm:h-10" viewBox="0 0 64 64" fill="none" stroke="#7B1B29" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M16 34h32c0 10-7.2 18-16 18s-16-8-16-18Z"/>
                             <path d="M24 52h16"/>
@@ -1246,15 +1246,15 @@
                     <p class="text-xs sm:text-[13.5px] lg:text-sm text-gray-600 font-normal font-body leading-relaxed max-w-[280px]">
                         Inspired by time-honoured traditions.
                     </p>
-                    <!-- Inset Vertical Line (Desktop) -->
-                    <div class="hidden md:block absolute right-0 top-5 bottom-5 w-[1px] bg-[#EADBCC]"></div>
-                    <!-- Inset Horizontal Line (Mobile) -->
-                    <div class="md:hidden absolute bottom-0 left-6 right-6 h-[1px] bg-[#EADBCC]"></div>
+                    <!-- Inset Vertical Line (Desktop - 2px Brand Gold) -->
+                    <div class="hidden md:block absolute right-0 top-5 bottom-5 w-[2px] bg-[#D38928]/50"></div>
+                    <!-- Inset Horizontal Line (Mobile - 2px Brand Gold) -->
+                    <div class="md:hidden absolute bottom-0 left-6 right-6 h-[2px] bg-[#D38928]/50"></div>
                 </div>
 
                 <!-- Column 2: Purest Ingredients -->
                 <div class="relative py-6 sm:py-8 lg:py-9 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center space-y-2.5 sm:space-y-3 group">
-                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#FAF5EE] border border-[#EADBCC] flex items-center justify-center text-[#7B1B29] group-hover:scale-105 transition-transform">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#FAF5EE] border-2 border-[#D38928]/40 flex items-center justify-center text-[#7B1B29] group-hover:scale-105 transition-transform">
                         <svg class="w-8 h-8 sm:w-10 sm:h-10" viewBox="0 0 64 64" fill="none" stroke="#7B1B29" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <!-- Sacred Flames & Kund -->
                             <path d="M32 16c-3 4-3 9 0 12 3-3 3-8 0-12Z"/>
@@ -1270,15 +1270,15 @@
                     <p class="text-xs sm:text-[13.5px] lg:text-sm text-gray-600 font-normal font-body leading-relaxed max-w-[280px]">
                         Carefully selected for every ritual.
                     </p>
-                    <!-- Inset Vertical Line (Desktop) -->
-                    <div class="hidden md:block absolute right-0 top-5 bottom-5 w-[1px] bg-[#EADBCC]"></div>
-                    <!-- Inset Horizontal Line (Mobile) -->
-                    <div class="md:hidden absolute bottom-0 left-6 right-6 h-[1px] bg-[#EADBCC]"></div>
+                    <!-- Inset Vertical Line (Desktop - 2px Brand Gold) -->
+                    <div class="hidden md:block absolute right-0 top-5 bottom-5 w-[2px] bg-[#D38928]/50"></div>
+                    <!-- Inset Horizontal Line (Mobile - 2px Brand Gold) -->
+                    <div class="md:hidden absolute bottom-0 left-6 right-6 h-[2px] bg-[#D38928]/50"></div>
                 </div>
 
                 <!-- Column 3: Eco-conscious -->
                 <div class="relative py-6 sm:py-8 lg:py-9 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center space-y-2.5 sm:space-y-3 group">
-                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#FAF5EE] border border-[#EADBCC] flex items-center justify-center text-[#7B1B29] group-hover:scale-105 transition-transform">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#FAF5EE] border-2 border-[#D38928]/40 flex items-center justify-center text-[#7B1B29] group-hover:scale-105 transition-transform">
                         <svg class="w-8 h-8 sm:w-10 sm:h-10" viewBox="0 0 64 64" fill="none" stroke="#7B1B29" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <!-- Box & Leaf -->
                             <path d="M19 24l13-8 13 8v22l-13 8-13-8V24Z"/>
@@ -1302,9 +1302,9 @@
 </section>
 
 <!-- ========================================================================= -->
-<!-- 8. FREQUENTLY ASKED QUESTIONS (Wider Container, 10px Padding, 8px Radius) -->
+<!-- 8. FREQUENTLY ASKED QUESTIONS (Pure White Background, 10px Padding, 8px)  -->
 <!-- ========================================================================= -->
-<section class="py-[40px] bg-[#FAF7F2] border-b border-[#EADBCC] select-none">
+<section class="py-[40px] bg-white border-b border-[#EAE3D9] select-none">
     <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
         <div class="max-w-5xl lg:max-w-[1100px] mx-auto space-y-6 sm:space-y-8">
         
