@@ -41,6 +41,31 @@ Route::get('/contact-us', [PageController::class, 'contact'])->name('pages.conta
 Route::post('/contact/submit', [PageController::class, 'submitContact'])->name('pages.contact.submit');
 Route::get('/pages/{slug}', [PageController::class, 'policy'])->name('pages.show');
 
+// Storage & Uploads Direct File Fallback Route (Guarantees image delivery even without symlink)
+Route::get('/storage/{path}', function (string $path) {
+    $storageFile = storage_path('app/public/' . $path);
+    if (file_exists($storageFile)) {
+        return response()->file($storageFile);
+    }
+    $uploadFile = public_path('uploads/' . $path);
+    if (file_exists($uploadFile)) {
+        return response()->file($uploadFile);
+    }
+    abort(404);
+})->where('path', '.*');
+
+Route::get('/uploads/{path}', function (string $path) {
+    $uploadFile = public_path('uploads/' . $path);
+    if (file_exists($uploadFile)) {
+        return response()->file($uploadFile);
+    }
+    $storageFile = storage_path('app/public/' . $path);
+    if (file_exists($storageFile)) {
+        return response()->file($storageFile);
+    }
+    abort(404);
+})->where('path', '.*');
+
 // Placeholder Blog Route
 Route::get('/blogs/{slug}', function (string $slug) {
     return response("<h1>Aaradhna Blog — " . e($slug) . "</h1>", 200);
