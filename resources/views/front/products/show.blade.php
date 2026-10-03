@@ -55,7 +55,7 @@
     $actualReviewCount = $product->approvedReviews ? $product->approvedReviews->count() : 0;
     $reviewCount = $actualReviewCount > 0 ? $actualReviewCount : (1386 + (abs(crc32($product->slug)) % 150));
 
-    // Gallery images array
+    // Gallery images array (Up to 6 high-resolution visuals)
     $galleryImages = [];
     if ($product->images && $product->images->count() > 0) {
         foreach ($product->images as $img) {
@@ -63,21 +63,41 @@
         }
     }
     
-    if (empty($galleryImages)) {
-        $galleryImages[] = asset($mainImg);
-        if ($product->category && str_contains(strtolower($product->category->slug), 'cone')) {
-            $galleryImages[] = asset('assets/images/single-dhoop-cone.jpg');
-            $galleryImages[] = asset('assets/images/chandan-cones-card.jpg');
-            $galleryImages[] = asset('assets/images/hero-sacred-cones.jpg');
-        } elseif ($product->category && str_contains(strtolower($product->category->slug), 'cup')) {
-            $galleryImages[] = asset('assets/images/single-havan-cup.jpg');
-            $galleryImages[] = asset('assets/images/havan-cup.jpg');
-            $galleryImages[] = asset('assets/images/hero-ram-uphaar-banner.jpg');
-        } else {
-            $galleryImages[] = asset('assets/images/single-bambooless-stick.jpg');
-            $galleryImages[] = asset('assets/images/hero-incense-banner.jpg');
-            $galleryImages[] = asset('assets/images/camphor-refill-pack-card.jpg');
+    // Category-specific fallbacks to guarantee 6 distinct high-res visuals
+    if ($product->category && str_contains(strtolower($product->category->slug), 'cone')) {
+        $fallbacks = [
+            asset($mainImg),
+            asset('assets/images/single-dhoop-cone.jpg'),
+            asset('assets/images/chandan-cones-card.jpg'),
+            asset('assets/images/hero-sacred-cones.jpg'),
+            asset('assets/images/hera-sacred-dhoop-cones.jpg'),
+            asset('assets/images/dhoop-cones.jpg'),
+        ];
+    } elseif ($product->category && str_contains(strtolower($product->category->slug), 'cup')) {
+        $fallbacks = [
+            asset($mainImg),
+            asset('assets/images/single-havan-cup.jpg'),
+            asset('assets/images/havan-cup.jpg'),
+            asset('assets/images/hero-sacred-hawan-cups.jpg'),
+            asset('assets/images/hero-ram-uphaar-banner.jpg'),
+            asset('assets/images/mangalam-havan-cups.jpg'),
+        ];
+    } else {
+        $fallbacks = [
+            asset($mainImg),
+            asset('assets/images/single-bambooless-stick.jpg'),
+            asset('assets/images/hero-incense-banner.jpg'),
+            asset('assets/images/camphor-refill-pack-card.jpg'),
+            asset('assets/images/hero-sacred-bambooless.jpg'),
+            asset('assets/images/devi-refill-pack-card.jpg'),
+        ];
+    }
+
+    foreach ($fallbacks as $fb) {
+        if (!in_array($fb, $galleryImages)) {
+            $galleryImages[] = $fb;
         }
+        if (count($galleryImages) >= 6) break;
     }
 @endphp
 
@@ -150,7 +170,7 @@
                     </div>
                 </div>
 
-                <!-- 2. DESKTOP VIEW: Large High-Res 2-Column Grid (8px gap & 8px/10px radius, No Borders) -->
+                <!-- 2. DESKTOP VIEW: Large High-Res 2-Column Grid (6 High-Quality Product Images, 8px gap & 8px/10px radius, No Borders) -->
                 <div class="hidden lg:grid grid-cols-2 gap-2">
                     
                     <!-- Visual 1: Hero Packshot with Ceramic Stand Banner -->
@@ -189,6 +209,22 @@
                         <img src="{{ $galleryImages[3] ?? asset('assets/images/hero-ram-uphaar-banner.jpg') }}" alt="Sacred Fragrance Ambience" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute bottom-2.5 left-2.5 right-2.5 bg-black/60 backdrop-blur-xs py-1.5 px-3 rounded-[6px] text-center text-white text-xs font-bold tracking-wider shadow-sm font-body">
                             TEMPLE-GRADE PURITY
+                        </div>
+                    </div>
+
+                    <!-- Visual 5: Sacred Botanical Ingredients / Close-up -->
+                    <div class="relative aspect-[4/4.8] rounded-[8px] sm:rounded-[10px] overflow-hidden bg-[#FAF7F2] shadow-xs group">
+                        <img src="{{ $galleryImages[4] ?? asset('assets/images/single-bambooless-stick.jpg') }}" alt="Sacred Vedic Formulations" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full bg-white/95 text-[#965A15] text-[11px] font-bold uppercase tracking-wider font-heading border border-[#D38928]/40 shadow-xs">
+                            100% Herbal
+                        </div>
+                    </div>
+
+                    <!-- Visual 6: Sacred Packaging & Ritual Heritage -->
+                    <div class="relative aspect-[4/4.8] rounded-[8px] sm:rounded-[10px] overflow-hidden bg-[#FAF7F2] shadow-xs group">
+                        <img src="{{ $galleryImages[5] ?? asset('assets/images/devi-refill-pack-card.jpg') }}" alt="Auspicious Divine Blessing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute bottom-2.5 left-2.5 right-2.5 bg-black/60 backdrop-blur-xs py-1.5 px-3 rounded-[6px] text-center text-white text-xs font-bold tracking-wider shadow-sm font-body">
+                            AUSPICIOUS BLISS
                         </div>
                     </div>
 
@@ -253,11 +289,11 @@
                     </p>
                 </div>
 
-                <!-- 5. 4 Iconic Feature Circles with Text (16px Font Size, Reduced Space) -->
-                <div class="flex flex-wrap items-center gap-x-5 sm:gap-x-7 gap-y-3 pt-2 pb-2">
+                <!-- 5. 4 Iconic Feature Circles with Text (2x2 Grid Layout, Increased Font Size) -->
+                <div class="grid grid-cols-2 gap-2.5 sm:gap-3.5 pt-2 pb-2">
                     
                     <!-- Feature 1: Chemical Free -->
-                    <div class="flex items-center space-x-2.5">
+                    <div class="flex items-center space-x-2.5 sm:space-x-3">
                         <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#D38928] flex items-center justify-center text-[#D38928] bg-transparent shrink-0">
                             <svg class="w-4.5 h-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M12 22C12 22 20 18 20 10C20 4.5 15.5 2 12 2C8.5 2 4 4.5 4 10C4 18 12 22 12 22Z"/>
@@ -266,13 +302,13 @@
                                 <path d="M12 13L8 17"/>
                             </svg>
                         </div>
-                        <span class="text-[15px] sm:text-[16px] font-semibold text-[#121212] font-body leading-tight">
+                        <span class="text-sm sm:text-base font-bold text-[#121212] font-body leading-tight">
                             Chemical Free
                         </span>
                     </div>
 
                     <!-- Feature 2: Low Smoke -->
-                    <div class="flex items-center space-x-2.5">
+                    <div class="flex items-center space-x-2.5 sm:space-x-3">
                         <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#D38928] flex items-center justify-center text-[#D38928] bg-transparent shrink-0">
                             <svg class="w-4.5 h-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M8 18c-1-1.5-1-3.5 0-5s2-3.5 1-5-3-3-1-5"/>
@@ -280,13 +316,13 @@
                                 <path d="M16 18c-1-1.5-1-3.5 0-5s2-3.5 1-5-3-3-1-5"/>
                             </svg>
                         </div>
-                        <span class="text-[15px] sm:text-[16px] font-semibold text-[#121212] font-body leading-tight">
+                        <span class="text-sm sm:text-base font-bold text-[#121212] font-body leading-tight">
                             Low Smoke
                         </span>
                     </div>
 
                     <!-- Feature 3: Long Lasting -->
-                    <div class="flex items-center space-x-2.5">
+                    <div class="flex items-center space-x-2.5 sm:space-x-3">
                         <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#D38928] flex items-center justify-center text-[#D38928] bg-transparent shrink-0">
                             <svg class="w-4.5 h-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M5 22h14"/>
@@ -295,13 +331,13 @@
                                 <path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/>
                             </svg>
                         </div>
-                        <span class="text-[15px] sm:text-[16px] font-semibold text-[#121212] font-body leading-tight">
+                        <span class="text-sm sm:text-base font-bold text-[#121212] font-body leading-tight">
                             Long Lasting
                         </span>
                     </div>
 
                     <!-- Feature 4: Free Ceramic Stand -->
-                    <div class="flex items-center space-x-2.5">
+                    <div class="flex items-center space-x-2.5 sm:space-x-3">
                         <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#D38928] flex items-center justify-center text-[#D38928] bg-transparent shrink-0">
                             <svg class="w-4.5 h-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <ellipse cx="12" cy="17" rx="8" ry="4"/>
@@ -309,7 +345,7 @@
                                 <circle cx="12" cy="4" r="1" fill="#D38928"/>
                             </svg>
                         </div>
-                        <span class="text-[15px] sm:text-[16px] font-semibold text-[#121212] font-body leading-tight">
+                        <span class="text-sm sm:text-base font-bold text-[#121212] font-body leading-tight">
                             Free Ceramic Stand
                         </span>
                     </div>
@@ -329,7 +365,7 @@
                                 value="1" 
                                 min="1" 
                                 max="99" 
-                                class="w-10 text-center text-sm font-bold border-none focus:ring-0 p-0 text-[#121212]"
+                                class="w-10 text-center text-sm font-bold border-none focus:ring-0 p-0 text-[#121212] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                                 readonly
                             >
                             <button type="button" id="qty-increment" class="text-gray-600 hover:text-[#121212] transition-colors focus:outline-none font-bold text-lg leading-none cursor-pointer">+</button>
@@ -677,54 +713,151 @@
         </div>
 
         <!-- ========================================================================= -->
-        <!-- 3. FREQUENTLY ASKED QUESTIONS (Accordion)                                 -->
+        <!-- 3. FREQUENTLY ASKED QUESTIONS (Exact Homepage FAQs & Accordion)           -->
         <!-- ========================================================================= -->
         <div class="mt-16 sm:mt-24 max-w-4xl mx-auto space-y-6">
             <div class="text-center space-y-2 mb-8">
-                <h2 class="text-2xl sm:text-3xl font-black text-[#121212] font-heading tracking-tight">
+                <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">
+                    ✦ SACRED KNOWLEDGE &amp; ANSWERS ✦
+                </span>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black text-[#121212] font-heading tracking-tight">
                     Frequently Asked Questions
                 </h2>
             </div>
 
-            <div class="bg-white rounded-[20px] border border-[#EADBCC] divide-y divide-[#EADBCC] shadow-xs overflow-hidden">
+            <!-- 7 Accordion FAQ Items (Compact 10px Padding, Soft Gold Borders) -->
+            <div class="space-y-2.5 max-w-3xl mx-auto">
                 
-                <div class="faq-item p-5 sm:p-6">
-                    <button type="button" class="faq-toggle flex justify-between items-center w-full text-left font-bold text-sm sm:text-base text-[#121212] hover:text-[#D38928] transition-colors focus:outline-none font-heading">
-                        <span>Why should we avoid burning bamboo sticks according to scriptures?</span>
-                        <span class="faq-icon ml-4 text-[#D38928] text-xl font-bold">+</span>
+                <!-- FAQ 1 -->
+                <div class="faq-item border border-[#EADBCC] rounded-[10px] sm:rounded-[12px] overflow-hidden bg-white shadow-xs transition-all duration-200">
+                    <button type="button" class="faq-toggle w-full p-[10px] px-3.5 sm:px-4 flex items-center justify-between text-left focus:outline-none cursor-pointer group hover:bg-[#FAF7F2]/60 transition-colors">
+                        <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
+                            Why is Manglam incense 100% Bamboo-Free and Charcoal-Free?
+                        </span>
+                        <div class="w-6 h-6 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                            <svg class="faq-icon w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </div>
                     </button>
-                    <div class="faq-answer hidden mt-3 text-xs sm:text-sm text-gray-600 leading-relaxed">
-                        In Vedic traditions and Sanatana Dharma, bamboo (Vamsha) is considered a symbol of ancestry and sacred lineage. Burning bamboo generates harmful heavy-metal residue and is strictly avoided during poojas and havan. Manglam uses 100% bamboo-free organic binders.
+                    <div class="faq-content hidden px-3.5 sm:px-4 pb-[10px] pt-1 text-xs sm:text-[13px] text-gray-600 leading-relaxed bg-[#FAF7F2]/30">
+                        <p>
+                            Our incense is <strong>100% bamboo-free</strong> (compliant with Vedic and Vastu scriptures) and <strong>0% toxic charcoal</strong>. Handcrafted using upcycled temple flower powders, pure Bhimseni camphor, natural Loban, and Guggal resins, it produces a soothing herbal aroma that leaves behind clean, auspicious white ash without causing any eye irritation or coughing.
+                        </p>
                     </div>
                 </div>
 
-                <div class="faq-item p-5 sm:p-6">
-                    <button type="button" class="faq-toggle flex justify-between items-center w-full text-left font-bold text-sm sm:text-base text-[#121212] hover:text-[#D38928] transition-colors focus:outline-none font-heading">
-                        <span>What makes Manglam incense smoke charcoal-free and non-toxic?</span>
-                        <span class="faq-icon ml-4 text-[#D38928] text-xl font-bold">+</span>
+                <!-- FAQ 2 -->
+                <div class="faq-item border border-[#EADBCC] rounded-[10px] sm:rounded-[12px] overflow-hidden bg-white shadow-xs transition-all duration-200">
+                    <button type="button" class="faq-toggle w-full p-[10px] px-3.5 sm:px-4 flex items-center justify-between text-left focus:outline-none cursor-pointer group hover:bg-[#FAF7F2]/60 transition-colors">
+                        <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
+                            How long do they burn, and does the temple fragrance linger in the room?
+                        </span>
+                        <div class="w-6 h-6 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                            <svg class="faq-icon w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </div>
                     </button>
-                    <div class="faq-answer hidden mt-3 text-xs sm:text-sm text-gray-600 leading-relaxed">
-                        Commercial incense uses black industrial charcoal powder which creates suffocating black smoke and eye irritation. Manglam uses sacred temple flower powders, natural resins (Guggal, Loban), and botanical bark that burns into pure white soothing ash.
+                    <div class="faq-content hidden px-3.5 sm:px-4 pb-[10px] pt-1 text-xs sm:text-[13px] text-gray-600 leading-relaxed bg-[#FAF7F2]/30">
+                        <p>
+                            Each 9-inch Bambooless Stick burns continuously for <strong>45 to 50 minutes</strong>, while our organic Sambrani Havan Cups burn intensely for <strong>25 to 30 minutes</strong>. Due to our rich botanical essential oil concentration, the uplifting sacred fragrance lingers throughout your home for <strong>4 to 6 hours</strong> after burning.
+                        </p>
                     </div>
                 </div>
 
-                <div class="faq-item p-5 sm:p-6">
-                    <button type="button" class="faq-toggle flex justify-between items-center w-full text-left font-bold text-sm sm:text-base text-[#121212] hover:text-[#D38928] transition-colors focus:outline-none font-heading">
-                        <span>How long does one stick burn, and does the fragrance linger?</span>
-                        <span class="faq-icon ml-4 text-[#D38928] text-xl font-bold">+</span>
+                <!-- FAQ 3 -->
+                <div class="faq-item border border-[#EADBCC] rounded-[10px] sm:rounded-[12px] overflow-hidden bg-white shadow-xs transition-all duration-200">
+                    <button type="button" class="faq-toggle w-full p-[10px] px-3.5 sm:px-4 flex items-center justify-between text-left focus:outline-none cursor-pointer group hover:bg-[#FAF7F2]/60 transition-colors">
+                        <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
+                            Are Manglam products safe to use around babies, elders, and pets?
+                        </span>
+                        <div class="w-6 h-6 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                            <svg class="faq-icon w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </div>
                     </button>
-                    <div class="faq-answer hidden mt-3 text-xs sm:text-sm text-gray-600 leading-relaxed">
-                        Each 9-inch bambooless stick burns continuously for 45 to 50 minutes. Due to the high concentration of natural aromatic essential oils, the uplifting temple fragrance lingers in your home for over 4 to 6 hours.
+                    <div class="faq-content hidden px-3.5 sm:px-4 pb-[10px] pt-1 text-xs sm:text-[13px] text-gray-600 leading-relaxed bg-[#FAF7F2]/30">
+                        <p>
+                            Yes, 100% safe. Because we never use toxic black charcoal, synthetic dipping chemicals, or artificial scent binders, our incense emits gentle herbal aroma rather than suffocating carbon monoxide, making it completely safe for daily pooja in closed or air-conditioned rooms with elders and toddlers.
+                        </p>
                     </div>
                 </div>
 
-                <div class="faq-item p-5 sm:p-6">
-                    <button type="button" class="faq-toggle flex justify-between items-center w-full text-left font-bold text-sm sm:text-base text-[#121212] hover:text-[#D38928] transition-colors focus:outline-none font-heading">
-                        <span>Do I get a holder or ceramic stand with this pack?</span>
-                        <span class="faq-icon ml-4 text-[#D38928] text-xl font-bold">+</span>
+                <!-- FAQ 4 -->
+                <div class="faq-item border border-[#EADBCC] rounded-[10px] sm:rounded-[12px] overflow-hidden bg-white shadow-xs transition-all duration-200">
+                    <button type="button" class="faq-toggle w-full p-[10px] px-3.5 sm:px-4 flex items-center justify-between text-left focus:outline-none cursor-pointer group hover:bg-[#FAF7F2]/60 transition-colors">
+                        <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
+                            What is the spiritual significance of burning 100% Bamboo-Free Agarbatti?
+                        </span>
+                        <div class="w-6 h-6 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                            <svg class="faq-icon w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </div>
                     </button>
-                    <div class="faq-answer hidden mt-3 text-xs sm:text-sm text-gray-600 leading-relaxed">
-                        Yes! Every refill pack includes a complimentary handcrafted artisanal ceramic incense stand (worth ₹150/-) so you can immediately begin your morning ritual safely.
+                    <div class="faq-content hidden px-3.5 sm:px-4 pb-[10px] pt-1 text-xs sm:text-[13px] text-gray-600 leading-relaxed bg-[#FAF7F2]/30">
+                        <p>
+                            In Sanatana Dharma and ancient Vedic scriptures, bamboo (Vamsha) is revered as a sacred symbol of family lineage and ancestral continuity. Burning bamboo is strictly forbidden in sacred yagnas and daily poojas because it creates negative energies and emits toxic heavy-metal vapors. Manglam adheres strictly to traditional Vidhi by crafting pure bambooless incense.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="faq-item border border-[#EADBCC] rounded-[10px] sm:rounded-[12px] overflow-hidden bg-white shadow-xs transition-all duration-200">
+                    <button type="button" class="faq-toggle w-full p-[10px] px-3.5 sm:px-4 flex items-center justify-between text-left focus:outline-none cursor-pointer group hover:bg-[#FAF7F2]/60 transition-colors">
+                        <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
+                            How do I properly ignite and use organic Sambrani Havan Cups &amp; Dhoop Cones?
+                        </span>
+                        <div class="w-6 h-6 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                            <svg class="faq-icon w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="faq-content hidden px-3.5 sm:px-4 pb-[10px] pt-1 text-xs sm:text-[13px] text-gray-600 leading-relaxed bg-[#FAF7F2]/30">
+                        <p>
+                            Hold the top rim of the Sambrani Havan Cup or the pointed tip of the Dhoop Cone over a diya flame or lighter for 10–15 seconds until it glows with an active ember. Gently blow out the active flame and place the cup/cone onto the complimentary heat-resistant ceramic coaster included in your package. Let the sacred herbal sambrani purify your home and altar.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 6 -->
+                <div class="faq-item border border-[#EADBCC] rounded-[10px] sm:rounded-[12px] overflow-hidden bg-white shadow-xs transition-all duration-200">
+                    <button type="button" class="faq-toggle w-full p-[10px] px-3.5 sm:px-4 flex items-center justify-between text-left focus:outline-none cursor-pointer group hover:bg-[#FAF7F2]/60 transition-colors">
+                        <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
+                            What sacred ingredients and temple flowers are used in handcrafting?
+                        </span>
+                        <div class="w-6 h-6 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                            <svg class="faq-icon w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="faq-content hidden px-3.5 sm:px-4 pb-[10px] pt-1 text-xs sm:text-[13px] text-gray-600 leading-relaxed bg-[#FAF7F2]/30">
+                        <p>
+                            Every batch of Manglam incense is lovingly handcrafted by Vedic artisans using dried consecrated flowers collected from sacred shrines, combined with pure Desi cow dung powder, organic Guggal, natural Sambrani Loban resin, Jatamansi, and natural therapeutic-grade essential oils.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 7 -->
+                <div class="faq-item border border-[#EADBCC] rounded-[10px] sm:rounded-[12px] overflow-hidden bg-white shadow-xs transition-all duration-200">
+                    <button type="button" class="faq-toggle w-full p-[10px] px-3.5 sm:px-4 flex items-center justify-between text-left focus:outline-none cursor-pointer group hover:bg-[#FAF7F2]/60 transition-colors">
+                        <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
+                            Do you offer nationwide shipping, COD, and complimentary ceramic holders?
+                        </span>
+                        <div class="w-6 h-6 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                            <svg class="faq-icon w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="faq-content hidden px-3.5 sm:px-4 pb-[10px] pt-1 text-xs sm:text-[13px] text-gray-600 leading-relaxed bg-[#FAF7F2]/30">
+                        <p>
+                            We deliver across 19,000+ pin codes across Bharat within 2–4 business days. <strong>Free shipping</strong> is provided on orders above ₹499. We support <strong>Cash on Delivery (COD)</strong>, 1-Click GoKwik UPI checkout, and include an artisan ceramic holder FREE inside every pack.
+                        </p>
                     </div>
                 </div>
 
@@ -732,17 +865,17 @@
         </div>
 
         <!-- ========================================================================= -->
-        <!-- 4. YOU MAY ALSO LIKE (Exact Matching Product Cards)                      -->
+        <!-- 4. YOU MAY ALSO LIKE (4 Exact Matching Product Cards)                     -->
         <!-- ========================================================================= -->
         @if($relatedProducts->count() > 0)
             <div class="mt-16 sm:mt-24">
-                <div class="text-center max-w-xl mx-auto mb-12 space-y-2">
+                <div class="text-center max-w-xl mx-auto mb-10 space-y-2">
                     <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black text-[#121212] font-heading tracking-tight">
                         You May Also Like
                     </h2>
                 </div>
 
-                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-2.5">
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4 max-w-7xl mx-auto">
                     @foreach($relatedProducts as $relProduct)
                         <x-product-card :product="$relProduct" />
                     @endforeach
@@ -751,9 +884,9 @@
         @endif
 
         <!-- ========================================================================= -->
-        <!-- 5. CUSTOMER REVIEWS & RATINGS (Real Figures & Moderated Submission)       -->
+        <!-- 5. CUSTOMER REVIEWS & RATINGS (Unbordered Clean Container)                -->
         <!-- ========================================================================= -->
-        <div id="customer-reviews" class="mt-14 sm:mt-20 mb-16 sm:mb-24 max-w-7xl mx-auto bg-white rounded-[18px] sm:rounded-[24px] border border-[#EADBCC] p-6 sm:p-8 lg:p-10 shadow-xs font-body">
+        <div id="customer-reviews" class="mt-14 sm:mt-20 mb-16 sm:mb-24 max-w-7xl mx-auto font-body">
             
             @php
                 $approvedReviewsList = $product->approvedReviews ?? collect();
@@ -766,6 +899,9 @@
                         $ratingCounts[$star]++;
                     }
                 }
+                $userUploadedReviewPhotos = $approvedReviewsList->flatMap(function($r) {
+                    return $r->media ?? collect();
+                });
             @endphp
 
             <!-- 1. Header Bar: Title, Rating & Write Review Button -->
@@ -799,38 +935,46 @@
                 </button>
             </div>
 
-            <!-- 2. User Shared Photos Gallery (Compact & Clean Thumbnails with Click to Zoom) -->
+            @if($userUploadedReviewPhotos->count() > 0)
+            <!-- 2. User Shared Photos Gallery (Only Real Customer Uploaded Photos) -->
             <div class="py-5 border-b border-[#EADBCC]">
                 <div class="flex items-center justify-between mb-3">
                     <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading uppercase tracking-wider flex items-center gap-1.5">
                         <svg class="w-4 h-4 text-[#D38928]" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M4 4h3l2-2h6l2 2h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm8 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/>
                         </svg>
-                        User Shared Photos
+                        User Shared Photos ({{ $userUploadedReviewPhotos->count() }})
                     </span>
                     <span class="text-[11px] text-gray-500 font-medium">Click any photo to enlarge</span>
                 </div>
                 <div class="flex items-center gap-2 sm:gap-2.5 overflow-x-auto pb-1">
-                    <div class="w-13 h-13 sm:w-14 sm:h-14 rounded-[8px] overflow-hidden border border-[#EADBCC] bg-[#FAF7F2] shadow-2xs shrink-0 group cursor-pointer relative" onclick="openReviewImageModal(this.querySelector('img').src)">
-                        <img src="{{ asset('assets/images/hero-incense-banner.jpg') }}" alt="User Photo 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
-                    </div>
-                    <div class="w-13 h-13 sm:w-14 sm:h-14 rounded-[8px] overflow-hidden border border-[#EADBCC] bg-[#FAF7F2] shadow-2xs shrink-0 group cursor-pointer relative" onclick="openReviewImageModal(this.querySelector('img').src)">
-                        <img src="{{ asset('assets/images/camphor-refill-pack-card.jpg') }}" alt="User Photo 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
-                    </div>
-                    <div class="w-13 h-13 sm:w-14 sm:h-14 rounded-[8px] overflow-hidden border border-[#EADBCC] bg-[#FAF7F2] shadow-2xs shrink-0 group cursor-pointer relative" onclick="openReviewImageModal(this.querySelector('img').src)">
-                        <img src="{{ asset('assets/images/hero-ram-uphaar-banner.jpg') }}" alt="User Photo 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
-                    </div>
-                    <div class="w-13 h-13 sm:w-14 sm:h-14 rounded-[8px] overflow-hidden border border-[#EADBCC] bg-[#FAF7F2] shadow-2xs shrink-0 group cursor-pointer relative" onclick="openReviewImageModal(this.querySelector('img').src)">
-                        <img src="{{ asset('assets/images/chandan-cones-card.jpg') }}" alt="User Photo 4" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
-                    </div>
-                    <div class="w-13 h-13 sm:w-14 sm:h-14 rounded-[8px] overflow-hidden border border-[#EADBCC] bg-[#FAF7F2] shadow-2xs shrink-0 group cursor-pointer relative" onclick="openReviewImageModal(this.querySelector('img').src)">
-                        <img src="{{ asset('assets/images/devi-refill-pack-card.jpg') }}" alt="User Photo 5" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
-                    </div>
-                    <div class="w-13 h-13 sm:w-14 sm:h-14 rounded-[8px] overflow-hidden border border-[#EADBCC] bg-[#FAF7F2] shadow-2xs shrink-0 group cursor-pointer relative" onclick="openReviewImageModal(this.querySelector('img').src)">
-                        <img src="{{ asset('assets/images/oudh-pack-card.jpg') }}" alt="User Photo 6" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
-                    </div>
+                    @foreach($userUploadedReviewPhotos as $uMedia)
+                        @php
+                            $rawP = $uMedia->media_path;
+                            if (str_starts_with($rawP, 'http')) {
+                                $uImg = $rawP;
+                                $uFall = $rawP;
+                            } elseif (str_starts_with($rawP, 'uploads/') || str_starts_with($rawP, 'assets/')) {
+                                $uImg = asset($rawP);
+                                $uFall = asset('storage/' . $rawP);
+                            } elseif (str_starts_with($rawP, 'storage/')) {
+                                $uImg = asset($rawP);
+                                $uFall = asset(str_replace('storage/', 'uploads/', $rawP));
+                            } elseif (str_starts_with($rawP, 'reviews/')) {
+                                $uImg = asset('uploads/' . $rawP);
+                                $uFall = asset('storage/' . $rawP);
+                            } else {
+                                $uImg = asset('uploads/reviews/' . $rawP);
+                                $uFall = asset('storage/reviews/' . $rawP);
+                            }
+                        @endphp
+                        <div class="w-13 h-13 sm:w-14 sm:h-14 rounded-[8px] overflow-hidden border border-[#EADBCC] bg-[#FAF7F2] shadow-2xs shrink-0 group cursor-pointer relative" onclick="openReviewImageModal(this.querySelector('img').src)">
+                            <img src="{{ $uImg }}" onerror="if(!this.dataset.triedFallback){ this.dataset.triedFallback=1; this.src='{{ $uFall }}'; }" alt="User Photo" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                        </div>
+                    @endforeach
                 </div>
             </div>
+            @endif
 
             <!-- 3. Non-Mandatory Review Submission Form (Backend Approval Flow) -->
             <div id="inline-review-form" class="hidden my-6 p-5 sm:p-7 rounded-[14px] bg-[#FAF8F5] border border-[#EADBCC] space-y-4 transition-all duration-300 shadow-xs">
@@ -876,17 +1020,17 @@
                             >
                         </div>
 
-                        <!-- 3. Interactive Star Rating Selector -->
+                        <!-- 3. Interactive Star Rating Selector (Default Unselected) -->
                         <div>
                             <label class="block text-gray-700 font-medium mb-1">Select Rating</label>
-                            <div class="flex items-center space-x-1 text-2xl text-[#D38928] py-0.5 select-none" id="star-rating-selector">
-                                <input type="hidden" name="rating" id="review-selected-rating" value="5">
-                                <button type="button" class="star-choice-btn cursor-pointer transition-transform hover:scale-125 focus:outline-none text-[#D38928]" data-val="1">★</button>
-                                <button type="button" class="star-choice-btn cursor-pointer transition-transform hover:scale-125 focus:outline-none text-[#D38928]" data-val="2">★</button>
-                                <button type="button" class="star-choice-btn cursor-pointer transition-transform hover:scale-125 focus:outline-none text-[#D38928]" data-val="3">★</button>
-                                <button type="button" class="star-choice-btn cursor-pointer transition-transform hover:scale-125 focus:outline-none text-[#D38928]" data-val="4">★</button>
-                                <button type="button" class="star-choice-btn cursor-pointer transition-transform hover:scale-125 focus:outline-none text-[#D38928]" data-val="5">★</button>
-                                <span class="text-xs font-bold text-gray-700 pl-2 font-heading" id="rating-label-display">5 Stars</span>
+                            <div class="flex items-center space-x-1 text-2xl text-gray-300 py-0.5 select-none" id="star-rating-selector">
+                                <input type="hidden" name="rating" id="review-selected-rating" value="">
+                                <button type="button" class="star-choice-btn cursor-pointer transition-transform hover:scale-125 focus:outline-none text-gray-300" data-val="1">☆</button>
+                                <button type="button" class="star-choice-btn cursor-pointer transition-transform hover:scale-125 focus:outline-none text-gray-300" data-val="2">☆</button>
+                                <button type="button" class="star-choice-btn cursor-pointer transition-transform hover:scale-125 focus:outline-none text-gray-300" data-val="3">☆</button>
+                                <button type="button" class="star-choice-btn cursor-pointer transition-transform hover:scale-125 focus:outline-none text-gray-300" data-val="4">☆</button>
+                                <button type="button" class="star-choice-btn cursor-pointer transition-transform hover:scale-125 focus:outline-none text-gray-300" data-val="5">☆</button>
+                                <span class="text-xs font-semibold text-gray-500 pl-2 font-heading" id="rating-label-display">Tap to Rate</span>
                             </div>
                         </div>
                     </div>
@@ -1237,20 +1381,25 @@
             });
         }
 
-        // FAQ Accordions
-        document.querySelectorAll('.faq-toggle').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const answer = btn.nextElementSibling;
-                const icon = btn.querySelector('.faq-icon');
-                if (answer) {
-                    const isHidden = answer.classList.contains('hidden');
-                    if (isHidden) {
-                        answer.classList.remove('hidden');
-                        if (icon) icon.textContent = '−';
-                    } else {
-                        answer.classList.add('hidden');
-                        if (icon) icon.textContent = '+';
-                    }
+        // FAQ Accordions (Exclusive Single Open Behavior)
+        const faqToggles = document.querySelectorAll('.faq-toggle');
+        faqToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const item = toggle.closest('.faq-item');
+                if (!item) return;
+                const content = item.querySelector('.faq-content') || toggle.nextElementSibling;
+                const icon = toggle.querySelector('.faq-icon');
+                if (!content) return;
+                const isHidden = content.classList.contains('hidden');
+
+                // Close all items first
+                document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+                document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('rotate-180'));
+
+                // Open clicked item if it was closed
+                if (isHidden) {
+                    content.classList.remove('hidden');
+                    if (icon) icon.classList.add('rotate-180');
                 }
             });
         });
@@ -1480,12 +1629,23 @@
                         }
                     });
                     const result = await response.json();
+                    const resetStarRating = () => {
+                        if (ratingInput) ratingInput.value = '';
+                        if (ratingLabel) ratingLabel.textContent = 'Tap to Rate';
+                        starBtns.forEach(sb => {
+                            sb.textContent = '☆';
+                            sb.classList.remove('text-[#D38928]');
+                            sb.classList.add('text-gray-300');
+                        });
+                    };
+
                     if (result.success) {
                         if (reviewSuccessAlert) {
                             reviewSuccessAlert.classList.remove('hidden');
                             reviewSuccessAlert.innerHTML = `✦ <strong>धन्यवाद!</strong> ${result.message}`;
                         }
                         reviewForm.reset();
+                        resetStarRating();
                         reviewSelectedFiles = [];
                         renderReviewUploadPreviews();
                         setTimeout(() => {
@@ -1502,6 +1662,13 @@
                         reviewSuccessAlert.innerHTML = `✦ <strong>धन्यवाद!</strong> Your review and photos have been submitted for moderation. It will appear once approved by our team.`;
                     }
                     reviewForm.reset();
+                    if (ratingInput) ratingInput.value = '';
+                    if (ratingLabel) ratingLabel.textContent = 'Tap to Rate';
+                    starBtns.forEach(sb => {
+                        sb.textContent = '☆';
+                        sb.classList.remove('text-[#D38928]');
+                        sb.classList.add('text-gray-300');
+                    });
                     reviewSelectedFiles = [];
                     renderReviewUploadPreviews();
                     setTimeout(() => {

@@ -97,7 +97,10 @@
         'pack-of-six' => 'COMBO (240 STICKS)',
         'pitambara-havan' => 'COMING SOON 🔥',
     ];
-    $topBadge = $topBadges[$product->slug] ?? ($product->is_bestseller ? 'TOP PICKS' : 'SACRED VEDIC');
+    $topBadge = $product->badge_text ?? $product->tag ?? ($topBadges[$product->slug] ?? ($product->is_bestseller ? 'TOP PICKS' : null));
+    if ($topBadge === 'none' || $topBadge === 'null' || $topBadge === '0') {
+        $topBadge = null;
+    }
 
     // Pack labels
     $packCount = str_contains($product->slug, '100') || str_contains($product->slug, 'refill') ? '100' : (str_contains($product->slug, 'six') || str_contains($product->slug, '240') ? '240' : (str_contains($product->slug, 'pitambara') ? '1' : '40'));
@@ -110,6 +113,7 @@
 
 <div class="product-card group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
     
+    @if(!empty($topBadge))
     <!-- Centered Overlapping Top Border Pill Badge with Sparkles -->
     <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
         <span class="inline-flex items-center space-x-1 bg-white px-3 sm:px-4 py-0.5 rounded-full border border-[#D38928] text-[10px] sm:text-[11px] font-bold tracking-widest text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading">
@@ -118,6 +122,7 @@
             <span class="text-[#D38928] text-xs">✨</span>
         </span>
     </div>
+    @endif
 
     <!-- Product Image Box (5px Inner Padding) -->
     <div class="p-[5px] pb-0">

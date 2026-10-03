@@ -96,20 +96,20 @@ class ProductController extends Controller
                 ->first();
         }
 
-        // 6 Related Products from same category or active products
+        // 4 Related Products from same category or active products
         $relatedProducts = Product::where('status', 'active')
             ->where('id', '!=', $product ? $product->id : 0)
             ->with(['variants', 'primaryImage', 'images', 'category', 'approvedReviews'])
             ->inRandomOrder()
-            ->take(6)
+            ->take(4)
             ->get();
 
-        if ($relatedProducts->count() < 6) {
+        if ($relatedProducts->count() < 4) {
             $filler = Product::where('status', 'active')
                 ->where('id', '!=', $product ? $product->id : 0)
                 ->whereNotIn('id', $relatedProducts->pluck('id'))
                 ->with(['variants', 'primaryImage', 'images', 'category', 'approvedReviews'])
-                ->take(6 - $relatedProducts->count())
+                ->take(4 - $relatedProducts->count())
                 ->get();
             $relatedProducts = $relatedProducts->concat($filler);
         }
