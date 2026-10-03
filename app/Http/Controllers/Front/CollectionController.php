@@ -163,8 +163,8 @@ class CollectionController extends Controller
         // 4.1 Handle AJAX Infinite Scroll request
         if ($request->ajax() || $request->wantsJson() || $request->filled('ajax')) {
             $cardsHtml = '';
-            foreach ($products as $product) {
-                $cardsHtml .= view('components.product-card', ['product' => $product])->render();
+            foreach ($products as $index => $product) {
+                $cardsHtml .= '<div class="product-item reveal-from-left" data-index="' . $index . '">' . view('components.product-card', ['product' => $product])->render() . '</div>';
             }
             return response()->json([
                 'html' => $cardsHtml,

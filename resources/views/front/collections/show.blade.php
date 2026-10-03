@@ -8,12 +8,14 @@
     <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
 
         <!-- ========================================================================= -->
-        <!-- TOP FILTER & SORT BAR (Exact Replica of Reference Screenshots)            -->
+        <!-- TOP FILTER & SORT BAR (Inline Active Tags & Sort By Dropdown)              -->
         <!-- ========================================================================= -->
         @php
             $activeAvail = (array) request('availability', []);
             $availSelectedCount = count($activeAvail);
             $hasPriceFilter = request()->filled('price_min') || request()->filled('price_max');
+            $hasActiveFilters = $availSelectedCount > 0 || $hasPriceFilter;
+            $currentSort = request('sort_by', 'featured');
         @endphp
 
         <form id="collection-filter-form" method="GET" action="{{ url()->current() }}" class="w-full mb-8">
@@ -21,10 +23,10 @@
                 <input type="hidden" name="search" value="{{ request('search') }}">
             @endif
 
-            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 py-2">
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 py-2 border-b border-[#EADBCC]/60 pb-4">
                 
-                <!-- Left: Filter Buttons (Availability & Price) -->
-                <div class="flex items-center space-x-3 text-sm flex-wrap gap-y-2">
+                <!-- Left: Filter Buttons + Inline Selected Badges -->
+                <div class="flex items-center space-x-2.5 sm:space-x-3 text-sm flex-wrap gap-y-2.5">
                     <span class="text-[#121212] font-normal text-sm sm:text-base mr-1">Filter:</span>
 
                     <!-- 1. Availability Dropdown -->
@@ -133,11 +135,83 @@
                         </div>
                     </div>
 
+                    <!-- 3. Active Filter Badges Inline (In the exact same row) -->
+                    @if(in_array('in_stock', $activeAvail))
+                        @php
+                            $newAvail = array_values(array_diff($activeAvail, ['in_stock']));
+                        @endphp
+                        <a 
+                            href="{{ request()->fullUrlWithQuery(['availability' => count($newAvail) > 0 ? $newAvail : null, 'page' => null]) }}"
+                            class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#FAF5EE] hover:bg-[#F3ECE0] text-[#1F1F1F] rounded-full text-xs font-medium border border-[#EADBCC] transition-colors group cursor-pointer"
+                            title="Remove In stock filter"
+                        >
+                            <span>Availability: In stock</span>
+                            <span class="text-gray-400 group-hover:text-black font-bold text-[11px] leading-none">✕</span>
+                        </a>
+                    @endif
+
+                    @if(in_array('out_of_stock', $activeAvail))
+                        @php
+                            $newAvail = array_values(array_diff($activeAvail, ['out_of_stock']));
+                        @endphp
+                        <a 
+                            href="{{ request()->fullUrlWithQuery(['availability' => count($newAvail) > 0 ? $newAvail : null, 'page' => null]) }}"
+                            class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#FAF5EE] hover:bg-[#F3ECE0] text-[#1F1F1F] rounded-full text-xs font-medium border border-[#EADBCC] transition-colors group cursor-pointer"
+                            title="Remove Out of stock filter"
+                        >
+                            <span>Availability: Out of stock</span>
+                            <span class="text-gray-400 group-hover:text-black font-bold text-[11px] leading-none">✕</span>
+                        </a>
+                    @endif
+
+                    @if($hasPriceFilter)
+                        <a 
+                            href="{{ request()->fullUrlWithQuery(['price_min' => null, 'price_max' => null, 'page' => null]) }}"
+                            class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#FAF5EE] hover:bg-[#F3ECE0] text-[#1F1F1F] rounded-full text-xs font-medium border border-[#EADBCC] transition-colors group cursor-pointer"
+                            title="Remove Price filter"
+                        >
+                            <span>Price: ₹{{ request('price_min', 0) }} - ₹{{ request('price_max', $maxProductPrice) }}</span>
+                            <span class="text-gray-400 group-hover:text-black font-bold text-[11px] leading-none">✕</span>
+                        </a>
+                    @endif
+
+                    @if($hasActiveFilters)
+                        <a 
+                            href="{{ request()->fullUrlWithQuery(['availability' => null, 'price_min' => null, 'price_max' => null, 'page' => null]) }}" 
+                            class="text-xs sm:text-sm text-[#1F1F1F] hover:text-[#D38928] underline underline-offset-3 font-medium ml-1 transition-colors cursor-pointer"
+                        >
+                            Remove all
+                        </a>
+                    @endif
+
                 </div>
 
-                <!-- Right: Product Count -->
-                <div class="flex items-center space-x-4 w-full md:w-auto justify-between md:justify-end text-xs sm:text-sm">
-                    <span class="text-gray-600 font-medium whitespace-nowrap">
+                <!-- Right: Sort by Dropdown & Product Count -->
+                <div class="flex items-center justify-between sm:justify-end gap-4 text-xs sm:text-sm shrink-0 w-full lg:w-auto mt-2 lg:mt-0">
+                    <div class="flex items-center gap-2">
+                        <label for="sort_by" class="text-gray-600 font-medium whitespace-nowrap">Sort by:</label>
+                        <div class="relative inline-block">
+                            <select 
+                                id="sort_by" 
+                                name="sort_by" 
+                                onchange="document.getElementById('collection-filter-form').submit()"
+                                class="appearance-none bg-[#FAF5EE] hover:bg-[#F3ECE0] border border-[#EADBCC]/70 rounded-[10px] pl-3 pr-8 py-2 text-xs sm:text-sm font-medium text-[#1F1F1F] focus:outline-none focus:border-[#D38928] cursor-pointer transition-colors"
+                            >
+                                <option value="featured" {{ $currentSort === 'featured' ? 'selected' : '' }}>Featured</option>
+                                <option value="best_selling" {{ $currentSort === 'best_selling' ? 'selected' : '' }}>Best selling</option>
+                                <option value="title_asc" {{ $currentSort === 'title_asc' ? 'selected' : '' }}>Alphabetically, A-Z</option>
+                                <option value="title_desc" {{ $currentSort === 'title_desc' ? 'selected' : '' }}>Alphabetically, Z-A</option>
+                                <option value="price_low_high" {{ $currentSort === 'price_low_high' ? 'selected' : '' }}>Price, low to high</option>
+                                <option value="price_high_low" {{ $currentSort === 'price_high_low' ? 'selected' : '' }}>Price, high to low</option>
+                                <option value="newest" {{ $currentSort === 'newest' ? 'selected' : '' }}>Date, new to old</option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2.5 text-gray-500">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <span class="text-gray-500 font-medium whitespace-nowrap">
                         {{ $products->total() }} {{ Str::plural('product', $products->total()) }}
                     </span>
                 </div>
@@ -150,8 +224,10 @@
             
             @if($products->count() > 0)
                 <div id="products-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-[10px]">
-                    @foreach($products as $product)
-                        <x-product-card :product="$product" />
+                    @foreach($products as $index => $product)
+                        <div class="product-item {{ $index >= 4 ? 'reveal-from-left' : '' }}" data-index="{{ $index }}">
+                            <x-product-card :product="$product" />
+                        </div>
                     @endforeach
                 </div>
 
@@ -363,6 +439,160 @@
 
         </div>
 
+        <!-- ========================================================================= -->
+        <!-- FREQUENTLY ASKED QUESTIONS (Pure White Background, Matching Design System) -->
+        <!-- ========================================================================= -->
+        <div class="mt-20 sm:mt-24 pt-12 border-t border-[#EADBCC] select-none">
+            <div class="space-y-6 sm:space-y-8">
+            
+                <!-- Section Header -->
+                <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-10 space-y-1.5">
+                    <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ CLARITY &amp; VIDHI ✦</span>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#121212] font-heading tracking-tight leading-tight">
+                        Frequently Asked Questions
+                    </h2>
+                </div>
+
+                <!-- Seamless Accordion Container (8px Border Radius & 10px Inner Padding) -->
+                <div class="bg-white rounded-[8px] border border-[#EADBCC] shadow-xs divide-y divide-[#EADBCC] overflow-hidden max-w-5xl">
+                    
+                    <!-- FAQ 1 -->
+                    <div class="faq-item">
+                        <button type="button" class="faq-toggle w-full p-[10px] px-3.5 sm:px-4 flex items-center justify-between text-left focus:outline-none cursor-pointer group hover:bg-[#FAF7F2]/60 transition-colors">
+                            <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
+                                What makes Manglam bambooless incense sticks and havan cups unique?
+                            </span>
+                            <div class="w-6 h-6 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                                <svg class="faq-icon w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </div>
+                        </button>
+                        <div class="faq-content hidden px-3.5 sm:px-4 pb-[10px] pt-1 text-xs sm:text-[13px] text-gray-600 leading-relaxed bg-[#FAF7F2]/30">
+                            <p>
+                                Our incense is <strong>100% bamboo-free</strong> (compliant with Vedic and Vastu scriptures) and <strong>0% toxic charcoal</strong>. Handcrafted using upcycled temple flower powders, pure Bhimseni camphor, natural Loban, and Guggal resins, it produces a soothing herbal aroma that leaves behind clean, auspicious white ash without causing any eye irritation or coughing.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="faq-item">
+                        <button type="button" class="faq-toggle w-full p-[10px] px-3.5 sm:px-4 flex items-center justify-between text-left focus:outline-none cursor-pointer group hover:bg-[#FAF7F2]/60 transition-colors">
+                            <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
+                                How long do they burn, and does the temple fragrance linger in the room?
+                            </span>
+                            <div class="w-6 h-6 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                                <svg class="faq-icon w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </div>
+                        </button>
+                        <div class="faq-content hidden px-3.5 sm:px-4 pb-[10px] pt-1 text-xs sm:text-[13px] text-gray-600 leading-relaxed bg-[#FAF7F2]/30">
+                            <p>
+                                Each 9-inch Bambooless Stick burns continuously for <strong>45 to 50 minutes</strong>, while our organic Sambrani Havan Cups burn intensely for <strong>25 to 30 minutes</strong>. Due to our rich botanical essential oil concentration, the uplifting sacred fragrance lingers throughout your home for <strong>4 to 6 hours</strong> after burning.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="faq-item">
+                        <button type="button" class="faq-toggle w-full p-[10px] px-3.5 sm:px-4 flex items-center justify-between text-left focus:outline-none cursor-pointer group hover:bg-[#FAF7F2]/60 transition-colors">
+                            <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
+                                Are Manglam products safe to use around babies, elders, and pets?
+                            </span>
+                            <div class="w-6 h-6 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                                <svg class="faq-icon w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </div>
+                        </button>
+                        <div class="faq-content hidden px-3.5 sm:px-4 pb-[10px] pt-1 text-xs sm:text-[13px] text-gray-600 leading-relaxed bg-[#FAF7F2]/30">
+                            <p>
+                                Yes, 100% safe. Because we never use toxic black charcoal, synthetic dipping chemicals, or artificial scent binders, our incense emits gentle herbal aroma rather than suffocating carbon monoxide, making it completely safe for daily pooja in closed or air-conditioned rooms with elders and toddlers.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="faq-item">
+                        <button type="button" class="faq-toggle w-full p-[10px] px-3.5 sm:px-4 flex items-center justify-between text-left focus:outline-none cursor-pointer group hover:bg-[#FAF7F2]/60 transition-colors">
+                            <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
+                                What is the spiritual significance of burning 100% Bamboo-Free Agarbatti?
+                            </span>
+                            <div class="w-6 h-6 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                                <svg class="faq-icon w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </div>
+                        </button>
+                        <div class="faq-content hidden px-3.5 sm:px-4 pb-[10px] pt-1 text-xs sm:text-[13px] text-gray-600 leading-relaxed bg-[#FAF7F2]/30">
+                            <p>
+                                In Sanatana Dharma and ancient Vedic scriptures, bamboo (Vamsha) is revered as a sacred symbol of family lineage and ancestral continuity. Burning bamboo is strictly forbidden in sacred yagnas and daily poojas because it creates negative energies and emits toxic heavy-metal vapors. Manglam adheres strictly to traditional Vidhi by crafting pure bambooless incense.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 5 -->
+                    <div class="faq-item">
+                        <button type="button" class="faq-toggle w-full p-[10px] px-3.5 sm:px-4 flex items-center justify-between text-left focus:outline-none cursor-pointer group hover:bg-[#FAF7F2]/60 transition-colors">
+                            <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
+                                How do I properly ignite and use organic Sambrani Havan Cups &amp; Dhoop Cones?
+                            </span>
+                            <div class="w-6 h-6 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                                <svg class="faq-icon w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </div>
+                        </button>
+                        <div class="faq-content hidden px-3.5 sm:px-4 pb-[10px] pt-1 text-xs sm:text-[13px] text-gray-600 leading-relaxed bg-[#FAF7F2]/30">
+                            <p>
+                                Hold the top rim of the Sambrani Havan Cup or the pointed tip of the Dhoop Cone over a diya flame or lighter for 10–15 seconds until it glows with an active ember. Gently blow out the active flame and place the cup/cone onto the complimentary heat-resistant ceramic coaster included in your package. Let the sacred herbal sambrani purify your home and altar.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 6 -->
+                    <div class="faq-item">
+                        <button type="button" class="faq-toggle w-full p-[10px] px-3.5 sm:px-4 flex items-center justify-between text-left focus:outline-none cursor-pointer group hover:bg-[#FAF7F2]/60 transition-colors">
+                            <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
+                                What sacred ingredients and temple flowers are used in handcrafting?
+                            </span>
+                            <div class="w-6 h-6 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                                <svg class="faq-icon w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </div>
+                        </button>
+                        <div class="faq-content hidden px-3.5 sm:px-4 pb-[10px] pt-1 text-xs sm:text-[13px] text-gray-600 leading-relaxed bg-[#FAF7F2]/30">
+                            <p>
+                                Every batch of Manglam incense is lovingly handcrafted by Vedic artisans using dried consecrated flowers collected from sacred shrines, combined with pure Desi cow dung powder, organic Guggal, natural Sambrani Loban resin, Jatamansi, and natural therapeutic-grade essential oils.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 7 -->
+                    <div class="faq-item">
+                        <button type="button" class="faq-toggle w-full p-[10px] px-3.5 sm:px-4 flex items-center justify-between text-left focus:outline-none cursor-pointer group hover:bg-[#FAF7F2]/60 transition-colors">
+                            <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
+                                Do you offer nationwide shipping, COD, and complimentary ceramic holders?
+                            </span>
+                            <div class="w-6 h-6 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                                <svg class="faq-icon w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </div>
+                        </button>
+                        <div class="faq-content hidden px-3.5 sm:px-4 pb-[10px] pt-1 text-xs sm:text-[13px] text-gray-600 leading-relaxed bg-[#FAF7F2]/30">
+                            <p>
+                                We deliver across 19,000+ pin codes across Bharat within 2–4 business days. <strong>Free shipping</strong> is provided on orders above ₹499. We support <strong>Cash on Delivery (COD)</strong>, 1-Click GoKwik UPI checkout, and include an artisan ceramic holder FREE inside every pack.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 @endsection
@@ -437,6 +667,57 @@
         });
 
         // =====================================================================
+        // STAGGERED LEFT-TO-RIGHT PRODUCT SCROLL REVEAL OBSERVER
+        // =====================================================================
+        const initScrollReveal = () => {
+            const unrevealedItems = document.querySelectorAll('.product-item.reveal-from-left:not(.is-revealed)');
+            
+            if ('IntersectionObserver' in window) {
+                const revealObserver = new IntersectionObserver((entries, obs) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            const el = entry.target;
+                            const idx = parseInt(el.dataset.index || '0', 10);
+                            const delay = (idx % 4) * 80;
+                            setTimeout(() => {
+                                el.classList.add('is-revealed');
+                            }, delay);
+                            obs.unobserve(el);
+                        }
+                    });
+                }, {
+                    rootMargin: '60px 0px',
+                    threshold: 0.08
+                });
+
+                unrevealedItems.forEach(item => revealObserver.observe(item));
+            } else {
+                unrevealedItems.forEach(item => item.classList.add('is-revealed'));
+            }
+        };
+
+        initScrollReveal();
+
+        // =====================================================================
+        // FAQ ACCORDION HANDLER
+        // =====================================================================
+        document.querySelectorAll('.faq-toggle').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('.faq-icon');
+                const isHidden = content.classList.contains('hidden');
+                
+                if (isHidden) {
+                    content.classList.remove('hidden');
+                    if (icon) icon.classList.add('rotate-180');
+                } else {
+                    content.classList.add('hidden');
+                    if (icon) icon.classList.remove('rotate-180');
+                }
+            });
+        });
+
+        // =====================================================================
         // INFINITE SCROLL (Automatically loads more products as you scroll down)
         // =====================================================================
         const sentinel = document.getElementById('infinite-scroll-sentinel');
@@ -464,6 +745,7 @@
                         const data = await response.json();
                         if (data.html && data.html.trim().length > 0) {
                             grid.insertAdjacentHTML('beforeend', data.html);
+                            initScrollReveal();
                         }
 
                         if (data.has_more && data.next_page_url) {

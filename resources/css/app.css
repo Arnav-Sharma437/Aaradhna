@@ -429,6 +429,19 @@ header nav button,
     transform: scale(1) !important;
 }
 
+/* Staggered Left-to-Right Reveal for Product Collections */
+.reveal-from-left {
+    opacity: 0;
+    transform: translateX(-24px);
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-from-left.is-revealed {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+}
+
 /* Stagger delay helpers */
 /* Custom Autofill Fix for Dark/Vedic Containers */
 input:-webkit-autofill,
