@@ -155,8 +155,8 @@
         </div>
     </div>
 
-    <!-- Product Card Content (5px Padding) -->
-    <div class="p-[5px] pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
+    <!-- Product Card Content (Normal Content Padding) -->
+    <div class="p-3.5 sm:p-4 pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
         
         <div class="space-y-1">
             <h3 class="text-[15px] sm:text-base font-bold text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug font-body">

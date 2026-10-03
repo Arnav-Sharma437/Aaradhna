@@ -178,7 +178,7 @@
                         </div>
                     </div>
                     <!-- Content -->
-                    <div class="p-[5px] pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
+                    <div class="p-3.5 sm:p-4 pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
                         <div class="space-y-1">
                             <h3 class="text-[15px] sm:text-base font-bold font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                                 <a href="{{ route('products.show', 'swarna-pushpa') }}">Swarna Pushpa <span class="text-xs font-normal capitalize text-gray-500 ml-0.5">(Marygold)</span></a>
@@ -225,7 +225,7 @@
                         </div>
                     </div>
                     <!-- Content -->
-                    <div class="p-[5px] pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
+                    <div class="p-3.5 sm:p-4 pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
                         <div class="space-y-1">
                             <h3 class="text-[15px] sm:text-base font-bold font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                                 <a href="{{ route('products.show', 'chandan-saanjh') }}">Chandan Saanjh <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(चंदन)</span></a>
@@ -272,7 +272,7 @@
                         </div>
                     </div>
                     <!-- Content -->
-                    <div class="p-[5px] pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
+                    <div class="p-3.5 sm:p-4 pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
                         <div class="space-y-1">
                             <h3 class="text-[15px] sm:text-base font-bold font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                                 <a href="{{ route('products.show', 'royal-oudh') }}">Royal Oudh <span class="text-xs font-normal text-gray-500 ml-0.5">(अवध)</span></a>
@@ -319,7 +319,7 @@
                         </div>
                     </div>
                     <!-- Content -->
-                    <div class="p-[5px] pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
+                    <div class="p-3.5 sm:p-4 pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
                         <div class="space-y-1">
                             <h3 class="text-[15px] sm:text-base font-bold font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                                 <a href="{{ route('products.show', 'google-dhoop') }}">Guggal Dhoop <span class="text-xs font-normal text-gray-500 ml-0.5">Havan Cup</span></a>
@@ -629,12 +629,12 @@
             </h2>
         </div>
 
-        <!-- 4 Big Single-Product Category Circles (Mobile Swipeable Slider + Desktop Grid) -->
-        <div id="category-slider" class="flex sm:grid overflow-x-auto sm:overflow-visible scrollbar-none snap-x snap-mandatory sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 pb-3 sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0 w-full">
+        <!-- 4 Big Single-Product Category Circles (Centered Grid & Tighter Spacing) -->
+        <div id="category-slider" class="flex sm:grid overflow-x-auto sm:overflow-visible scrollbar-none snap-x snap-mandatory sm:grid-cols-4 justify-start sm:justify-center items-start gap-3.5 sm:gap-5 lg:gap-6 max-w-5xl mx-auto pb-3 sm:pb-0 -mx-4 px-4 sm:mx-auto sm:px-0 w-full">
             
             <!-- Category 1: Single Bamboo-less Dhoop Stick -->
-            <div class="w-[160px] sm:w-auto shrink-0 snap-start group flex flex-col items-center text-center space-y-3 sm:space-y-4">
-                <a href="{{ route('collections.show', 'bambooless') }}" class="block relative w-full max-w-[200px] sm:max-w-[250px] lg:max-w-[280px] aspect-square rounded-full p-2 bg-white border border-[#EADBCC] hover:border-[#D38928] group-hover:scale-105 transition-all duration-500 cursor-pointer">
+            <div class="w-[145px] sm:w-auto shrink-0 snap-start group flex flex-col items-center text-center space-y-2.5 sm:space-y-3">
+                <a href="{{ route('collections.show', 'bambooless') }}" class="block relative w-full max-w-[170px] sm:max-w-[200px] lg:max-w-[210px] aspect-square rounded-full p-2 bg-white border border-[#EADBCC] hover:border-[#D38928] group-hover:scale-105 transition-all duration-500 cursor-pointer">
                     <div class="w-full h-full rounded-full overflow-hidden bg-white p-1 sm:p-2 flex items-center justify-center relative">
                         <img 
                             src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" 
@@ -656,8 +656,8 @@
             </div>
 
             <!-- Category 2: Single Dhoop Cone -->
-            <div class="w-[160px] sm:w-auto shrink-0 snap-start group flex flex-col items-center text-center space-y-3 sm:space-y-4">
-                <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block relative w-full max-w-[200px] sm:max-w-[250px] lg:max-w-[280px] aspect-square rounded-full p-2 bg-white border border-[#EADBCC] hover:border-[#D38928] group-hover:scale-105 transition-all duration-500 cursor-pointer">
+            <div class="w-[145px] sm:w-auto shrink-0 snap-start group flex flex-col items-center text-center space-y-2.5 sm:space-y-3">
+                <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block relative w-full max-w-[170px] sm:max-w-[200px] lg:max-w-[210px] aspect-square rounded-full p-2 bg-white border border-[#EADBCC] hover:border-[#D38928] group-hover:scale-105 transition-all duration-500 cursor-pointer">
                     <div class="w-full h-full rounded-full overflow-hidden bg-white p-1 sm:p-2 flex items-center justify-center relative">
                         <img 
                             src="{{ asset('assets/images/single-dhoop-cone.jpg') }}" 
@@ -679,8 +679,8 @@
             </div>
 
             <!-- Category 3: Single 100% Organic Havan Cup -->
-            <div class="w-[160px] sm:w-auto shrink-0 snap-start group flex flex-col items-center text-center space-y-3 sm:space-y-4">
-                <a href="{{ route('collections.show', 'havan-cups') }}" class="block relative w-full max-w-[200px] sm:max-w-[250px] lg:max-w-[280px] aspect-square rounded-full p-2 bg-white border border-[#EADBCC] hover:border-[#D38928] group-hover:scale-105 transition-all duration-500 cursor-pointer">
+            <div class="w-[145px] sm:w-auto shrink-0 snap-start group flex flex-col items-center text-center space-y-2.5 sm:space-y-3">
+                <a href="{{ route('collections.show', 'havan-cups') }}" class="block relative w-full max-w-[170px] sm:max-w-[200px] lg:max-w-[210px] aspect-square rounded-full p-2 bg-white border border-[#EADBCC] hover:border-[#D38928] group-hover:scale-105 transition-all duration-500 cursor-pointer">
                     <div class="w-full h-full rounded-full overflow-hidden bg-white p-1 sm:p-2 flex items-center justify-center relative">
                         <img 
                             src="{{ asset('assets/images/single-havan-cup.jpg') }}" 
@@ -702,8 +702,8 @@
             </div>
 
             <!-- Category 4: Manglam Pitambara Havan Pack -->
-            <div class="w-[160px] sm:w-auto shrink-0 snap-start group flex flex-col items-center text-center space-y-3 sm:space-y-4">
-                <a href="{{ route('products.pitambara') }}" class="block relative w-full max-w-[200px] sm:max-w-[250px] lg:max-w-[280px] aspect-square rounded-full p-2 bg-white border border-[#EADBCC] hover:border-[#D38928] group-hover:scale-105 transition-all duration-500 cursor-pointer">
+            <div class="w-[145px] sm:w-auto shrink-0 snap-start group flex flex-col items-center text-center space-y-2.5 sm:space-y-3">
+                <a href="{{ route('products.pitambara') }}" class="block relative w-full max-w-[170px] sm:max-w-[200px] lg:max-w-[210px] aspect-square rounded-full p-2 bg-white border border-[#EADBCC] hover:border-[#D38928] group-hover:scale-105 transition-all duration-500 cursor-pointer">
                     <div class="w-full h-full rounded-full overflow-hidden bg-white p-1 sm:p-2 flex items-center justify-center relative">
                         <img 
                             src="{{ asset('assets/images/pitambara-pack.jpg') }}" 
@@ -798,7 +798,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="p-[5px] pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
+                <div class="p-3.5 sm:p-4 pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
                     <div class="space-y-1">
                         <h3 class="text-[15px] sm:text-base font-bold font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                             <a href="{{ route('products.show', 'swarna-pushpa') }}">Swarna Pushpa <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(Refill 100)</span></a>
@@ -842,7 +842,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="p-[5px] pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
+                <div class="p-3.5 sm:p-4 pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
                     <div class="space-y-1">
                         <h3 class="text-[15px] sm:text-base font-bold font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                             <a href="{{ route('products.show', 'divya-naagchampa') }}">Divya Naagchampa <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(Refill)</span></a>
@@ -886,7 +886,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="p-[5px] pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
+                <div class="p-3.5 sm:p-4 pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
                     <div class="space-y-1">
                         <h3 class="text-[15px] sm:text-base font-bold font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                             <a href="{{ route('products.show', 'royal-oudh') }}">Royal Oudh <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(Sticks)</span></a>
@@ -930,7 +930,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="p-[5px] pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
+                <div class="p-3.5 sm:p-4 pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
                     <div class="space-y-1">
                         <h3 class="text-[15px] sm:text-base font-bold font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                             <a href="{{ route('products.show', 'chandan-saanjh') }}">Chandan Saanjh <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(Sticks)</span></a>

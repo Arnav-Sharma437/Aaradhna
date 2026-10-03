@@ -134,11 +134,10 @@
                             Buy 2 Get 1 Free
                         </a>
                     </li>
-                    <li class="pt-1">
-                        <a href="{{ route('products.pitambara') }}" class="group inline-flex items-center gap-1.5 py-1 px-2.5 rounded-lg bg-[#F6DAA8]/15 border border-[#F6DAA8]/40 hover:bg-[#F6DAA8]/25 hover:border-[#F6DAA8] transition-all text-[#F6DAA8] font-bold text-xs sm:text-sm">
-                            <span class="w-2 h-2 rounded-full bg-[#F6DAA8] animate-pulse"></span>
+                    <li>
+                        <a href="{{ route('products.pitambara') }}" class="text-[#F6DAA8] font-bold hover:text-white transition-colors inline-flex items-center gap-1.5 py-0.5">
+                            <span class="text-[#F6DAA8]">✦</span>
                             <span>Pitambara Havan</span>
-                            <span class="text-[9px] uppercase font-black bg-[#D38928] text-white px-1.5 py-0.5 rounded leading-none shadow-2xs">Special</span>
                         </a>
                     </li>
                 </ul>
@@ -191,17 +190,19 @@
                     Subscribe to our newsletter for Vedic updates &amp; festive offerings.
                 </p>
 
-                <!-- Newsletter Input Form -->
+                <!-- Newsletter Input Form with dark autofill styling -->
                 <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Manglam!');" class="pt-2">
-                    <div class="relative flex items-center w-full rounded-full border border-[#F6DAA8]/40 bg-black/25 p-1 pl-4 focus-within:border-[#F6DAA8] transition-colors shadow-inner">
+                    <div class="relative flex items-center w-full rounded-full border border-[#F6DAA8]/40 bg-[#420810]/80 p-1 pl-4 focus-within:border-[#F6DAA8] transition-colors shadow-inner">
                         <svg class="w-4.5 h-4.5 text-white/60 mr-2.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                         </svg>
                         <input 
                             type="email" 
+                            name="footer_email"
+                            autocomplete="off"
                             placeholder="Enter your email address" 
                             required
-                            class="bg-transparent text-white placeholder-white/50 text-xs sm:text-sm focus:outline-none flex-1 min-w-0 pr-2 font-body"
+                            class="footer-email-input bg-transparent text-white placeholder-white/50 text-xs sm:text-sm focus:outline-none flex-1 min-w-0 pr-2 font-body"
                         >
                         <button 
                             type="submit" 
@@ -222,31 +223,31 @@
         <div class="w-full h-[1px] bg-white/15 mt-8 sm:mt-10 mb-6"></div>
 
         <!-- ================================================================= -->
-        <!-- 3. BOTTOM ROW: POLICIES, CENTERED COPYRIGHT & PAYMENT BADGES      -->
+        <!-- 3. BOTTOM ROW: POLICIES, EXACT CENTER COPYRIGHT & PAYMENT BADGES  -->
         <!-- ================================================================= -->
-        <div class="flex flex-col lg:flex-row items-center justify-between gap-5 text-xs sm:text-[13px] text-white/80">
+        <div class="grid grid-cols-1 lg:grid-cols-3 items-center gap-4 text-xs sm:text-[13px] text-white/80 w-full">
             
-            <!-- Exact 4 Policies Requested by User -->
-            <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 sm:gap-x-4">
-                <a href="{{ route('pages.show', 'refund-policy') }}" class="hover:text-[#F6DAA8] transition-colors">Return &amp; Refund Policy</a>
+            <!-- Left Column: Policies -->
+            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-x-3 gap-y-1.5 sm:gap-x-3.5">
+                <a href="{{ route('pages.show', 'refund-policy') }}" class="hover:text-[#F6DAA8] transition-colors whitespace-nowrap">Return &amp; Refund Policy</a>
                 <span class="text-white/30 hidden sm:inline">|</span>
-                <a href="{{ route('pages.show', 'shipping-policy') }}" class="hover:text-[#F6DAA8] transition-colors">Shipping Policy</a>
+                <a href="{{ route('pages.show', 'shipping-policy') }}" class="hover:text-[#F6DAA8] transition-colors whitespace-nowrap">Shipping Policy</a>
                 <span class="text-white/30 hidden sm:inline">|</span>
-                <a href="{{ route('pages.show', 'terms-of-service') }}" class="hover:text-[#F6DAA8] transition-colors">Terms &amp; Conditions</a>
+                <a href="{{ route('pages.show', 'terms-of-service') }}" class="hover:text-[#F6DAA8] transition-colors whitespace-nowrap">Terms &amp; Conditions</a>
                 <span class="text-white/30 hidden sm:inline">|</span>
-                <a href="{{ route('pages.show', 'privacy-policy') }}" class="hover:text-[#F6DAA8] transition-colors">Privacy Policy</a>
+                <a href="{{ route('pages.show', 'privacy-policy') }}" class="hover:text-[#F6DAA8] transition-colors whitespace-nowrap">Privacy Policy</a>
             </div>
 
-            <!-- Centered Devotional Copyright -->
-            <div class="text-center text-[#F6DAA8] font-body text-xs sm:text-sm font-medium">
+            <!-- Center Column: 100% Dead-Center Copyright -->
+            <div class="text-center text-[#F6DAA8] font-body text-xs sm:text-sm font-medium whitespace-nowrap py-1 lg:py-0">
                 <span>© {{ date('Y') }} Manglam. All Rights Reserved.</span>
             </div>
 
-            <!-- Authentic Payment Icons (VISA, MasterCard, UPI, RuPay, Paytm, GPay) -->
-            <div class="flex flex-wrap items-center justify-center gap-1.5 shrink-0">
+            <!-- Right Column: Authentic Payment Icons (Never Clipped) -->
+            <div class="flex flex-wrap items-center justify-center lg:justify-end gap-1.5 shrink-0">
                 <!-- VISA -->
-                <div class="h-6 px-2 bg-white rounded flex items-center justify-center shadow-xs" title="Visa">
-                    <svg class="h-3.5 w-auto" viewBox="0 0 48 16" fill="none">
+                <div class="h-6 px-2.5 bg-white rounded flex items-center justify-center shadow-xs" title="Visa">
+                    <svg class="h-3.5 w-auto" viewBox="0 0 54 18" fill="none">
                         <path d="M19.43 1.25L13.14 15.22H8.97L5.47 3.99C5.26 3.16 5.08 2.86 4.45 2.5C3.39 1.93 1.58 1.4 0 1.05L0.09 0.65H7.07C7.96 0.65 8.76 1.24 8.95 2.27L10.66 11.23L15.21 0.65H19.43V1.25ZM36.56 10.74C36.58 6.78 31.06 6.56 31.1 4.75C31.11 4.2 31.64 3.61 32.78 3.46C33.34 3.38 34.92 3.32 36.6 4.1L37.31 0.79C36.33 0.44 35.08 0.1 33.51 0.1C29.43 0.1 26.54 2.27 26.51 5.37C26.48 7.67 28.53 8.95 30.1 9.72C31.71 10.51 32.25 11.01 32.24 11.72C32.23 12.8 30.93 13.29 29.74 13.31C27.65 13.34 26.44 12.75 25.48 12.31L24.74 15.75C25.68 16.18 27.42 16.55 29.23 16.57C33.59 16.57 36.53 14.42 36.56 10.74ZM47.45 15.22H51.13L47.93 0.65H44.52C43.74 0.65 43.08 1.1 42.79 1.8L36.56 15.22H40.75L41.58 12.92H46.7L47.45 15.22ZM42.73 9.78L44.85 3.96L46.06 9.78H42.73ZM24.78 0.65L21.48 15.22H17.48L20.78 0.65H24.78Z" fill="#1A1F71"/>
                     </svg>
                 </div>
@@ -261,14 +262,12 @@
                 </div>
 
                 <!-- UPI -->
-                <div class="h-6 px-2 bg-white rounded flex items-center justify-center shadow-xs" title="UPI">
-                    <div class="flex items-center gap-0.5">
-                        <svg class="h-3.5 w-auto" viewBox="0 0 18 16" fill="none">
-                            <path d="M6 0L0 16H6L12 0H6Z" fill="#097939"/>
-                            <path d="M12 0L6 16H12L18 0H12Z" fill="#ED752E"/>
-                        </svg>
-                        <span class="font-sans font-black text-[11px] text-[#1E2229] leading-none">UPI</span>
-                    </div>
+                <div class="h-6 px-2 bg-white rounded flex items-center justify-center gap-1 shadow-xs" title="UPI">
+                    <svg class="h-3.5 w-auto" viewBox="0 0 18 16" fill="none">
+                        <path d="M6 0L0 16H6L12 0H6Z" fill="#097939"/>
+                        <path d="M12 0L6 16H12L18 0H12Z" fill="#ED752E"/>
+                    </svg>
+                    <span class="font-sans font-black text-[11px] text-[#1E2229] leading-none">UPI</span>
                 </div>
 
                 <!-- RuPay -->
@@ -298,6 +297,18 @@
 
     </div>
 </footer>
+
+<style>
+    .footer-email-input:-webkit-autofill,
+    .footer-email-input:-webkit-autofill:hover, 
+    .footer-email-input:-webkit-autofill:focus,
+    .footer-email-input:-webkit-autofill:active {
+        -webkit-text-fill-color: #ffffff !important;
+        -webkit-box-shadow: 0 0 0 1000px #3A060E inset !important;
+        box-shadow: 0 0 0 1000px #3A060E inset !important;
+        transition: background-color 5000s ease-in-out 0s;
+    }
+</style>
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
