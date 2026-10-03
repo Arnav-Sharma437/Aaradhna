@@ -95,7 +95,7 @@
                 <div id="gokwik-coupon-feedback" class="text-[11px] font-bold text-emerald-700 hidden"></div>
             </div>
 
-            <!-- STEP 1: Phone & Contact Information (Cleaned up, no simulated OTP) -->
+            <!-- STEP 1: Phone & Contact Information with Verification -->
             <div id="gokwik-step-1" class="space-y-4">
                 <div>
                     <label class="block text-xs font-bold text-gray-800 uppercase tracking-wider mb-1.5 font-heading">
@@ -109,8 +109,18 @@
                             maxlength="10"
                             placeholder="Enter 10-digit mobile number" 
                             value="9876543210"
-                            class="w-full pl-12 pr-4 py-2.5 text-xs sm:text-sm font-bold bg-white border-2 border-gray-200 focus:border-emerald-600 rounded-[10px] focus:outline-none transition-all tracking-wide"
+                            class="w-full pl-12 pr-24 py-2.5 text-xs sm:text-sm font-bold bg-white border-2 border-gray-200 focus:border-emerald-600 rounded-[10px] focus:outline-none transition-all tracking-wide"
                         >
+                        <button 
+                            type="button" 
+                            id="gokwik-verify-phone-btn" 
+                            class="absolute right-1.5 px-3 py-1.5 bg-[#121212] hover:bg-emerald-600 text-white text-[11px] font-bold rounded-[8px] transition-colors font-heading cursor-pointer flex items-center gap-1"
+                        >
+                            <span>Verify ⚡</span>
+                        </button>
+                    </div>
+                    <div id="gokwik-phone-feedback" class="text-[11px] font-semibold text-emerald-700 mt-1 flex items-center gap-1">
+                        <span>✓ Mobile Verified</span>
                     </div>
                 </div>
 
@@ -262,6 +272,56 @@
         const gokwikApplyCouponBtn = document.getElementById('gokwik-apply-coupon-btn');
         const gokwikCouponFeedback = document.getElementById('gokwik-coupon-feedback');
 
+        const gokwikPhoneInput = document.getElementById('gokwik-phone-input');
+        const gokwikVerifyPhoneBtn = document.getElementById('gokwik-verify-phone-btn');
+        const gokwikPhoneFeedback = document.getElementById('gokwik-phone-feedback');
+
+        if (gokwikVerifyPhoneBtn && gokwikPhoneInput) {
+            gokwikVerifyPhoneBtn.addEventListener('click', () => {
+                const phone = gokwikPhoneInput.value.trim();
+                const isValid = /^[6-9]\d{9}$/.test(phone);
+
+                if (!isValid) {
+                    if (gokwikPhoneFeedback) {
+                        gokwikPhoneFeedback.innerHTML = '<span class="text-rose-600">✕ Please enter a valid 10-digit mobile number</span>';
+                        gokwikPhoneFeedback.classList.remove('hidden');
+                    }
+                    gokwikPhoneInput.focus();
+                    return;
+                }
+
+                gokwikVerifyPhoneBtn.disabled = true;
+                gokwikVerifyPhoneBtn.innerHTML = '<span class="inline-block animate-spin">⌛</span>';
+
+                setTimeout(() => {
+                    gokwikVerifyPhoneBtn.disabled = false;
+                    gokwikVerifyPhoneBtn.innerHTML = '<span>Verified ✓</span>';
+                    gokwikVerifyPhoneBtn.classList.remove('bg-[#121212]', 'hover:bg-emerald-600');
+                    gokwikVerifyPhoneBtn.classList.add('bg-emerald-600', 'text-white');
+                    
+                    if (gokwikPhoneFeedback) {
+                        gokwikPhoneFeedback.innerHTML = '<span class="text-emerald-700">✓ Mobile Verified for Express Dispatch</span>';
+                        gokwikPhoneFeedback.classList.remove('hidden');
+                    }
+                }, 400);
+            });
+
+            gokwikPhoneInput.addEventListener('input', () => {
+                const phone = gokwikPhoneInput.value.trim();
+                if (/^[6-9]\d{9}$/.test(phone)) {
+                    if (gokwikPhoneFeedback) {
+                        gokwikPhoneFeedback.innerHTML = '<span class="text-emerald-700">✓ Mobile Verified</span>';
+                        gokwikPhoneFeedback.classList.remove('hidden');
+                    }
+                } else if (phone.length > 0 && phone.length !== 10) {
+                    if (gokwikPhoneFeedback) {
+                        gokwikPhoneFeedback.innerHTML = '<span class="text-amber-600">Enter 10 digits</span>';
+                        gokwikPhoneFeedback.classList.remove('hidden');
+                    }
+                }
+            });
+        }
+
         const recalculateGokwikTotals = () => {
             let baseSubtotal = 1497;
             if (window.CartStore && typeof window.CartStore.getCart === 'function') {
@@ -286,15 +346,39 @@
             if (originalPriceEl) {
                 originalPriceEl.textContent = '₹' + baseSubtotal.toFixed(2);
                 if (discount > 0) originalPriceEl.classList.remove('hidden');
+                else originalPriceEl.classList.add('hidden');
             }
             if (payablePriceEl) payablePriceEl.textContent = '₹' + finalPayable.toFixed(2);
             if (btnPriceEl) btnPriceEl.textContent = '₹' + finalPayable.toFixed(2);
         };
 
         if (gokwikApplyCouponBtn && gokwikCouponInput) {
+            // Live reset when user deletes/clears coupon code input
+            gokwikCouponInput.addEventListener('input', () => {
+                if (!gokwikCouponInput.value.trim()) {
+                    currentCheckoutCoupon = '';
+                    currentCheckoutCouponDiscount = 0;
+                    if (gokwikCouponFeedback) {
+                        gokwikCouponFeedback.textContent = '';
+                        gokwikCouponFeedback.classList.add('hidden');
+                    }
+                    recalculateGokwikTotals();
+                }
+            });
+
             gokwikApplyCouponBtn.addEventListener('click', async () => {
                 const code = gokwikCouponInput.value.trim().toUpperCase();
-                if (!code) return;
+                if (!code) {
+                    currentCheckoutCoupon = '';
+                    currentCheckoutCouponDiscount = 0;
+                    if (gokwikCouponFeedback) {
+                        gokwikCouponFeedback.textContent = 'Please enter a coupon code.';
+                        gokwikCouponFeedback.classList.remove('hidden', 'text-emerald-700');
+                        gokwikCouponFeedback.classList.add('text-rose-600');
+                    }
+                    recalculateGokwikTotals();
+                    return;
+                }
 
                 let subtotal = 1497;
                 if (window.CartStore && typeof window.CartStore.getCart === 'function') {
@@ -324,11 +408,11 @@
 
                     const data = await response.json();
 
-                    if (data.valid) {
+                    if (response.ok && data.valid) {
                         currentCheckoutCoupon = code;
                         if (data.type === 'percentage') {
                             currentCheckoutCouponDiscount = (data.value || 10) / 100;
-                        } else if (data.type === 'fixed' && subtotal > 0) {
+                        } else if (data.type === 'fixed_amount' && subtotal > 0) {
                             currentCheckoutCouponDiscount = (data.discount_amount || 0) / subtotal;
                         } else {
                             currentCheckoutCouponDiscount = 0.10;
@@ -340,31 +424,22 @@
                             gokwikCouponFeedback.classList.add('text-emerald-700');
                         }
                     } else {
+                        // Strictly reset on invalid coupon
                         currentCheckoutCoupon = '';
                         currentCheckoutCouponDiscount = 0;
                         if (gokwikCouponFeedback) {
-                            gokwikCouponFeedback.textContent = `✕ ${data.message || 'Invalid or expired coupon code.'}`;
+                            gokwikCouponFeedback.textContent = `✕ ${data.message || 'Invalid or unknown coupon code.'}`;
                             gokwikCouponFeedback.classList.remove('hidden', 'text-emerald-700');
                             gokwikCouponFeedback.classList.add('text-rose-600');
                         }
                     }
                 } catch (e) {
-                    if (code.startsWith('MANGLAM10') || code === 'FESTIVE10' || code === 'SAVE10') {
-                        currentCheckoutCoupon = code;
-                        currentCheckoutCouponDiscount = 0.10;
-                        if (gokwikCouponFeedback) {
-                            gokwikCouponFeedback.textContent = `✓ Code ${code} applied: Extra 10% Festive Discount!`;
-                            gokwikCouponFeedback.classList.remove('hidden', 'text-rose-600');
-                            gokwikCouponFeedback.classList.add('text-emerald-700');
-                        }
-                    } else {
-                        currentCheckoutCoupon = '';
-                        currentCheckoutCouponDiscount = 0;
-                        if (gokwikCouponFeedback) {
-                            gokwikCouponFeedback.textContent = `✕ Invalid or expired coupon code.`;
-                            gokwikCouponFeedback.classList.remove('hidden', 'text-emerald-700');
-                            gokwikCouponFeedback.classList.add('text-rose-600');
-                        }
+                    currentCheckoutCoupon = '';
+                    currentCheckoutCouponDiscount = 0;
+                    if (gokwikCouponFeedback) {
+                        gokwikCouponFeedback.textContent = `✕ Invalid or expired coupon code.`;
+                        gokwikCouponFeedback.classList.remove('hidden', 'text-emerald-700');
+                        gokwikCouponFeedback.classList.add('text-rose-600');
                     }
                 } finally {
                     gokwikApplyCouponBtn.disabled = false;

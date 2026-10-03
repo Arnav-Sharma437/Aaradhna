@@ -428,9 +428,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const couponFeedback = document.getElementById('coupon-feedback');
 
     if (applyCouponBtn && couponInput) {
+        // Real-time reset if user clears the input box
+        couponInput.addEventListener('input', () => {
+            if (!couponInput.value.trim()) {
+                activeCouponDiscount = 0;
+                if (couponFeedback) {
+                    couponFeedback.textContent = '';
+                    couponFeedback.classList.add('hidden');
+                }
+                renderCartPage();
+                renderCartDrawer();
+            }
+        });
+
         applyCouponBtn.addEventListener('click', async () => {
             const code = couponInput.value.trim().toUpperCase();
-            if (!code) return;
+            if (!code) {
+                activeCouponDiscount = 0;
+                if (couponFeedback) {
+                    couponFeedback.textContent = 'Please enter a coupon code.';
+                    couponFeedback.classList.remove('hidden', 'text-emerald-700');
+                    couponFeedback.classList.add('text-rose-600');
+                }
+                renderCartPage();
+                renderCartDrawer();
+                return;
+            }
 
             const cart = getCart();
             const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
@@ -455,10 +478,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const data = await response.json();
 
-                if (data.valid) {
+                if (response.ok && data.valid) {
                     if (data.type === 'percentage') {
                         activeCouponDiscount = (data.value || 10) / 100;
-                    } else if (data.type === 'fixed' && subtotal > 0) {
+                    } else if (data.type === 'fixed_amount' && subtotal > 0) {
                         activeCouponDiscount = (data.discount_amount || 0) / subtotal;
                     } else {
                         activeCouponDiscount = 0.10;
@@ -469,39 +492,27 @@ document.addEventListener('DOMContentLoaded', () => {
                         couponFeedback.classList.remove('hidden', 'text-rose-600');
                         couponFeedback.classList.add('text-emerald-700');
                     }
-                    renderCartPage();
-                    renderCartDrawer();
                 } else {
+                    // Strictly zero out discount on invalid or expired code
                     activeCouponDiscount = 0;
                     if (couponFeedback) {
-                        couponFeedback.textContent = `✕ ${data.message || 'Invalid or expired coupon code.'}`;
+                        couponFeedback.textContent = `✕ ${data.message || 'Invalid or unknown coupon code.'}`;
                         couponFeedback.classList.remove('hidden', 'text-emerald-700');
                         couponFeedback.classList.add('text-rose-600');
                     }
-                    renderCartPage();
-                    renderCartDrawer();
                 }
             } catch (err) {
-                // Client-side fallback if offline
-                if (code.startsWith('MANGLAM10') || code === 'FESTIVE10' || code === 'SAVE10') {
-                    activeCouponDiscount = 0.10;
-                    if (couponFeedback) {
-                        couponFeedback.textContent = `✓ Code ${code} applied: Extra 10% Festive Discount!`;
-                        couponFeedback.classList.remove('hidden', 'text-rose-600');
-                        couponFeedback.classList.add('text-emerald-700');
-                    }
-                } else {
-                    if (couponFeedback) {
-                        couponFeedback.textContent = `✕ Invalid or expired coupon code.`;
-                        couponFeedback.classList.remove('hidden', 'text-emerald-700');
-                        couponFeedback.classList.add('text-rose-600');
-                    }
+                activeCouponDiscount = 0;
+                if (couponFeedback) {
+                    couponFeedback.textContent = `✕ Invalid or expired coupon code.`;
+                    couponFeedback.classList.remove('hidden', 'text-emerald-700');
+                    couponFeedback.classList.add('text-rose-600');
                 }
-                renderCartPage();
-                renderCartDrawer();
             } finally {
                 applyCouponBtn.disabled = false;
                 applyCouponBtn.textContent = 'Apply';
+                renderCartPage();
+                renderCartDrawer();
             }
         });
     }
