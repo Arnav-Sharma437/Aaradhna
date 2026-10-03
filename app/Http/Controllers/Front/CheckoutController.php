@@ -201,11 +201,11 @@ class CheckoutController extends Controller
             }
 
             // 5. Razorpay Online Payment Flow
-            $razorpayKey = config('services.razorpay.key');
-            $razorpaySecret = config('services.razorpay.secret');
+            $razorpayKey = config('services.razorpay.key') ?: env('RAZORPAY_KEY_ID') ?: env('RAZORPAY_KEY') ?: env('RAZORPAY_PUBLIC_KEY');
+            $razorpaySecret = config('services.razorpay.secret') ?: env('RAZORPAY_KEY_SECRET') ?: env('RAZORPAY_SECRET') ?: env('RAZORPAY_API_SECRET');
 
             if (empty($razorpayKey) || empty($razorpaySecret)) {
-                throw new \Exception('Razorpay credentials are not configured in .env');
+                throw new \Exception('Razorpay credentials (RAZORPAY_KEY_ID / RAZORPAY_KEY_SECRET) are not configured in your server .env file.');
             }
 
             $api = new Api($razorpayKey, $razorpaySecret);
@@ -273,13 +273,13 @@ class CheckoutController extends Controller
         ]);
 
         try {
-            $razorpayKey = config('services.razorpay.key');
-            $razorpaySecret = config('services.razorpay.secret');
+            $razorpayKey = config('services.razorpay.key') ?: env('RAZORPAY_KEY_ID') ?: env('RAZORPAY_KEY') ?: env('RAZORPAY_PUBLIC_KEY');
+            $razorpaySecret = config('services.razorpay.secret') ?: env('RAZORPAY_KEY_SECRET') ?: env('RAZORPAY_SECRET') ?: env('RAZORPAY_API_SECRET');
 
             if (empty($razorpayKey) || empty($razorpaySecret)) {
                 return response()->json([
                     'success' => false,
-                    'message' => 'Razorpay credentials not configured.'
+                    'message' => 'Razorpay credentials (RAZORPAY_KEY_ID / RAZORPAY_KEY_SECRET) not configured on server.'
                 ], 500);
             }
 
