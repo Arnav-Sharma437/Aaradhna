@@ -150,11 +150,11 @@
                     </div>
                 </div>
 
-                <!-- 2. DESKTOP VIEW: Large High-Res 2-Column Grid (Exact 5px gap & 8px/10px radius, No Borders) -->
-                <div class="hidden lg:grid grid-cols-2 gap-[5px]">
+                <!-- 2. DESKTOP VIEW: Large High-Res 2-Column Grid (8px gap & 8px/10px radius, No Borders) -->
+                <div class="hidden lg:grid grid-cols-2 gap-2">
                     
                     <!-- Visual 1: Hero Packshot with Ceramic Stand Banner -->
-                    <div class="relative aspect-[3/4] rounded-[8px] sm:rounded-[10px] overflow-hidden bg-[#FAF7F2] shadow-xs group">
+                    <div class="relative aspect-[4/4.8] rounded-[8px] sm:rounded-[10px] overflow-hidden bg-[#FAF7F2] shadow-xs group">
                         <img src="{{ $galleryImages[0] }}" alt="{{ $product->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         @if($hasDiscount || $discountPercent)
                         <div class="absolute top-2.5 left-2.5 z-10 pointer-events-none">
@@ -169,7 +169,7 @@
                     </div>
 
                     <!-- Visual 2: Artisanal Pooja Altar & Burning Incense -->
-                    <div class="relative aspect-[3/4] rounded-[8px] sm:rounded-[10px] overflow-hidden bg-[#FAF7F2] shadow-xs group">
+                    <div class="relative aspect-[4/4.8] rounded-[8px] sm:rounded-[10px] overflow-hidden bg-[#FAF7F2] shadow-xs group">
                         <img src="{{ $galleryImages[1] ?? asset('assets/images/hero-incense-banner.jpg') }}" alt="Manglam Sacred Altar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute bottom-2.5 left-2.5 right-2.5 bg-black/60 backdrop-blur-xs py-1.5 px-3 rounded-[6px] text-center text-white text-xs font-bold tracking-wider shadow-sm font-body">
                             100% BAMBOO FREE &amp; VEDIC
@@ -177,7 +177,7 @@
                     </div>
 
                     <!-- Visual 3: Sacred Camphor / Temple Crystals / Detail -->
-                    <div class="relative aspect-[3/4] rounded-[8px] sm:rounded-[10px] overflow-hidden bg-[#FAF7F2] shadow-xs group">
+                    <div class="relative aspect-[4/4.8] rounded-[8px] sm:rounded-[10px] overflow-hidden bg-[#FAF7F2] shadow-xs group">
                         <img src="{{ $galleryImages[2] ?? asset('assets/images/camphor-refill-pack-card.jpg') }}" alt="Pure Temple Ingredients" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full bg-white/95 text-[#965A15] text-[11px] font-bold uppercase tracking-wider font-heading border border-[#D38928]/40 shadow-xs">
                             Zero Charcoal
@@ -185,33 +185,13 @@
                     </div>
 
                     <!-- Visual 4: Devotional Ambient Living Room -->
-                    <div class="relative aspect-[3/4] rounded-[8px] sm:rounded-[10px] overflow-hidden bg-[#FAF7F2] shadow-xs group">
+                    <div class="relative aspect-[4/4.8] rounded-[8px] sm:rounded-[10px] overflow-hidden bg-[#FAF7F2] shadow-xs group">
                         <img src="{{ $galleryImages[3] ?? asset('assets/images/hero-ram-uphaar-banner.jpg') }}" alt="Sacred Fragrance Ambience" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute bottom-2.5 left-2.5 right-2.5 bg-black/60 backdrop-blur-xs py-1.5 px-3 rounded-[6px] text-center text-white text-xs font-bold tracking-wider shadow-sm font-body">
                             TEMPLE-GRADE PURITY
                         </div>
                     </div>
 
-                </div>
-
-                <!-- Fragrance Notes & Why Choose Manglam (High-Res Image Format with exact equal aspect-[3/4] size & 5px Gap) -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-[5px] pt-0.5">
-                    <div class="relative w-full aspect-[3/4] rounded-[8px] sm:rounded-[10px] overflow-hidden bg-[#8C531B] shadow-xs group">
-                        <img 
-                            src="{{ asset('assets/images/fragrance-notes-card.png') }}" 
-                            alt="Fragrance Notes Aromatic Profile" 
-                            class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
-                            loading="lazy"
-                        >
-                    </div>
-                    <div class="relative w-full aspect-[3/4] rounded-[8px] sm:rounded-[10px] overflow-hidden bg-white shadow-xs group">
-                        <img 
-                            src="{{ asset('assets/images/why-choose-manglam-card.png') }}" 
-                            alt="Why Choose Manglam Purity Guarantee" 
-                            class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
-                            loading="lazy"
-                        >
-                    </div>
                 </div>
             </div>
 
@@ -390,26 +370,31 @@
                         </a>
                     </div>
 
-                    <!-- 1. Product Description Accordion (Collapsible with Title & Arrow) -->
+                    <!-- 1. Product Description Accordion (Collapsible & Closed by Default) -->
                     <div class="pt-2">
                         <div class="border border-[#EADBCC] rounded-[8px] sm:rounded-[10px] bg-white overflow-hidden shadow-2xs">
                             <button 
                                 type="button" 
                                 id="product-desc-accordion-btn"
-                                class="w-full px-4 py-3.5 flex items-center justify-between text-left font-bold text-sm sm:text-base text-[#121212] hover:text-[#D38928] bg-white hover:bg-[#FAF8F5] transition-colors focus:outline-none font-heading cursor-pointer select-none"
+                                class="w-full px-4 py-3.5 flex items-center justify-between text-left font-bold text-base sm:text-lg text-[#121212] hover:text-[#D38928] bg-white hover:bg-[#FAF8F5] transition-colors focus:outline-none font-heading cursor-pointer select-none"
                                 onclick="
                                     const body = document.getElementById('product-desc-accordion-body');
                                     const icon = document.getElementById('product-desc-accordion-icon');
-                                    const isHidden = body.classList.toggle('hidden');
-                                    icon.style.transform = isHidden ? 'rotate(0deg)' : 'rotate(180deg)';
+                                    if (body.classList.contains('hidden')) {
+                                        body.classList.remove('hidden');
+                                        icon.style.transform = 'rotate(180deg)';
+                                    } else {
+                                        body.classList.add('hidden');
+                                        icon.style.transform = 'rotate(0deg)';
+                                    }
                                 "
                             >
                                 <span>Product Description</span>
-                                <svg id="product-desc-accordion-icon" class="w-4 h-4 text-[#D38928] transform transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <svg id="product-desc-accordion-icon" class="w-5 h-5 text-[#D38928] transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
                                 </svg>
                             </button>
-                            <div id="product-desc-accordion-body" class="px-4 pb-4 pt-1 text-xs sm:text-sm text-gray-600 leading-relaxed font-body border-t border-[#EADBCC]/60 bg-[#FFFEFC]">
+                            <div id="product-desc-accordion-body" class="hidden px-4 pb-4 pt-2 text-sm sm:text-[15px] text-gray-700 leading-relaxed font-body border-t border-[#EADBCC]/60 bg-[#FFFEFC] transition-all duration-300">
                                 @if($product->description)
                                     <div class="prose prose-sm max-w-none text-gray-700">
                                         {!! $product->description !!}
@@ -423,21 +408,158 @@
                         </div>
                     </div>
 
-                    <!-- 2. Specifications & Purity Comparison Image Section (Just Below Description) -->
+                    <!-- 2. Customer Trust & Reviews Badge (Clickable link to #customer-reviews) -->
                     <div class="pt-2">
-                        <div class="w-full rounded-[8px] sm:rounded-[10px] overflow-hidden border border-[#EADBCC] shadow-2xs bg-white">
-                            <img 
-                                src="{{ asset('assets/images/specifications-purity-comparison.png') }}" 
-                                alt="Specifications and Purity Comparison Manglam vs Others" 
-                                class="w-full h-auto block object-cover"
-                                loading="lazy"
-                            >
-                        </div>
+                        <a href="#customer-reviews" class="block w-full text-center group cursor-pointer focus:outline-none">
+                            <div class="py-2.5 px-4 rounded-[8px] sm:rounded-[10px] bg-[#FAF7F2] border border-[#EADBCC]/80 shadow-2xs hover:shadow-xs transition-all flex flex-col items-center justify-center">
+                                <img 
+                                    src="{{ asset('assets/images/customer-trust-avatars.png') }}" 
+                                    alt="Trusted by 10Lakh+ Happy Customers" 
+                                    class="w-full max-w-[340px] sm:max-w-[380px] h-auto object-contain mx-auto group-hover:scale-102 transition-transform duration-300"
+                                    loading="lazy"
+                                >
+                            </div>
+                        </a>
                     </div>
                 </div>
 
             </div>
 
+        </div>
+
+        <!-- ========================================================================= -->
+        <!-- 2. SPECIFICATIONS & PURITY COMPARISON SECTION (HTML / Tailwind UI)        -->
+        <!-- ========================================================================= -->
+        <div class="mt-12 sm:mt-16 max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 items-stretch">
+                
+                <!-- Left Card: Specifications (5 Cols) -->
+                <div class="lg:col-span-5 bg-white rounded-[14px] sm:rounded-[18px] border border-[#EADBCC] shadow-xs overflow-hidden flex flex-col">
+                    <div class="bg-[#7B1925] px-6 py-3.5 border-b border-[#D38928]/40">
+                        <h3 class="font-serif text-xl sm:text-2xl text-white font-medium tracking-wide">
+                            Specifications
+                        </h3>
+                    </div>
+                    <div class="p-4 sm:p-6 flex-1 flex flex-col justify-between divide-y divide-[#F1E5D8]">
+                        <div class="py-3 flex items-center justify-between text-sm sm:text-[15px]">
+                            <span class="text-gray-700 font-medium">Country of Origin</span>
+                            <span class="text-gray-900 font-bold flex items-center gap-1.5">
+                                Vrindavan, Bharat
+                                <span class="text-base leading-none">🇮🇳</span>
+                            </span>
+                        </div>
+                        <div class="py-3 flex items-center justify-between text-sm sm:text-[15px]">
+                            <span class="text-gray-700 font-medium">Item Form</span>
+                            <span class="text-gray-900 font-bold">{{ $product->item_form ?? 'Bambooless Incense' }}</span>
+                        </div>
+                        <div class="py-3 flex items-center justify-between text-sm sm:text-[15px]">
+                            <span class="text-gray-700 font-medium">Key Herb / Essence</span>
+                            <span class="text-gray-900 font-bold">{{ $product->fragrance ?? 'Pure Bhimseni & Herbs' }}</span>
+                        </div>
+                        <div class="py-3 flex items-center justify-between text-sm sm:text-[15px]">
+                            <span class="text-gray-700 font-medium">Stick Count</span>
+                            <span class="text-gray-900 font-bold">{{ $product->stick_count ? $product->stick_count . ' Sticks / Pack' : '100 Sticks / Pack' }}</span>
+                        </div>
+                        <div class="py-3 flex items-center justify-between text-sm sm:text-[15px]">
+                            <span class="text-gray-700 font-medium">Burn Time</span>
+                            <span class="text-gray-900 font-bold">{{ $product->burn_time ?? '45 – 50 Minutes' }}</span>
+                        </div>
+                        <div class="py-3 flex items-center justify-between text-sm sm:text-[15px]">
+                            <span class="text-gray-700 font-medium">Ceramic Holder</span>
+                            <span class="text-[#1B7F49] font-bold">Included FREE (₹150 Value)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Card: Features Comparison (7 Cols) -->
+                <div class="lg:col-span-7 bg-white rounded-[14px] sm:rounded-[18px] border border-[#EADBCC] shadow-xs overflow-hidden flex flex-col">
+                    <!-- Header Bar -->
+                    <div class="bg-[#7B1925] border-b border-[#D38928]/40 grid grid-cols-12 items-center">
+                        <div class="col-span-6 px-6 py-3.5">
+                            <h3 class="font-serif text-xl sm:text-2xl text-white font-medium tracking-wide">
+                                Features
+                            </h3>
+                        </div>
+                        <div class="col-span-3 bg-[#FDF6ED] py-2 px-2 text-center rounded-t-lg border-t-2 border-x-2 border-[#D38928]/50 shadow-xs flex flex-col items-center justify-center">
+                            <svg class="w-4 h-4 text-[#C27E23] mb-0.5" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C12 2 8 7 8 11C8 14.5 10.5 17 12 18C13.5 17 16 14.5 16 11C16 7 12 2 12 2Z"/>
+                                <path d="M6 13C4 14.5 3 17 4 19C5.5 20.5 8 20.5 10 19.5C9 18 8 16 8 13C7.2 13 6.5 13 6 13Z" opacity="0.7"/>
+                                <path d="M18 13C18.8 13 19.5 13 20 13C21 17 20 19.5 18.5 20.5C16.5 20.5 14 18 15 16.5C15.8 14.8 17 13.5 18 13Z" opacity="0.7"/>
+                            </svg>
+                            <span class="text-[11px] sm:text-xs font-black tracking-widest text-[#7B1925] uppercase font-heading">Manglam</span>
+                        </div>
+                        <div class="col-span-3 py-3 px-2 text-center text-[11px] sm:text-xs font-bold tracking-wider text-[#F7E7CE] uppercase font-heading">
+                            Others
+                        </div>
+                    </div>
+
+                    <!-- Comparison Rows -->
+                    <div class="p-0 flex-1 flex flex-col justify-between divide-y divide-[#F1E5D8]">
+                        
+                        <div class="grid grid-cols-12 items-center text-sm sm:text-[15px]">
+                            <div class="col-span-6 px-4 sm:px-6 py-3 text-gray-800 font-medium">
+                                100% Bamboo-Free (Scripture Compliant)
+                            </div>
+                            <div class="col-span-3 bg-[#FDF6ED] h-full flex items-center justify-center py-3 border-x border-[#EEDBCA]/60">
+                                <span class="w-6 h-6 rounded-full bg-[#1B7F49] text-white flex items-center justify-center text-xs shadow-xs font-bold">✓</span>
+                            </div>
+                            <div class="col-span-3 bg-[#FBF7F2]/60 h-full flex items-center justify-center py-3">
+                                <span class="w-6 h-6 rounded-full bg-[#D32F2F] text-white flex items-center justify-center text-xs shadow-xs font-bold">✕</span>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-12 items-center text-sm sm:text-[15px]">
+                            <div class="col-span-6 px-4 sm:px-6 py-3 text-gray-800 font-medium">
+                                Zero Toxic Charcoal (No Eye Burning)
+                            </div>
+                            <div class="col-span-3 bg-[#FDF6ED] h-full flex items-center justify-center py-3 border-x border-[#EEDBCA]/60">
+                                <span class="w-6 h-6 rounded-full bg-[#1B7F49] text-white flex items-center justify-center text-xs shadow-xs font-bold">✓</span>
+                            </div>
+                            <div class="col-span-3 bg-[#FBF7F2]/60 h-full flex items-center justify-center py-3">
+                                <span class="w-6 h-6 rounded-full bg-[#D32F2F] text-white flex items-center justify-center text-xs shadow-xs font-bold">✕</span>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-12 items-center text-sm sm:text-[15px]">
+                            <div class="col-span-6 px-4 sm:px-6 py-3 text-gray-800 font-medium">
+                                Premium Organic Essential Herbs
+                            </div>
+                            <div class="col-span-3 bg-[#FDF6ED] h-full flex items-center justify-center py-3 border-x border-[#EEDBCA]/60">
+                                <span class="w-6 h-6 rounded-full bg-[#1B7F49] text-white flex items-center justify-center text-xs shadow-xs font-bold">✓</span>
+                            </div>
+                            <div class="col-span-3 bg-[#FBF7F2]/60 h-full flex items-center justify-center py-3">
+                                <span class="w-6 h-6 rounded-full bg-[#D32F2F] text-white flex items-center justify-center text-xs shadow-xs font-bold">✕</span>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-12 items-center text-sm sm:text-[15px]">
+                            <div class="col-span-6 px-4 sm:px-6 py-3 text-gray-800 font-medium">
+                                Long-Lasting Temple Scent (4+ Hours)
+                            </div>
+                            <div class="col-span-3 bg-[#FDF6ED] h-full flex items-center justify-center py-3 border-x border-[#EEDBCA]/60">
+                                <span class="w-6 h-6 rounded-full bg-[#1B7F49] text-white flex items-center justify-center text-xs shadow-xs font-bold">✓</span>
+                            </div>
+                            <div class="col-span-3 bg-[#FBF7F2]/60 h-full flex items-center justify-center py-3">
+                                <span class="w-6 h-6 rounded-full bg-[#D32F2F] text-white flex items-center justify-center text-xs shadow-xs font-bold">✕</span>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-12 items-center text-sm sm:text-[15px]">
+                            <div class="col-span-6 px-4 sm:px-6 py-3 text-gray-800 font-medium">
+                                Complimentary Artisan Terracotta Stand
+                            </div>
+                            <div class="col-span-3 bg-[#FDF6ED] h-full flex items-center justify-center py-3 border-x border-[#EEDBCA]/60 rounded-b-lg">
+                                <span class="w-6 h-6 rounded-full bg-[#1B7F49] text-white flex items-center justify-center text-xs shadow-xs font-bold">✓</span>
+                            </div>
+                            <div class="col-span-3 bg-[#FBF7F2]/60 h-full flex items-center justify-center py-3">
+                                <span class="w-6 h-6 rounded-full bg-[#D32F2F] text-white flex items-center justify-center text-xs shadow-xs font-bold">✕</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
         </div>
 
         <!-- ========================================================================= -->
