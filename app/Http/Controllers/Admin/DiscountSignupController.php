@@ -5,16 +5,47 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Coupon;
 use App\Models\DiscountSignup;
+use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\View\View;
 
 class DiscountSignupController extends Controller
 {
     /**
+     * Ensure table exists before querying
+     */
+    protected function ensureTableExists(): void
+    {
+        try {
+            if (!Schema::hasTable('discount_signups')) {
+                Schema::create('discount_signups', function (Blueprint $table) {
+                    $table->id();
+                    $table->string('name');
+                    $table->string('phone', 20);
+                    $table->string('email')->index();
+                    $table->string('product_interest');
+                    $table->string('ordering_blocker');
+                    $table->string('discovery_source');
+                    $table->string('product_priority');
+                    $table->string('generated_coupon_code')->index();
+                    $table->unsignedBigInteger('coupon_id')->nullable();
+                    $table->string('coupon_status')->default('issued')->index();
+                    $table->string('ip_address', 45)->nullable();
+                    $table->timestamps();
+                });
+            }
+        } catch (\Throwable $e) {
+            // Ignore
+        }
+    }
+
+    /**
      * Display a listing of discount signups with search, filters, and summary metrics.
      */
     public function index(Request $request): View
     {
+        $this->ensureTableExists();
         $query = DiscountSignup::with('coupon')->latest();
 
         // 1. Search Query

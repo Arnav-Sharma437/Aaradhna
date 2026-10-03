@@ -5,18 +5,49 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use App\Models\Coupon;
 use App\Models\DiscountSignup;
+use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
 
 class DiscountSignupController extends Controller
 {
     /**
+     * Ensure the table exists on live hostinger / cpanel if migrations were not run
+     */
+    protected function ensureTableExists(): void
+    {
+        try {
+            if (!Schema::hasTable('discount_signups')) {
+                Schema::create('discount_signups', function (Blueprint $table) {
+                    $table->id();
+                    $table->string('name');
+                    $table->string('phone', 20);
+                    $table->string('email')->index();
+                    $table->string('product_interest');
+                    $table->string('ordering_blocker');
+                    $table->string('discovery_source');
+                    $table->string('product_priority');
+                    $table->string('generated_coupon_code')->index();
+                    $table->unsignedBigInteger('coupon_id')->nullable();
+                    $table->string('coupon_status')->default('issued')->index();
+                    $table->string('ip_address', 45)->nullable();
+                    $table->timestamps();
+                });
+            }
+        } catch (\Throwable $e) {
+            // Log or continue
+        }
+    }
+
+    /**
      * Store discount signup multi-step survey response and generate a unique 10% coupon.
      */
     public function store(Request $request): JsonResponse
     {
+        $this->ensureTableExists();
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'phone' => ['required', 'string', 'regex:/^[6-9]\d{9}$/'],

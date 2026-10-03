@@ -78,7 +78,7 @@
                             'collections' => \App\Models\Collection::count(),
                             'customers' => \App\Models\User::where('role', 'customer')->count(),
                             'coupons' => \App\Models\Coupon::where('is_active', true)->count(),
-                            'discount_signups' => \App\Models\DiscountSignup::count(),
+                            'discount_signups' => \Illuminate\Support\Facades\Schema::hasTable('discount_signups') ? \App\Models\DiscountSignup::count() : 0,
                             'reviews' => \App\Models\Review::count(),
                             'banners' => \App\Models\HomepageBanner::where('is_active', true)->count(),
                             'blogs' => \App\Models\BlogPost::where('is_published', true)->count(),
