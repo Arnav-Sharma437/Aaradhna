@@ -34,7 +34,7 @@
                         <button 
                             type="button" 
                             id="availability-toggle-btn"
-                            class="px-4 py-2 bg-[#FAF5EE] hover:bg-[#F3ECE0] rounded-[10px] text-xs sm:text-sm text-[#1F1F1F] font-medium flex items-center gap-1.5 transition-colors cursor-pointer border border-[#EADBCC]/50"
+                            class="px-4 py-2 {{ $availSelectedCount > 0 ? 'bg-[#EEDBC5] border-[#D38928]/60 text-[#2B1810]' : 'bg-[#FAF5EE] hover:bg-[#F3ECE0] border-[#EADBCC]/50 text-[#1F1F1F]' }} rounded-[10px] text-xs sm:text-sm font-medium flex items-center gap-1.5 transition-colors cursor-pointer border"
                         >
                             <span class="{{ $availSelectedCount > 0 ? 'underline underline-offset-4 decoration-2 decoration-[#121212] font-semibold' : '' }}">Availability</span>
                             <svg class="w-3.5 h-3.5 text-gray-500 transition-transform duration-200" id="availability-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
@@ -86,7 +86,7 @@
                         <button 
                             type="button" 
                             id="price-toggle-btn"
-                            class="px-4 py-2 bg-[#FAF5EE] hover:bg-[#F3ECE0] rounded-[10px] text-xs sm:text-sm text-[#1F1F1F] font-medium flex items-center gap-1.5 transition-colors cursor-pointer border border-[#EADBCC]/50"
+                            class="px-4 py-2 {{ $hasPriceFilter ? 'bg-[#EEDBC5] border-[#D38928]/60 text-[#2B1810]' : 'bg-[#FAF5EE] hover:bg-[#F3ECE0] border-[#EADBCC]/50 text-[#1F1F1F]' }} rounded-[10px] text-xs sm:text-sm font-medium flex items-center gap-1.5 transition-colors cursor-pointer border"
                         >
                             <span class="{{ $hasPriceFilter ? 'underline underline-offset-4 decoration-2 decoration-[#121212] font-semibold' : '' }}">Price</span>
                             <svg class="w-3.5 h-3.5 text-gray-500 transition-transform duration-200" id="price-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
@@ -142,11 +142,11 @@
                         @endphp
                         <a 
                             href="{{ request()->fullUrlWithQuery(['availability' => count($newAvail) > 0 ? $newAvail : null, 'page' => null]) }}"
-                            class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#FAF5EE] hover:bg-[#F3ECE0] text-[#1F1F1F] rounded-full text-xs font-medium border border-[#EADBCC] transition-colors group cursor-pointer"
+                            class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#F0E4D4] hover:bg-[#E5D5C1] text-[#2B1810] rounded-full text-xs font-semibold border border-[#D5BEA6] shadow-2xs transition-colors group cursor-pointer"
                             title="Remove In stock filter"
                         >
                             <span>Availability: In stock</span>
-                            <span class="text-gray-400 group-hover:text-black font-bold text-[11px] leading-none">✕</span>
+                            <span class="text-gray-500 group-hover:text-black font-bold text-[11px] leading-none">✕</span>
                         </a>
                     @endif
 
@@ -156,22 +156,22 @@
                         @endphp
                         <a 
                             href="{{ request()->fullUrlWithQuery(['availability' => count($newAvail) > 0 ? $newAvail : null, 'page' => null]) }}"
-                            class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#FAF5EE] hover:bg-[#F3ECE0] text-[#1F1F1F] rounded-full text-xs font-medium border border-[#EADBCC] transition-colors group cursor-pointer"
+                            class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#F0E4D4] hover:bg-[#E5D5C1] text-[#2B1810] rounded-full text-xs font-semibold border border-[#D5BEA6] shadow-2xs transition-colors group cursor-pointer"
                             title="Remove Out of stock filter"
                         >
                             <span>Availability: Out of stock</span>
-                            <span class="text-gray-400 group-hover:text-black font-bold text-[11px] leading-none">✕</span>
+                            <span class="text-gray-500 group-hover:text-black font-bold text-[11px] leading-none">✕</span>
                         </a>
                     @endif
 
                     @if($hasPriceFilter)
                         <a 
                             href="{{ request()->fullUrlWithQuery(['price_min' => null, 'price_max' => null, 'page' => null]) }}"
-                            class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#FAF5EE] hover:bg-[#F3ECE0] text-[#1F1F1F] rounded-full text-xs font-medium border border-[#EADBCC] transition-colors group cursor-pointer"
+                            class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#F0E4D4] hover:bg-[#E5D5C1] text-[#2B1810] rounded-full text-xs font-semibold border border-[#D5BEA6] shadow-2xs transition-colors group cursor-pointer"
                             title="Remove Price filter"
                         >
                             <span>Price: ₹{{ request('price_min', 0) }} - ₹{{ request('price_max', $maxProductPrice) }}</span>
-                            <span class="text-gray-400 group-hover:text-black font-bold text-[11px] leading-none">✕</span>
+                            <span class="text-gray-500 group-hover:text-black font-bold text-[11px] leading-none">✕</span>
                         </a>
                     @endif
 
@@ -678,7 +678,7 @@
                         if (entry.isIntersecting) {
                             const el = entry.target;
                             const idx = parseInt(el.dataset.index || '0', 10);
-                            const delay = (idx % 4) * 80;
+                            const delay = (idx % 4) * 150;
                             setTimeout(() => {
                                 el.classList.add('is-revealed');
                             }, delay);
