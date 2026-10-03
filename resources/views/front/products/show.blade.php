@@ -81,16 +81,16 @@
     }
 @endphp
 
-<div class="bg-white min-h-screen py-6 lg:py-10 pb-24 sm:pb-36 font-body">
-    <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
+<div class="bg-white min-h-screen py-2 sm:py-4 pb-20 font-body">
+    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
 
-        <!-- Breadcrumbs -->
-        <nav class="flex items-center text-xs text-gray-500 mb-6 space-x-2 font-medium" aria-label="Breadcrumb">
+        <!-- Breadcrumbs (Compact Spacing) -->
+        <nav class="flex items-center text-xs text-gray-500 mb-3 space-x-2 font-medium" aria-label="Breadcrumb">
             <a href="{{ route('home') }}" class="hover:text-[#D38928] transition-colors">Home</a>
             <span>/</span>
             @if($product->category)
-                <a href="{{ route('collections.show', $product->category->slug) }}" class="hover:text-[#D38928] transition-colors">
-                    {{ $product->category->name }}
+                <a href="{{ route('collections.show', $product->category->slug) }}" class="hover:text-[#D38928] transition-colors capitalize">
+                    {{ strtolower($product->category->name) }}
                 </a>
                 <span>/</span>
             @else
@@ -103,15 +103,15 @@
         <!-- ========================================================================= -->
         <!-- 1. MAIN HERO SECTION (Left: Main Image + Gallery | Right: Clean Purchase Panel) -->
         <!-- ========================================================================= -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8 items-start">
             
             <!-- LEFT COLUMN: Mobile Single+Thumbnails & Desktop High-Res 2-Column Grid (7 Cols) -->
-            <div class="lg:col-span-7 space-y-6">
+            <div class="lg:col-span-7 space-y-4">
 
                 <!-- 1. MOBILE/TABLET VIEW: Main Hero Image + Horizontal Thumbnails Below (Visible on mobile/tablet, hidden on desktop) -->
-                <div class="block lg:hidden space-y-3.5" id="product-mobile-gallery">
+                <div class="block lg:hidden space-y-3" id="product-mobile-gallery">
                     <!-- Main Large Hero Image -->
-                    <div class="relative w-full aspect-square sm:aspect-[4/3.8] rounded-[20px] sm:rounded-[24px] overflow-hidden bg-[#FAF7F2] border border-gray-200/80 shadow-xs group">
+                    <div class="relative w-full aspect-square sm:aspect-[4/3.8] rounded-[18px] sm:rounded-[22px] overflow-hidden bg-[#FAF7F2] border border-gray-200/80 shadow-xs group">
                         <img 
                             id="main-product-gallery-img" 
                             src="{{ $galleryImages[0] }}" 
@@ -121,25 +121,25 @@
                         
                         <!-- Discount Badge top-left -->
                         @if($hasDiscount || $discountPercent)
-                        <div class="absolute top-4 left-4 z-10 pointer-events-none">
-                            <span class="inline-block bg-[#8B1E1E] text-white text-[11px] sm:text-xs font-bold px-3 py-1 rounded-[6px] tracking-wide shadow-sm">
+                        <div class="absolute top-3.5 left-3.5 z-10 pointer-events-none">
+                            <span class="inline-block bg-[#8B1E1E] text-white text-[11px] sm:text-xs font-bold px-2.5 py-0.5 rounded-[6px] tracking-wide shadow-sm font-body">
                                 {{ $discountPercent }}% OFF
                             </span>
                         </div>
                         @endif
 
                         <!-- Free Ceramic Stand highlight tag bottom -->
-                        <div class="absolute bottom-3.5 left-3.5 right-3.5 bg-black/60 backdrop-blur-xs py-2 px-3.5 rounded-[10px] text-center text-white text-xs font-semibold tracking-wide shadow-sm">
+                        <div class="absolute bottom-3 left-3 right-3 bg-black/60 backdrop-blur-xs py-1.5 px-3 rounded-[8px] text-center text-white text-xs font-semibold tracking-wide shadow-sm font-body">
                             FREE CERAMIC STAND <span class="text-[#F6DAA8] font-normal">Worth ₹150/-</span>
                         </div>
                     </div>
 
                     <!-- Horizontal Thumbnails Strip Directly Below -->
-                    <div class="flex items-center gap-3 sm:gap-4 overflow-x-auto pb-2 scrollbar-none" id="product-thumbnails-container">
+                    <div class="flex items-center gap-2.5 sm:gap-3 overflow-x-auto pb-1.5 scrollbar-none" id="product-thumbnails-container">
                         @foreach($galleryImages as $index => $imgUrl)
                             <button 
                                 type="button" 
-                                class="gallery-thumbnail-btn relative w-20 h-20 sm:w-24 sm:h-24 rounded-[12px] sm:rounded-[16px] overflow-hidden bg-[#FAF7F2] border-2 transition-all duration-200 shrink-0 cursor-pointer focus:outline-none {{ $index === 0 ? 'border-[#D38928] ring-2 ring-[#D38928]/30 shadow-sm opacity-100' : 'border-gray-200 hover:border-gray-400 opacity-75 hover:opacity-100' }}"
+                                class="gallery-thumbnail-btn relative w-18 h-18 sm:w-22 sm:h-22 rounded-[10px] sm:rounded-[14px] overflow-hidden bg-[#FAF7F2] border-2 transition-all duration-200 shrink-0 cursor-pointer focus:outline-none {{ $index === 0 ? 'border-[#D38928] ring-2 ring-[#D38928]/30 shadow-sm opacity-100' : 'border-gray-200 hover:border-gray-400 opacity-75 hover:opacity-100' }}"
                                 data-img-src="{{ $imgUrl }}"
                                 data-index="{{ $index }}"
                                 aria-label="View product image {{ $index + 1 }}"
@@ -151,43 +151,43 @@
                 </div>
 
                 <!-- 2. DESKTOP VIEW: Large High-Res 2-Column Grid (Visible on lg, hidden on mobile) -->
-                <div class="hidden lg:grid grid-cols-2 gap-5">
+                <div class="hidden lg:grid grid-cols-2 gap-4">
                     
                     <!-- Visual 1: Hero Packshot with Ceramic Stand Banner -->
-                    <div class="relative aspect-[3/4] rounded-[20px] overflow-hidden bg-[#FAF7F2] border border-gray-200 shadow-xs group">
+                    <div class="relative aspect-[3/4] rounded-[18px] overflow-hidden bg-[#FAF7F2] border border-gray-200 shadow-xs group">
                         <img src="{{ $galleryImages[0] }}" alt="{{ $product->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         @if($hasDiscount || $discountPercent)
-                        <div class="absolute top-4 left-4 z-10 pointer-events-none">
-                            <span class="inline-block bg-[#8B1E1E] text-white text-xs font-bold px-3 py-1 rounded-[6px] tracking-wide shadow-sm">
+                        <div class="absolute top-3.5 left-3.5 z-10 pointer-events-none">
+                            <span class="inline-block bg-[#8B1E1E] text-white text-xs font-bold px-2.5 py-0.5 rounded-[6px] tracking-wide shadow-sm font-body">
                                 {{ $discountPercent }}% OFF
                             </span>
                         </div>
                         @endif
-                        <div class="absolute bottom-3.5 left-3.5 right-3.5 bg-black/60 backdrop-blur-xs py-2 px-3 rounded-[10px] text-center text-white text-xs font-bold tracking-wider shadow-sm">
+                        <div class="absolute bottom-3 left-3 right-3 bg-black/60 backdrop-blur-xs py-1.5 px-3 rounded-[8px] text-center text-white text-xs font-bold tracking-wider shadow-sm font-body">
                             FREE CERAMIC STAND <span class="text-[#F6DAA8] font-normal">Worth ₹150/-</span>
                         </div>
                     </div>
 
                     <!-- Visual 2: Artisanal Pooja Altar & Burning Incense -->
-                    <div class="relative aspect-[3/4] rounded-[20px] overflow-hidden bg-[#FAF7F2] border border-gray-200 shadow-xs group">
+                    <div class="relative aspect-[3/4] rounded-[18px] overflow-hidden bg-[#FAF7F2] border border-gray-200 shadow-xs group">
                         <img src="{{ $galleryImages[1] ?? asset('assets/images/hero-incense-banner.jpg') }}" alt="Manglam Sacred Altar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute bottom-3.5 left-3.5 right-3.5 bg-black/60 backdrop-blur-xs py-2 px-3 rounded-[10px] text-center text-white text-xs font-bold tracking-wider shadow-sm">
+                        <div class="absolute bottom-3 left-3 right-3 bg-black/60 backdrop-blur-xs py-1.5 px-3 rounded-[8px] text-center text-white text-xs font-bold tracking-wider shadow-sm font-body">
                             100% BAMBOO FREE &amp; VEDIC
                         </div>
                     </div>
 
                     <!-- Visual 3: Sacred Camphor / Temple Crystals / Detail -->
-                    <div class="relative aspect-[3/4] rounded-[20px] overflow-hidden bg-[#FAF7F2] border border-gray-200 shadow-xs group">
+                    <div class="relative aspect-[3/4] rounded-[18px] overflow-hidden bg-[#FAF7F2] border border-gray-200 shadow-xs group">
                         <img src="{{ $galleryImages[2] ?? asset('assets/images/camphor-refill-pack-card.jpg') }}" alt="Pure Temple Ingredients" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/95 text-[#965A15] text-[11px] font-bold uppercase tracking-wider font-heading border border-[#D38928]/40 shadow-xs">
+                        <div class="absolute top-3.5 left-3.5 px-2.5 py-0.5 rounded-full bg-white/95 text-[#965A15] text-[11px] font-bold uppercase tracking-wider font-heading border border-[#D38928]/40 shadow-xs">
                             Zero Charcoal
                         </div>
                     </div>
 
                     <!-- Visual 4: Devotional Ambient Living Room -->
-                    <div class="relative aspect-[3/4] rounded-[20px] overflow-hidden bg-[#FAF7F2] border border-gray-200 shadow-xs group">
+                    <div class="relative aspect-[3/4] rounded-[18px] overflow-hidden bg-[#FAF7F2] border border-gray-200 shadow-xs group">
                         <img src="{{ $galleryImages[3] ?? asset('assets/images/hero-ram-uphaar-banner.jpg') }}" alt="Sacred Fragrance Ambience" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute bottom-3.5 left-3.5 right-3.5 bg-black/60 backdrop-blur-xs py-2 px-3 rounded-[10px] text-center text-white text-xs font-bold tracking-wider shadow-sm">
+                        <div class="absolute bottom-3 left-3 right-3 bg-black/60 backdrop-blur-xs py-1.5 px-3 rounded-[8px] text-center text-white text-xs font-bold tracking-wider shadow-sm font-body">
                             TEMPLE-GRADE PURITY
                         </div>
                     </div>
@@ -195,41 +195,41 @@
                 </div>
 
                 <!-- Fragrance Notes Pyramid & Why Choose Manglam Infographics -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
                     
                     <!-- Card 1: Fragrance Notes Pyramid -->
-                    <div class="bg-gradient-to-b from-[#A66E2E] to-[#6E4215] text-white p-6 rounded-[16px] shadow-sm flex flex-col justify-between">
+                    <div class="bg-gradient-to-b from-[#A66E2E] to-[#6E4215] text-white p-5 sm:p-6 rounded-[16px] shadow-sm flex flex-col justify-between">
                         <div>
                             <span class="text-[10px] font-extrabold uppercase tracking-widest text-[#F6DAA8] font-heading block mb-1">AROMATIC PROFILE</span>
-                            <h3 class="text-xl sm:text-2xl font-normal font-heading mb-4 text-white">Fragrance Notes</h3>
+                            <h3 class="text-xl sm:text-2xl font-normal font-heading mb-3 text-white">Fragrance Notes</h3>
                             
-                            <div class="space-y-3 text-xs">
-                                <div class="bg-black/20 p-2.5 rounded-[8px] border border-white/10">
+                            <div class="space-y-2.5 text-xs">
+                                <div class="bg-black/20 p-2 rounded-[8px] border border-white/10">
                                     <strong class="text-[#F6DAA8] block font-heading text-xs uppercase">TOP NOTES</strong>
                                     <span class="text-white/90">Pure Bhimseni Camphor & Divine Basil</span>
                                 </div>
-                                <div class="bg-black/20 p-2.5 rounded-[8px] border border-white/10">
+                                <div class="bg-black/20 p-2 rounded-[8px] border border-white/10">
                                     <strong class="text-[#F6DAA8] block font-heading text-xs uppercase">MID NOTES</strong>
                                     <span class="text-white/90">Vrindavan Chandan & Sacred Loban</span>
                                 </div>
-                                <div class="bg-black/20 p-2.5 rounded-[8px] border border-white/10">
+                                <div class="bg-black/20 p-2 rounded-[8px] border border-white/10">
                                     <strong class="text-[#F6DAA8] block font-heading text-xs uppercase">BASE NOTES</strong>
                                     <span class="text-white/90">Vedic Guggal & Ancient Amber Woods</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="pt-4 border-t border-white/15 mt-4 text-[11px] text-[#F6DAA8]">
+                        <div class="pt-3 border-t border-white/15 mt-3 text-[11px] text-[#F6DAA8]">
                             ✦ Lingers in your home for 4+ hours after pooja
                         </div>
                     </div>
 
                     <!-- Card 2: Why Choose Manglam -->
-                    <div class="bg-[#FFFDF9] border border-gray-200 p-6 rounded-[16px] shadow-sm flex flex-col justify-between">
+                    <div class="bg-[#FFFDF9] border border-gray-200 p-5 sm:p-6 rounded-[16px] shadow-sm flex flex-col justify-between">
                         <div>
                             <span class="text-[10px] font-extrabold uppercase tracking-widest text-[#D38928] font-heading block mb-1">PURITY GUARANTEE</span>
-                            <h3 class="text-xl sm:text-2xl font-normal font-heading mb-4 text-[#121212]">Why Choose Manglam</h3>
+                            <h3 class="text-xl sm:text-2xl font-normal font-heading mb-3 text-[#121212]">Why Choose Manglam</h3>
                             
-                            <ul class="space-y-3 text-xs text-gray-700">
+                            <ul class="space-y-2.5 text-xs text-gray-700">
                                 <li class="flex items-start">
                                     <span class="text-emerald-700 font-bold mr-2">✓</span>
                                     <span><strong>100% Bamboo-Free:</strong> Traditional scriptures forbid burning bamboo in sacred fire.</span>
@@ -244,7 +244,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="pt-4 border-t border-gray-200 mt-4 flex items-center justify-between text-[11px] font-bold text-[#965A15] font-heading">
+                        <div class="pt-3 border-t border-gray-200 mt-3 flex items-center justify-between text-[11px] font-bold text-[#965A15] font-heading">
                             <span>VEDIC CERTIFIED</span>
                             <span>MADE IN BHARAT 🇮🇳</span>
                         </div>
@@ -253,50 +253,50 @@
                 </div>
             </div>
 
-            <!-- RIGHT COLUMN: Clean, Seamless Purchase Details (5 Cols) -->
-            <div class="lg:col-span-5 space-y-4 lg:pl-4 sticky top-28 font-body">
+            <!-- RIGHT COLUMN: Compact, Tight Spaced Purchase Details (5 Cols) -->
+            <div class="lg:col-span-5 space-y-3.5 lg:pl-2 sticky top-24 font-body">
                 
-                <!-- 1. Star Rating & Review Count (Clickable to scroll to reviews) -->
-                <a href="#customer-reviews" class="inline-flex items-center space-x-2 text-xs sm:text-sm text-gray-700 hover:text-[#D38928] transition-colors group cursor-pointer focus:outline-none">
-                    <div class="flex text-[#D38928] text-sm sm:text-base">
+                <!-- 1. Star Rating & Review Count (Bigger & Clickable to scroll to reviews) -->
+                <a href="#customer-reviews" class="inline-flex items-center space-x-2 text-sm sm:text-[15px] text-gray-700 hover:text-[#D38928] transition-colors group cursor-pointer focus:outline-none">
+                    <div class="flex text-[#D38928] text-base sm:text-lg leading-none">
                         <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                     </div>
-                    <span class="font-medium underline-offset-2 group-hover:underline font-body text-gray-700">{{ $reviewCount }} reviews</span>
+                    <span class="font-medium underline-offset-3 group-hover:underline font-body text-gray-800 text-sm sm:text-[15px]">{{ $reviewCount }} reviews</span>
                 </a>
 
-                <!-- 2. Product Title & Subtitle / Eyebrow -->
-                <div class="space-y-1">
-                    <h1 class="text-3xl sm:text-4xl lg:text-[42px] font-normal text-[#121212] tracking-tight leading-[1.15] font-serif">
+                <!-- 2. Product Title & Subtitle / Category (Capitalized) -->
+                <div class="space-y-0.5">
+                    <h1 class="text-2xl sm:text-3xl lg:text-[38px] font-normal text-[#121212] tracking-tight leading-[1.15] font-serif">
                         {{ $product->title }}
                     </h1>
-                    <div class="text-[11px] sm:text-xs tracking-[0.2em] text-gray-500 uppercase font-medium pt-0.5 font-heading">
-                        {{ $product->category ? $product->category->name : 'BAMBOOLESS INCENSE' }}
+                    <div class="text-xs sm:text-[13px] text-gray-500 capitalize font-medium pt-0.5 font-body">
+                        {{ $product->category ? ucwords(strtolower($product->category->name)) : 'Bambooless Incense' }}
                     </div>
                 </div>
 
-                <!-- 3. Pricing Display & Savings Pill -->
-                <div class="space-y-1.5 pt-1">
-                    <div class="flex flex-wrap items-baseline gap-3 font-body">
-                        <span class="text-base sm:text-lg text-gray-500 line-through font-medium">
+                <!-- 3. Pricing Display & Savings Pill (Same Font & Cohesive Look) -->
+                <div class="space-y-1 pt-0.5">
+                    <div class="flex flex-wrap items-baseline gap-2.5 sm:gap-3 font-body">
+                        <span class="text-base sm:text-lg text-gray-400 line-through font-medium font-body">
                             ₹{{ number_format($mrpPrice, 2) }}
                         </span>
-                        <span id="display-sale-price" class="text-xl sm:text-2xl font-bold text-[#C87A1E]">
+                        <span id="display-sale-price" class="text-xl sm:text-2xl font-bold text-[#C87A1E] font-body">
                             ₹{{ number_format($product->active_price, 2) }}
                         </span>
                         @if($mrpPrice > $product->active_price)
-                        <span class="px-2.5 py-0.5 bg-[#FFF9F2] text-[#C87A1E] border border-[#F0D5B3] text-xs font-semibold rounded-full font-body">
+                        <span class="px-2.5 py-0.5 bg-[#FFF9F2] text-[#C87A1E] border border-[#F0D5B3] text-xs sm:text-[13px] font-semibold rounded-full font-body">
                             Save ₹{{ number_format($mrpPrice - $product->active_price, 2) }} ({{ round((($mrpPrice - $product->active_price) / $mrpPrice) * 100) }}%)
                         </span>
                         @endif
                     </div>
-                    <p class="text-xs text-gray-600 pt-0.5 font-body">
-                        Taxes included. <a href="{{ route('pages.show', 'shipping-policy') }}" class="underline hover:text-[#D38928] text-gray-800">Shipping</a> calculated at checkout.
+                    <p class="text-xs text-gray-500 pt-0.5 font-body">
+                        Taxes included. <a href="{{ route('pages.show', 'shipping-policy') }}" class="underline hover:text-[#D38928] text-gray-700">Shipping</a> calculated at checkout.
                     </p>
                 </div>
 
-                <!-- 4. Bold Hook / USP Statement -->
-                <div class="pt-2">
-                    <p class="text-base sm:text-[17px] font-bold text-[#121212] font-body leading-snug">
+                <!-- 4. Bold Hook Statement (20px Font Size) -->
+                <div class="pt-1">
+                    <p class="text-[18px] sm:text-[20px] font-bold text-[#121212] font-body leading-snug">
                         @if(str_contains(strtolower($product->slug), 'cone'))
                             30 Sticks. No Bamboo ~ One stick fills the room with clean, real fragrance.
                         @elseif(str_contains(strtolower($product->slug), 'cup'))
@@ -311,74 +311,74 @@
                     </p>
                 </div>
 
-                <!-- 5. 4 Iconic Feature Circles with Text (Matching Exact Screenshot) -->
-                <div class="flex flex-wrap items-center gap-x-6 sm:gap-x-8 gap-y-4 pt-3 pb-3">
+                <!-- 5. 4 Iconic Feature Circles with Text (16px Font Size, Reduced Space) -->
+                <div class="flex flex-wrap items-center gap-x-5 sm:gap-x-7 gap-y-3 pt-2 pb-2">
                     
                     <!-- Feature 1: Chemical Free -->
                     <div class="flex items-center space-x-2.5">
-                        <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-[#D38928] flex items-center justify-center text-[#D38928] bg-transparent shrink-0">
-                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#D38928] flex items-center justify-center text-[#D38928] bg-transparent shrink-0">
+                            <svg class="w-4.5 h-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M12 22C12 22 20 18 20 10C20 4.5 15.5 2 12 2C8.5 2 4 4.5 4 10C4 18 12 22 12 22Z"/>
                                 <path d="M12 2V22"/>
                                 <path d="M12 7L16 11"/>
                                 <path d="M12 13L8 17"/>
                             </svg>
                         </div>
-                        <span class="text-xs sm:text-[13.5px] font-bold text-[#121212] font-body leading-tight">
+                        <span class="text-[15px] sm:text-[16px] font-semibold text-[#121212] font-body leading-tight">
                             Chemical Free
                         </span>
                     </div>
 
                     <!-- Feature 2: Low Smoke -->
                     <div class="flex items-center space-x-2.5">
-                        <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-[#D38928] flex items-center justify-center text-[#D38928] bg-transparent shrink-0">
-                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#D38928] flex items-center justify-center text-[#D38928] bg-transparent shrink-0">
+                            <svg class="w-4.5 h-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M8 18c-1-1.5-1-3.5 0-5s2-3.5 1-5-3-3-1-5"/>
                                 <path d="M12 19c-1-1.5-1-3.5 0-5s2-3.5 1-5-3-3-1-5"/>
                                 <path d="M16 18c-1-1.5-1-3.5 0-5s2-3.5 1-5-3-3-1-5"/>
                             </svg>
                         </div>
-                        <span class="text-xs sm:text-[13.5px] font-bold text-[#121212] font-body leading-tight">
+                        <span class="text-[15px] sm:text-[16px] font-semibold text-[#121212] font-body leading-tight">
                             Low Smoke
                         </span>
                     </div>
 
                     <!-- Feature 3: Long Lasting -->
                     <div class="flex items-center space-x-2.5">
-                        <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-[#D38928] flex items-center justify-center text-[#D38928] bg-transparent shrink-0">
-                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#D38928] flex items-center justify-center text-[#D38928] bg-transparent shrink-0">
+                            <svg class="w-4.5 h-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M5 22h14"/>
                                 <path d="M5 2h14"/>
                                 <path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/>
                                 <path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/>
                             </svg>
                         </div>
-                        <span class="text-xs sm:text-[13.5px] font-bold text-[#121212] font-body leading-tight">
+                        <span class="text-[15px] sm:text-[16px] font-semibold text-[#121212] font-body leading-tight">
                             Long Lasting
                         </span>
                     </div>
 
                     <!-- Feature 4: Free Ceramic Stand -->
                     <div class="flex items-center space-x-2.5">
-                        <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-[#D38928] flex items-center justify-center text-[#D38928] bg-transparent shrink-0">
-                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#D38928] flex items-center justify-center text-[#D38928] bg-transparent shrink-0">
+                            <svg class="w-4.5 h-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <ellipse cx="12" cy="17" rx="8" ry="4"/>
                                 <path d="M12 17V5"/>
                                 <circle cx="12" cy="4" r="1" fill="#D38928"/>
                             </svg>
                         </div>
-                        <span class="text-xs sm:text-[13.5px] font-bold text-[#121212] font-body leading-tight">
+                        <span class="text-[15px] sm:text-[16px] font-semibold text-[#121212] font-body leading-tight">
                             Free Ceramic Stand
                         </span>
                     </div>
 
                 </div>
 
-                <!-- 6. Quantity Stepper + Add to Cart CTA Row -->
-                <div class="space-y-3 pt-2">
+                <!-- 6. Quantity Stepper + Add to Cart CTA Row (Compact Space) -->
+                <div class="space-y-2.5 pt-1">
                     <div class="flex items-center space-x-3">
                         <!-- Stepper Box -->
-                        <div class="flex items-center justify-between border border-gray-400 rounded-[2px] bg-white px-3 h-12 w-28 shrink-0">
+                        <div class="flex items-center justify-between border border-gray-400 rounded-[2px] bg-white px-3 h-11 sm:h-12 w-28 shrink-0">
                             <button type="button" id="qty-decrement" class="text-gray-600 hover:text-[#121212] transition-colors focus:outline-none font-bold text-lg leading-none cursor-pointer">−</button>
                             <input 
                                 type="number" 
@@ -397,7 +397,7 @@
                         <button 
                             type="button" 
                             id="main-add-to-cart-btn"
-                            class="flex-1 h-12 bg-[#D38928] hover:bg-[#B8741E] active:bg-[#965A15] text-white text-sm sm:text-base font-bold rounded-full shadow-xs hover:shadow-md transition-all duration-200 text-center flex items-center justify-center cursor-pointer focus:outline-none font-heading"
+                            class="flex-1 h-11 sm:h-12 bg-[#D38928] hover:bg-[#B8741E] active:bg-[#965A15] text-white text-sm sm:text-base font-bold rounded-full shadow-xs hover:shadow-md transition-all duration-200 text-center flex items-center justify-center cursor-pointer focus:outline-none font-heading"
                             data-product-id="{{ $product->id }}"
                             data-product-title="{{ $product->title }}"
                             data-product-slug="{{ $product->slug }}"
@@ -411,7 +411,7 @@
                     <!-- Buy It Now Button -->
                     <a 
                         href="{{ route('cart.index') }}" 
-                        class="block w-full h-12 leading-[46px] bg-[#FAF7F2] hover:bg-[#F3ECE0] border border-black text-[#121212] text-sm sm:text-base font-semibold rounded-[2px] shadow-xs text-center transition-colors font-heading"
+                        class="block w-full h-11 sm:h-12 leading-[42px] sm:leading-[46px] bg-[#FAF7F2] hover:bg-[#F3ECE0] border border-black text-[#121212] text-sm sm:text-base font-semibold rounded-[2px] shadow-xs text-center transition-colors font-heading"
                     >
                         Buy It Now
                     </a>
