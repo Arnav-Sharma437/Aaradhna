@@ -1206,8 +1206,8 @@
 <section class="py-12 sm:py-16 bg-[#FFFDF9] border-b border-[#EADBCC] select-none font-body">
     <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
         
-        <!-- Clean Header (Matching Reference Screenshot) -->
-        <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-10 space-y-2">
+        <!-- Clean Header (Matching Reference Screenshot - Compact bottom spacing) -->
+        <div class="text-center max-w-2xl mx-auto mb-4 sm:mb-6 space-y-1.5">
             <div class="flex items-center justify-center space-x-3 text-[#A86520] text-xs sm:text-[13px] font-bold uppercase tracking-[0.22em] font-heading">
                 <div class="w-8 sm:w-14 h-[1px] bg-[#D38928]/50"></div>
                 <span class="flex items-center gap-1.5">
@@ -1225,12 +1225,12 @@
             </p>
         </div>
 
-        <!-- 3 Feature Columns inside Slim & Wide Elegant Card Container -->
-        <div class="bg-white rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] max-w-5xl mx-auto shadow-2xs overflow-hidden">
-            <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[#EADBCC]">
+        <!-- Slim & Wide Elegant Card Container (8px Radius, Wider Container ~1260px, Inset Divider Lines) -->
+        <div class="bg-white rounded-[8px] border border-[#EADBCC] max-w-[1260px] mx-auto shadow-2xs overflow-hidden">
+            <div class="grid grid-cols-1 md:grid-cols-3 relative">
                 
                 <!-- Column 1: Ancient Recipes -->
-                <div class="py-6 sm:py-8 lg:py-9 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center space-y-2.5 sm:space-y-3 group">
+                <div class="relative py-6 sm:py-8 lg:py-9 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center space-y-2.5 sm:space-y-3 group">
                     <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#FAF5EE] border border-[#EADBCC] flex items-center justify-center text-[#7B1B29] group-hover:scale-105 transition-transform">
                         <svg class="w-8 h-8 sm:w-10 sm:h-10" viewBox="0 0 64 64" fill="none" stroke="#7B1B29" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M16 34h32c0 10-7.2 18-16 18s-16-8-16-18Z"/>
@@ -1243,13 +1243,17 @@
                     <h3 class="text-lg sm:text-xl lg:text-[22px] font-heading font-normal text-[#5C141E]">
                         Ancient Recipes
                     </h3>
-                    <p class="text-xs sm:text-[13.5px] lg:text-sm text-gray-600 font-normal font-body leading-relaxed max-w-[260px]">
+                    <p class="text-xs sm:text-[13.5px] lg:text-sm text-gray-600 font-normal font-body leading-relaxed max-w-[280px]">
                         Inspired by time-honoured traditions.
                     </p>
+                    <!-- Inset Vertical Line (Desktop) -->
+                    <div class="hidden md:block absolute right-0 top-5 bottom-5 w-[1px] bg-[#EADBCC]"></div>
+                    <!-- Inset Horizontal Line (Mobile) -->
+                    <div class="md:hidden absolute bottom-0 left-6 right-6 h-[1px] bg-[#EADBCC]"></div>
                 </div>
 
                 <!-- Column 2: Purest Ingredients -->
-                <div class="py-6 sm:py-8 lg:py-9 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center space-y-2.5 sm:space-y-3 group">
+                <div class="relative py-6 sm:py-8 lg:py-9 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center space-y-2.5 sm:space-y-3 group">
                     <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#FAF5EE] border border-[#EADBCC] flex items-center justify-center text-[#7B1B29] group-hover:scale-105 transition-transform">
                         <svg class="w-8 h-8 sm:w-10 sm:h-10" viewBox="0 0 64 64" fill="none" stroke="#7B1B29" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <!-- Sacred Flames & Kund -->
@@ -1263,13 +1267,17 @@
                     <h3 class="text-lg sm:text-xl lg:text-[22px] font-heading font-normal text-[#5C141E]">
                         Purest Ingredients
                     </h3>
-                    <p class="text-xs sm:text-[13.5px] lg:text-sm text-gray-600 font-normal font-body leading-relaxed max-w-[260px]">
+                    <p class="text-xs sm:text-[13.5px] lg:text-sm text-gray-600 font-normal font-body leading-relaxed max-w-[280px]">
                         Carefully selected for every ritual.
                     </p>
+                    <!-- Inset Vertical Line (Desktop) -->
+                    <div class="hidden md:block absolute right-0 top-5 bottom-5 w-[1px] bg-[#EADBCC]"></div>
+                    <!-- Inset Horizontal Line (Mobile) -->
+                    <div class="md:hidden absolute bottom-0 left-6 right-6 h-[1px] bg-[#EADBCC]"></div>
                 </div>
 
                 <!-- Column 3: Eco-conscious -->
-                <div class="py-6 sm:py-8 lg:py-9 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center space-y-2.5 sm:space-y-3 group">
+                <div class="relative py-6 sm:py-8 lg:py-9 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center space-y-2.5 sm:space-y-3 group">
                     <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#FAF5EE] border border-[#EADBCC] flex items-center justify-center text-[#7B1B29] group-hover:scale-105 transition-transform">
                         <svg class="w-8 h-8 sm:w-10 sm:h-10" viewBox="0 0 64 64" fill="none" stroke="#7B1B29" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <!-- Box & Leaf -->
@@ -1283,7 +1291,7 @@
                     <h3 class="text-lg sm:text-xl lg:text-[22px] font-heading font-normal text-[#5C141E]">
                         Eco-conscious
                     </h3>
-                    <p class="text-xs sm:text-[13.5px] lg:text-sm text-gray-600 font-normal font-body leading-relaxed max-w-[260px]">
+                    <p class="text-xs sm:text-[13.5px] lg:text-sm text-gray-600 font-normal font-body leading-relaxed max-w-[280px]">
                         Thoughtful choices, mindful practices.
                     </p>
                 </div>
