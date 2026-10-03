@@ -236,9 +236,15 @@ class ProductController extends Controller
         ]);
 
         if ($request->hasFile('images')) {
+            $uploadDir = public_path('uploads/reviews');
+            if (!file_exists($uploadDir)) {
+                @mkdir($uploadDir, 0777, true);
+            }
             foreach ($request->file('images') as $image) {
                 if ($image && $image->isValid()) {
-                    $path = $image->store('reviews', 'public');
+                    $filename = time() . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
+                    $image->move($uploadDir, $filename);
+                    $path = 'uploads/reviews/' . $filename;
                     ReviewMedia::create([
                         'review_id' => $review->id,
                         'media_path' => $path,

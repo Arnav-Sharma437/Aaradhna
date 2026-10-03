@@ -799,7 +799,7 @@
                 </button>
             </div>
 
-            <!-- 2. User Shared Photos Gallery (Compact & Clean Thumbnails) -->
+            <!-- 2. User Shared Photos Gallery (Compact & Clean Thumbnails with Click to Zoom) -->
             <div class="py-5 border-b border-[#EADBCC]">
                 <div class="flex items-center justify-between mb-3">
                     <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading uppercase tracking-wider flex items-center gap-1.5">
@@ -808,25 +808,25 @@
                         </svg>
                         User Shared Photos
                     </span>
-                    <span class="text-[11px] text-gray-500 font-medium">Customer unboxing &amp; pooja setups</span>
+                    <span class="text-[11px] text-gray-500 font-medium">Click any photo to enlarge</span>
                 </div>
                 <div class="flex items-center gap-2 sm:gap-2.5 overflow-x-auto pb-1">
-                    <div class="w-13 h-13 sm:w-14 sm:h-14 rounded-[8px] overflow-hidden border border-[#EADBCC] bg-[#FAF7F2] shadow-2xs shrink-0 group cursor-pointer">
+                    <div class="w-13 h-13 sm:w-14 sm:h-14 rounded-[8px] overflow-hidden border border-[#EADBCC] bg-[#FAF7F2] shadow-2xs shrink-0 group cursor-pointer relative" onclick="openReviewImageModal(this.querySelector('img').src)">
                         <img src="{{ asset('assets/images/hero-incense-banner.jpg') }}" alt="User Photo 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
                     </div>
-                    <div class="w-13 h-13 sm:w-14 sm:h-14 rounded-[8px] overflow-hidden border border-[#EADBCC] bg-[#FAF7F2] shadow-2xs shrink-0 group cursor-pointer">
+                    <div class="w-13 h-13 sm:w-14 sm:h-14 rounded-[8px] overflow-hidden border border-[#EADBCC] bg-[#FAF7F2] shadow-2xs shrink-0 group cursor-pointer relative" onclick="openReviewImageModal(this.querySelector('img').src)">
                         <img src="{{ asset('assets/images/camphor-refill-pack-card.jpg') }}" alt="User Photo 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
                     </div>
-                    <div class="w-13 h-13 sm:w-14 sm:h-14 rounded-[8px] overflow-hidden border border-[#EADBCC] bg-[#FAF7F2] shadow-2xs shrink-0 group cursor-pointer">
+                    <div class="w-13 h-13 sm:w-14 sm:h-14 rounded-[8px] overflow-hidden border border-[#EADBCC] bg-[#FAF7F2] shadow-2xs shrink-0 group cursor-pointer relative" onclick="openReviewImageModal(this.querySelector('img').src)">
                         <img src="{{ asset('assets/images/hero-ram-uphaar-banner.jpg') }}" alt="User Photo 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
                     </div>
-                    <div class="w-13 h-13 sm:w-14 sm:h-14 rounded-[8px] overflow-hidden border border-[#EADBCC] bg-[#FAF7F2] shadow-2xs shrink-0 group cursor-pointer">
+                    <div class="w-13 h-13 sm:w-14 sm:h-14 rounded-[8px] overflow-hidden border border-[#EADBCC] bg-[#FAF7F2] shadow-2xs shrink-0 group cursor-pointer relative" onclick="openReviewImageModal(this.querySelector('img').src)">
                         <img src="{{ asset('assets/images/chandan-cones-card.jpg') }}" alt="User Photo 4" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
                     </div>
-                    <div class="w-13 h-13 sm:w-14 sm:h-14 rounded-[8px] overflow-hidden border border-[#EADBCC] bg-[#FAF7F2] shadow-2xs shrink-0 group cursor-pointer">
+                    <div class="w-13 h-13 sm:w-14 sm:h-14 rounded-[8px] overflow-hidden border border-[#EADBCC] bg-[#FAF7F2] shadow-2xs shrink-0 group cursor-pointer relative" onclick="openReviewImageModal(this.querySelector('img').src)">
                         <img src="{{ asset('assets/images/devi-refill-pack-card.jpg') }}" alt="User Photo 5" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
                     </div>
-                    <div class="w-13 h-13 sm:w-14 sm:h-14 rounded-[8px] overflow-hidden border border-[#EADBCC] bg-[#FAF7F2] shadow-2xs shrink-0 group cursor-pointer">
+                    <div class="w-13 h-13 sm:w-14 sm:h-14 rounded-[8px] overflow-hidden border border-[#EADBCC] bg-[#FAF7F2] shadow-2xs shrink-0 group cursor-pointer relative" onclick="openReviewImageModal(this.querySelector('img').src)">
                         <img src="{{ asset('assets/images/oudh-pack-card.jpg') }}" alt="User Photo 6" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
                     </div>
                 </div>
@@ -1034,10 +1034,42 @@
                                 {{ $rev->review_text }}
                             </p>
                             @if($rev->media && $rev->media->count() > 0)
-                                <div class="flex items-center gap-2 pt-1">
+                                <div class="flex items-center gap-2.5 pt-1">
                                     @foreach($rev->media as $mediaItem)
-                                        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-[8px] overflow-hidden border border-[#EADBCC] shadow-2xs group cursor-pointer">
-                                            <img src="{{ asset('storage/' . $mediaItem->media_path) }}" alt="Customer Attached Photo" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-300">
+                                        @php
+                                            $rawPath = $mediaItem->media_path;
+                                            if (str_starts_with($rawPath, 'http')) {
+                                                $resolvedImg = $rawPath;
+                                                $fallbackImg = $rawPath;
+                                            } elseif (str_starts_with($rawPath, 'uploads/') || str_starts_with($rawPath, 'assets/')) {
+                                                $resolvedImg = asset($rawPath);
+                                                $fallbackImg = asset('storage/' . $rawPath);
+                                            } elseif (str_starts_with($rawPath, 'storage/')) {
+                                                $resolvedImg = asset($rawPath);
+                                                $fallbackImg = asset(str_replace('storage/', 'uploads/', $rawPath));
+                                            } elseif (str_starts_with($rawPath, 'reviews/')) {
+                                                $resolvedImg = asset('uploads/' . $rawPath);
+                                                $fallbackImg = asset('storage/' . $rawPath);
+                                            } else {
+                                                $resolvedImg = asset('uploads/reviews/' . $rawPath);
+                                                $fallbackImg = asset('storage/reviews/' . $rawPath);
+                                            }
+                                        @endphp
+                                        <div 
+                                            class="w-16 h-16 sm:w-20 sm:h-20 rounded-[8px] overflow-hidden border border-[#EADBCC] shadow-2xs group cursor-pointer relative" 
+                                            onclick="openReviewImageModal(this.querySelector('img').src)"
+                                        >
+                                            <img 
+                                                src="{{ $resolvedImg }}" 
+                                                onerror="if(!this.dataset.triedFallback){ this.dataset.triedFallback=1; this.src='{{ $fallbackImg }}'; }" 
+                                                alt="Customer Attached Photo" 
+                                                class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-300"
+                                            >
+                                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center pointer-events-none">
+                                                <svg class="w-4 h-4 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" />
+                                                </svg>
+                                            </div>
                                         </div>
                                     @endforeach
                                 </div>
@@ -1071,10 +1103,10 @@
                             मंडी में हमारे घर में रोजाना सुबह पूजा होती है। इस अगरबत्ती का धुआं बिल्कुल भी आंखों में नहीं लगता और 4-5 घंटे तक कमरे में ताजगी बनी रहती है। बहुत ही शांत अनुभव!
                         </p>
                         <div class="flex items-center gap-2 pt-1">
-                            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-[8px] overflow-hidden border border-[#EADBCC] shadow-2xs group cursor-pointer">
+                            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-[8px] overflow-hidden border border-[#EADBCC] shadow-2xs group cursor-pointer relative" onclick="openReviewImageModal(this.querySelector('img').src)">
                                 <img src="{{ asset('assets/images/hero-incense-banner.jpg') }}" alt="Customer Altar Photo" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-300">
                             </div>
-                            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-[8px] overflow-hidden border border-[#EADBCC] shadow-2xs group cursor-pointer">
+                            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-[8px] overflow-hidden border border-[#EADBCC] shadow-2xs group cursor-pointer relative" onclick="openReviewImageModal(this.querySelector('img').src)">
                                 <img src="{{ asset('assets/images/camphor-refill-pack-card.jpg') }}" alt="Customer Stand Photo" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-300">
                             </div>
                         </div>
@@ -1485,6 +1517,55 @@
             });
         }
     });
+
+    // 10. Customer Photo Lightbox Preview Functions
+    window.openReviewImageModal = (src) => {
+        const modal = document.getElementById('review-lightbox-modal');
+        const img = document.getElementById('review-lightbox-img');
+        if (modal && img && src) {
+            img.src = src;
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+    };
+
+    window.closeReviewImageModal = () => {
+        const modal = document.getElementById('review-lightbox-modal');
+        if (modal) {
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+    };
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            window.closeReviewImageModal();
+        }
+    });
 </script>
 @endpush
+
+<!-- Fullscreen Customer Photo Lightbox Modal -->
+<div 
+    id="review-lightbox-modal" 
+    class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-4 select-none" 
+    onclick="closeReviewImageModal()"
+>
+    <div class="relative max-w-4xl max-h-[90vh] flex flex-col items-center" onclick="event.stopPropagation()">
+        <button 
+            type="button" 
+            onclick="closeReviewImageModal()" 
+            class="absolute -top-11 right-0 sm:-right-11 w-9 h-9 rounded-full bg-white/20 hover:bg-white text-white hover:text-black flex items-center justify-center text-lg font-bold transition-colors cursor-pointer shadow-lg"
+            aria-label="Close Preview"
+        >
+            ✕
+        </button>
+        <img 
+            id="review-lightbox-img" 
+            src="" 
+            alt="Customer Photo Zoom" 
+            class="max-w-full max-h-[82vh] rounded-[12px] object-contain shadow-2xl border border-white/20"
+        >
+    </div>
+</div>
 @endsection
