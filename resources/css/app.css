@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap');
 @import url('https://fonts.cdnfonts.com/css/recoleta');
 @import 'tailwindcss';
 
@@ -17,12 +17,14 @@
 }
 
 @theme {
-    /* Fonts: Recoleta & Instrument Sans ONLY */
+    /* Fonts: Recoleta, Instrument Sans & Instrument Serif */
     --font-recoleta: 'Recoleta', Georgia, serif;
     --font-body: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
     --font-heading: 'Recoleta', Georgia, serif;
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
-    --font-serif: 'Recoleta', Georgia, serif;
+    --font-serif: 'Instrument Serif', Georgia, serif;
+    --font-instrument: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-instrument-serif: 'Instrument Serif', Georgia, serif;
     --font-spiritual: 'Recoleta', Georgia, serif;
     --font-cinzel: 'Recoleta', Georgia, serif;
 
