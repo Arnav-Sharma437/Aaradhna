@@ -47,7 +47,7 @@
         </div>
 
         <!-- 3. Scrollable Modal Body -->
-        <div class="flex-1 overflow-y-auto p-4 sm:p-6 space-y-5">
+        <div class="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4 font-body">
             
             <!-- Order Quick Summary Box -->
             <div class="bg-[#FAF7F2] rounded-[16px] border border-[#EADBCC] p-3.5 space-y-2.5">
@@ -62,7 +62,7 @@
                 <div class="flex items-center justify-between pt-1 border-t border-[#EADBCC]/60 text-xs">
                     <div>
                         <span class="text-gray-500">Payable Amount:</span>
-                        <span class="text-gray-400 line-through ml-1.5" id="gokwik-original-price">₹1,547.00</span>
+                        <span class="text-gray-400 line-through ml-1.5 hidden" id="gokwik-original-price">₹1,547.00</span>
                     </div>
                     <div class="text-right">
                         <span id="gokwik-payable-price" class="text-base font-black font-heading text-emerald-700">₹1,447.00</span>
@@ -70,11 +70,36 @@
                 </div>
             </div>
 
-            <!-- STEP 1: Phone Number & OTP / Quick Autofill -->
+            <!-- Coupon Code Section in Checkout Modal -->
+            <div class="bg-[#FFFDF9] rounded-[14px] border border-[#EADBCC] p-3.5 space-y-2">
+                <div class="flex items-center justify-between">
+                    <label for="gokwik-coupon-input" class="text-xs font-bold text-gray-800 uppercase tracking-wider font-heading flex items-center gap-1.5">
+                        <span>🎟️ Have a Coupon / Promo Code?</span>
+                    </label>
+                </div>
+                <div class="flex space-x-2">
+                    <input 
+                        type="text" 
+                        id="gokwik-coupon-input" 
+                        placeholder="Enter coupon code (e.g. MANGLAM10)" 
+                        class="flex-1 px-3 py-2 text-xs font-semibold uppercase bg-white border border-[#EADBCC] focus:border-[#D38928] rounded-[8px] focus:outline-none tracking-wider"
+                    >
+                    <button 
+                        type="button" 
+                        id="gokwik-apply-coupon-btn" 
+                        class="px-4 py-2 bg-[#121212] hover:bg-[#D38928] text-white text-xs font-bold rounded-[8px] transition-colors font-heading cursor-pointer whitespace-nowrap"
+                    >
+                        Apply
+                    </button>
+                </div>
+                <div id="gokwik-coupon-feedback" class="text-[11px] font-bold text-emerald-700 hidden"></div>
+            </div>
+
+            <!-- STEP 1: Phone & Contact Information (Cleaned up, no simulated OTP) -->
             <div id="gokwik-step-1" class="space-y-4">
                 <div>
                     <label class="block text-xs font-bold text-gray-800 uppercase tracking-wider mb-1.5 font-heading">
-                        Enter Mobile Number for 1-Click Checkout
+                        Contact &amp; Delivery Mobile Number *
                     </label>
                     <div class="relative flex items-center">
                         <span class="absolute left-3.5 text-xs font-bold text-gray-500 font-heading">+91</span>
@@ -82,111 +107,67 @@
                             type="tel" 
                             id="gokwik-phone-input"
                             maxlength="10"
-                            placeholder="Enter 10-digit number" 
+                            placeholder="Enter 10-digit mobile number" 
                             value="9876543210"
-                            class="w-full pl-12 pr-28 py-3 text-sm font-bold bg-white border-2 border-gray-200 focus:border-emerald-600 rounded-[12px] focus:outline-none transition-all tracking-wide"
+                            class="w-full pl-12 pr-4 py-2.5 text-xs sm:text-sm font-bold bg-white border-2 border-gray-200 focus:border-emerald-600 rounded-[10px] focus:outline-none transition-all tracking-wide"
                         >
-                        <button 
-                            type="button" 
-                            id="gokwik-send-otp-btn"
-                            class="absolute right-2 px-3 py-1.5 bg-[#1C1F26] hover:bg-emerald-600 text-white text-[11px] font-bold rounded-[8px] font-heading transition-colors"
-                        >
-                            Verify ⚡
-                        </button>
-                    </div>
-                    <p class="text-[11px] text-gray-500 mt-1.5 flex items-center gap-1">
-                        <span class="text-emerald-600 font-bold">✓</span> GoKwik will auto-fetch your saved address securely.
-                    </p>
-                </div>
-
-                <!-- OTP Input (Pre-filled for dummy experience) -->
-                <div id="gokwik-otp-box" class="bg-emerald-50 border border-emerald-200 rounded-[14px] p-3.5 space-y-2">
-                    <div class="flex items-center justify-between text-xs font-bold text-emerald-800 font-heading">
-                        <span>⚡ Quick OTP Verified (Simulated)</span>
-                        <span class="text-[10px] text-emerald-600 font-mono">Auto-Filled</span>
-                    </div>
-                    <div class="flex items-center space-x-2">
-                        <input type="text" value="7" readonly class="w-10 h-10 text-center font-black text-base bg-white border border-emerald-300 rounded-[8px] text-gray-800">
-                        <input type="text" value="4" readonly class="w-10 h-10 text-center font-black text-base bg-white border border-emerald-300 rounded-[8px] text-gray-800">
-                        <input type="text" value="9" readonly class="w-10 h-10 text-center font-black text-base bg-white border border-emerald-300 rounded-[8px] text-gray-800">
-                        <input type="text" value="2" readonly class="w-10 h-10 text-center font-black text-base bg-white border border-emerald-300 rounded-[8px] text-gray-800">
-                        <span class="text-xs text-emerald-700 font-semibold ml-2">✓ Verified User</span>
                     </div>
                 </div>
 
                 <!-- STEP 2: Delivery Address -->
-                <div class="space-y-3 pt-2">
+                <div class="space-y-2 pt-1">
                     <div class="flex items-center justify-between">
                         <label class="text-xs font-bold text-gray-800 uppercase tracking-wider font-heading">
                             Delivery Address
                         </label>
-                        <span class="text-[11px] text-emerald-700 font-bold">● Pre-Filled from GoKwik</span>
+                        <span class="text-[11px] text-emerald-700 font-semibold">● Express Delivery</span>
                     </div>
 
                     <!-- Address Card -->
-                    <div class="p-3.5 bg-white rounded-[14px] border-2 border-emerald-600 shadow-xs relative space-y-1 text-xs">
+                    <div class="p-3 bg-white rounded-[12px] border border-gray-200 shadow-2xs space-y-1 text-xs">
                         <div class="flex items-center justify-between font-bold text-gray-900 font-heading">
-                            <span>Rameshwar Sharma (Home)</span>
+                            <span>Rameshwar Sharma</span>
                             <span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 text-[10px] font-bold rounded-full">Default</span>
                         </div>
-                        <p class="text-gray-600 leading-relaxed">
-                            B-402, Vrindavan Dham Residency, Near ISKCON Temple Road, Sector 14, Mathura, Uttar Pradesh - 281001
+                        <p class="text-gray-600 leading-relaxed text-[11px]">
+                            B-402, Vrindavan Dham Residency, Near ISKCON Temple Road, Mathura, UP - 281001
                         </p>
-                        <div class="text-[11px] text-gray-500 pt-1">
-                            Phone: +91 98765 43210
-                        </div>
                     </div>
                 </div>
 
-                <!-- STEP 3: Payment Options (GoKwik Style) -->
-                <div class="space-y-3 pt-2">
+                <!-- STEP 3: Payment Options (Simplified) -->
+                <div class="space-y-2.5 pt-1">
                     <label class="block text-xs font-bold text-gray-800 uppercase tracking-wider font-heading">
                         Select Payment Method
                     </label>
 
                     <div class="space-y-2">
-                        
-                        <!-- Option 1: UPI / GPay / PhonePe (Recommended with Discount) -->
-                        <label class="gokwik-pay-option flex items-center justify-between p-3.5 rounded-[14px] border-2 border-emerald-600 bg-emerald-50/50 cursor-pointer transition-all">
+                        <!-- Option 1: UPI (Recommended) -->
+                        <label class="gokwik-pay-option flex items-center justify-between p-3 rounded-[12px] border-2 border-emerald-600 bg-emerald-50/50 cursor-pointer transition-all">
                             <div class="flex items-center space-x-3">
                                 <input type="radio" name="gokwik_payment" value="UPI" checked class="text-emerald-600 focus:ring-0">
                                 <div>
                                     <div class="text-xs font-bold text-gray-900 font-heading flex items-center gap-1.5">
-                                        <span>UPI (Google Pay / PhonePe / Paytm / QR)</span>
+                                        <span>UPI (GPay / PhonePe / Paytm / QR)</span>
                                         <span class="px-1.5 py-0.5 bg-emerald-600 text-white text-[9px] font-black rounded-md uppercase">Save ₹50</span>
                                     </div>
-                                    <div class="text-[11px] text-gray-500">Fastest payment without OTP hassle</div>
+                                    <div class="text-[10px] text-gray-500">Fast instant payment</div>
                                 </div>
                             </div>
-                            <div class="flex items-center space-x-1 shrink-0">
-                                <span class="text-xs font-bold font-heading text-emerald-800">⚡ Instant</span>
-                            </div>
+                            <span class="text-xs font-bold font-heading text-emerald-800">⚡ Instant</span>
                         </label>
 
                         <!-- Option 2: Cash on Delivery (COD) -->
-                        <label class="gokwik-pay-option flex items-center justify-between p-3.5 rounded-[14px] border border-gray-200 bg-white hover:border-gray-300 cursor-pointer transition-all">
+                        <label class="gokwik-pay-option flex items-center justify-between p-3 rounded-[12px] border border-gray-200 bg-white hover:border-gray-300 cursor-pointer transition-all">
                             <div class="flex items-center space-x-3">
                                 <input type="radio" name="gokwik_payment" value="COD" class="text-emerald-600 focus:ring-0">
                                 <div>
                                     <div class="text-xs font-bold text-gray-900 font-heading">Cash on Delivery (COD)</div>
-                                    <div class="text-[11px] text-gray-500">Pay cash upon sacred delivery</div>
+                                    <div class="text-[10px] text-gray-500">Pay cash upon delivery</div>
                                 </div>
                             </div>
-                            <span class="text-[11px] text-gray-500 font-medium">Verified COD</span>
+                            <span class="text-[11px] text-gray-500 font-medium">Verified</span>
                         </label>
-
-                        <!-- Option 3: Credit / Debit Card / NetBanking -->
-                        <label class="gokwik-pay-option flex items-center justify-between p-3.5 rounded-[14px] border border-gray-200 bg-white hover:border-gray-300 cursor-pointer transition-all">
-                            <div class="flex items-center space-x-3">
-                                <input type="radio" name="gokwik_payment" value="CARD" class="text-emerald-600 focus:ring-0">
-                                <div>
-                                    <div class="text-xs font-bold text-gray-900 font-heading">Cards &amp; NetBanking</div>
-                                    <div class="text-[11px] text-gray-500">Visa, MasterCard, RuPay &amp; NetBanking</div>
-                                </div>
-                            </div>
-                            <span class="text-xs text-gray-400">💳</span>
-                        </label>
-
                     </div>
                 </div>
 
@@ -194,10 +175,10 @@
                 <button 
                     type="button" 
                     id="gokwik-pay-btn"
-                    class="w-full py-4 px-6 bg-[#00A86B] hover:bg-[#008f5b] active:bg-[#00784c] text-white text-sm sm:text-base font-black uppercase tracking-wider rounded-[14px] shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center space-x-2 font-heading cursor-pointer"
+                    class="w-full py-3.5 px-6 bg-[#00A86B] hover:bg-[#008f5b] active:bg-[#00784c] text-white text-sm sm:text-base font-black uppercase tracking-wider rounded-[12px] shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center space-x-2 font-heading cursor-pointer mt-3"
                 >
-                    <span>⚡ PAY &amp; PLACE SACRED ORDER</span>
-                    <span id="gokwik-btn-price" class="bg-black/20 px-2 py-0.5 rounded-full text-xs font-mono">₹1,447.00</span>
+                    <span>⚡ CONFIRM &amp; PLACE SACRED ORDER</span>
+                    <span id="gokwik-btn-price" class="bg-black/20 px-2.5 py-0.5 rounded-full text-xs font-mono">₹1,447.00</span>
                 </button>
 
             </div>
@@ -274,27 +255,149 @@
         const btnPriceEl = document.getElementById('gokwik-btn-price');
         const itemsCountEl = document.getElementById('gokwik-items-count');
 
+        let currentCheckoutCoupon = '';
+        let currentCheckoutCouponDiscount = 0; // decimal fraction (e.g. 0.10)
+
+        const gokwikCouponInput = document.getElementById('gokwik-coupon-input');
+        const gokwikApplyCouponBtn = document.getElementById('gokwik-apply-coupon-btn');
+        const gokwikCouponFeedback = document.getElementById('gokwik-coupon-feedback');
+
+        const recalculateGokwikTotals = () => {
+            let baseSubtotal = 1497;
+            if (window.CartStore && typeof window.CartStore.getCart === 'function') {
+                const cart = window.CartStore.getCart();
+                if (cart.length > 0) {
+                    baseSubtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                }
+            } else if (window.cartItems && window.cartItems.length > 0) {
+                baseSubtotal = window.cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            }
+
+            let discount = 0;
+            if (currentCheckoutCouponDiscount > 0) {
+                discount = baseSubtotal * currentCheckoutCouponDiscount;
+            } else {
+                // Flat 50 UPI default discount
+                discount = 50;
+            }
+
+            const finalPayable = Math.max(0, baseSubtotal - discount);
+
+            if (originalPriceEl) {
+                originalPriceEl.textContent = '₹' + baseSubtotal.toFixed(2);
+                if (discount > 0) originalPriceEl.classList.remove('hidden');
+            }
+            if (payablePriceEl) payablePriceEl.textContent = '₹' + finalPayable.toFixed(2);
+            if (btnPriceEl) btnPriceEl.textContent = '₹' + finalPayable.toFixed(2);
+        };
+
+        if (gokwikApplyCouponBtn && gokwikCouponInput) {
+            gokwikApplyCouponBtn.addEventListener('click', async () => {
+                const code = gokwikCouponInput.value.trim().toUpperCase();
+                if (!code) return;
+
+                let subtotal = 1497;
+                if (window.CartStore && typeof window.CartStore.getCart === 'function') {
+                    const cart = window.CartStore.getCart();
+                    if (cart.length > 0) {
+                        subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                    }
+                }
+
+                gokwikApplyCouponBtn.disabled = true;
+                gokwikApplyCouponBtn.textContent = 'Checking...';
+
+                try {
+                    const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
+                    const response = await fetch('/api/coupons/validate', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json',
+                            'X-CSRF-TOKEN': csrfToken || ''
+                        },
+                        body: JSON.stringify({
+                            code: code,
+                            subtotal: subtotal
+                        })
+                    });
+
+                    const data = await response.json();
+
+                    if (data.valid) {
+                        currentCheckoutCoupon = code;
+                        if (data.type === 'percentage') {
+                            currentCheckoutCouponDiscount = (data.value || 10) / 100;
+                        } else if (data.type === 'fixed' && subtotal > 0) {
+                            currentCheckoutCouponDiscount = (data.discount_amount || 0) / subtotal;
+                        } else {
+                            currentCheckoutCouponDiscount = 0.10;
+                        }
+
+                        if (gokwikCouponFeedback) {
+                            gokwikCouponFeedback.textContent = `✓ ${data.message || 'Coupon code applied: 10% OFF!'}`;
+                            gokwikCouponFeedback.classList.remove('hidden', 'text-rose-600');
+                            gokwikCouponFeedback.classList.add('text-emerald-700');
+                        }
+                    } else {
+                        currentCheckoutCoupon = '';
+                        currentCheckoutCouponDiscount = 0;
+                        if (gokwikCouponFeedback) {
+                            gokwikCouponFeedback.textContent = `✕ ${data.message || 'Invalid or expired coupon code.'}`;
+                            gokwikCouponFeedback.classList.remove('hidden', 'text-emerald-700');
+                            gokwikCouponFeedback.classList.add('text-rose-600');
+                        }
+                    }
+                } catch (e) {
+                    if (code.startsWith('MANGLAM10') || code === 'FESTIVE10' || code === 'SAVE10') {
+                        currentCheckoutCoupon = code;
+                        currentCheckoutCouponDiscount = 0.10;
+                        if (gokwikCouponFeedback) {
+                            gokwikCouponFeedback.textContent = `✓ Code ${code} applied: Extra 10% Festive Discount!`;
+                            gokwikCouponFeedback.classList.remove('hidden', 'text-rose-600');
+                            gokwikCouponFeedback.classList.add('text-emerald-700');
+                        }
+                    } else {
+                        currentCheckoutCoupon = '';
+                        currentCheckoutCouponDiscount = 0;
+                        if (gokwikCouponFeedback) {
+                            gokwikCouponFeedback.textContent = `✕ Invalid or expired coupon code.`;
+                            gokwikCouponFeedback.classList.remove('hidden', 'text-emerald-700');
+                            gokwikCouponFeedback.classList.add('text-rose-600');
+                        }
+                    }
+                } finally {
+                    gokwikApplyCouponBtn.disabled = false;
+                    gokwikApplyCouponBtn.textContent = 'Apply';
+                    recalculateGokwikTotals();
+                }
+            });
+        }
+
         window.openGoKwikCheckout = (price = null, count = null) => {
             // Close cart drawer if open
             if (window.closeCartDrawer) window.closeCartDrawer();
 
             // Calculate active cart summary
             let total = 1497;
-            if (price) {
-                total = parseFloat(price);
+            let totalItems = 2;
+
+            if (window.CartStore && typeof window.CartStore.getCart === 'function') {
+                const cart = window.CartStore.getCart();
+                if (cart.length > 0) {
+                    total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                    totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+                }
             } else if (window.cartItems && window.cartItems.length > 0) {
                 total = window.cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                totalItems = window.cartItems.reduce((sum, item) => sum + item.quantity, 0);
             }
 
-            const discountedPrice = Math.max(0, total - 50); // Flat 50 UPI discount
-
-            if (originalPriceEl) originalPriceEl.textContent = '₹' + total.toFixed(2);
-            if (payablePriceEl) payablePriceEl.textContent = '₹' + discountedPrice.toFixed(2);
-            if (btnPriceEl) btnPriceEl.textContent = '₹' + discountedPrice.toFixed(2);
             if (itemsCountEl) {
-                const totalItems = window.cartItems ? window.cartItems.reduce((sum, item) => sum + item.quantity, 0) : 2;
                 itemsCountEl.textContent = `${totalItems} Item${totalItems > 1 ? 's' : ''} in Cart`;
             }
+
+            recalculateGokwikTotals();
 
             // Reset modal state
             if (step1) step1.classList.remove('hidden');
@@ -343,7 +446,7 @@
                         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
-                    <span>Processing with GoKwik...</span>
+                    <span>Placing Order...</span>
                 `;
                 payBtn.disabled = true;
 
@@ -357,6 +460,10 @@
                     if (!isNaN(parsed) && parsed > 0) orderTotal = parsed;
                 }
 
+                const cartItemsList = (window.CartStore && typeof window.CartStore.getCart === 'function')
+                    ? window.CartStore.getCart()
+                    : (window.cartItems || []);
+
                 try {
                     const response = await fetch("{{ route('checkout.create-order') }}", {
                         method: 'POST',
@@ -367,8 +474,9 @@
                         },
                         body: JSON.stringify({
                             phone: phone,
-                            payment_method: selectedPayment === 'UPI' ? 'UPI (GoKwik Fast 1-Click)' : (selectedPayment === 'COD' ? 'Cash on Delivery (COD)' : 'Card / NetBanking'),
-                            items: window.cartItems || [],
+                            coupon_code: currentCheckoutCoupon,
+                            payment_method: selectedPayment === 'UPI' ? 'UPI (GoKwik Fast 1-Click)' : 'Cash on Delivery (COD)',
+                            items: cartItemsList,
                             total_amount: orderTotal
                         })
                     });
@@ -379,9 +487,12 @@
                     if (successScreen) successScreen.classList.remove('hidden');
 
                     // Clear cart in storage
-                    localStorage.removeItem('mangalam_cart');
-                    if (window.cartItems) window.cartItems = [];
-                    if (window.updateCartBadges) window.updateCartBadges();
+                    if (window.CartStore && typeof window.CartStore.clearCart === 'function') {
+                        window.CartStore.clearCart();
+                    } else {
+                        localStorage.removeItem('mangalam_cart');
+                        if (window.cartItems) window.cartItems = [];
+                    }
 
                     const orderIdEl = document.getElementById('gokwik-order-num');
                     const viewOrderBtn = document.getElementById('gokwik-view-order-btn');
@@ -396,9 +507,9 @@
                     if (step1) step1.classList.add('hidden');
                     if (successScreen) successScreen.classList.remove('hidden');
 
-                    localStorage.removeItem('mangalam_cart');
-                    if (window.cartItems) window.cartItems = [];
-                    if (window.updateCartBadges) window.updateCartBadges();
+                    if (window.CartStore && typeof window.CartStore.clearCart === 'function') {
+                        window.CartStore.clearCart();
+                    }
 
                     const orderIdEl = document.getElementById('gokwik-order-num');
                     if (orderIdEl) orderIdEl.textContent = '#MG-GK-' + Math.floor(100000 + Math.random() * 900000);

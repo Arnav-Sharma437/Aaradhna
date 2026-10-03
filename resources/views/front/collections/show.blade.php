@@ -18,15 +18,8 @@
             };
         @endphp
 
-        <!-- Top Centered Category / Collection Title -->
-        <div class="text-center mb-6 sm:mb-8 pt-1">
-            <h1 class="text-2xl sm:text-3xl lg:text-4xl font-black text-[#121212] font-heading tracking-tight">
-                {{ $displayCatTitle }}
-            </h1>
-        </div>
-
         <!-- ========================================================================= -->
-        <!-- TOP FILTER & SORT BAR (Inline Active Tags & Sort By Dropdown)              -->
+        <!-- TOP FILTER & SORT BAR (Filter Left, Category Center, Sort By Right)       -->
         <!-- ========================================================================= -->
         @php
             $activeAvail = (array) request('availability', []);
@@ -41,10 +34,11 @@
                 <input type="hidden" name="search" value="{{ request('search') }}">
             @endif
 
-            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 py-2 border-b border-[#EADBCC]/60 pb-4">
+            <!-- 1. Main Filter Bar: Left Filter Buttons | Center Category Name | Right Sort By -->
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 py-2 border-b border-[#EADBCC]/60 pb-4">
                 
-                <!-- Left: Filter Buttons + Inline Selected Badges -->
-                <div class="flex items-center space-x-2.5 sm:space-x-3 text-sm flex-wrap gap-y-2.5">
+                <!-- Left: Filter Buttons (Availability & Price) -->
+                <div class="flex items-center space-x-2 sm:space-x-3 text-sm flex-wrap shrink-0">
                     <span class="text-[#121212] font-normal text-sm sm:text-base mr-1">Filter:</span>
 
                     <!-- 1. Availability Dropdown -->
@@ -152,60 +146,17 @@
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- 3. Active Filter Badges Inline (In the exact same row) -->
-                    @if(in_array('in_stock', $activeAvail))
-                        @php
-                            $newAvail = array_values(array_diff($activeAvail, ['in_stock']));
-                        @endphp
-                        <a 
-                            href="{{ request()->fullUrlWithQuery(['availability' => count($newAvail) > 0 ? $newAvail : null, 'page' => null]) }}"
-                            class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#F0E4D4] hover:bg-[#E5D5C1] text-[#2B1810] rounded-full text-xs font-semibold border border-[#D5BEA6] shadow-2xs transition-colors group cursor-pointer"
-                            title="Remove In stock filter"
-                        >
-                            <span>Availability: In stock</span>
-                            <span class="text-gray-500 group-hover:text-black font-bold text-[11px] leading-none">✕</span>
-                        </a>
-                    @endif
-
-                    @if(in_array('out_of_stock', $activeAvail))
-                        @php
-                            $newAvail = array_values(array_diff($activeAvail, ['out_of_stock']));
-                        @endphp
-                        <a 
-                            href="{{ request()->fullUrlWithQuery(['availability' => count($newAvail) > 0 ? $newAvail : null, 'page' => null]) }}"
-                            class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#F0E4D4] hover:bg-[#E5D5C1] text-[#2B1810] rounded-full text-xs font-semibold border border-[#D5BEA6] shadow-2xs transition-colors group cursor-pointer"
-                            title="Remove Out of stock filter"
-                        >
-                            <span>Availability: Out of stock</span>
-                            <span class="text-gray-500 group-hover:text-black font-bold text-[11px] leading-none">✕</span>
-                        </a>
-                    @endif
-
-                    @if($hasPriceFilter)
-                        <a 
-                            href="{{ request()->fullUrlWithQuery(['price_min' => null, 'price_max' => null, 'page' => null]) }}"
-                            class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#F0E4D4] hover:bg-[#E5D5C1] text-[#2B1810] rounded-full text-xs font-semibold border border-[#D5BEA6] shadow-2xs transition-colors group cursor-pointer"
-                            title="Remove Price filter"
-                        >
-                            <span>Price: ₹{{ request('price_min', 0) }} - ₹{{ request('price_max', $maxProductPrice) }}</span>
-                            <span class="text-gray-500 group-hover:text-black font-bold text-[11px] leading-none">✕</span>
-                        </a>
-                    @endif
-
-                    @if($hasActiveFilters)
-                        <a 
-                            href="{{ request()->fullUrlWithQuery(['availability' => null, 'price_min' => null, 'price_max' => null, 'page' => null]) }}" 
-                            class="text-xs sm:text-sm text-[#1F1F1F] hover:text-[#D38928] underline underline-offset-3 font-medium ml-1 transition-colors cursor-pointer"
-                        >
-                            Remove all
-                        </a>
-                    @endif
-
+                <!-- Center: Category / Collection Name in the Middle of Filter and Sort By -->
+                <div class="text-center my-1 md:my-0 flex-1 px-2">
+                    <h1 class="text-lg sm:text-xl lg:text-2xl font-black text-[#121212] font-heading tracking-tight">
+                        {{ $displayCatTitle }}
+                    </h1>
                 </div>
 
                 <!-- Right: Sort by Dropdown & Product Count -->
-                <div class="flex items-center justify-between sm:justify-end gap-4 text-xs sm:text-sm shrink-0 w-full lg:w-auto mt-2 lg:mt-0">
+                <div class="flex items-center justify-between sm:justify-end gap-3 text-xs sm:text-sm shrink-0">
                     <div class="flex items-center gap-2">
                         <label for="sort_by" class="text-gray-600 font-medium whitespace-nowrap">Sort by:</label>
                         <div class="relative inline-block">
@@ -235,6 +186,59 @@
                 </div>
 
             </div>
+
+            <!-- 2. Selected Active Filter Tags (Rendered UNDERNEATH the bar) -->
+            @if($hasActiveFilters)
+                <div class="flex items-center flex-wrap gap-2 pt-3 pb-1">
+                    <span class="text-xs text-gray-500 font-medium mr-1">Active filters:</span>
+
+                    @if(in_array('in_stock', $activeAvail))
+                        @php
+                            $newAvail = array_values(array_diff($activeAvail, ['in_stock']));
+                        @endphp
+                        <a 
+                            href="{{ request()->fullUrlWithQuery(['availability' => count($newAvail) > 0 ? $newAvail : null, 'page' => null]) }}"
+                            class="inline-flex items-center gap-1.5 px-3 py-1 bg-[#F0E4D4] hover:bg-[#E5D5C1] text-[#2B1810] rounded-full text-xs font-semibold border border-[#D5BEA6] shadow-2xs transition-colors group cursor-pointer"
+                            title="Remove In stock filter"
+                        >
+                            <span>Availability: In stock</span>
+                            <span class="text-gray-500 group-hover:text-black font-bold text-[11px] leading-none">✕</span>
+                        </a>
+                    @endif
+
+                    @if(in_array('out_of_stock', $activeAvail))
+                        @php
+                            $newAvail = array_values(array_diff($activeAvail, ['out_of_stock']));
+                        @endphp
+                        <a 
+                            href="{{ request()->fullUrlWithQuery(['availability' => count($newAvail) > 0 ? $newAvail : null, 'page' => null]) }}"
+                            class="inline-flex items-center gap-1.5 px-3 py-1 bg-[#F0E4D4] hover:bg-[#E5D5C1] text-[#2B1810] rounded-full text-xs font-semibold border border-[#D5BEA6] shadow-2xs transition-colors group cursor-pointer"
+                            title="Remove Out of stock filter"
+                        >
+                            <span>Availability: Out of stock</span>
+                            <span class="text-gray-500 group-hover:text-black font-bold text-[11px] leading-none">✕</span>
+                        </a>
+                    @endif
+
+                    @if($hasPriceFilter)
+                        <a 
+                            href="{{ request()->fullUrlWithQuery(['price_min' => null, 'price_max' => null, 'page' => null]) }}"
+                            class="inline-flex items-center gap-1.5 px-3 py-1 bg-[#F0E4D4] hover:bg-[#E5D5C1] text-[#2B1810] rounded-full text-xs font-semibold border border-[#D5BEA6] shadow-2xs transition-colors group cursor-pointer"
+                            title="Remove Price filter"
+                        >
+                            <span>Price: ₹{{ request('price_min', 0) }} - ₹{{ request('price_max', $maxProductPrice) }}</span>
+                            <span class="text-gray-500 group-hover:text-black font-bold text-[11px] leading-none">✕</span>
+                        </a>
+                    @endif
+
+                    <a 
+                        href="{{ request()->fullUrlWithQuery(['availability' => null, 'price_min' => null, 'price_max' => null, 'page' => null]) }}" 
+                        class="text-xs text-[#1F1F1F] hover:text-[#D38928] underline underline-offset-3 font-medium ml-2 transition-colors cursor-pointer"
+                    >
+                        Clear all
+                    </a>
+                </div>
+            @endif
         </form>
 
         <!-- Full-Width Clean Product Grid (4 Columns on Desktop, 2 Columns on Mobile) -->
