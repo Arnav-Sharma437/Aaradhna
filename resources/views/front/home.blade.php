@@ -1217,10 +1217,10 @@
                 </span>
                 <div class="w-10 sm:w-18 h-[1px] bg-[#C87A1E]/40"></div>
             </div>
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal text-[#6B1120] tracking-tight leading-tight">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-[#6B1120] tracking-tight leading-tight">
                 Rooted in Purity
             </h2>
-            <p class="text-xs sm:text-base text-gray-600 font-normal">
+            <p class="text-xs sm:text-base text-gray-600 font-normal font-body">
                 Traditional wisdom. Thoughtfully crafted.
             </p>
         </div>
@@ -1240,10 +1240,10 @@
                             <circle cx="28" cy="27" r="1.5" fill="#6B1120"/>
                         </svg>
                     </div>
-                    <h3 class="text-lg sm:text-xl lg:text-2xl font-serif font-medium text-[#1F1F1F]">
+                    <h3 class="text-lg sm:text-xl lg:text-2xl font-heading font-bold text-[#1F1F1F]">
                         Ancient Recipes
                     </h3>
-                    <p class="text-xs sm:text-sm lg:text-[14.5px] text-gray-600 font-normal leading-relaxed max-w-xs">
+                    <p class="text-xs sm:text-sm lg:text-[14.5px] text-gray-600 font-normal font-body leading-relaxed max-w-xs">
                         Inspired by time-honoured traditions.
                     </p>
                 </div>
@@ -1260,10 +1260,10 @@
                             <path d="M25 48h14"/>
                         </svg>
                     </div>
-                    <h3 class="text-lg sm:text-xl lg:text-2xl font-serif font-medium text-[#1F1F1F]">
+                    <h3 class="text-lg sm:text-xl lg:text-2xl font-heading font-bold text-[#1F1F1F]">
                         Purest Ingredients
                     </h3>
-                    <p class="text-xs sm:text-sm lg:text-[14.5px] text-gray-600 font-normal leading-relaxed max-w-xs">
+                    <p class="text-xs sm:text-sm lg:text-[14.5px] text-gray-600 font-normal font-body leading-relaxed max-w-xs">
                         Carefully selected for every ritual.
                     </p>
                 </div>
@@ -1280,7 +1280,7 @@
                             <path d="M30 42l4-4"/>
                         </svg>
                     </div>
-                    <h3 class="text-lg sm:text-xl lg:text-2xl font-serif font-medium text-[#1F1F1F]">
+                    <h3 class="text-lg sm:text-xl lg:text-2xl font-heading font-bold text-[#1F1F1F]">
                         Eco-conscious
                     </h3>
                     <p class="text-xs sm:text-sm lg:text-[14.5px] text-gray-600 font-normal leading-relaxed max-w-xs">
