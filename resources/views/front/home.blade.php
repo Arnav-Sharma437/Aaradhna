@@ -1225,8 +1225,8 @@
             </p>
         </div>
 
-        <!-- Slim & Wide Elegant Card Container (8px Radius, 2px Brand Gold Border, Inset Gold Divider Lines) -->
-        <div class="bg-white rounded-[8px] border-2 border-[#D38928] max-w-[1260px] mx-auto shadow-2xs overflow-hidden">
+        <!-- Slim & Wide Elegant Card Container (8px Radius, Soft Gold Border matching icon borders, Inset Gold Divider Lines) -->
+        <div class="bg-white rounded-[8px] border-2 border-[#D38928]/40 max-w-[1260px] mx-auto shadow-2xs overflow-hidden">
             <div class="grid grid-cols-1 md:grid-cols-3 relative">
                 
                 <!-- Column 1: Ancient Recipes -->
@@ -1246,10 +1246,10 @@
                     <p class="text-xs sm:text-[13.5px] lg:text-sm text-gray-600 font-normal font-body leading-relaxed max-w-[280px]">
                         Inspired by time-honoured traditions.
                     </p>
-                    <!-- Inset Vertical Line (Desktop - 2px Brand Gold) -->
-                    <div class="hidden md:block absolute right-0 top-5 bottom-5 w-[2px] bg-[#D38928]/50"></div>
-                    <!-- Inset Horizontal Line (Mobile - 2px Brand Gold) -->
-                    <div class="md:hidden absolute bottom-0 left-6 right-6 h-[2px] bg-[#D38928]/50"></div>
+                    <!-- Inset Vertical Line (Desktop - Matching Soft Gold) -->
+                    <div class="hidden md:block absolute right-0 top-5 bottom-5 w-[2px] bg-[#D38928]/40"></div>
+                    <!-- Inset Horizontal Line (Mobile - Matching Soft Gold) -->
+                    <div class="md:hidden absolute bottom-0 left-6 right-6 h-[2px] bg-[#D38928]/40"></div>
                 </div>
 
                 <!-- Column 2: Purest Ingredients -->
@@ -1270,10 +1270,10 @@
                     <p class="text-xs sm:text-[13.5px] lg:text-sm text-gray-600 font-normal font-body leading-relaxed max-w-[280px]">
                         Carefully selected for every ritual.
                     </p>
-                    <!-- Inset Vertical Line (Desktop - 2px Brand Gold) -->
-                    <div class="hidden md:block absolute right-0 top-5 bottom-5 w-[2px] bg-[#D38928]/50"></div>
-                    <!-- Inset Horizontal Line (Mobile - 2px Brand Gold) -->
-                    <div class="md:hidden absolute bottom-0 left-6 right-6 h-[2px] bg-[#D38928]/50"></div>
+                    <!-- Inset Vertical Line (Desktop - Matching Soft Gold) -->
+                    <div class="hidden md:block absolute right-0 top-5 bottom-5 w-[2px] bg-[#D38928]/40"></div>
+                    <!-- Inset Horizontal Line (Mobile - Matching Soft Gold) -->
+                    <div class="md:hidden absolute bottom-0 left-6 right-6 h-[2px] bg-[#D38928]/40"></div>
                 </div>
 
                 <!-- Column 3: Eco-conscious -->
