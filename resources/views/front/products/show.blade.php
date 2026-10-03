@@ -395,31 +395,146 @@
                                 </svg>
                             </button>
                             <div id="product-desc-accordion-body" class="hidden px-4 pb-4 pt-2 text-sm sm:text-[15px] text-gray-700 leading-relaxed font-body border-t border-[#EADBCC]/60 bg-[#FFFEFC] transition-all duration-300">
-                                @if($product->description)
-                                    <div class="prose prose-sm max-w-none text-gray-700">
-                                        {!! $product->description !!}
-                                    </div>
-                                @else
-                                    <p>
-                                        Immerse your home temple in divine bliss with <strong>{{ $product->title }}</strong>. Handcrafted with revered Vedic botanicals, organic resins, and essential flower extracts in Vrindavan Dham. 100% bamboo-free and zero charcoal formulation to honor sacred scriptures and protect your prana with soothing, non-irritating pure white smoke.
+                                <div class="space-y-3">
+                                    <!-- Initial 4 Lines Content -->
+                                    <p class="leading-relaxed">
+                                        Immerse your sacred home temple and living spaces in divine transcendental tranquility with <strong>{{ $product->title }}</strong>. Crafted with deep reverence in the holy land of Vrindavan Dham, each artisanal stick is infused with time-tested Vedic botanicals, naturally harvested temple flower extracts, rare Himalayan herbs, pure Guggal, and sacred Bhimseni camphor.
                                     </p>
-                                @endif
+
+                                    <!-- Collapsible Extra Content (Read More) -->
+                                    <div id="product-desc-more" class="hidden space-y-3">
+                                        <p class="leading-relaxed">
+                                            In strict adherence to Sanatana Dharma scriptures, our formulation is 100% bamboo-free (Vamsha-free) and completely devoid of toxic black charcoal or synthetic dipping chemicals. It produces a gentle, soothing white aromatic smoke that purifies the indoor prana without causing throat irritation, coughing, or eye burning.
+                                        </p>
+                                        <p class="leading-relaxed">
+                                            Ideal for your morning puja, sandhya aarti, deep meditation, yogic sadhana, and festive rituals. Each pack comes accompanied by a complimentary handcrafted terracotta ceramic holder to ensure a safe, residue-free burning experience.
+                                        </p>
+                                        @if($product->description)
+                                            <div class="prose prose-sm max-w-none text-gray-700 pt-1 border-t border-gray-100">
+                                                {!! $product->description !!}
+                                            </div>
+                                        @endif
+                                    </div>
+
+                                    <!-- Read More / Read Less Toggle Button -->
+                                    <button 
+                                        type="button" 
+                                        id="desc-read-more-btn"
+                                        class="inline-flex items-center gap-1 text-xs sm:text-sm font-bold text-[#8C531B] hover:text-[#7B1925] transition-colors focus:outline-none cursor-pointer select-none pt-0.5"
+                                        onclick="
+                                            const moreContent = document.getElementById('product-desc-more');
+                                            const btn = document.getElementById('desc-read-more-btn');
+                                            if (moreContent.classList.contains('hidden')) {
+                                                moreContent.classList.remove('hidden');
+                                                btn.innerHTML = 'Read Less &minus;';
+                                            } else {
+                                                moreContent.classList.add('hidden');
+                                                btn.innerHTML = 'Read More &plus;';
+                                            }
+                                        "
+                                    >
+                                        Read More &plus;
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- 2. Customer Trust & Reviews Badge (Clickable link to #customer-reviews) -->
+                    <!-- 2. Customer Trust & Reviews Badge (Developed HTML/Tailwind Section) -->
                     <div class="pt-2">
-                        <a href="#customer-reviews" class="block w-full text-center group cursor-pointer focus:outline-none">
-                            <div class="py-2.5 px-4 rounded-[8px] sm:rounded-[10px] bg-[#FAF7F2] border border-[#EADBCC]/80 shadow-2xs hover:shadow-xs transition-all flex flex-col items-center justify-center">
-                                <img 
-                                    src="{{ asset('assets/images/customer-trust-avatars.png') }}" 
-                                    alt="Trusted by 10Lakh+ Happy Customers" 
-                                    class="w-full max-w-[340px] sm:max-w-[380px] h-auto object-contain mx-auto group-hover:scale-102 transition-transform duration-300"
-                                    loading="lazy"
-                                >
+                        <a href="#customer-reviews" class="block w-full group cursor-pointer focus:outline-none">
+                            <div class="py-3 px-4 rounded-[8px] sm:rounded-[10px] bg-[#FAF7F2] border border-[#EADBCC]/80 shadow-2xs hover:shadow-xs hover:border-[#D38928]/40 transition-all flex flex-col items-center justify-center text-center">
+                                
+                                <!-- Avatars + Stars + 4.8 Rating Row -->
+                                <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+                                    <!-- 5 Devotee Avatars with Golden Ring Borders -->
+                                    <div class="flex items-center -space-x-2 sm:-space-x-2.5">
+                                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&auto=format&fit=crop&q=80" alt="Customer Devotee" class="w-8 h-8 sm:w-8.5 sm:h-8.5 rounded-full object-cover border-2 border-[#D38928] ring-1 ring-white shadow-xs">
+                                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="Customer Devotee" class="w-8 h-8 sm:w-8.5 sm:h-8.5 rounded-full object-cover border-2 border-[#D38928] ring-1 ring-white shadow-xs">
+                                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" alt="Customer Devotee" class="w-8 h-8 sm:w-8.5 sm:h-8.5 rounded-full object-cover border-2 border-[#D38928] ring-1 ring-white shadow-xs">
+                                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80" alt="Customer Devotee" class="w-8 h-8 sm:w-8.5 sm:h-8.5 rounded-full object-cover border-2 border-[#D38928] ring-1 ring-white shadow-xs">
+                                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80" alt="Customer Devotee" class="w-8 h-8 sm:w-8.5 sm:h-8.5 rounded-full object-cover border-2 border-[#D38928] ring-1 ring-white shadow-xs">
+                                    </div>
+
+                                    <!-- Gold Stars & Rating Text -->
+                                    <div class="flex items-center space-x-1.5">
+                                        <div class="flex text-[#D38928] text-base sm:text-lg leading-none">
+                                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                        </div>
+                                        <span class="text-sm sm:text-[15px] font-bold text-gray-900 font-heading">Excellent 4.8</span>
+                                    </div>
+                                </div>
+
+                                <!-- Trusted by Subtitle with Heart Icon -->
+                                <p class="text-xs sm:text-[13px] font-medium text-[#8C531B] tracking-tight mt-1.5 flex items-center justify-center gap-1 font-body">
+                                    Trusted by 10Lakh+ Happy Customers <span class="text-[#8B1E1E] text-sm leading-none">♥</span>
+                                </p>
                             </div>
                         </a>
+                    </div>
+
+                    <!-- 3. Trust & Purity Pillars (4 Circular Badges Developed Section) -->
+                    <div class="pt-3 border-t border-[#EADBCC]/60 mt-1">
+                        <div class="grid grid-cols-4 gap-1.5 sm:gap-2.5 items-start">
+                            
+                            <!-- Badge 1: Low Smoke -->
+                            <div class="flex flex-col items-center text-center group cursor-default">
+                                <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-[1.5px] border-[#D38928]/80 bg-white p-1 flex flex-col items-center justify-center shadow-2xs group-hover:scale-105 group-hover:border-[#831F2E] transition-all">
+                                    <span class="text-[6.5px] sm:text-[7px] font-bold text-[#965A15] tracking-widest uppercase leading-none mb-0.5">LOW</span>
+                                    <svg class="w-4 h-4 sm:w-4.5 sm:h-4.5 text-[#D38928]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 3z"/>
+                                    </svg>
+                                    <span class="text-[6.5px] sm:text-[7px] font-bold text-[#965A15] tracking-widest uppercase leading-none mt-0.5">SMOKE</span>
+                                </div>
+                                <span class="mt-1 text-[10px] sm:text-xs font-semibold text-gray-800 font-heading leading-tight">
+                                    Low Smoke
+                                </span>
+                            </div>
+
+                            <!-- Badge 2: Backed by Scriptures -->
+                            <div class="flex flex-col items-center text-center group cursor-default">
+                                <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-[1.5px] border-[#D38928]/80 bg-white p-1 flex flex-col items-center justify-center shadow-2xs group-hover:scale-105 group-hover:border-[#831F2E] transition-all">
+                                    <span class="text-[6px] sm:text-[6.5px] font-bold text-[#965A15] tracking-tighter uppercase leading-none mb-0.5">BACKED</span>
+                                    <div class="w-4 h-4 sm:w-4.5 sm:h-4.5 rounded-[2px] border border-[#D38928] flex items-center justify-center bg-[#FAF7F2]">
+                                        <span class="text-[8px] sm:text-[9px] font-serif font-black text-[#8B1E1E] leading-none">श्री</span>
+                                    </div>
+                                    <span class="text-[5.5px] sm:text-[6px] font-bold text-[#965A15] tracking-tighter uppercase leading-none mt-0.5">SCRIPTURES</span>
+                                </div>
+                                <span class="mt-1 text-[10px] sm:text-xs font-semibold text-gray-800 font-heading leading-tight">
+                                    Backed by Scriptures
+                                </span>
+                            </div>
+
+                            <!-- Badge 3: Pure Fragrance -->
+                            <div class="flex flex-col items-center text-center group cursor-default">
+                                <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-[1.5px] border-[#D38928]/80 bg-white p-1 flex flex-col items-center justify-center shadow-2xs group-hover:scale-105 group-hover:border-[#831F2E] transition-all">
+                                    <span class="text-[6.5px] sm:text-[7px] font-bold text-[#965A15] tracking-widest uppercase leading-none mb-0.5">DIVINE</span>
+                                    <span class="text-sm sm:text-base font-serif font-black text-[#D38928] leading-none">ॐ</span>
+                                    <span class="text-[5.5px] sm:text-[6px] font-bold text-[#965A15] tracking-tighter uppercase leading-none mt-0.5">FRAGRANCE</span>
+                                </div>
+                                <span class="mt-1 text-[10px] sm:text-xs font-semibold text-gray-800 font-heading leading-tight">
+                                    Pure Fragrance
+                                </span>
+                            </div>
+
+                            <!-- Badge 4: 24 hours dispatch -->
+                            <div class="flex flex-col items-center text-center group cursor-default">
+                                <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-[1.5px] border-[#D38928]/80 bg-white p-1 flex flex-col items-center justify-center shadow-2xs group-hover:scale-105 group-hover:border-[#831F2E] transition-all">
+                                    <span class="text-[6.5px] sm:text-[7px] font-bold text-[#965A15] tracking-widest uppercase leading-none mb-0.5">24 HRS</span>
+                                    <div class="flex items-center justify-center space-x-0.5">
+                                        <span class="text-[9px] sm:text-[10px] font-black text-[#8B1E1E] leading-none">24h</span>
+                                        <svg class="w-2.5 h-2.5 sm:w-3 sm:h-3 text-[#D38928]" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+                                        </svg>
+                                    </div>
+                                    <span class="text-[5.5px] sm:text-[6px] font-bold text-[#965A15] tracking-tighter uppercase leading-none mt-0.5">DISPATCH</span>
+                                </div>
+                                <span class="mt-1 text-[10px] sm:text-xs font-semibold text-gray-800 font-heading leading-tight">
+                                    24 hours dispatch
+                                </span>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
 
