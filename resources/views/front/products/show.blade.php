@@ -428,11 +428,11 @@
                                 "
                             >
                                 <span>Product Description</span>
-                                <svg id="product-desc-accordion-icon" class="w-5 h-5 text-[#D38928] transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <svg id="product-desc-accordion-icon" class="w-5 h-5 text-[#D38928] transform rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
                                 </svg>
                             </button>
-                            <div id="product-desc-accordion-body" class="hidden px-4 pb-4 pt-2 text-sm sm:text-[15px] text-gray-700 leading-relaxed font-body border-t border-[#EADBCC]/60 bg-[#FFFEFC] transition-all duration-300">
+                            <div id="product-desc-accordion-body" class="px-4 pb-4 pt-2 text-sm sm:text-[15px] text-gray-700 leading-relaxed font-body border-t border-[#EADBCC]/60 bg-[#FFFEFC] transition-all duration-300">
                                 <div class="space-y-3">
                                     <!-- Initial 4 Lines Content -->
                                     <p class="leading-relaxed">
@@ -720,10 +720,29 @@
         </div>
 
         <!-- ========================================================================= -->
-        <!-- 3. FREQUENTLY ASKED QUESTIONS (Exact Homepage FAQs & Accordion)           -->
+        <!-- 3. YOU MAY ALSO LIKE (4 Exact Matching Product Cards)                     -->
         <!-- ========================================================================= -->
-        <div class="mt-10 sm:mt-14 max-w-4xl mx-auto space-y-4">
-            <div class="text-center space-y-1.5 mb-5">
+        @if($relatedProducts->count() > 0)
+            <div class="mt-10 sm:mt-14">
+                <div class="text-center max-w-xl mx-auto mb-6 space-y-1.5">
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black text-[#121212] font-heading tracking-tight">
+                        You May Also Like
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4 max-w-7xl mx-auto">
+                    @foreach($relatedProducts as $relProduct)
+                        <x-product-card :product="$relProduct" />
+                    @endforeach
+                </div>
+            </div>
+        @endif
+
+        <!-- ========================================================================= -->
+        <!-- 4. FREQUENTLY ASKED QUESTIONS (Exact Homepage Width & Seamless Container) -->
+        <!-- ========================================================================= -->
+        <div class="mt-10 sm:mt-14 max-w-5xl lg:max-w-[1100px] mx-auto space-y-6 sm:space-y-8">
+            <div class="text-center max-w-2xl mx-auto mb-6 sm:mb-8 space-y-1.5">
                 <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">
                     ✦ SACRED KNOWLEDGE &amp; ANSWERS ✦
                 </span>
@@ -732,11 +751,11 @@
                 </h2>
             </div>
 
-            <!-- 7 Accordion FAQ Items (Compact 10px Padding, Soft Gold Borders) -->
-            <div class="space-y-2.5 max-w-3xl mx-auto">
+            <!-- Seamless Accordion Container (Matching Homepage Exact Styling) -->
+            <div class="bg-white rounded-[8px] border border-[#EADBCC] shadow-xs divide-y divide-[#EADBCC] overflow-hidden">
                 
                 <!-- FAQ 1 -->
-                <div class="faq-item border border-[#EADBCC] rounded-[10px] sm:rounded-[12px] overflow-hidden bg-white shadow-xs transition-all duration-200">
+                <div class="faq-item">
                     <button type="button" class="faq-toggle w-full p-[10px] px-3.5 sm:px-4 flex items-center justify-between text-left focus:outline-none cursor-pointer group hover:bg-[#FAF7F2]/60 transition-colors">
                         <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
                             Why is Manglam incense 100% Bamboo-Free and Charcoal-Free?
@@ -755,7 +774,7 @@
                 </div>
 
                 <!-- FAQ 2 -->
-                <div class="faq-item border border-[#EADBCC] rounded-[10px] sm:rounded-[12px] overflow-hidden bg-white shadow-xs transition-all duration-200">
+                <div class="faq-item">
                     <button type="button" class="faq-toggle w-full p-[10px] px-3.5 sm:px-4 flex items-center justify-between text-left focus:outline-none cursor-pointer group hover:bg-[#FAF7F2]/60 transition-colors">
                         <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
                             How long do they burn, and does the temple fragrance linger in the room?
@@ -774,7 +793,7 @@
                 </div>
 
                 <!-- FAQ 3 -->
-                <div class="faq-item border border-[#EADBCC] rounded-[10px] sm:rounded-[12px] overflow-hidden bg-white shadow-xs transition-all duration-200">
+                <div class="faq-item">
                     <button type="button" class="faq-toggle w-full p-[10px] px-3.5 sm:px-4 flex items-center justify-between text-left focus:outline-none cursor-pointer group hover:bg-[#FAF7F2]/60 transition-colors">
                         <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
                             Are Manglam products safe to use around babies, elders, and pets?
@@ -793,7 +812,7 @@
                 </div>
 
                 <!-- FAQ 4 -->
-                <div class="faq-item border border-[#EADBCC] rounded-[10px] sm:rounded-[12px] overflow-hidden bg-white shadow-xs transition-all duration-200">
+                <div class="faq-item">
                     <button type="button" class="faq-toggle w-full p-[10px] px-3.5 sm:px-4 flex items-center justify-between text-left focus:outline-none cursor-pointer group hover:bg-[#FAF7F2]/60 transition-colors">
                         <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
                             What is the spiritual significance of burning 100% Bamboo-Free Agarbatti?
@@ -812,7 +831,7 @@
                 </div>
 
                 <!-- FAQ 5 -->
-                <div class="faq-item border border-[#EADBCC] rounded-[10px] sm:rounded-[12px] overflow-hidden bg-white shadow-xs transition-all duration-200">
+                <div class="faq-item">
                     <button type="button" class="faq-toggle w-full p-[10px] px-3.5 sm:px-4 flex items-center justify-between text-left focus:outline-none cursor-pointer group hover:bg-[#FAF7F2]/60 transition-colors">
                         <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
                             How do I properly ignite and use organic Sambrani Havan Cups &amp; Dhoop Cones?
@@ -831,7 +850,7 @@
                 </div>
 
                 <!-- FAQ 6 -->
-                <div class="faq-item border border-[#EADBCC] rounded-[10px] sm:rounded-[12px] overflow-hidden bg-white shadow-xs transition-all duration-200">
+                <div class="faq-item">
                     <button type="button" class="faq-toggle w-full p-[10px] px-3.5 sm:px-4 flex items-center justify-between text-left focus:outline-none cursor-pointer group hover:bg-[#FAF7F2]/60 transition-colors">
                         <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
                             What sacred ingredients and temple flowers are used in handcrafting?
@@ -850,7 +869,7 @@
                 </div>
 
                 <!-- FAQ 7 -->
-                <div class="faq-item border border-[#EADBCC] rounded-[10px] sm:rounded-[12px] overflow-hidden bg-white shadow-xs transition-all duration-200">
+                <div class="faq-item">
                     <button type="button" class="faq-toggle w-full p-[10px] px-3.5 sm:px-4 flex items-center justify-between text-left focus:outline-none cursor-pointer group hover:bg-[#FAF7F2]/60 transition-colors">
                         <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
                             Do you offer nationwide shipping, COD, and complimentary ceramic holders?
@@ -870,25 +889,6 @@
 
             </div>
         </div>
-
-        <!-- ========================================================================= -->
-        <!-- 4. YOU MAY ALSO LIKE (4 Exact Matching Product Cards)                     -->
-        <!-- ========================================================================= -->
-        @if($relatedProducts->count() > 0)
-            <div class="mt-10 sm:mt-14">
-                <div class="text-center max-w-xl mx-auto mb-6 space-y-1.5">
-                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black text-[#121212] font-heading tracking-tight">
-                        You May Also Like
-                    </h2>
-                </div>
-
-                <div class="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4 max-w-7xl mx-auto">
-                    @foreach($relatedProducts as $relProduct)
-                        <x-product-card :product="$relProduct" />
-                    @endforeach
-                </div>
-            </div>
-        @endif
 
         <!-- ========================================================================= -->
         <!-- 5. CUSTOMER REVIEWS & RATINGS (Narrow Elegant Container, Divider Lines Only) -->

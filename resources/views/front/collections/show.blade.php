@@ -7,6 +7,24 @@
 <div class="bg-white min-h-screen py-6 lg:py-10 pb-24 font-body">
     <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
 
+        @php
+            $displayCatTitle = match($collection->slug ?? '') {
+                'all' => 'Shop All',
+                'bambooless' => 'Bambooless',
+                'havan-cups' => 'Havan Cups',
+                'dhoop-cones' => 'Dhoop Cones',
+                'super-save-offers' => 'Super Save Offers',
+                default => $collection->title ?? ucwords(str_replace('-', ' ', $collection->slug ?? 'All Products')),
+            };
+        @endphp
+
+        <!-- Top Centered Category / Collection Title -->
+        <div class="text-center mb-6 sm:mb-8 pt-1">
+            <h1 class="text-2xl sm:text-3xl lg:text-4xl font-black text-[#121212] font-heading tracking-tight">
+                {{ $displayCatTitle }}
+            </h1>
+        </div>
+
         <!-- ========================================================================= -->
         <!-- TOP FILTER & SORT BAR (Inline Active Tags & Sort By Dropdown)              -->
         <!-- ========================================================================= -->

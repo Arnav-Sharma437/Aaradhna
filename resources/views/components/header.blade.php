@@ -41,40 +41,44 @@
             <nav class="hidden lg:flex items-center justify-center flex-1 min-w-0 space-x-3 lg:space-x-4 xl:space-x-6 2xl:space-x-7 px-1 xl:px-2 font-body">
                 
                 <!-- 1. Bambooless -->
+                @php $isBambooless = request()->is('collections/bambooless'); @endphp
                 <div class="py-2 xl:py-3 flex items-center">
                     <a 
                         href="{{ route('collections.show', 'bambooless') }}" 
-                        class="nav-link-hover text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-medium text-[#444444] hover:text-[#831F2E] transition-colors whitespace-nowrap tracking-normal"
+                        class="text-[13.5px] lg:text-[14px] xl:text-[14.5px] {{ $isBambooless ? 'font-bold text-[#831F2E] border-b-2 border-[#831F2E] pb-0.5' : 'font-medium text-[#444444] hover:text-[#831F2E]' }} transition-colors whitespace-nowrap tracking-normal"
                     >
                         <span>Bambooless</span>
                     </a>
                 </div>
 
                 <!-- 2. Havan Cups -->
+                @php $isHavanCups = request()->is('collections/havan-cups'); @endphp
                 <div class="py-2 xl:py-3 flex items-center">
                     <a 
                         href="{{ route('collections.show', 'havan-cups') }}" 
-                        class="nav-link-hover text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-medium text-[#444444] hover:text-[#831F2E] transition-colors whitespace-nowrap tracking-normal"
+                        class="text-[13.5px] lg:text-[14px] xl:text-[14.5px] {{ $isHavanCups ? 'font-bold text-[#831F2E] border-b-2 border-[#831F2E] pb-0.5' : 'font-medium text-[#444444] hover:text-[#831F2E]' }} transition-colors whitespace-nowrap tracking-normal"
                     >
                         <span>Havan Cups</span>
                     </a>
                 </div>
 
                 <!-- 3. Dhoop Cones -->
+                @php $isDhoopCones = request()->is('collections/dhoop-cones'); @endphp
                 <div class="py-2 xl:py-3 flex items-center">
                     <a 
                         href="{{ route('collections.show', 'dhoop-cones') }}" 
-                        class="nav-link-hover text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-medium text-[#444444] hover:text-[#831F2E] transition-colors whitespace-nowrap tracking-normal"
+                        class="text-[13.5px] lg:text-[14px] xl:text-[14.5px] {{ $isDhoopCones ? 'font-bold text-[#831F2E] border-b-2 border-[#831F2E] pb-0.5' : 'font-medium text-[#444444] hover:text-[#831F2E]' }} transition-colors whitespace-nowrap tracking-normal"
                     >
                         <span>Dhoop Cones</span>
                     </a>
                 </div>
 
                 <!-- 4. Super Save Offers (Interactive Mega Menu) -->
+                @php $isSuperSave = request()->is('bundles*') || request()->is('collections/super-save-offers'); @endphp
                 <div class="relative group py-2 xl:py-3 flex items-center">
                     <button 
                         type="button"
-                        class="nav-link-hover flex items-center space-x-1 text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-medium text-[#444444] group-hover:text-[#831F2E] transition-colors whitespace-nowrap tracking-normal cursor-pointer focus:outline-none"
+                        class="flex items-center space-x-1 text-[13.5px] lg:text-[14px] xl:text-[14.5px] {{ $isSuperSave ? 'font-bold text-[#831F2E] border-b-2 border-[#831F2E] pb-0.5' : 'font-medium text-[#444444] group-hover:text-[#831F2E]' }} transition-colors whitespace-nowrap tracking-normal cursor-pointer focus:outline-none"
                     >
                         <span>Super Save Offers</span>
                         <svg class="w-3.5 h-3.5 text-[#8C827A] group-hover:text-[#831F2E] group-hover:rotate-180 transition-transform duration-200 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -150,20 +154,22 @@
                 </div>
 
                 <!-- 5. Best Seller Combo -->
+                @php $isBestSeller = request()->is('products/pack-of-six'); @endphp
                 <div class="py-2 xl:py-3 flex items-center">
                     <a 
                         href="{{ route('products.show', 'pack-of-six') }}" 
-                        class="nav-link-hover text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-medium text-[#444444] hover:text-[#831F2E] transition-colors whitespace-nowrap tracking-normal"
+                        class="text-[13.5px] lg:text-[14px] xl:text-[14.5px] {{ $isBestSeller ? 'font-bold text-[#831F2E] border-b-2 border-[#831F2E] pb-0.5' : 'font-medium text-[#444444] hover:text-[#831F2E]' }} transition-colors whitespace-nowrap tracking-normal"
                     >
                         <span>Best Seller Combo</span>
                     </a>
                 </div>
 
                 <!-- 6. Pitambara Havan -->
+                @php $isPitambara = request()->is('pitambara-havan'); @endphp
                 <div class="py-2 xl:py-3 flex items-center">
                     <a 
                         href="{{ route('products.pitambara') }}" 
-                        class="nav-link-hover text-[13.5px] lg:text-[14px] xl:text-[14.5px] font-medium text-[#831F2E] hover:text-[#6E1724] transition-colors whitespace-nowrap tracking-normal"
+                        class="text-[13.5px] lg:text-[14px] xl:text-[14.5px] {{ $isPitambara ? 'font-bold text-[#831F2E] border-b-2 border-[#831F2E] pb-0.5' : 'font-medium text-[#831F2E] hover:text-[#6E1724]' }} transition-colors whitespace-nowrap tracking-normal"
                     >
                         <span>Pitambara Havan</span>
                     </a>
