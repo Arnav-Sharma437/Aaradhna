@@ -111,7 +111,7 @@
                 <!-- 1. MOBILE/TABLET VIEW: Main Hero Image + Horizontal Thumbnails Below (Visible on mobile/tablet, hidden on desktop) -->
                 <div class="block lg:hidden space-y-[5px]" id="product-mobile-gallery">
                     <!-- Main Large Hero Image -->
-                    <div class="relative w-full aspect-square sm:aspect-[4/3.8] rounded-[8px] sm:rounded-[10px] overflow-hidden bg-[#FAF7F2] border border-gray-200/80 shadow-xs group">
+                    <div class="relative w-full aspect-square sm:aspect-[4/3.8] rounded-[8px] sm:rounded-[10px] overflow-hidden bg-[#FAF7F2] shadow-xs group">
                         <img 
                             id="main-product-gallery-img" 
                             src="{{ $galleryImages[0] }}" 
@@ -139,7 +139,7 @@
                         @foreach($galleryImages as $index => $imgUrl)
                             <button 
                                 type="button" 
-                                class="gallery-thumbnail-btn relative w-18 h-18 sm:w-20 sm:h-20 rounded-[6px] sm:rounded-[8px] overflow-hidden bg-[#FAF7F2] border-2 transition-all duration-200 shrink-0 cursor-pointer focus:outline-none {{ $index === 0 ? 'border-[#D38928] ring-2 ring-[#D38928]/30 shadow-sm opacity-100' : 'border-gray-200 hover:border-gray-400 opacity-75 hover:opacity-100' }}"
+                                class="gallery-thumbnail-btn relative w-18 h-18 sm:w-20 sm:h-20 rounded-[6px] sm:rounded-[8px] overflow-hidden bg-[#FAF7F2] transition-all duration-200 shrink-0 cursor-pointer focus:outline-none {{ $index === 0 ? 'ring-2 ring-[#D38928] opacity-100' : 'opacity-75 hover:opacity-100' }}"
                                 data-img-src="{{ $imgUrl }}"
                                 data-index="{{ $index }}"
                                 aria-label="View product image {{ $index + 1 }}"
@@ -150,11 +150,11 @@
                     </div>
                 </div>
 
-                <!-- 2. DESKTOP VIEW: Large High-Res 2-Column Grid (Exact 5px gap & 8px/10px radius) -->
+                <!-- 2. DESKTOP VIEW: Large High-Res 2-Column Grid (Exact 5px gap & 8px/10px radius, No Borders) -->
                 <div class="hidden lg:grid grid-cols-2 gap-[5px]">
                     
                     <!-- Visual 1: Hero Packshot with Ceramic Stand Banner -->
-                    <div class="relative aspect-[3/4] rounded-[8px] sm:rounded-[10px] overflow-hidden bg-[#FAF7F2] border border-gray-200 shadow-xs group">
+                    <div class="relative aspect-[3/4] rounded-[8px] sm:rounded-[10px] overflow-hidden bg-[#FAF7F2] shadow-xs group">
                         <img src="{{ $galleryImages[0] }}" alt="{{ $product->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         @if($hasDiscount || $discountPercent)
                         <div class="absolute top-2.5 left-2.5 z-10 pointer-events-none">
@@ -169,7 +169,7 @@
                     </div>
 
                     <!-- Visual 2: Artisanal Pooja Altar & Burning Incense -->
-                    <div class="relative aspect-[3/4] rounded-[8px] sm:rounded-[10px] overflow-hidden bg-[#FAF7F2] border border-gray-200 shadow-xs group">
+                    <div class="relative aspect-[3/4] rounded-[8px] sm:rounded-[10px] overflow-hidden bg-[#FAF7F2] shadow-xs group">
                         <img src="{{ $galleryImages[1] ?? asset('assets/images/hero-incense-banner.jpg') }}" alt="Manglam Sacred Altar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute bottom-2.5 left-2.5 right-2.5 bg-black/60 backdrop-blur-xs py-1.5 px-3 rounded-[6px] text-center text-white text-xs font-bold tracking-wider shadow-sm font-body">
                             100% BAMBOO FREE &amp; VEDIC
@@ -177,7 +177,7 @@
                     </div>
 
                     <!-- Visual 3: Sacred Camphor / Temple Crystals / Detail -->
-                    <div class="relative aspect-[3/4] rounded-[8px] sm:rounded-[10px] overflow-hidden bg-[#FAF7F2] border border-gray-200 shadow-xs group">
+                    <div class="relative aspect-[3/4] rounded-[8px] sm:rounded-[10px] overflow-hidden bg-[#FAF7F2] shadow-xs group">
                         <img src="{{ $galleryImages[2] ?? asset('assets/images/camphor-refill-pack-card.jpg') }}" alt="Pure Temple Ingredients" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full bg-white/95 text-[#965A15] text-[11px] font-bold uppercase tracking-wider font-heading border border-[#D38928]/40 shadow-xs">
                             Zero Charcoal
@@ -185,7 +185,7 @@
                     </div>
 
                     <!-- Visual 4: Devotional Ambient Living Room -->
-                    <div class="relative aspect-[3/4] rounded-[8px] sm:rounded-[10px] overflow-hidden bg-[#FAF7F2] border border-gray-200 shadow-xs group">
+                    <div class="relative aspect-[3/4] rounded-[8px] sm:rounded-[10px] overflow-hidden bg-[#FAF7F2] shadow-xs group">
                         <img src="{{ $galleryImages[3] ?? asset('assets/images/hero-ram-uphaar-banner.jpg') }}" alt="Sacred Fragrance Ambience" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute bottom-2.5 left-2.5 right-2.5 bg-black/60 backdrop-blur-xs py-1.5 px-3 rounded-[6px] text-center text-white text-xs font-bold tracking-wider shadow-sm font-body">
                             TEMPLE-GRADE PURITY
@@ -194,21 +194,21 @@
 
                 </div>
 
-                <!-- Fragrance Notes & Why Choose Manglam (High-Res Image Format with 5px Gap & 8px/10px Radius) -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-[5px] pt-1">
-                    <div class="relative w-full aspect-[5/4] sm:aspect-[4/3] rounded-[8px] sm:rounded-[10px] overflow-hidden bg-[#FAF7F2] border border-gray-200 shadow-xs group">
+                <!-- Fragrance Notes & Why Choose Manglam (High-Res Image Format with exact equal aspect-[3/4] size & 5px Gap) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-[5px] pt-0.5">
+                    <div class="relative w-full aspect-[3/4] rounded-[8px] sm:rounded-[10px] overflow-hidden bg-[#8C531B] shadow-xs group">
                         <img 
                             src="{{ asset('assets/images/fragrance-notes-card.png') }}" 
                             alt="Fragrance Notes Aromatic Profile" 
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                             loading="lazy"
                         >
                     </div>
-                    <div class="relative w-full aspect-[5/4] sm:aspect-[4/3] rounded-[8px] sm:rounded-[10px] overflow-hidden bg-[#FAF7F2] border border-gray-200 shadow-xs group">
+                    <div class="relative w-full aspect-[3/4] rounded-[8px] sm:rounded-[10px] overflow-hidden bg-white shadow-xs group">
                         <img 
                             src="{{ asset('assets/images/why-choose-manglam-card.png') }}" 
                             alt="Why Choose Manglam Purity Guarantee" 
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                             loading="lazy"
                         >
                     </div>
@@ -389,162 +389,55 @@
                             >
                         </a>
                     </div>
+
+                    <!-- 1. Product Description Accordion (Collapsible with Title & Arrow) -->
+                    <div class="pt-2">
+                        <div class="border border-[#EADBCC] rounded-[8px] sm:rounded-[10px] bg-white overflow-hidden shadow-2xs">
+                            <button 
+                                type="button" 
+                                id="product-desc-accordion-btn"
+                                class="w-full px-4 py-3.5 flex items-center justify-between text-left font-bold text-sm sm:text-base text-[#121212] hover:text-[#D38928] bg-white hover:bg-[#FAF8F5] transition-colors focus:outline-none font-heading cursor-pointer select-none"
+                                onclick="
+                                    const body = document.getElementById('product-desc-accordion-body');
+                                    const icon = document.getElementById('product-desc-accordion-icon');
+                                    const isHidden = body.classList.toggle('hidden');
+                                    icon.style.transform = isHidden ? 'rotate(0deg)' : 'rotate(180deg)';
+                                "
+                            >
+                                <span>Product Description</span>
+                                <svg id="product-desc-accordion-icon" class="w-4 h-4 text-[#D38928] transform transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <div id="product-desc-accordion-body" class="px-4 pb-4 pt-1 text-xs sm:text-sm text-gray-600 leading-relaxed font-body border-t border-[#EADBCC]/60 bg-[#FFFEFC]">
+                                @if($product->description)
+                                    <div class="prose prose-sm max-w-none text-gray-700">
+                                        {!! $product->description !!}
+                                    </div>
+                                @else
+                                    <p>
+                                        Immerse your home temple in divine bliss with <strong>{{ $product->title }}</strong>. Handcrafted with revered Vedic botanicals, organic resins, and essential flower extracts in Vrindavan Dham. 100% bamboo-free and zero charcoal formulation to honor sacred scriptures and protect your prana with soothing, non-irritating pure white smoke.
+                                    </p>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Specifications & Purity Comparison Image Section (Just Below Description) -->
+                    <div class="pt-2">
+                        <div class="w-full rounded-[8px] sm:rounded-[10px] overflow-hidden border border-[#EADBCC] shadow-2xs bg-white">
+                            <img 
+                                src="{{ asset('assets/images/specifications-purity-comparison.png') }}" 
+                                alt="Specifications and Purity Comparison Manglam vs Others" 
+                                class="w-full h-auto block object-cover"
+                                loading="lazy"
+                            >
+                        </div>
+                    </div>
                 </div>
 
             </div>
 
-        </div>
-
-        <!-- ========================================================================= -->
-        <!-- 2. SPECIFICATION & COMPARISON TABLE (Mangalam vs Others)                  -->
-        <!-- ========================================================================= -->
-        <div class="mt-16 sm:mt-24 space-y-8">
-            <div class="text-center max-w-2xl mx-auto space-y-2">
-                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#121212] font-heading tracking-tight">
-                    Specification &amp; Purity Comparison
-                </h2>
-                <p class="text-xs sm:text-sm text-gray-500 leading-relaxed">
-                    Why spiritual seekers and temple priests trust Manglam over ordinary commercial incense.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
-                
-                <!-- Left Card: Specifications (5 Cols) -->
-                <div class="lg:col-span-5 bg-white rounded-[20px] border border-[#EADBCC] p-6 sm:p-7 shadow-xs flex flex-col justify-between">
-                    <div>
-                        <div class="pb-4 border-b border-[#EADBCC]">
-                            <h3 class="font-heading font-bold text-base sm:text-lg text-[#121212]">Specifications</h3>
-                        </div>
-
-                        <div class="divide-y divide-[#EADBCC] text-xs sm:text-sm">
-                            <div class="py-3 sm:py-3.5 flex items-center justify-between gap-3">
-                                <span class="text-gray-500 font-medium">Country of Origin</span>
-                                <span class="text-[#121212] font-semibold font-heading">Vrindavan, Bharat 🇮🇳</span>
-                            </div>
-                            <div class="py-3 sm:py-3.5 flex items-center justify-between gap-3">
-                                <span class="text-gray-500 font-medium">Item Form</span>
-                                <span class="text-[#121212] font-semibold font-heading">Bambooless Incense</span>
-                            </div>
-                            <div class="py-3 sm:py-3.5 flex items-center justify-between gap-3">
-                                <span class="text-gray-500 font-medium">Key Herb / Essence</span>
-                                <span class="text-[#121212] font-semibold font-heading text-right">Pure Bhimseni &amp; Herbs</span>
-                            </div>
-                            <div class="py-3 sm:py-3.5 flex items-center justify-between gap-3">
-                                <span class="text-gray-500 font-medium">Stick Count</span>
-                                <span class="text-[#121212] font-semibold font-heading">100 Sticks / Pack</span>
-                            </div>
-                            <div class="py-3 sm:py-3.5 flex items-center justify-between gap-3">
-                                <span class="text-gray-500 font-medium">Burn Time</span>
-                                <span class="text-[#121212] font-semibold font-heading">45 - 50 Minutes</span>
-                            </div>
-                            <div class="py-3 sm:py-3.5 flex items-center justify-between gap-3">
-                                <span class="text-gray-500 font-medium">Ceramic Holder</span>
-                                <span class="text-emerald-700 font-bold font-heading">Included FREE (₹150 Value)</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mt-4 pt-3.5 border-t border-[#EADBCC] flex items-center justify-between text-[11px] text-gray-500">
-                        <span>✦ Lab Tested Purity</span>
-                        <span class="font-medium text-[#C87A1E]">Zero Synthetic Chemical</span>
-                    </div>
-                </div>
-
-                <!-- Right Card: Purity Comparison (7 Cols) -->
-                <div class="lg:col-span-7 bg-white rounded-[20px] border border-[#EADBCC] p-6 sm:p-7 shadow-xs flex flex-col justify-between">
-                    <div>
-                        <!-- Header Columns -->
-                        <div class="grid grid-cols-12 items-center pb-4 border-b border-[#EADBCC] gap-2">
-                            <div class="col-span-6 font-bold text-xs uppercase tracking-wider text-gray-500 font-heading">
-                                Features
-                            </div>
-                            <div class="col-span-3 text-center font-bold text-xs uppercase tracking-wider text-[#D38928] font-heading">
-                                Manglam™
-                            </div>
-                            <div class="col-span-3 text-center font-bold text-xs uppercase tracking-wider text-gray-400 font-heading">
-                                Others
-                            </div>
-                        </div>
-
-                        <!-- Comparison Rows -->
-                        <div class="divide-y divide-[#EADBCC] text-xs sm:text-sm">
-                            
-                            <!-- Row 1 -->
-                            <div class="grid grid-cols-12 py-3.5 items-center gap-2">
-                                <div class="col-span-6 font-medium text-[#121212]">
-                                    100% Bamboo-Free (Scripture Compliant)
-                                </div>
-                                <div class="col-span-3 text-center text-emerald-600 font-bold text-base">
-                                    ✓
-                                </div>
-                                <div class="col-span-3 text-center text-red-400 font-bold text-base">
-                                    ✕
-                                </div>
-                            </div>
-
-                            <!-- Row 2 -->
-                            <div class="grid grid-cols-12 py-3.5 items-center gap-2">
-                                <div class="col-span-6 font-medium text-[#121212]">
-                                    Zero Toxic Charcoal (No Eye Burning)
-                                </div>
-                                <div class="col-span-3 text-center text-emerald-600 font-bold text-base">
-                                    ✓
-                                </div>
-                                <div class="col-span-3 text-center text-red-400 font-bold text-base">
-                                    ✕
-                                </div>
-                            </div>
-
-                            <!-- Row 3 -->
-                            <div class="grid grid-cols-12 py-3.5 items-center gap-2">
-                                <div class="col-span-6 font-medium text-[#121212]">
-                                    Premium Organic Essential Herbs
-                                </div>
-                                <div class="col-span-3 text-center text-emerald-600 font-bold text-base">
-                                    ✓
-                                </div>
-                                <div class="col-span-3 text-center text-red-400 font-bold text-base">
-                                    ✕
-                                </div>
-                            </div>
-
-                            <!-- Row 4 -->
-                            <div class="grid grid-cols-12 py-3.5 items-center gap-2">
-                                <div class="col-span-6 font-medium text-[#121212]">
-                                    Long-Lasting Temple Scent (4+ Hours)
-                                </div>
-                                <div class="col-span-3 text-center text-emerald-600 font-bold text-base">
-                                    ✓
-                                </div>
-                                <div class="col-span-3 text-center text-red-400 font-bold text-base">
-                                    ✕
-                                </div>
-                            </div>
-
-                            <!-- Row 5 -->
-                            <div class="grid grid-cols-12 py-3.5 items-center gap-2">
-                                <div class="col-span-6 font-medium text-[#121212]">
-                                    Complimentary Artisan Terracotta Stand
-                                </div>
-                                <div class="col-span-3 text-center text-emerald-600 font-bold text-base">
-                                    ✓
-                                </div>
-                                <div class="col-span-3 text-center text-red-400 font-bold text-base">
-                                    ✕
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="mt-4 pt-3.5 border-t border-[#EADBCC] flex items-center justify-between text-[11px] text-gray-500">
-                        <span>✦ 100% Eco-Friendly &amp; Non-Toxic</span>
-                        <span class="font-semibold text-emerald-700">Recommended for Daily Pooja</span>
-                    </div>
-                </div>
-
-            </div>
         </div>
 
         <!-- ========================================================================= -->
@@ -831,23 +724,23 @@
 <!-- FLOATING 3D STICKY BOTTOM ADD TO CART ON SCROLL -->
 <div 
     id="sticky-product-bar" 
-    class="fixed bottom-[68px] lg:bottom-6 left-1/2 -translate-x-1/2 z-40 w-[94%] sm:w-[85%] lg:w-[70%] max-w-5xl bg-[#831F2E]/98 backdrop-blur-2xl border-2 border-[#6E1724] ring-1 ring-[#D38928]/40 rounded-2xl sm:rounded-[28px] px-4 sm:px-7 py-3 sm:py-3.5 shadow-[0_25px_60px_-10px_rgba(0,0,0,0.5),0_12px_28px_-6px_rgba(131,31,46,0.5),inset_0_1px_2px_rgba(255,255,255,0.15)] transform translate-y-32 opacity-0 pointer-events-none transition-all duration-300 flex items-center justify-between gap-4 sm:gap-8 font-body select-none"
+    class="fixed bottom-[68px] lg:bottom-6 left-1/2 -translate-x-1/2 z-40 w-[94%] sm:w-[85%] lg:w-[70%] max-w-5xl bg-white/98 backdrop-blur-2xl border-2 border-[#831F2E] rounded-2xl sm:rounded-[28px] px-4 sm:px-7 py-3 sm:py-3.5 shadow-[0_25px_60px_-10px_rgba(131,31,46,0.25),0_12px_28px_-6px_rgba(0,0,0,0.18)] transform translate-y-32 opacity-0 pointer-events-none transition-all duration-300 flex items-center justify-between gap-4 sm:gap-8 font-body select-none"
 >
     <div class="flex items-center space-x-3.5 sm:space-x-4 overflow-hidden min-w-0 pr-2">
-        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-black/20 border border-[#F6DAA8]/30 overflow-hidden shrink-0 shadow-md">
+        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-[#FAF7F2] border border-[#831F2E]/30 overflow-hidden shrink-0 shadow-xs">
             <img src="{{ asset($mainImg) }}" alt="{{ $product->title }}" class="w-full h-full object-cover">
         </div>
         <div class="truncate text-left">
-            <div class="text-xs sm:text-base font-bold text-white font-heading truncate leading-tight">{{ $product->title }}</div>
+            <div class="text-xs sm:text-base font-bold text-[#121212] font-heading truncate leading-tight">{{ $product->title }}</div>
             <div class="flex items-baseline space-x-2 pt-0.5 sm:pt-1 font-body">
-                <span class="text-sm sm:text-lg font-bold text-[#F6DAA8]">
+                <span class="text-sm sm:text-lg font-bold text-[#C87A1E]">
                     ₹{{ number_format($product->active_price, 2) }}
                 </span>
                 @if(isset($mrpPrice) && $mrpPrice > $product->active_price)
-                    <span class="text-xs sm:text-sm text-white/60 line-through font-medium">
+                    <span class="text-xs sm:text-sm text-gray-400 line-through font-medium">
                         ₹{{ number_format($mrpPrice, 2) }}
                     </span>
-                    <span class="hidden sm:inline-block px-2 py-0.5 bg-[#962637] border border-[#F6DAA8]/40 text-[#F6DAA8] text-[10px] font-bold rounded-full font-body">
+                    <span class="hidden sm:inline-block px-2 py-0.5 bg-[#FFF8EE] border border-[#F0D5AA] text-[#C87A1E] text-[10px] font-bold rounded-full font-body">
                         {{ round((($mrpPrice - $product->active_price) / $mrpPrice) * 100) }}% OFF
                     </span>
                 @endif
@@ -858,7 +751,7 @@
     <button 
         type="button" 
         id="sticky-atc-btn" 
-        class="py-2.5 sm:py-3 px-5 sm:px-7 bg-[#D38928] hover:bg-[#B8741E] active:bg-[#965A15] text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-[10px] shadow-md hover:shadow-lg transition-all font-heading cursor-pointer whitespace-nowrap shrink-0 flex items-center space-x-2 border border-[#F6DAA8]/30"
+        class="py-2.5 sm:py-3 px-5 sm:px-7 bg-[#D38928] hover:bg-[#B8741E] active:bg-[#965A15] text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-[10px] shadow-sm hover:shadow-md transition-all font-heading cursor-pointer whitespace-nowrap shrink-0 flex items-center space-x-2"
         data-product-id="{{ $product->id }}"
         data-product-title="{{ $product->title }}"
         data-product-slug="{{ $product->slug }}"
