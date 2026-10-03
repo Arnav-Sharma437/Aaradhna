@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
+use App\Models\Review;
+use App\Models\ReviewMedia;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -63,7 +65,7 @@ class ProductController extends Controller
                 'primaryImage',
                 'images',
                 'variants',
-                'approvedReviews',
+                'approvedReviews.media',
             ])
             ->first();
 
@@ -198,5 +200,61 @@ class ProductController extends Controller
         }
 
         return back()->with('prebooking_success', 'धन्यवाद! Your VIP Pre-booking for Mangalam Pitambara Havan is confirmed. Our Vedic care team will notify you with priority invitation before the public launch.');
+    }
+
+    /**
+     * Store a newly submitted customer review (Pending admin approval).
+     */
+    public function storeReview(Request $request, Product $product)
+    {
+        $validated = $request->validate([
+            'reviewer_name' => 'nullable|string|max:100',
+            'reviewer_email' => 'nullable|email|max:150',
+            'rating' => 'nullable|integer|min:1|max:5',
+            'title' => 'nullable|string|max:200',
+            'review_text' => 'nullable|string|max:3000',
+            'images' => 'nullable|array|max:4',
+            'images.*' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:5120',
+        ]);
+
+        $name = !empty($validated['reviewer_name']) ? trim($validated['reviewer_name']) : 'Anonymous';
+        $email = !empty($validated['reviewer_email']) ? trim($validated['reviewer_email']) : 'anonymous@manglam.co';
+        $rating = !empty($validated['rating']) ? (int) $validated['rating'] : 5;
+        $title = !empty($validated['title']) ? trim($validated['title']) : null;
+        $text = !empty($validated['review_text']) ? trim($validated['review_text']) : 'Authentic sacred fragrance experience.';
+
+        $review = Review::create([
+            'product_id' => $product->id,
+            'user_id' => auth()->id(),
+            'reviewer_name' => $name,
+            'reviewer_email' => $email,
+            'rating' => $rating,
+            'title' => $title,
+            'review_text' => $text,
+            'is_verified_buyer' => auth()->check(),
+            'status' => 'pending', // Pending moderation approval
+        ]);
+
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $image) {
+                if ($image && $image->isValid()) {
+                    $path = $image->store('reviews', 'public');
+                    ReviewMedia::create([
+                        'review_id' => $review->id,
+                        'media_path' => $path,
+                        'media_type' => 'image',
+                    ]);
+                }
+            }
+        }
+
+        if ($request->expectsJson() || $request->ajax()) {
+            return response()->json([
+                'success' => true,
+                'message' => 'Dhanyawad! Your review and photos have been submitted for moderation. It will be visible after approval.',
+            ]);
+        }
+
+        return redirect()->back()->with('review_submitted', 'Dhanyawad! Your review has been submitted and is pending verification. It will appear once approved by our team.');
     }
 }

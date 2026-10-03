@@ -21,6 +21,7 @@ Route::get('/collections/{slug}', [CollectionController::class, 'show'])->name('
 Route::get('/pitambara-havan', [ProductController::class, 'showPitambara'])->name('products.pitambara');
 Route::post('/pitambara-havan/pre-book', [ProductController::class, 'storePreBooking'])->name('pitambara.prebook');
 Route::get('/products/{slug}', [ProductController::class, 'show'])->name('products.show');
+Route::post('/products/{product}/reviews', [ProductController::class, 'storeReview'])->name('products.reviews.store');
 
 // Bundle Builder Offers (Super Save Offers)
 use App\Http\Controllers\Front\BundleController;
