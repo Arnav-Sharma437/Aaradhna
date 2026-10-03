@@ -595,13 +595,12 @@
                                 Features
                             </h3>
                         </div>
-                        <div class="col-span-3 bg-[#FDF6ED] py-2 px-2 text-center rounded-t-lg border-t-2 border-x-2 border-[#D38928]/50 shadow-xs flex flex-col items-center justify-center">
-                            <svg class="w-4 h-4 text-[#C27E23] mb-0.5" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 2C12 2 8 7 8 11C8 14.5 10.5 17 12 18C13.5 17 16 14.5 16 11C16 7 12 2 12 2Z"/>
-                                <path d="M6 13C4 14.5 3 17 4 19C5.5 20.5 8 20.5 10 19.5C9 18 8 16 8 13C7.2 13 6.5 13 6 13Z" opacity="0.7"/>
-                                <path d="M18 13C18.8 13 19.5 13 20 13C21 17 20 19.5 18.5 20.5C16.5 20.5 14 18 15 16.5C15.8 14.8 17 13.5 18 13Z" opacity="0.7"/>
-                            </svg>
-                            <span class="text-[11px] sm:text-xs font-black tracking-widest text-[#7B1925] uppercase font-heading">Manglam</span>
+                        <div class="col-span-3 bg-[#FDF6ED] py-2 px-2 text-center rounded-t-lg border-t-2 border-x-2 border-[#D38928]/50 shadow-xs flex items-center justify-center min-h-[52px]">
+                            <img 
+                                src="{{ asset('assets/images/mangalam-logo.png') }}" 
+                                alt="Manglam" 
+                                class="h-6 sm:h-7.5 w-auto max-w-[95px] sm:max-w-[115px] object-contain"
+                            >
                         </div>
                         <div class="col-span-3 py-3 px-2 text-center text-[11px] sm:text-xs font-bold tracking-wider text-[#F7E7CE] uppercase font-heading">
                             Others
