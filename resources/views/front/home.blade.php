@@ -1201,93 +1201,94 @@
 </section>
 
 <!-- ========================================================================= -->
-<!-- 6. ROOTED IN PURITY (Rich Vedic Patterned Section & 3 Compact Cards in Single Row) -->
+<!-- 6. ROOTED IN PURITY (Exact Matching Reference Screenshot on White Background) -->
 <!-- ========================================================================= -->
-<section class="py-[40px] border-b border-[#EAE3D9] select-none font-body relative overflow-hidden bg-[#C85A17] bg-cover bg-center" style="background-image: url('{{ asset('assets/images/rooted-in-purity-bg.png') }}'); background-size: cover; background-position: center;">
-    
-    <!-- Subtle Warm Gradient Overlay for Depth -->
-    <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/30 pointer-events-none"></div>
-
-    <div class="w-full max-w-[1440px] mx-auto px-3 sm:px-8 lg:px-[40px] relative z-10">
+<section class="py-[40px] bg-white border-b border-[#EAE3D9] select-none font-body">
+    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
         
-        <!-- Clean Luxury Header -->
-        <div class="text-center max-xl mx-auto mb-6 sm:mb-8">
-            <div class="inline-flex items-center space-x-1.5 sm:space-x-2 px-3 py-0.5 sm:px-3.5 sm:py-1 rounded-full bg-white/90 backdrop-blur-xs border border-white/40 text-[#831F2E] shadow-sm mb-2 sm:mb-3">
-                <span class="w-1.5 h-1.5 rounded-full bg-[#831F2E]"></span>
-                <span class="text-[9px] sm:text-[11px] font-bold uppercase tracking-[0.2em] font-heading">✦ 100% SATTVIK SAMAGRI ✦</span>
+        <!-- Clean Header (Matching Screenshot) -->
+        <div class="text-center max-w-xl mx-auto mb-8 sm:mb-10 space-y-1.5">
+            <div class="flex items-center justify-center space-x-3 text-[#C87A1E] text-xs font-bold uppercase tracking-[0.2em] font-heading">
+                <div class="w-8 sm:w-14 h-[1px] bg-[#C87A1E]/40"></div>
+                <span class="flex items-center gap-1.5">
+                    <span class="text-[9px]">◆</span>
+                    <span>CRAFTED WITH CARE</span>
+                    <span class="text-[9px]">◆</span>
+                </span>
+                <div class="w-8 sm:w-14 h-[1px] bg-[#C87A1E]/40"></div>
             </div>
-            <h2 class="text-xl sm:text-3xl lg:text-4xl font-bold text-white font-heading tracking-tight drop-shadow-md">
+            <h2 class="text-3xl sm:text-4xl lg:text-[42px] font-serif font-normal text-[#6B1120] tracking-tight leading-tight">
                 Rooted in Purity
             </h2>
+            <p class="text-xs sm:text-sm text-gray-600 font-normal">
+                Traditional wisdom. Thoughtfully crafted.
+            </p>
         </div>
 
-        <!-- 3 Elegant Rectangular Cards in Single Row on all screens -->
-        <div class="grid grid-cols-3 gap-2 sm:gap-6 max-w-4xl mx-auto">
-            
-            <!-- Card 1: Ancient Recipes -->
-            <div class="bg-white rounded-[12px] sm:rounded-[20px] py-4 px-2 sm:py-10 sm:px-6 flex flex-col items-center justify-center text-center shadow-md sm:shadow-lg border border-white/60 hover:-translate-y-1 transition-all duration-300 group">
-                <!-- Circular Line-Art Icon (Preserved & Enhanced) -->
-                <div class="w-12 h-12 sm:w-24 sm:h-24 rounded-full border sm:border-2 border-[#121212] bg-[#FAF5EE] group-hover:bg-[#FFF] flex items-center justify-center text-[#121212] shadow-xs transition-colors">
-                    <svg class="w-6 h-6 sm:w-12 sm:h-12" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                        <!-- Mortar Bowl -->
-                        <path d="M16 34h32c0 10-7.2 18-16 18s-16-8-16-18Z"/>
-                        <path d="M24 52h16"/>
-                        <!-- Pestle Grinder Stick -->
-                        <path d="M38 18l7-6a1.5 1.5 0 0 1 2.1.2l1.1 1.1a1.5 1.5 0 0 1-.2 2.1L38 34"/>
-                        <!-- Floating Herbal Leaves -->
-                        <path d="M22 22c0-3.5 3.5-5.5 6-5.5s1 3.5 0 5.5-6 0-6 0Z"/>
-                        <circle cx="28" cy="27" r="1.5" fill="currentColor"/>
-                        <circle cx="23" cy="29" r="1" fill="currentColor"/>
-                    </svg>
+        <!-- 3 Feature Columns inside Single Unified Rounded Box (Matching Screenshot) -->
+        <div class="bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] p-4 sm:p-8 max-w-5xl mx-auto shadow-xs">
+            <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[#EADBCC]">
+                
+                <!-- Column 1: Ancient Recipes -->
+                <div class="py-6 px-4 sm:py-6 sm:px-6 flex flex-col items-center justify-center text-center space-y-3 group">
+                    <div class="w-16 h-16 rounded-full bg-[#FAF5EE] border border-[#EADBCC] flex items-center justify-center text-[#6B1120] group-hover:scale-105 transition-transform">
+                        <svg class="w-8 h-8" viewBox="0 0 64 64" fill="none" stroke="#6B1120" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 34h32c0 10-7.2 18-16 18s-16-8-16-18Z"/>
+                            <path d="M24 52h16"/>
+                            <path d="M38 18l7-6a1.5 1.5 0 0 1 2.1.2l1.1 1.1a1.5 1.5 0 0 1-.2 2.1L38 34"/>
+                            <path d="M22 22c0-3.5 3.5-5.5 6-5.5s1 3.5 0 5.5-6 0-6 0Z"/>
+                            <circle cx="28" cy="27" r="1.5" fill="#6B1120"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-base sm:text-lg font-serif font-medium text-[#1F1F1F]">
+                        Ancient Recipes
+                    </h3>
+                    <p class="text-xs sm:text-[13.5px] text-gray-600 font-normal leading-relaxed">
+                        Inspired by time-honoured traditions.
+                    </p>
                 </div>
-                <!-- Clean Label -->
-                <h3 class="text-[11px] sm:text-base lg:text-lg font-serif font-bold text-[#121212] mt-2 sm:mt-4 tracking-tight sm:tracking-wide leading-tight">
-                    Ancient Recipes
-                </h3>
-            </div>
 
-            <!-- Card 2: Purest Ingredients -->
-            <div class="bg-white rounded-[12px] sm:rounded-[20px] py-4 px-2 sm:py-10 sm:px-6 flex flex-col items-center justify-center text-center shadow-md sm:shadow-lg border border-white/60 hover:-translate-y-1 transition-all duration-300 group">
-                <!-- Circular Line-Art Icon (Preserved & Enhanced) -->
-                <div class="w-12 h-12 sm:w-24 sm:h-24 rounded-full border sm:border-2 border-[#121212] bg-[#FAF5EE] group-hover:bg-[#FFF] flex items-center justify-center text-[#121212] shadow-xs transition-colors">
-                    <svg class="w-6 h-6 sm:w-12 sm:h-12" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                        <!-- 3 Sacred Botanical Leaves -->
-                        <path d="M32 14c-3.5 4.5-3.5 10.5 0 14 3.5-3.5 3.5-9.5 0-14Z"/>
-                        <path d="M23 20c-4.5 1-6.5 5.5-4 10 3.5-1 6.5-4.5 4-10Z"/>
-                        <path d="M41 20c4.5 1 6.5 5.5 4 10-3.5-1-6.5-4.5-4-10Z"/>
-                        <!-- Cupped Hand Underneath -->
-                        <path d="M17 38c5-1.5 11 1 14 4.5l2.5-1.5c2.5-1.5 5-1.5 7.5 1l5 6"/>
-                        <path d="M15 38c-2.5 2.5-3 6-.5 8.5l6.5 6.5h17l7.5-8.5"/>
-                    </svg>
+                <!-- Column 2: Purest Ingredients -->
+                <div class="py-6 px-4 sm:py-6 sm:px-6 flex flex-col items-center justify-center text-center space-y-3 group">
+                    <div class="w-16 h-16 rounded-full bg-[#FAF5EE] border border-[#EADBCC] flex items-center justify-center text-[#6B1120] group-hover:scale-105 transition-transform">
+                        <svg class="w-8 h-8" viewBox="0 0 64 64" fill="none" stroke="#6B1120" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <!-- Sacred Flames & Kund -->
+                            <path d="M32 16c-3 4-3 9 0 12 3-3 3-8 0-12Z"/>
+                            <path d="M23 21c-3.5 1-5 4.5-3 8 2.5-1 4.5-4 3-8Z"/>
+                            <path d="M41 21c3.5 1 5 4.5 3 8-2.5-1-4.5-4-3-8Z"/>
+                            <path d="M18 36h28c0 7-6.3 12-14 12s-14-5-14-12Z"/>
+                            <path d="M25 48h14"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-base sm:text-lg font-serif font-medium text-[#1F1F1F]">
+                        Purest Ingredients
+                    </h3>
+                    <p class="text-xs sm:text-[13.5px] text-gray-600 font-normal leading-relaxed">
+                        Carefully selected for every ritual.
+                    </p>
                 </div>
-                <!-- Clean Label -->
-                <h3 class="text-[11px] sm:text-base lg:text-lg font-serif font-bold text-[#121212] mt-2 sm:mt-4 tracking-tight sm:tracking-wide leading-tight">
-                    Purest Ingredients
-                </h3>
-            </div>
 
-            <!-- Card 3: Eco-conscious -->
-            <div class="bg-white rounded-[12px] sm:rounded-[20px] py-4 px-2 sm:py-10 sm:px-6 flex flex-col items-center justify-center text-center shadow-md sm:shadow-lg border border-white/60 hover:-translate-y-1 transition-all duration-300 group">
-                <!-- Circular Line-Art Icon (Preserved & Enhanced) -->
-                <div class="w-12 h-12 sm:w-24 sm:h-24 rounded-full border sm:border-2 border-[#121212] bg-[#FAF5EE] group-hover:bg-[#FFF] flex items-center justify-center text-[#121212] shadow-xs transition-colors">
-                    <svg class="w-6 h-6 sm:w-12 sm:h-12" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                        <!-- Open Box -->
-                        <path d="M19 35l13 6 13-6"/>
-                        <path d="M32 41v13"/>
-                        <path d="M17 33l15-7 15 7v13l-15 7-15-7V33Z"/>
-                        <path d="M14 29l8-5"/>
-                        <path d="M50 29l-8-5"/>
-                        <!-- Recycle Leaf / Leaves Circle Above Box -->
-                        <circle cx="32" cy="19" r="6"/>
-                        <path d="M30 16l3 3-3 3"/>
-                    </svg>
+                <!-- Column 3: Eco-conscious -->
+                <div class="py-6 px-4 sm:py-6 sm:px-6 flex flex-col items-center justify-center text-center space-y-3 group">
+                    <div class="w-16 h-16 rounded-full bg-[#FAF5EE] border border-[#EADBCC] flex items-center justify-center text-[#6B1120] group-hover:scale-105 transition-transform">
+                        <svg class="w-8 h-8" viewBox="0 0 64 64" fill="none" stroke="#6B1120" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <!-- Box & Leaf -->
+                            <path d="M19 24l13-8 13 8v22l-13 8-13-8V24Z"/>
+                            <path d="M19 24l13 8 13-8"/>
+                            <path d="M32 32v22"/>
+                            <path d="M28 42c0-5 4-8 8-8s1 5 0 8-8 0-8 0Z"/>
+                            <path d="M30 42l4-4"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-base sm:text-lg font-serif font-medium text-[#1F1F1F]">
+                        Eco-conscious
+                    </h3>
+                    <p class="text-xs sm:text-[13.5px] text-gray-600 font-normal leading-relaxed">
+                        Thoughtful choices, mindful practices.
+                    </p>
                 </div>
-                <!-- Clean Label -->
-                <h3 class="text-[11px] sm:text-base lg:text-lg font-serif font-bold text-[#121212] mt-2 sm:mt-4 tracking-tight sm:tracking-wide leading-tight">
-                    Eco-conscious
-                </h3>
-            </div>
 
+            </div>
         </div>
 
     </div>
