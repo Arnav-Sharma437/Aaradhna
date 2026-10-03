@@ -119,8 +119,8 @@
         </span>
     </div>
 
-    <!-- Product Image Box (Matching Categories Inner Padding & Radius) -->
-    <div class="p-2.5 sm:p-3.5 pb-0">
+    <!-- Product Image Box (5px Inner Padding) -->
+    <div class="p-[5px] pb-0">
         <div class="relative w-full aspect-[4/4.8] rounded-[16px] sm:rounded-[20px] overflow-hidden bg-[#FAF7F2] shadow-2xs">
             <a href="{{ route('products.show', $product->slug) }}" class="block w-full h-full relative overflow-hidden">
                 <!-- Primary Image -->
@@ -155,8 +155,8 @@
         </div>
     </div>
 
-    <!-- Product Card Content -->
-    <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
+    <!-- Product Card Content (5px Padding) -->
+    <div class="p-[5px] pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
         
         <div class="space-y-1">
             <h3 class="text-[15px] sm:text-base font-bold text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug font-body">

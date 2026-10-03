@@ -46,9 +46,12 @@ class PageController extends Controller
     {
         $titles = [
             'privacy-policy' => 'Privacy Policy',
-            'terms-of-service' => 'Terms of Service',
-            'shipping-policy' => 'Shipping & Delivery Policy',
-            'refund-policy' => 'Refund & Cancellation Policy',
+            'terms-of-service' => 'Terms & Conditions',
+            'terms-and-conditions' => 'Terms & Conditions',
+            'terms-conditions' => 'Terms & Conditions',
+            'shipping-policy' => 'Shipping Policy',
+            'refund-policy' => 'Return & Refund Policy',
+            'return-refund-policy' => 'Return & Refund Policy',
         ];
 
         $title = $titles[$slug] ?? ucwords(str_replace('-', ' ', $slug));

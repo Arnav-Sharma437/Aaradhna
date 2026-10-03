@@ -151,7 +151,7 @@
             </button>
 
             <!-- 8-Card Luxury Grid (Mobile Swipeable Slider + Desktop Grid) -->
-            <div id="bestseller-grid" class="flex sm:grid overflow-x-auto sm:overflow-visible scrollbar-none snap-x snap-mandatory sm:grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4 lg:gap-5 pt-4 sm:pt-5 pb-4 sm:pb-0 -mx-5 px-5 sm:mx-0 sm:px-0 scroll-smooth">
+            <div id="bestseller-grid" class="flex sm:grid overflow-x-auto sm:overflow-visible scrollbar-none snap-x snap-mandatory sm:grid-cols-2 lg:grid-cols-4 gap-[10px] pt-4 sm:pt-5 pb-4 sm:pb-0 -mx-5 px-5 sm:mx-0 sm:px-0 scroll-smooth">
                 
                 <!-- Card 1: Swarna Pushpa -->
                 <div class="product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
@@ -163,8 +163,8 @@
                             <span class="text-[#D38928] text-xs">✨</span>
                         </span>
                     </div>
-                    <!-- Image Box (Matching Categories Inner Padding & Radius) -->
-                    <div class="p-2.5 sm:p-3.5 pb-0">
+                    <!-- Image Box (5px Inner Padding) -->
+                    <div class="p-[5px] pb-0">
                         <div class="relative w-full aspect-[4/4.8] rounded-[16px] sm:rounded-[20px] overflow-hidden bg-[#FAF7F2] shadow-2xs">
                             <a href="{{ route('products.show', 'swarna-pushpa') }}" class="block w-full h-full relative overflow-hidden">
                                 <img src="{{ asset('assets/images/oudh-pack-card.jpg') }}" alt="Swarna Pushpa Bambooless" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
@@ -178,7 +178,7 @@
                         </div>
                     </div>
                     <!-- Content -->
-                    <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
+                    <div class="p-[5px] pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
                         <div class="space-y-1">
                             <h3 class="text-[15px] sm:text-base font-bold font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                                 <a href="{{ route('products.show', 'swarna-pushpa') }}">Swarna Pushpa <span class="text-xs font-normal capitalize text-gray-500 ml-0.5">(Marygold)</span></a>
@@ -210,8 +210,8 @@
                             <span class="text-[#D38928] text-xs">✨</span>
                         </span>
                     </div>
-                    <!-- Image Box (Matching Categories Inner Padding & Radius) -->
-                    <div class="p-2.5 sm:p-3.5 pb-0">
+                    <!-- Image Box (5px Inner Padding) -->
+                    <div class="p-[5px] pb-0">
                         <div class="relative w-full aspect-[4/4.8] rounded-[16px] sm:rounded-[20px] overflow-hidden bg-[#FAF7F2] shadow-2xs">
                             <a href="{{ route('products.show', 'chandan-saanjh') }}" class="block w-full h-full relative overflow-hidden">
                                 <img src="{{ asset('assets/images/incense-pack.jpg') }}" alt="Chandan Saanjh Incense" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
@@ -225,7 +225,7 @@
                         </div>
                     </div>
                     <!-- Content -->
-                    <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
+                    <div class="p-[5px] pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
                         <div class="space-y-1">
                             <h3 class="text-[15px] sm:text-base font-bold font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                                 <a href="{{ route('products.show', 'chandan-saanjh') }}">Chandan Saanjh <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(चंदन)</span></a>
@@ -257,8 +257,8 @@
                             <span class="text-[#D38928] text-xs">✨</span>
                         </span>
                     </div>
-                    <!-- Image Box (Matching Categories Inner Padding & Radius) -->
-                    <div class="p-2.5 sm:p-3.5 pb-0">
+                    <!-- Image Box (5px Inner Padding) -->
+                    <div class="p-[5px] pb-0">
                         <div class="relative w-full aspect-[4/4.8] rounded-[16px] sm:rounded-[20px] overflow-hidden bg-[#FAF7F2] shadow-2xs">
                             <a href="{{ route('products.show', 'royal-oudh') }}" class="block w-full h-full relative overflow-hidden">
                                 <img src="{{ asset('assets/images/oudh-pack-card.jpg') }}" alt="Royal Oudh Incense" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
@@ -272,7 +272,7 @@
                         </div>
                     </div>
                     <!-- Content -->
-                    <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
+                    <div class="p-[5px] pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
                         <div class="space-y-1">
                             <h3 class="text-[15px] sm:text-base font-bold font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                                 <a href="{{ route('products.show', 'royal-oudh') }}">Royal Oudh <span class="text-xs font-normal text-gray-500 ml-0.5">(अवध)</span></a>
@@ -304,8 +304,8 @@
                             <span class="text-[#D38928] text-xs">✨</span>
                         </span>
                     </div>
-                    <!-- Image Box (Matching Categories Inner Padding & Radius) -->
-                    <div class="p-2.5 sm:p-3.5 pb-0">
+                    <!-- Image Box (5px Inner Padding) -->
+                    <div class="p-[5px] pb-0">
                         <div class="relative w-full aspect-[4/4.8] rounded-[16px] sm:rounded-[20px] overflow-hidden bg-[#FAF7F2] shadow-2xs">
                             <a href="{{ route('products.show', 'google-dhoop') }}" class="block w-full h-full relative overflow-hidden">
                                 <img src="{{ asset('assets/images/havan-cup.jpg') }}" alt="Google Dhoop Havan Cup" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
@@ -319,7 +319,7 @@
                         </div>
                     </div>
                     <!-- Content -->
-                    <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
+                    <div class="p-[5px] pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
                         <div class="space-y-1">
                             <h3 class="text-[15px] sm:text-base font-bold font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                                 <a href="{{ route('products.show', 'google-dhoop') }}">Guggal Dhoop <span class="text-xs font-normal text-gray-500 ml-0.5">Havan Cup</span></a>
@@ -350,7 +350,7 @@
                             <span class="text-[#D38928] text-xs">✨</span>
                         </span>
                     </div>
-                    <div class="p-2.5 sm:p-3.5 pb-0">
+                    <div class="p-[5px] pb-0">
                         <div class="relative w-full aspect-[4/4.8] rounded-[16px] sm:rounded-[20px] overflow-hidden bg-[#FAF7F2] shadow-2xs">
                             <a href="{{ route('products.show', 'divya-naagchampa') }}" class="block w-full h-full">
                                 <img src="{{ asset('assets/images/incense-pack.jpg') }}" alt="Divya Naagchampa Bambooless" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105"><img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Divya Naagchampa (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
@@ -362,7 +362,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
+                    <div class="p-[5px] pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
                         <div class="space-y-1">
                             <h3 class="text-[15px] sm:text-base font-bold font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                                 <a href="{{ route('products.show', 'divya-naagchampa') }}">Divya Naagchampa <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(नागचंपा)</span></a>
@@ -393,7 +393,7 @@
                             <span class="text-[#D38928] text-xs">✨</span>
                         </span>
                     </div>
-                    <div class="p-2.5 sm:p-3.5 pb-0">
+                    <div class="p-[5px] pb-0">
                         <div class="relative w-full aspect-[4/4.8] rounded-[16px] sm:rounded-[20px] overflow-hidden bg-[#FAF7F2] shadow-2xs">
                             <a href="{{ route('products.show', 'mogra-noor') }}" class="block w-full h-full">
                                 <img src="{{ asset('assets/images/incense-pack.jpg') }}" alt="Mogra Noor Bambooless" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105"><img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Mogra Noor (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
@@ -405,7 +405,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
+                    <div class="p-[5px] pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
                         <div class="space-y-1">
                             <h3 class="text-[15px] sm:text-base font-bold font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                                 <a href="{{ route('products.show', 'mogra-noor') }}">Mogra Noor <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(मोगरा)</span></a>
@@ -436,7 +436,7 @@
                             <span class="text-[#D38928] text-xs">✨</span>
                         </span>
                     </div>
-                    <div class="p-2.5 sm:p-3.5 pb-0">
+                    <div class="p-[5px] pb-0">
                         <div class="relative w-full aspect-[4/4.8] rounded-[16px] sm:rounded-[20px] overflow-hidden bg-[#FAF7F2] shadow-2xs">
                             <a href="{{ route('products.show', 'gulab-rooh') }}" class="block w-full h-full">
                                 <img src="{{ asset('assets/images/incense-pack.jpg') }}" alt="Gulab Rooh Bambooless" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105"><img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Gulab Rooh (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
@@ -448,7 +448,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
+                    <div class="p-[5px] pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
                         <div class="space-y-1">
                             <h3 class="text-[15px] sm:text-base font-bold font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                                 <a href="{{ route('products.show', 'gulab-rooh') }}">Gulab Rooh <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(गुलाब)</span></a>
@@ -479,7 +479,7 @@
                             <span class="text-[#D38928] text-xs">✨</span>
                         </span>
                     </div>
-                    <div class="p-2.5 sm:p-3.5 pb-0">
+                    <div class="p-[5px] pb-0">
                         <div class="relative w-full aspect-[4/4.8] rounded-[16px] sm:rounded-[20px] overflow-hidden bg-[#FAF7F2] shadow-2xs">
                             <a href="{{ route('products.show', 'lavender-veda') }}" class="block w-full h-full">
                                 <img src="{{ asset('assets/images/incense-pack.jpg') }}" alt="Lavender Veda Bambooless" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105"><img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Lavender Veda (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
@@ -491,7 +491,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
+                    <div class="p-[5px] pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
                         <div class="space-y-1">
                             <h3 class="text-[15px] sm:text-base font-bold font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                                 <a href="{{ route('products.show', 'lavender-veda') }}">Lavender Veda <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(लैवेंडर)</span></a>
@@ -774,7 +774,7 @@
             </h2>
         </div>
 
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4 lg:gap-5 pt-4 sm:pt-5">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-[10px] pt-4 sm:pt-5">
             
             <!-- Card 1: Swarna Pushpa Refill Pack -->
             <div class="product-card group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
@@ -785,7 +785,7 @@
                         <span class="text-[#D38928] text-xs">✨</span>
                     </span>
                 </div>
-                <div class="p-2.5 sm:p-3.5 pb-0">
+                <div class="p-[5px] pb-0">
                     <div class="relative w-full aspect-[4/4.8] rounded-[16px] sm:rounded-[20px] overflow-hidden bg-[#FAF7F2] shadow-2xs">
                         <a href="{{ route('products.show', 'swarna-pushpa') }}" class="block w-full h-full relative overflow-hidden">
                             <img src="{{ asset('assets/images/devi-refill-pack-card.jpg') }}" alt="Swarna Pushpa Refill Pack" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
@@ -798,7 +798,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
+                <div class="p-[5px] pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
                     <div class="space-y-1">
                         <h3 class="text-[15px] sm:text-base font-bold font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                             <a href="{{ route('products.show', 'swarna-pushpa') }}">Swarna Pushpa <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(Refill 100)</span></a>
@@ -829,7 +829,7 @@
                         <span class="text-[#D38928] text-xs">✨</span>
                     </span>
                 </div>
-                <div class="p-2.5 sm:p-3.5 pb-0">
+                <div class="p-[5px] pb-0">
                     <div class="relative w-full aspect-[4/4.8] rounded-[16px] sm:rounded-[20px] overflow-hidden bg-[#FAF7F2] shadow-2xs">
                         <a href="{{ route('products.show', 'divya-naagchampa') }}" class="block w-full h-full relative overflow-hidden">
                             <img src="{{ asset('assets/images/camphor-refill-pack-card.jpg') }}" alt="Divya Naagchampa Refill Pack" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
@@ -842,7 +842,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
+                <div class="p-[5px] pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
                     <div class="space-y-1">
                         <h3 class="text-[15px] sm:text-base font-bold font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                             <a href="{{ route('products.show', 'divya-naagchampa') }}">Divya Naagchampa <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(Refill)</span></a>
@@ -873,7 +873,7 @@
                         <span class="text-[#D38928] text-xs">✨</span>
                     </span>
                 </div>
-                <div class="p-2.5 sm:p-3.5 pb-0">
+                <div class="p-[5px] pb-0">
                     <div class="relative w-full aspect-[4/4.8] rounded-[16px] sm:rounded-[20px] overflow-hidden bg-[#FAF7F2] shadow-2xs">
                         <a href="{{ route('products.show', 'royal-oudh') }}" class="block w-full h-full relative overflow-hidden">
                             <img src="{{ asset('assets/images/oudh-pack-card.jpg') }}" alt="Royal Oudh Bambooless Sticks" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
@@ -886,7 +886,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
+                <div class="p-[5px] pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
                     <div class="space-y-1">
                         <h3 class="text-[15px] sm:text-base font-bold font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                             <a href="{{ route('products.show', 'royal-oudh') }}">Royal Oudh <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(Sticks)</span></a>
@@ -917,7 +917,7 @@
                         <span class="text-[#D38928] text-xs">✨</span>
                     </span>
                 </div>
-                <div class="p-2.5 sm:p-3.5 pb-0">
+                <div class="p-[5px] pb-0">
                     <div class="relative w-full aspect-[4/4.8] rounded-[16px] sm:rounded-[20px] overflow-hidden bg-[#FAF7F2] shadow-2xs">
                         <a href="{{ route('products.show', 'chandan-saanjh') }}" class="block w-full h-full relative overflow-hidden">
                             <img src="{{ asset('assets/images/chandan-cones-card.jpg') }}" alt="Chandan Saanjh Sticks" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
@@ -930,14 +930,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="p-3.5 sm:p-5 pt-3 sm:pt-4 flex flex-col justify-between flex-grow space-y-2.5 sm:space-y-3.5">
+                <div class="p-[5px] pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
                     <div class="space-y-1">
                         <h3 class="text-[15px] sm:text-base font-bold font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
-                            <a href="{{ route('products.show', 'chandan-saanjh') }}">Chandan Saanjh <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(चंदन)</span></a>
+                            <a href="{{ route('products.show', 'chandan-saanjh') }}">Chandan Saanjh <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(Sticks)</span></a>
                         </h3>
                         <div class="flex items-center space-x-1.5 text-[#D38928] leading-none">
                             <div class="flex text-[11px] sm:text-xs leading-none"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            <span class="text-[11px] sm:text-xs text-[#D38928] font-medium leading-none">(162)</span>
+                            <span class="text-[11px] sm:text-xs text-[#D38928] font-medium leading-none">(198)</span>
                         </div>
                     </div>
                     <div>

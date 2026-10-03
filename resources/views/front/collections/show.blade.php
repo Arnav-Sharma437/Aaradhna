@@ -149,7 +149,7 @@
         <div class="w-full">
             
             @if($products->count() > 0)
-                <div id="products-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6 lg:gap-7">
+                <div id="products-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-[10px]">
                     @foreach($products as $product)
                         <x-product-card :product="$product" />
                     @endforeach

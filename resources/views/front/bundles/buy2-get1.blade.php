@@ -69,7 +69,7 @@
         <!-- ========================================================================= -->
         <!-- 2. PRODUCT CARDS GRID (Exact Replica of 100-Stick Cylinder Grid)          -->
         <!-- ========================================================================= -->
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3.5 sm:gap-6">
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-[10px]">
             @foreach($products as $prod)
                 <div class="bundle-item-card bg-[#FFFDF9] rounded-[18px] border border-[#EADBCC] hover:border-[#D38928] p-3 sm:p-4 flex flex-col justify-between shadow-xs hover:shadow-xl transition-all duration-300 group" data-id="{{ $prod['id'] }}" data-title="{{ $prod['title'] }}" data-price="{{ $prod['price'] }}" data-mrp="{{ $prod['mrp'] }}" data-image="{{ asset($prod['image']) }}">
                     

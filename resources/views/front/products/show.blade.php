@@ -639,7 +639,7 @@
                     </h2>
                 </div>
 
-                <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 lg:gap-8">
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-[10px]">
                     @foreach($relatedProducts as $relProduct)
                         <x-product-card :product="$relProduct" />
                     @endforeach

@@ -12,29 +12,26 @@
     </div>
 
     <!-- Main Footer Container (1440px) -->
-    <div class="w-full max-w-[1440px] mx-auto pt-12 sm:pt-16 pb-8 px-5 sm:px-8 lg:px-[40px] relative z-10">
+    <div class="w-full max-w-[1440px] mx-auto pt-10 sm:pt-14 pb-8 px-5 sm:px-8 lg:px-[40px] relative z-10">
         
         <!-- ================================================================= -->
-        <!-- 1. TOP SECTION: SACRED VEDIC MANTRA & LOTUS EMBLEM                 -->
+        <!-- 1. TOP SECTION: SACRED VEDIC MANTRA & 2 ELEGANT GOLDEN LINES       -->
         <!-- ================================================================= -->
         <div class="text-center relative z-10 space-y-3">
-            <div class="text-[#F6DAA8] text-lg sm:text-2xl md:text-[27px] font-serif tracking-wide sm:tracking-widest leading-relaxed sm:leading-relaxed drop-shadow-sm">
+            <div class="text-[#F6DAA8] text-lg sm:text-2xl md:text-[27px] font-bold font-serif tracking-wide sm:tracking-widest leading-relaxed sm:leading-relaxed drop-shadow-md">
                 <div>मङ्गलं भगवान् विष्णुः, मङ्गलम् गरुडध्वजः ।</div>
                 <div>मङ्गलं पुण्डरी काक्षः, मङ्गलाय तनो हरिः ॥</div>
             </div>
 
-            <!-- Golden Lotus Flower Decorative Divider -->
-            <div class="flex items-center justify-center space-x-3 pt-1 opacity-85">
-                <div class="w-16 sm:w-28 h-[1px] bg-gradient-to-r from-transparent via-[#F6DAA8] to-transparent"></div>
-                <svg class="w-6 h-6 text-[#F6DAA8] shrink-0" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 3c-.5 2-2 4.5-4 5.5 1.5.5 3 0 4-1.5 1 1.5 2.5 2 4 1.5-2-1-3.5-3.5-4-5.5zm-5 6c-2 1.5-4 4-4 7 2.5 0 5-1.5 6-3.5-1-.5-1.5-2-2-3.5zm10 0c-.5 1.5-1 3-2 3.5 1 2 3.5 3.5 6 3.5 0-3-2-5.5-4-7zm-8 4.5c-1 2-1 4.5 0 6.5 2 0 4-2 4-4.5-.5-.8-1.5-1.5-2.5-1.8-.5-.2-1-.2-1.5-.2zm6 0c-.5 0-1 0-1.5.2-1 .3-2 1-2.5 1.8 0 2.5 2 4.5 4 4.5 1-2 1-4.5 0-6.5z"/>
-                </svg>
-                <div class="w-16 sm:w-28 h-[1px] bg-gradient-to-r from-transparent via-[#F6DAA8] to-transparent"></div>
+            <!-- 2 Thin Golden Lines: One Long, One Short Below (Exact User Requirement) -->
+            <div class="flex flex-col items-center justify-center space-y-1.5 pt-2">
+                <div class="w-36 sm:w-64 h-[1.5px] bg-gradient-to-r from-transparent via-[#F6DAA8] to-transparent"></div>
+                <div class="w-18 sm:w-32 h-[1px] bg-gradient-to-r from-transparent via-[#F6DAA8]/70 to-transparent"></div>
             </div>
         </div>
 
         <!-- Horizontal Divider Line -->
-        <div class="w-full h-[1px] bg-white/15 my-8 sm:my-12"></div>
+        <div class="w-full h-[1px] bg-white/15 my-8 sm:my-10"></div>
 
         <!-- ================================================================= -->
         <!-- 2. MAIN 4-COLUMN GRID                                             -->
@@ -111,7 +108,7 @@
                     </div>
                     <span class="footer-accordion-icon text-[#F6DAA8] text-xl font-bold md:hidden leading-none transition-transform duration-200">+</span>
                 </button>
-                <ul id="footer-shop-menu" class="footer-accordion-content hidden md:block space-y-3 text-sm sm:text-[14.5px] text-white/85 pt-3 md:pt-4">
+                <ul id="footer-shop-menu" class="footer-accordion-content hidden md:block space-y-2.5 text-sm sm:text-[14.5px] text-white/85 pt-3 md:pt-4">
                     <li>
                         <a href="{{ route('collections.show', 'bambooless') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
                             Bambooless
@@ -129,12 +126,19 @@
                     </li>
                     <li>
                         <a href="{{ route('bundles.trial-packs') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
-                            Trial Pack @ 799
+                            Trial Pack
                         </a>
                     </li>
                     <li>
                         <a href="{{ route('bundles.buy2get1') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
-                            Buy 2 Get 1 FREE
+                            Buy 2 Get 1 Free
+                        </a>
+                    </li>
+                    <li class="pt-1">
+                        <a href="{{ route('products.pitambara') }}" class="group inline-flex items-center gap-1.5 py-1 px-2.5 rounded-lg bg-[#F6DAA8]/15 border border-[#F6DAA8]/40 hover:bg-[#F6DAA8]/25 hover:border-[#F6DAA8] transition-all text-[#F6DAA8] font-bold text-xs sm:text-sm">
+                            <span class="w-2 h-2 rounded-full bg-[#F6DAA8] animate-pulse"></span>
+                            <span>Pitambara Havan</span>
+                            <span class="text-[9px] uppercase font-black bg-[#D38928] text-white px-1.5 py-0.5 rounded leading-none shadow-2xs">Special</span>
                         </a>
                     </li>
                 </ul>
@@ -151,25 +155,25 @@
                     </div>
                     <span class="footer-accordion-icon text-[#F6DAA8] text-xl font-bold md:hidden leading-none transition-transform duration-200">+</span>
                 </button>
-                <ul id="footer-about-menu" class="footer-accordion-content hidden md:block space-y-3 text-sm sm:text-[14.5px] text-white/85 pt-3 md:pt-4">
+                <ul id="footer-about-menu" class="footer-accordion-content hidden md:block space-y-2.5 text-sm sm:text-[14.5px] text-white/85 pt-3 md:pt-4">
                     <li>
                         <a href="{{ route('pages.about') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
                             About Us
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('pages.about') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
-                            Sacred Ingredients
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('pages.show', 'faqs') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
-                            Vedic Vidhi &amp; FAQs
-                        </a>
-                    </li>
-                    <li>
                         <a href="{{ route('pages.contact') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
                             Contact Us
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('blogs.index', 'vedic-rituals') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
+                            Blogs
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ auth()->check() ? route('account.index') : route('account.login') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
+                            My Account
                         </a>
                     </li>
                 </ul>
@@ -215,20 +219,22 @@
         </div>
 
         <!-- Horizontal Divider Line -->
-        <div class="w-full h-[1px] bg-white/15 mt-8 sm:mt-12 mb-6"></div>
+        <div class="w-full h-[1px] bg-white/15 mt-8 sm:mt-10 mb-6"></div>
 
         <!-- ================================================================= -->
         <!-- 3. BOTTOM ROW: POLICIES, CENTERED COPYRIGHT & PAYMENT BADGES      -->
         <!-- ================================================================= -->
-        <div class="flex flex-col lg:flex-row items-center justify-between gap-4 text-xs sm:text-[13px] text-white/75">
+        <div class="flex flex-col lg:flex-row items-center justify-between gap-5 text-xs sm:text-[13px] text-white/80">
             
-            <!-- Legal Policy Links -->
-            <div class="flex flex-wrap items-center justify-center space-x-3 sm:space-x-4">
+            <!-- Exact 4 Policies Requested by User -->
+            <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 sm:gap-x-4">
+                <a href="{{ route('pages.show', 'refund-policy') }}" class="hover:text-[#F6DAA8] transition-colors">Return &amp; Refund Policy</a>
+                <span class="text-white/30 hidden sm:inline">|</span>
+                <a href="{{ route('pages.show', 'shipping-policy') }}" class="hover:text-[#F6DAA8] transition-colors">Shipping Policy</a>
+                <span class="text-white/30 hidden sm:inline">|</span>
+                <a href="{{ route('pages.show', 'terms-of-service') }}" class="hover:text-[#F6DAA8] transition-colors">Terms &amp; Conditions</a>
+                <span class="text-white/30 hidden sm:inline">|</span>
                 <a href="{{ route('pages.show', 'privacy-policy') }}" class="hover:text-[#F6DAA8] transition-colors">Privacy Policy</a>
-                <span class="text-white/30">|</span>
-                <a href="{{ route('pages.show', 'terms-of-service') }}" class="hover:text-[#F6DAA8] transition-colors">Terms of Service</a>
-                <span class="text-white/30">|</span>
-                <a href="{{ route('pages.show', 'shipping-policy') }}" class="hover:text-[#F6DAA8] transition-colors">Shipping &amp; Delivery</a>
             </div>
 
             <!-- Centered Devotional Copyright -->
@@ -236,24 +242,56 @@
                 <span>© {{ date('Y') }} Manglam. All Rights Reserved.</span>
             </div>
 
-            <!-- Payment Icons -->
-            <div class="flex items-center space-x-2 shrink-0">
+            <!-- Authentic Payment Icons (VISA, MasterCard, UPI, RuPay, Paytm, GPay) -->
+            <div class="flex flex-wrap items-center justify-center gap-1.5 shrink-0">
                 <!-- VISA -->
-                <span class="px-2 py-1 bg-white text-[#1A1F71] font-black text-[11px] rounded-[4px] leading-none shadow-xs">
-                    VISA
-                </span>
+                <div class="h-6 px-2 bg-white rounded flex items-center justify-center shadow-xs" title="Visa">
+                    <svg class="h-3.5 w-auto" viewBox="0 0 48 16" fill="none">
+                        <path d="M19.43 1.25L13.14 15.22H8.97L5.47 3.99C5.26 3.16 5.08 2.86 4.45 2.5C3.39 1.93 1.58 1.4 0 1.05L0.09 0.65H7.07C7.96 0.65 8.76 1.24 8.95 2.27L10.66 11.23L15.21 0.65H19.43V1.25ZM36.56 10.74C36.58 6.78 31.06 6.56 31.1 4.75C31.11 4.2 31.64 3.61 32.78 3.46C33.34 3.38 34.92 3.32 36.6 4.1L37.31 0.79C36.33 0.44 35.08 0.1 33.51 0.1C29.43 0.1 26.54 2.27 26.51 5.37C26.48 7.67 28.53 8.95 30.1 9.72C31.71 10.51 32.25 11.01 32.24 11.72C32.23 12.8 30.93 13.29 29.74 13.31C27.65 13.34 26.44 12.75 25.48 12.31L24.74 15.75C25.68 16.18 27.42 16.55 29.23 16.57C33.59 16.57 36.53 14.42 36.56 10.74ZM47.45 15.22H51.13L47.93 0.65H44.52C43.74 0.65 43.08 1.1 42.79 1.8L36.56 15.22H40.75L41.58 12.92H46.7L47.45 15.22ZM42.73 9.78L44.85 3.96L46.06 9.78H42.73ZM24.78 0.65L21.48 15.22H17.48L20.78 0.65H24.78Z" fill="#1A1F71"/>
+                    </svg>
+                </div>
+
                 <!-- MasterCard -->
-                <span class="px-2 py-1 bg-white text-[#EB001B] font-black text-[11px] rounded-[4px] leading-none shadow-xs">
-                    MasterCard
-                </span>
+                <div class="h-6 px-1.5 bg-white rounded flex items-center justify-center shadow-xs" title="Mastercard">
+                    <svg class="h-4 w-auto" viewBox="0 0 32 20" fill="none">
+                        <circle cx="10" cy="10" r="10" fill="#EB001B"/>
+                        <circle cx="22" cy="10" r="10" fill="#F79E1B"/>
+                        <path d="M16 3.1A9.95 9.95 0 0 1 19.9 10 9.95 9.95 0 0 1 16 16.9 9.95 9.95 0 0 1 12.1 10 9.95 9.95 0 0 1 16 3.1Z" fill="#FF5F00"/>
+                    </svg>
+                </div>
+
                 <!-- UPI -->
-                <span class="px-2 py-1 bg-white text-[#097939] font-black text-[11px] rounded-[4px] leading-none shadow-xs">
-                    UPI
-                </span>
+                <div class="h-6 px-2 bg-white rounded flex items-center justify-center shadow-xs" title="UPI">
+                    <div class="flex items-center gap-0.5">
+                        <svg class="h-3.5 w-auto" viewBox="0 0 18 16" fill="none">
+                            <path d="M6 0L0 16H6L12 0H6Z" fill="#097939"/>
+                            <path d="M12 0L6 16H12L18 0H12Z" fill="#ED752E"/>
+                        </svg>
+                        <span class="font-sans font-black text-[11px] text-[#1E2229] leading-none">UPI</span>
+                    </div>
+                </div>
+
+                <!-- RuPay -->
+                <div class="h-6 px-2 bg-white rounded flex items-center justify-center shadow-xs" title="RuPay">
+                    <div class="flex items-center font-sans font-black text-[11px] italic tracking-tighter leading-none">
+                        <span class="text-[#097939]">Ru</span><span class="text-[#00529C]">Pay</span>
+                        <span class="inline-block w-1.5 h-3 bg-gradient-to-b from-[#ED752E] to-[#097939] transform skew-x-[-15deg] ml-0.5"></span>
+                    </div>
+                </div>
+
                 <!-- Paytm -->
-                <span class="px-2 py-1 bg-white text-[#002970] font-black text-[11px] rounded-[4px] leading-none shadow-xs">
-                    Paytm
-                </span>
+                <div class="h-6 px-2 bg-white rounded flex items-center justify-center shadow-xs" title="Paytm">
+                    <span class="font-sans font-black text-[11px] tracking-tight leading-none">
+                        <span class="text-[#002E6E]">Pay</span><span class="text-[#00BAF2]">tm</span>
+                    </span>
+                </div>
+
+                <!-- Google Pay -->
+                <div class="h-6 px-2 bg-white rounded flex items-center justify-center shadow-xs" title="Google Pay">
+                    <span class="font-sans font-bold text-[11px] text-[#5F6368] flex items-center gap-0.5 leading-none">
+                        <span class="font-black text-[#4285F4]">G</span>Pay
+                    </span>
+                </div>
             </div>
 
         </div>
