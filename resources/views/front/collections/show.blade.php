@@ -35,7 +35,7 @@
             @endif
 
             <!-- 1. Main Filter Bar: Left Filter Buttons | Center Category Name | Right Sort By -->
-            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 py-2 border-b border-[#EADBCC]/60 pb-4">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 py-2 pb-2">
                 
                 <!-- Left: Filter Buttons (Availability & Price) -->
                 <div class="flex items-center space-x-2 sm:space-x-3 text-sm flex-wrap shrink-0">

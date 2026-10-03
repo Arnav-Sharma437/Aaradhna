@@ -95,8 +95,8 @@
                 <div id="gokwik-coupon-feedback" class="text-[11px] font-bold text-emerald-700 hidden"></div>
             </div>
 
-            <!-- STEP 1: Phone & Contact Information with Verification -->
-            <div id="gokwik-step-1" class="space-y-4">
+            <!-- STEP 1: Phone & Contact Information with OTP Verification -->
+            <div id="gokwik-step-1" class="space-y-3.5">
                 <div>
                     <label class="block text-xs font-bold text-gray-800 uppercase tracking-wider mb-1.5 font-heading">
                         Contact &amp; Delivery Mobile Number *
@@ -109,19 +109,43 @@
                             maxlength="10"
                             placeholder="Enter 10-digit mobile number" 
                             value="9876543210"
-                            class="w-full pl-12 pr-24 py-2.5 text-xs sm:text-sm font-bold bg-white border-2 border-gray-200 focus:border-emerald-600 rounded-[10px] focus:outline-none transition-all tracking-wide"
+                            class="w-full pl-12 pr-28 py-2.5 text-xs sm:text-sm font-bold bg-white border-2 border-gray-200 focus:border-emerald-600 rounded-[10px] focus:outline-none transition-all tracking-wide"
                         >
                         <button 
                             type="button" 
                             id="gokwik-verify-phone-btn" 
                             class="absolute right-1.5 px-3 py-1.5 bg-[#121212] hover:bg-emerald-600 text-white text-[11px] font-bold rounded-[8px] transition-colors font-heading cursor-pointer flex items-center gap-1"
                         >
-                            <span>Verify ⚡</span>
+                            <span>Get OTP ⚡</span>
                         </button>
                     </div>
-                    <div id="gokwik-phone-feedback" class="text-[11px] font-semibold text-emerald-700 mt-1 flex items-center gap-1">
-                        <span>✓ Mobile Verified</span>
+                </div>
+
+                <!-- OTP Input Box Container -->
+                <div id="gokwik-otp-container" class="hidden bg-[#FAF7F2] border border-[#EADBCC] rounded-[14px] p-3.5 space-y-2.5 animate-fadeIn">
+                    <div class="flex items-center justify-between text-xs">
+                        <span class="font-bold text-gray-800 font-heading">Enter 4-Digit OTP sent to your mobile:</span>
+                        <span class="text-[11px] font-mono text-emerald-700 font-bold" id="gokwik-otp-timer">OTP: 4829</span>
                     </div>
+                    
+                    <div class="flex items-center space-x-2">
+                        <input type="text" maxlength="1" id="otp-1" value="4" class="gokwik-otp-input w-10 h-10 text-center font-black text-base bg-white border border-gray-300 focus:border-emerald-600 rounded-[8px] focus:outline-none shadow-2xs">
+                        <input type="text" maxlength="1" id="otp-2" value="8" class="gokwik-otp-input w-10 h-10 text-center font-black text-base bg-white border border-gray-300 focus:border-emerald-600 rounded-[8px] focus:outline-none shadow-2xs">
+                        <input type="text" maxlength="1" id="otp-3" value="2" class="gokwik-otp-input w-10 h-10 text-center font-black text-base bg-white border border-gray-300 focus:border-emerald-600 rounded-[8px] focus:outline-none shadow-2xs">
+                        <input type="text" maxlength="1" id="otp-4" value="9" class="gokwik-otp-input w-10 h-10 text-center font-black text-base bg-white border border-gray-300 focus:border-emerald-600 rounded-[8px] focus:outline-none shadow-2xs">
+                        <button type="button" id="gokwik-confirm-otp-btn" class="flex-1 py-2 px-3 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-[8px] transition-colors font-heading cursor-pointer">
+                            Confirm OTP ✓
+                        </button>
+                    </div>
+
+                    <div class="flex items-center justify-between text-[11px] text-gray-500">
+                        <span>Didn't receive? <button type="button" id="gokwik-resend-otp-btn" class="underline font-semibold hover:text-[#D38928] cursor-pointer">Resend OTP</button></span>
+                        <span id="gokwik-otp-status" class="font-bold text-emerald-700"></span>
+                    </div>
+                </div>
+
+                <div id="gokwik-phone-feedback" class="text-[11px] font-semibold text-emerald-700 flex items-center gap-1">
+                    <span>✓ Mobile Verified for Express Delivery</span>
                 </div>
 
                 <!-- STEP 2: Delivery Address -->
@@ -275,6 +299,28 @@
         const gokwikPhoneInput = document.getElementById('gokwik-phone-input');
         const gokwikVerifyPhoneBtn = document.getElementById('gokwik-verify-phone-btn');
         const gokwikPhoneFeedback = document.getElementById('gokwik-phone-feedback');
+        const gokwikOtpContainer = document.getElementById('gokwik-otp-container');
+        const gokwikConfirmOtpBtn = document.getElementById('gokwik-confirm-otp-btn');
+        const gokwikResendOtpBtn = document.getElementById('gokwik-resend-otp-btn');
+        const gokwikOtpInputs = document.querySelectorAll('.gokwik-otp-input');
+        const gokwikOtpStatus = document.getElementById('gokwik-otp-status');
+        const gokwikOtpTimer = document.getElementById('gokwik-otp-timer');
+
+        let isPhoneOtpVerified = false;
+
+        // Auto advance OTP inputs
+        gokwikOtpInputs.forEach((input, index) => {
+            input.addEventListener('input', (e) => {
+                if (e.target.value.length === 1 && index < gokwikOtpInputs.length - 1) {
+                    gokwikOtpInputs[index + 1].focus();
+                }
+            });
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'Backspace' && !e.target.value && index > 0) {
+                    gokwikOtpInputs[index - 1].focus();
+                }
+            });
+        });
 
         if (gokwikVerifyPhoneBtn && gokwikPhoneInput) {
             gokwikVerifyPhoneBtn.addEventListener('click', () => {
@@ -291,26 +337,79 @@
                 }
 
                 gokwikVerifyPhoneBtn.disabled = true;
-                gokwikVerifyPhoneBtn.innerHTML = '<span class="inline-block animate-spin">⌛</span>';
+                gokwikVerifyPhoneBtn.innerHTML = '<span class="inline-block animate-spin">⌛</span> Sending...';
 
                 setTimeout(() => {
                     gokwikVerifyPhoneBtn.disabled = false;
-                    gokwikVerifyPhoneBtn.innerHTML = '<span>Verified ✓</span>';
-                    gokwikVerifyPhoneBtn.classList.remove('bg-[#121212]', 'hover:bg-emerald-600');
-                    gokwikVerifyPhoneBtn.classList.add('bg-emerald-600', 'text-white');
-                    
+                    gokwikVerifyPhoneBtn.classList.add('hidden');
+                    if (gokwikOtpContainer) {
+                        gokwikOtpContainer.classList.remove('hidden');
+                        if (gokwikOtpInputs.length > 0) gokwikOtpInputs[0].focus();
+                    }
                     if (gokwikPhoneFeedback) {
-                        gokwikPhoneFeedback.innerHTML = '<span class="text-emerald-700">✓ Mobile Verified for Express Dispatch</span>';
+                        gokwikPhoneFeedback.innerHTML = '<span class="text-amber-600">⚡ OTP sent to +91 ' + phone + '</span>';
                         gokwikPhoneFeedback.classList.remove('hidden');
                     }
-                }, 400);
+                }, 350);
             });
+
+            if (gokwikConfirmOtpBtn) {
+                gokwikConfirmOtpBtn.addEventListener('click', () => {
+                    const enteredOtp = Array.from(gokwikOtpInputs).map(i => i.value).join('');
+                    if (enteredOtp.length < 4) {
+                        if (gokwikOtpStatus) gokwikOtpStatus.innerHTML = '<span class="text-rose-600">Enter 4 digits</span>';
+                        return;
+                    }
+
+                    gokwikConfirmOtpBtn.innerHTML = 'Verifying...';
+                    gokwikConfirmOtpBtn.disabled = true;
+
+                    setTimeout(() => {
+                        isPhoneOtpVerified = true;
+                        if (gokwikOtpContainer) gokwikOtpContainer.classList.add('hidden');
+                        if (gokwikVerifyPhoneBtn) {
+                            gokwikVerifyPhoneBtn.classList.remove('hidden', 'bg-[#121212]', 'hover:bg-emerald-600');
+                            gokwikVerifyPhoneBtn.classList.add('bg-emerald-600', 'text-white');
+                            gokwikVerifyPhoneBtn.innerHTML = '<span>Verified ✓</span>';
+                            gokwikVerifyPhoneBtn.disabled = true;
+                        }
+                        if (gokwikPhoneFeedback) {
+                            gokwikPhoneFeedback.innerHTML = '<span class="text-emerald-700">✓ Mobile Verified with OTP for Express Dispatch</span>';
+                            gokwikPhoneFeedback.classList.remove('hidden');
+                        }
+                    }, 400);
+                });
+            }
+
+            if (gokwikResendOtpBtn) {
+                gokwikResendOtpBtn.addEventListener('click', () => {
+                    const newOtp = Math.floor(1000 + Math.random() * 9000);
+                    if (gokwikOtpTimer) gokwikOtpTimer.textContent = 'OTP: ' + newOtp;
+                    const digits = String(newOtp).split('');
+                    gokwikOtpInputs.forEach((input, i) => {
+                        input.value = digits[i] || '';
+                    });
+                    if (gokwikOtpStatus) {
+                        gokwikOtpStatus.innerHTML = '<span class="text-emerald-700">New OTP Sent!</span>';
+                        setTimeout(() => { if (gokwikOtpStatus) gokwikOtpStatus.textContent = ''; }, 3000);
+                    }
+                });
+            }
 
             gokwikPhoneInput.addEventListener('input', () => {
                 const phone = gokwikPhoneInput.value.trim();
-                if (/^[6-9]\d{9}$/.test(phone)) {
+                isPhoneOtpVerified = false;
+                if (gokwikVerifyPhoneBtn) {
+                    gokwikVerifyPhoneBtn.classList.remove('hidden', 'bg-emerald-600');
+                    gokwikVerifyPhoneBtn.classList.add('bg-[#121212]');
+                    gokwikVerifyPhoneBtn.innerHTML = '<span>Get OTP ⚡</span>';
+                    gokwikVerifyPhoneBtn.disabled = false;
+                }
+                if (gokwikOtpContainer) gokwikOtpContainer.classList.add('hidden');
+
+                if (phone.length === 10 && /^[6-9]\d{9}$/.test(phone)) {
                     if (gokwikPhoneFeedback) {
-                        gokwikPhoneFeedback.innerHTML = '<span class="text-emerald-700">✓ Mobile Verified</span>';
+                        gokwikPhoneFeedback.innerHTML = '<span class="text-amber-700">Click "Get OTP ⚡" to verify mobile</span>';
                         gokwikPhoneFeedback.classList.remove('hidden');
                     }
                 } else if (phone.length > 0 && phone.length !== 10) {
