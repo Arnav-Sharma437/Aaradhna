@@ -645,14 +645,14 @@
                         </div>
                     </div>
 
-                    <!-- Comparison Rows (Clean Continuous Middle Pillar, 30px Green Ticks, Transparent Others) -->
+                    <!-- Comparison Rows (Clean Continuous Middle Pillar with matching row dividers, 30px Green Ticks, Transparent Others) -->
                     <div class="p-0 flex-1 flex flex-col justify-between">
                         
                         <div class="grid grid-cols-12 items-center text-xs sm:text-[13.5px]">
                             <div class="col-span-6 px-4 sm:px-5 py-2 sm:py-2.5 text-gray-800 font-medium border-b border-[#F1E5D8]/80">
                                 100% Bamboo-Free (Scripture Compliant)
                             </div>
-                            <div class="col-span-3 bg-[#FDF6ED] h-full flex items-center justify-center py-2 sm:py-2.5 border-x border-[#EEDBCA]/60">
+                            <div class="col-span-3 bg-[#FDF6ED] h-full flex items-center justify-center py-2 sm:py-2.5 border-x border-[#EEDBCA]/60 border-b border-[#F1E5D8]/80">
                                 <span class="w-[30px] h-[30px] rounded-full bg-[#1B7F49] text-white flex items-center justify-center text-sm font-bold shadow-xs">✓</span>
                             </div>
                             <div class="col-span-3 bg-transparent h-full flex items-center justify-center py-2 sm:py-2.5 border-b border-[#F1E5D8]/80">
@@ -664,7 +664,7 @@
                             <div class="col-span-6 px-4 sm:px-5 py-2 sm:py-2.5 text-gray-800 font-medium border-b border-[#F1E5D8]/80">
                                 Zero Toxic Charcoal (No Eye Burning)
                             </div>
-                            <div class="col-span-3 bg-[#FDF6ED] h-full flex items-center justify-center py-2 sm:py-2.5 border-x border-[#EEDBCA]/60">
+                            <div class="col-span-3 bg-[#FDF6ED] h-full flex items-center justify-center py-2 sm:py-2.5 border-x border-[#EEDBCA]/60 border-b border-[#F1E5D8]/80">
                                 <span class="w-[30px] h-[30px] rounded-full bg-[#1B7F49] text-white flex items-center justify-center text-sm font-bold shadow-xs">✓</span>
                             </div>
                             <div class="col-span-3 bg-transparent h-full flex items-center justify-center py-2 sm:py-2.5 border-b border-[#F1E5D8]/80">
@@ -676,7 +676,7 @@
                             <div class="col-span-6 px-4 sm:px-5 py-2 sm:py-2.5 text-gray-800 font-medium border-b border-[#F1E5D8]/80">
                                 Premium Organic Essential Herbs
                             </div>
-                            <div class="col-span-3 bg-[#FDF6ED] h-full flex items-center justify-center py-2 sm:py-2.5 border-x border-[#EEDBCA]/60">
+                            <div class="col-span-3 bg-[#FDF6ED] h-full flex items-center justify-center py-2 sm:py-2.5 border-x border-[#EEDBCA]/60 border-b border-[#F1E5D8]/80">
                                 <span class="w-[30px] h-[30px] rounded-full bg-[#1B7F49] text-white flex items-center justify-center text-sm font-bold shadow-xs">✓</span>
                             </div>
                             <div class="col-span-3 bg-transparent h-full flex items-center justify-center py-2 sm:py-2.5 border-b border-[#F1E5D8]/80">
@@ -688,7 +688,7 @@
                             <div class="col-span-6 px-4 sm:px-5 py-2 sm:py-2.5 text-gray-800 font-medium border-b border-[#F1E5D8]/80">
                                 Long-Lasting Temple Scent (4+ Hours)
                             </div>
-                            <div class="col-span-3 bg-[#FDF6ED] h-full flex items-center justify-center py-2 sm:py-2.5 border-x border-[#EEDBCA]/60">
+                            <div class="col-span-3 bg-[#FDF6ED] h-full flex items-center justify-center py-2 sm:py-2.5 border-x border-[#EEDBCA]/60 border-b border-[#F1E5D8]/80">
                                 <span class="w-[30px] h-[30px] rounded-full bg-[#1B7F49] text-white flex items-center justify-center text-sm font-bold shadow-xs">✓</span>
                             </div>
                             <div class="col-span-3 bg-transparent h-full flex items-center justify-center py-2 sm:py-2.5 border-b border-[#F1E5D8]/80">
@@ -717,8 +717,8 @@
         <!-- ========================================================================= -->
         <!-- 3. FREQUENTLY ASKED QUESTIONS (Exact Homepage FAQs & Accordion)           -->
         <!-- ========================================================================= -->
-        <div class="mt-16 sm:mt-24 max-w-4xl mx-auto space-y-6">
-            <div class="text-center space-y-2 mb-8">
+        <div class="mt-10 sm:mt-14 max-w-4xl mx-auto space-y-4">
+            <div class="text-center space-y-1.5 mb-5">
                 <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">
                     ✦ SACRED KNOWLEDGE &amp; ANSWERS ✦
                 </span>
@@ -870,8 +870,8 @@
         <!-- 4. YOU MAY ALSO LIKE (4 Exact Matching Product Cards)                     -->
         <!-- ========================================================================= -->
         @if($relatedProducts->count() > 0)
-            <div class="mt-16 sm:mt-24">
-                <div class="text-center max-w-xl mx-auto mb-10 space-y-2">
+            <div class="mt-10 sm:mt-14">
+                <div class="text-center max-w-xl mx-auto mb-6 space-y-1.5">
                     <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black text-[#121212] font-heading tracking-tight">
                         You May Also Like
                     </h2>
@@ -888,7 +888,7 @@
         <!-- ========================================================================= -->
         <!-- 5. CUSTOMER REVIEWS & RATINGS (Narrow Elegant Container, Divider Lines Only) -->
         <!-- ========================================================================= -->
-        <div id="customer-reviews" class="mt-14 sm:mt-20 mb-16 sm:mb-24 max-w-4xl mx-auto font-body">
+        <div id="customer-reviews" class="mt-10 sm:mt-14 mb-12 sm:mb-16 max-w-4xl mx-auto font-body">
             
             @php
                 $approvedReviewsList = $product->approvedReviews ?? collect();
@@ -907,7 +907,7 @@
             @endphp
 
             <!-- 1. Header Bar: Title, Rating & Write Review Button -->
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#EADBCC]">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#EADBCC]">
                 <div>
                     <div class="flex items-center gap-3">
                         <h3 class="text-xl sm:text-2xl lg:text-3xl font-bold text-[#121212] font-heading tracking-tight">
@@ -939,7 +939,7 @@
 
             @if($userUploadedReviewPhotos->count() > 0)
             <!-- 2. User Shared Photos Gallery (Only Real Customer Uploaded Photos) -->
-            <div class="py-5 border-b border-[#EADBCC]">
+            <div class="py-3 border-b border-[#EADBCC]">
                 <div class="flex items-center justify-between mb-3">
                     <span class="text-xs sm:text-sm font-bold text-[#121212] font-heading uppercase tracking-wider flex items-center gap-1.5">
                         <svg class="w-4 h-4 text-[#D38928]" fill="currentColor" viewBox="0 0 24 24">
@@ -1088,7 +1088,7 @@
             </div>
 
             <!-- 4. Rating Summary Histogram -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 my-6 pb-6 border-b border-[#EADBCC] items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 my-4 pb-4 border-b border-[#EADBCC] items-center">
                 <!-- Average Rating Box -->
                 <div class="lg:col-span-4 text-center lg:border-r border-[#EADBCC] pr-0 lg:pr-6 space-y-1">
                     <div class="text-4xl sm:text-5xl font-black text-[#121212] font-heading leading-none">
