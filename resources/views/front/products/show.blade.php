@@ -194,62 +194,24 @@
 
                 </div>
 
-                <!-- Fragrance Notes Pyramid & Why Choose Manglam Infographics -->
+                <!-- Fragrance Notes & Why Choose Manglam (High-Res Image Format with 5px Gap & 8px/10px Radius) -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-[5px] pt-1">
-                    
-                    <!-- Card 1: Fragrance Notes Pyramid -->
-                    <div class="bg-gradient-to-b from-[#A66E2E] to-[#6E4215] text-white p-5 sm:p-6 rounded-[8px] sm:rounded-[10px] shadow-sm flex flex-col justify-between">
-                        <div>
-                            <span class="text-[10px] font-extrabold uppercase tracking-widest text-[#F6DAA8] font-heading block mb-1">AROMATIC PROFILE</span>
-                            <h3 class="text-xl sm:text-2xl font-normal font-heading mb-3 text-white">Fragrance Notes</h3>
-                            
-                            <div class="space-y-2.5 text-xs">
-                                <div class="bg-black/20 p-2 rounded-[6px] border border-white/10">
-                                    <strong class="text-[#F6DAA8] block font-heading text-xs uppercase">TOP NOTES</strong>
-                                    <span class="text-white/90">Pure Bhimseni Camphor & Divine Basil</span>
-                                </div>
-                                <div class="bg-black/20 p-2 rounded-[6px] border border-white/10">
-                                    <strong class="text-[#F6DAA8] block font-heading text-xs uppercase">MID NOTES</strong>
-                                    <span class="text-white/90">Vrindavan Chandan & Sacred Loban</span>
-                                </div>
-                                <div class="bg-black/20 p-2 rounded-[6px] border border-white/10">
-                                    <strong class="text-[#F6DAA8] block font-heading text-xs uppercase">BASE NOTES</strong>
-                                    <span class="text-white/90">Vedic Guggal & Ancient Amber Woods</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pt-3 border-t border-white/15 mt-3 text-[11px] text-[#F6DAA8]">
-                            ✦ Lingers in your home for 4+ hours after pooja
-                        </div>
+                    <div class="relative w-full aspect-[5/4] sm:aspect-[4/3] rounded-[8px] sm:rounded-[10px] overflow-hidden bg-[#FAF7F2] border border-gray-200 shadow-xs group">
+                        <img 
+                            src="{{ asset('assets/images/fragrance-notes-card.png') }}" 
+                            alt="Fragrance Notes Aromatic Profile" 
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            loading="lazy"
+                        >
                     </div>
-
-                    <!-- Card 2: Why Choose Manglam -->
-                    <div class="bg-[#FFFDF9] border border-gray-200 p-5 sm:p-6 rounded-[8px] sm:rounded-[10px] shadow-sm flex flex-col justify-between">
-                        <div>
-                            <span class="text-[10px] font-extrabold uppercase tracking-widest text-[#D38928] font-heading block mb-1">PURITY GUARANTEE</span>
-                            <h3 class="text-xl sm:text-2xl font-normal font-heading mb-3 text-[#121212]">Why Choose Manglam</h3>
-                            
-                            <ul class="space-y-2.5 text-xs text-gray-700">
-                                <li class="flex items-start">
-                                    <span class="text-emerald-700 font-bold mr-2">✓</span>
-                                    <span><strong>100% Bamboo-Free:</strong> Traditional scriptures forbid burning bamboo in sacred fire.</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="text-emerald-700 font-bold mr-2">✓</span>
-                                    <span><strong>0% Charcoal:</strong> Produces soothing, non-irritating pure white smoke.</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="text-emerald-700 font-bold mr-2">✓</span>
-                                    <span><strong>Natural Essential Oils:</strong> Hand-rolled by Vedic artisans in Vrindavan.</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="pt-3 border-t border-gray-200 mt-3 flex items-center justify-between text-[11px] font-bold text-[#965A15] font-heading">
-                            <span>VEDIC CERTIFIED</span>
-                            <span>MADE IN BHARAT 🇮🇳</span>
-                        </div>
+                    <div class="relative w-full aspect-[5/4] sm:aspect-[4/3] rounded-[8px] sm:rounded-[10px] overflow-hidden bg-[#FAF7F2] border border-gray-200 shadow-xs group">
+                        <img 
+                            src="{{ asset('assets/images/why-choose-manglam-card.png') }}" 
+                            alt="Why Choose Manglam Purity Guarantee" 
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            loading="lazy"
+                        >
                     </div>
-
                 </div>
             </div>
 
@@ -415,6 +377,18 @@
                     >
                         Buy It Now
                     </a>
+
+                    <!-- Promotional Promo Banner (Max Width 600px, Height 250px with rounded-[8px] sm:rounded-[10px]) -->
+                    <div class="pt-2">
+                        <a href="{{ route('bundles.trial-packs') }}" class="block w-full max-w-[600px] h-auto max-h-[250px] rounded-[8px] sm:rounded-[10px] overflow-hidden border border-[#EADBCC] shadow-xs group focus:outline-none">
+                            <img 
+                                src="{{ asset('assets/images/Banner 9.jpg') }}" 
+                                alt="Festive Offer - 5 Divine Essentials" 
+                                class="w-full h-full max-h-[250px] object-cover group-hover:scale-102 transition-transform duration-300"
+                                loading="lazy"
+                            >
+                        </a>
+                    </div>
                 </div>
 
             </div>
@@ -426,7 +400,6 @@
         <!-- ========================================================================= -->
         <div class="mt-16 sm:mt-24 space-y-8">
             <div class="text-center max-w-2xl mx-auto space-y-2">
-                <span class="text-[11px] font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ PURITY AUDIT ✦</span>
                 <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#121212] font-heading tracking-tight">
                     Specification &amp; Purity Comparison
                 </h2>
@@ -579,7 +552,6 @@
         <!-- ========================================================================= -->
         <div class="mt-16 sm:mt-24 max-w-4xl mx-auto space-y-6">
             <div class="text-center space-y-2 mb-8">
-                <span class="text-[11px] font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ CLARIFICATIONS ✦</span>
                 <h2 class="text-2xl sm:text-3xl font-black text-[#121212] font-heading tracking-tight">
                     Frequently Asked Questions
                 </h2>
@@ -636,7 +608,6 @@
         @if($relatedProducts->count() > 0)
             <div class="mt-16 sm:mt-24">
                 <div class="text-center max-w-xl mx-auto mb-12 space-y-2">
-                    <span class="text-[11px] font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ COMPLETE YOUR RITUAL ✦</span>
                     <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black text-[#121212] font-heading tracking-tight">
                         You May Also Like
                     </h2>
@@ -860,23 +831,23 @@
 <!-- FLOATING 3D STICKY BOTTOM ADD TO CART ON SCROLL -->
 <div 
     id="sticky-product-bar" 
-    class="fixed bottom-[68px] lg:bottom-6 left-1/2 -translate-x-1/2 z-40 w-[94%] sm:w-[85%] lg:w-[70%] max-w-5xl bg-white/98 backdrop-blur-2xl border-2 border-[#EADBCC] rounded-2xl sm:rounded-[28px] px-4 sm:px-7 py-3 sm:py-3.5 shadow-[0_25px_60px_-10px_rgba(0,0,0,0.32),0_12px_28px_-6px_rgba(211,137,40,0.3),inset_0_2px_4px_rgba(255,255,255,1)] transform translate-y-32 opacity-0 pointer-events-none transition-all duration-300 flex items-center justify-between gap-4 sm:gap-8 font-body select-none"
+    class="fixed bottom-[68px] lg:bottom-6 left-1/2 -translate-x-1/2 z-40 w-[94%] sm:w-[85%] lg:w-[70%] max-w-5xl bg-[#831F2E]/98 backdrop-blur-2xl border-2 border-[#6E1724] ring-1 ring-[#D38928]/40 rounded-2xl sm:rounded-[28px] px-4 sm:px-7 py-3 sm:py-3.5 shadow-[0_25px_60px_-10px_rgba(0,0,0,0.5),0_12px_28px_-6px_rgba(131,31,46,0.5),inset_0_1px_2px_rgba(255,255,255,0.15)] transform translate-y-32 opacity-0 pointer-events-none transition-all duration-300 flex items-center justify-between gap-4 sm:gap-8 font-body select-none"
 >
     <div class="flex items-center space-x-3.5 sm:space-x-4 overflow-hidden min-w-0 pr-2">
-        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-[#FAF7F2] border border-[#EADBCC] overflow-hidden shrink-0 shadow-md">
+        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-black/20 border border-[#F6DAA8]/30 overflow-hidden shrink-0 shadow-md">
             <img src="{{ asset($mainImg) }}" alt="{{ $product->title }}" class="w-full h-full object-cover">
         </div>
         <div class="truncate text-left">
-            <div class="text-xs sm:text-base font-bold text-[#121212] font-heading truncate leading-tight">{{ $product->title }}</div>
+            <div class="text-xs sm:text-base font-bold text-white font-heading truncate leading-tight">{{ $product->title }}</div>
             <div class="flex items-baseline space-x-2 pt-0.5 sm:pt-1 font-body">
-                <span class="text-sm sm:text-lg font-bold text-[#C87A1E]">
+                <span class="text-sm sm:text-lg font-bold text-[#F6DAA8]">
                     ₹{{ number_format($product->active_price, 2) }}
                 </span>
                 @if(isset($mrpPrice) && $mrpPrice > $product->active_price)
-                    <span class="text-xs sm:text-sm text-gray-400 line-through font-medium">
+                    <span class="text-xs sm:text-sm text-white/60 line-through font-medium">
                         ₹{{ number_format($mrpPrice, 2) }}
                     </span>
-                    <span class="hidden sm:inline-block px-2 py-0.5 bg-[#FFF8EE] border border-[#F0D5AA] text-[#C87A1E] text-[10px] font-bold rounded-full font-body">
+                    <span class="hidden sm:inline-block px-2 py-0.5 bg-[#962637] border border-[#F6DAA8]/40 text-[#F6DAA8] text-[10px] font-bold rounded-full font-body">
                         {{ round((($mrpPrice - $product->active_price) / $mrpPrice) * 100) }}% OFF
                     </span>
                 @endif
@@ -887,14 +858,14 @@
     <button 
         type="button" 
         id="sticky-atc-btn" 
-        class="py-2.5 sm:py-3 px-5 sm:px-7 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-[10px] shadow-sm hover:shadow transition-colors font-heading cursor-pointer whitespace-nowrap shrink-0 flex items-center space-x-2"
+        class="py-2.5 sm:py-3 px-5 sm:px-7 bg-[#D38928] hover:bg-[#B8741E] active:bg-[#965A15] text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-[10px] shadow-md hover:shadow-lg transition-all font-heading cursor-pointer whitespace-nowrap shrink-0 flex items-center space-x-2 border border-[#F6DAA8]/30"
         data-product-id="{{ $product->id }}"
         data-product-title="{{ $product->title }}"
         data-product-slug="{{ $product->slug }}"
         data-product-price="{{ $product->active_price }}"
         data-product-image="{{ asset($mainImg) }}"
     >
-        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <svg class="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
         </svg>
         <span>Add to Cart</span>

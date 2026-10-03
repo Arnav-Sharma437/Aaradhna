@@ -447,7 +447,6 @@
             
                 <!-- Section Header -->
                 <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-10 space-y-1.5">
-                    <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ CLARITY &amp; VIDHI ✦</span>
                     <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#121212] font-heading tracking-tight leading-tight">
                         Frequently Asked Questions
                     </h2>
