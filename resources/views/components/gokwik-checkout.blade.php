@@ -1,33 +1,33 @@
 <!-- ========================================================================= -->
-<!-- GOKWIK 1-CLICK FAST EXPRESS CHECKOUT MODAL (Dummy Interactive Mockup)     -->
+<!-- MANGLAM.CO™ EXPRESS RAZORPAY CHECKOUT MODAL                               -->
 <!-- ========================================================================= -->
 <div 
     id="gokwik-checkout-modal" 
-    class="fixed inset-0 z-[80] bg-black/70 backdrop-blur-sm hidden items-center justify-center p-3 sm:p-4 font-body select-none transition-all duration-300 opacity-0 pointer-events-none"
+    class="fixed inset-0 z-[80] bg-black/75 backdrop-blur-xs hidden items-center justify-center p-3 sm:p-4 font-body select-none transition-all duration-300 opacity-0 pointer-events-none"
     aria-hidden="true"
 >
     <!-- Modal Container -->
     <div 
         id="gokwik-modal-card"
-        class="w-full max-w-lg bg-white rounded-[24px] shadow-2xl border border-gray-100 overflow-hidden flex flex-col max-h-[92vh] transform scale-95 transition-all duration-300"
+        class="w-full max-w-lg bg-white rounded-[24px] shadow-2xl border border-[#EADBCC] overflow-hidden flex flex-col max-h-[94vh] transform scale-95 transition-all duration-300"
     >
         
-        <!-- 1. GoKwik Top Header Bar -->
+        <!-- 1. Header Bar with Brand & Security -->
         <div class="bg-[#1C1F26] text-white px-5 py-3.5 flex items-center justify-between shrink-0">
             <div class="flex items-center space-x-2.5">
-                <!-- GoKwik Brand Logo -->
-                <div class="flex items-center space-x-1.5 font-heading">
-                    <span class="text-emerald-400 text-lg font-black tracking-tight">⚡ Go<span class="text-white">Kwik</span></span>
-                    <span class="text-[10px] bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">Fast Checkout</span>
+                <img src="{{ asset('assets/images/fac-icon.png') }}" alt="Manglam" class="w-6 h-6 object-contain">
+                <div class="font-heading">
+                    <span class="text-white text-base font-black tracking-tight">Manglam<span class="text-[#D38928]">.co™</span></span>
+                    <span class="text-[10px] bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded-full font-bold uppercase tracking-wider ml-1.5">Express Checkout</span>
                 </div>
             </div>
 
             <div class="flex items-center space-x-3">
-                <div class="hidden sm:flex items-center space-x-1 text-[11px] text-gray-300">
-                    <svg class="w-3.5 h-3.5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
+                <div class="hidden sm:flex items-center space-x-1 text-[11px] text-emerald-400 font-semibold">
+                    <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
                     </svg>
-                    <span>100% Safe &amp; Encrypted</span>
+                    <span>Razorpay Secured</span>
                 </div>
                 <button 
                     type="button" 
@@ -40,17 +40,17 @@
             </div>
         </div>
 
-        <!-- 2. Green Promo Strip (Extra Discount on UPI) -->
+        <!-- 2. Promo Strip -->
         <div class="bg-gradient-to-r from-emerald-600 to-teal-700 text-white px-4 py-2 text-center text-xs font-bold font-heading flex items-center justify-center space-x-2 shrink-0">
-            <span>🎉 Instant ₹50 Flat Extra Discount applied via UPI</span>
-            <span class="px-1.5 py-0.2 bg-white/20 rounded text-[10px]">AUTO-APPLIED</span>
+            <span>🎉 ₹50 Instant Extra Discount applied on Online Razorpay / UPI</span>
+            <span class="px-1.5 py-0.2 bg-white/20 rounded text-[10px] uppercase font-mono">Auto-Applied</span>
         </div>
 
         <!-- 3. Scrollable Modal Body -->
-        <div class="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4 font-body">
+        <div class="flex-1 overflow-y-auto p-4 sm:p-5 space-y-4 font-body">
             
             <!-- Order Quick Summary Box -->
-            <div class="bg-[#FAF7F2] rounded-[16px] border border-[#EADBCC] p-3.5 space-y-2.5">
+            <div class="bg-[#FAF7F2] rounded-[16px] border border-[#EADBCC] p-3.5 space-y-2">
                 <div class="flex items-center justify-between text-xs font-bold text-[#121212] font-heading">
                     <span class="flex items-center gap-1.5">
                         <img src="{{ asset('assets/images/mangalam-logo.png') }}" alt="Manglam" class="h-4 w-auto object-contain inline">
@@ -61,7 +61,7 @@
 
                 <div class="flex items-center justify-between pt-1 border-t border-[#EADBCC]/60 text-xs">
                     <div>
-                        <span class="text-gray-500">Payable Amount:</span>
+                        <span class="text-gray-500">Total Payable:</span>
                         <span class="text-gray-400 line-through ml-1.5 hidden" id="gokwik-original-price">₹1,547.00</span>
                     </div>
                     <div class="text-right">
@@ -70,8 +70,8 @@
                 </div>
             </div>
 
-            <!-- Coupon Code Section in Checkout Modal -->
-            <div class="bg-[#FFFDF9] rounded-[14px] border border-[#EADBCC] p-3.5 space-y-2">
+            <!-- Coupon Code Section -->
+            <div class="bg-[#FFFDF9] rounded-[14px] border border-[#EADBCC] p-3 space-y-2">
                 <div class="flex items-center justify-between">
                     <label for="gokwik-coupon-input" class="text-xs font-bold text-gray-800 uppercase tracking-wider font-heading flex items-center gap-1.5">
                         <span>🎟️ Have a Coupon / Promo Code?</span>
@@ -81,7 +81,7 @@
                     <input 
                         type="text" 
                         id="gokwik-coupon-input" 
-                        placeholder="Enter coupon code (e.g. MANGLAM10)" 
+                        placeholder="e.g. MANGLAM10XXXX" 
                         class="flex-1 px-3 py-2 text-xs font-semibold uppercase bg-white border border-[#EADBCC] focus:border-[#D38928] rounded-[8px] focus:outline-none tracking-wider"
                     >
                     <button 
@@ -95,97 +95,91 @@
                 <div id="gokwik-coupon-feedback" class="text-[11px] font-bold text-emerald-700 hidden"></div>
             </div>
 
-            <!-- STEP 1: Phone & Contact Information with OTP Verification -->
+            <!-- STEP 1: Customer Contact & Delivery Form -->
             <div id="gokwik-step-1" class="space-y-3.5">
-                <div>
-                    <label class="block text-xs font-bold text-gray-800 uppercase tracking-wider mb-1.5 font-heading">
-                        Contact &amp; Delivery Mobile Number *
+                
+                <!-- Contact Details -->
+                <div class="space-y-2.5">
+                    <label class="block text-xs font-bold text-gray-800 uppercase tracking-wider font-heading">
+                        1. Contact Information
                     </label>
-                    <div class="relative flex items-center">
-                        <span class="absolute left-3.5 text-xs font-bold text-gray-500 font-heading">+91</span>
-                        <input 
-                            type="tel" 
-                            id="gokwik-phone-input"
-                            maxlength="10"
-                            placeholder="Enter 10-digit mobile number" 
-                            value="9876543210"
-                            class="w-full pl-12 pr-28 py-2.5 text-xs sm:text-sm font-bold bg-white border-2 border-gray-200 focus:border-emerald-600 rounded-[10px] focus:outline-none transition-all tracking-wide"
-                        >
-                        <button 
-                            type="button" 
-                            id="gokwik-verify-phone-btn" 
-                            class="absolute right-1.5 px-3 py-1.5 bg-[#121212] hover:bg-emerald-600 text-white text-[11px] font-bold rounded-[8px] transition-colors font-heading cursor-pointer flex items-center gap-1"
-                        >
-                            <span>Get OTP ⚡</span>
-                        </button>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                        <div>
+                            <input 
+                                type="text" 
+                                id="gokwik-name-input"
+                                placeholder="Full Name *" 
+                                value="Ramesh Sharma"
+                                class="w-full px-3 py-2 text-xs font-semibold bg-white border border-gray-200 focus:border-emerald-600 rounded-[8px] focus:outline-none"
+                            >
+                        </div>
+                        <div>
+                            <input 
+                                type="tel" 
+                                id="gokwik-phone-input"
+                                maxlength="10"
+                                placeholder="10-digit Mobile Number *" 
+                                value="9876543210"
+                                class="w-full px-3 py-2 text-xs font-bold bg-white border border-gray-200 focus:border-emerald-600 rounded-[8px] focus:outline-none"
+                            >
+                        </div>
                     </div>
                 </div>
 
-                <!-- OTP Input Box Container -->
-                <div id="gokwik-otp-container" class="hidden bg-[#FAF7F2] border border-[#EADBCC] rounded-[14px] p-3.5 space-y-2.5 animate-fadeIn">
-                    <div class="flex items-center justify-between text-xs">
-                        <span class="font-bold text-gray-800 font-heading">Enter 4-Digit OTP sent to your mobile:</span>
-                        <span class="text-[11px] font-mono text-emerald-700 font-bold" id="gokwik-otp-timer">OTP: 4829</span>
-                    </div>
-                    
-                    <div class="flex items-center space-x-2">
-                        <input type="text" maxlength="1" id="otp-1" value="4" class="gokwik-otp-input w-10 h-10 text-center font-black text-base bg-white border border-gray-300 focus:border-emerald-600 rounded-[8px] focus:outline-none shadow-2xs">
-                        <input type="text" maxlength="1" id="otp-2" value="8" class="gokwik-otp-input w-10 h-10 text-center font-black text-base bg-white border border-gray-300 focus:border-emerald-600 rounded-[8px] focus:outline-none shadow-2xs">
-                        <input type="text" maxlength="1" id="otp-3" value="2" class="gokwik-otp-input w-10 h-10 text-center font-black text-base bg-white border border-gray-300 focus:border-emerald-600 rounded-[8px] focus:outline-none shadow-2xs">
-                        <input type="text" maxlength="1" id="otp-4" value="9" class="gokwik-otp-input w-10 h-10 text-center font-black text-base bg-white border border-gray-300 focus:border-emerald-600 rounded-[8px] focus:outline-none shadow-2xs">
-                        <button type="button" id="gokwik-confirm-otp-btn" class="flex-1 py-2 px-3 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-[8px] transition-colors font-heading cursor-pointer">
-                            Confirm OTP ✓
-                        </button>
-                    </div>
-
-                    <div class="flex items-center justify-between text-[11px] text-gray-500">
-                        <span>Didn't receive? <button type="button" id="gokwik-resend-otp-btn" class="underline font-semibold hover:text-[#D38928] cursor-pointer">Resend OTP</button></span>
-                        <span id="gokwik-otp-status" class="font-bold text-emerald-700"></span>
-                    </div>
-                </div>
-
-                <div id="gokwik-phone-feedback" class="text-[11px] font-semibold text-emerald-700 flex items-center gap-1">
-                    <span>✓ Mobile Verified for Express Delivery</span>
-                </div>
-
-                <!-- STEP 2: Delivery Address -->
-                <div class="space-y-2 pt-1">
+                <!-- Delivery Address Details -->
+                <div class="space-y-2.5 pt-1">
                     <div class="flex items-center justify-between">
                         <label class="text-xs font-bold text-gray-800 uppercase tracking-wider font-heading">
-                            Delivery Address
+                            2. Delivery Address
                         </label>
-                        <span class="text-[11px] text-emerald-700 font-semibold">● Express Delivery</span>
+                        <span class="text-[11px] text-emerald-700 font-semibold">● Free Express Shipping</span>
                     </div>
 
-                    <!-- Address Card -->
-                    <div class="p-3 bg-white rounded-[12px] border border-gray-200 shadow-2xs space-y-1 text-xs">
-                        <div class="flex items-center justify-between font-bold text-gray-900 font-heading">
-                            <span>Rameshwar Sharma</span>
-                            <span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 text-[10px] font-bold rounded-full">Default</span>
+                    <div class="space-y-2">
+                        <textarea 
+                            id="gokwik-address-input" 
+                            rows="2" 
+                            placeholder="House/Flat No., Street, Area, Landmark *" 
+                            class="w-full px-3 py-2 text-xs font-medium bg-white border border-gray-200 focus:border-emerald-600 rounded-[8px] focus:outline-none"
+                        >B-402, Vrindavan Dham Residency, Near ISKCON Temple Road</textarea>
+
+                        <div class="grid grid-cols-2 gap-2.5">
+                            <input 
+                                type="text" 
+                                id="gokwik-city-input" 
+                                placeholder="City / District *" 
+                                value="Mathura"
+                                class="w-full px-3 py-2 text-xs font-medium bg-white border border-gray-200 focus:border-emerald-600 rounded-[8px] focus:outline-none"
+                            >
+                            <input 
+                                type="text" 
+                                id="gokwik-pincode-input" 
+                                maxlength="6"
+                                placeholder="Pincode *" 
+                                value="281001"
+                                class="w-full px-3 py-2 text-xs font-bold bg-white border border-gray-200 focus:border-emerald-600 rounded-[8px] focus:outline-none"
+                            >
                         </div>
-                        <p class="text-gray-600 leading-relaxed text-[11px]">
-                            B-402, Vrindavan Dham Residency, Near ISKCON Temple Road, Mathura, UP - 281001
-                        </p>
                     </div>
                 </div>
 
-                <!-- STEP 3: Payment Options (Simplified) -->
-                <div class="space-y-2.5 pt-1">
+                <!-- Payment Options -->
+                <div class="space-y-2 pt-1">
                     <label class="block text-xs font-bold text-gray-800 uppercase tracking-wider font-heading">
-                        Select Payment Method
+                        3. Select Payment Method
                     </label>
 
                     <div class="space-y-2">
-                        <!-- Option 1: Online Payment / Razorpay (UPI, Cards, NetBanking, Wallets) -->
+                        <!-- Option 1: Razorpay Online (UPI, Cards, NetBanking, Wallets) -->
                         <label class="gokwik-pay-option flex items-center justify-between p-3 rounded-[12px] border-2 border-emerald-600 bg-emerald-50/50 cursor-pointer transition-all">
                             <div class="flex items-center space-x-3">
                                 <input type="radio" name="gokwik_payment" value="Razorpay" checked class="text-emerald-600 focus:ring-0">
                                 <div>
                                     <div class="text-xs font-bold text-gray-900 font-heading flex items-center gap-1.5">
-                                        <span>UPI / Cards / NetBanking (Online)</span>
+                                        <span>UPI / Cards / NetBanking (Razorpay)</span>
                                         <span class="px-1.5 py-0.5 bg-emerald-600 text-white text-[9px] font-black rounded-md uppercase">Save ₹50</span>
                                     </div>
-                                    <div class="text-[10px] text-gray-500">Fast 1-Click Payment via Razorpay ⚡</div>
+                                    <div class="text-[10px] text-gray-500">Google Pay, PhonePe, Paytm, Cards &amp; NetBanking</div>
                                 </div>
                             </div>
                             <span class="text-xs font-bold font-heading text-emerald-800">⚡ Instant</span>
@@ -197,7 +191,7 @@
                                 <input type="radio" name="gokwik_payment" value="COD" class="text-emerald-600 focus:ring-0">
                                 <div>
                                     <div class="text-xs font-bold text-gray-900 font-heading">Cash on Delivery (COD)</div>
-                                    <div class="text-[10px] text-gray-500">Pay cash upon delivery at doorstep</div>
+                                    <div class="text-[10px] text-gray-500">Pay upon delivery at your doorstep</div>
                                 </div>
                             </div>
                             <span class="text-[11px] text-gray-500 font-medium">Verified</span>
@@ -205,7 +199,7 @@
                     </div>
                 </div>
 
-                <!-- Payment Status Feedback (Error / Cancelled notice) -->
+                <!-- Payment Status Feedback Notice -->
                 <div id="gokwik-payment-feedback" class="hidden text-center text-xs p-2.5 rounded-[10px] bg-amber-50 border border-amber-200 text-amber-800 font-medium"></div>
 
                 <!-- Complete Order Button -->
@@ -214,29 +208,29 @@
                     id="gokwik-pay-btn"
                     class="w-full py-3.5 px-6 bg-[#00A86B] hover:bg-[#008f5b] active:bg-[#00784c] text-white text-sm sm:text-base font-black uppercase tracking-wider rounded-[12px] shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center space-x-2 font-heading cursor-pointer mt-3"
                 >
-                    <span>⚡ CONFIRM &amp; PLACE SACRED ORDER</span>
+                    <span id="gokwik-pay-btn-label">⚡ PAY VIA RAZORPAY</span>
                     <span id="gokwik-btn-price" class="bg-black/20 px-2.5 py-0.5 rounded-full text-xs font-mono">₹1,447.00</span>
                 </button>
 
             </div>
 
-            <!-- STEP 4: Success Screen (Hidden by default) -->
+            <!-- STEP 4: Success Screen -->
             <div id="gokwik-success-screen" class="hidden text-center py-6 space-y-4">
                 <div class="w-16 h-16 mx-auto rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-3xl font-black animate-bounce shadow-md">
                     ✓
                 </div>
                 <div class="space-y-1">
-                    <span class="text-xs font-bold text-emerald-700 uppercase tracking-widest font-heading">GoKwik Express Verified ⚡</span>
+                    <span class="text-xs font-bold text-emerald-700 uppercase tracking-widest font-heading">Payment Verified ⚡</span>
                     <h4 class="text-2xl font-black font-heading text-[#121212]">Order Confirmed!</h4>
                     <p class="text-xs sm:text-sm text-gray-600 max-w-sm mx-auto">
-                        Your sacred Manglam order <strong id="gokwik-order-num" class="font-mono text-[#D38928]">#GK-948214</strong> has been placed successfully.
+                        Your sacred Manglam order <strong id="gokwik-order-num" class="font-mono text-[#D38928]">#MG-CONFIRMED</strong> has been placed successfully.
                     </p>
                 </div>
 
                 <div class="bg-[#FAF7F2] p-4 rounded-[14px] border border-[#EADBCC] text-left text-xs space-y-1.5 max-w-sm mx-auto">
                     <div class="flex justify-between font-bold">
                         <span class="text-gray-600">Payment Status:</span>
-                        <span class="text-emerald-700">✓ Paid / Confirmed</span>
+                        <span class="text-emerald-700" id="gokwik-success-payment-status">✓ Paid (Razorpay Verified)</span>
                     </div>
                     <div class="flex justify-between">
                         <span class="text-gray-600">Expected Delivery:</span>
@@ -264,12 +258,12 @@
 
         </div>
 
-        <!-- 4. GoKwik Trust Footer -->
+        <!-- 4. Trust Footer -->
         <div class="bg-gray-50 border-t border-gray-200 px-4 py-2.5 flex items-center justify-between text-[11px] text-gray-500 font-medium shrink-0">
             <span class="flex items-center gap-1">
-                <span class="text-emerald-600 font-bold">🔒</span> Verified GoKwik Checkout
+                <span class="text-emerald-600 font-bold">🔒</span> 100% Secure Checkout
             </span>
-            <span>256-Bit SSL Protection</span>
+            <span>256-Bit SSL • Razorpay Gateway</span>
         </div>
 
     </div>
@@ -279,7 +273,7 @@
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
 <!-- ========================================================================= -->
-<!-- SCRIPT: GOKWIK FAST CHECKOUT TRIGGER & RAZORPAY PAYMENT FLOW              -->
+<!-- SCRIPT: RAZORPAY CHECKOUT TRIGGER & SIGNATURE VERIFICATION               -->
 <!-- ========================================================================= -->
 <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -287,6 +281,7 @@
         const card = document.getElementById('gokwik-modal-card');
         const closeBtn = document.getElementById('gokwik-close-btn');
         const payBtn = document.getElementById('gokwik-pay-btn');
+        const payBtnLabel = document.getElementById('gokwik-pay-btn-label');
         const doneBtn = document.getElementById('gokwik-done-btn');
         const step1 = document.getElementById('gokwik-step-1');
         const successScreen = document.getElementById('gokwik-success-screen');
@@ -303,130 +298,22 @@
         const gokwikApplyCouponBtn = document.getElementById('gokwik-apply-coupon-btn');
         const gokwikCouponFeedback = document.getElementById('gokwik-coupon-feedback');
 
+        const gokwikNameInput = document.getElementById('gokwik-name-input');
         const gokwikPhoneInput = document.getElementById('gokwik-phone-input');
-        const gokwikVerifyPhoneBtn = document.getElementById('gokwik-verify-phone-btn');
-        const gokwikPhoneFeedback = document.getElementById('gokwik-phone-feedback');
-        const gokwikOtpContainer = document.getElementById('gokwik-otp-container');
-        const gokwikConfirmOtpBtn = document.getElementById('gokwik-confirm-otp-btn');
-        const gokwikResendOtpBtn = document.getElementById('gokwik-resend-otp-btn');
-        const gokwikOtpInputs = document.querySelectorAll('.gokwik-otp-input');
-        const gokwikOtpStatus = document.getElementById('gokwik-otp-status');
-        const gokwikOtpTimer = document.getElementById('gokwik-otp-timer');
+        const gokwikAddressInput = document.getElementById('gokwik-address-input');
+        const gokwikCityInput = document.getElementById('gokwik-city-input');
+        const gokwikPincodeInput = document.getElementById('gokwik-pincode-input');
 
-        let isPhoneOtpVerified = false;
-
-        // Auto advance OTP inputs
-        gokwikOtpInputs.forEach((input, index) => {
-            input.addEventListener('input', (e) => {
-                if (e.target.value.length === 1 && index < gokwikOtpInputs.length - 1) {
-                    gokwikOtpInputs[index + 1].focus();
-                }
-            });
-            input.addEventListener('keydown', (e) => {
-                if (e.key === 'Backspace' && !e.target.value && index > 0) {
-                    gokwikOtpInputs[index - 1].focus();
+        // Toggle Pay Button Label depending on chosen payment method
+        document.querySelectorAll('input[name="gokwik_payment"]').forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                if (e.target.value === 'COD') {
+                    if (payBtnLabel) payBtnLabel.textContent = 'PLACE CASH ON DELIVERY ORDER';
+                } else {
+                    if (payBtnLabel) payBtnLabel.textContent = '⚡ PAY VIA RAZORPAY';
                 }
             });
         });
-
-        if (gokwikVerifyPhoneBtn && gokwikPhoneInput) {
-            gokwikVerifyPhoneBtn.addEventListener('click', () => {
-                const phone = gokwikPhoneInput.value.trim();
-                const isValid = /^[6-9]\d{9}$/.test(phone);
-
-                if (!isValid) {
-                    if (gokwikPhoneFeedback) {
-                        gokwikPhoneFeedback.innerHTML = '<span class="text-rose-600">✕ Please enter a valid 10-digit mobile number</span>';
-                        gokwikPhoneFeedback.classList.remove('hidden');
-                    }
-                    gokwikPhoneInput.focus();
-                    return;
-                }
-
-                gokwikVerifyPhoneBtn.disabled = true;
-                gokwikVerifyPhoneBtn.innerHTML = '<span class="inline-block animate-spin">⌛</span> Sending...';
-
-                setTimeout(() => {
-                    gokwikVerifyPhoneBtn.disabled = false;
-                    gokwikVerifyPhoneBtn.classList.add('hidden');
-                    if (gokwikOtpContainer) {
-                        gokwikOtpContainer.classList.remove('hidden');
-                        if (gokwikOtpInputs.length > 0) gokwikOtpInputs[0].focus();
-                    }
-                    if (gokwikPhoneFeedback) {
-                        gokwikPhoneFeedback.innerHTML = '<span class="text-amber-600">⚡ OTP sent to +91 ' + phone + '</span>';
-                        gokwikPhoneFeedback.classList.remove('hidden');
-                    }
-                }, 350);
-            });
-
-            if (gokwikConfirmOtpBtn) {
-                gokwikConfirmOtpBtn.addEventListener('click', () => {
-                    const enteredOtp = Array.from(gokwikOtpInputs).map(i => i.value).join('');
-                    if (enteredOtp.length < 4) {
-                        if (gokwikOtpStatus) gokwikOtpStatus.innerHTML = '<span class="text-rose-600">Enter 4 digits</span>';
-                        return;
-                    }
-
-                    gokwikConfirmOtpBtn.innerHTML = 'Verifying...';
-                    gokwikConfirmOtpBtn.disabled = true;
-
-                    setTimeout(() => {
-                        isPhoneOtpVerified = true;
-                        if (gokwikOtpContainer) gokwikOtpContainer.classList.add('hidden');
-                        if (gokwikVerifyPhoneBtn) {
-                            gokwikVerifyPhoneBtn.classList.remove('hidden', 'bg-[#121212]', 'hover:bg-emerald-600');
-                            gokwikVerifyPhoneBtn.classList.add('bg-emerald-600', 'text-white');
-                            gokwikVerifyPhoneBtn.innerHTML = '<span>Verified ✓</span>';
-                            gokwikVerifyPhoneBtn.disabled = true;
-                        }
-                        if (gokwikPhoneFeedback) {
-                            gokwikPhoneFeedback.innerHTML = '<span class="text-emerald-700">✓ Mobile Verified with OTP for Express Dispatch</span>';
-                            gokwikPhoneFeedback.classList.remove('hidden');
-                        }
-                    }, 400);
-                });
-            }
-
-            if (gokwikResendOtpBtn) {
-                gokwikResendOtpBtn.addEventListener('click', () => {
-                    const newOtp = Math.floor(1000 + Math.random() * 9000);
-                    if (gokwikOtpTimer) gokwikOtpTimer.textContent = 'OTP: ' + newOtp;
-                    const digits = String(newOtp).split('');
-                    gokwikOtpInputs.forEach((input, i) => {
-                        input.value = digits[i] || '';
-                    });
-                    if (gokwikOtpStatus) {
-                        gokwikOtpStatus.innerHTML = '<span class="text-emerald-700">New OTP Sent!</span>';
-                        setTimeout(() => { if (gokwikOtpStatus) gokwikOtpStatus.textContent = ''; }, 3000);
-                    }
-                });
-            }
-
-            gokwikPhoneInput.addEventListener('input', () => {
-                const phone = gokwikPhoneInput.value.trim();
-                isPhoneOtpVerified = false;
-                if (gokwikVerifyPhoneBtn) {
-                    gokwikVerifyPhoneBtn.classList.remove('hidden', 'bg-emerald-600');
-                    gokwikVerifyPhoneBtn.classList.add('bg-[#121212]');
-                    gokwikVerifyPhoneBtn.innerHTML = '<span>Get OTP ⚡</span>';
-                    gokwikVerifyPhoneBtn.disabled = false;
-                }
-                if (gokwikOtpContainer) gokwikOtpContainer.classList.add('hidden');
-
-                if (phone.length === 10 && /^[6-9]\d{9}$/.test(phone)) {
-                    if (gokwikPhoneFeedback) {
-                        gokwikPhoneFeedback.innerHTML = '<span class="text-amber-700">Click "Get OTP ⚡" to verify mobile</span>';
-                        gokwikPhoneFeedback.classList.remove('hidden');
-                    }
-                } else if (phone.length > 0 && phone.length !== 10) {
-                    if (gokwikPhoneFeedback) {
-                        gokwikPhoneFeedback.innerHTML = '<span class="text-amber-600">Enter 10 digits</span>';
-                        gokwikPhoneFeedback.classList.remove('hidden');
-                    }
-                }
-            });
-        }
 
         const recalculateGokwikTotals = () => {
             let baseSubtotal = 1497;
@@ -459,7 +346,7 @@
         };
 
         if (gokwikApplyCouponBtn && gokwikCouponInput) {
-            // Live reset when user deletes/clears coupon code input
+            // Live reset when user clears coupon code input
             gokwikCouponInput.addEventListener('input', () => {
                 if (!gokwikCouponInput.value.trim()) {
                     currentCheckoutCoupon = '';
@@ -530,7 +417,6 @@
                             gokwikCouponFeedback.classList.add('text-emerald-700');
                         }
                     } else {
-                        // Strictly reset on invalid coupon
                         currentCheckoutCoupon = '';
                         currentCheckoutCouponDiscount = 0;
                         if (gokwikCouponFeedback) {
@@ -629,17 +515,22 @@
             payBtn.disabled = false;
             let currentPriceText = '₹1,447.00';
             if (payablePriceEl) currentPriceText = payablePriceEl.textContent;
+            const selectedPayment = document.querySelector('input[name="gokwik_payment"]:checked')?.value || 'Razorpay';
+            const labelText = selectedPayment === 'COD' ? 'PLACE CASH ON DELIVERY ORDER' : '⚡ PAY VIA RAZORPAY';
             payBtn.innerHTML = `
-                <span>⚡ CONFIRM &amp; PLACE SACRED ORDER</span>
+                <span id="gokwik-pay-btn-label">${labelText}</span>
                 <span id="gokwik-btn-price" class="bg-black/20 px-2.5 py-0.5 rounded-full text-xs font-mono">${currentPriceText}</span>
             `;
         };
 
-        // Handle Pay button click (Razorpay Standard Checkout & COD flow)
+        // Handle Pay button click (Direct Razorpay Standard Checkout & COD flow)
         if (payBtn) {
             payBtn.addEventListener('click', async () => {
-                const phoneInput = document.getElementById('gokwik-phone-input');
-                const phone = phoneInput ? phoneInput.value.trim() : '9876543210';
+                const name = gokwikNameInput ? gokwikNameInput.value.trim() : 'Customer';
+                const phone = gokwikPhoneInput ? gokwikPhoneInput.value.trim() : '';
+                const address = gokwikAddressInput ? gokwikAddressInput.value.trim() : '';
+                const city = gokwikCityInput ? gokwikCityInput.value.trim() : '';
+                const pincode = gokwikPincodeInput ? gokwikPincodeInput.value.trim() : '';
                 const selectedPayment = document.querySelector('input[name="gokwik_payment"]:checked')?.value || 'Razorpay';
 
                 if (paymentFeedback) {
@@ -647,18 +538,39 @@
                     paymentFeedback.classList.add('hidden');
                 }
 
+                // Form validation
+                if (!phone || !/^[6-9]\d{9}$/.test(phone)) {
+                    if (paymentFeedback) {
+                        paymentFeedback.innerHTML = '<span class="text-rose-600 font-bold">✕ Please enter a valid 10-digit mobile number.</span>';
+                        paymentFeedback.classList.remove('hidden');
+                    }
+                    if (gokwikPhoneInput) gokwikPhoneInput.focus();
+                    return;
+                }
+
+                if (!address || address.length < 5) {
+                    if (paymentFeedback) {
+                        paymentFeedback.innerHTML = '<span class="text-rose-600 font-bold">✕ Please enter your complete delivery address.</span>';
+                        paymentFeedback.classList.remove('hidden');
+                    }
+                    if (gokwikAddressInput) gokwikAddressInput.focus();
+                    return;
+                }
+
                 payBtn.innerHTML = `
                     <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white inline" fill="none" viewBox="0 0 24 24">
                         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
-                    <span>Initializing Order...</span>
+                    <span>Initializing Razorpay...</span>
                 `;
                 payBtn.disabled = true;
 
                 const cartItemsList = (window.CartStore && typeof window.CartStore.getCart === 'function')
                     ? window.CartStore.getCart()
                     : (window.cartItems || []);
+
+                const fullAddressString = `${address}, ${city} - ${pincode}`;
 
                 try {
                     const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
@@ -670,7 +582,9 @@
                             'Accept': 'application/json'
                         },
                         body: JSON.stringify({
+                            name: name,
                             phone: phone,
+                            address: fullAddressString,
                             coupon_code: currentCheckoutCoupon,
                             payment_method: selectedPayment,
                             items: cartItemsList,
@@ -680,13 +594,16 @@
                     const data = await response.json();
 
                     if (!response.ok || !data.success) {
-                        throw new Error(data.message || 'Failed to place order.');
+                        throw new Error(data.message || 'Failed to initialize order.');
                     }
 
                     // 1. CASH ON DELIVERY FLOW
                     if (!data.requires_payment || selectedPayment === 'COD') {
                         if (step1) step1.classList.add('hidden');
                         if (successScreen) successScreen.classList.remove('hidden');
+
+                        const statusEl = document.getElementById('gokwik-success-payment-status');
+                        if (statusEl) statusEl.textContent = '✓ Cash on Delivery (Pay at Doorstep)';
 
                         // Clear cart
                         if (window.CartStore && typeof window.CartStore.clearCart === 'function') {
@@ -703,9 +620,9 @@
                         return;
                     }
 
-                    // 2. RAZORPAY STANDARD CHECKOUT FLOW
+                    // 2. OFFICIAL RAZORPAY STANDARD CHECKOUT POPUP
                     if (typeof window.Razorpay === 'undefined') {
-                        throw new Error('Razorpay SDK failed to load. Please check your internet connection.');
+                        throw new Error('Razorpay payment gateway failed to load. Please check your network.');
                     }
 
                     const rzpOptions = {
@@ -713,11 +630,11 @@
                         amount: data.amount,
                         currency: data.currency || 'INR',
                         name: 'Manglam.co™',
-                        description: 'Order #' + data.order_number + ' - Pure Vedic Items',
+                        description: 'Order #' + data.order_number + ' - Sacred Pooja Items',
                         image: '{{ asset("assets/images/fac-icon.png") }}',
                         order_id: data.razorpay_order_id,
                         prefill: {
-                            name: data.customer?.name || 'Devotee',
+                            name: data.customer?.name || name,
                             email: data.customer?.email || 'devotee@mangalam.co',
                             contact: data.customer?.phone || phone
                         },
@@ -730,7 +647,7 @@
                                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                                     <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                                 </svg>
-                                <span>Verifying Payment...</span>
+                                <span>Verifying Sacred Payment...</span>
                             `;
 
                             try {
@@ -755,6 +672,9 @@
                                     if (step1) step1.classList.add('hidden');
                                     if (successScreen) successScreen.classList.remove('hidden');
 
+                                    const statusEl = document.getElementById('gokwik-success-payment-status');
+                                    if (statusEl) statusEl.textContent = '✓ Paid (Razorpay Verified)';
+
                                     // Clear cart only after verified successful payment
                                     if (window.CartStore && typeof window.CartStore.clearCart === 'function') {
                                         window.CartStore.clearCart();
@@ -770,14 +690,14 @@
                                 } else {
                                     restorePayButton();
                                     if (paymentFeedback) {
-                                        paymentFeedback.innerHTML = `<span class="text-rose-600 font-bold">✕ ${verifyData.message || 'Payment signature verification failed. Please try again.'}</span>`;
+                                        paymentFeedback.innerHTML = `<span class="text-rose-600 font-bold">✕ ${verifyData.message || 'Payment signature verification failed.'}</span>`;
                                         paymentFeedback.classList.remove('hidden');
                                     }
                                 }
                             } catch (vErr) {
                                 restorePayButton();
                                 if (paymentFeedback) {
-                                    paymentFeedback.innerHTML = `<span class="text-rose-600 font-bold">✕ Verification error. Please check your network and retry.</span>`;
+                                    paymentFeedback.innerHTML = `<span class="text-rose-600 font-bold">✕ Verification error. Please check connection.</span>`;
                                     paymentFeedback.classList.remove('hidden');
                                 }
                             }
@@ -786,7 +706,7 @@
                             ondismiss: function () {
                                 restorePayButton();
                                 if (paymentFeedback) {
-                                    paymentFeedback.innerHTML = '<span class="text-amber-800 font-medium">⚡ Payment was cancelled. Your cart is preserved and you can retry anytime.</span>';
+                                    paymentFeedback.innerHTML = '<span class="text-amber-800 font-medium">⚡ Razorpay payment window was closed. Your cart is preserved and you can retry anytime.</span>';
                                     paymentFeedback.classList.remove('hidden');
                                 }
                             }
@@ -820,7 +740,7 @@
             });
         }
 
-        // Attach GoKwik opener to all checkout triggers across the site
+        // Attach Checkout opener to all checkout triggers across the site
         document.querySelectorAll('.gokwik-checkout-trigger').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
