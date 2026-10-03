@@ -14,12 +14,40 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
 use Razorpay\Api\Api;
 use Razorpay\Api\Errors\SignatureVerificationError;
 
 class CheckoutController extends Controller
 {
+    /**
+     * Ensure database columns exist for Razorpay integration safely.
+     */
+    protected function ensureRazorpayColumnsExist(): void
+    {
+        try {
+            if (!Schema::hasColumn('orders', 'razorpay_order_id')) {
+                Schema::table('orders', function ($table) {
+                    if (!Schema::hasColumn('orders', 'razorpay_order_id')) {
+                        $table->string('razorpay_order_id')->nullable()->index();
+                    }
+                    if (!Schema::hasColumn('orders', 'razorpay_payment_id')) {
+                        $table->string('razorpay_payment_id')->nullable();
+                    }
+                    if (!Schema::hasColumn('orders', 'razorpay_signature')) {
+                        $table->string('razorpay_signature')->nullable();
+                    }
+                    if (!Schema::hasColumn('orders', 'paid_at')) {
+                        $table->timestamp('paid_at')->nullable();
+                    }
+                });
+            }
+        } catch (\Throwable $e) {
+            Log::info('Schema check notice: ' . $e->getMessage());
+        }
+    }
+
     /**
      * Create / Place Order from GoKwik or Cart Checkout.
      * Integrates with Razorpay for Online payments and supports COD.
@@ -37,6 +65,8 @@ class CheckoutController extends Controller
             'total_amount' => 'nullable|numeric',
         ]);
 
+        $this->ensureRazorpayColumnsExist();
+
         try {
             DB::beginTransaction();
 
@@ -53,7 +83,7 @@ class CheckoutController extends Controller
             $isCOD = (stripos($rawPaymentMethod, 'cod') !== false || stripos($rawPaymentMethod, 'cash') !== false);
             $paymentMethod = $isCOD ? 'Cash on Delivery (COD)' : 'Razorpay (Online / UPI)';
 
-            $customerName = $validated['name'] ?? ($user ? $user->name : 'Pandit Rameshwar Mishra');
+            $customerName = $validated['name'] ?? ($user ? $user->name : 'Devotee');
             $customerPhone = $validated['phone'] ?? ($user ? $user->phone : '9876543210');
             $customerEmail = $validated['email'] ?? ($user ? $user->email : 'devotee@mangalam.co');
 
@@ -113,7 +143,7 @@ class CheckoutController extends Controller
             if (!empty($couponCode)) {
                 $appliedCoupon = Coupon::where('code', $couponCode)->first();
                 
-                if (!$appliedCoupon) {
+                if (!$appliedCoupon && Schema::hasTable('discount_signups')) {
                     $signup = DiscountSignup::where('generated_coupon_code', $couponCode)->first();
                     if ($signup) {
                         $appliedCoupon = Coupon::firstOrCreate(
@@ -141,7 +171,7 @@ class CheckoutController extends Controller
             // Default promotional UPI discount if no coupon is supplied and user chose online payment
             if ($discountAmount <= 0 && !$isCOD) {
                 $discountAmount = 50.00;
-                $couponCode = 'GOKWIK50';
+                $couponCode = 'RAZORPAY50';
             }
 
             $shippingFee = 0.00; // Free sacred shipping
@@ -178,12 +208,13 @@ class CheckoutController extends Controller
 
             // 4. Handle COD vs Razorpay flow
             if ($isCOD) {
-                // If coupon applied on COD, update usage
                 if ($appliedCoupon) {
                     $appliedCoupon->increment('used_count');
-                    DiscountSignup::where('coupon_id', $appliedCoupon->id)
-                        ->orWhere('generated_coupon_code', $couponCode)
-                        ->update(['coupon_status' => 'used']);
+                    if (Schema::hasTable('discount_signups')) {
+                        DiscountSignup::where('coupon_id', $appliedCoupon->id)
+                            ->orWhere('generated_coupon_code', $couponCode)
+                            ->update(['coupon_status' => 'used']);
+                    }
                 }
 
                 DB::commit();
@@ -225,9 +256,13 @@ class CheckoutController extends Controller
                 ],
             ]);
 
-            $order->update([
-                'razorpay_order_id' => $razorpayOrder['id'],
-            ]);
+            $orderUpdatePayload = [
+                'payment_id' => $razorpayOrder['id'],
+            ];
+            if (Schema::hasColumn('orders', 'razorpay_order_id')) {
+                $orderUpdatePayload['razorpay_order_id'] = $razorpayOrder['id'];
+            }
+            $order->update($orderUpdatePayload);
 
             DB::commit();
 
@@ -272,6 +307,8 @@ class CheckoutController extends Controller
             'order_number' => 'nullable|string',
         ]);
 
+        $this->ensureRazorpayColumnsExist();
+
         try {
             $razorpayKey = config('services.razorpay.key') ?: env('RAZORPAY_KEY_ID') ?: env('RAZORPAY_KEY') ?: env('RAZORPAY_PUBLIC_KEY');
             $razorpaySecret = config('services.razorpay.secret') ?: env('RAZORPAY_KEY_SECRET') ?: env('RAZORPAY_SECRET') ?: env('RAZORPAY_API_SECRET');
@@ -283,10 +320,16 @@ class CheckoutController extends Controller
                 ], 500);
             }
 
-            // Find order by razorpay_order_id or order_number
-            $order = Order::where('razorpay_order_id', $validated['razorpay_order_id'])
-                ->orWhere('order_number', $validated['order_number'] ?? '')
-                ->first();
+            // Find order
+            $order = null;
+            if (Schema::hasColumn('orders', 'razorpay_order_id')) {
+                $order = Order::where('razorpay_order_id', $validated['razorpay_order_id'])->first();
+            }
+            if (!$order) {
+                $order = Order::where('payment_id', $validated['razorpay_order_id'])
+                    ->orWhere('order_number', $validated['order_number'] ?? '')
+                    ->first();
+            }
 
             if (!$order) {
                 return response()->json([
@@ -316,14 +359,21 @@ class CheckoutController extends Controller
             $api->utility->verifyPaymentSignature($attributes);
 
             // Update order status upon successful signature verification
-            $order->update([
+            $updateFields = [
                 'payment_status' => 'paid',
                 'payment_id' => $validated['razorpay_payment_id'],
-                'razorpay_payment_id' => $validated['razorpay_payment_id'],
-                'razorpay_signature' => $validated['razorpay_signature'],
                 'order_status' => 'confirmed',
-                'paid_at' => now(),
-            ]);
+            ];
+            if (Schema::hasColumn('orders', 'razorpay_payment_id')) {
+                $updateFields['razorpay_payment_id'] = $validated['razorpay_payment_id'];
+            }
+            if (Schema::hasColumn('orders', 'razorpay_signature')) {
+                $updateFields['razorpay_signature'] = $validated['razorpay_signature'];
+            }
+            if (Schema::hasColumn('orders', 'paid_at')) {
+                $updateFields['paid_at'] = now();
+            }
+            $order->update($updateFields);
 
             // Update coupon usage status
             if (!empty($order->coupon_code)) {
@@ -331,8 +381,10 @@ class CheckoutController extends Controller
                 if ($coupon) {
                     $coupon->increment('used_count');
                 }
-                DiscountSignup::where('generated_coupon_code', $order->coupon_code)
-                    ->update(['coupon_status' => 'used']);
+                if (Schema::hasTable('discount_signups')) {
+                    DiscountSignup::where('generated_coupon_code', $order->coupon_code)
+                        ->update(['coupon_status' => 'used']);
+                }
             }
 
             return response()->json([
@@ -350,7 +402,6 @@ class CheckoutController extends Controller
             if (isset($order)) {
                 $order->update([
                     'payment_status' => 'failed',
-                    'razorpay_payment_id' => $validated['razorpay_payment_id'],
                 ]);
             }
 
