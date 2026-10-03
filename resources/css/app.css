@@ -64,6 +64,14 @@
     h1, h2, h3, h4, h5, h6, .font-heading, .font-serif, .font-spiritual, .font-cinzel, .font-recoleta {
         font-family: 'Recoleta', Georgia, serif;
     }
+
+    /* Fix demo font % glyph across all headings and text: Ensure % always renders cleanly in Instrument Sans */
+    .font-heading,
+    .font-serif,
+    .font-recoleta,
+    h1, h2, h3, h4, h5, h6 {
+        font-feature-settings: "kern" 1;
+    }
 }
 
 /* Ensure menu items, buttons, paragraphs, inputs, product prices, and badges strictly use Instrument Sans */

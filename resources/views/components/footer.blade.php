@@ -202,7 +202,7 @@
                     STAY CONNECTED
                 </span>
                 <h3 class="text-2xl sm:text-3xl font-serif text-white tracking-tight leading-none">
-                    Get 10% OFF
+                    Get 10<span class="font-sans">%</span> OFF
                 </h3>
                 <p class="text-xs sm:text-sm text-white/80">
                     Subscribe to our newsletter for Vedic updates &amp; festive offerings.
