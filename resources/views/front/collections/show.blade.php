@@ -188,151 +188,240 @@
         </div>
 
         <!-- ========================================================================= -->
-        <!-- BOTTOM EDITORIAL BRAND & COLLECTION NARRATIVE (Matching Screenshot)       -->
+        <!-- BOTTOM EDITORIAL BRAND & COLLECTION NARRATIVE (Luxury Vedic Presentation) -->
         <!-- ========================================================================= -->
-        <div class="mt-16 sm:mt-24 pt-10 sm:pt-14 border-t border-[#EADBCC] max-w-4xl">
+        <div class="mt-20 sm:mt-28 pt-12 sm:pt-16 border-t border-[#EADBCC]">
             
-            <!-- Main Golden Serif Title -->
-            <h2 class="text-xl sm:text-2xl lg:text-[26px] font-serif font-normal text-[#C87A1E] leading-snug mb-6">
-                Buy {{ $collection->title }} – 100% Natural &amp; Low Smoke
-            </h2>
+            <!-- Section Header Banner -->
+            <div class="max-w-3xl mb-10 sm:mb-14 space-y-3">
+                <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#FAF5EE] border border-[#D38928]/40 text-[#D38928] text-xs font-bold uppercase tracking-[0.2em] font-heading">
+                    <span>✦ SACRED VEDIC CRAFT &amp; PURITY ✦</span>
+                </div>
+                <h2 class="text-2xl sm:text-3xl lg:text-[34px] font-serif font-bold text-[#1F1F1F] leading-tight">
+                    Buy {{ $collection->title }} – 100% Natural, Charcoal-Free &amp; Low Smoke
+                </h2>
+                <p class="text-sm sm:text-base text-gray-600 font-normal leading-relaxed">
+                    Crafted strictly following ancient Ayurvedic traditions and Vedic Shastras for daily pooja, dhyan, and divine living.
+                </p>
+            </div>
 
-            @if($collection->slug === 'havan-cups')
-                <!-- 1. Pure Sambrani Cup -->
-                <div class="space-y-2 mb-6">
-                    <h3 class="text-[15px] sm:text-base font-serif font-medium text-[#1F1F1F]">
-                        Pure Sambrani Cup for Everyday Use
+            <!-- 4 Quick Vedic Value Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mb-12 sm:mb-16">
+                <!-- Card 1 -->
+                <div class="bg-[#FFFDF9] rounded-[18px] border border-[#EADBCC] p-5 sm:p-6 space-y-3 shadow-xs hover:border-[#D38928] transition-all duration-300 group">
+                    <div class="w-12 h-12 rounded-xl bg-[#FAF5EE] border border-[#EADBCC] flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                        🌿
+                    </div>
+                    <h3 class="text-base sm:text-lg font-bold font-heading text-[#1F1F1F]">
+                        100% Bamboo-Free
                     </h3>
-                    <p class="text-xs sm:text-[13px] text-gray-700 leading-relaxed font-normal">
-                        A Sambrani cup is a traditional incense made with sandalwood, herbs, cow dung and resins. When lit, it emits a soothing aroma that purifies your space and uplifts your mood.
-                    </p>
-                    <p class="text-xs sm:text-[13px] text-gray-700 leading-relaxed font-normal">
-                        Our low-smoke Sambrani cups are made with 100% natural ingredients available in three natural fragrances: <strong class="underline font-normal text-gray-900">Sandalwood Havan Cup</strong>, <strong class="underline font-normal text-gray-900">Guggal Havan Cup</strong> and <strong class="underline font-normal text-gray-900">Loban Havan Cup</strong>—safe for indoor use and perfect for daily rituals, meditation, and yoga.
+                    <p class="text-xs sm:text-[13.5px] text-gray-600 leading-relaxed font-normal">
+                        According to sacred Vedic Shastras, burning bamboo is inauspicious. Our incense preserves spiritual sanctity without any bamboo core.
                     </p>
                 </div>
 
-                <!-- 2. Easy-to-Use Dhoop Cup -->
-                <div class="space-y-2 mb-6">
-                    <h3 class="text-[15px] sm:text-base font-serif font-medium text-[#1F1F1F]">
-                        Easy-to-Use Dhoop Cup for Clean Burning
+                <!-- Card 2 -->
+                <div class="bg-[#FFFDF9] rounded-[18px] border border-[#EADBCC] p-5 sm:p-6 space-y-3 shadow-xs hover:border-[#D38928] transition-all duration-300 group">
+                    <div class="w-12 h-12 rounded-xl bg-[#FAF5EE] border border-[#EADBCC] flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                        🌸
+                    </div>
+                    <h3 class="text-base sm:text-lg font-bold font-heading text-[#1F1F1F]">
+                        Sacred Temple Flowers
                     </h3>
-                    <p class="text-xs sm:text-[13px] text-gray-700 leading-relaxed font-normal">
-                        A dhoop cup is a mess-free incense solution. Pre-filled and easy to light, it offers consistent aroma and is ideal for homes and temples.
-                    </p>
-                    <p class="text-xs sm:text-[13px] text-gray-700 leading-relaxed font-normal">
-                        Made with herbal blends, our dhoop cups provide a pleasant scent without overwhelming smoke.
+                    <p class="text-xs sm:text-[13.5px] text-gray-600 leading-relaxed font-normal">
+                        Made by collecting holy floral offerings from Vrindavan temples, blended with essential oils, pure Chandan, and natural resins.
                     </p>
                 </div>
 
-                <!-- 3. Dhoop Sambrani -->
-                <div class="space-y-2">
-                    <h3 class="text-[15px] sm:text-base font-serif font-medium text-[#1F1F1F]">
-                        Dhoop Sambrani – Uplift Your Spiritual Routine
+                <!-- Card 3 -->
+                <div class="bg-[#FFFDF9] rounded-[18px] border border-[#EADBCC] p-5 sm:p-6 space-y-3 shadow-xs hover:border-[#D38928] transition-all duration-300 group">
+                    <div class="w-12 h-12 rounded-xl bg-[#FAF5EE] border border-[#EADBCC] flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                        💨
+                    </div>
+                    <h3 class="text-base sm:text-lg font-bold font-heading text-[#1F1F1F]">
+                        Zero Charcoal Smoke
                     </h3>
-                    <p class="text-xs sm:text-[13px] text-gray-700 leading-relaxed font-normal">
-                        Dhoop sambrani and sambrani dhoop are powerful purifiers, often used in pujas and spiritual ceremonies. They cleanse the environment and bring positive energy.
-                    </p>
-                    <p class="text-xs sm:text-[13px] text-gray-700 leading-relaxed font-normal">
-                        Each cup is handmade to ensure a rich, lasting fragrance—free from chemicals or synthetic scents.
+                    <p class="text-xs sm:text-[13.5px] text-gray-600 leading-relaxed font-normal">
+                        No toxic black smoke, eye irritation, or carbon residue. Emits pure, therapeutic white aromatic smoke completely safe for indoor spaces.
                     </p>
                 </div>
 
-            @elseif($collection->slug === 'bambooless')
-                <!-- Bambooless sticks narrative -->
-                <div class="space-y-2 mb-6">
-                    <h3 class="text-[15px] sm:text-base font-serif font-medium text-[#1F1F1F]">
-                        Sacred Bambooless Incense for Pure Puja
+                <!-- Card 4 -->
+                <div class="bg-[#FFFDF9] rounded-[18px] border border-[#EADBCC] p-5 sm:p-6 space-y-3 shadow-xs hover:border-[#D38928] transition-all duration-300 group">
+                    <div class="w-12 h-12 rounded-xl bg-[#FAF5EE] border border-[#EADBCC] flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                        🪔
+                    </div>
+                    <h3 class="text-base sm:text-lg font-bold font-heading text-[#1F1F1F]">
+                        Long-Lasting Peace
                     </h3>
-                    <p class="text-xs sm:text-[13px] text-gray-700 leading-relaxed font-normal">
-                        According to traditional Vedic Shastras, burning bamboo is considered inauspicious. Our Bamboo-less incense sticks are crafted strictly adhering to ancient rituals, preserving absolute purity.
-                    </p>
-                    <p class="text-xs sm:text-[13px] text-gray-700 leading-relaxed font-normal">
-                        Handcrafted with sacred temple flowers and enriched with botanical extracts like <strong class="underline font-normal text-gray-900">Chandan</strong>, <strong class="underline font-normal text-gray-900">Oudh</strong>, and <strong class="underline font-normal text-gray-900">Kesar Rose</strong> for long-lasting aroma.
+                    <p class="text-xs sm:text-[13.5px] text-gray-600 leading-relaxed font-normal">
+                        Each stick and cup burns slowly and evenly, leaving a lingering divine aroma that cleanses negative energies throughout your home.
                     </p>
                 </div>
+            </div>
 
-                <div class="space-y-2 mb-6">
-                    <h3 class="text-[15px] sm:text-base font-serif font-medium text-[#1F1F1F]">
-                        100% Charcoal-Free with Zero Harmful Chemicals
-                    </h3>
-                    <p class="text-xs sm:text-[13px] text-gray-700 leading-relaxed font-normal">
-                        Unlike conventional black incense sticks that release heavy soot and harmful toxins, our bambooless sticks emit clean, calming white smoke that is safe for children, elders, and indoor use.
-                    </p>
-                </div>
+            <!-- Deep Narrative Articles Container -->
+            <div class="bg-gradient-to-br from-[#FFFDF9] to-[#FAF5EE] rounded-[24px] border border-[#EADBCC] p-6 sm:p-10 lg:p-12 shadow-xs space-y-8 max-w-5xl">
+                
+                @if($collection->slug === 'havan-cups')
+                    <!-- 1. Pure Sambrani Cup -->
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-2 text-[#D38928] text-xs font-bold uppercase tracking-wider font-heading">
+                            <span>✦ VEDIC PURIFICATION</span>
+                        </div>
+                        <h3 class="text-lg sm:text-2xl font-serif font-bold text-[#1F1F1F]">
+                            Pure Sambrani &amp; Guggal Havan Cup for Daily Rituals
+                        </h3>
+                        <p class="text-xs sm:text-[14.5px] text-gray-700 leading-relaxed font-normal">
+                            A traditional Sambrani Havan Cup is a sacred blend of dried cow dung, pure sandalwood extracts, natural resins, and holy Ayurvedic herbs. When lit, it acts as a mini havan in your living room, releasing powerful natural antimicrobials that purify the air, remove heavy vastu doshas, and fill the space with positive spiritual energy.
+                        </p>
+                        <p class="text-xs sm:text-[14.5px] text-gray-700 leading-relaxed font-normal">
+                            Our low-smoke Sambrani cups are made with 100% natural ingredients available in three divine fragrances: <strong class="text-gray-900 font-bold">Sandalwood Havan Cup</strong>, <strong class="text-gray-900 font-bold">Guggal Havan Cup</strong>, and <strong class="text-gray-900 font-bold">Loban Havan Cup</strong>—completely safe for indoor use, pooja altars, meditation, and yoga practice.
+                        </p>
+                    </div>
 
-                <div class="space-y-2">
-                    <h3 class="text-[15px] sm:text-base font-serif font-medium text-[#1F1F1F]">
-                        Elevate Daily Devotion &amp; Meditation
-                    </h3>
-                    <p class="text-xs sm:text-[13px] text-gray-700 leading-relaxed font-normal">
-                        Ideal for morning prayers, meditation, yoga, and creating an aura of serenity in your home or workspace throughout the day.
-                    </p>
-                </div>
+                    <div class="w-full h-[1px] bg-[#EADBCC]"></div>
 
-            @elseif($collection->slug === 'dhoop-cones')
-                <!-- Dhoop Cones narrative -->
-                <div class="space-y-2 mb-6">
-                    <h3 class="text-[15px] sm:text-base font-serif font-medium text-[#1F1F1F]">
-                        Natural Temple Flower Dhoop Cones
-                    </h3>
-                    <p class="text-xs sm:text-[13px] text-gray-700 leading-relaxed font-normal">
-                        Our Dhoop Cones are handcrafted by recycling sacred temple blossoms offered to deities, blended with natural herbs, essential oils, and therapeutic resins.
-                    </p>
-                    <p class="text-xs sm:text-[13px] text-gray-700 leading-relaxed font-normal">
-                        Designed with an optimized burning cone structure that produces a dense, purifying aroma without overpowering smoke.
-                    </p>
-                </div>
+                    <!-- 2. Easy-to-Use Dhoop Cup -->
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-2 text-[#D38928] text-xs font-bold uppercase tracking-wider font-heading">
+                            <span>✦ MESS-FREE CONVENIENCE</span>
+                        </div>
+                        <h3 class="text-lg sm:text-2xl font-serif font-bold text-[#1F1F1F]">
+                            Easy-to-Use Dhoop Cups for Clean &amp; Safe Burning
+                        </h3>
+                        <p class="text-xs sm:text-[14.5px] text-gray-700 leading-relaxed font-normal">
+                            Unlike traditional raw charcoal burning which requires manual ghee, samagri, and coal management, our pre-filled ready-to-light havan cups offer a mess-free, instant solution. Simply place the cup on the free burner plate included in every box, light the outer rim for 15 seconds, and let it diffuse its soothing fragrant warmth.
+                        </p>
+                        <p class="text-xs sm:text-[14.5px] text-gray-700 leading-relaxed font-normal">
+                            Made exclusively with therapeutic resin blends, Manglam havan cups provide an authentic temple-like experience without overwhelming smoke or toxic residue.
+                        </p>
+                    </div>
 
-                <div class="space-y-2 mb-6">
-                    <h3 class="text-[15px] sm:text-base font-serif font-medium text-[#1F1F1F]">
-                        Charcoal-Free &amp; Pure Ayurvedic Formulation
-                    </h3>
-                    <p class="text-xs sm:text-[13px] text-gray-700 leading-relaxed font-normal">
-                        Formulated without artificial petrochemical scents, synthetic dyes, or charcoal binders, ensuring clean air and uplifting wellness for your living spaces.
-                    </p>
-                </div>
+                    <div class="w-full h-[1px] bg-[#EADBCC]"></div>
 
-                <div class="space-y-2">
-                    <h3 class="text-[15px] sm:text-base font-serif font-medium text-[#1F1F1F]">
-                        Deep Relaxation &amp; Positive Energy
-                    </h3>
-                    <p class="text-xs sm:text-[13px] text-gray-700 leading-relaxed font-normal">
-                        Each cone burns steadily for 30–40 minutes, spreading a deep soothing aura that cleanses negativity and fills your environment with divine peace.
-                    </p>
-                </div>
+                    <!-- 3. Dhoop Sambrani -->
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-2 text-[#D38928] text-xs font-bold uppercase tracking-wider font-heading">
+                            <span>✦ SPIRITUAL WELLNESS</span>
+                        </div>
+                        <h3 class="text-lg sm:text-2xl font-serif font-bold text-[#1F1F1F]">
+                            Dhoop Sambrani – Elevate Your Daily Spiritual Routine
+                        </h3>
+                        <p class="text-xs sm:text-[14.5px] text-gray-700 leading-relaxed font-normal">
+                            Dhoop sambrani has been revered since Vedic times for cleansing the aura, dispelling negativity, and inviting peace, wealth, and prosperity into homes and business premises. Each cup is lovingly crafted to burn steadily for 25–35 minutes, leaving a comforting fragrance that lingers for hours.
+                        </p>
+                    </div>
 
-            @else
-                <!-- Default / All Collections narrative -->
-                <div class="space-y-2 mb-6">
-                    <h3 class="text-[15px] sm:text-base font-serif font-medium text-[#1F1F1F]">
-                        Pure Ayurvedic Formulations for Everyday Rituals
-                    </h3>
-                    <p class="text-xs sm:text-[13px] text-gray-700 leading-relaxed font-normal">
-                        {{ $collection->description ?? 'Handcrafted with reverence in Vrindavan Dham using traditional Ayurvedic methods. Created exclusively for spiritual clarity, positive energy, and peace of mind.' }}
-                    </p>
-                    <p class="text-xs sm:text-[13px] text-gray-700 leading-relaxed font-normal">
-                        Made with 100% natural herbs, sacred temple flowers, and pure therapeutic resins, completely free from charcoal and toxic additives.
-                    </p>
-                </div>
+                @elseif($collection->slug === 'bambooless')
+                    <!-- Bambooless sticks narrative -->
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-2 text-[#D38928] text-xs font-bold uppercase tracking-wider font-heading">
+                            <span>✦ SHASTRA-APPROVED SANCTITY</span>
+                        </div>
+                        <h3 class="text-lg sm:text-2xl font-serif font-bold text-[#1F1F1F]">
+                            Sacred Bambooless Incense for Pure &amp; Auspicious Puja
+                        </h3>
+                        <p class="text-xs sm:text-[14.5px] text-gray-700 leading-relaxed font-normal">
+                            According to traditional Vedic Shastras and Hindu scriptures, burning bamboo wood during religious rituals is strictly prohibited as it is considered inauspicious. Our 100% Bamboo-less Incense Sticks are crafted without any wood core, ensuring your daily worship adheres strictly to authentic sacred principles.
+                        </p>
+                        <p class="text-xs sm:text-[14.5px] text-gray-700 leading-relaxed font-normal">
+                            Each stick is handcrafted using dried temple flower petals, aromatic wood powders, pure essential oils, and botanical extracts like <strong class="text-gray-900 font-bold">Chandan (Sandalwood)</strong>, <strong class="text-gray-900 font-bold">Royal Oudh</strong>, <strong class="text-gray-900 font-bold">Divya Naagchampa</strong>, and <strong class="text-gray-900 font-bold">Swarna Pushpa</strong> for an enchanting, long-lasting aroma.
+                        </p>
+                    </div>
 
-                <div class="space-y-2 mb-6">
-                    <h3 class="text-[15px] sm:text-base font-serif font-medium text-[#1F1F1F]">
-                        Clean &amp; Soot-Free Burning
-                    </h3>
-                    <p class="text-xs sm:text-[13px] text-gray-700 leading-relaxed font-normal">
-                        Experience gentle, purifying white smoke that carries the natural essence of Vedic botanicals without causing eye irritation or respiratory discomfort.
-                    </p>
-                </div>
+                    <div class="w-full h-[1px] bg-[#EADBCC]"></div>
 
-                <div class="space-y-2">
-                    <h3 class="text-[15px] sm:text-base font-serif font-medium text-[#1F1F1F]">
-                        Handcrafted for Daily Puja, Yoga &amp; Meditation
-                    </h3>
-                    <p class="text-xs sm:text-[13px] text-gray-700 leading-relaxed font-normal">
-                        Perfect for creating a sanctified, tranquil atmosphere during your morning and evening rituals.
-                    </p>
-                </div>
-            @endif
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-2 text-[#D38928] text-xs font-bold uppercase tracking-wider font-heading">
+                            <span>✦ HEALTH &amp; PURITY</span>
+                        </div>
+                        <h3 class="text-lg sm:text-2xl font-serif font-bold text-[#1F1F1F]">
+                            100% Charcoal-Free with Zero Harmful Chemicals &amp; Toxins
+                        </h3>
+                        <p class="text-xs sm:text-[14.5px] text-gray-700 leading-relaxed font-normal">
+                            Conventional black incense sticks contain cheap coal powders, sulfur, and synthetic chemical binders that release toxic fumes and black soot upon burning. Manglam bambooless sticks are 100% charcoal-free, emitting clean, aromatic white smoke that is gentle on the respiratory system, safe for elders, children, and pets.
+                        </p>
+                    </div>
+
+                    <div class="w-full h-[1px] bg-[#EADBCC]"></div>
+
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-2 text-[#D38928] text-xs font-bold uppercase tracking-wider font-heading">
+                            <span>✦ DAILY PRACTICE</span>
+                        </div>
+                        <h3 class="text-lg sm:text-2xl font-serif font-bold text-[#1F1F1F]">
+                            Elevate Daily Devotion, Morning Sandhya &amp; Deep Meditation
+                        </h3>
+                        <p class="text-xs sm:text-[14.5px] text-gray-700 leading-relaxed font-normal">
+                            Whether you are performing your morning aarti, lighting an incense during evening sandhya, practicing yoga, or working in your study, our bambooless sticks create a serene environment that enhances focus, tranquility, and mental peace throughout the day.
+                        </p>
+                    </div>
+
+                @elseif($collection->slug === 'dhoop-cones')
+                    <!-- Dhoop Cones narrative -->
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-2 text-[#D38928] text-xs font-bold uppercase tracking-wider font-heading">
+                            <span>✦ AYURVEDIC FORMULATION</span>
+                        </div>
+                        <h3 class="text-lg sm:text-2xl font-serif font-bold text-[#1F1F1F]">
+                            Natural Temple Flower Dhoop Cones
+                        </h3>
+                        <p class="text-xs sm:text-[14.5px] text-gray-700 leading-relaxed font-normal">
+                            Our Dhoop Cones are created by lovingly upcycling sacred temple blossoms offered in holy shrines. These petals are sun-dried, powdered, and blended with natural herbs, cold-pressed essential oils, and therapeutic resins to form solid cones that release deep aromatic richness.
+                        </p>
+                        <p class="text-xs sm:text-[14.5px] text-gray-700 leading-relaxed font-normal">
+                            Engineered with an optimized cone profile, each piece burns steadily for 30–40 minutes, creating a soothing cascading fragrance that purifies your home and removes stagnant indoor odors.
+                        </p>
+                    </div>
+
+                    <div class="w-full h-[1px] bg-[#EADBCC]"></div>
+
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-2 text-[#D38928] text-xs font-bold uppercase tracking-wider font-heading">
+                            <span>✦ PURE &amp; CLEAN</span>
+                        </div>
+                        <h3 class="text-lg sm:text-2xl font-serif font-bold text-[#1F1F1F]">
+                            Charcoal-Free, Dip-Free &amp; Zero Synthetic Perfumes
+                        </h3>
+                        <p class="text-xs sm:text-[14.5px] text-gray-700 leading-relaxed font-normal">
+                            Unlike commercial cones dipped in chemical fragrance oils (phthalates and DEP), Manglam cones contain only pure natural aromatics. They burn with low, gentle smoke that nurtures mental relaxation and emotional calm.
+                        </p>
+                    </div>
+
+                @else
+                    <!-- Default / All Collections narrative -->
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-2 text-[#D38928] text-xs font-bold uppercase tracking-wider font-heading">
+                            <span>✦ SACRED HERITAGE</span>
+                        </div>
+                        <h3 class="text-lg sm:text-2xl font-serif font-bold text-[#1F1F1F]">
+                            Pure Ayurvedic Formulations for Everyday Rituals
+                        </h3>
+                        <p class="text-xs sm:text-[14.5px] text-gray-700 leading-relaxed font-normal">
+                            {{ $collection->description ?? 'Handcrafted with reverence in Vrindavan Dham using traditional Ayurvedic methods. Created exclusively for spiritual clarity, positive energy, and peace of mind.' }}
+                        </p>
+                        <p class="text-xs sm:text-[14.5px] text-gray-700 leading-relaxed font-normal">
+                            Made with 100% natural herbs, sacred temple flowers, and pure therapeutic resins, completely free from bamboo sticks, charcoal, and toxic synthetic additives.
+                        </p>
+                    </div>
+
+                    <div class="w-full h-[1px] bg-[#EADBCC]"></div>
+
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-2 text-[#D38928] text-xs font-bold uppercase tracking-wider font-heading">
+                            <span>✦ DAILY DEVOTION</span>
+                        </div>
+                        <h3 class="text-lg sm:text-2xl font-serif font-bold text-[#1F1F1F]">
+                            Handcrafted for Daily Puja, Yoga, Dhyan &amp; Meditation
+                        </h3>
+                        <p class="text-xs sm:text-[14.5px] text-gray-700 leading-relaxed font-normal">
+                            Experience clean, soothing aromas that uplift your sanctuary and bring divine harmony to your daily life.
+                        </p>
+                    </div>
+                @endif
+
+            </div>
 
         </div>
 
