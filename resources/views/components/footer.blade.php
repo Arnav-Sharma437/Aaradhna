@@ -128,6 +128,11 @@
                 </button>
                 <ul id="footer-shop-menu" class="footer-accordion-content hidden md:block space-y-2.5 text-sm sm:text-[14.5px] text-white/85 pt-3 md:pt-4">
                     <li>
+                        <a href="{{ route('collections.show', 'all') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
+                            Shop All
+                        </a>
+                    </li>
+                    <li>
                         <a href="{{ route('collections.show', 'bambooless') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
                             Bambooless
                         </a>
