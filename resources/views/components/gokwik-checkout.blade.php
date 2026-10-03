@@ -176,16 +176,16 @@
                     </label>
 
                     <div class="space-y-2">
-                        <!-- Option 1: UPI (Recommended) -->
+                        <!-- Option 1: Online Payment / Razorpay (UPI, Cards, NetBanking, Wallets) -->
                         <label class="gokwik-pay-option flex items-center justify-between p-3 rounded-[12px] border-2 border-emerald-600 bg-emerald-50/50 cursor-pointer transition-all">
                             <div class="flex items-center space-x-3">
-                                <input type="radio" name="gokwik_payment" value="UPI" checked class="text-emerald-600 focus:ring-0">
+                                <input type="radio" name="gokwik_payment" value="Razorpay" checked class="text-emerald-600 focus:ring-0">
                                 <div>
                                     <div class="text-xs font-bold text-gray-900 font-heading flex items-center gap-1.5">
-                                        <span>UPI (GPay / PhonePe / Paytm / QR)</span>
+                                        <span>UPI / Cards / NetBanking (Online)</span>
                                         <span class="px-1.5 py-0.5 bg-emerald-600 text-white text-[9px] font-black rounded-md uppercase">Save ₹50</span>
                                     </div>
-                                    <div class="text-[10px] text-gray-500">Fast instant payment</div>
+                                    <div class="text-[10px] text-gray-500">Fast 1-Click Payment via Razorpay ⚡</div>
                                 </div>
                             </div>
                             <span class="text-xs font-bold font-heading text-emerald-800">⚡ Instant</span>
@@ -197,13 +197,16 @@
                                 <input type="radio" name="gokwik_payment" value="COD" class="text-emerald-600 focus:ring-0">
                                 <div>
                                     <div class="text-xs font-bold text-gray-900 font-heading">Cash on Delivery (COD)</div>
-                                    <div class="text-[10px] text-gray-500">Pay cash upon delivery</div>
+                                    <div class="text-[10px] text-gray-500">Pay cash upon delivery at doorstep</div>
                                 </div>
                             </div>
                             <span class="text-[11px] text-gray-500 font-medium">Verified</span>
                         </label>
                     </div>
                 </div>
+
+                <!-- Payment Status Feedback (Error / Cancelled notice) -->
+                <div id="gokwik-payment-feedback" class="hidden text-center text-xs p-2.5 rounded-[10px] bg-amber-50 border border-amber-200 text-amber-800 font-medium"></div>
 
                 <!-- Complete Order Button -->
                 <button 
@@ -272,8 +275,11 @@
     </div>
 </div>
 
+<!-- Razorpay Standard Checkout SDK -->
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
 <!-- ========================================================================= -->
-<!-- SCRIPT: GOKWIK FAST CHECKOUT TRIGGER & SIMULATED FLOW                     -->
+<!-- SCRIPT: GOKWIK FAST CHECKOUT TRIGGER & RAZORPAY PAYMENT FLOW              -->
 <!-- ========================================================================= -->
 <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -288,6 +294,7 @@
         const originalPriceEl = document.getElementById('gokwik-original-price');
         const btnPriceEl = document.getElementById('gokwik-btn-price');
         const itemsCountEl = document.getElementById('gokwik-items-count');
+        const paymentFeedback = document.getElementById('gokwik-payment-feedback');
 
         let currentCheckoutCoupon = '';
         let currentCheckoutCouponDiscount = 0; // decimal fraction (e.g. 0.10)
@@ -571,6 +578,11 @@
                 itemsCountEl.textContent = `${totalItems} Item${totalItems > 1 ? 's' : ''} in Cart`;
             }
 
+            if (paymentFeedback) {
+                paymentFeedback.textContent = '';
+                paymentFeedback.classList.add('hidden');
+            }
+
             recalculateGokwikTotals();
 
             // Reset modal state
@@ -612,81 +624,191 @@
             });
         }
 
-        // Handle Pay button click (Simulate instant GoKwik payment & save order to DB)
+        const restorePayButton = () => {
+            if (!payBtn) return;
+            payBtn.disabled = false;
+            let currentPriceText = '₹1,447.00';
+            if (payablePriceEl) currentPriceText = payablePriceEl.textContent;
+            payBtn.innerHTML = `
+                <span>⚡ CONFIRM &amp; PLACE SACRED ORDER</span>
+                <span id="gokwik-btn-price" class="bg-black/20 px-2.5 py-0.5 rounded-full text-xs font-mono">${currentPriceText}</span>
+            `;
+        };
+
+        // Handle Pay button click (Razorpay Standard Checkout & COD flow)
         if (payBtn) {
             payBtn.addEventListener('click', async () => {
+                const phoneInput = document.getElementById('gokwik-phone-input');
+                const phone = phoneInput ? phoneInput.value.trim() : '9876543210';
+                const selectedPayment = document.querySelector('input[name="gokwik_payment"]:checked')?.value || 'Razorpay';
+
+                if (paymentFeedback) {
+                    paymentFeedback.textContent = '';
+                    paymentFeedback.classList.add('hidden');
+                }
+
                 payBtn.innerHTML = `
                     <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white inline" fill="none" viewBox="0 0 24 24">
                         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
-                    <span>Placing Order...</span>
+                    <span>Initializing Order...</span>
                 `;
                 payBtn.disabled = true;
-
-                const phoneInput = document.getElementById('gokwik-phone-input');
-                const phone = phoneInput ? phoneInput.value : '9876543210';
-                const selectedPayment = document.querySelector('input[name="gokwik_payment"]:checked')?.value || 'UPI';
-
-                let orderTotal = 1447;
-                if (payablePriceEl) {
-                    const parsed = parseFloat(payablePriceEl.textContent.replace(/[^0-9.]/g, ''));
-                    if (!isNaN(parsed) && parsed > 0) orderTotal = parsed;
-                }
 
                 const cartItemsList = (window.CartStore && typeof window.CartStore.getCart === 'function')
                     ? window.CartStore.getCart()
                     : (window.cartItems || []);
 
                 try {
+                    const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
                     const response = await fetch("{{ route('checkout.create-order') }}", {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
-                            'X-CSRF-TOKEN': "{{ csrf_token() }}",
+                            'X-CSRF-TOKEN': csrfToken || "{{ csrf_token() }}",
                             'Accept': 'application/json'
                         },
                         body: JSON.stringify({
                             phone: phone,
                             coupon_code: currentCheckoutCoupon,
-                            payment_method: selectedPayment === 'UPI' ? 'UPI (GoKwik Fast 1-Click)' : 'Cash on Delivery (COD)',
+                            payment_method: selectedPayment,
                             items: cartItemsList,
-                            total_amount: orderTotal
                         })
                     });
 
                     const data = await response.json();
 
-                    if (step1) step1.classList.add('hidden');
-                    if (successScreen) successScreen.classList.remove('hidden');
-
-                    // Clear cart in storage
-                    if (window.CartStore && typeof window.CartStore.clearCart === 'function') {
-                        window.CartStore.clearCart();
-                    } else {
-                        localStorage.removeItem('mangalam_cart');
-                        if (window.cartItems) window.cartItems = [];
+                    if (!response.ok || !data.success) {
+                        throw new Error(data.message || 'Failed to place order.');
                     }
 
-                    const orderIdEl = document.getElementById('gokwik-order-num');
-                    const viewOrderBtn = document.getElementById('gokwik-view-order-btn');
+                    // 1. CASH ON DELIVERY FLOW
+                    if (!data.requires_payment || selectedPayment === 'COD') {
+                        if (step1) step1.classList.add('hidden');
+                        if (successScreen) successScreen.classList.remove('hidden');
 
-                    if (data.success && data.order_number) {
-                        if (orderIdEl) orderIdEl.textContent = '#' + data.order_number;
+                        // Clear cart
+                        if (window.CartStore && typeof window.CartStore.clearCart === 'function') {
+                            window.CartStore.clearCart();
+                        } else {
+                            localStorage.removeItem('mangalam_cart');
+                            if (window.cartItems) window.cartItems = [];
+                        }
+
+                        const orderIdEl = document.getElementById('gokwik-order-num');
+                        const viewOrderBtn = document.getElementById('gokwik-view-order-btn');
+                        if (orderIdEl) orderIdEl.textContent = '#' + (data.order_number || 'MG-CONFIRMED');
                         if (viewOrderBtn && data.redirect_url) viewOrderBtn.href = data.redirect_url;
-                    } else {
-                        if (orderIdEl) orderIdEl.textContent = '#MG-GK-' + Math.floor(100000 + Math.random() * 900000);
+                        return;
                     }
+
+                    // 2. RAZORPAY STANDARD CHECKOUT FLOW
+                    if (typeof window.Razorpay === 'undefined') {
+                        throw new Error('Razorpay SDK failed to load. Please check your internet connection.');
+                    }
+
+                    const rzpOptions = {
+                        key: data.razorpay_key,
+                        amount: data.amount,
+                        currency: data.currency || 'INR',
+                        name: 'Manglam.co™',
+                        description: 'Order #' + data.order_number + ' - Pure Vedic Items',
+                        image: '{{ asset("assets/images/fac-icon.png") }}',
+                        order_id: data.razorpay_order_id,
+                        prefill: {
+                            name: data.customer?.name || 'Devotee',
+                            email: data.customer?.email || 'devotee@mangalam.co',
+                            contact: data.customer?.phone || phone
+                        },
+                        theme: {
+                            color: '#00A86B'
+                        },
+                        handler: async function (rzpResponse) {
+                            payBtn.innerHTML = `
+                                <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white inline" fill="none" viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                </svg>
+                                <span>Verifying Payment...</span>
+                            `;
+
+                            try {
+                                const verifyRes = await fetch("{{ route('checkout.verify-payment') }}", {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json',
+                                        'X-CSRF-TOKEN': csrfToken || "{{ csrf_token() }}",
+                                        'Accept': 'application/json'
+                                    },
+                                    body: JSON.stringify({
+                                        razorpay_payment_id: rzpResponse.razorpay_payment_id,
+                                        razorpay_order_id: rzpResponse.razorpay_order_id,
+                                        razorpay_signature: rzpResponse.razorpay_signature,
+                                        order_number: data.order_number
+                                    })
+                                });
+
+                                const verifyData = await verifyRes.json();
+
+                                if (verifyRes.ok && verifyData.success) {
+                                    if (step1) step1.classList.add('hidden');
+                                    if (successScreen) successScreen.classList.remove('hidden');
+
+                                    // Clear cart only after verified successful payment
+                                    if (window.CartStore && typeof window.CartStore.clearCart === 'function') {
+                                        window.CartStore.clearCart();
+                                    } else {
+                                        localStorage.removeItem('mangalam_cart');
+                                        if (window.cartItems) window.cartItems = [];
+                                    }
+
+                                    const orderIdEl = document.getElementById('gokwik-order-num');
+                                    const viewOrderBtn = document.getElementById('gokwik-view-order-btn');
+                                    if (orderIdEl) orderIdEl.textContent = '#' + (verifyData.order_number || data.order_number);
+                                    if (viewOrderBtn && verifyData.redirect_url) viewOrderBtn.href = verifyData.redirect_url;
+                                } else {
+                                    restorePayButton();
+                                    if (paymentFeedback) {
+                                        paymentFeedback.innerHTML = `<span class="text-rose-600 font-bold">✕ ${verifyData.message || 'Payment signature verification failed. Please try again.'}</span>`;
+                                        paymentFeedback.classList.remove('hidden');
+                                    }
+                                }
+                            } catch (vErr) {
+                                restorePayButton();
+                                if (paymentFeedback) {
+                                    paymentFeedback.innerHTML = `<span class="text-rose-600 font-bold">✕ Verification error. Please check your network and retry.</span>`;
+                                    paymentFeedback.classList.remove('hidden');
+                                }
+                            }
+                        },
+                        modal: {
+                            ondismiss: function () {
+                                restorePayButton();
+                                if (paymentFeedback) {
+                                    paymentFeedback.innerHTML = '<span class="text-amber-800 font-medium">⚡ Payment was cancelled. Your cart is preserved and you can retry anytime.</span>';
+                                    paymentFeedback.classList.remove('hidden');
+                                }
+                            }
+                        }
+                    };
+
+                    const rzp = new window.Razorpay(rzpOptions);
+                    rzp.on('payment.failed', function (resp) {
+                        restorePayButton();
+                        if (paymentFeedback) {
+                            paymentFeedback.innerHTML = `<span class="text-rose-600 font-bold">✕ Payment Failed: ${resp.error?.description || 'Transaction declined'}</span>`;
+                            paymentFeedback.classList.remove('hidden');
+                        }
+                    });
+                    rzp.open();
+
                 } catch (e) {
-                    if (step1) step1.classList.add('hidden');
-                    if (successScreen) successScreen.classList.remove('hidden');
-
-                    if (window.CartStore && typeof window.CartStore.clearCart === 'function') {
-                        window.CartStore.clearCart();
+                    restorePayButton();
+                    if (paymentFeedback) {
+                        paymentFeedback.innerHTML = `<span class="text-rose-600 font-bold">✕ ${e.message || 'An error occurred while placing your order.'}</span>`;
+                        paymentFeedback.classList.remove('hidden');
                     }
-
-                    const orderIdEl = document.getElementById('gokwik-order-num');
-                    if (orderIdEl) orderIdEl.textContent = '#MG-GK-' + Math.floor(100000 + Math.random() * 900000);
                 }
             });
         }

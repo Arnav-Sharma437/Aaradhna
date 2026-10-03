@@ -89,8 +89,9 @@ Route::get('/account/register', [AccountAuthController::class, 'showRegister'])-
 Route::post('/account/register', [AccountAuthController::class, 'register'])->name('account.register.submit');
 Route::post('/account/logout', [AccountAuthController::class, 'logout'])->name('account.logout');
 
-// Order Placement API (GoKwik & Cart Checkout)
+// Order Placement & Payment Verification API (Razorpay & Checkout)
 Route::post('/api/checkout/create-order', [CheckoutController::class, 'createOrder'])->name('checkout.create-order');
+Route::post('/api/checkout/verify-payment', [CheckoutController::class, 'verifyPayment'])->name('checkout.verify-payment');
 
 // Discount Signup Survey & Coupon Validation API
 Route::post('/discount-signup/submit', [DiscountSignupController::class, 'store'])->name('discount-signup.store');

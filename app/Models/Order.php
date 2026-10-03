@@ -28,6 +28,10 @@ class Order extends Model
         'payment_method',
         'payment_status',
         'payment_id',
+        'razorpay_order_id',
+        'razorpay_payment_id',
+        'razorpay_signature',
+        'paid_at',
         'order_status',
         'tracking_number',
         'courier_name',
@@ -42,6 +46,7 @@ class Order extends Model
         'shipping_fee' => 'decimal:2',
         'tax_amount' => 'decimal:2',
         'total_amount' => 'decimal:2',
+        'paid_at' => 'datetime',
     ];
 
     public function user(): BelongsTo
