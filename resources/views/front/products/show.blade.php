@@ -231,8 +231,8 @@
                 </div>
             </div>
 
-            <!-- RIGHT COLUMN: Compact, Tight Spaced Purchase Details (5 Cols) -->
-            <div class="lg:col-span-5 space-y-3.5 lg:pl-2 sticky top-24 font-body">
+            <!-- RIGHT COLUMN: Compact, Tight Spaced Purchase Details (5 Cols, 8px Spacing) -->
+            <div class="lg:col-span-5 space-y-2 lg:pl-2 sticky top-24 font-body">
                 
                 <!-- 1. Star Rating & Review Count (Bigger & Clickable to scroll to reviews) -->
                 <a href="#customer-reviews" class="inline-flex items-center space-x-2 text-sm sm:text-[15px] text-gray-700 hover:text-[#D38928] transition-colors group cursor-pointer focus:outline-none">
@@ -243,7 +243,7 @@
                 </a>
 
                 <!-- 2. Product Title & Subtitle / Category (Capitalized) -->
-                <div class="space-y-0.5">
+                <div>
                     <h1 class="text-2xl sm:text-3xl lg:text-[38px] font-normal text-[#121212] tracking-tight leading-[1.15] font-serif">
                         {{ $product->title }}
                     </h1>
@@ -253,7 +253,7 @@
                 </div>
 
                 <!-- 3. Pricing Display & Savings Pill (Same Font & Cohesive Look) -->
-                <div class="space-y-1 pt-0.5">
+                <div>
                     <div class="flex flex-wrap items-baseline gap-2.5 sm:gap-3 font-body">
                         <span class="text-base sm:text-lg text-gray-400 line-through font-medium font-body">
                             ₹{{ number_format($mrpPrice, 2) }}
@@ -273,7 +273,7 @@
                 </div>
 
                 <!-- 4. Bold Hook Statement (20px Font Size) -->
-                <div class="pt-1">
+                <div>
                     <p class="text-[18px] sm:text-[20px] font-bold text-[#121212] font-body leading-snug">
                         @if(str_contains(strtolower($product->slug), 'cone'))
                             30 Sticks. No Bamboo ~ One stick fills the room with clean, real fragrance.
@@ -289,64 +289,64 @@
                     </p>
                 </div>
 
-                <!-- 5. 4 Iconic Feature Circles with Text (2x2 Grid Layout, Increased Font Size) -->
-                <div class="grid grid-cols-2 gap-2.5 sm:gap-3.5 pt-2 pb-2">
+                <!-- 5. 4 Iconic Feature Circles with Text (3 in First Line + Free Ceramic Stand, with <br> text format) -->
+                <div class="flex flex-wrap items-center gap-x-5 sm:gap-x-7 gap-y-2.5 py-1">
                     
                     <!-- Feature 1: Chemical Free -->
-                    <div class="flex items-center space-x-2.5 sm:space-x-3">
-                        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#D38928] flex items-center justify-center text-[#D38928] bg-transparent shrink-0">
-                            <svg class="w-4.5 h-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-[#D38928] flex items-center justify-center text-[#D38928] bg-transparent shrink-0">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M12 22C12 22 20 18 20 10C20 4.5 15.5 2 12 2C8.5 2 4 4.5 4 10C4 18 12 22 12 22Z"/>
                                 <path d="M12 2V22"/>
                                 <path d="M12 7L16 11"/>
                                 <path d="M12 13L8 17"/>
                             </svg>
                         </div>
-                        <span class="text-sm sm:text-base font-bold text-[#121212] font-body leading-tight">
-                            Chemical Free
+                        <span class="text-xs sm:text-[13px] font-bold text-[#121212] font-body leading-tight">
+                            Chemical<br>Free
                         </span>
                     </div>
 
                     <!-- Feature 2: Low Smoke -->
-                    <div class="flex items-center space-x-2.5 sm:space-x-3">
-                        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#D38928] flex items-center justify-center text-[#D38928] bg-transparent shrink-0">
-                            <svg class="w-4.5 h-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-[#D38928] flex items-center justify-center text-[#D38928] bg-transparent shrink-0">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M8 18c-1-1.5-1-3.5 0-5s2-3.5 1-5-3-3-1-5"/>
                                 <path d="M12 19c-1-1.5-1-3.5 0-5s2-3.5 1-5-3-3-1-5"/>
                                 <path d="M16 18c-1-1.5-1-3.5 0-5s2-3.5 1-5-3-3-1-5"/>
                             </svg>
                         </div>
-                        <span class="text-sm sm:text-base font-bold text-[#121212] font-body leading-tight">
-                            Low Smoke
+                        <span class="text-xs sm:text-[13px] font-bold text-[#121212] font-body leading-tight">
+                            Low<br>Smoke
                         </span>
                     </div>
 
                     <!-- Feature 3: Long Lasting -->
-                    <div class="flex items-center space-x-2.5 sm:space-x-3">
-                        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#D38928] flex items-center justify-center text-[#D38928] bg-transparent shrink-0">
-                            <svg class="w-4.5 h-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-[#D38928] flex items-center justify-center text-[#D38928] bg-transparent shrink-0">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M5 22h14"/>
                                 <path d="M5 2h14"/>
                                 <path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/>
                                 <path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/>
                             </svg>
                         </div>
-                        <span class="text-sm sm:text-base font-bold text-[#121212] font-body leading-tight">
-                            Long Lasting
+                        <span class="text-xs sm:text-[13px] font-bold text-[#121212] font-body leading-tight">
+                            Long<br>Lasting
                         </span>
                     </div>
 
                     <!-- Feature 4: Free Ceramic Stand -->
-                    <div class="flex items-center space-x-2.5 sm:space-x-3">
-                        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#D38928] flex items-center justify-center text-[#D38928] bg-transparent shrink-0">
-                            <svg class="w-4.5 h-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-[#D38928] flex items-center justify-center text-[#D38928] bg-transparent shrink-0">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <ellipse cx="12" cy="17" rx="8" ry="4"/>
                                 <path d="M12 17V5"/>
                                 <circle cx="12" cy="4" r="1" fill="#D38928"/>
                             </svg>
                         </div>
-                        <span class="text-sm sm:text-base font-bold text-[#121212] font-body leading-tight">
-                            Free Ceramic Stand
+                        <span class="text-xs sm:text-[13px] font-bold text-[#121212] font-body leading-tight">
+                            Free Ceramic<br>Stand
                         </span>
                     </div>
 
@@ -586,36 +586,36 @@
                 
                 <!-- Left Card: Specifications (5 Cols) -->
                 <div class="lg:col-span-5 bg-white rounded-[14px] sm:rounded-[18px] border border-[#EADBCC] shadow-xs overflow-hidden flex flex-col">
-                    <div class="bg-[#7B1925] px-6 py-3.5 border-b border-[#D38928]/40">
-                        <h3 class="font-serif text-xl sm:text-2xl text-white font-medium tracking-wide">
+                    <div class="bg-[#7B1925] px-5 py-2.5 border-b border-[#D38928]/40">
+                        <h3 class="font-serif text-lg sm:text-xl text-white font-medium tracking-wide">
                             Specifications
                         </h3>
                     </div>
-                    <div class="p-4 sm:p-6 flex-1 flex flex-col justify-between divide-y divide-[#F1E5D8]">
-                        <div class="py-3 flex items-center justify-between text-sm sm:text-[15px]">
+                    <div class="p-3 sm:p-5 flex-1 flex flex-col justify-between divide-y divide-[#F1E5D8]">
+                        <div class="py-[5px] flex items-center justify-between text-xs sm:text-[13.5px]">
                             <span class="text-gray-700 font-medium">Country of Origin</span>
                             <span class="text-gray-900 font-bold flex items-center gap-1.5">
                                 Vrindavan, Bharat
                                 <span class="text-base leading-none">🇮🇳</span>
                             </span>
                         </div>
-                        <div class="py-3 flex items-center justify-between text-sm sm:text-[15px]">
+                        <div class="py-[5px] flex items-center justify-between text-xs sm:text-[13.5px]">
                             <span class="text-gray-700 font-medium">Item Form</span>
                             <span class="text-gray-900 font-bold">{{ $product->item_form ?? 'Bambooless Incense' }}</span>
                         </div>
-                        <div class="py-3 flex items-center justify-between text-sm sm:text-[15px]">
+                        <div class="py-[5px] flex items-center justify-between text-xs sm:text-[13.5px]">
                             <span class="text-gray-700 font-medium">Key Herb / Essence</span>
                             <span class="text-gray-900 font-bold">{{ $product->fragrance ?? 'Pure Bhimseni & Herbs' }}</span>
                         </div>
-                        <div class="py-3 flex items-center justify-between text-sm sm:text-[15px]">
+                        <div class="py-[5px] flex items-center justify-between text-xs sm:text-[13.5px]">
                             <span class="text-gray-700 font-medium">Stick Count</span>
                             <span class="text-gray-900 font-bold">{{ $product->stick_count ? $product->stick_count . ' Sticks / Pack' : '100 Sticks / Pack' }}</span>
                         </div>
-                        <div class="py-3 flex items-center justify-between text-sm sm:text-[15px]">
+                        <div class="py-[5px] flex items-center justify-between text-xs sm:text-[13.5px]">
                             <span class="text-gray-700 font-medium">Burn Time</span>
                             <span class="text-gray-900 font-bold">{{ $product->burn_time ?? '45 – 50 Minutes' }}</span>
                         </div>
-                        <div class="py-3 flex items-center justify-between text-sm sm:text-[15px]">
+                        <div class="py-[5px] flex items-center justify-between text-xs sm:text-[13.5px]">
                             <span class="text-gray-700 font-medium">Ceramic Holder</span>
                             <span class="text-[#1B7F49] font-bold">Included FREE (₹150 Value)</span>
                         </div>
@@ -624,85 +624,85 @@
 
                 <!-- Right Card: Features Comparison (7 Cols) -->
                 <div class="lg:col-span-7 bg-white rounded-[14px] sm:rounded-[18px] border border-[#EADBCC] shadow-xs overflow-hidden flex flex-col">
-                    <!-- Header Bar -->
-                    <div class="bg-[#7B1925] border-b border-[#D38928]/40 grid grid-cols-12 items-center">
-                        <div class="col-span-6 px-6 py-3.5">
-                            <h3 class="font-serif text-xl sm:text-2xl text-white font-medium tracking-wide">
+                    <!-- Header Bar (Attached Middle Column) -->
+                    <div class="bg-[#7B1925] grid grid-cols-12 items-stretch">
+                        <div class="col-span-6 px-5 py-2.5 flex items-center border-b border-[#D38928]/40">
+                            <h3 class="font-serif text-lg sm:text-xl text-white font-medium tracking-wide">
                                 Features
                             </h3>
                         </div>
-                        <div class="col-span-3 bg-[#FDF6ED] py-2 px-2 text-center rounded-t-lg border-t-2 border-x-2 border-[#D38928]/50 shadow-xs flex items-center justify-center min-h-[52px]">
+                        <div class="col-span-3 bg-[#FDF6ED] border-x border-[#EEDBCA]/60 flex items-center justify-center p-1.5 shadow-2xs">
                             <img 
                                 src="{{ asset('assets/images/mangalam-logo.png') }}" 
                                 alt="Manglam" 
-                                class="h-6 sm:h-7.5 w-auto max-w-[95px] sm:max-w-[115px] object-contain"
+                                class="h-6 sm:h-7 w-auto max-w-[90px] sm:max-w-[110px] object-contain"
                             >
                         </div>
-                        <div class="col-span-3 py-3 px-2 text-center text-[11px] sm:text-xs font-bold tracking-wider text-[#F7E7CE] uppercase font-heading">
+                        <div class="col-span-3 py-2.5 px-2 flex items-center justify-center text-center text-[11px] sm:text-xs font-bold tracking-wider text-[#F7E7CE] uppercase font-heading border-b border-[#D38928]/40">
                             Others
                         </div>
                     </div>
 
-                    <!-- Comparison Rows -->
+                    <!-- Comparison Rows (5px Padding & 20px Icons) -->
                     <div class="p-0 flex-1 flex flex-col justify-between divide-y divide-[#F1E5D8]">
                         
-                        <div class="grid grid-cols-12 items-center text-sm sm:text-[15px]">
-                            <div class="col-span-6 px-4 sm:px-6 py-3 text-gray-800 font-medium">
+                        <div class="grid grid-cols-12 items-center text-xs sm:text-[13.5px]">
+                            <div class="col-span-6 px-4 sm:px-5 py-[5px] text-gray-800 font-medium">
                                 100% Bamboo-Free (Scripture Compliant)
                             </div>
-                            <div class="col-span-3 bg-[#FDF6ED] h-full flex items-center justify-center py-3 border-x border-[#EEDBCA]/60">
-                                <span class="w-6 h-6 rounded-full bg-[#1B7F49] text-white flex items-center justify-center text-xs shadow-xs font-bold">✓</span>
+                            <div class="col-span-3 bg-[#FDF6ED] h-full flex items-center justify-center py-[5px] border-x border-[#EEDBCA]/60">
+                                <span class="w-5 h-5 rounded-full bg-[#1B7F49] text-white flex items-center justify-center text-[11px] font-bold">✓</span>
                             </div>
-                            <div class="col-span-3 bg-[#FBF7F2]/60 h-full flex items-center justify-center py-3">
-                                <span class="w-6 h-6 rounded-full bg-[#D32F2F] text-white flex items-center justify-center text-xs shadow-xs font-bold">✕</span>
+                            <div class="col-span-3 bg-[#FBF7F2]/60 h-full flex items-center justify-center py-[5px]">
+                                <span class="w-5 h-5 rounded-full bg-[#D32F2F] text-white flex items-center justify-center text-[11px] font-bold">✕</span>
                             </div>
                         </div>
 
-                        <div class="grid grid-cols-12 items-center text-sm sm:text-[15px]">
-                            <div class="col-span-6 px-4 sm:px-6 py-3 text-gray-800 font-medium">
+                        <div class="grid grid-cols-12 items-center text-xs sm:text-[13.5px]">
+                            <div class="col-span-6 px-4 sm:px-5 py-[5px] text-gray-800 font-medium">
                                 Zero Toxic Charcoal (No Eye Burning)
                             </div>
-                            <div class="col-span-3 bg-[#FDF6ED] h-full flex items-center justify-center py-3 border-x border-[#EEDBCA]/60">
-                                <span class="w-6 h-6 rounded-full bg-[#1B7F49] text-white flex items-center justify-center text-xs shadow-xs font-bold">✓</span>
+                            <div class="col-span-3 bg-[#FDF6ED] h-full flex items-center justify-center py-[5px] border-x border-[#EEDBCA]/60">
+                                <span class="w-5 h-5 rounded-full bg-[#1B7F49] text-white flex items-center justify-center text-[11px] font-bold">✓</span>
                             </div>
-                            <div class="col-span-3 bg-[#FBF7F2]/60 h-full flex items-center justify-center py-3">
-                                <span class="w-6 h-6 rounded-full bg-[#D32F2F] text-white flex items-center justify-center text-xs shadow-xs font-bold">✕</span>
+                            <div class="col-span-3 bg-[#FBF7F2]/60 h-full flex items-center justify-center py-[5px]">
+                                <span class="w-5 h-5 rounded-full bg-[#D32F2F] text-white flex items-center justify-center text-[11px] font-bold">✕</span>
                             </div>
                         </div>
 
-                        <div class="grid grid-cols-12 items-center text-sm sm:text-[15px]">
-                            <div class="col-span-6 px-4 sm:px-6 py-3 text-gray-800 font-medium">
+                        <div class="grid grid-cols-12 items-center text-xs sm:text-[13.5px]">
+                            <div class="col-span-6 px-4 sm:px-5 py-[5px] text-gray-800 font-medium">
                                 Premium Organic Essential Herbs
                             </div>
-                            <div class="col-span-3 bg-[#FDF6ED] h-full flex items-center justify-center py-3 border-x border-[#EEDBCA]/60">
-                                <span class="w-6 h-6 rounded-full bg-[#1B7F49] text-white flex items-center justify-center text-xs shadow-xs font-bold">✓</span>
+                            <div class="col-span-3 bg-[#FDF6ED] h-full flex items-center justify-center py-[5px] border-x border-[#EEDBCA]/60">
+                                <span class="w-5 h-5 rounded-full bg-[#1B7F49] text-white flex items-center justify-center text-[11px] font-bold">✓</span>
                             </div>
-                            <div class="col-span-3 bg-[#FBF7F2]/60 h-full flex items-center justify-center py-3">
-                                <span class="w-6 h-6 rounded-full bg-[#D32F2F] text-white flex items-center justify-center text-xs shadow-xs font-bold">✕</span>
+                            <div class="col-span-3 bg-[#FBF7F2]/60 h-full flex items-center justify-center py-[5px]">
+                                <span class="w-5 h-5 rounded-full bg-[#D32F2F] text-white flex items-center justify-center text-[11px] font-bold">✕</span>
                             </div>
                         </div>
 
-                        <div class="grid grid-cols-12 items-center text-sm sm:text-[15px]">
-                            <div class="col-span-6 px-4 sm:px-6 py-3 text-gray-800 font-medium">
+                        <div class="grid grid-cols-12 items-center text-xs sm:text-[13.5px]">
+                            <div class="col-span-6 px-4 sm:px-5 py-[5px] text-gray-800 font-medium">
                                 Long-Lasting Temple Scent (4+ Hours)
                             </div>
-                            <div class="col-span-3 bg-[#FDF6ED] h-full flex items-center justify-center py-3 border-x border-[#EEDBCA]/60">
-                                <span class="w-6 h-6 rounded-full bg-[#1B7F49] text-white flex items-center justify-center text-xs shadow-xs font-bold">✓</span>
+                            <div class="col-span-3 bg-[#FDF6ED] h-full flex items-center justify-center py-[5px] border-x border-[#EEDBCA]/60">
+                                <span class="w-5 h-5 rounded-full bg-[#1B7F49] text-white flex items-center justify-center text-[11px] font-bold">✓</span>
                             </div>
-                            <div class="col-span-3 bg-[#FBF7F2]/60 h-full flex items-center justify-center py-3">
-                                <span class="w-6 h-6 rounded-full bg-[#D32F2F] text-white flex items-center justify-center text-xs shadow-xs font-bold">✕</span>
+                            <div class="col-span-3 bg-[#FBF7F2]/60 h-full flex items-center justify-center py-[5px]">
+                                <span class="w-5 h-5 rounded-full bg-[#D32F2F] text-white flex items-center justify-center text-[11px] font-bold">✕</span>
                             </div>
                         </div>
 
-                        <div class="grid grid-cols-12 items-center text-sm sm:text-[15px]">
-                            <div class="col-span-6 px-4 sm:px-6 py-3 text-gray-800 font-medium">
+                        <div class="grid grid-cols-12 items-center text-xs sm:text-[13.5px]">
+                            <div class="col-span-6 px-4 sm:px-5 py-[5px] text-gray-800 font-medium">
                                 Complimentary Artisan Terracotta Stand
                             </div>
-                            <div class="col-span-3 bg-[#FDF6ED] h-full flex items-center justify-center py-3 border-x border-[#EEDBCA]/60 rounded-b-lg">
-                                <span class="w-6 h-6 rounded-full bg-[#1B7F49] text-white flex items-center justify-center text-xs shadow-xs font-bold">✓</span>
+                            <div class="col-span-3 bg-[#FDF6ED] h-full flex items-center justify-center py-[5px] border-x border-[#EEDBCA]/60 rounded-b-lg">
+                                <span class="w-5 h-5 rounded-full bg-[#1B7F49] text-white flex items-center justify-center text-[11px] font-bold">✓</span>
                             </div>
-                            <div class="col-span-3 bg-[#FBF7F2]/60 h-full flex items-center justify-center py-3">
-                                <span class="w-6 h-6 rounded-full bg-[#D32F2F] text-white flex items-center justify-center text-xs shadow-xs font-bold">✕</span>
+                            <div class="col-span-3 bg-[#FBF7F2]/60 h-full flex items-center justify-center py-[5px]">
+                                <span class="w-5 h-5 rounded-full bg-[#D32F2F] text-white flex items-center justify-center text-[11px] font-bold">✕</span>
                             </div>
                         </div>
 
@@ -884,9 +884,9 @@
         @endif
 
         <!-- ========================================================================= -->
-        <!-- 5. CUSTOMER REVIEWS & RATINGS (Unbordered Clean Container)                -->
+        <!-- 5. CUSTOMER REVIEWS & RATINGS (Narrow Elegant Container, Divider Lines Only) -->
         <!-- ========================================================================= -->
-        <div id="customer-reviews" class="mt-14 sm:mt-20 mb-16 sm:mb-24 max-w-7xl mx-auto font-body">
+        <div id="customer-reviews" class="mt-14 sm:mt-20 mb-16 sm:mb-24 max-w-4xl mx-auto font-body">
             
             @php
                 $approvedReviewsList = $product->approvedReviews ?? collect();
@@ -1134,11 +1134,11 @@
                 </div>
             </div>
 
-            <!-- 5. Reviews List with Profile Avatar Icon & Anonymous Fallback -->
-            <div class="space-y-4">
+            <!-- 5. Reviews List with Profile Avatar Icon & Anonymous Fallback (Clean Divider Lines Only) -->
+            <div class="divide-y divide-[#EADBCC]">
                 @if($approvedReviewsList->count() > 0)
                     @foreach($approvedReviewsList as $rev)
-                        <div class="p-5 sm:p-6 rounded-[14px] sm:rounded-[16px] border border-[#EAE3D9] bg-white space-y-3 shadow-2xs">
+                        <div class="py-5 sm:py-6 space-y-2.5 bg-transparent">
                             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                                 <div class="flex items-center space-x-3">
                                     <!-- User Profile Avatar Icon -->
@@ -1221,9 +1221,9 @@
                         </div>
                     @endforeach
                 @else
-                    <!-- Default Verified Customer Reviews (with profile icons & Anonymous fallback) -->
+                    <!-- Default Verified Customer Reviews (Clean Divider Line Rows) -->
                     <!-- Review 1 -->
-                    <div class="p-5 sm:p-6 rounded-[14px] sm:rounded-[16px] border border-[#EAE3D9] bg-white space-y-3 shadow-2xs">
+                    <div class="py-5 sm:py-6 space-y-2.5 bg-transparent">
                         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                             <div class="flex items-center space-x-3">
                                 <div class="w-8 h-8 rounded-full bg-[#FAF7F2] border border-[#D38928]/40 flex items-center justify-center text-[#8C531B] text-xs font-bold shadow-2xs shrink-0">
@@ -1257,7 +1257,7 @@
                     </div>
 
                     <!-- Review 2 -->
-                    <div class="p-5 sm:p-6 rounded-[14px] sm:rounded-[16px] border border-[#EAE3D9] bg-white space-y-3 shadow-2xs">
+                    <div class="py-5 sm:py-6 space-y-2.5 bg-transparent">
                         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                             <div class="flex items-center space-x-3">
                                 <div class="w-8 h-8 rounded-full bg-[#FAF7F2] border border-[#D38928]/40 flex items-center justify-center text-[#8C531B] text-xs font-bold shadow-2xs shrink-0">
