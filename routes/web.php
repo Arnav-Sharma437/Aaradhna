@@ -6,6 +6,7 @@ use App\Http\Controllers\Front\CollectionController;
 use App\Http\Controllers\Front\ProductController;
 use App\Http\Controllers\Front\CartWishlistController;
 use App\Http\Controllers\Front\SearchController;
+use App\Http\Controllers\Front\DiscountSignupController;
 
 // Storefront Homepage
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -91,6 +92,10 @@ Route::post('/account/logout', [AccountAuthController::class, 'logout'])->name('
 // Order Placement API (GoKwik & Cart Checkout)
 Route::post('/api/checkout/create-order', [CheckoutController::class, 'createOrder'])->name('checkout.create-order');
 
+// Discount Signup Survey & Coupon Validation API
+Route::post('/discount-signup/submit', [DiscountSignupController::class, 'store'])->name('discount-signup.store');
+Route::post('/api/coupons/validate', [DiscountSignupController::class, 'validateCoupon'])->name('coupons.validate');
+
 // Protected Customer Account Routes
 Route::middleware(['auth'])->prefix('account')->name('account.')->group(function () {
     Route::get('/', [AccountController::class, 'index'])->name('index');
@@ -122,6 +127,7 @@ use App\Http\Controllers\Admin\InventoryController as AdminInventoryController;
 use App\Http\Controllers\Admin\OrderController as AdminOrderController;
 use App\Http\Controllers\Admin\CustomerController as AdminCustomerController;
 use App\Http\Controllers\Admin\CouponController as AdminCouponController;
+use App\Http\Controllers\Admin\DiscountSignupController as AdminDiscountSignupController;
 use App\Http\Controllers\Admin\ReviewController as AdminReviewController;
 use App\Http\Controllers\Admin\BannerController as AdminBannerController;
 use App\Http\Controllers\Admin\BlogController as AdminBlogController;
@@ -172,6 +178,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
         // 7. Discounts & Promo Codes Module
         Route::patch('/coupons/{coupon}/toggle-status', [AdminCouponController::class, 'toggleStatus'])->name('coupons.toggle-status');
         Route::resource('coupons', AdminCouponController::class);
+
+        // 7b. Discount Signups & Lead Survey Responses
+        Route::resource('discount-signups', AdminDiscountSignupController::class)->only(['index', 'destroy']);
 
         // 8. Product Reviews Moderation Module
         Route::get('/reviews', [AdminReviewController::class, 'index'])->name('reviews.index');

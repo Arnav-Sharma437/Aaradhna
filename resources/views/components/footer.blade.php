@@ -201,43 +201,43 @@
                 </ul>
             </div>
 
-            <!-- Col 4: STAY CONNECTED / NEWSLETTER (3.5 Cols) -->
-            <div class="lg:col-span-4 lg:border-l lg:border-white/10 lg:pl-8 space-y-3">
-                <span class="text-[11px] sm:text-xs uppercase tracking-[0.22em] text-[#F6DAA8] font-bold block">
+            <!-- Col 4: STAY CONNECTED / NEWSLETTER (3.5 Cols - Click to Open 10% OFF Multi-step Flow) -->
+            <div 
+                class="lg:col-span-4 lg:border-l lg:border-white/10 lg:pl-8 space-y-3 cursor-pointer group/newsletter select-none"
+                onclick="window.openDiscountSignupModal()"
+            >
+                <span class="text-[11px] sm:text-xs uppercase tracking-[0.22em] text-[#F6DAA8] font-bold block group-hover/newsletter:text-white transition-colors">
                     STAY CONNECTED
                 </span>
-                <h3 class="text-2xl sm:text-3xl font-serif text-white tracking-tight leading-none">
+                <h3 class="text-2xl sm:text-3xl font-serif text-white tracking-tight leading-none group-hover/newsletter:text-[#F6DAA8] transition-colors">
                     Get 10<span class="font-sans">%</span> OFF
                 </h3>
-                <p class="text-xs sm:text-sm text-white/80">
+                <p class="text-xs sm:text-sm text-white/80 group-hover/newsletter:text-white transition-colors">
                     Subscribe to our newsletter for Vedic updates &amp; festive offerings.
                 </p>
 
-                <!-- Newsletter Input Form with dark autofill styling -->
-                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Manglam!');" class="pt-2">
-                    <div class="relative flex items-center w-full rounded-full border border-[#F6DAA8]/40 bg-[#420810]/80 p-1 pl-4 focus-within:border-[#F6DAA8] transition-colors shadow-inner">
-                        <svg class="w-4.5 h-4.5 text-white/60 mr-2.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <!-- Newsletter Clickable Interactive Bar (Opens Multi-step Modal) -->
+                <div class="pt-2">
+                    <div class="relative flex items-center w-full rounded-full border border-[#F6DAA8]/40 bg-[#420810]/80 p-1 pl-4 hover:border-[#F6DAA8] group-hover/newsletter:border-[#F6DAA8] transition-colors shadow-inner cursor-pointer">
+                        <svg class="w-4.5 h-4.5 text-white/60 mr-2.5 shrink-0 group-hover/newsletter:text-[#F6DAA8] transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                         </svg>
                         <input 
-                            type="email" 
-                            name="footer_email"
-                            autocomplete="off"
-                            placeholder="Enter your email address" 
-                            required
-                            class="footer-email-input bg-transparent text-white placeholder-white/50 text-xs sm:text-sm focus:outline-none flex-1 min-w-0 pr-2 font-body"
+                            type="text" 
+                            readonly
+                            placeholder="Click to get your 10% OFF coupon" 
+                            class="footer-email-input bg-transparent text-white placeholder-white/60 text-xs sm:text-sm focus:outline-none flex-1 min-w-0 pr-2 font-body cursor-pointer pointer-events-none"
                         >
-                        <button 
-                            type="submit" 
-                            class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#F6DAA8] hover:bg-[#ffe3b5] text-[#5C0D1B] flex items-center justify-center font-bold transition-all transform active:scale-95 shrink-0 shadow-md cursor-pointer"
-                            aria-label="Subscribe"
+                        <div 
+                            class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#F6DAA8] hover:bg-[#ffe3b5] text-[#5C0D1B] flex items-center justify-center font-bold transition-all transform group-hover/newsletter:scale-105 shrink-0 shadow-md cursor-pointer"
+                            aria-label="Get 10% OFF"
                         >
                             <svg class="w-4 h-4 sm:w-4.5 sm:h-4.5 text-[#5C0D1B]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
                             </svg>
-                        </button>
+                        </div>
                     </div>
-                </form>
+                </div>
             </div>
 
         </div>

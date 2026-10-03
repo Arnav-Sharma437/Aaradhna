@@ -78,6 +78,7 @@
                             'collections' => \App\Models\Collection::count(),
                             'customers' => \App\Models\User::where('role', 'customer')->count(),
                             'coupons' => \App\Models\Coupon::where('is_active', true)->count(),
+                            'discount_signups' => \App\Models\DiscountSignup::count(),
                             'reviews' => \App\Models\Review::count(),
                             'banners' => \App\Models\HomepageBanner::where('is_active', true)->count(),
                             'blogs' => \App\Models\BlogPost::where('is_published', true)->count(),
@@ -188,6 +189,18 @@
                                     <span>Discounts</span>
                                 </div>
                                 <span class="px-2 py-0.5 text-[10px] font-bold rounded-full {{ $navCounts['coupons'] > 0 ? 'bg-emerald-500/20 text-emerald-300' : 'bg-white/10 text-white/80' }}">{{ $navCounts['coupons'] }}</span>
+                            </a>
+
+                            <!-- Discount Signups & Lead Flow -->
+                            <a 
+                                href="{{ route('admin.discount-signups.index') }}" 
+                                class="flex items-center justify-between px-3 py-2 rounded-[8px] text-xs font-medium transition-all group {{ request()->routeIs('admin.discount-signups*') ? 'bg-[#2E2E2E] text-white font-bold' : 'text-[#CCCCCC] hover:bg-[#252525] hover:text-white' }}"
+                            >
+                                <div class="flex items-center space-x-3">
+                                    <svg class="w-4 h-4 text-amber-400/80 group-hover:text-amber-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/></svg>
+                                    <span>Discount Signups</span>
+                                </div>
+                                <span class="px-2 py-0.5 text-[10px] font-bold rounded-full {{ $navCounts['discount_signups'] > 0 ? 'bg-amber-500/20 text-amber-300' : 'bg-white/10 text-white/80' }}">{{ $navCounts['discount_signups'] }}</span>
                             </a>
 
                             <!-- Reviews -->

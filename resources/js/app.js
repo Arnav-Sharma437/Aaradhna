@@ -422,29 +422,86 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Coupon Code on Cart Page
+    // Coupon Code on Cart Page with Server-Side Validation
     const applyCouponBtn = document.getElementById('apply-coupon-btn');
     const couponInput = document.getElementById('coupon-code-input');
     const couponFeedback = document.getElementById('coupon-feedback');
 
     if (applyCouponBtn && couponInput) {
-        applyCouponBtn.addEventListener('click', () => {
+        applyCouponBtn.addEventListener('click', async () => {
             const code = couponInput.value.trim().toUpperCase();
-            if (code === 'MANGLAM10' || code === 'MANGALAM10' || code === 'FESTIVE10' || code === 'SAVE10') {
-                activeCouponDiscount = 0.10;
-                if (couponFeedback) {
-                    couponFeedback.textContent = `✓ Code ${code} applied: Extra 10% Festive Discount!`;
-                    couponFeedback.classList.remove('hidden', 'text-rose-600');
-                    couponFeedback.classList.add('text-emerald-700');
+            if (!code) return;
+
+            const cart = getCart();
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+            applyCouponBtn.disabled = true;
+            applyCouponBtn.innerHTML = '<span class="inline-block animate-spin">⌛</span> Checking...';
+
+            try {
+                const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
+                const response = await fetch('/api/coupons/validate', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                        'X-CSRF-TOKEN': csrfToken || ''
+                    },
+                    body: JSON.stringify({
+                        code: code,
+                        subtotal: subtotal
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.valid) {
+                    if (data.type === 'percentage') {
+                        activeCouponDiscount = (data.value || 10) / 100;
+                    } else if (data.type === 'fixed' && subtotal > 0) {
+                        activeCouponDiscount = (data.discount_amount || 0) / subtotal;
+                    } else {
+                        activeCouponDiscount = 0.10;
+                    }
+
+                    if (couponFeedback) {
+                        couponFeedback.textContent = `✓ ${data.message || 'Coupon applied successfully!'}`;
+                        couponFeedback.classList.remove('hidden', 'text-rose-600');
+                        couponFeedback.classList.add('text-emerald-700');
+                    }
+                    renderCartPage();
+                    renderCartDrawer();
+                } else {
+                    activeCouponDiscount = 0;
+                    if (couponFeedback) {
+                        couponFeedback.textContent = `✕ ${data.message || 'Invalid or expired coupon code.'}`;
+                        couponFeedback.classList.remove('hidden', 'text-emerald-700');
+                        couponFeedback.classList.add('text-rose-600');
+                    }
+                    renderCartPage();
+                    renderCartDrawer();
+                }
+            } catch (err) {
+                // Client-side fallback if offline
+                if (code.startsWith('MANGLAM10') || code === 'FESTIVE10' || code === 'SAVE10') {
+                    activeCouponDiscount = 0.10;
+                    if (couponFeedback) {
+                        couponFeedback.textContent = `✓ Code ${code} applied: Extra 10% Festive Discount!`;
+                        couponFeedback.classList.remove('hidden', 'text-rose-600');
+                        couponFeedback.classList.add('text-emerald-700');
+                    }
+                } else {
+                    if (couponFeedback) {
+                        couponFeedback.textContent = `✕ Invalid or expired coupon code.`;
+                        couponFeedback.classList.remove('hidden', 'text-emerald-700');
+                        couponFeedback.classList.add('text-rose-600');
+                    }
                 }
                 renderCartPage();
                 renderCartDrawer();
-            } else if (code.length > 0) {
-                if (couponFeedback) {
-                    couponFeedback.textContent = `✕ Invalid or expired coupon code.`;
-                    couponFeedback.classList.remove('hidden', 'text-emerald-700');
-                    couponFeedback.classList.add('text-rose-600');
-                }
+            } finally {
+                applyCouponBtn.disabled = false;
+                applyCouponBtn.textContent = 'Apply';
             }
         });
     }

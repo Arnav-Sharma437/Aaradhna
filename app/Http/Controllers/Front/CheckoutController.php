@@ -96,7 +96,25 @@ class CheckoutController extends Controller
                 ];
             }
 
-            $discountAmount = 50.00; // Flat GoKwik UPI discount
+            $couponCode = strtoupper(trim($request->input('coupon_code', '')));
+            $discountAmount = 0.00;
+            $appliedCoupon = null;
+
+            if (!empty($couponCode)) {
+                $appliedCoupon = \App\Models\Coupon::where('code', $couponCode)->first();
+                if ($appliedCoupon && $appliedCoupon->isValidForSubtotal($subtotal)) {
+                    $discountAmount = $appliedCoupon->calculateDiscount($subtotal);
+                } else {
+                    $appliedCoupon = null;
+                }
+            }
+
+            // Default fallback if no coupon or if GoKwik UPI flat discount
+            if ($discountAmount <= 0 && $paymentMethod === 'UPI (GoKwik)') {
+                $discountAmount = 50.00;
+                $couponCode = 'GOKWIK50';
+            }
+
             $shippingFee = 0.00; // Free sacred shipping
             $totalAmount = max(0, $subtotal - $discountAmount + $shippingFee);
 
@@ -114,7 +132,7 @@ class CheckoutController extends Controller
                 'billing_address' => $shippingAddress,
                 'subtotal' => $subtotal,
                 'discount_amount' => $discountAmount,
-                'coupon_code' => 'GOKWIK50',
+                'coupon_code' => !empty($couponCode) ? $couponCode : null,
                 'shipping_fee' => $shippingFee,
                 'tax_amount' => 0.00,
                 'total_amount' => $totalAmount,
@@ -126,6 +144,17 @@ class CheckoutController extends Controller
                 'courier_name' => 'Bluedart Express',
                 'notes' => 'Handle with reverence. Pure Vedic Pooja Items inside.',
             ]);
+
+            // Increment coupon usage & update discount signup status
+            if ($appliedCoupon) {
+                $appliedCoupon->increment('used_count');
+                \App\Models\DiscountSignup::where('coupon_id', $appliedCoupon->id)
+                    ->orWhere('generated_coupon_code', $couponCode)
+                    ->update(['coupon_status' => 'used']);
+            } elseif (!empty($couponCode)) {
+                \App\Models\DiscountSignup::where('generated_coupon_code', $couponCode)
+                    ->update(['coupon_status' => 'used']);
+            }
 
             foreach ($itemsToCreate as $item) {
                 $item['order_id'] = $order->id;
