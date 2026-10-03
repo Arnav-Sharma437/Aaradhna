@@ -289,63 +289,65 @@
                     </p>
                 </div>
 
-                <!-- 5. 4 Iconic Feature Circles with Text (3 in First Line + Free Ceramic Stand, with <br> text format) -->
-                <div class="flex flex-wrap items-center gap-x-5 sm:gap-x-7 gap-y-2.5 py-1">
-                    
-                    <!-- Feature 1: Chemical Free -->
-                    <div class="flex items-center space-x-2">
-                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-[#D38928] flex items-center justify-center text-[#D38928] bg-transparent shrink-0">
-                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M12 22C12 22 20 18 20 10C20 4.5 15.5 2 12 2C8.5 2 4 4.5 4 10C4 18 12 22 12 22Z"/>
-                                <path d="M12 2V22"/>
-                                <path d="M12 7L16 11"/>
-                                <path d="M12 13L8 17"/>
-                            </svg>
+                <!-- 5. 4 Iconic Feature Circles with Text (3 in First Line + 1 in Second Line, Bigger Font) -->
+                <div class="space-y-2 py-1">
+                    <!-- Line 1: 3 Features in one row -->
+                    <div class="grid grid-cols-3 gap-2 sm:gap-3">
+                        <!-- Feature 1: Chemical Free -->
+                        <div class="flex items-center space-x-2 sm:space-x-2.5">
+                            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#D38928] flex items-center justify-center text-[#D38928] bg-transparent shrink-0">
+                                <svg class="w-4.5 h-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 22C12 22 20 18 20 10C20 4.5 15.5 2 12 2C8.5 2 4 4.5 4 10C4 18 12 22 12 22Z"/>
+                                    <path d="M12 2V22"/>
+                                    <path d="M12 7L16 11"/>
+                                    <path d="M12 13L8 17"/>
+                                </svg>
+                            </div>
+                            <span class="text-sm sm:text-[15px] font-bold text-[#121212] font-body leading-tight">
+                                Chemical<br>Free
+                            </span>
                         </div>
-                        <span class="text-xs sm:text-[13px] font-bold text-[#121212] font-body leading-tight">
-                            Chemical<br>Free
-                        </span>
+
+                        <!-- Feature 2: Low Smoke -->
+                        <div class="flex items-center space-x-2 sm:space-x-2.5">
+                            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#D38928] flex items-center justify-center text-[#D38928] bg-transparent shrink-0">
+                                <svg class="w-4.5 h-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M8 18c-1-1.5-1-3.5 0-5s2-3.5 1-5-3-3-1-5"/>
+                                    <path d="M12 19c-1-1.5-1-3.5 0-5s2-3.5 1-5-3-3-1-5"/>
+                                    <path d="M16 18c-1-1.5-1-3.5 0-5s2-3.5 1-5-3-3-1-5"/>
+                                </svg>
+                            </div>
+                            <span class="text-sm sm:text-[15px] font-bold text-[#121212] font-body leading-tight">
+                                Low<br>Smoke
+                            </span>
+                        </div>
+
+                        <!-- Feature 3: Long Lasting -->
+                        <div class="flex items-center space-x-2 sm:space-x-2.5">
+                            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#D38928] flex items-center justify-center text-[#D38928] bg-transparent shrink-0">
+                                <svg class="w-4.5 h-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M5 22h14"/>
+                                    <path d="M5 2h14"/>
+                                    <path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/>
+                                    <path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/>
+                                </svg>
+                            </div>
+                            <span class="text-sm sm:text-[15px] font-bold text-[#121212] font-body leading-tight">
+                                Long<br>Lasting
+                            </span>
+                        </div>
                     </div>
 
-                    <!-- Feature 2: Low Smoke -->
-                    <div class="flex items-center space-x-2">
-                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-[#D38928] flex items-center justify-center text-[#D38928] bg-transparent shrink-0">
-                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M8 18c-1-1.5-1-3.5 0-5s2-3.5 1-5-3-3-1-5"/>
-                                <path d="M12 19c-1-1.5-1-3.5 0-5s2-3.5 1-5-3-3-1-5"/>
-                                <path d="M16 18c-1-1.5-1-3.5 0-5s2-3.5 1-5-3-3-1-5"/>
-                            </svg>
-                        </div>
-                        <span class="text-xs sm:text-[13px] font-bold text-[#121212] font-body leading-tight">
-                            Low<br>Smoke
-                        </span>
-                    </div>
-
-                    <!-- Feature 3: Long Lasting -->
-                    <div class="flex items-center space-x-2">
-                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-[#D38928] flex items-center justify-center text-[#D38928] bg-transparent shrink-0">
-                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M5 22h14"/>
-                                <path d="M5 2h14"/>
-                                <path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/>
-                                <path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/>
-                            </svg>
-                        </div>
-                        <span class="text-xs sm:text-[13px] font-bold text-[#121212] font-body leading-tight">
-                            Long<br>Lasting
-                        </span>
-                    </div>
-
-                    <!-- Feature 4: Free Ceramic Stand -->
-                    <div class="flex items-center space-x-2">
-                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-[#D38928] flex items-center justify-center text-[#D38928] bg-transparent shrink-0">
-                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <!-- Line 2: Free Ceramic Stand -->
+                    <div class="flex items-center space-x-2 sm:space-x-2.5 pt-0.5">
+                        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#D38928] flex items-center justify-center text-[#D38928] bg-transparent shrink-0">
+                            <svg class="w-4.5 h-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <ellipse cx="12" cy="17" rx="8" ry="4"/>
                                 <path d="M12 17V5"/>
                                 <circle cx="12" cy="4" r="1" fill="#D38928"/>
                             </svg>
                         </div>
-                        <span class="text-xs sm:text-[13px] font-bold text-[#121212] font-body leading-tight">
+                        <span class="text-sm sm:text-[15px] font-bold text-[#121212] font-body leading-tight">
                             Free Ceramic<br>Stand
                         </span>
                     </div>
@@ -581,17 +583,17 @@
         <!-- ========================================================================= -->
         <!-- 2. SPECIFICATIONS & PURITY COMPARISON SECTION (HTML / Tailwind UI)        -->
         <!-- ========================================================================= -->
-        <div class="mt-12 sm:mt-16 max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 items-stretch">
+        <div class="mt-8 sm:mt-12 max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 items-stretch">
                 
                 <!-- Left Card: Specifications (5 Cols) -->
                 <div class="lg:col-span-5 bg-white rounded-[14px] sm:rounded-[18px] border border-[#EADBCC] shadow-xs overflow-hidden flex flex-col">
-                    <div class="bg-[#7B1925] px-5 py-2.5 border-b border-[#D38928]/40">
+                    <div class="bg-[#7B1925] px-4 sm:px-5 py-2 sm:py-2.5 border-b border-[#D38928]/40">
                         <h3 class="font-serif text-lg sm:text-xl text-white font-medium tracking-wide">
                             Specifications
                         </h3>
                     </div>
-                    <div class="p-3 sm:p-5 flex-1 flex flex-col justify-between divide-y divide-[#F1E5D8]">
+                    <div class="p-2.5 sm:p-4 flex-1 flex flex-col justify-between divide-y divide-[#F1E5D8]">
                         <div class="py-[5px] flex items-center justify-between text-xs sm:text-[13.5px]">
                             <span class="text-gray-700 font-medium">Country of Origin</span>
                             <span class="text-gray-900 font-bold flex items-center gap-1.5">
@@ -624,21 +626,21 @@
 
                 <!-- Right Card: Features Comparison (7 Cols) -->
                 <div class="lg:col-span-7 bg-white rounded-[14px] sm:rounded-[18px] border border-[#EADBCC] shadow-xs overflow-hidden flex flex-col">
-                    <!-- Header Bar (Attached Middle Column) -->
-                    <div class="bg-[#7B1925] grid grid-cols-12 items-stretch">
-                        <div class="col-span-6 px-5 py-2.5 flex items-center border-b border-[#D38928]/40">
+                    <!-- Header Bar with Distinct Rounded-Top Logo Box -->
+                    <div class="bg-[#7B1925] border-b border-[#D38928]/40 grid grid-cols-12 items-center">
+                        <div class="col-span-6 px-4 sm:px-5 py-2 sm:py-2.5">
                             <h3 class="font-serif text-lg sm:text-xl text-white font-medium tracking-wide">
                                 Features
                             </h3>
                         </div>
-                        <div class="col-span-3 bg-[#FDF6ED] border-x border-[#EEDBCA]/60 flex items-center justify-center p-1.5 shadow-2xs">
+                        <div class="col-span-3 bg-[#FDF6ED] py-1.5 px-2 text-center rounded-t-[10px] border-t-2 border-x-2 border-[#D38928]/50 shadow-xs flex items-center justify-center -mb-[1px] relative z-10 min-h-[46px]">
                             <img 
                                 src="{{ asset('assets/images/mangalam-logo.png') }}" 
                                 alt="Manglam" 
                                 class="h-6 sm:h-7 w-auto max-w-[90px] sm:max-w-[110px] object-contain"
                             >
                         </div>
-                        <div class="col-span-3 py-2.5 px-2 flex items-center justify-center text-center text-[11px] sm:text-xs font-bold tracking-wider text-[#F7E7CE] uppercase font-heading border-b border-[#D38928]/40">
+                        <div class="col-span-3 py-2 sm:py-2.5 px-2 text-center text-[11px] sm:text-xs font-bold tracking-wider text-[#F7E7CE] uppercase font-heading">
                             Others
                         </div>
                     </div>
