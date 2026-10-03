@@ -1201,49 +1201,57 @@
 </section>
 
 <!-- ========================================================================= -->
-<!-- 6. ROOTED IN PURITY (Spacious Luxury Presentation on White Background)     -->
+<!-- 6. ROOTED IN PURITY (Exact Matching Reference Screenshot Styling)         -->
 <!-- ========================================================================= -->
-<section class="py-[40px] bg-white border-b border-[#EAE3D9] select-none font-body">
+<section class="py-12 sm:py-16 bg-[#FFFDF9] border-b border-[#EADBCC] select-none font-body">
     <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
         
-        <!-- Clean Header (Matching Site Style) -->
-        <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-14 space-y-1.5">
-            <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ CRAFTED WITH CARE ✦</span>
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-[#6B1120] tracking-tight leading-tight">
+        <!-- Clean Header (Matching Reference Screenshot) -->
+        <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-10 space-y-2">
+            <div class="flex items-center justify-center space-x-3 text-[#A86520] text-xs sm:text-[13px] font-bold uppercase tracking-[0.22em] font-heading">
+                <div class="w-8 sm:w-14 h-[1px] bg-[#D38928]/50"></div>
+                <span class="flex items-center gap-1.5">
+                    <span class="text-[9px] text-[#D38928]">◆</span>
+                    <span>CRAFTED WITH CARE</span>
+                    <span class="text-[9px] text-[#D38928]">◆</span>
+                </span>
+                <div class="w-8 sm:w-14 h-[1px] bg-[#D38928]/50"></div>
+            </div>
+            <h2 class="text-3xl sm:text-4xl lg:text-[46px] font-heading font-normal text-[#5C141E] tracking-tight leading-tight">
                 Rooted in Purity
             </h2>
-            <p class="text-xs sm:text-base text-gray-600 font-normal font-body">
+            <p class="text-xs sm:text-sm md:text-base text-gray-600 font-normal font-body">
                 Traditional wisdom. Thoughtfully crafted.
             </p>
         </div>
 
-        <!-- 3 Feature Columns inside Generous Unified Rounded Box (Matching Site Width) -->
-        <div class="bg-[#FFFDF9] rounded-[24px] sm:rounded-[28px] border border-[#EADBCC] p-4 sm:p-8 lg:p-10 max-w-6xl mx-auto shadow-xs">
+        <!-- 3 Feature Columns inside Slim & Wide Elegant Card Container -->
+        <div class="bg-white rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] max-w-5xl mx-auto shadow-2xs overflow-hidden">
             <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[#EADBCC]">
                 
                 <!-- Column 1: Ancient Recipes -->
-                <div class="py-8 px-5 sm:py-8 sm:px-8 lg:px-10 flex flex-col items-center justify-center text-center space-y-3.5 group">
-                    <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#FAF5EE] border border-[#EADBCC] flex items-center justify-center text-[#6B1120] group-hover:scale-105 transition-transform shadow-2xs">
-                        <svg class="w-10 h-10 sm:w-12 sm:h-12" viewBox="0 0 64 64" fill="none" stroke="#6B1120" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <div class="py-6 sm:py-8 lg:py-9 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center space-y-2.5 sm:space-y-3 group">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#FAF5EE] border border-[#EADBCC] flex items-center justify-center text-[#7B1B29] group-hover:scale-105 transition-transform">
+                        <svg class="w-8 h-8 sm:w-10 sm:h-10" viewBox="0 0 64 64" fill="none" stroke="#7B1B29" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M16 34h32c0 10-7.2 18-16 18s-16-8-16-18Z"/>
                             <path d="M24 52h16"/>
                             <path d="M38 18l7-6a1.5 1.5 0 0 1 2.1.2l1.1 1.1a1.5 1.5 0 0 1-.2 2.1L38 34"/>
                             <path d="M22 22c0-3.5 3.5-5.5 6-5.5s1 3.5 0 5.5-6 0-6 0Z"/>
-                            <circle cx="28" cy="27" r="1.5" fill="#6B1120"/>
+                            <circle cx="28" cy="27" r="1.5" fill="#7B1B29"/>
                         </svg>
                     </div>
-                    <h3 class="text-lg sm:text-xl lg:text-2xl font-heading font-bold text-[#1F1F1F]">
+                    <h3 class="text-lg sm:text-xl lg:text-[22px] font-heading font-normal text-[#5C141E]">
                         Ancient Recipes
                     </h3>
-                    <p class="text-xs sm:text-sm lg:text-[14.5px] text-gray-600 font-normal font-body leading-relaxed max-w-xs">
+                    <p class="text-xs sm:text-[13.5px] lg:text-sm text-gray-600 font-normal font-body leading-relaxed max-w-[260px]">
                         Inspired by time-honoured traditions.
                     </p>
                 </div>
 
                 <!-- Column 2: Purest Ingredients -->
-                <div class="py-8 px-5 sm:py-8 sm:px-8 lg:px-10 flex flex-col items-center justify-center text-center space-y-3.5 group">
-                    <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#FAF5EE] border border-[#EADBCC] flex items-center justify-center text-[#6B1120] group-hover:scale-105 transition-transform shadow-2xs">
-                        <svg class="w-10 h-10 sm:w-12 sm:h-12" viewBox="0 0 64 64" fill="none" stroke="#6B1120" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <div class="py-6 sm:py-8 lg:py-9 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center space-y-2.5 sm:space-y-3 group">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#FAF5EE] border border-[#EADBCC] flex items-center justify-center text-[#7B1B29] group-hover:scale-105 transition-transform">
+                        <svg class="w-8 h-8 sm:w-10 sm:h-10" viewBox="0 0 64 64" fill="none" stroke="#7B1B29" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <!-- Sacred Flames & Kund -->
                             <path d="M32 16c-3 4-3 9 0 12 3-3 3-8 0-12Z"/>
                             <path d="M23 21c-3.5 1-5 4.5-3 8 2.5-1 4.5-4 3-8Z"/>
@@ -1252,18 +1260,18 @@
                             <path d="M25 48h14"/>
                         </svg>
                     </div>
-                    <h3 class="text-lg sm:text-xl lg:text-2xl font-heading font-bold text-[#1F1F1F]">
+                    <h3 class="text-lg sm:text-xl lg:text-[22px] font-heading font-normal text-[#5C141E]">
                         Purest Ingredients
                     </h3>
-                    <p class="text-xs sm:text-sm lg:text-[14.5px] text-gray-600 font-normal font-body leading-relaxed max-w-xs">
+                    <p class="text-xs sm:text-[13.5px] lg:text-sm text-gray-600 font-normal font-body leading-relaxed max-w-[260px]">
                         Carefully selected for every ritual.
                     </p>
                 </div>
 
                 <!-- Column 3: Eco-conscious -->
-                <div class="py-8 px-5 sm:py-8 sm:px-8 lg:px-10 flex flex-col items-center justify-center text-center space-y-3.5 group">
-                    <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#FAF5EE] border border-[#EADBCC] flex items-center justify-center text-[#6B1120] group-hover:scale-105 transition-transform shadow-2xs">
-                        <svg class="w-10 h-10 sm:w-12 sm:h-12" viewBox="0 0 64 64" fill="none" stroke="#6B1120" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <div class="py-6 sm:py-8 lg:py-9 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center space-y-2.5 sm:space-y-3 group">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#FAF5EE] border border-[#EADBCC] flex items-center justify-center text-[#7B1B29] group-hover:scale-105 transition-transform">
+                        <svg class="w-8 h-8 sm:w-10 sm:h-10" viewBox="0 0 64 64" fill="none" stroke="#7B1B29" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <!-- Box & Leaf -->
                             <path d="M19 24l13-8 13 8v22l-13 8-13-8V24Z"/>
                             <path d="M19 24l13 8 13-8"/>
@@ -1272,14 +1280,13 @@
                             <path d="M30 42l4-4"/>
                         </svg>
                     </div>
-                    <h3 class="text-lg sm:text-xl lg:text-2xl font-heading font-bold text-[#1F1F1F]">
+                    <h3 class="text-lg sm:text-xl lg:text-[22px] font-heading font-normal text-[#5C141E]">
                         Eco-conscious
                     </h3>
-                    <p class="text-xs sm:text-sm lg:text-[14.5px] text-gray-600 font-normal leading-relaxed max-w-xs">
+                    <p class="text-xs sm:text-[13.5px] lg:text-sm text-gray-600 font-normal font-body leading-relaxed max-w-[260px]">
                         Thoughtful choices, mindful practices.
                     </p>
                 </div>
-
             </div>
         </div>
 
