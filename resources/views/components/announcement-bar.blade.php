@@ -1,14 +1,14 @@
-<div class="w-full bg-[#831F2E] text-white border-b border-[#6E1724] text-xs py-2 shadow-xs font-body select-none relative overflow-hidden" id="announcement-bar">
+<div class="w-full bg-[#831F2E] text-white border-b border-[#6E1724] text-xs py-[3px] shadow-xs font-body select-none relative overflow-hidden" id="announcement-bar">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 flex items-center justify-between">
         
-        <!-- Left Navigation Arrow -->
+        <!-- Left Navigation Arrow (10px width) -->
         <button 
             type="button" 
             id="announcement-prev-btn" 
-            class="p-1 text-white/80 hover:text-white transition-all transform hover:scale-110 active:scale-95 cursor-pointer focus:outline-none shrink-0" 
+            class="p-0.5 text-white/80 hover:text-white transition-all transform hover:scale-110 active:scale-95 cursor-pointer focus:outline-none shrink-0 flex items-center justify-center" 
             aria-label="Previous Announcement"
         >
-            <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <svg class="w-[10px] h-[10px]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
         </button>
@@ -53,14 +53,14 @@
 
         </div>
 
-        <!-- Right Navigation Arrow -->
+        <!-- Right Navigation Arrow (10px width) -->
         <button 
             type="button" 
             id="announcement-next-btn" 
-            class="p-1 text-white/80 hover:text-white transition-all transform hover:scale-110 active:scale-95 cursor-pointer focus:outline-none shrink-0" 
+            class="p-0.5 text-white/80 hover:text-white transition-all transform hover:scale-110 active:scale-95 cursor-pointer focus:outline-none shrink-0 flex items-center justify-center" 
             aria-label="Next Announcement"
         >
-            <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <svg class="w-[10px] h-[10px]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
             </svg>
         </button>
