@@ -70,30 +70,42 @@ class CheckoutController extends Controller
         try {
             DB::beginTransaction();
 
+            $customerName = trim($validated['name'] ?? 'Devotee');
+            $customerPhone = trim($validated['phone'] ?? '');
+            $customerEmail = trim($validated['email'] ?? ($customerPhone ? $customerPhone . '@mangalam.co' : 'devotee@mangalam.co'));
+
             $user = Auth::user();
-            if (!$user && !empty($validated['phone'])) {
-                $user = User::where('phone', $validated['phone'])
-                    ->orWhere('email', $validated['email'] ?? 'guest@example.com')
+            if (!$user && !empty($customerPhone)) {
+                $user = User::where('phone', $customerPhone)
+                    ->orWhere('email', $customerEmail)
                     ->first();
+
+                if (!$user && strlen($customerPhone) >= 10) {
+                    $user = User::create([
+                        'name' => $customerName ?: 'Devotee',
+                        'phone' => $customerPhone,
+                        'email' => $customerEmail,
+                        'password' => \Illuminate\Support\Facades\Hash::make(\Illuminate\Support\Str::random(16)),
+                    ]);
+                }
+
+                if ($user) {
+                    Auth::login($user, true);
+                }
             }
 
             $orderNumber = 'MG-' . strtoupper(Str::random(3)) . '-' . rand(100000, 999999);
-            $itemsData = $validated['items'] ?? [];
             $rawPaymentMethod = $validated['payment_method'] ?? 'Razorpay';
             $isCOD = (stripos($rawPaymentMethod, 'cod') !== false || stripos($rawPaymentMethod, 'cash') !== false);
             $paymentMethod = $isCOD ? 'Cash on Delivery (COD)' : 'Razorpay (Online / UPI)';
 
-            $customerName = $validated['name'] ?? ($user ? $user->name : 'Devotee');
-            $customerPhone = $validated['phone'] ?? ($user ? $user->phone : '9876543210');
-            $customerEmail = $validated['email'] ?? ($user ? $user->email : 'devotee@mangalam.co');
-
             $shippingAddress = [
                 'name' => $customerName,
                 'phone' => $customerPhone,
-                'address' => $validated['address'] ?? 'B-402, Vrindavan Dham Residency, Sector 14, Mathura, UP - 281001',
-                'city' => 'Mathura',
-                'state' => 'Uttar Pradesh',
-                'pincode' => '281001',
+                'address' => $validated['address'] ?? 'Customer Delivery Address',
+                'city' => $validated['city'] ?? 'India',
+                'state' => 'India',
+                'pincode' => $validated['pincode'] ?? '',
                 'country' => 'India'
             ];
 

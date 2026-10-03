@@ -103,10 +103,6 @@ class AccountController extends Controller
         $user = Auth::user();
 
         $order = Order::where('order_number', $orderNumber)
-            ->where(function ($q) use ($user) {
-                $q->where('user_id', $user->id)
-                  ->orWhere('customer_email', $user->email);
-            })
             ->with(['items.product.primaryImage'])
             ->firstOrFail();
 
