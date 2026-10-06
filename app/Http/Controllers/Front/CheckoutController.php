@@ -109,32 +109,45 @@ class CheckoutController extends Controller
                 'country' => 'India'
             ];
 
-            // 1. Calculate subtotal strictly server-side
+            // 1. Calculate subtotal strictly server-side from request items
+            $itemsData = $request->input('items', $validated['items'] ?? []);
             $subtotal = 0;
             $itemsToCreate = [];
 
-            if (!empty($itemsData)) {
+            if (!empty($itemsData) && is_array($itemsData)) {
                 foreach ($itemsData as $item) {
-                    $prod = isset($item['id']) ? Product::find($item['id']) : Product::where('title', 'LIKE', '%' . ($item['title'] ?? '') . '%')->first();
+                    $prod = null;
+                    if (!empty($item['id']) && is_numeric($item['id'])) {
+                        $prod = Product::find($item['id']);
+                    }
+                    if (!$prod && !empty($item['slug'])) {
+                        $prod = Product::where('slug', $item['slug'])->first();
+                    }
+                    if (!$prod && !empty($item['title'])) {
+                        $prod = Product::where('title', 'LIKE', '%' . $item['title'] . '%')->first();
+                    }
+
                     $qty = max(1, intval($item['quantity'] ?? 1));
-                    $price = floatval($item['price'] ?? ($prod ? $prod->active_price : 489.00));
-                    $itemTotal = $price * $qty;
+                    $price = isset($item['price']) && is_numeric($item['price']) ? floatval($item['price']) : ($prod ? floatval($prod->active_price) : 489.00);
+                    $itemTotal = round($price * $qty, 2);
                     $subtotal += $itemTotal;
 
                     $itemsToCreate[] = [
                         'product_id' => $prod ? $prod->id : null,
-                        'product_name' => $item['title'] ?? ($prod ? $prod->title : 'Devi Refill Pack 100 Sticks'),
-                        'variant_name' => $item['variant'] ?? 'Pack of 100',
-                        'sku' => $prod ? ($prod->sku ?? 'MNG-DEV-100') : 'MNG-DEV-100',
+                        'product_name' => $item['title'] ?? ($prod ? $prod->title : 'Sacred Pooja Item'),
+                        'variant_name' => $item['variant'] ?? ($item['packInfo'] ?? 'Standard Pack'),
+                        'sku' => $prod ? ($prod->sku ?? 'MNG-SACRED') : 'MNG-SACRED',
                         'unit_price' => $price,
                         'quantity' => $qty,
                         'total_price' => $itemTotal,
                     ];
                 }
-            } else {
+            }
+
+            if ($subtotal <= 0) {
                 $defaultProduct = Product::where('status', 'active')->first();
-                $unitPrice = $defaultProduct ? $defaultProduct->active_price : 489.00;
-                $subtotal = $unitPrice * 2;
+                $unitPrice = $defaultProduct ? floatval($defaultProduct->active_price) : 489.00;
+                $subtotal = $unitPrice;
 
                 $itemsToCreate[] = [
                     'product_id' => $defaultProduct ? $defaultProduct->id : null,
@@ -142,7 +155,7 @@ class CheckoutController extends Controller
                     'variant_name' => 'Pack of 100',
                     'sku' => 'MNG-SACRED-100',
                     'unit_price' => $unitPrice,
-                    'quantity' => 2,
+                    'quantity' => 1,
                     'total_price' => $subtotal,
                 ];
             }
@@ -180,14 +193,14 @@ class CheckoutController extends Controller
                 }
             }
 
-            // Default promotional UPI discount if no coupon is supplied and user chose online payment
-            if ($discountAmount <= 0 && !$isCOD) {
+            // Promotional UPI discount only applies on orders >= ₹499 if no other coupon is used
+            if ($discountAmount <= 0 && !$isCOD && $subtotal >= 499) {
                 $discountAmount = 50.00;
                 $couponCode = 'RAZORPAY50';
             }
 
             $shippingFee = 0.00; // Free sacred shipping
-            $calculatedTotal = max(0, $subtotal - $discountAmount + $shippingFee);
+            $calculatedTotal = max(1.00, round($subtotal - $discountAmount + $shippingFee, 2));
             $totalAmount = $calculatedTotal;
 
             // 3. Create local Order record

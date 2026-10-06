@@ -42,7 +42,7 @@
 
         <!-- 2. Promo Strip -->
         <div class="bg-gradient-to-r from-[#9B1C31] to-[#7B1425] text-white px-4 py-2 text-center text-xs font-bold font-heading flex items-center justify-center space-x-2 shrink-0 shadow-inner">
-            <span>🎉 ₹50 Instant Extra Discount applied on Online Razorpay / UPI</span>
+            <span>🎉 ₹50 Instant Extra Discount on Prepaid Orders above ₹499</span>
             <span class="px-1.5 py-0.2 bg-[#D38928] text-white text-[9px] rounded font-mono uppercase">Auto-Applied</span>
         </div>
 
@@ -109,7 +109,7 @@
                                 type="text" 
                                 id="gokwik-name-input"
                                 placeholder="Enter Full Name *" 
-                                value="{{ Auth::user()?->name ?? '' }}"
+                                value=""
                                 class="w-full px-3 py-2 text-xs font-medium bg-white border border-[#EADBCC] focus:border-[#D38928] rounded-[8px] focus:outline-none"
                                 required
                             >
@@ -120,7 +120,7 @@
                                 id="gokwik-phone-input"
                                 maxlength="10"
                                 placeholder="Enter 10-digit Mobile Number *" 
-                                value="{{ Auth::user()?->phone ?? '' }}"
+                                value=""
                                 class="w-full px-3 py-2 text-xs font-bold bg-white border border-[#EADBCC] focus:border-[#D38928] rounded-[8px] focus:outline-none"
                                 required
                             >
@@ -318,42 +318,43 @@
 
             if (window.CartStore && typeof window.CartStore.getCart === 'function') {
                 const cart = window.CartStore.getCart();
-                if (cart.length > 0) {
-                    baseSubtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-                    totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+                if (cart && cart.length > 0) {
+                    baseSubtotal = cart.reduce((sum, item) => sum + ((parseFloat(item.price) || 0) * (parseInt(item.quantity) || 1)), 0);
+                    totalItems = cart.reduce((sum, item) => sum + (parseInt(item.quantity) || 1), 0);
                 }
             } else if (window.cartItems && window.cartItems.length > 0) {
-                baseSubtotal = window.cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-                totalItems = window.cartItems.reduce((sum, item) => sum + item.quantity, 0);
-            }
-
-            if (baseSubtotal === 0) {
-                baseSubtotal = 489;
-                totalItems = 1;
+                baseSubtotal = window.cartItems.reduce((sum, item) => sum + ((parseFloat(item.price) || 0) * (parseInt(item.quantity) || 1)), 0);
+                totalItems = window.cartItems.reduce((sum, item) => sum + (parseInt(item.quantity) || 1), 0);
             }
 
             let discount = 0;
             if (currentCheckoutCouponDiscount > 0) {
                 discount = baseSubtotal * currentCheckoutCouponDiscount;
-            } else {
-                // Flat 50 UPI default discount
+            } else if (baseSubtotal >= 499) {
+                // Flat 50 UPI promotional discount only for orders >= 499
                 discount = 50;
+            } else {
+                discount = 0;
             }
 
-            const finalPayable = Math.max(0, baseSubtotal - discount);
+            const finalPayable = Math.max(baseSubtotal > 0 ? 1 : 0, roundToTwo(baseSubtotal - discount));
 
             if (itemsCountEl) {
-                itemsCountEl.textContent = `${totalItems} Item${totalItems > 1 ? 's' : ''} in Cart`;
+                itemsCountEl.textContent = `${totalItems} Item${totalItems === 1 ? '' : 's'} in Cart`;
             }
 
             if (originalPriceEl) {
                 originalPriceEl.textContent = '₹' + baseSubtotal.toFixed(2);
-                if (discount > 0) originalPriceEl.classList.remove('hidden');
+                if (discount > 0 && baseSubtotal > 0) originalPriceEl.classList.remove('hidden');
                 else originalPriceEl.classList.add('hidden');
             }
             if (payablePriceEl) payablePriceEl.textContent = '₹' + finalPayable.toFixed(2);
             if (btnPriceEl) btnPriceEl.textContent = '₹' + finalPayable.toFixed(2);
         };
+
+        function roundToTwo(num) {
+            return +(Math.round(num + "e+2")  + "e-2");
+        }
 
         if (gokwikApplyCouponBtn && gokwikCouponInput) {
             // Live reset when user clears coupon code input

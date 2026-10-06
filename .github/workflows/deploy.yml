@@ -161,6 +161,10 @@ jobs:
             echo "Clearing stale framework cache safely..."
             php artisan optimize:clear || php artisan view:clear
 
+            echo "Refreshing configuration cache from live .env..."
+            php artisan config:clear
+            php artisan config:cache
+
             echo "Creating storage symlink if not already linked..."
             php artisan storage:link 2>/dev/null || true
 

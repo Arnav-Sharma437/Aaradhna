@@ -189,7 +189,7 @@
             <button 
                 type="button" 
                 onclick="window.openGoKwikCheckout()"
-                class="gokwik-checkout-trigger w-full py-3.5 px-5 bg-[#00A86B] hover:bg-[#008f5b] active:bg-[#00784c] text-white text-sm sm:text-base font-black uppercase tracking-wider rounded-[10px] shadow-md hover:shadow-xl transition-all duration-200 flex items-center justify-between font-heading text-center cursor-pointer"
+                class="gokwik-checkout-trigger w-full py-3.5 px-5 bg-[#D38928] hover:bg-[#B8741E] active:bg-[#9E6215] text-white text-sm sm:text-base font-black uppercase tracking-wider rounded-[10px] shadow-md hover:shadow-xl transition-all duration-200 flex items-center justify-between font-heading text-center cursor-pointer"
             >
                 <div class="flex items-center space-x-2">
                     <span class="text-base">⚡</span>
