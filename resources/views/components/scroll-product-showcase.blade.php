@@ -75,7 +75,7 @@
             
             <!-- Top Editorial Header (Exact match to reference "Spring Summer 2026") -->
             <div class="max-w-md z-20 space-y-2">
-                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black font-heading text-[#121212] tracking-tight leading-none">
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-normal uppercase font-heading text-[#121212] tracking-wider leading-none">
                     Pavitra Collection 2026
                 </h2>
                 <p class="text-xs sm:text-sm text-gray-600 font-light leading-relaxed">
