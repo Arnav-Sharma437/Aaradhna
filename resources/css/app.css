@@ -87,9 +87,10 @@
         background-color: #ffffff;
     }
 
-    /* Headings font family default */
+    /* Headings font family default: Always render Agatho in clean Regular (400) weight */
     h1, h2, h3, h4, h5, h6, .font-heading, .font-serif, .font-spiritual, .font-cinzel, .font-recoleta, .font-agatho {
         font-family: 'Agatho', Georgia, serif;
+        font-weight: 400 !important;
     }
 
     /* Clean kerning and rendering for headings */

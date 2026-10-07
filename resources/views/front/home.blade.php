@@ -125,7 +125,7 @@
         <!-- Section Header -->
         <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12 space-y-1.5">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ PURE VEDIC BLESSINGS ✦</span>
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#121212] font-heading tracking-tight leading-tight">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-normal text-[#121212] font-heading tracking-tight leading-tight">
                 Bestseller of the Month
             </h2>
         </div>
@@ -624,7 +624,7 @@
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">
                 ✦ 100% NATURAL • CHARCOAL FREE ✦
             </span>
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#2B1810] font-heading tracking-tight capitalize leading-tight">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-normal text-[#2B1810] font-heading tracking-tight capitalize leading-tight">
                 Product Categories
             </h2>
         </div>
@@ -646,7 +646,7 @@
 
                 <!-- Category Details -->
                 <div class="space-y-0.5 max-w-xs flex flex-col items-center">
-                    <h3 class="text-sm sm:text-base lg:text-[17px] font-bold capitalize tracking-wide text-[#121212] hover:text-[#D38928] transition-colors font-heading block">
+                    <h3 class="text-sm sm:text-base lg:text-[17px] font-normal capitalize tracking-wide text-[#121212] hover:text-[#D38928] transition-colors font-heading block">
                         <a href="{{ route('collections.show', 'bambooless') }}">Dhoop Stick</a>
                     </h3>
                     <p class="text-[11px] sm:text-xs text-[#7A7A7A] font-medium leading-tight">
@@ -669,7 +669,7 @@
 
                 <!-- Category Details -->
                 <div class="space-y-0.5 max-w-xs flex flex-col items-center">
-                    <h3 class="text-sm sm:text-base lg:text-[17px] font-bold capitalize tracking-wide text-[#121212] hover:text-[#D38928] transition-colors font-heading block">
+                    <h3 class="text-sm sm:text-base lg:text-[17px] font-normal capitalize tracking-wide text-[#121212] hover:text-[#D38928] transition-colors font-heading block">
                         <a href="{{ route('collections.show', 'dhoop-cones') }}">Dhoop Cones</a>
                     </h3>
                     <p class="text-[11px] sm:text-xs text-[#7A7A7A] font-medium leading-tight">
@@ -692,7 +692,7 @@
 
                 <!-- Category Details -->
                 <div class="space-y-0.5 max-w-xs flex flex-col items-center">
-                    <h3 class="text-sm sm:text-base lg:text-[17px] font-bold capitalize tracking-wide text-[#121212] hover:text-[#D38928] transition-colors font-heading block">
+                    <h3 class="text-sm sm:text-base lg:text-[17px] font-normal capitalize tracking-wide text-[#121212] hover:text-[#D38928] transition-colors font-heading block">
                         <a href="{{ route('collections.show', 'havan-cups') }}">Havan Cup</a>
                     </h3>
                     <p class="text-[11px] sm:text-xs text-[#7A7A7A] font-medium leading-tight">
@@ -715,7 +715,7 @@
 
                 <!-- Category Details -->
                 <div class="space-y-0.5 max-w-xs flex flex-col items-center">
-                    <h3 class="text-sm sm:text-base lg:text-[17px] font-bold capitalize tracking-wide text-[#121212] hover:text-[#D38928] transition-colors font-heading block">
+                    <h3 class="text-sm sm:text-base lg:text-[17px] font-normal capitalize tracking-wide text-[#121212] hover:text-[#D38928] transition-colors font-heading block">
                         <a href="{{ route('products.pitambara') }}">Pitambara Havan Pack</a>
                     </h3>
                     <p class="text-[11px] sm:text-xs text-[#7A7A7A] font-medium leading-tight">
@@ -769,7 +769,7 @@
         
         <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12 space-y-1.5">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ DAILY RITUAL GUIDES ✦</span>
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#121212] font-heading tracking-tight leading-tight">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-normal text-[#121212] font-heading tracking-tight leading-tight">
                 Devotional Moments of Peace
             </h2>
         </div>
@@ -966,7 +966,7 @@
         <!-- Header -->
         <div class="text-center max-w-2xl mx-auto space-y-1.5 mb-6 sm:mb-8">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ 50,000+ BLESSED DEVOTEES ✦</span>
-            <h2 class="text-2xl sm:text-4xl lg:text-5xl font-black text-[#121212] font-heading tracking-tight leading-tight">
+            <h2 class="text-2xl sm:text-4xl lg:text-5xl font-normal text-[#121212] font-heading tracking-tight leading-tight">
                 Customer Testimonials
             </h2>
         </div>
@@ -1303,7 +1303,7 @@
         <!-- Section Header -->
         <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-10 space-y-1.5">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ CLARITY &amp; VIDHI ✦</span>
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#121212] font-heading tracking-tight leading-tight">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-normal text-[#121212] font-heading tracking-tight leading-tight">
                 Frequently Asked Questions
             </h2>
         </div>
