@@ -43,7 +43,7 @@
         ],
         (object)[
             'id' => 5,
-            'title' => 'Manglam Pack of Six (240)',
+            'title' => 'ISHANAA Pack of Six (240)',
             'slug' => 'pack-of-six',
             'subtitle' => '6 Luxury Fragrances Combo Pack',
             'active_price' => 1199.00,
@@ -75,7 +75,7 @@
             
             <!-- Top Editorial Header (Exact match to reference "Spring Summer 2026") -->
             <div class="max-w-md z-20 space-y-2">
-                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-normal uppercase font-heading text-[#121212] tracking-wider leading-none">
+                <h2 class="text-xl sm:text-[22px] lg:text-[26px] font-normal uppercase font-heading text-[#121212] tracking-[0.12em] leading-none">
                     Pavitra Collection 2026
                 </h2>
                 <p class="text-xs sm:text-sm text-gray-600 font-light leading-relaxed">

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Sacred Wishlist — Manglam.co™')
+@section('title', 'Sacred Wishlist — ISHANAA™')
 @section('meta_description', 'Your saved sacred pooja essentials and devotional fragrances.')
 
 @section('content')

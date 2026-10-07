@@ -220,7 +220,7 @@
         <!-- Section Header -->
         <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12 space-y-1.5">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ SACRED UNBOXING &amp; RITUALS ✦</span>
-            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-normal uppercase text-[#121212] font-heading tracking-wider leading-tight">
+            <h2 class="text-xl sm:text-[22px] lg:text-[26px] font-normal uppercase text-[#121212] font-heading tracking-[0.12em] leading-snug">
                 Experience Divine Fragrance
             </h2>
         </div>

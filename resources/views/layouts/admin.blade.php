@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title', 'Shopify-Style Admin') — Manglam.co™</title>
+    <title>@yield('title', 'Shopify-Style Admin') — ISHANAA™</title>
 
     <!-- Google Fonts: Instrument Sans (Agatho loaded locally) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,7 +49,7 @@
                     <div class="h-14 px-4 bg-[#141414] border-b border-[#2C2C2C] flex items-center justify-between">
                         <div class="flex items-center space-x-2.5 min-w-0">
                             <div class="h-8 bg-white px-2 py-1 rounded-[8px] flex items-center justify-center shadow-md shrink-0">
-                                <img src="{{ asset('assets/images/mangalam-logo.png') }}" alt="Manglam" class="h-full w-auto object-contain">
+                                <img src="{{ asset('assets/images/mangalam-logo.png') }}" alt="ISHANAA" class="h-full w-auto object-contain">
                             </div>
                             <div class="min-w-0">
                                 <span class="text-xs font-bold text-white tracking-wide truncate block font-heading">Admin Portal</span>

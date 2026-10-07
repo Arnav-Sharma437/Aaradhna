@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Buy 2, Get 1 FREE + Chandan Trial Pack FREE @ ₹999 — Manglam.co™')
+@section('title', 'Buy 2, Get 1 FREE + Chandan Trial Pack FREE @ ₹999 — ISHANAA™')
 @section('meta_description', 'Create your own festive bundle! Buy 2 Refill Packs & Get 1 FREE plus a Chandan Trial Pack FREE at just ₹999.')
 
 @section('content')
@@ -15,7 +15,7 @@
         <div class="w-full rounded-[16px] sm:rounded-[20px] overflow-hidden shadow-xs border border-[#EADBCC]">
             <img 
                 src="{{ asset('assets/images/banner-buy2-get1-free.jpg') }}" 
-                alt="Buy 2 Get 1 FREE + Chandan Pack FREE - Manglam" 
+                alt="Buy 2 Get 1 FREE + Chandan Pack FREE - ISHANAA" 
                 class="w-full h-auto block object-contain"
             >
         </div>

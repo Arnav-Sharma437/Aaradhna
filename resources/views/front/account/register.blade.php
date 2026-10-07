@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Create Devotee Account - Manglam')
+@section('title', 'Create Devotee Account - ISHANAA')
 
 @section('content')
 <div class="min-h-[85vh] bg-[#FAF7F2] py-12 sm:py-16 flex items-center justify-center px-4 sm:px-6 lg:px-8">
@@ -12,7 +12,7 @@
                 🪷
             </div>
             <h1 class="text-2xl sm:text-3xl font-black text-[#121212] font-heading tracking-tight">
-                Join Manglam Parivar
+                Join ISHANAA Parivar
             </h1>
             <p class="text-xs sm:text-sm text-gray-600">
                 Create your devotee profile for personalized pooja recommendations and express checkout.

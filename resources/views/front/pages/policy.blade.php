@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', "{$title} — Manglam.co™")
-@section('meta_description', "Official {$title} of Manglam.co™ — 100% Pure Vedic Pooja Essentials.")
+@section('title', "{$title} — ISHANAA™")
+@section('meta_description', "Official {$title} of ISHANAA™ — 100% Pure Vedic Pooja Essentials.")
 
 @section('content')
 <div class="bg-[#FAF7F2] min-h-screen font-body select-none py-10 sm:py-16">
@@ -17,11 +17,11 @@
         <div class="bg-white border border-[#EADBCC] rounded-[24px] p-6 sm:p-12 shadow-sm space-y-6">
             
             <div class="border-b border-[#EADBCC] pb-6 space-y-2">
-                <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ MANGLAM SACRED POLICIES ✦</span>
+                <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ ISHANAA SACRED POLICIES ✦</span>
                 <h1 class="text-2xl sm:text-4xl font-bold text-[#121212] font-heading tracking-tight">
                     {{ $title }}
                 </h1>
-                <p class="text-xs text-gray-500">Effective Date: {{ date('F Y') }} • Manglam.co™ Pure Vedic Living</p>
+                <p class="text-xs text-gray-500">Effective Date: {{ date('F Y') }} • ISHANAA™ Pure Vedic Living</p>
             </div>
 
             <div class="prose prose-stone max-w-none text-xs sm:text-[14px] text-gray-700 leading-relaxed space-y-6">
@@ -29,7 +29,7 @@
                 @if(in_array($slug, ['refund-policy', 'return-refund-policy']))
                     <!-- Return & Refund Policy -->
                     <p class="text-gray-800 font-medium">
-                        At Manglam.co™, every sacred item is crafted with devotion, purity, and uncompromising quality. We strive to provide you with the most divine experience for your daily pooja and rituals. However, if you experience any issues with your order, our return and refund policy is outlined below.
+                        At ISHANAA™, every sacred item is crafted with devotion, purity, and uncompromising quality. We strive to provide you with the most divine experience for your daily pooja and rituals. However, if you experience any issues with your order, our return and refund policy is outlined below.
                     </p>
 
                     <div class="space-y-3">
@@ -70,7 +70,7 @@
                 @elseif($slug === 'shipping-policy')
                     <!-- Shipping Policy -->
                     <p class="text-gray-800 font-medium">
-                        Manglam.co™ partners with leading courier networks (BlueDart, Delhivery, DTDC, XpressBees) to deliver pure Vedic fragrance and pooja samagri safely across all pin codes in India.
+                        ISHANAA™ partners with leading courier networks (BlueDart, Delhivery, DTDC, XpressBees) to deliver pure Vedic fragrance and pooja samagri safely across all pin codes in India.
                     </p>
 
                     <div class="space-y-3">
@@ -104,12 +104,12 @@
                 @elseif(in_array($slug, ['terms-of-service', 'terms-and-conditions']))
                     <!-- Terms & Conditions -->
                     <p class="text-gray-800 font-medium">
-                        Welcome to Manglam.co™. These Terms and Conditions govern your use of our website and the purchase of any products offered on this platform. By browsing or purchasing from Manglam.co™, you agree to abide by these terms.
+                        Welcome to ISHANAA™. These Terms and Conditions govern your use of our website and the purchase of any products offered on this platform. By browsing or purchasing from ISHANAA™, you agree to abide by these terms.
                     </p>
 
                     <div class="space-y-3">
                         <h3 class="text-base sm:text-lg font-bold text-[#121212] font-heading">1. Product Authenticity &amp; Ingredients</h3>
-                        <p>Manglam.co™ guarantees that all incense products, dhoop sticks, sambrani cups, and havan materials are 100% bamboo-free, zero-charcoal, and created with dried botanical flowers, natural resins, and essential oils adhering strictly to Vedic scriptures.</p>
+                        <p>ISHANAA™ guarantees that all incense products, dhoop sticks, sambrani cups, and havan materials are 100% bamboo-free, zero-charcoal, and created with dried botanical flowers, natural resins, and essential oils adhering strictly to Vedic scriptures.</p>
                     </div>
 
                     <div class="space-y-3">
@@ -119,7 +119,7 @@
 
                     <div class="space-y-3">
                         <h3 class="text-base sm:text-lg font-bold text-[#121212] font-heading">3. Intellectual Property</h3>
-                        <p>All trademarks, logos, texts, photographs, and sacred branding assets displayed on Manglam.co™ are the exclusive property of Manglam. Any unauthorized reproduction or duplication is strictly prohibited under Indian copyright law.</p>
+                        <p>All trademarks, logos, texts, photographs, and sacred branding assets displayed on ISHANAA™ are the exclusive property of ISHANAA. Any unauthorized reproduction or duplication is strictly prohibited under Indian copyright law.</p>
                     </div>
 
                     <div class="space-y-3">
@@ -130,7 +130,7 @@
                 @elseif($slug === 'privacy-policy')
                     <!-- Privacy Policy -->
                     <p class="text-gray-800 font-medium">
-                        Manglam.co™ respects your privacy and is committed to protecting your personal data. This Privacy Policy informs you about how we handle and protect your personal information when you visit our website.
+                        ISHANAA™ respects your privacy and is committed to protecting your personal data. This Privacy Policy informs you about how we handle and protect your personal information when you visit our website.
                     </p>
 
                     <div class="space-y-3">
@@ -160,7 +160,7 @@
 
                 @else
                     <p class="text-gray-800">
-                        Welcome to Manglam.co™. For specific inquiries or information regarding our policies, kindly contact our customer desk.
+                        Welcome to ISHANAA™. For specific inquiries or information regarding our policies, kindly contact our customer desk.
                     </p>
                 @endif
 
@@ -168,7 +168,7 @@
 
             <div class="pt-8 border-t border-[#EADBCC] flex flex-col sm:flex-row items-center justify-between gap-4">
                 <a href="{{ route('home') }}" class="text-xs font-bold text-[#D38928] hover:text-[#b8741e] font-heading">
-                    ← Back to Manglam Home
+                    ← Back to ISHANAA Home
                 </a>
                 <a href="{{ route('pages.contact') }}" class="text-xs font-bold text-gray-700 hover:text-[#D38928]">
                     Need assistance? Contact Devotee Seva Desk →

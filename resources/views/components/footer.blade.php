@@ -1,5 +1,5 @@
 <!-- ========================================================================= -->
-<!-- LUXURY SACRED VEDIC FOOTER — MANGLAM.CO™                                   -->
+<!-- LUXURY SACRED VEDIC FOOTER — ISHANAA™                                   -->
 <!-- ========================================================================= -->
 <footer class="text-white font-body relative overflow-hidden bg-[#5C0D1B] border-t-2 border-[#D38928]/40 select-none">
     
@@ -40,10 +40,10 @@
             
             <!-- Col 1: Brand Logo, Tagline & Social Media (4.5 Cols) -->
             <div class="lg:col-span-4 space-y-5">
-                <a href="{{ route('home') }}" class="inline-block py-1" aria-label="Manglam Home">
+                <a href="{{ route('home') }}" class="inline-block py-1" aria-label="ISHANAA Home">
                     <img 
                         src="{{ asset('assets/images/mangalam-logo-white.png') }}" 
-                        alt="Manglam" 
+                        alt="ISHANAA" 
                         class="h-13 sm:h-15 w-auto max-w-[190px] object-contain"
                     >
                 </a>
@@ -263,7 +263,7 @@
 
             <!-- Center Column: 100% Dead-Center Copyright -->
             <div class="text-center text-[#F6DAA8] font-body text-xs sm:text-sm font-medium whitespace-nowrap py-1 lg:py-0">
-                <span>© {{ date('Y') }} Manglam. All Rights Reserved.</span>
+                <span>© {{ date('Y') }} ISHANAA. All Rights Reserved.</span>
             </div>
 
             <!-- Right Column: Authentic Payment Icons (Never Clipped) -->

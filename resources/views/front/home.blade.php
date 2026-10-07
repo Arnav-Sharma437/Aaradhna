@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Manglam.co™ — 100% Pure Bambooless Agarbatti & Vedic Pooja Samagri')
+@section('title', 'ISHANAA™ — 100% Pure Bambooless Agarbatti & Vedic Pooja Samagri')
 @section('meta_description', 'Shri Ram Uphaar, Bambooless Incense Sticks, Havan Cups, Dhoop Cones, and Natural Attar Sprays crafted as per Vedic Vidhi.')
 
 @section('content')
@@ -46,7 +46,7 @@
                         <source media="(max-width: 768px)" srcset="{{ asset('assets/images/hero-sacred-mobile.jpg') }}">
                         <img 
                             src="{{ asset('assets/images/hero-sacred.jpg') }}" 
-                            alt="Manglam Sacred Bambooless Collection" 
+                            alt="ISHANAA Sacred Bambooless Collection" 
                             class="w-full h-full object-cover object-center"
                         >
                     </picture>
@@ -60,7 +60,7 @@
                         <source media="(max-width: 768px)" srcset="{{ asset('assets/images/hero-sacred-hawan-cups-mobile.jpg') }}">
                         <img 
                             src="{{ asset('assets/images/hero-sacred-hawan-cups.jpg') }}" 
-                            alt="Manglam Sacred Havan Cups Collection" 
+                            alt="ISHANAA Sacred Havan Cups Collection" 
                             class="w-full h-full object-cover object-center"
                         >
                     </picture>
@@ -74,7 +74,7 @@
                         <source media="(max-width: 768px)" srcset="{{ asset('assets/images/hera-sacred-dhoop-cones-mobile.jpg') }}">
                         <img 
                             src="{{ asset('assets/images/hera-sacred-dhoop-cones.jpg') }}" 
-                            alt="Manglam Sacred Dhoop Cones Collection" 
+                            alt="ISHANAA Sacred Dhoop Cones Collection" 
                             class="w-full h-full object-cover object-center"
                         >
                     </picture>
@@ -125,7 +125,7 @@
         <!-- Section Header -->
         <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12 space-y-1.5">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ PURE VEDIC BLESSINGS ✦</span>
-            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-normal uppercase text-[#121212] font-heading tracking-wider leading-tight">
+            <h2 class="text-xl sm:text-[22px] lg:text-[26px] font-normal uppercase text-[#121212] font-heading tracking-[0.12em] leading-snug">
                 Bestseller of the Month
             </h2>
         </div>
@@ -624,7 +624,7 @@
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">
                 ✦ 100% NATURAL • CHARCOAL FREE ✦
             </span>
-            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-normal uppercase text-[#2B1810] font-heading tracking-wider leading-tight">
+            <h2 class="text-xl sm:text-[22px] lg:text-[26px] font-normal uppercase text-[#2B1810] font-heading tracking-[0.12em] leading-snug">
                 Product Categories
             </h2>
         </div>
@@ -701,7 +701,7 @@
                 </div>
             </div>
 
-            <!-- Category 4: Manglam Pitambara Havan Pack -->
+            <!-- Category 4: ISHANAA Pitambara Havan Pack -->
             <div class="w-[145px] sm:w-auto shrink-0 snap-start group flex flex-col items-center text-center space-y-2.5 sm:space-y-3">
                 <a href="{{ route('products.pitambara') }}" class="block relative w-full max-w-[170px] sm:max-w-[200px] lg:max-w-[210px] aspect-square rounded-full p-2 bg-white border border-[#EADBCC] hover:border-[#D38928] group-hover:scale-105 transition-all duration-500 cursor-pointer">
                     <div class="w-full h-full rounded-full overflow-hidden bg-white p-1 sm:p-2 flex items-center justify-center relative">
@@ -748,7 +748,7 @@
             <source media="(max-width: 640px)" srcset="{{ asset('assets/images/festive-offer-mobile-banner.png') }}">
             <img 
                 src="{{ asset('assets/images/Banner 9.jpg') }}" 
-                alt="Festive Collection - 5 Divine Essentials at just ₹799 - Manglam" 
+                alt="Festive Collection - 5 Divine Essentials at just ₹799 - ISHANAA" 
                 class="w-full h-auto block object-cover group-hover:opacity-95 transition-opacity duration-300"
                 loading="lazy"
             >
@@ -769,7 +769,7 @@
         
         <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12 space-y-1.5">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ DAILY RITUAL GUIDES ✦</span>
-            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-normal uppercase text-[#121212] font-heading tracking-wider leading-tight">
+            <h2 class="text-xl sm:text-[22px] lg:text-[26px] font-normal uppercase text-[#121212] font-heading tracking-[0.12em] leading-snug">
                 Devotional Moments of Peace
             </h2>
         </div>
@@ -966,7 +966,7 @@
         <!-- Header -->
         <div class="text-center max-w-2xl mx-auto space-y-1.5 mb-6 sm:mb-8">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ 50,000+ BLESSED DEVOTEES ✦</span>
-            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-normal uppercase text-[#121212] font-heading tracking-wider leading-tight">
+            <h2 class="text-xl sm:text-[22px] lg:text-[26px] font-normal uppercase text-[#121212] font-heading tracking-[0.12em] leading-snug">
                 Customer Testimonials
             </h2>
         </div>
@@ -1032,7 +1032,7 @@
                             'initials' => 'SK',
                             'avatar_bg' => 'bg-[#3E2314]',
                             'product' => 'Pitambara Havan Cups',
-                            'quote' => 'Being from Kangra, I always prefer clean, organic products for home prayer. Manglam bambooless sticks emit gentle white smoke that keeps our living room fragrant and tranquil.'
+                            'quote' => 'Being from Kangra, I always prefer clean, organic products for home prayer. ISHANAA bambooless sticks emit gentle white smoke that keeps our living room fragrant and tranquil.'
                         ]
                     ];
                 @endphp
@@ -1209,7 +1209,7 @@
         <!-- Clean Standard Eyebrow Header -->
         <div class="text-center max-w-2xl mx-auto mb-4 sm:mb-6 space-y-1.5">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ CRAFTED WITH CARE ✦</span>
-            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-heading font-normal uppercase text-[#5C141E] tracking-wider leading-tight">
+            <h2 class="text-xl sm:text-[22px] lg:text-[26px] font-heading font-normal uppercase text-[#5C141E] tracking-[0.12em] leading-snug">
                 Rooted in Purity
             </h2>
             <!-- <p class="text-xs sm:text-sm md:text-base text-gray-600 font-normal font-body">
@@ -1303,7 +1303,7 @@
         <!-- Section Header -->
         <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-10 space-y-1.5">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ CLARITY &amp; VIDHI ✦</span>
-            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-normal uppercase text-[#121212] font-heading tracking-wider leading-tight">
+            <h2 class="text-xl sm:text-[22px] lg:text-[26px] font-normal uppercase text-[#121212] font-heading tracking-[0.12em] leading-snug">
                 Frequently Asked Questions
             </h2>
         </div>
@@ -1315,7 +1315,7 @@
             <div class="faq-item">
                 <button type="button" class="faq-toggle w-full p-[10px] px-3.5 sm:px-4 flex items-center justify-between text-left focus:outline-none cursor-pointer group hover:bg-[#FAF7F2]/60 transition-colors">
                     <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
-                        What makes Manglam bambooless incense sticks and havan cups unique?
+                        What makes ISHANAA bambooless incense sticks and havan cups unique?
                     </span>
                     <div class="w-6 h-6 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
                         <svg class="faq-icon w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
@@ -1353,7 +1353,7 @@
             <div class="faq-item">
                 <button type="button" class="faq-toggle w-full p-[10px] px-3.5 sm:px-4 flex items-center justify-between text-left focus:outline-none cursor-pointer group hover:bg-[#FAF7F2]/60 transition-colors">
                     <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
-                        Are Manglam products safe to use around babies, elders, and pets?
+                        Are ISHANAA products safe to use around babies, elders, and pets?
                     </span>
                     <div class="w-6 h-6 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
                         <svg class="faq-icon w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
@@ -1382,7 +1382,7 @@
                 </button>
                 <div class="faq-content hidden px-3.5 sm:px-4 pb-[10px] pt-1 text-xs sm:text-[13px] text-gray-600 leading-relaxed bg-[#FAF7F2]/30">
                     <p>
-                        In Sanatana Dharma and ancient Vedic scriptures, bamboo (Vamsha) is revered as a sacred symbol of family lineage and ancestral continuity. Burning bamboo is strictly forbidden in sacred yagnas and daily poojas because it creates negative energies and emits toxic heavy-metal vapors. Manglam adheres strictly to traditional Vidhi by crafting pure bambooless incense.
+                        In Sanatana Dharma and ancient Vedic scriptures, bamboo (Vamsha) is revered as a sacred symbol of family lineage and ancestral continuity. Burning bamboo is strictly forbidden in sacred yagnas and daily poojas because it creates negative energies and emits toxic heavy-metal vapors. ISHANAA adheres strictly to traditional Vidhi by crafting pure bambooless incense.
                     </p>
                 </div>
             </div>
@@ -1420,7 +1420,7 @@
                 </button>
                 <div class="faq-content hidden px-3.5 sm:px-4 pb-[10px] pt-1 text-xs sm:text-[13px] text-gray-600 leading-relaxed bg-[#FAF7F2]/30">
                     <p>
-                        Every batch of Manglam incense is lovingly handcrafted by Vedic artisans using dried consecrated flowers collected from sacred shrines, combined with pure Desi cow dung powder, organic Guggal, natural Sambrani Loban resin, Jatamansi, and natural therapeutic-grade essential oils.
+                        Every batch of ISHANAA incense is lovingly handcrafted by Vedic artisans using dried consecrated flowers collected from sacred shrines, combined with pure Desi cow dung powder, organic Guggal, natural Sambrani Loban resin, Jatamansi, and natural therapeutic-grade essential oils.
                     </p>
                 </div>
             </div>

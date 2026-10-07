@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $product->meta_title ?? "{$product->title} — Manglam.co™")
+@section('title', $product->meta_title ?? "{$product->title} — ISHANAA™")
 @section('meta_description', $product->meta_description ?? ($product->short_description ?? Str::limit(strip_tags($product->description), 150)))
 
 @section('content')
@@ -190,7 +190,7 @@
 
                     <!-- Visual 2: Artisanal Pooja Altar & Burning Incense -->
                     <div class="relative aspect-[4/4.8] rounded-[8px] sm:rounded-[10px] overflow-hidden bg-[#FAF7F2] shadow-xs group">
-                        <img src="{{ $galleryImages[1] ?? asset('assets/images/hero-incense-banner.jpg') }}" alt="Manglam Sacred Altar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="{{ $galleryImages[1] ?? asset('assets/images/hero-incense-banner.jpg') }}" alt="ISHANAA Sacred Altar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute bottom-2.5 left-2.5 right-2.5 bg-black/60 backdrop-blur-xs py-1.5 px-3 rounded-[6px] text-center text-white text-xs font-bold tracking-wider shadow-sm font-body">
                             100% BAMBOO FREE &amp; VEDIC
                         </div>
@@ -636,7 +636,7 @@
                         <div class="col-span-3 bg-[#FDF6ED] py-1.5 px-2 text-center rounded-t-[10px] border-t-2 border-x-2 border-[#D38928]/50 shadow-xs flex items-center justify-center -mb-[1px] relative z-10 min-h-[46px]">
                             <img 
                                 src="{{ asset('assets/images/mangalam-logo.png') }}" 
-                                alt="Manglam" 
+                                alt="ISHANAA" 
                                 class="h-6 sm:h-7 w-auto max-w-[90px] sm:max-w-[110px] object-contain"
                             >
                         </div>
@@ -758,7 +758,7 @@
                 <div class="faq-item">
                     <button type="button" class="faq-toggle w-full p-[10px] px-3.5 sm:px-4 flex items-center justify-between text-left focus:outline-none cursor-pointer group hover:bg-[#FAF7F2]/60 transition-colors">
                         <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
-                            Why is Manglam incense 100% Bamboo-Free and Charcoal-Free?
+                            Why is ISHANAA incense 100% Bamboo-Free and Charcoal-Free?
                         </span>
                         <div class="w-6 h-6 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
                             <svg class="faq-icon w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
@@ -796,7 +796,7 @@
                 <div class="faq-item">
                     <button type="button" class="faq-toggle w-full p-[10px] px-3.5 sm:px-4 flex items-center justify-between text-left focus:outline-none cursor-pointer group hover:bg-[#FAF7F2]/60 transition-colors">
                         <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
-                            Are Manglam products safe to use around babies, elders, and pets?
+                            Are ISHANAA products safe to use around babies, elders, and pets?
                         </span>
                         <div class="w-6 h-6 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
                             <svg class="faq-icon w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
@@ -825,7 +825,7 @@
                     </button>
                     <div class="faq-content hidden px-3.5 sm:px-4 pb-[10px] pt-1 text-xs sm:text-[13px] text-gray-600 leading-relaxed bg-[#FAF7F2]/30">
                         <p>
-                            In Sanatana Dharma and ancient Vedic scriptures, bamboo (Vamsha) is revered as a sacred symbol of family lineage and ancestral continuity. Burning bamboo is strictly forbidden in sacred yagnas and daily poojas because it creates negative energies and emits toxic heavy-metal vapors. Manglam adheres strictly to traditional Vidhi by crafting pure bambooless incense.
+                            In Sanatana Dharma and ancient Vedic scriptures, bamboo (Vamsha) is revered as a sacred symbol of family lineage and ancestral continuity. Burning bamboo is strictly forbidden in sacred yagnas and daily poojas because it creates negative energies and emits toxic heavy-metal vapors. ISHANAA adheres strictly to traditional Vidhi by crafting pure bambooless incense.
                         </p>
                     </div>
                 </div>
@@ -863,7 +863,7 @@
                     </button>
                     <div class="faq-content hidden px-3.5 sm:px-4 pb-[10px] pt-1 text-xs sm:text-[13px] text-gray-600 leading-relaxed bg-[#FAF7F2]/30">
                         <p>
-                            Every batch of Manglam incense is lovingly handcrafted by Vedic artisans using dried consecrated flowers collected from sacred shrines, combined with pure Desi cow dung powder, organic Guggal, natural Sambrani Loban resin, Jatamansi, and natural therapeutic-grade essential oils.
+                            Every batch of ISHANAA incense is lovingly handcrafted by Vedic artisans using dried consecrated flowers collected from sacred shrines, combined with pure Desi cow dung powder, organic Guggal, natural Sambrani Loban resin, Jatamansi, and natural therapeutic-grade essential oils.
                         </p>
                     </div>
                 </div>
@@ -1497,7 +1497,7 @@
         document.querySelectorAll('.product-share-trigger').forEach(btn => {
             btn.addEventListener('click', () => {
                 const title = btn.dataset.title || document.title;
-                const text = btn.dataset.text || 'Check out this sacred Vedic incense on Manglam.co!';
+                const text = btn.dataset.text || 'Check out this sacred Vedic incense on ISHANAA!';
                 const url = btn.dataset.url || window.location.href;
                 executeShare(title, text, url);
             });

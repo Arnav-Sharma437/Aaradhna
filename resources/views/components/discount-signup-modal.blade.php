@@ -1,5 +1,5 @@
 <!-- ========================================================================= -->
-<!-- MANGLAM™ 10% OFF MULTI-STEP SIGNUP MODAL                                  -->
+<!-- ISHANAA™ 10% OFF MULTI-STEP SIGNUP MODAL                                  -->
 <!-- ========================================================================= -->
 <div 
     id="discount-signup-modal" 
@@ -22,7 +22,7 @@
             <div class="flex items-center space-x-3">
                 <img 
                     src="{{ asset('assets/images/mangalam-logo-white.png') }}" 
-                    alt="Manglam" 
+                    alt="ISHANAA" 
                     class="h-7 sm:h-8 w-auto object-contain"
                 >
                 <span class="text-xs font-bold uppercase tracking-widest text-[#F6DAA8] font-heading border-l border-white/20 pl-3">
@@ -338,7 +338,7 @@
                             Your 10% OFF is Ready!
                         </h3>
                         <p class="text-xs sm:text-sm text-[#F6DAA8] font-medium" id="discount-success-subtext">
-                            Thank you for joining the Manglam family.
+                            Thank you for joining the ISHANAA family.
                         </p>
                     </div>
 
@@ -354,7 +354,7 @@
                                 id="discount-generated-code-display" 
                                 class="text-2xl sm:text-3xl lg:text-4xl font-black font-mono tracking-widest text-[#F6DAA8] select-all bg-black/30 px-4 py-1.5 rounded-lg border border-[#F6DAA8]/30"
                             >
-                                MANGLAM10A7K2
+                                ISHANAA10A7K2
                             </span>
                         </div>
 

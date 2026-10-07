@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Devotee Sign In - Manglam')
+@section('title', 'Devotee Sign In - ISHANAA')
 
 @section('content')
 <div class="min-h-[80vh] bg-[#FAF7F2] py-12 sm:py-16 flex items-center justify-center px-4 sm:px-6 lg:px-8">
@@ -115,7 +115,7 @@
 
             <!-- Sign Up Link -->
             <div class="text-center pt-2 border-t border-[#EADBCC] text-xs text-gray-600">
-                <span>New to Manglam? </span>
+                <span>New to ISHANAA? </span>
                 <a href="{{ route('account.register') }}" class="font-bold text-[#D38928] hover:underline font-heading">
                     Create Devotee Account
                 </a>

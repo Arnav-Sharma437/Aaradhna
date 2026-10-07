@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Contact Us — Manglam Seva Kendra™')
-@section('meta_description', 'Get in touch with Manglam Seva Kendra. Inquiries for daily pooja samagri, temple bulk orders, and devotee assistance in Vrindavan Dham.')
+@section('title', 'Contact Us — ISHANAA Seva Kendra™')
+@section('meta_description', 'Get in touch with ISHANAA Seva Kendra. Inquiries for daily pooja samagri, temple bulk orders, and devotee assistance in Vrindavan Dham.')
 
 @section('content')
 <div class="bg-white min-h-screen font-body select-none">
@@ -19,7 +19,7 @@
             
             <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-[#D38928]/20 border border-[#F6DAA8]/40 text-[#F6DAA8] text-xs font-semibold tracking-widest uppercase shadow-sm">
                 <span>🪔</span>
-                <span>सेवा परमो धर्मः • MANGLAM SEVA KENDRA</span>
+                <span>सेवा परमो धर्मः • ISHANAA SEVA KENDRA</span>
                 <span>🪔</span>
             </div>
 
@@ -55,7 +55,7 @@
                     <div class="space-y-2">
                         <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ DEVOTEE ASSISTANCE ✦</span>
                         <h2 class="text-2xl sm:text-3xl font-normal text-[#121212] font-heading tracking-tight">
-                            Manglam Seva Kendra
+                            ISHANAA Seva Kendra
                         </h2>
                         <p class="text-xs sm:text-sm text-gray-600">
                             Available 7 days a week from morning Mangala Aarti to evening Sandhya Aarti.
@@ -106,7 +106,7 @@
                         <div class="space-y-1">
                             <h4 class="text-sm font-bold text-[#121212] font-heading">Sacred Seva Kendra</h4>
                             <p class="text-xs text-gray-600 leading-relaxed">
-                                Manglam Vedic Samagri Kendra,<br>
+                                ISHANAA Vedic Samagri Kendra,<br>
                                 Mathura Road, Vrindavan Dham,<br>
                                 Uttar Pradesh — 281121, Bharat 🇮🇳
                             </p>

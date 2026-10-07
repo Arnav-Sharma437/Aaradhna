@@ -1,5 +1,5 @@
 <!-- ========================================================================= -->
-<!-- MANGLAM.CO™ LUXURY EXPRESS CHECKOUT MODAL (RAZORPAY & COD)                 -->
+<!-- ISHANAA™ LUXURY EXPRESS CHECKOUT MODAL (RAZORPAY & COD)                 -->
 <!-- ========================================================================= -->
 <div 
     id="gokwik-checkout-modal" 
@@ -15,9 +15,9 @@
         <!-- 1. Header Bar with Brand & Security -->
         <div class="bg-[#24140E] text-white px-5 py-3.5 flex items-center justify-between shrink-0 border-b border-[#D38928]/30">
             <div class="flex items-center space-x-2.5">
-                <img src="{{ asset('assets/images/fac-icon.png') }}" alt="Manglam" class="w-6 h-6 object-contain">
+                <img src="{{ asset('assets/images/fac-icon.png') }}" alt="ISHANAA" class="w-6 h-6 object-contain">
                 <div class="font-heading">
-                    <span class="text-white text-base font-black tracking-tight">Manglam<span class="text-[#D38928]">.co™</span></span>
+                    <span class="text-white text-base font-black tracking-tight">ISHANAA<span class="text-[#D38928]">.co™</span></span>
                     <span class="text-[10px] bg-[#9B1C31] text-white px-2 py-0.5 rounded-full font-bold uppercase tracking-wider ml-1.5 font-sans">Secure Checkout</span>
                 </div>
             </div>
@@ -53,7 +53,7 @@
             <div class="bg-[#FAF5EE] rounded-[16px] border border-[#EADBCC] p-3.5 space-y-2">
                 <div class="flex items-center justify-between text-xs font-bold text-[#121212] font-heading">
                     <span class="flex items-center gap-1.5">
-                        <img src="{{ asset('assets/images/mangalam-logo.png') }}" alt="Manglam" class="h-4 w-auto object-contain inline">
+                        <img src="{{ asset('assets/images/mangalam-logo.png') }}" alt="ISHANAA" class="h-4 w-auto object-contain inline">
                         <span>Order Summary</span>
                     </span>
                     <span id="gokwik-items-count" class="text-gray-500 font-normal">0 Items in Cart</span>
@@ -81,7 +81,7 @@
                     <input 
                         type="text" 
                         id="gokwik-coupon-input" 
-                        placeholder="e.g. MANGLAM10XXXX" 
+                        placeholder="e.g. ISHANAA10XXXX" 
                         class="flex-1 px-3 py-2 text-xs font-semibold uppercase bg-[#FAF5EE] border border-[#EADBCC] focus:border-[#D38928] rounded-[8px] focus:outline-none tracking-wider"
                     >
                     <button 
@@ -228,7 +228,7 @@
                     <span class="text-xs font-bold text-[#D38928] uppercase tracking-widest font-heading">Order Placed Successfully ⚡</span>
                     <h4 class="text-2xl font-black font-heading text-[#121212]">Order Confirmed!</h4>
                     <p class="text-xs sm:text-sm text-gray-600 max-w-sm mx-auto">
-                        Your sacred Manglam order <strong id="gokwik-order-num" class="font-mono text-[#D38928]">#MG-CONFIRMED</strong> has been placed. Redirecting to your Dashboard...
+                        Your sacred ISHANAA order <strong id="gokwik-order-num" class="font-mono text-[#D38928]">#MG-CONFIRMED</strong> has been placed. Redirecting to your Dashboard...
                     </p>
                 </div>
 
@@ -624,7 +624,7 @@
                         if (window.CartStore && typeof window.CartStore.clearCart === 'function') {
                             window.CartStore.clearCart();
                         } else {
-                            localStorage.removeItem('mangalam_cart');
+                            localStorage.removeItem('ishanaa_cart');
                             if (window.cartItems) window.cartItems = [];
                         }
 
@@ -646,7 +646,7 @@
                         key: data.razorpay_key,
                         amount: data.amount,
                         currency: data.currency || 'INR',
-                        name: 'Manglam.co™',
+                        name: 'ISHANAA™',
                         description: 'Order #' + data.order_number + ' - Sacred Pooja Items',
                         image: '{{ asset("assets/images/fac-icon.png") }}',
                         order_id: data.razorpay_order_id,
@@ -690,7 +690,7 @@
                                     if (window.CartStore && typeof window.CartStore.clearCart === 'function') {
                                         window.CartStore.clearCart();
                                     } else {
-                                        localStorage.removeItem('mangalam_cart');
+                                        localStorage.removeItem('ishanaa_cart');
                                         if (window.cartItems) window.cartItems = [];
                                     }
 

@@ -25,7 +25,7 @@
 
         <!-- Brand Logo -->
         <a href="{{ route('home') }}" class="flex items-center">
-            <img src="{{ asset('assets/images/mangalam-logo.png') }}" alt="Manglam" class="h-8 sm:h-9 w-auto object-contain">
+            <img src="{{ asset('assets/images/mangalam-logo.png') }}" alt="ISHANAA" class="h-8 sm:h-9 w-auto object-contain">
         </a>
 
         <!-- Right Quick Actions -->
@@ -190,7 +190,7 @@
             <!-- Coupon Pill Button -->
             <div class="pt-1">
                 <div class="inline-flex items-center space-x-1.5 bg-white text-[#D38928] px-4 py-2 rounded-full font-bold text-xs shadow-lg">
-                    <span>Use code <strong>MANGLAM10</strong> at checkout</span>
+                    <span>Use code <strong>ISHANAA10</strong> at checkout</span>
                     <span>🏷️</span>
                 </div>
             </div>
