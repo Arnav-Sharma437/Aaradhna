@@ -87,19 +87,20 @@
         background-color: #ffffff;
     }
 
-    /* Headings font family default: Always render Agatho in clean Regular (400) weight */
+    /* Headings font family default: Ultra-clean Light (300) weight for Agatho */
     h1, h2, h3, h4, h5, h6, .font-heading, .font-serif, .font-spiritual, .font-cinzel, .font-recoleta, .font-agatho {
         font-family: 'Agatho', Georgia, serif;
-        font-weight: 400 !important;
+        font-weight: 300 !important;
     }
 
-    /* Clean kerning and rendering for headings */
+    /* Clean kerning and elegant spacing for serif headings */
     .font-heading,
     .font-serif,
     .font-agatho,
     .font-recoleta,
     h1, h2, h3, h4, h5, h6 {
         font-feature-settings: "kern" 1;
+        letter-spacing: 0.03em;
     }
 }
 

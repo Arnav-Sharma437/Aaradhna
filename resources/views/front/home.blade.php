@@ -125,7 +125,7 @@
         <!-- Section Header -->
         <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12 space-y-1.5">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ PURE VEDIC BLESSINGS ✦</span>
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-normal text-[#121212] font-heading tracking-tight leading-tight">
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-normal uppercase text-[#121212] font-heading tracking-wider leading-tight">
                 Bestseller of the Month
             </h2>
         </div>
@@ -624,7 +624,7 @@
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">
                 ✦ 100% NATURAL • CHARCOAL FREE ✦
             </span>
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-normal text-[#2B1810] font-heading tracking-tight capitalize leading-tight">
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-normal uppercase text-[#2B1810] font-heading tracking-wider leading-tight">
                 Product Categories
             </h2>
         </div>
@@ -769,7 +769,7 @@
         
         <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12 space-y-1.5">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ DAILY RITUAL GUIDES ✦</span>
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-normal text-[#121212] font-heading tracking-tight leading-tight">
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-normal uppercase text-[#121212] font-heading tracking-wider leading-tight">
                 Devotional Moments of Peace
             </h2>
         </div>
@@ -966,7 +966,7 @@
         <!-- Header -->
         <div class="text-center max-w-2xl mx-auto space-y-1.5 mb-6 sm:mb-8">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ 50,000+ BLESSED DEVOTEES ✦</span>
-            <h2 class="text-2xl sm:text-4xl lg:text-5xl font-normal text-[#121212] font-heading tracking-tight leading-tight">
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-normal uppercase text-[#121212] font-heading tracking-wider leading-tight">
                 Customer Testimonials
             </h2>
         </div>
@@ -1209,7 +1209,7 @@
         <!-- Clean Standard Eyebrow Header -->
         <div class="text-center max-w-2xl mx-auto mb-4 sm:mb-6 space-y-1.5">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ CRAFTED WITH CARE ✦</span>
-            <h2 class="text-3xl sm:text-4xl lg:text-[46px] font-heading font-normal text-[#5C141E] tracking-tight leading-tight">
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-heading font-normal uppercase text-[#5C141E] tracking-wider leading-tight">
                 Rooted in Purity
             </h2>
             <!-- <p class="text-xs sm:text-sm md:text-base text-gray-600 font-normal font-body">
@@ -1303,7 +1303,7 @@
         <!-- Section Header -->
         <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-10 space-y-1.5">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ CLARITY &amp; VIDHI ✦</span>
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-normal text-[#121212] font-heading tracking-tight leading-tight">
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-normal uppercase text-[#121212] font-heading tracking-wider leading-tight">
                 Frequently Asked Questions
             </h2>
         </div>
