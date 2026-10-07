@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap');
-@import url('https://fonts.cdnfonts.com/css/recoleta');
 @import 'tailwindcss';
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
@@ -8,25 +7,53 @@
 @source '../**/*.js';
 
 @font-face {
-    font-family: 'Recoleta';
+    font-family: 'Agatho';
     font-style: normal;
-    font-weight: 300 900;
-    src: local('Recoleta'), local('Recoleta Regular'), local('Recoleta-Regular'),
-         url('https://fonts.cdnfonts.com/s/31694/Recoleta-RegularDEMO.woff') format('woff');
+    font-weight: 400;
+    src: local('Agatho Regular'), local('Agatho-Regular'), local('Agatho'),
+         url('/assets/fonts/agatho/Agatho-Regular.otf') format('opentype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Agatho';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Agatho Light'), local('Agatho-Light'),
+         url('/assets/fonts/agatho/Agatho-Light.otf') format('opentype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Agatho';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Agatho Medium'), local('Agatho-Medium'),
+         url('/assets/fonts/agatho/Agatho-Medium.otf') format('opentype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Agatho';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Agatho Bold'), local('Agatho-Bold'),
+         url('/assets/fonts/agatho/Agatho-Bold.otf') format('opentype');
     font-display: swap;
 }
 
 @theme {
-    /* Fonts: Recoleta, Instrument Sans & Instrument Serif */
-    --font-recoleta: 'Recoleta', Georgia, serif;
+    /* Fonts: Agatho, Instrument Sans & Instrument Serif */
+    --font-agatho: 'Agatho', Georgia, serif;
+    --font-recoleta: 'Agatho', Georgia, serif;
     --font-body: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
-    --font-heading: 'Recoleta', Georgia, serif;
+    --font-heading: 'Agatho', Georgia, serif;
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
-    --font-serif: 'Recoleta', Georgia, serif;
+    --font-serif: 'Agatho', Georgia, serif;
     --font-instrument: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
     --font-instrument-serif: 'Instrument Serif', Georgia, serif;
-    --font-spiritual: 'Recoleta', Georgia, serif;
-    --font-cinzel: 'Recoleta', Georgia, serif;
+    --font-spiritual: 'Agatho', Georgia, serif;
+    --font-cinzel: 'Agatho', Georgia, serif;
 
     /* Design Tokens */
     --color-primary: #121212;
@@ -61,13 +88,14 @@
     }
 
     /* Headings font family default */
-    h1, h2, h3, h4, h5, h6, .font-heading, .font-serif, .font-spiritual, .font-cinzel, .font-recoleta {
-        font-family: 'Recoleta', Georgia, serif;
+    h1, h2, h3, h4, h5, h6, .font-heading, .font-serif, .font-spiritual, .font-cinzel, .font-recoleta, .font-agatho {
+        font-family: 'Agatho', Georgia, serif;
     }
 
-    /* Fix demo font % glyph across all headings and text: Ensure % always renders cleanly in Instrument Sans */
+    /* Clean kerning and rendering for headings */
     .font-heading,
     .font-serif,
+    .font-agatho,
     .font-recoleta,
     h1, h2, h3, h4, h5, h6 {
         font-feature-settings: "kern" 1;
@@ -190,7 +218,7 @@ header nav button,
 
 #hero-banner-carousel h1,
 #hero-banner-carousel h2 {
-    font-family: 'Recoleta', Georgia, serif !important;
+    font-family: 'Agatho', Georgia, serif !important;
     font-weight: 700 !important;
 }
 

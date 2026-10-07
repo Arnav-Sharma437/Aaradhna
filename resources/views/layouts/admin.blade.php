@@ -7,11 +7,10 @@
 
     <title>@yield('title', 'Shopify-Style Admin') — Manglam.co™</title>
 
-    <!-- Google Fonts: Recoleta & Instrument Sans -->
+    <!-- Google Fonts: Instrument Sans (Agatho loaded locally) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/recoleta" rel="stylesheet">
 
     <!-- Styles / Scripts via Vite -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])

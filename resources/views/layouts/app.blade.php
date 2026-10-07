@@ -15,11 +15,10 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
 
-    <!-- Fonts: Recoleta, Instrument Sans & Instrument Serif -->
+    <!-- Fonts: Instrument Sans & Instrument Serif (Agatho loaded locally) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/recoleta" rel="stylesheet">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="{{ asset('assets/images/fac-icon.png') }}">
