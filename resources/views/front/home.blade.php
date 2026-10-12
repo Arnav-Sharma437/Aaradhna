@@ -123,9 +123,9 @@
     <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
         
         <!-- Section Header -->
-        <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12 space-y-1.5">
+        <div class="text-center max-w-2xl mx-auto mb-4 sm:mb-6 space-y-1.5">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ PURE VEDIC BLESSINGS ✦</span>
-            <h2 class="text-xl sm:text-[22px] lg:text-[26px] font-normal uppercase text-[#121212] font-heading tracking-[0.12em] leading-snug">
+            <h2 class="text-2xl sm:text-3xl lg:text-[44px] font-normal uppercase text-[#121212] font-heading tracking-[0.08em] leading-tight">
                 Bestseller of the Month
             </h2>
         </div>
@@ -151,7 +151,7 @@
             </button>
 
             <!-- 8-Card Luxury Grid (Mobile Swipeable Slider + Desktop Grid) -->
-            <div id="bestseller-grid" class="flex sm:grid overflow-x-auto sm:overflow-visible scrollbar-none snap-x snap-mandatory sm:grid-cols-2 lg:grid-cols-4 gap-[10px] pt-4 sm:pt-5 pb-4 sm:pb-0 -mx-5 px-5 sm:mx-0 sm:px-0 scroll-smooth">
+            <div id="bestseller-grid" class="flex sm:grid overflow-x-auto sm:overflow-visible scrollbar-none snap-x snap-mandatory sm:grid-cols-2 lg:grid-cols-4 gap-[10px] pt-3.5 sm:pt-4 pb-4 sm:pb-0 -mx-5 px-5 sm:mx-0 sm:px-0 scroll-smooth">
                 
                 <!-- Card 1: Swarna Pushpa -->
                 <div class="product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
@@ -620,11 +620,11 @@
     <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
         
         <!-- Section Header -->
-        <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-16 space-y-1.5">
+        <div class="text-center max-w-2xl mx-auto mb-4 sm:mb-6 space-y-1.5">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">
                 ✦ 100% NATURAL • CHARCOAL FREE ✦
             </span>
-            <h2 class="text-xl sm:text-[22px] lg:text-[26px] font-normal uppercase text-[#2B1810] font-heading tracking-[0.12em] leading-snug">
+            <h2 class="text-2xl sm:text-3xl lg:text-[44px] font-normal uppercase text-[#2B1810] font-heading tracking-[0.08em] leading-tight">
                 Product Categories
             </h2>
         </div>
@@ -767,14 +767,14 @@
 <section class="py-[40px] bg-white border-b border-[#EAE3D9]">
     <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
         
-        <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12 space-y-1.5">
+        <div class="text-center max-w-2xl mx-auto mb-4 sm:mb-6 space-y-1.5">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ DAILY RITUAL GUIDES ✦</span>
-            <h2 class="text-xl sm:text-[22px] lg:text-[26px] font-normal uppercase text-[#121212] font-heading tracking-[0.12em] leading-snug">
+            <h2 class="text-2xl sm:text-3xl lg:text-[44px] font-normal uppercase text-[#121212] font-heading tracking-[0.08em] leading-tight">
                 Devotional Moments of Peace
             </h2>
         </div>
 
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-[10px] pt-4 sm:pt-5">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-[10px] pt-3.5 sm:pt-4">
             
             <!-- Card 1: Swarna Pushpa Refill Pack -->
             <div class="product-card group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
@@ -1209,7 +1209,7 @@
         <!-- Clean Standard Eyebrow Header -->
         <div class="text-center max-w-2xl mx-auto mb-4 sm:mb-6 space-y-1.5">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ CRAFTED WITH CARE ✦</span>
-            <h2 class="text-xl sm:text-[22px] lg:text-[26px] font-heading font-normal uppercase text-[#2B1810] tracking-[0.12em] leading-snug">
+            <h2 class="text-2xl sm:text-3xl lg:text-[44px] font-heading font-normal uppercase text-[#2B1810] tracking-[0.08em] leading-tight">
                 Rooted in Purity
             </h2>
             <!-- <p class="text-xs sm:text-sm md:text-base text-gray-600 font-normal font-body">
@@ -1301,9 +1301,9 @@
         <div class="max-w-5xl lg:max-w-[1100px] mx-auto space-y-6 sm:space-y-8">
         
         <!-- Section Header -->
-        <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-10 space-y-1.5">
+        <div class="text-center max-w-2xl mx-auto mb-4 sm:mb-6 space-y-1.5">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ CLARITY &amp; VIDHI ✦</span>
-            <h2 class="text-xl sm:text-[22px] lg:text-[26px] font-normal uppercase text-[#121212] font-heading tracking-[0.12em] leading-snug">
+            <h2 class="text-2xl sm:text-3xl lg:text-[44px] font-normal uppercase text-[#121212] font-heading tracking-[0.08em] leading-tight">
                 Frequently Asked Questions
             </h2>
         </div>
