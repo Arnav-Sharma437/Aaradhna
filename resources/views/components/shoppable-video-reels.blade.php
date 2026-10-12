@@ -286,7 +286,7 @@
             <button 
                 type="button" 
                 id="reel-scroll-prev"
-                class="absolute -left-3 lg:-left-5 top-[38%] -translate-y-1/2 z-30 w-11 h-11 lg:w-12 lg:h-12 rounded-full bg-white hover:bg-[#831F2E] text-[#121212] hover:text-white border border-[#EADBCC] shadow-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 active:scale-95 cursor-pointer focus:outline-none"
+                class="absolute -left-3 lg:-left-5 top-[38%] -translate-y-1/2 z-30 w-11 h-11 lg:w-12 lg:h-12 rounded-full bg-white hover:bg-[#C28430] text-[#121212] hover:text-white border border-[#EADBCC] shadow-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 active:scale-95 cursor-pointer focus:outline-none"
                 aria-label="Previous Videos"
             >
                 <svg class="w-5 h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
@@ -296,7 +296,7 @@
             <button 
                 type="button" 
                 id="reel-scroll-next"
-                class="absolute -right-3 lg:-right-5 top-[38%] -translate-y-1/2 z-30 w-11 h-11 lg:w-12 lg:h-12 rounded-full bg-white hover:bg-[#831F2E] text-[#121212] hover:text-white border border-[#EADBCC] shadow-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 active:scale-95 cursor-pointer focus:outline-none"
+                class="absolute -right-3 lg:-right-5 top-[38%] -translate-y-1/2 z-30 w-11 h-11 lg:w-12 lg:h-12 rounded-full bg-white hover:bg-[#C28430] text-[#121212] hover:text-white border border-[#EADBCC] shadow-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 active:scale-95 cursor-pointer focus:outline-none"
                 aria-label="Next Videos"
             >
                 <svg class="w-5 h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
@@ -355,10 +355,10 @@
                                 </div>
                             </div>
 
-                            <!-- Brand Red/Maroon Add To Cart Button -->
+                            <!-- Brand Logo Gold Add To Cart Button -->
                             <button 
                                 type="button" 
-                                class="quick-add-to-cart-btn w-full py-2 px-3 bg-[#831F2E] hover:bg-[#6E1724] text-white text-xs font-bold rounded-[8px] transition-all flex items-center justify-center space-x-1 font-heading cursor-pointer shadow-xs active:scale-95"
+                                class="quick-add-to-cart-btn w-full py-2 px-3 bg-[#C28430] hover:bg-[#A66B1F] text-white text-xs font-bold rounded-[8px] transition-all flex items-center justify-center space-x-1 font-heading cursor-pointer shadow-xs active:scale-95"
                                 data-product-id="{{ $reel['id'] }}"
                                 data-product-title="{{ $reel['title'] }}"
                                 data-product-slug="{{ $reel['slug'] }}"
@@ -401,7 +401,7 @@
     <button 
         type="button" 
         id="modal-desktop-prev-btn"
-        class="hidden sm:flex absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-40 w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-white text-[#121212] hover:bg-[#831F2E] hover:text-white items-center justify-center shadow-2xl transition-all duration-200 cursor-pointer focus:outline-none transform hover:scale-105"
+        class="hidden sm:flex absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-40 w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-white text-[#121212] hover:bg-[#C28430] hover:text-white items-center justify-center shadow-2xl transition-all duration-200 cursor-pointer focus:outline-none transform hover:scale-105"
         aria-label="Previous Reel"
     >
         <svg class="w-6 h-6 mr-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
@@ -411,7 +411,7 @@
     <button 
         type="button" 
         id="modal-desktop-next-btn"
-        class="hidden sm:flex absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-40 w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-white text-[#121212] hover:bg-[#831F2E] hover:text-white items-center justify-center shadow-2xl transition-all duration-200 cursor-pointer focus:outline-none transform hover:scale-105"
+        class="hidden sm:flex absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-40 w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-white text-[#121212] hover:bg-[#C28430] hover:text-white items-center justify-center shadow-2xl transition-all duration-200 cursor-pointer focus:outline-none transform hover:scale-105"
         aria-label="Next Reel"
     >
         <svg class="w-6 h-6 ml-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
@@ -516,7 +516,7 @@
                                             <h4 class="text-xs sm:text-[13px] font-bold text-[#121212] truncate font-heading">
                                                 {{ $item['title'] }}
                                             </h4>
-                                            <span class="text-[10px] text-[#831F2E] font-bold">▲ Details</span>
+                                            <span class="text-[10px] text-[#C28430] font-bold">▲ Details</span>
                                         </div>
                                         <div class="flex items-baseline space-x-1.5 pt-0.5">
                                             <span class="text-xs sm:text-sm font-black text-[#121212] font-heading">₹{{ $item['price'] }}</span>
@@ -529,7 +529,7 @@
                                 <!-- Quick Add To Cart Button on Bar -->
                                 <button 
                                     type="button" 
-                                    class="quick-add-to-cart-btn shrink-0 ml-2 py-2 px-3.5 bg-[#831F2E] hover:bg-[#6E1724] text-white font-bold text-xs rounded-[10px] shadow-sm transition-all flex items-center space-x-1 font-heading cursor-pointer focus:outline-none"
+                                    class="quick-add-to-cart-btn shrink-0 ml-2 py-2 px-3.5 bg-[#C28430] hover:bg-[#A66B1F] text-white font-bold text-xs rounded-[10px] shadow-sm transition-all flex items-center space-x-1 font-heading cursor-pointer focus:outline-none"
                                     data-product-id="{{ $item['id'] }}"
                                     data-product-title="{{ $item['title'] }}"
                                     data-product-slug="{{ $item['slug'] }}"
@@ -577,7 +577,7 @@
                                 <span id="drawer-product-rating" class="text-gray-500 font-medium">4.9 (1,240 Reviews)</span>
                             </div>
                             <div class="flex items-baseline space-x-2 pt-1">
-                                <span id="drawer-product-price" class="text-base sm:text-lg font-black text-[#831F2E] font-heading">₹289.00</span>
+                                <span id="drawer-product-price" class="text-base sm:text-lg font-black text-[#C28430] font-heading">₹289.00</span>
                                 <span id="drawer-product-mrp" class="text-xs text-gray-400 line-through">₹375</span>
                                 <span id="drawer-product-discount" class="text-xs font-bold text-[#16A34A]">23% OFF</span>
                             </div>
@@ -585,7 +585,7 @@
                     </div>
 
                     <div class="bg-white rounded-[14px] p-3 border border-[#EADBCC]/70 space-y-2">
-                        <h4 class="text-xs font-bold text-[#831F2E] font-heading uppercase tracking-wide flex items-center space-x-1.5">
+                        <h4 class="text-xs font-bold text-[#C28430] font-heading uppercase tracking-wide flex items-center space-x-1.5">
                             <span>🌿</span>
                             <span>Why Choose this Sacred Blend?</span>
                         </h4>
@@ -605,7 +605,7 @@
                     <button 
                         type="button" 
                         id="drawer-add-to-cart-btn"
-                        class="quick-add-to-cart-btn w-full py-3 px-4 bg-[#831F2E] hover:bg-[#6E1724] text-white font-black text-sm rounded-[12px] shadow-md hover:shadow-lg transition-all transform active:scale-95 flex items-center justify-center space-x-2 font-heading cursor-pointer focus:outline-none"
+                        class="quick-add-to-cart-btn w-full py-3 px-4 bg-[#C28430] hover:bg-[#A66B1F] text-white font-black text-sm rounded-[12px] shadow-md hover:shadow-lg transition-all transform active:scale-95 flex items-center justify-center space-x-2 font-heading cursor-pointer focus:outline-none"
                         data-product-id="1"
                         data-product-title=""
                         data-product-slug=""
@@ -830,7 +830,7 @@
             if (drawerPerfectFor && item.perfect_for) {
                 drawerPerfectFor.innerHTML = item.perfect_for.map(point => `
                     <li class="flex items-center space-x-2">
-                        <span class="text-[#831F2E] text-xs font-bold">✦</span>
+                        <span class="text-[#C28430] text-xs font-bold">✦</span>
                         <span>${point}</span>
                     </li>
                 `).join('');

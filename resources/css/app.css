@@ -59,7 +59,7 @@
     --color-primary: #121212;
     --color-gold: #D38928;
     --color-light-gold: #F6DAA8;
-    --color-maroon: #9B1C31;
+    --color-maroon: #C28430;
     --color-warm-bg: #FDF5EB;
     --color-secondary-bg: #F9F9F9;
     --color-secondary-alt-bg: #F3F3F3;
@@ -71,7 +71,7 @@
     --color-[#2B1810]: #121212;
     --color-[#D38928]: #D38928;
     --color-[#F6DAA8]: #F6DAA8;
-    --color-mangalam-maroon: #9B1C31;
+    --color-mangalam-maroon: #C28430;
     --color-[#FAF5EE]: #FDF5EB;
     --color-mangalam-bg-gray: #F9F9F9;
     --color-mangalam-bg-alt: #F3F3F3;
@@ -224,7 +224,7 @@ header nav button,
     font-weight: 700 !important;
 }
 
-/* Menu Hover Underline Effect with Announcement Bar Color (#831F2E) */
+/* Menu Hover Underline Effect with Logo Gold Color (#C28430) */
 .nav-link-hover {
     position: relative;
     display: inline-flex;
@@ -233,7 +233,7 @@ header nav button,
 }
 
 .nav-link-hover:hover {
-    color: #831F2E !important;
+    color: #C28430 !important;
 }
 
 .nav-link-hover::after {
@@ -243,7 +243,7 @@ header nav button,
     left: 0;
     width: 0;
     height: 1px;
-    background-color: #831F2E;
+    background-color: #C28430;
     transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: 1px;
 }
@@ -256,7 +256,7 @@ header nav button,
     position: relative;
     display: inline-flex;
     align-items: center;
-    color: #831F2E !important;
+    color: #C28430 !important;
     transition: color 0.2s ease-in-out;
 }
 
@@ -267,7 +267,7 @@ header nav button,
     left: 0;
     width: 100% !important;
     height: 1px;
-    background-color: #831F2E;
+    background-color: #C28430;
     border-radius: 1px;
 }
 

@@ -89,7 +89,7 @@
                     
                     <!-- Upsell 1 -->
                     <div class="bg-[#FFFDF9] border border-[#EADBCC] rounded-[12px] p-2 flex flex-col justify-between text-center space-y-1 relative">
-                        <span class="absolute top-1 left-1 px-1.5 py-0.2 bg-[#9B1C31] text-white text-[8px] font-bold rounded-full font-heading">30% OFF</span>
+                        <span class="absolute top-1 left-1 px-1.5 py-0.2 bg-[#C28430] text-white text-[8px] font-bold rounded-full font-heading">30% OFF</span>
                         <div class="w-full aspect-square rounded-[8px] overflow-hidden bg-white mb-1">
                             <img src="{{ asset('assets/images/devi-refill-pack-card.jpg') }}" alt="Bestseller Combo" class="w-full h-full object-cover">
                         </div>
@@ -102,7 +102,7 @@
 
                     <!-- Upsell 2 -->
                     <div class="bg-[#FFFDF9] border border-[#EADBCC] rounded-[12px] p-2 flex flex-col justify-between text-center space-y-1 relative">
-                        <span class="absolute top-1 left-1 px-1.5 py-0.2 bg-[#9B1C31] text-white text-[8px] font-bold rounded-full font-heading">30% OFF</span>
+                        <span class="absolute top-1 left-1 px-1.5 py-0.2 bg-[#C28430] text-white text-[8px] font-bold rounded-full font-heading">30% OFF</span>
                         <div class="w-full aspect-square rounded-[8px] overflow-hidden bg-white mb-1">
                             <img src="{{ asset('assets/images/oudh-pack-card.jpg') }}" alt="Bhairav Refill Pack" class="w-full h-full object-cover">
                         </div>
@@ -115,7 +115,7 @@
 
                     <!-- Upsell 3 -->
                     <div class="bg-[#FFFDF9] border border-[#EADBCC] rounded-[12px] p-2 flex flex-col justify-between text-center space-y-1 relative">
-                        <span class="absolute top-1 left-1 px-1.5 py-0.2 bg-[#9B1C31] text-white text-[8px] font-bold rounded-full font-heading">51% OFF</span>
+                        <span class="absolute top-1 left-1 px-1.5 py-0.2 bg-[#C28430] text-white text-[8px] font-bold rounded-full font-heading">51% OFF</span>
                         <div class="w-full aspect-square rounded-[8px] overflow-hidden bg-white mb-1">
                             <img src="{{ asset('assets/images/devi-refill-pack-card.jpg') }}" alt="Devi Refill Pack" class="w-full h-full object-cover">
                         </div>

@@ -24,22 +24,22 @@
     <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px] pt-4 sm:pt-6">
         <div class="rounded-2xl border border-[#D38928]/35 bg-gradient-to-r from-[#FFF9F2] via-[#FAF3EA] to-[#FFF9F2] p-3.5 sm:p-4 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-3.5">
             <div class="flex items-center space-x-3.5 text-center sm:text-left">
-                <div class="w-10 h-10 rounded-xl bg-[#831F2E] text-white flex items-center justify-center font-black text-base shrink-0 shadow-xs">
+                <div class="w-10 h-10 rounded-xl bg-[#C28430] text-white flex items-center justify-center font-black text-base shrink-0 shadow-xs">
                     ✦
                 </div>
                 <div>
                     <div class="flex items-center justify-center sm:justify-start space-x-2">
-                        <h4 class="text-xs sm:text-sm font-black text-[#831F2E] font-heading uppercase tracking-wide">
+                        <h4 class="text-xs sm:text-sm font-black text-[#C28430] font-heading uppercase tracking-wide">
                             Festive Exclusive Bundle Offer
                         </h4>
-                        <span class="px-2 py-0.5 bg-[#831F2E]/10 text-[#831F2E] text-[10px] font-bold rounded-full border border-[#831F2E]/20">Auto-Applied</span>
+                        <span class="px-2 py-0.5 bg-[#C28430]/10 text-[#C28430] text-[10px] font-bold rounded-full border border-[#C28430]/20">Auto-Applied</span>
                     </div>
                     <p class="text-[11px] sm:text-xs text-gray-700 font-medium pt-0.5">
                         Special festival discount already unlocked on this box. No extra coupons needed!
                     </p>
                 </div>
             </div>
-            <div class="shrink-0 flex items-center space-x-1.5 px-3.5 py-1.5 rounded-xl bg-white/90 border border-[#D38928]/30 text-[#831F2E] font-bold text-xs shadow-2xs">
+            <div class="shrink-0 flex items-center space-x-1.5 px-3.5 py-1.5 rounded-xl bg-white/90 border border-[#D38928]/30 text-[#C28430] font-bold text-xs shadow-2xs">
                 <span>🏷️ Special Savings Active</span>
             </div>
         </div>
@@ -71,7 +71,7 @@
                         <img src="{{ asset($prod['image']) }}" alt="{{ $prod['title'] }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute top-2 right-2 text-right pointer-events-none select-none leading-none bg-white/95 px-2 py-1 rounded-[6px] border border-[#EADBCC] shadow-2xs">
                             <span class="text-[8px] uppercase font-semibold text-gray-500 block">pack of</span>
-                            <span class="text-xs font-black font-heading text-[#831F2E] block">24</span>
+                            <span class="text-xs font-black font-heading text-[#C28430] block">24</span>
                             <span class="text-[8px] uppercase font-semibold text-gray-500 block">sticks</span>
                         </div>
                     </div>
@@ -138,7 +138,7 @@
                         <div class="slot-content hidden w-full h-full relative rounded-[10px] overflow-visible group">
                             <img src="" alt="" class="slot-img w-full h-full object-cover rounded-[10px]">
                             <!-- Bigger Minus Badge in Top Right Corner -->
-                            <button type="button" class="slot-remove-btn absolute -top-1.5 -right-1.5 w-5 h-5 rounded-md bg-black text-white text-xs font-black flex items-center justify-center shadow-md cursor-pointer hover:bg-[#831F2E] transition-colors leading-none select-none z-10" title="Remove pack">−</button>
+                            <button type="button" class="slot-remove-btn absolute -top-1.5 -right-1.5 w-5 h-5 rounded-md bg-black text-white text-xs font-black flex items-center justify-center shadow-md cursor-pointer hover:bg-[#C28430] transition-colors leading-none select-none z-10" title="Remove pack">−</button>
                         </div>
                     </div>
                 @endfor
@@ -202,7 +202,7 @@
                     particleCount: 120,
                     spread: 80,
                     origin: { y: 0.8 },
-                    colors: ['#D38928', '#831F2E', '#F6DAA8', '#10B981', '#E63946', '#FFD700']
+                    colors: ['#D38928', '#C28430', '#F6DAA8', '#10B981', '#E63946', '#FFD700']
                 });
                 setTimeout(() => {
                     confetti({
@@ -210,14 +210,14 @@
                         angle: 60,
                         spread: 60,
                         origin: { x: 0.1, y: 0.8 },
-                        colors: ['#D38928', '#831F2E', '#F6DAA8', '#FFD700']
+                        colors: ['#D38928', '#C28430', '#F6DAA8', '#FFD700']
                     });
                     confetti({
                         particleCount: 70,
                         angle: 120,
                         spread: 60,
                         origin: { x: 0.9, y: 0.8 },
-                        colors: ['#D38928', '#831F2E', '#F6DAA8', '#FFD700']
+                        colors: ['#D38928', '#C28430', '#F6DAA8', '#FFD700']
                     });
                 }, 200);
             }

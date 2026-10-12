@@ -19,7 +19,7 @@
                 <!-- Brand Logo (Desktop Left-aligned) -->
                 <a href="{{ route('home') }}" class="hidden lg:flex items-center py-1" aria-label="ISHANAA - Pure Sacred Rituals">
                     <img 
-                        src="{{ asset('assets/images/mangalam-logo.png') }}" 
+                        src="{{ asset('assets/images/Ishanaa-logo.png') }}" 
                         alt="ISHANAA" 
                         class="h-10 sm:h-13 lg:h-15 w-auto max-w-[130px] sm:max-w-[160px] lg:max-w-[190px] xl:max-w-[210px] object-contain"
                     >
@@ -30,7 +30,7 @@
             <div class="lg:hidden absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-auto">
                 <a href="{{ route('home') }}" class="flex items-center py-1" aria-label="ISHANAA - Pure Sacred Rituals">
                     <img 
-                        src="{{ asset('assets/images/mangalam-logo.png') }}" 
+                        src="{{ asset('assets/images/Ishanaa-logo.png') }}" 
                         alt="ISHANAA" 
                         class="h-9 sm:h-11 w-auto max-w-[130px] sm:max-w-[150px] object-contain"
                     >
@@ -45,7 +45,7 @@
                 <div class="py-2 xl:py-3 flex items-center">
                     <a 
                         href="{{ route('collections.show', 'bambooless') }}" 
-                        class="text-[13.5px] lg:text-[14px] xl:text-[14.5px] {{ $isBambooless ? 'font-bold text-[#831F2E] border-b-2 border-[#831F2E] pb-0.5' : 'font-medium text-[#444444] hover:text-[#831F2E]' }} transition-colors whitespace-nowrap tracking-normal"
+                        class="text-[13.5px] lg:text-[14px] xl:text-[14.5px] {{ $isBambooless ? 'font-bold text-[#C28430] border-b-2 border-[#C28430] pb-0.5' : 'font-medium text-[#444444] hover:text-[#C28430]' }} transition-colors whitespace-nowrap tracking-normal"
                     >
                         <span>Bambooless</span>
                     </a>
@@ -56,7 +56,7 @@
                 <div class="py-2 xl:py-3 flex items-center">
                     <a 
                         href="{{ route('collections.show', 'havan-cups') }}" 
-                        class="text-[13.5px] lg:text-[14px] xl:text-[14.5px] {{ $isHavanCups ? 'font-bold text-[#831F2E] border-b-2 border-[#831F2E] pb-0.5' : 'font-medium text-[#444444] hover:text-[#831F2E]' }} transition-colors whitespace-nowrap tracking-normal"
+                        class="text-[13.5px] lg:text-[14px] xl:text-[14.5px] {{ $isHavanCups ? 'font-bold text-[#C28430] border-b-2 border-[#C28430] pb-0.5' : 'font-medium text-[#444444] hover:text-[#C28430]' }} transition-colors whitespace-nowrap tracking-normal"
                     >
                         <span>Havan Cups</span>
                     </a>
@@ -67,7 +67,7 @@
                 <div class="py-2 xl:py-3 flex items-center">
                     <a 
                         href="{{ route('collections.show', 'dhoop-cones') }}" 
-                        class="text-[13.5px] lg:text-[14px] xl:text-[14.5px] {{ $isDhoopCones ? 'font-bold text-[#831F2E] border-b-2 border-[#831F2E] pb-0.5' : 'font-medium text-[#444444] hover:text-[#831F2E]' }} transition-colors whitespace-nowrap tracking-normal"
+                        class="text-[13.5px] lg:text-[14px] xl:text-[14.5px] {{ $isDhoopCones ? 'font-bold text-[#C28430] border-b-2 border-[#C28430] pb-0.5' : 'font-medium text-[#444444] hover:text-[#C28430]' }} transition-colors whitespace-nowrap tracking-normal"
                     >
                         <span>Dhoop Cones</span>
                     </a>
@@ -78,10 +78,10 @@
                 <div class="relative group py-2 xl:py-3 flex items-center">
                     <button 
                         type="button"
-                        class="flex items-center space-x-1 text-[13.5px] lg:text-[14px] xl:text-[14.5px] {{ $isSuperSave ? 'font-bold text-[#831F2E] border-b-2 border-[#831F2E] pb-0.5' : 'font-medium text-[#444444] group-hover:text-[#831F2E]' }} transition-colors whitespace-nowrap tracking-normal cursor-pointer focus:outline-none"
+                        class="flex items-center space-x-1 text-[13.5px] lg:text-[14px] xl:text-[14.5px] {{ $isSuperSave ? 'font-bold text-[#C28430] border-b-2 border-[#C28430] pb-0.5' : 'font-medium text-[#444444] group-hover:text-[#C28430]' }} transition-colors whitespace-nowrap tracking-normal cursor-pointer focus:outline-none"
                     >
                         <span>Super Save Offers</span>
-                        <svg class="w-3.5 h-3.5 text-[#8C827A] group-hover:text-[#831F2E] group-hover:rotate-180 transition-transform duration-200 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-3.5 h-3.5 text-[#8C827A] group-hover:text-[#C28430] group-hover:rotate-180 transition-transform duration-200 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                         </svg>
                     </button>
@@ -98,7 +98,7 @@
                                     onmouseenter="document.getElementById('mega-preview-trial').classList.remove('opacity-0', 'pointer-events-none'); document.getElementById('mega-preview-b2g1').classList.add('opacity-0', 'pointer-events-none');"
                                 >
                                     <div>
-                                        <div class="text-[15px] font-bold text-[#1F1F1F] group-hover/item:text-[#831F2E] transition-colors">
+                                        <div class="text-[15px] font-bold text-[#1F1F1F] group-hover/item:text-[#C28430] transition-colors">
                                             Buy any 5 Trial Pack @ 799
                                         </div>
                                         <div class="text-xs text-[#7B7B7B] mt-0.5">5 Sacred Vedic Fragrances</div>
@@ -112,18 +112,18 @@
                                     onmouseenter="document.getElementById('mega-preview-b2g1').classList.remove('opacity-0', 'pointer-events-none'); document.getElementById('mega-preview-trial').classList.add('opacity-0', 'pointer-events-none');"
                                 >
                                     <div>
-                                        <div class="text-[15px] font-bold text-[#1F1F1F] group-hover/item:text-[#831F2E] transition-colors">
+                                        <div class="text-[15px] font-bold text-[#1F1F1F] group-hover/item:text-[#C28430] transition-colors">
                                             Buy 2 Get 1 FREE
                                         </div>
                                         <div class="text-xs text-[#7B7B7B] mt-0.5">Free Chandan pack included</div>
                                     </div>
-                                    <span class="text-xs font-bold bg-[#831F2E]/10 text-[#831F2E] px-2.5 py-1 rounded-full shrink-0 ml-2">FREE GIFT</span>
+                                    <span class="text-xs font-bold bg-[#C28430]/10 text-[#C28430] px-2.5 py-1 rounded-full shrink-0 ml-2">FREE GIFT</span>
                                 </a>
 
                                 <div class="pt-3 px-3.5 border-t border-stone-100">
                                     <a 
                                         href="{{ route('collections.show', 'super-save-offers') }}" 
-                                        class="flex items-center justify-between text-xs sm:text-sm font-semibold text-[#831F2E] hover:text-[#6E1724] transition-colors"
+                                        class="flex items-center justify-between text-xs sm:text-sm font-semibold text-[#C28430] hover:text-[#A66B1F] transition-colors"
                                     >
                                         <span>View All Offers</span>
                                         <span>&rarr;</span>
@@ -158,7 +158,7 @@
                 <div class="py-2 xl:py-3 flex items-center">
                     <a 
                         href="{{ route('products.show', 'pack-of-six') }}" 
-                        class="text-[13.5px] lg:text-[14px] xl:text-[14.5px] {{ $isBestSeller ? 'font-bold text-[#831F2E] border-b-2 border-[#831F2E] pb-0.5' : 'font-medium text-[#444444] hover:text-[#831F2E]' }} transition-colors whitespace-nowrap tracking-normal"
+                        class="text-[13.5px] lg:text-[14px] xl:text-[14.5px] {{ $isBestSeller ? 'font-bold text-[#C28430] border-b-2 border-[#C28430] pb-0.5' : 'font-medium text-[#444444] hover:text-[#C28430]' }} transition-colors whitespace-nowrap tracking-normal"
                     >
                         <span>Best Seller Combo</span>
                     </a>
@@ -169,7 +169,7 @@
                 <div class="py-2 xl:py-3 flex items-center">
                     <a 
                         href="{{ route('products.pitambara') }}" 
-                        class="text-[13.5px] lg:text-[14px] xl:text-[14.5px] {{ $isPitambara ? 'font-bold text-[#831F2E] border-b-2 border-[#831F2E] pb-0.5' : 'font-medium text-[#831F2E] hover:text-[#6E1724]' }} transition-colors whitespace-nowrap tracking-normal"
+                        class="text-[13.5px] lg:text-[14px] xl:text-[14.5px] {{ $isPitambara ? 'font-bold text-[#C28430] border-b-2 border-[#C28430] pb-0.5' : 'font-medium text-[#C28430] hover:text-[#A66B1F]' }} transition-colors whitespace-nowrap tracking-normal"
                     >
                         <span>Pitambara Havan</span>
                     </a>
@@ -183,8 +183,8 @@
                 <!-- 1. Search Icon Button -->
                 <button 
                     type="button" 
-                    id="search-modal-trigger"
-                    class="p-2 text-[#1F1F1F] hover:text-[#831F2E] transition-colors focus:outline-none shrink-0 cursor-pointer rounded-full hover:bg-stone-50"
+                    id="search-modal-trigger" 
+                    class="p-2 text-[#1F1F1F] hover:text-[#C28430] transition-colors focus:outline-none shrink-0 cursor-pointer rounded-full hover:bg-stone-50" 
                     aria-label="Open Search"
                 >
                     <svg class="w-6 h-6 sm:w-[25px] sm:h-[25px]" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
@@ -195,12 +195,12 @@
                 <!-- 2. Customer Account (Visible on all screens) -->
                 <a 
                     href="{{ auth()->check() ? route('account.index') : route('account.login') }}" 
-                    class="p-1.5 sm:p-2 text-[#1F1F1F] hover:text-[#831F2E] transition-colors inline-flex items-center justify-center shrink-0 rounded-full hover:bg-stone-50 relative group"
+                    class="p-1.5 sm:p-2 text-[#1F1F1F] hover:text-[#C28430] transition-colors inline-flex items-center justify-center shrink-0 rounded-full hover:bg-stone-50 relative group"
                     aria-label="Customer Account"
                     title="{{ auth()->check() ? 'My Devotee Account (' . auth()->user()->name . ')' : 'Sign In to Devotee Account' }}"
                 >
                     <div class="relative">
-                        <svg class="w-5 h-5 sm:w-6 sm:h-6 {{ auth()->check() ? 'text-[#831F2E]' : '' }}" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6 {{ auth()->check() ? 'text-[#C28430]' : '' }}" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
                         </svg>
                         <span class="absolute -top-1 -right-1 text-[#D38928] text-[10px] leading-none font-bold">⚡</span>
@@ -210,8 +210,8 @@
                 <!-- 3. Shopping Bag / Cart with live badge -->
                 <a 
                     href="{{ route('cart.index') }}" 
-                    id="cart-drawer-trigger"
-                    class="p-1.5 sm:p-2 text-[#1F1F1F] hover:text-[#831F2E] transition-colors relative inline-flex items-center justify-center shrink-0 cursor-pointer rounded-full hover:bg-stone-50"
+                    id="cart-drawer-trigger" 
+                    class="p-1.5 sm:p-2 text-[#1F1F1F] hover:text-[#C28430] transition-colors relative inline-flex items-center justify-center shrink-0 cursor-pointer rounded-full hover:bg-stone-50" 
                     aria-label="Cart"
                 >
                     <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
@@ -249,7 +249,7 @@
             <a href="{{ route('collections.show', 'havan-cups') }}" class="px-3.5 py-1 rounded-full border border-[#D38928] bg-white text-[#121212] hover:bg-[#D38928] hover:text-white transition-colors shrink-0 shadow-2xs">
                 Havan Cups
             </a>
-            <a href="{{ route('products.pitambara') }}" class="px-3.5 py-1 rounded-full border border-[#831F2E] bg-white text-[#831F2E] hover:bg-[#831F2E] hover:text-white transition-colors shrink-0 shadow-2xs">
+            <a href="{{ route('products.pitambara') }}" class="px-3.5 py-1 rounded-full border border-[#C28430] bg-white text-[#C28430] hover:bg-[#C28430] hover:text-white transition-colors shrink-0 shadow-2xs">
                 Pitambara Special
             </a>
         </div>

@@ -998,7 +998,7 @@
                             'name' => 'अनिल डोगरा',
                             'city' => 'कांगड़ा, हिमाचल प्रदेश',
                             'initials' => 'AD',
-                            'avatar_bg' => 'bg-[#831F2E]',
+                            'avatar_bg' => 'bg-[#C28430]',
                             'product' => 'Swarna Pushpa',
                             'quote' => 'कांगड़ा में हमारे घर में रोजाना पूजा होती है। बिल्कुल शुद्ध धुआं है और आंखों में कोई जलन नहीं होती। शास्त्रों के अनुसार बिना बांस वाली अगरबत्ती से बहुत ही पवित्र अनुभव मिलता है।'
                         ],
@@ -1022,7 +1022,7 @@
                             'name' => 'राजेश धीमान',
                             'city' => 'हमीरपुर, हिमाचल प्रदेश',
                             'initials' => 'RD',
-                            'avatar_bg' => 'bg-[#831F2E]',
+                            'avatar_bg' => 'bg-[#C28430]',
                             'product' => 'Bambooless Incense',
                             'quote' => 'हमीरपुर से मंगवाया था। पहले बाजार वाली धूप से कमरे में भारीपन और सिरदर्द होता था, लेकिन इसमें सिर्फ शुद्ध जड़ी-बूटियों की महक है। बहुत ही शांत वातावरण बनता है।'
                         ],
@@ -1102,7 +1102,7 @@
                             'name' => 'दीपक शर्मा',
                             'city' => 'मंडी, हिमाचल प्रदेश',
                             'initials' => 'DS',
-                            'avatar_bg' => 'bg-[#831F2E]',
+                            'avatar_bg' => 'bg-[#C28430]',
                             'quote' => 'मंडी के हमारे मंदिर में सुबह-शाम यही अगरबत्ती जलती है। घर का वातावरण एकदम शांत और सकारात्मक हो जाता है। बिना बांस के शुद्ध वैदिक खुशबू।'
                         ],
                         [
@@ -1123,7 +1123,7 @@
                             'name' => 'Vikas Jaswal',
                             'city' => 'Hamirpur, Himachal Pradesh',
                             'initials' => 'VJ',
-                            'avatar_bg' => 'bg-[#831F2E]',
+                            'avatar_bg' => 'bg-[#C28430]',
                             'quote' => 'Hamirpur me daily Sandhya aarti ke liye best incense mila hai. Charcoal-free hone ki wajah se pure white ash banti hai jo mandir ko clean rakhti hai.'
                         ],
                         [
@@ -1209,7 +1209,7 @@
         <!-- Clean Standard Eyebrow Header -->
         <div class="text-center max-w-2xl mx-auto mb-4 sm:mb-6 space-y-1.5">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ CRAFTED WITH CARE ✦</span>
-            <h2 class="text-xl sm:text-[22px] lg:text-[26px] font-heading font-normal uppercase text-[#5C141E] tracking-[0.12em] leading-snug">
+            <h2 class="text-xl sm:text-[22px] lg:text-[26px] font-heading font-normal uppercase text-[#2B1810] tracking-[0.12em] leading-snug">
                 Rooted in Purity
             </h2>
             <!-- <p class="text-xs sm:text-sm md:text-base text-gray-600 font-normal font-body">
@@ -1223,16 +1223,16 @@
                 
                 <!-- Column 1: Ancient Recipes -->
                 <div class="relative py-7 sm:py-9 lg:py-10 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center space-y-3 group">
-                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#FAF5EE] border-2 border-[#D38928]/40 flex items-center justify-center text-[#7B1B29] group-hover:scale-105 transition-transform">
-                        <svg class="w-8 h-8 sm:w-10 sm:h-10" viewBox="0 0 64 64" fill="none" stroke="#7B1B29" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#FAF5EE] border-2 border-[#D38928]/40 flex items-center justify-center text-[#C28430] group-hover:scale-105 transition-transform">
+                        <svg class="w-8 h-8 sm:w-10 sm:h-10" viewBox="0 0 64 64" fill="none" stroke="#C28430" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M16 34h32c0 10-7.2 18-16 18s-16-8-16-18Z"/>
                             <path d="M24 52h16"/>
                             <path d="M38 18l7-6a1.5 1.5 0 0 1 2.1.2l1.1 1.1a1.5 1.5 0 0 1-.2 2.1L38 34"/>
                             <path d="M22 22c0-3.5 3.5-5.5 6-5.5s1 3.5 0 5.5-6 0-6 0Z"/>
-                            <circle cx="28" cy="27" r="1.5" fill="#7B1B29"/>
+                            <circle cx="28" cy="27" r="1.5" fill="#C28430"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl sm:text-2xl lg:text-[23px] font-heading font-semibold text-[#5C141E]">
+                    <h3 class="text-xl sm:text-2xl lg:text-[23px] font-heading font-semibold text-[#2B1810]">
                         Ancient Recipes
                     </h3>
                     <p class="text-xs sm:text-[14px] lg:text-[14.5px] text-gray-600 font-normal font-body leading-relaxed max-w-[280px]">
@@ -1246,8 +1246,8 @@
 
                 <!-- Column 2: Purest Ingredients -->
                 <div class="relative py-7 sm:py-9 lg:py-10 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center space-y-3 group">
-                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#FAF5EE] border-2 border-[#D38928]/40 flex items-center justify-center text-[#7B1B29] group-hover:scale-105 transition-transform">
-                        <svg class="w-8 h-8 sm:w-10 sm:h-10" viewBox="0 0 64 64" fill="none" stroke="#7B1B29" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#FAF5EE] border-2 border-[#D38928]/40 flex items-center justify-center text-[#C28430] group-hover:scale-105 transition-transform">
+                        <svg class="w-8 h-8 sm:w-10 sm:h-10" viewBox="0 0 64 64" fill="none" stroke="#C28430" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <!-- Sacred Flames & Kund -->
                             <path d="M32 16c-3 4-3 9 0 12 3-3 3-8 0-12Z"/>
                             <path d="M23 21c-3.5 1-5 4.5-3 8 2.5-1 4.5-4 3-8Z"/>
@@ -1256,7 +1256,7 @@
                             <path d="M25 48h14"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl sm:text-2xl lg:text-[23px] font-heading font-semibold text-[#5C141E]">
+                    <h3 class="text-xl sm:text-2xl lg:text-[23px] font-heading font-semibold text-[#2B1810]">
                         Purest Ingredients
                     </h3>
                     <p class="text-xs sm:text-[14px] lg:text-[14.5px] text-gray-600 font-normal font-body leading-relaxed max-w-[280px]">
@@ -1270,8 +1270,8 @@
 
                 <!-- Column 3: Eco-conscious -->
                 <div class="relative py-7 sm:py-9 lg:py-10 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center space-y-3 group">
-                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#FAF5EE] border-2 border-[#D38928]/40 flex items-center justify-center text-[#7B1B29] group-hover:scale-105 transition-transform">
-                        <svg class="w-8 h-8 sm:w-10 sm:h-10" viewBox="0 0 64 64" fill="none" stroke="#7B1B29" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#FAF5EE] border-2 border-[#D38928]/40 flex items-center justify-center text-[#C28430] group-hover:scale-105 transition-transform">
+                        <svg class="w-8 h-8 sm:w-10 sm:h-10" viewBox="0 0 64 64" fill="none" stroke="#C28430" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <!-- Box & Leaf -->
                             <path d="M19 24l13-8 13 8v22l-13 8-13-8V24Z"/>
                             <path d="M19 24l13 8 13-8"/>
@@ -1280,7 +1280,7 @@
                             <path d="M30 42l4-4"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl sm:text-2xl lg:text-[23px] font-heading font-semibold text-[#5C141E]">
+                    <h3 class="text-xl sm:text-2xl lg:text-[23px] font-heading font-semibold text-[#2B1810]">
                         Eco-conscious
                     </h3>
                     <p class="text-xs sm:text-[14px] lg:text-[14.5px] text-gray-600 font-normal font-body leading-relaxed max-w-[280px]">

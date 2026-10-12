@@ -8,10 +8,10 @@
     role="dialog"
     aria-modal="true"
 >
-    <!-- Modal Card (Warm Spiritual Gold-Maroon Luxury Aesthetic) -->
+    <!-- Modal Card (Warm Dark Espresso & Sacred Gold Luxury Aesthetic) -->
     <div 
         id="discount-signup-card" 
-        class="w-full max-w-xl bg-gradient-to-b from-[#6B1120] via-[#5C0D1B] to-[#420810] text-white rounded-[24px] sm:rounded-[28px] border-2 border-[#D38928]/60 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.7),0_0_40px_rgba(211,137,40,0.2)] overflow-hidden flex flex-col max-h-[92vh] transform scale-95 transition-all duration-300 relative"
+        class="w-full max-w-xl bg-gradient-to-b from-[#24140E] via-[#1A0E0A] to-[#120805] text-white rounded-[24px] sm:rounded-[28px] border-2 border-[#C28430]/60 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.7),0_0_40px_rgba(194,132,48,0.2)] overflow-hidden flex flex-col max-h-[92vh] transform scale-95 transition-all duration-300 relative"
     >
         <!-- Background Sacred Glow -->
         <div class="absolute -top-24 -right-24 w-60 h-60 bg-[#D38928]/20 rounded-full blur-3xl pointer-events-none"></div>
@@ -21,7 +21,7 @@
         <div class="p-4 sm:p-5 pb-3 border-b border-white/15 flex items-center justify-between relative z-10">
             <div class="flex items-center space-x-3">
                 <img 
-                    src="{{ asset('assets/images/mangalam-logo-white.png') }}" 
+                    src="{{ asset('assets/images/Ishanaa-logo.png') }}" 
                     alt="ISHANAA" 
                     class="h-7 sm:h-8 w-auto object-contain"
                 >
@@ -139,7 +139,7 @@
                             type="button" 
                             id="step-1-next-btn"
                             onclick="window.goToDiscountStep(2)"
-                            class="w-full sm:w-auto px-8 py-3 bg-[#F6DAA8] hover:bg-[#ffe3b5] text-[#5C0D1B] text-sm font-bold uppercase tracking-wider rounded-xl sm:rounded-full shadow-lg transition-all transform active:scale-95 cursor-pointer font-heading flex items-center justify-center gap-2"
+                            class="w-full sm:w-auto px-8 py-3 bg-[#F6DAA8] hover:bg-[#ffe3b5] text-[#24140E] text-sm font-bold uppercase tracking-wider rounded-xl sm:rounded-full shadow-lg transition-all transform active:scale-95 cursor-pointer font-heading flex items-center justify-center gap-2"
                         >
                             <span>Next</span>
                             <span>➔</span>
@@ -227,7 +227,7 @@
                             type="button" 
                             id="step-2-next-btn"
                             onclick="window.goToDiscountStep(3)"
-                            class="px-8 py-3 bg-[#F6DAA8] hover:bg-[#ffe3b5] text-[#5C0D1B] text-sm font-bold uppercase tracking-wider rounded-xl sm:rounded-full shadow-lg transition-all transform active:scale-95 cursor-pointer font-heading flex items-center gap-2"
+                            class="px-8 py-3 bg-[#F6DAA8] hover:bg-[#ffe3b5] text-[#24140E] text-sm font-bold uppercase tracking-wider rounded-xl sm:rounded-full shadow-lg transition-all transform active:scale-95 cursor-pointer font-heading flex items-center gap-2"
                         >
                             <span>Next</span>
                             <span>➔</span>
@@ -315,7 +315,7 @@
                             type="button" 
                             id="discount-submit-btn"
                             onclick="window.submitDiscountSignupForm()"
-                            class="flex-1 sm:flex-initial px-8 py-3.5 bg-gradient-to-r from-[#F6DAA8] via-[#E6B86C] to-[#D38928] hover:opacity-95 text-[#5C0D1B] text-sm font-bold uppercase tracking-wider rounded-xl sm:rounded-full shadow-xl transition-all transform active:scale-95 cursor-pointer font-heading flex items-center justify-center gap-2"
+                            class="flex-1 sm:flex-initial px-8 py-3.5 bg-gradient-to-r from-[#F6DAA8] via-[#E6B86C] to-[#D38928] hover:opacity-95 text-[#24140E] text-sm font-bold uppercase tracking-wider rounded-xl sm:rounded-full shadow-xl transition-all transform active:scale-95 cursor-pointer font-heading flex items-center justify-center gap-2"
                         >
                             <span id="discount-submit-spinner" class="hidden animate-spin">⟳</span>
                             <span id="discount-submit-text">Get My 10% OFF</span>
@@ -342,8 +342,8 @@
                         </p>
                     </div>
 
-                    <!-- Premium Gold/Maroon Coupon Box (Shopify Luxury Polaris Card) -->
-                    <div class="bg-[#420810]/90 border-2 border-dashed border-[#F6DAA8] rounded-[20px] p-5 sm:p-6 space-y-3.5 shadow-2xl relative">
+                    <!-- Premium Gold/Espresso Coupon Box (Shopify Luxury Polaris Card) -->
+                    <div class="bg-[#1A0E0A]/90 border-2 border-dashed border-[#F6DAA8] rounded-[20px] p-5 sm:p-6 space-y-3.5 shadow-2xl relative">
                         <span class="text-[10px] uppercase tracking-[0.24em] text-[#F6DAA8]/80 font-bold block">
                             YOUR EXCLUSIVE PROMO CODE
                         </span>
@@ -364,9 +364,9 @@
                                 type="button" 
                                 id="discount-copy-coupon-btn"
                                 onclick="window.copyDiscountCouponCode()"
-                                class="w-full sm:w-auto px-6 py-2.5 bg-[#F6DAA8] hover:bg-[#ffe3b5] text-[#5C0D1B] text-xs sm:text-sm font-bold uppercase tracking-wider rounded-full shadow-md transition-all transform active:scale-95 cursor-pointer font-heading inline-flex items-center justify-center gap-2"
+                                class="w-full sm:w-auto px-6 py-2.5 bg-[#F6DAA8] hover:bg-[#ffe3b5] text-[#24140E] text-xs sm:text-sm font-bold uppercase tracking-wider rounded-full shadow-md transition-all transform active:scale-95 cursor-pointer font-heading inline-flex items-center justify-center gap-2"
                             >
-                                <svg class="w-4 h-4 text-[#5C0D1B]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <svg class="w-4 h-4 text-[#24140E]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
                                 </svg>
                                 <span id="discount-copy-btn-text">COPY COUPON</span>
@@ -422,19 +422,19 @@
 
                 // Reset all in same group
                 group.querySelectorAll('.discount-pill-opt').forEach(p => {
-                    p.classList.remove('bg-[#F6DAA8]', 'text-[#5C0D1B]', 'border-[#F6DAA8]', 'font-bold');
+                    p.classList.remove('bg-[#F6DAA8]', 'text-[#24140E]', 'border-[#F6DAA8]', 'font-bold');
                     p.classList.add('bg-white/5', 'text-white/90', 'border-white/30');
                     const dot = p.querySelector('.pill-dot');
                     if (dot) dot.classList.add('bg-transparent');
-                    if (dot) dot.classList.remove('bg-[#5C0D1B]');
+                    if (dot) dot.classList.remove('bg-[#24140E]');
                 });
 
                 // Set active
                 this.classList.remove('bg-white/5', 'text-white/90', 'border-white/30');
-                this.classList.add('bg-[#F6DAA8]', 'text-[#5C0D1B]', 'border-[#F6DAA8]', 'font-bold');
+                this.classList.add('bg-[#F6DAA8]', 'text-[#24140E]', 'border-[#F6DAA8]', 'font-bold');
                 const dot = this.querySelector('.pill-dot');
                 if (dot) dot.classList.remove('bg-transparent');
-                if (dot) dot.classList.add('bg-[#5C0D1B]');
+                if (dot) dot.classList.add('bg-[#24140E]');
             });
         });
 

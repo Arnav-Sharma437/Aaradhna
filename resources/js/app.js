@@ -177,7 +177,7 @@ function renderCartDrawer() {
                 <div class="flex-1 min-w-0 space-y-1">
                     <div class="flex items-start justify-between">
                         <h4 class="text-xs sm:text-sm font-bold font-serif text-[#121212] truncate">${item.title}</h4>
-                        <button type="button" class="drawer-remove-item text-gray-400 hover:text-[#9B1C31] p-1 transition-colors cursor-pointer" data-title="${item.title}" aria-label="Remove item">
+                        <button type="button" class="drawer-remove-item text-gray-400 hover:text-[#C28430] p-1 transition-colors cursor-pointer" data-title="${item.title}" aria-label="Remove item">
                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
                         </button>
                     </div>
@@ -266,7 +266,7 @@ function renderCartPage() {
                             ₹${(item.price * item.quantity).toFixed(2)}
                         </span>
                     </div>
-                    <button type="button" class="cart-page-remove-btn text-gray-400 hover:text-[#9B1C31] p-2 transition-colors cursor-pointer" data-title="${item.title}" aria-label="Remove item">
+                    <button type="button" class="cart-page-remove-btn text-gray-400 hover:text-[#C28430] p-2 transition-colors cursor-pointer" data-title="${item.title}" aria-label="Remove item">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
                     </button>
                 </div>

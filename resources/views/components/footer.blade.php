@@ -1,14 +1,14 @@
 <!-- ========================================================================= -->
 <!-- LUXURY SACRED VEDIC FOOTER — ISHANAA™                                   -->
 <!-- ========================================================================= -->
-<footer class="text-white font-body relative overflow-hidden bg-[#5C0D1B] border-t-2 border-[#D38928]/40 select-none">
+<footer class="text-white font-body relative overflow-hidden bg-[#1F140E] border-t-2 border-[#C28430]/40 select-none">
     
-    <!-- Deep Sacred Vedic Maroon Gradient Background -->
-    <div class="absolute inset-0 bg-gradient-to-b from-[#6B1120] via-[#5C0D1B] to-[#420810] pointer-events-none"></div>
+    <!-- Deep Sacred Vedic Warm Dark Gradient Background -->
+    <div class="absolute inset-0 bg-gradient-to-b from-[#24140E] via-[#1A0E0A] to-[#120805] pointer-events-none"></div>
 
     <!-- Soft Golden Center Glow -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
-        <div class="absolute -bottom-20 left-1/2 -translate-x-1/2 w-[700px] h-[300px] rounded-full bg-[#D38928]/10 blur-[100px]"></div>
+        <div class="absolute -bottom-20 left-1/2 -translate-x-1/2 w-[700px] h-[300px] rounded-full bg-[#C28430]/15 blur-[100px]"></div>
     </div>
 
     <!-- Main Footer Container (1440px) -->
@@ -42,7 +42,7 @@
             <div class="lg:col-span-4 space-y-5">
                 <a href="{{ route('home') }}" class="inline-block py-1" aria-label="ISHANAA Home">
                     <img 
-                        src="{{ asset('assets/images/mangalam-logo-white.png') }}" 
+                        src="{{ asset('assets/images/Ishanaa-logo.png') }}" 
                         alt="ISHANAA" 
                         class="h-13 sm:h-15 w-auto max-w-[190px] object-contain"
                     >
@@ -218,7 +218,7 @@
 
                 <!-- Newsletter Clickable Interactive Bar (Opens Multi-step Modal) -->
                 <div class="pt-2">
-                    <div class="relative flex items-center w-full rounded-full border border-[#F6DAA8]/40 bg-[#420810]/80 p-1 pl-4 hover:border-[#F6DAA8] group-hover/newsletter:border-[#F6DAA8] transition-colors shadow-inner cursor-pointer">
+                    <div class="relative flex items-center w-full rounded-full border border-[#F6DAA8]/40 bg-[#1A0E0A]/90 p-1 pl-4 hover:border-[#F6DAA8] group-hover/newsletter:border-[#F6DAA8] transition-colors shadow-inner cursor-pointer">
                         <svg class="w-4.5 h-4.5 text-white/60 mr-2.5 shrink-0 group-hover/newsletter:text-[#F6DAA8] transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                         </svg>
@@ -229,10 +229,10 @@
                             class="footer-email-input bg-transparent text-white placeholder-white/60 text-xs sm:text-sm focus:outline-none flex-1 min-w-0 pr-2 font-body cursor-pointer pointer-events-none"
                         >
                         <div 
-                            class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#F6DAA8] hover:bg-[#ffe3b5] text-[#5C0D1B] flex items-center justify-center font-bold transition-all transform group-hover/newsletter:scale-105 shrink-0 shadow-md cursor-pointer"
+                            class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#F6DAA8] hover:bg-[#ffe3b5] text-[#24140E] flex items-center justify-center font-bold transition-all transform group-hover/newsletter:scale-105 shrink-0 shadow-md cursor-pointer"
                             aria-label="Get 10% OFF"
                         >
-                            <svg class="w-4 h-4 sm:w-4.5 sm:h-4.5 text-[#5C0D1B]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                            <svg class="w-4 h-4 sm:w-4.5 sm:h-4.5 text-[#24140E]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
                             </svg>
                         </div>

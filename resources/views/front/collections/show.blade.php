@@ -150,7 +150,7 @@
 
                 <!-- Center: Category / Collection Name in the Middle of Filter and Sort By -->
                 <div class="text-center my-1 md:my-0 flex-1 px-3">
-                    <h1 class="text-2xl sm:text-3xl lg:text-[34px] font-black text-[#9B1C31] font-heading tracking-tight drop-shadow-xs">
+                    <h1 class="text-2xl sm:text-3xl lg:text-[34px] font-black text-[#C28430] font-heading tracking-tight drop-shadow-xs">
                         {{ $displayCatTitle }}
                     </h1>
                 </div>

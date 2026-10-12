@@ -13,17 +13,17 @@
     >
         
         <!-- 1. Header Bar with Brand & Security -->
-        <div class="bg-[#24140E] text-white px-5 py-3.5 flex items-center justify-between shrink-0 border-b border-[#D38928]/30">
+        <div class="bg-[#24140E] text-white px-5 py-3.5 flex items-center justify-between shrink-0 border-b border-[#C28430]/30">
             <div class="flex items-center space-x-2.5">
                 <img src="{{ asset('assets/images/fac-icon.png') }}" alt="ISHANAA" class="w-6 h-6 object-contain">
                 <div class="font-heading">
-                    <span class="text-white text-base font-black tracking-tight">ISHANAA<span class="text-[#D38928]">.co™</span></span>
-                    <span class="text-[10px] bg-[#9B1C31] text-white px-2 py-0.5 rounded-full font-bold uppercase tracking-wider ml-1.5 font-sans">Secure Checkout</span>
+                    <span class="text-white text-base font-black tracking-tight">ISHANAA<span class="text-[#C28430]">™</span></span>
+                    <span class="text-[10px] bg-[#C28430] text-white px-2 py-0.5 rounded-full font-bold uppercase tracking-wider ml-1.5 font-sans">Secure Checkout</span>
                 </div>
             </div>
 
             <div class="flex items-center space-x-3">
-                <div class="hidden sm:flex items-center space-x-1 text-[11px] text-[#D38928] font-semibold">
+                <div class="hidden sm:flex items-center space-x-1 text-[11px] text-[#C28430] font-semibold">
                     <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
                     </svg>
@@ -41,9 +41,9 @@
         </div>
 
         <!-- 2. Promo Strip -->
-        <div class="bg-gradient-to-r from-[#9B1C31] to-[#7B1425] text-white px-4 py-2 text-center text-xs font-bold font-heading flex items-center justify-center space-x-2 shrink-0 shadow-inner">
+        <div class="bg-gradient-to-r from-[#C28430] to-[#A66B1F] text-white px-4 py-2 text-center text-xs font-bold font-heading flex items-center justify-center space-x-2 shrink-0 shadow-inner">
             <span>🎉 ₹50 Instant Extra Discount on Prepaid Orders above ₹499</span>
-            <span class="px-1.5 py-0.2 bg-[#D38928] text-white text-[9px] rounded font-mono uppercase">Auto-Applied</span>
+            <span class="px-1.5 py-0.2 bg-[#24140E] text-[#F6DAA8] text-[9px] rounded font-mono uppercase">Auto-Applied</span>
         </div>
 
         <!-- 3. Scrollable Modal Body -->
@@ -53,7 +53,7 @@
             <div class="bg-[#FAF5EE] rounded-[16px] border border-[#EADBCC] p-3.5 space-y-2">
                 <div class="flex items-center justify-between text-xs font-bold text-[#121212] font-heading">
                     <span class="flex items-center gap-1.5">
-                        <img src="{{ asset('assets/images/mangalam-logo.png') }}" alt="ISHANAA" class="h-4 w-auto object-contain inline">
+                        <img src="{{ asset('assets/images/Ishanaa-logo.png') }}" alt="ISHANAA" class="h-4 w-auto object-contain inline">
                         <span>Order Summary</span>
                     </span>
                     <span id="gokwik-items-count" class="text-gray-500 font-normal">0 Items in Cart</span>
@@ -65,7 +65,7 @@
                         <span class="text-gray-400 line-through ml-1.5 hidden" id="gokwik-original-price">₹0.00</span>
                     </div>
                     <div class="text-right">
-                        <span id="gokwik-payable-price" class="text-base font-black font-heading text-[#9B1C31]">₹0.00</span>
+                        <span id="gokwik-payable-price" class="text-base font-black font-heading text-[#C28430]">₹0.00</span>
                     </div>
                 </div>
             </div>
@@ -176,24 +176,24 @@
 
                     <div class="space-y-2">
                         <!-- Option 1: Razorpay Online (UPI, Cards, NetBanking, Wallets) -->
-                        <label class="gokwik-pay-option flex items-center justify-between p-3 rounded-[12px] border-2 border-[#9B1C31] bg-[#FFF8F3] cursor-pointer transition-all">
+                        <label class="gokwik-pay-option flex items-center justify-between p-3 rounded-[12px] border-2 border-[#C28430] bg-[#FFF8F3] cursor-pointer transition-all">
                             <div class="flex items-center space-x-3">
-                                <input type="radio" name="gokwik_payment" value="Razorpay" checked class="text-[#9B1C31] focus:ring-0">
+                                <input type="radio" name="gokwik_payment" value="Razorpay" checked class="text-[#C28430] focus:ring-0">
                                 <div>
                                     <div class="text-xs font-bold text-gray-900 font-heading flex items-center gap-1.5">
                                         <span>UPI / Cards / NetBanking (Razorpay)</span>
-                                        <span class="px-1.5 py-0.5 bg-[#9B1C31] text-white text-[9px] font-black rounded-md uppercase">Save ₹50</span>
+                                        <span class="px-1.5 py-0.5 bg-[#C28430] text-white text-[9px] font-black rounded-md uppercase">Save ₹50</span>
                                     </div>
                                     <div class="text-[10px] text-gray-500">Google Pay, PhonePe, Paytm, QR, Cards &amp; NetBanking</div>
                                 </div>
                             </div>
-                            <span class="text-xs font-bold font-heading text-[#9B1C31]">⚡ Instant</span>
+                            <span class="text-xs font-bold font-heading text-[#C28430]">⚡ Instant</span>
                         </label>
 
                         <!-- Option 2: Cash on Delivery (COD) -->
                         <label class="gokwik-pay-option flex items-center justify-between p-3 rounded-[12px] border border-[#EADBCC] bg-white hover:border-[#D38928] cursor-pointer transition-all">
                             <div class="flex items-center space-x-3">
-                                <input type="radio" name="gokwik_payment" value="COD" class="text-[#9B1C31] focus:ring-0">
+                                <input type="radio" name="gokwik_payment" value="COD" class="text-[#C28430] focus:ring-0">
                                 <div>
                                     <div class="text-xs font-bold text-gray-900 font-heading">Cash on Delivery (COD)</div>
                                     <div class="text-[10px] text-gray-500">Pay upon delivery at your doorstep</div>
@@ -221,21 +221,21 @@
 
             <!-- STEP 4: Success Screen -->
             <div id="gokwik-success-screen" class="hidden text-center py-6 space-y-4">
-                <div class="w-16 h-16 mx-auto rounded-full bg-[#FAF5EE] border-2 border-[#D38928] text-[#9B1C31] flex items-center justify-center text-3xl font-black shadow-md">
+                <div class="w-16 h-16 mx-auto rounded-full bg-[#FAF5EE] border-2 border-[#C28430] text-[#C28430] flex items-center justify-center text-3xl font-black shadow-md">
                     ✓
                 </div>
                 <div class="space-y-1">
-                    <span class="text-xs font-bold text-[#D38928] uppercase tracking-widest font-heading">Order Placed Successfully ⚡</span>
+                    <span class="text-xs font-bold text-[#C28430] uppercase tracking-widest font-heading">Order Placed Successfully ⚡</span>
                     <h4 class="text-2xl font-black font-heading text-[#121212]">Order Confirmed!</h4>
                     <p class="text-xs sm:text-sm text-gray-600 max-w-sm mx-auto">
-                        Your sacred ISHANAA order <strong id="gokwik-order-num" class="font-mono text-[#D38928]">#MG-CONFIRMED</strong> has been placed. Redirecting to your Dashboard...
+                        Your sacred ISHANAA order <strong id="gokwik-order-num" class="font-mono text-[#C28430]">#MG-CONFIRMED</strong> has been placed. Redirecting to your Dashboard...
                     </p>
                 </div>
 
                 <div class="bg-[#FAF5EE] p-4 rounded-[14px] border border-[#EADBCC] text-left text-xs space-y-1.5 max-w-sm mx-auto">
                     <div class="flex justify-between font-bold">
                         <span class="text-gray-600">Payment Status:</span>
-                        <span class="text-[#9B1C31]" id="gokwik-success-payment-status">✓ Paid (Razorpay Verified)</span>
+                        <span class="text-[#C28430]" id="gokwik-success-payment-status">✓ Paid (Razorpay Verified)</span>
                     </div>
                     <div class="flex justify-between">
                         <span class="text-gray-600">Expected Delivery:</span>
@@ -716,7 +716,7 @@
                             ondismiss: function () {
                                 restorePayButton();
                                 if (paymentFeedback) {
-                                    paymentFeedback.innerHTML = '<span class="text-[#9B1C31] font-semibold text-xs">⚡ Razorpay payment window was closed. Your cart is preserved and you can retry anytime.</span>';
+                                    paymentFeedback.innerHTML = '<span class="text-[#C28430] font-semibold text-xs">⚡ Razorpay payment window was closed. Your cart is preserved and you can retry anytime.</span>';
                                     paymentFeedback.classList.remove('hidden');
                                 }
                             }

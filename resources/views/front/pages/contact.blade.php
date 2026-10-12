@@ -100,7 +100,7 @@
 
                     <!-- Seva Card 3: Ashram Kendra Address -->
                     <div class="bg-[#FAF7F2] border border-[#EADBCC] rounded-[18px] p-5 shadow-xs flex items-start space-x-4">
-                        <div class="w-12 h-12 rounded-full bg-[#9B1C31] text-white flex items-center justify-center shrink-0 shadow-sm text-xl">
+                        <div class="w-12 h-12 rounded-full bg-[#C28430] text-white flex items-center justify-center shrink-0 shadow-sm text-xl">
                             🛕
                         </div>
                         <div class="space-y-1">

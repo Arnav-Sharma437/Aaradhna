@@ -517,7 +517,7 @@
                             
                             <!-- Badge 1: Low Smoke -->
                             <div class="flex flex-col items-center text-center group cursor-default">
-                                <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-[1.5px] border-[#D38928]/80 bg-white p-1 flex flex-col items-center justify-center shadow-2xs group-hover:scale-105 group-hover:border-[#831F2E] transition-all">
+                                <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-[1.5px] border-[#D38928]/80 bg-white p-1 flex flex-col items-center justify-center shadow-2xs group-hover:scale-105 group-hover:border-[#C28430] transition-all">
                                     <span class="text-[6.5px] sm:text-[7px] font-bold text-[#965A15] tracking-widest uppercase leading-none mb-0.5">LOW</span>
                                     <svg class="w-4 h-4 sm:w-4.5 sm:h-4.5 text-[#D38928]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 3z"/>
@@ -531,7 +531,7 @@
 
                             <!-- Badge 2: Backed by Scriptures -->
                             <div class="flex flex-col items-center text-center group cursor-default">
-                                <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-[1.5px] border-[#D38928]/80 bg-white p-1 flex flex-col items-center justify-center shadow-2xs group-hover:scale-105 group-hover:border-[#831F2E] transition-all">
+                                <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-[1.5px] border-[#D38928]/80 bg-white p-1 flex flex-col items-center justify-center shadow-2xs group-hover:scale-105 group-hover:border-[#C28430] transition-all">
                                     <span class="text-[6px] sm:text-[6.5px] font-bold text-[#965A15] tracking-tighter uppercase leading-none mb-0.5">BACKED</span>
                                     <div class="w-4 h-4 sm:w-4.5 sm:h-4.5 rounded-[2px] border border-[#D38928] flex items-center justify-center bg-[#FAF7F2]">
                                         <span class="text-[8px] sm:text-[9px] font-serif font-black text-[#8B1E1E] leading-none">श्री</span>
@@ -545,7 +545,7 @@
 
                             <!-- Badge 3: Pure Fragrance -->
                             <div class="flex flex-col items-center text-center group cursor-default">
-                                <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-[1.5px] border-[#D38928]/80 bg-white p-1 flex flex-col items-center justify-center shadow-2xs group-hover:scale-105 group-hover:border-[#831F2E] transition-all">
+                                <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-[1.5px] border-[#D38928]/80 bg-white p-1 flex flex-col items-center justify-center shadow-2xs group-hover:scale-105 group-hover:border-[#C28430] transition-all">
                                     <span class="text-[6.5px] sm:text-[7px] font-bold text-[#965A15] tracking-widest uppercase leading-none mb-0.5">DIVINE</span>
                                     <span class="text-sm sm:text-base font-serif font-black text-[#D38928] leading-none">ॐ</span>
                                     <span class="text-[5.5px] sm:text-[6px] font-bold text-[#965A15] tracking-tighter uppercase leading-none mt-0.5">FRAGRANCE</span>
@@ -557,7 +557,7 @@
 
                             <!-- Badge 4: 24 hours dispatch -->
                             <div class="flex flex-col items-center text-center group cursor-default">
-                                <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-[1.5px] border-[#D38928]/80 bg-white p-1 flex flex-col items-center justify-center shadow-2xs group-hover:scale-105 group-hover:border-[#831F2E] transition-all">
+                                <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-[1.5px] border-[#D38928]/80 bg-white p-1 flex flex-col items-center justify-center shadow-2xs group-hover:scale-105 group-hover:border-[#C28430] transition-all">
                                     <span class="text-[6.5px] sm:text-[7px] font-bold text-[#965A15] tracking-widest uppercase leading-none mb-0.5">24 HRS</span>
                                     <div class="flex items-center justify-center space-x-0.5">
                                         <span class="text-[9px] sm:text-[10px] font-black text-[#8B1E1E] leading-none">24h</span>
@@ -627,7 +627,7 @@
                 <!-- Right Card: Features Comparison (7 Cols) -->
                 <div class="lg:col-span-7 bg-white rounded-[14px] sm:rounded-[18px] border border-[#EADBCC] shadow-xs overflow-hidden flex flex-col">
                     <!-- Header Bar with Distinct Rounded-Top Logo Box -->
-                    <div class="bg-[#7B1925] border-b border-[#D38928]/40 grid grid-cols-12 items-center">
+                    <div class="bg-[#C28430] border-b border-[#A66B1F] grid grid-cols-12 items-center">
                         <div class="col-span-6 px-4 sm:px-5 py-2 sm:py-2.5">
                             <h3 class="font-serif text-lg sm:text-xl text-white font-medium tracking-wide">
                                 Features
@@ -635,7 +635,7 @@
                         </div>
                         <div class="col-span-3 bg-[#FDF6ED] py-1.5 px-2 text-center rounded-t-[10px] border-t-2 border-x-2 border-[#D38928]/50 shadow-xs flex items-center justify-center -mb-[1px] relative z-10 min-h-[46px]">
                             <img 
-                                src="{{ asset('assets/images/mangalam-logo.png') }}" 
+                                src="{{ asset('assets/images/Ishanaa-logo.png') }}" 
                                 alt="ISHANAA" 
                                 class="h-6 sm:h-7 w-auto max-w-[90px] sm:max-w-[110px] object-contain"
                             >
@@ -932,7 +932,7 @@
                 <button 
                     type="button" 
                     id="write-review-toggle-btn"
-                    class="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#831F2E] hover:bg-[#6E1724] text-white text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow transition-all font-heading cursor-pointer shrink-0"
+                    class="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#C28430] hover:bg-[#A66B1F] text-white text-xs sm:text-sm font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow transition-all font-heading cursor-pointer shrink-0"
                     onclick="const form = document.getElementById('inline-review-form'); form.classList.toggle('hidden');"
                 >
                     <svg class="w-4 h-4 text-[#F6DAA8]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -998,7 +998,7 @@
                         <span class="text-sm font-bold text-[#121212] font-heading uppercase tracking-wider flex items-center gap-1.5">
                             <span class="text-[#D38928]">✦</span> Write a Review
                         </span>
-                        <button type="button" class="text-xs text-gray-500 hover:text-[#831F2E] font-bold cursor-pointer transition-colors" onclick="document.getElementById('inline-review-form').classList.add('hidden');">✕ Close</button>
+                        <button type="button" class="text-xs text-gray-500 hover:text-[#C28430] font-bold cursor-pointer transition-colors" onclick="document.getElementById('inline-review-form').classList.add('hidden');">✕ Close</button>
                     </div>
 
                     <!-- Row 1: Name, Email & Interactive Star Rating -->
@@ -1084,7 +1084,7 @@
                         <button 
                             type="submit" 
                             id="submit-review-btn"
-                            class="px-6 py-2.5 bg-[#831F2E] hover:bg-[#6E1724] text-white text-xs sm:text-sm font-bold rounded-[8px] shadow-xs cursor-pointer font-heading transition-colors"
+                            class="px-6 py-2.5 bg-[#C28430] hover:bg-[#A66B1F] text-white text-xs sm:text-sm font-bold rounded-[8px] shadow-xs cursor-pointer font-heading transition-colors"
                         >
                             Submit Review
                         </button>
@@ -1301,10 +1301,10 @@
 <!-- FLOATING 3D STICKY BOTTOM ADD TO CART ON SCROLL (Compact Width) -->
 <div 
     id="sticky-product-bar" 
-    class="fixed bottom-[68px] lg:bottom-6 left-1/2 -translate-x-1/2 z-40 w-[92%] sm:w-[75%] lg:w-[48%] max-w-xl bg-white/98 backdrop-blur-2xl border-2 border-[#831F2E] rounded-2xl sm:rounded-[24px] px-3.5 sm:px-5 py-2.5 sm:py-3 shadow-[0_20px_50px_-10px_rgba(131,31,46,0.22),0_10px_20px_-6px_rgba(0,0,0,0.15)] transform translate-y-32 opacity-0 pointer-events-none transition-all duration-300 flex items-center justify-between gap-3 sm:gap-6 font-body select-none"
+    class="fixed bottom-[68px] lg:bottom-6 left-1/2 -translate-x-1/2 z-40 w-[92%] sm:w-[75%] lg:w-[48%] max-w-xl bg-white/98 backdrop-blur-2xl border-2 border-[#C28430] rounded-2xl sm:rounded-[24px] px-3.5 sm:px-5 py-2.5 sm:py-3 shadow-[0_20px_50px_-10px_rgba(194,132,48,0.22),0_10px_20px_-6px_rgba(0,0,0,0.15)] transform translate-y-32 opacity-0 pointer-events-none transition-all duration-300 flex items-center justify-between gap-3 sm:gap-6 font-body select-none"
 >
     <div class="flex items-center space-x-3.5 sm:space-x-4 overflow-hidden min-w-0 pr-2">
-        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-[#FAF7F2] border border-[#831F2E]/30 overflow-hidden shrink-0 shadow-xs">
+        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-[#FAF7F2] border border-[#C28430]/30 overflow-hidden shrink-0 shadow-xs">
             <img src="{{ asset($mainImg) }}" alt="{{ $product->title }}" class="w-full h-full object-cover">
         </div>
         <div class="truncate text-left">
@@ -1585,7 +1585,7 @@
                     div.className = 'relative w-14 h-14 sm:w-16 sm:h-16 rounded-[8px] overflow-hidden border border-[#D38928] shadow-xs shrink-0 group';
                     div.innerHTML = `
                         <img src="${e.target.result}" class="w-full h-full object-cover">
-                        <button type="button" onclick="window.removeReviewUploadedFile(${index})" class="absolute top-1 right-1 w-5 h-5 rounded-full bg-black/80 hover:bg-[#831F2E] text-white flex items-center justify-center text-[10px] font-bold transition-colors cursor-pointer" title="Remove photo">✕</button>
+                        <button type="button" onclick="window.removeReviewUploadedFile(${index})" class="absolute top-1 right-1 w-5 h-5 rounded-full bg-black/80 hover:bg-[#C28430] text-white flex items-center justify-center text-[10px] font-bold transition-colors cursor-pointer" title="Remove photo">✕</button>
                     `;
                     reviewPreviewContainer.appendChild(div);
                 };

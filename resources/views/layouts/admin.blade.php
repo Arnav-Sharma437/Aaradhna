@@ -49,7 +49,7 @@
                     <div class="h-14 px-4 bg-[#141414] border-b border-[#2C2C2C] flex items-center justify-between">
                         <div class="flex items-center space-x-2.5 min-w-0">
                             <div class="h-8 bg-white px-2 py-1 rounded-[8px] flex items-center justify-center shadow-md shrink-0">
-                                <img src="{{ asset('assets/images/mangalam-logo.png') }}" alt="ISHANAA" class="h-full w-auto object-contain">
+                                <img src="{{ asset('assets/images/Ishanaa-logo.png') }}" alt="ISHANAA" class="h-full w-auto object-contain">
                             </div>
                             <div class="min-w-0">
                                 <span class="text-xs font-bold text-white tracking-wide truncate block font-heading">Admin Portal</span>
@@ -405,7 +405,7 @@
             <p id="confirm-modal-message" class="text-xs text-gray-600 leading-relaxed">Are you sure you want to proceed?</p>
             <div class="flex items-center justify-end space-x-3 pt-2">
                 <button type="button" id="confirm-modal-cancel" class="px-3.5 py-2 rounded-[8px] bg-gray-100 hover:bg-gray-200 text-xs font-semibold text-gray-700 transition-colors">Cancel</button>
-                <button type="button" id="confirm-modal-ok" class="px-4 py-2 rounded-[8px] bg-[#9B1C31] hover:bg-[#801627] text-xs font-bold text-white transition-colors">Proceed</button>
+                <button type="button" id="confirm-modal-ok" class="px-4 py-2 rounded-[8px] bg-[#C28430] hover:bg-[#A66B1F] text-xs font-bold text-white transition-colors">Proceed</button>
             </div>
         </div>
     </div>
