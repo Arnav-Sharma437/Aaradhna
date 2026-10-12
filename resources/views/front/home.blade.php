@@ -998,7 +998,7 @@
                             'name' => 'अनिल डोगरा',
                             'city' => 'कांगड़ा, हिमाचल प्रदेश',
                             'initials' => 'AD',
-                            'avatar_bg' => 'bg-[#C28430]',
+                            'avatar_bg' => 'bg-[#831F2E]',
                             'product' => 'Swarna Pushpa',
                             'quote' => 'कांगड़ा में हमारे घर में रोजाना पूजा होती है। बिल्कुल शुद्ध धुआं है और आंखों में कोई जलन नहीं होती। शास्त्रों के अनुसार बिना बांस वाली अगरबत्ती से बहुत ही पवित्र अनुभव मिलता है।'
                         ],
@@ -1022,7 +1022,7 @@
                             'name' => 'राजेश धीमान',
                             'city' => 'हमीरपुर, हिमाचल प्रदेश',
                             'initials' => 'RD',
-                            'avatar_bg' => 'bg-[#C28430]',
+                            'avatar_bg' => 'bg-[#831F2E]',
                             'product' => 'Bambooless Incense',
                             'quote' => 'हमीरपुर से मंगवाया था। पहले बाजार वाली धूप से कमरे में भारीपन और सिरदर्द होता था, लेकिन इसमें सिर्फ शुद्ध जड़ी-बूटियों की महक है। बहुत ही शांत वातावरण बनता है।'
                         ],
@@ -1102,7 +1102,7 @@
                             'name' => 'दीपक शर्मा',
                             'city' => 'मंडी, हिमाचल प्रदेश',
                             'initials' => 'DS',
-                            'avatar_bg' => 'bg-[#C28430]',
+                            'avatar_bg' => 'bg-[#831F2E]',
                             'quote' => 'मंडी के हमारे मंदिर में सुबह-शाम यही अगरबत्ती जलती है। घर का वातावरण एकदम शांत और सकारात्मक हो जाता है। बिना बांस के शुद्ध वैदिक खुशबू।'
                         ],
                         [
@@ -1123,7 +1123,7 @@
                             'name' => 'Vikas Jaswal',
                             'city' => 'Hamirpur, Himachal Pradesh',
                             'initials' => 'VJ',
-                            'avatar_bg' => 'bg-[#C28430]',
+                            'avatar_bg' => 'bg-[#831F2E]',
                             'quote' => 'Hamirpur me daily Sandhya aarti ke liye best incense mila hai. Charcoal-free hone ki wajah se pure white ash banti hai jo mandir ko clean rakhti hai.'
                         ],
                         [

@@ -63,6 +63,12 @@
                     </div>
 
                     <!-- Seva Card 1: WhatsApp Direct Helpdesk -->
+                    @php
+                        $contactWa = preg_replace('/[^0-9]/', '', $storeSettings['support_whatsapp'] ?? '919876543210');
+                        $contactPhone = $storeSettings['support_phone'] ?? '+91 98765 43210';
+                        $contactEmail = $storeSettings['support_email'] ?? 'care@ishanaa.com';
+                        $contactAddress = $storeSettings['store_address'] ?? 'Plot 42, Industrial Area, Varanasi, Uttar Pradesh 221001';
+                    @endphp
                     <div class="bg-[#FAF7F2] border border-[#EADBCC] rounded-[18px] p-5 shadow-xs flex items-start space-x-4">
                         <div class="w-12 h-12 rounded-full bg-emerald-600 text-white flex items-center justify-center shrink-0 shadow-sm text-xl">
                             💬
@@ -72,11 +78,11 @@
                             <p class="text-xs text-gray-600">Instant answers for orders, product queries &amp; custom requests.</p>
                             <div class="pt-1.5">
                                 <a 
-                                    href="https://wa.me/919999999999" 
+                                    href="https://wa.me/{{ $contactWa }}" 
                                     target="_blank" 
                                     class="inline-flex items-center text-xs font-bold text-emerald-700 hover:text-emerald-800 transition-colors"
                                 >
-                                    <span>Chat on WhatsApp (+91 99999 99999)</span>
+                                    <span>Chat on WhatsApp ({{ $contactPhone }})</span>
                                     <span class="ml-1">→</span>
                                 </a>
                             </div>
@@ -92,8 +98,7 @@
                             <h4 class="text-sm font-bold text-[#121212] font-heading">Email Devotee Care</h4>
                             <p class="text-xs text-gray-600">Write to us for any detailed requirement or temple donations.</p>
                             <div class="pt-1.5 space-y-0.5 text-xs font-semibold text-[#8B4513]">
-                                <div>seva@manglam.co</div>
-                                <div>support@manglam.co</div>
+                                <div><a href="mailto:{{ $contactEmail }}" class="hover:text-[#D38928]">{{ $contactEmail }}</a></div>
                             </div>
                         </div>
                     </div>
@@ -107,8 +112,7 @@
                             <h4 class="text-sm font-bold text-[#121212] font-heading">Sacred Seva Kendra</h4>
                             <p class="text-xs text-gray-600 leading-relaxed">
                                 ISHANAA Vedic Samagri Kendra,<br>
-                                Mathura Road, Vrindavan Dham,<br>
-                                Uttar Pradesh — 281121, Bharat 🇮🇳
+                                {{ $contactAddress }}
                             </p>
                         </div>
                     </div>

@@ -56,7 +56,7 @@
                 <div class="flex items-center space-x-3 pt-2">
                     <!-- Instagram -->
                     <a 
-                        href="https://instagram.com" 
+                        href="{{ $storeSettings['instagram_url'] ?? 'https://instagram.com' }}" 
                         target="_blank" 
                         rel="noopener noreferrer" 
                         class="w-10 h-10 rounded-full border border-[#D38928]/40 hover:border-[#C28430] text-[#2B1810] hover:text-[#C28430] bg-white hover:bg-[#FDF9F2] flex items-center justify-center transition-all transform hover:scale-105 shadow-2xs"
@@ -71,7 +71,7 @@
 
                     <!-- Facebook -->
                     <a 
-                        href="https://facebook.com" 
+                        href="{{ $storeSettings['facebook_url'] ?? 'https://facebook.com' }}" 
                         target="_blank" 
                         rel="noopener noreferrer" 
                         class="w-10 h-10 rounded-full border border-[#D38928]/40 hover:border-[#C28430] text-[#2B1810] hover:text-[#C28430] bg-white hover:bg-[#FDF9F2] flex items-center justify-center transition-all transform hover:scale-105 shadow-2xs"
@@ -84,7 +84,7 @@
 
                     <!-- YouTube -->
                     <a 
-                        href="https://youtube.com" 
+                        href="{{ $storeSettings['youtube_url'] ?? 'https://youtube.com' }}" 
                         target="_blank" 
                         rel="noopener noreferrer" 
                         class="w-10 h-10 rounded-full border border-[#D38928]/40 hover:border-[#C28430] text-[#2B1810] hover:text-[#C28430] bg-white hover:bg-[#FDF9F2] flex items-center justify-center transition-all transform hover:scale-105 shadow-2xs"
@@ -97,20 +97,24 @@
                 </div>
 
                 <!-- Customer Support Contacts (WhatsApp & Email - Exact Reference Screenshot) -->
+                @php
+                    $waNumber = preg_replace('/[^0-9]/', '', $storeSettings['support_whatsapp'] ?? '919876543210');
+                    $supportEmail = $storeSettings['support_email'] ?? 'care@ishanaa.com';
+                @endphp
                 <div class="space-y-2 pt-3 border-t border-[#EADBCC] text-xs sm:text-[13.5px] text-[#443026]">
-                    <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 hover:text-[#C28430] transition-colors group">
+                    <a href="https://wa.me/{{ $waNumber }}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 hover:text-[#C28430] transition-colors group">
                         <svg class="w-4.5 h-4.5 text-[#25D366] group-hover:scale-110 transition-transform shrink-0" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.777.79 2.796.791h.002c3.181 0 5.767-2.586 5.768-5.766 0-3.18-2.587-5.767-5.77-5.77-5.767zm3.376 8.21c-.144.405-.837.774-1.17.824-.312.045-.698.075-2.221-.555-1.849-.766-3.04-2.656-3.133-2.778-.093-.122-.751-.998-.751-1.904 0-.906.474-1.353.643-1.537.169-.184.37-.231.494-.231.123 0 .247.001.355.006.114.005.267-.043.418.321.155.372.531 1.29.577 1.383.046.093.078.201.015.324-.061.123-.093.2-.185.308-.093.108-.195.241-.278.324-.093.093-.19.195-.082.38.108.185.48 1.066 1.028 1.554.707.63 1.303.826 1.488.918.185.093.293.078.402-.046.108-.124.463-.539.587-.724.123-.185.247-.154.416-.093.169.062 1.077.509 1.262.602.185.092.308.139.355.216.046.077.046.447-.098.852z"/>
                             <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.98-1.309C8.423 21.523 10.153 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.167c-1.636 0-3.155-.49-4.432-1.332l-.318-.208-2.964.778.791-2.89-.228-.363C3.96 14.82 3.444 13.447 3.444 12c0-4.717 3.839-8.556 8.556-8.556 4.717 0 8.556 3.839 8.556 8.556 0 4.717-3.839 8.556-8.556 8.556z"/>
                         </svg>
                         <span class="font-medium">Whatsapp Support</span>
                     </a>
-                    <a href="mailto:support@manglam.co" class="flex items-center gap-2.5 hover:text-[#C28430] transition-colors group">
+                    <a href="mailto:{{ $supportEmail }}" class="flex items-center gap-2.5 hover:text-[#C28430] transition-colors group">
                         <svg class="w-4.5 h-4.5 text-[#C28430] group-hover:scale-110 transition-transform shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <rect x="2" y="4" width="20" height="16" rx="2"/>
                             <path d="M22 7l-10 7L2 7"/>
                         </svg>
-                        <span class="font-medium">support@manglam.co</span>
+                        <span class="font-medium">{{ $supportEmail }}</span>
                     </a>
                 </div>
             </div>

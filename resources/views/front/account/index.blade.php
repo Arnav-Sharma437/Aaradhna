@@ -152,7 +152,7 @@
                     <!-- Welcome Hero Banner -->
                     <div class="relative overflow-hidden bg-gradient-to-r from-[#2B1810] to-[#45271A] text-white rounded-[24px] p-6 sm:p-8 shadow-lg border border-[#EADBCC]/30">
                         <div class="relative z-10 space-y-2 max-w-xl">
-                            <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#F6DAA8] font-heading">✦ SHUBH AARADHNA ✦</span>
+                            <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#F6DAA8] font-heading">✦ SHUBH ISHANAA ✦</span>
                             <h2 class="text-xl sm:text-2xl font-black font-heading leading-tight">
                                 Pure Vedic Blends for Your Daily Auspicious Hours
                             </h2>

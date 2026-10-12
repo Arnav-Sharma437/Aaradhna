@@ -627,7 +627,7 @@
                 <!-- Right Card: Features Comparison (7 Cols) -->
                 <div class="lg:col-span-7 bg-white rounded-[14px] sm:rounded-[18px] border border-[#EADBCC] shadow-xs overflow-hidden flex flex-col">
                     <!-- Header Bar with Distinct Rounded-Top Logo Box -->
-                    <div class="bg-[#C28430] border-b border-[#A66B1F] grid grid-cols-12 items-center">
+                    <div class="bg-[#7B1925] border-b border-[#D38928]/40 grid grid-cols-12 items-center">
                         <div class="col-span-6 px-4 sm:px-5 py-2 sm:py-2.5">
                             <h3 class="font-serif text-lg sm:text-xl text-white font-medium tracking-wide">
                                 Features

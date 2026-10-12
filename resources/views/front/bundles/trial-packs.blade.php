@@ -24,22 +24,22 @@
     <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px] pt-4 sm:pt-6">
         <div class="rounded-2xl border border-[#D38928]/35 bg-gradient-to-r from-[#FFF9F2] via-[#FAF3EA] to-[#FFF9F2] p-3.5 sm:p-4 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-3.5">
             <div class="flex items-center space-x-3.5 text-center sm:text-left">
-                <div class="w-10 h-10 rounded-xl bg-[#C28430] text-white flex items-center justify-center font-black text-base shrink-0 shadow-xs">
+                <div class="w-10 h-10 rounded-xl bg-[#831F2E] text-white flex items-center justify-center font-black text-base shrink-0 shadow-xs">
                     ✦
                 </div>
                 <div>
                     <div class="flex items-center justify-center sm:justify-start space-x-2">
-                        <h4 class="text-xs sm:text-sm font-black text-[#C28430] font-heading uppercase tracking-wide">
+                        <h4 class="text-xs sm:text-sm font-black text-[#831F2E] font-heading uppercase tracking-wide">
                             Festive Exclusive Bundle Offer
                         </h4>
-                        <span class="px-2 py-0.5 bg-[#C28430]/10 text-[#C28430] text-[10px] font-bold rounded-full border border-[#C28430]/20">Auto-Applied</span>
+                        <span class="px-2 py-0.5 bg-[#831F2E]/10 text-[#831F2E] text-[10px] font-bold rounded-full border border-[#831F2E]/20">Auto-Applied</span>
                     </div>
                     <p class="text-[11px] sm:text-xs text-gray-700 font-medium pt-0.5">
                         Special festival discount already unlocked on this box. No extra coupons needed!
                     </p>
                 </div>
             </div>
-            <div class="shrink-0 flex items-center space-x-1.5 px-3.5 py-1.5 rounded-xl bg-white/90 border border-[#D38928]/30 text-[#C28430] font-bold text-xs shadow-2xs">
+            <div class="shrink-0 flex items-center space-x-1.5 px-3.5 py-1.5 rounded-xl bg-white/90 border border-[#831F2E]/30 text-[#831F2E] font-bold text-xs shadow-2xs">
                 <span>🏷️ Special Savings Active</span>
             </div>
         </div>

@@ -19,7 +19,11 @@
             <!-- Slide 1 -->
             <div class="announcement-slide absolute inset-0 flex items-center justify-center text-center transition-all duration-500 ease-in-out opacity-100 translate-x-0">
                 <p class="text-[11px] sm:text-xs font-medium tracking-wide text-white truncate px-1">
-                    Free Shipping on Orders Above ₹499 <span class="text-[#F6DAA8] mx-1.5 font-bold">•</span> COD Available Above ₹699
+                    @if(!empty($storeSettings['announcement_text']))
+                        {{ $storeSettings['announcement_text'] }}
+                    @else
+                        Free Shipping on Orders Above ₹{{ $storeSettings['free_shipping_threshold'] ?? '499' }} <span class="text-[#F6DAA8] mx-1.5 font-bold">•</span> COD Available Above ₹699
+                    @endif
                 </p>
             </div>
 

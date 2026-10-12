@@ -220,7 +220,7 @@
                     
                     <span 
                         id="header-cart-badge"
-                        class="absolute top-0.5 right-0 bg-[#121212] text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center leading-none ring-1 ring-white"
+                        class="absolute top-0.5 right-0 bg-[#831F2E] text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center leading-none ring-1 ring-white"
                     >
                         {{ session('cart_count', 0) }}
                     </span>
@@ -234,7 +234,7 @@
     <!-- Mobile Horizontal Quick Category & Offer Pills Strip (Matches Reference Screenshot) -->
     <div class="lg:hidden w-full border-t border-[#EAE3D9]/70 bg-[#FFFDF9] py-2 px-3 overflow-x-auto scrollbar-none">
         <div class="flex items-center space-x-2 whitespace-nowrap text-xs font-semibold">
-            <a href="{{ route('bundles.buy2get1') }}" class="px-3.5 py-1 rounded-full border border-[#D38928] bg-white text-[#965A15] hover:bg-[#D38928] hover:text-white transition-colors shrink-0 shadow-2xs font-heading">
+            <a href="{{ route('bundles.buy2get1') }}" class="px-3.5 py-1 rounded-full border border-[#831F2E]/40 bg-[#FFF8F8] text-[#831F2E] hover:bg-[#831F2E] hover:text-white transition-colors shrink-0 shadow-2xs font-heading">
                 Buy 2 Get 1 free
             </a>
             <a href="{{ route('collections.show', 'bambooless') }}" class="px-3.5 py-1 rounded-full border border-[#D38928] bg-white text-[#121212] hover:bg-[#D38928] hover:text-white transition-colors shrink-0 shadow-2xs">

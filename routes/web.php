@@ -69,7 +69,7 @@ Route::get('/uploads/{path}', function (string $path) {
 
 // Placeholder Blog Route
 Route::get('/blogs/{slug}', function (string $slug) {
-    return response("<h1>Aaradhna Blog — " . e($slug) . "</h1>", 200);
+    return response("<h1>Ishanaa Blog — " . e($slug) . "</h1>", 200);
 })->name('blogs.index');
 
 // =========================================================================
