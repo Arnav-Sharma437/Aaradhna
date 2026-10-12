@@ -150,7 +150,7 @@
 
                 <!-- Center: Category / Collection Name in the Middle of Filter and Sort By -->
                 <div class="text-center my-1 md:my-0 flex-1 px-3">
-                    <h1 class="text-2xl sm:text-3xl lg:text-[44px] font-black text-[#C28430] font-heading tracking-tight drop-shadow-xs">
+                    <h1 class="text-2xl sm:text-3xl lg:text-[34px] font-black text-[#C28430] font-heading tracking-tight drop-shadow-xs">
                         {{ $displayCatTitle }}
                     </h1>
                 </div>
@@ -245,7 +245,7 @@
         <div class="w-full">
             
             @if($products->count() > 0)
-                <div id="products-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-[10px] pt-3.5 sm:pt-4">
+                <div id="products-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-[10px]">
                     @foreach($products as $index => $product)
                         <div class="product-item {{ $index >= 4 ? 'reveal-from-left' : '' }}" data-index="{{ $index }}">
                             <x-product-card :product="$product" />

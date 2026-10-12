@@ -467,21 +467,21 @@ header nav button,
     will-change: opacity, transform;
 }
 
-/* Main Section Title: Guaranteed single-line across all screens (no wrapping/break), scaling gracefully up to 44px */
-.main-section-title {
-    font-size: clamp(16px, 4.2vw, 44px) !important;
-    white-space: nowrap !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-    line-height: 1.15 !important;
-    letter-spacing: clamp(0.02em, 0.5vw, 0.08em) !important;
+.reveal-from-left.is-revealed {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
 }
 
-@media (min-width: 1024px) {
-    .main-section-title {
-        font-size: 44px !important;
-        overflow: visible !important;
-    }
+/* Stagger delay helpers */
+/* Custom Autofill Fix for Dark/Vedic Containers */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-text-fill-color: #ffffff !important;
+    -webkit-box-shadow: 0 0 0 1000px #3A060E inset !important;
+    box-shadow: 0 0 0 1000px #3A060E inset !important;
+    transition: background-color 5000s ease-in-out 0s;
 }
 
 

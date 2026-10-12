@@ -218,9 +218,9 @@
     <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
         
         <!-- Section Header -->
-        <div class="text-center max-w-5xl mx-auto mb-4 sm:mb-6 space-y-1.5 px-2">
+        <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12 space-y-1.5">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ SACRED UNBOXING &amp; RITUALS ✦</span>
-            <h2 class="main-section-title font-normal uppercase text-[#121212] font-heading">
+            <h2 class="text-xl sm:text-[22px] lg:text-[26px] font-normal uppercase text-[#121212] font-heading tracking-[0.12em] leading-snug">
                 Experience Divine Fragrance
             </h2>
         </div>
