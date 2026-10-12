@@ -1,4 +1,4 @@
-<div class="w-full bg-[#C28430] text-white border-b border-[#A66B1F] text-xs py-[3px] shadow-xs font-body select-none relative overflow-hidden" id="announcement-bar">
+<div class="w-full bg-[#C28430] text-white text-xs py-[3px] shadow-xs font-body select-none relative overflow-hidden" id="announcement-bar">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 flex items-center justify-between">
         
         <!-- Left Navigation Arrow (10px width) -->

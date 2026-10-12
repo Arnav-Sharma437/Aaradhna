@@ -1,14 +1,14 @@
 <!-- ========================================================================= -->
 <!-- LUXURY SACRED VEDIC FOOTER — ISHANAA™                                   -->
 <!-- ========================================================================= -->
-<footer class="text-white font-body relative overflow-hidden bg-[#1F140E] border-t-2 border-[#C28430]/40 select-none">
+<footer class="text-[#2B1810] font-body relative overflow-hidden bg-[#FBF4E8] border-t-2 border-[#C28430]/40 select-none">
     
-    <!-- Deep Sacred Vedic Warm Dark Gradient Background -->
-    <div class="absolute inset-0 bg-gradient-to-b from-[#24140E] via-[#1A0E0A] to-[#120805] pointer-events-none"></div>
+    <!-- Solid Logo Light Tone Background -->
+    <div class="absolute inset-0 bg-[#FBF4E8] pointer-events-none"></div>
 
-    <!-- Soft Golden Center Glow -->
+    <!-- Soft Warm Amber Glow -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
-        <div class="absolute -bottom-20 left-1/2 -translate-x-1/2 w-[700px] h-[300px] rounded-full bg-[#C28430]/15 blur-[100px]"></div>
+        <div class="absolute -bottom-20 left-1/2 -translate-x-1/2 w-[700px] h-[300px] rounded-full bg-[#C28430]/10 blur-[90px]"></div>
     </div>
 
     <!-- Main Footer Container (1440px) -->
@@ -18,20 +18,20 @@
         <!-- 1. TOP SECTION: SACRED VEDIC MANTRA & 2 ELEGANT GOLDEN LINES       -->
         <!-- ================================================================= -->
         <div class="text-center relative z-10 space-y-3">
-            <div class="text-[#F6DAA8] text-lg sm:text-2xl md:text-[27px] font-bold font-serif tracking-wide sm:tracking-widest leading-relaxed sm:leading-relaxed drop-shadow-md">
+            <div class="text-[#8C5A1E] text-lg sm:text-2xl md:text-[27px] font-bold font-serif tracking-wide sm:tracking-widest leading-relaxed sm:leading-relaxed drop-shadow-xs">
                 <div>मङ्गलं भगवान् विष्णुः, मङ्गलम् गरुडध्वजः ।</div>
                 <div>मङ्गलं पुण्डरी काक्षः, मङ्गलाय तनो हरिः ॥</div>
             </div>
 
             <!-- 2 Thin Golden Lines: One Long, One Short Below (Exact User Requirement) -->
             <div class="flex flex-col items-center justify-center space-y-1.5 pt-2">
-                <div class="w-36 sm:w-64 h-[1.5px] bg-gradient-to-r from-transparent via-[#F6DAA8] to-transparent"></div>
-                <div class="w-18 sm:w-32 h-[1px] bg-gradient-to-r from-transparent via-[#F6DAA8]/70 to-transparent"></div>
+                <div class="w-36 sm:w-64 h-[1.5px] bg-gradient-to-r from-transparent via-[#C28430] to-transparent"></div>
+                <div class="w-18 sm:w-32 h-[1px] bg-gradient-to-r from-transparent via-[#C28430]/70 to-transparent"></div>
             </div>
         </div>
 
         <!-- Horizontal Divider Line -->
-        <div class="w-full h-[1px] bg-white/15 my-8 sm:my-10"></div>
+        <div class="w-full h-[1px] bg-[#EADBCC] my-8 sm:my-10"></div>
 
         <!-- ================================================================= -->
         <!-- 2. MAIN 4-COLUMN GRID                                             -->
@@ -44,11 +44,11 @@
                     <img 
                         src="{{ asset('assets/images/Ishanaa-logo.png') }}" 
                         alt="ISHANAA" 
-                        class="h-13 sm:h-15 w-auto max-w-[190px] object-contain"
+                        class="h-11 sm:h-13 w-auto max-w-[170px] object-contain"
                     >
                 </a>
                 
-                <p class="text-[11px] sm:text-xs uppercase tracking-[0.24em] text-[#F6DAA8] font-bold">
+                <p class="text-[11px] sm:text-xs uppercase tracking-[0.24em] text-[#8C5A1E] font-bold font-heading">
                     PURE FRAGRANCE. DIVINE LIVING.
                 </p>
 
@@ -59,7 +59,7 @@
                         href="https://instagram.com" 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        class="w-10 h-10 rounded-full border border-white/30 hover:border-[#F6DAA8] text-white hover:text-[#F6DAA8] bg-white/5 hover:bg-white/15 flex items-center justify-center transition-all transform hover:scale-105"
+                        class="w-10 h-10 rounded-full border border-[#D38928]/40 hover:border-[#C28430] text-[#2B1810] hover:text-[#C28430] bg-white hover:bg-[#FDF9F2] flex items-center justify-center transition-all transform hover:scale-105 shadow-2xs"
                         aria-label="Instagram"
                     >
                         <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -74,7 +74,7 @@
                         href="https://facebook.com" 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        class="w-10 h-10 rounded-full border border-white/30 hover:border-[#F6DAA8] text-white hover:text-[#F6DAA8] bg-white/5 hover:bg-white/15 flex items-center justify-center transition-all transform hover:scale-105"
+                        class="w-10 h-10 rounded-full border border-[#D38928]/40 hover:border-[#C28430] text-[#2B1810] hover:text-[#C28430] bg-white hover:bg-[#FDF9F2] flex items-center justify-center transition-all transform hover:scale-105 shadow-2xs"
                         aria-label="Facebook"
                     >
                         <svg class="w-4.5 h-4.5" fill="currentColor" viewBox="0 0 24 24">
@@ -87,7 +87,7 @@
                         href="https://youtube.com" 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        class="w-10 h-10 rounded-full border border-white/30 hover:border-[#F6DAA8] text-white hover:text-[#F6DAA8] bg-white/5 hover:bg-white/15 flex items-center justify-center transition-all transform hover:scale-105"
+                        class="w-10 h-10 rounded-full border border-[#D38928]/40 hover:border-[#C28430] text-[#2B1810] hover:text-[#C28430] bg-white hover:bg-[#FDF9F2] flex items-center justify-center transition-all transform hover:scale-105 shadow-2xs"
                         aria-label="YouTube"
                     >
                         <svg class="w-4.5 h-4.5" fill="currentColor" viewBox="0 0 24 24">
@@ -97,16 +97,16 @@
                 </div>
 
                 <!-- Customer Support Contacts (WhatsApp & Email - Exact Reference Screenshot) -->
-                <div class="space-y-2 pt-3 border-t border-white/10 text-xs sm:text-[13.5px] text-white/90">
-                    <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 hover:text-[#F6DAA8] transition-colors group">
+                <div class="space-y-2 pt-3 border-t border-[#EADBCC] text-xs sm:text-[13.5px] text-[#443026]">
+                    <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 hover:text-[#C28430] transition-colors group">
                         <svg class="w-4.5 h-4.5 text-[#25D366] group-hover:scale-110 transition-transform shrink-0" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.777.79 2.796.791h.002c3.181 0 5.767-2.586 5.768-5.766 0-3.18-2.587-5.767-5.77-5.767zm3.376 8.21c-.144.405-.837.774-1.17.824-.312.045-.698.075-2.221-.555-1.849-.766-3.04-2.656-3.133-2.778-.093-.122-.751-.998-.751-1.904 0-.906.474-1.353.643-1.537.169-.184.37-.231.494-.231.123 0 .247.001.355.006.114.005.267-.043.418.321.155.372.531 1.29.577 1.383.046.093.078.201.015.324-.061.123-.093.2-.185.308-.093.108-.195.241-.278.324-.093.093-.19.195-.082.38.108.185.48 1.066 1.028 1.554.707.63 1.303.826 1.488.918.185.093.293.078.402-.046.108-.124.463-.539.587-.724.123-.185.247-.154.416-.093.169.062 1.077.509 1.262.602.185.092.308.139.355.216.046.077.046.447-.098.852z"/>
+                            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.777.79 2.796.791h.002c3.181 0 5.767-2.586 5.768-5.766 0-3.18-2.587-5.767-5.77-5.77-5.767zm3.376 8.21c-.144.405-.837.774-1.17.824-.312.045-.698.075-2.221-.555-1.849-.766-3.04-2.656-3.133-2.778-.093-.122-.751-.998-.751-1.904 0-.906.474-1.353.643-1.537.169-.184.37-.231.494-.231.123 0 .247.001.355.006.114.005.267-.043.418.321.155.372.531 1.29.577 1.383.046.093.078.201.015.324-.061.123-.093.2-.185.308-.093.108-.195.241-.278.324-.093.093-.19.195-.082.38.108.185.48 1.066 1.028 1.554.707.63 1.303.826 1.488.918.185.093.293.078.402-.046.108-.124.463-.539.587-.724.123-.185.247-.154.416-.093.169.062 1.077.509 1.262.602.185.092.308.139.355.216.046.077.046.447-.098.852z"/>
                             <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.98-1.309C8.423 21.523 10.153 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.167c-1.636 0-3.155-.49-4.432-1.332l-.318-.208-2.964.778.791-2.89-.228-.363C3.96 14.82 3.444 13.447 3.444 12c0-4.717 3.839-8.556 8.556-8.556 4.717 0 8.556 3.839 8.556 8.556 0 4.717-3.839 8.556-8.556 8.556z"/>
                         </svg>
                         <span class="font-medium">Whatsapp Support</span>
                     </a>
-                    <a href="mailto:support@manglam.co" class="flex items-center gap-2.5 hover:text-[#F6DAA8] transition-colors group">
-                        <svg class="w-4.5 h-4.5 text-[#F6DAA8] group-hover:scale-110 transition-transform shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <a href="mailto:support@manglam.co" class="flex items-center gap-2.5 hover:text-[#C28430] transition-colors group">
+                        <svg class="w-4.5 h-4.5 text-[#C28430] group-hover:scale-110 transition-transform shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <rect x="2" y="4" width="20" height="16" rx="2"/>
                             <path d="M22 7l-10 7L2 7"/>
                         </svg>
@@ -116,50 +116,50 @@
             </div>
 
             <!-- Col 2: SHOP Menu (2.5 Cols) -->
-            <div class="lg:col-span-2 md:border-l md:border-white/10 md:pl-6">
+            <div class="lg:col-span-2 md:border-l md:border-[#EADBCC] md:pl-6">
                 <button type="button" class="footer-accordion-btn w-full flex items-center justify-between py-2 md:py-0 text-left focus:outline-none cursor-pointer md:cursor-default" data-target="footer-shop-menu">
                     <div>
-                        <h4 class="text-sm sm:text-base font-bold uppercase tracking-[0.16em] text-[#F6DAA8] font-heading">
+                        <h4 class="text-sm sm:text-base font-bold uppercase tracking-[0.16em] text-[#8C5A1E] font-heading">
                             SHOP
                         </h4>
-                        <div class="w-6 h-[2px] bg-[#F6DAA8] mt-1.5 hidden md:block"></div>
+                        <div class="w-6 h-[2px] bg-[#C28430] mt-1.5 hidden md:block"></div>
                     </div>
-                    <span class="footer-accordion-icon text-[#F6DAA8] text-xl font-bold md:hidden leading-none transition-transform duration-200">+</span>
+                    <span class="footer-accordion-icon text-[#8C5A1E] text-xl font-bold md:hidden leading-none transition-transform duration-200">+</span>
                 </button>
-                <ul id="footer-shop-menu" class="footer-accordion-content hidden md:block space-y-2.5 text-sm sm:text-[14.5px] text-white/85 pt-3 md:pt-4">
+                <ul id="footer-shop-menu" class="footer-accordion-content hidden md:block space-y-2.5 text-sm sm:text-[14.5px] text-[#443026] pt-3 md:pt-4">
                     <li>
-                        <a href="{{ route('collections.show', 'all') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
+                        <a href="{{ route('collections.show', 'all') }}" class="hover:text-[#C28430] transition-colors inline-block py-0.5">
                             Shop All
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('collections.show', 'bambooless') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
+                        <a href="{{ route('collections.show', 'bambooless') }}" class="hover:text-[#C28430] transition-colors inline-block py-0.5">
                             Bambooless
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('collections.show', 'havan-cups') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
+                        <a href="{{ route('collections.show', 'havan-cups') }}" class="hover:text-[#C28430] transition-colors inline-block py-0.5">
                             Havan Cups
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('collections.show', 'dhoop-cones') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
+                        <a href="{{ route('collections.show', 'dhoop-cones') }}" class="hover:text-[#C28430] transition-colors inline-block py-0.5">
                             Dhoop Cones
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('bundles.trial-packs') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
+                        <a href="{{ route('bundles.trial-packs') }}" class="hover:text-[#C28430] transition-colors inline-block py-0.5">
                             Trial Pack
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('bundles.buy2get1') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
+                        <a href="{{ route('bundles.buy2get1') }}" class="hover:text-[#C28430] transition-colors inline-block py-0.5">
                             Buy 2 Get 1 Free
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('products.pitambara') }}" class="text-[#F6DAA8] font-bold hover:text-white transition-colors inline-flex items-center gap-1.5 py-0.5">
-                            <span class="text-[#F6DAA8]">✦</span>
+                        <a href="{{ route('products.pitambara') }}" class="text-[#8C5A1E] font-bold hover:text-[#C28430] transition-colors inline-flex items-center gap-1.5 py-0.5">
+                            <span class="text-[#C28430]">✦</span>
                             <span>Pitambara Havan</span>
                         </a>
                     </li>
@@ -167,34 +167,34 @@
             </div>
 
             <!-- Col 3: ABOUT Menu (2.5 Cols) -->
-            <div class="lg:col-span-2 md:border-l md:border-white/10 md:pl-6">
+            <div class="lg:col-span-2 md:border-l md:border-[#EADBCC] md:pl-6">
                 <button type="button" class="footer-accordion-btn w-full flex items-center justify-between py-2 md:py-0 text-left focus:outline-none cursor-pointer md:cursor-default" data-target="footer-about-menu">
                     <div>
-                        <h4 class="text-sm sm:text-base font-bold uppercase tracking-[0.16em] text-[#F6DAA8] font-heading">
+                        <h4 class="text-sm sm:text-base font-bold uppercase tracking-[0.16em] text-[#8C5A1E] font-heading">
                             ABOUT
                         </h4>
-                        <div class="w-6 h-[2px] bg-[#F6DAA8] mt-1.5 hidden md:block"></div>
+                        <div class="w-6 h-[2px] bg-[#C28430] mt-1.5 hidden md:block"></div>
                     </div>
-                    <span class="footer-accordion-icon text-[#F6DAA8] text-xl font-bold md:hidden leading-none transition-transform duration-200">+</span>
+                    <span class="footer-accordion-icon text-[#8C5A1E] text-xl font-bold md:hidden leading-none transition-transform duration-200">+</span>
                 </button>
-                <ul id="footer-about-menu" class="footer-accordion-content hidden md:block space-y-2.5 text-sm sm:text-[14.5px] text-white/85 pt-3 md:pt-4">
+                <ul id="footer-about-menu" class="footer-accordion-content hidden md:block space-y-2.5 text-sm sm:text-[14.5px] text-[#443026] pt-3 md:pt-4">
                     <li>
-                        <a href="{{ route('pages.about') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
+                        <a href="{{ route('pages.about') }}" class="hover:text-[#C28430] transition-colors inline-block py-0.5">
                             About Us
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('pages.contact') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
+                        <a href="{{ route('pages.contact') }}" class="hover:text-[#C28430] transition-colors inline-block py-0.5">
                             Contact Us
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('blogs.index', 'vedic-rituals') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
+                        <a href="{{ route('blogs.index', 'vedic-rituals') }}" class="hover:text-[#C28430] transition-colors inline-block py-0.5">
                             Blogs
                         </a>
                     </li>
                     <li>
-                        <a href="{{ auth()->check() ? route('account.index') : route('account.login') }}" class="hover:text-[#F6DAA8] transition-colors inline-block py-0.5">
+                        <a href="{{ auth()->check() ? route('account.index') : route('account.login') }}" class="hover:text-[#C28430] transition-colors inline-block py-0.5">
                             My Account
                         </a>
                     </li>
@@ -203,36 +203,36 @@
 
             <!-- Col 4: STAY CONNECTED / NEWSLETTER (3.5 Cols - Click to Open 10% OFF Multi-step Flow) -->
             <div 
-                class="lg:col-span-4 lg:border-l lg:border-white/10 lg:pl-8 space-y-3 cursor-pointer group/newsletter select-none"
+                class="lg:col-span-4 lg:border-l lg:border-[#EADBCC] lg:pl-8 space-y-3 cursor-pointer group/newsletter select-none"
                 onclick="window.openDiscountSignupModal()"
             >
-                <span class="text-[11px] sm:text-xs uppercase tracking-[0.22em] text-[#F6DAA8] font-bold block group-hover/newsletter:text-white transition-colors">
+                <span class="text-[11px] sm:text-xs uppercase tracking-[0.22em] text-[#8C5A1E] font-bold block group-hover/newsletter:text-[#C28430] transition-colors">
                     STAY CONNECTED
                 </span>
-                <h3 class="text-2xl sm:text-3xl font-serif text-white tracking-tight leading-none group-hover/newsletter:text-[#F6DAA8] transition-colors">
+                <h3 class="text-2xl sm:text-3xl font-serif text-[#2B1810] tracking-tight leading-none group-hover/newsletter:text-[#8C5A1E] transition-colors">
                     Get 10<span class="font-sans">%</span> OFF
                 </h3>
-                <p class="text-xs sm:text-sm text-white/80 group-hover/newsletter:text-white transition-colors">
+                <p class="text-xs sm:text-sm text-[#443026] group-hover/newsletter:text-[#2B1810] transition-colors">
                     Subscribe to our newsletter for Vedic updates &amp; festive offerings.
                 </p>
 
                 <!-- Newsletter Clickable Interactive Bar (Opens Multi-step Modal) -->
                 <div class="pt-2">
-                    <div class="relative flex items-center w-full rounded-full border border-[#F6DAA8]/40 bg-[#1A0E0A]/90 p-1 pl-4 hover:border-[#F6DAA8] group-hover/newsletter:border-[#F6DAA8] transition-colors shadow-inner cursor-pointer">
-                        <svg class="w-4.5 h-4.5 text-white/60 mr-2.5 shrink-0 group-hover/newsletter:text-[#F6DAA8] transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <div class="relative flex items-center w-full rounded-full border border-[#D38928]/40 bg-white p-1 pl-4 hover:border-[#C28430] group-hover/newsletter:border-[#C28430] transition-colors shadow-2xs cursor-pointer">
+                        <svg class="w-4.5 h-4.5 text-[#8C5A1E]/70 mr-2.5 shrink-0 group-hover/newsletter:text-[#8C5A1E] transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                         </svg>
                         <input 
                             type="text" 
                             readonly
                             placeholder="Click to get your 10% OFF coupon" 
-                            class="footer-email-input bg-transparent text-white placeholder-white/60 text-xs sm:text-sm focus:outline-none flex-1 min-w-0 pr-2 font-body cursor-pointer pointer-events-none"
+                            class="footer-email-input bg-transparent text-[#2B1810] placeholder-[#554035]/70 text-xs sm:text-sm focus:outline-none flex-1 min-w-0 pr-2 font-body cursor-pointer pointer-events-none"
                         >
                         <div 
-                            class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#F6DAA8] hover:bg-[#ffe3b5] text-[#24140E] flex items-center justify-center font-bold transition-all transform group-hover/newsletter:scale-105 shrink-0 shadow-md cursor-pointer"
+                            class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#C28430] hover:bg-[#8C5A1E] text-white flex items-center justify-center font-bold transition-all transform group-hover/newsletter:scale-105 shrink-0 shadow-xs cursor-pointer"
                             aria-label="Get 10% OFF"
                         >
-                            <svg class="w-4 h-4 sm:w-4.5 sm:h-4.5 text-[#24140E]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                            <svg class="w-4 h-4 sm:w-4.5 sm:h-4.5 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
                             </svg>
                         </div>
@@ -243,26 +243,26 @@
         </div>
 
         <!-- Horizontal Divider Line -->
-        <div class="w-full h-[1px] bg-white/15 mt-8 sm:mt-10 mb-6"></div>
+        <div class="w-full h-[1px] bg-[#EADBCC] mt-8 sm:mt-10 mb-6"></div>
 
         <!-- ================================================================= -->
         <!-- 3. BOTTOM ROW: POLICIES, EXACT CENTER COPYRIGHT & PAYMENT BADGES  -->
         <!-- ================================================================= -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 items-center gap-4 text-xs sm:text-[13px] text-white/80 w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-3 items-center gap-4 text-xs sm:text-[13px] text-[#554035] w-full">
             
             <!-- Left Column: Policies -->
             <div class="flex flex-wrap items-center justify-center lg:justify-start gap-x-3 gap-y-1.5 sm:gap-x-3.5">
-                <a href="{{ route('pages.show', 'refund-policy') }}" class="hover:text-[#F6DAA8] transition-colors whitespace-nowrap">Return &amp; Refund Policy</a>
-                <span class="text-white/30 hidden sm:inline">|</span>
-                <a href="{{ route('pages.show', 'shipping-policy') }}" class="hover:text-[#F6DAA8] transition-colors whitespace-nowrap">Shipping Policy</a>
-                <span class="text-white/30 hidden sm:inline">|</span>
-                <a href="{{ route('pages.show', 'terms-of-service') }}" class="hover:text-[#F6DAA8] transition-colors whitespace-nowrap">Terms &amp; Conditions</a>
-                <span class="text-white/30 hidden sm:inline">|</span>
-                <a href="{{ route('pages.show', 'privacy-policy') }}" class="hover:text-[#F6DAA8] transition-colors whitespace-nowrap">Privacy Policy</a>
+                <a href="{{ route('pages.show', 'refund-policy') }}" class="hover:text-[#8C5A1E] transition-colors whitespace-nowrap">Return &amp; Refund Policy</a>
+                <span class="text-[#D38928]/40 hidden sm:inline">|</span>
+                <a href="{{ route('pages.show', 'shipping-policy') }}" class="hover:text-[#8C5A1E] transition-colors whitespace-nowrap">Shipping Policy</a>
+                <span class="text-[#D38928]/40 hidden sm:inline">|</span>
+                <a href="{{ route('pages.show', 'terms-of-service') }}" class="hover:text-[#8C5A1E] transition-colors whitespace-nowrap">Terms &amp; Conditions</a>
+                <span class="text-[#D38928]/40 hidden sm:inline">|</span>
+                <a href="{{ route('pages.show', 'privacy-policy') }}" class="hover:text-[#8C5A1E] transition-colors whitespace-nowrap">Privacy Policy</a>
             </div>
 
             <!-- Center Column: 100% Dead-Center Copyright -->
-            <div class="text-center text-[#F6DAA8] font-body text-xs sm:text-sm font-medium whitespace-nowrap py-1 lg:py-0">
+            <div class="text-center text-[#8C5A1E] font-body text-xs sm:text-sm font-medium whitespace-nowrap py-1 lg:py-0">
                 <span>© {{ date('Y') }} ISHANAA. All Rights Reserved.</span>
             </div>
 

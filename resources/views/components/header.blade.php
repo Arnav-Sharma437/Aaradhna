@@ -21,7 +21,7 @@
                     <img 
                         src="{{ asset('assets/images/Ishanaa-logo.png') }}" 
                         alt="ISHANAA" 
-                        class="h-10 sm:h-13 lg:h-15 w-auto max-w-[130px] sm:max-w-[160px] lg:max-w-[190px] xl:max-w-[210px] object-contain"
+                        class="h-8 lg:h-9 xl:h-10 w-auto max-w-[120px] lg:max-w-[135px] xl:max-w-[150px] object-contain"
                     >
                 </a>
             </div>
