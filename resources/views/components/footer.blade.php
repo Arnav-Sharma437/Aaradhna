@@ -56,7 +56,7 @@
                 <div class="flex items-center space-x-3 pt-2">
                     <!-- Instagram -->
                     <a 
-                        href="{{ $storeSettings['instagram_url'] ?? 'https://instagram.com' }}" 
+                        href="{{ $storeSettings['instagram_url'] ?? 'https://www.instagram.com/ishanaa_shop/' }}" 
                         target="_blank" 
                         rel="noopener noreferrer" 
                         class="w-10 h-10 rounded-full border border-[#D38928]/40 hover:border-[#C28430] text-[#2B1810] hover:text-[#C28430] bg-white hover:bg-[#FDF9F2] flex items-center justify-center transition-all transform hover:scale-105 shadow-2xs"
@@ -71,7 +71,7 @@
 
                     <!-- Facebook -->
                     <a 
-                        href="{{ $storeSettings['facebook_url'] ?? 'https://facebook.com' }}" 
+                        href="{{ $storeSettings['facebook_url'] ?? 'https://www.facebook.com/profile.php?id=61594948600545' }}" 
                         target="_blank" 
                         rel="noopener noreferrer" 
                         class="w-10 h-10 rounded-full border border-[#D38928]/40 hover:border-[#C28430] text-[#2B1810] hover:text-[#C28430] bg-white hover:bg-[#FDF9F2] flex items-center justify-center transition-all transform hover:scale-105 shadow-2xs"

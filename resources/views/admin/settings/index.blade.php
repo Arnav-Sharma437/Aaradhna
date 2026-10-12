@@ -170,12 +170,12 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                     <label class="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-1">Instagram Profile URL</label>
-                    <input type="url" name="instagram_url" value="{{ $settings['instagram_url'] ?? 'https://instagram.com/manglam' }}" class="w-full px-3.5 py-2.5 rounded-[8px] border border-gray-300 text-xs focus:ring-[#D38928] focus:border-[#D38928]">
+                    <input type="url" name="instagram_url" value="{{ $settings['instagram_url'] ?? 'https://www.instagram.com/ishanaa_shop/' }}" class="w-full px-3.5 py-2.5 rounded-[8px] border border-gray-300 text-xs focus:ring-[#D38928] focus:border-[#D38928]">
                 </div>
 
                 <div>
                     <label class="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-1">Facebook Page URL</label>
-                    <input type="url" name="facebook_url" value="{{ $settings['facebook_url'] ?? 'https://facebook.com/manglam' }}" class="w-full px-3.5 py-2.5 rounded-[8px] border border-gray-300 text-xs focus:ring-[#D38928] focus:border-[#D38928]">
+                    <input type="url" name="facebook_url" value="{{ $settings['facebook_url'] ?? 'https://www.facebook.com/profile.php?id=61594948600545' }}" class="w-full px-3.5 py-2.5 rounded-[8px] border border-gray-300 text-xs focus:ring-[#D38928] focus:border-[#D38928]">
                 </div>
 
                 <div>

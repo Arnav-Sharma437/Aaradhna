@@ -229,9 +229,8 @@ class AdminModulesSeeder extends Seeder
             ['group' => 'shipping', 'key' => 'standard_shipping_fee', 'value' => '49'],
             ['group' => 'payment', 'key' => 'gokwik_enabled', 'value' => '1'],
             ['group' => 'payment', 'key' => 'cod_enabled', 'value' => '1'],
-            ['group' => 'payment', 'key' => 'gokwik_upi_discount', 'value' => '50'],
-            ['group' => 'social', 'key' => 'instagram_url', 'value' => 'https://instagram.com/mangalam.co'],
-            ['group' => 'social', 'key' => 'facebook_url', 'value' => 'https://facebook.com/mangalam.co'],
+            ['group' => 'social', 'key' => 'instagram_url', 'value' => 'https://www.instagram.com/ishanaa_shop/'],
+            ['group' => 'social', 'key' => 'facebook_url', 'value' => 'https://www.facebook.com/profile.php?id=61594948600545'],
         ];
 
         foreach ($settingsData as $s) {
