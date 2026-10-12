@@ -15,6 +15,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 
+    <link rel="icon" type="image/jpeg" href="{{ asset('assets/images/Ishana-fav-icon.jpeg') }}?v={{ filemtime(public_path('assets/images/Ishana-fav-icon.jpeg')) }}">
+    <link rel="shortcut icon" type="image/jpeg" href="{{ asset('assets/images/Ishana-fav-icon.jpeg') }}?v={{ filemtime(public_path('assets/images/Ishana-fav-icon.jpeg')) }}">
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('styles')
 </head>
