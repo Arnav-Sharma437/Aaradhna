@@ -362,7 +362,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="p-[5px] pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
+                    <!-- Content -->
+                    <div class="p-3.5 sm:p-4 pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
                         <div class="space-y-1">
                             <h3 class="text-[15px] sm:text-base font-bold font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                                 <a href="{{ route('products.show', 'divya-naagchampa') }}">Divya Naagchampa <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(नागचंपा)</span></a>
@@ -395,8 +396,9 @@
                     </div>
                     <div class="p-[5px] pb-0">
                         <div class="relative w-full aspect-[4/4.8] rounded-[16px] sm:rounded-[20px] overflow-hidden bg-[#FAF7F2] shadow-2xs">
-                            <a href="{{ route('products.show', 'mogra-noor') }}" class="block w-full h-full">
-                                <img src="{{ asset('assets/images/incense-pack.jpg') }}" alt="Mogra Noor Bambooless" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105"><img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Mogra Noor (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
+                            <a href="{{ route('products.show', 'mogra-noor') }}" class="block w-full h-full relative overflow-hidden">
+                                <img src="{{ asset('assets/images/incense-pack.jpg') }}" alt="Mogra Noor Bambooless" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
+                                <img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Mogra Noor (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                             </a>
                             <div class="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 text-right pointer-events-none select-none leading-none z-10">
                                 <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-gray-500 block tracking-wider">PACK OF</span>
@@ -405,7 +407,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="p-[5px] pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
+                    <!-- Content -->
+                    <div class="p-3.5 sm:p-4 pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
                         <div class="space-y-1">
                             <h3 class="text-[15px] sm:text-base font-bold font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                                 <a href="{{ route('products.show', 'mogra-noor') }}">Mogra Noor <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(मोगरा)</span></a>
@@ -438,8 +441,9 @@
                     </div>
                     <div class="p-[5px] pb-0">
                         <div class="relative w-full aspect-[4/4.8] rounded-[16px] sm:rounded-[20px] overflow-hidden bg-[#FAF7F2] shadow-2xs">
-                            <a href="{{ route('products.show', 'gulab-rooh') }}" class="block w-full h-full">
-                                <img src="{{ asset('assets/images/incense-pack.jpg') }}" alt="Gulab Rooh Bambooless" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105"><img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Gulab Rooh (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
+                            <a href="{{ route('products.show', 'gulab-rooh') }}" class="block w-full h-full relative overflow-hidden">
+                                <img src="{{ asset('assets/images/incense-pack.jpg') }}" alt="Gulab Rooh Bambooless" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
+                                <img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Gulab Rooh (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                             </a>
                             <div class="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 text-right pointer-events-none select-none leading-none z-10">
                                 <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-gray-500 block tracking-wider">PACK OF</span>
@@ -448,7 +452,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="p-[5px] pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
+                    <!-- Content -->
+                    <div class="p-3.5 sm:p-4 pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
                         <div class="space-y-1">
                             <h3 class="text-[15px] sm:text-base font-bold font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                                 <a href="{{ route('products.show', 'gulab-rooh') }}">Gulab Rooh <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(गुलाब)</span></a>
@@ -481,8 +486,9 @@
                     </div>
                     <div class="p-[5px] pb-0">
                         <div class="relative w-full aspect-[4/4.8] rounded-[16px] sm:rounded-[20px] overflow-hidden bg-[#FAF7F2] shadow-2xs">
-                            <a href="{{ route('products.show', 'lavender-veda') }}" class="block w-full h-full">
-                                <img src="{{ asset('assets/images/incense-pack.jpg') }}" alt="Lavender Veda Bambooless" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105"><img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Lavender Veda (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
+                            <a href="{{ route('products.show', 'lavender-veda') }}" class="block w-full h-full relative overflow-hidden">
+                                <img src="{{ asset('assets/images/incense-pack.jpg') }}" alt="Lavender Veda Bambooless" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
+                                <img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Lavender Veda (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                             </a>
                             <div class="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 text-right pointer-events-none select-none leading-none z-10">
                                 <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-gray-500 block tracking-wider">PACK OF</span>
@@ -491,7 +497,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="p-[5px] pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
+                    <!-- Content -->
+                    <div class="p-3.5 sm:p-4 pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
                         <div class="space-y-1">
                             <h3 class="text-[15px] sm:text-base font-bold font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
                                 <a href="{{ route('products.show', 'lavender-veda') }}">Lavender Veda <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(लैवेंडर)</span></a>
@@ -528,20 +535,18 @@
                 <svg class="w-3.5 h-3.5 group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
             </button>
 
-            <!-- 2. View All Products Button (Appears after Load More is clicked) -->
-            <a 
-                href="{{ route('collections.show', 'all') }}" 
-                id="bestseller-view-all-btn"
-                style="display: none;"
-                class="hover:opacity-95 active:scale-95 transition-all duration-200 transform hover:-translate-y-0.5 cursor-pointer max-w-[180px] sm:max-w-[200px] mx-auto text-center"
-                aria-label="Shop All Products"
-            >
-                <img 
-                    src="{{ asset('assets/images/btn-shop-now-maroon.png') }}" 
-                    alt="Shop Now" 
-                    class="w-full h-auto object-contain drop-shadow-xs hover:drop-shadow-sm transition-all"
+            <!-- 2. Themed 'View All Products' Button (Appears after Load More is clicked) -->
+            <div id="bestseller-view-all-wrapper" style="display: none;">
+                <a 
+                    href="{{ route('collections.show', 'all') }}" 
+                    id="bestseller-view-all-btn"
+                    class="inline-flex items-center space-x-2 px-8 py-3.5 bg-[#D38928] hover:bg-[#B8741E] active:bg-[#965A15] text-white text-xs sm:text-sm font-bold uppercase tracking-widest rounded-[10px] shadow-md hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 font-heading cursor-pointer"
+                    aria-label="View All Products"
                 >
-            </a>
+                    <span>View All Products</span>
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </a>
+            </div>
         </div>
 
     </div>
@@ -550,13 +555,13 @@
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const loadMoreBtn = document.getElementById('bestseller-load-more-btn');
-        const viewAllBtn = document.getElementById('bestseller-view-all-btn');
+        const viewAllWrapper = document.getElementById('bestseller-view-all-wrapper');
         const extraCards = document.querySelectorAll('.bestseller-extra-card');
         const bestsellerGrid = document.getElementById('bestseller-grid');
         const prevBtn = document.getElementById('bestseller-prev-btn');
         const nextBtn = document.getElementById('bestseller-next-btn');
 
-        if (loadMoreBtn && viewAllBtn) {
+        if (loadMoreBtn && viewAllWrapper) {
             loadMoreBtn.addEventListener('click', () => {
                 extraCards.forEach((card, index) => {
                     card.classList.remove('sm:hidden');
@@ -574,13 +579,13 @@
                 loadMoreBtn.style.opacity = '0';
                 setTimeout(() => {
                     loadMoreBtn.style.display = 'none';
-                    viewAllBtn.style.display = 'inline-block';
-                    viewAllBtn.style.opacity = '0';
-                    viewAllBtn.style.transform = 'scale(0.95)';
-                    viewAllBtn.style.transition = 'opacity 0.4s ease-out, transform 0.4s ease-out';
+                    viewAllWrapper.style.display = 'block';
+                    viewAllWrapper.style.opacity = '0';
+                    viewAllWrapper.style.transform = 'scale(0.95)';
+                    viewAllWrapper.style.transition = 'opacity 0.4s ease-out, transform 0.4s ease-out';
                     setTimeout(() => {
-                        viewAllBtn.style.opacity = '1';
-                        viewAllBtn.style.transform = 'scale(1)';
+                        viewAllWrapper.style.opacity = '1';
+                        viewAllWrapper.style.transform = 'scale(1)';
                     }, 40);
                 }, 200);
             });
