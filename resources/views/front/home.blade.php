@@ -123,9 +123,9 @@
     <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
         
         <!-- Section Header -->
-        <div class="text-center max-w-4xl mx-auto mb-4 sm:mb-6 space-y-1.5">
+        <div class="text-center max-w-5xl mx-auto mb-4 sm:mb-6 space-y-1.5 px-2">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ PURE VEDIC BLESSINGS ✦</span>
-            <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-[44px] font-normal uppercase text-[#121212] font-heading tracking-[0.06em] leading-tight whitespace-nowrap">
+            <h2 class="main-section-title font-normal uppercase text-[#121212] font-heading">
                 Bestseller of the Month
             </h2>
         </div>
@@ -620,11 +620,11 @@
     <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
         
         <!-- Section Header -->
-        <div class="text-center max-w-4xl mx-auto mb-4 sm:mb-6 space-y-1.5">
+        <div class="text-center max-w-5xl mx-auto mb-4 sm:mb-6 space-y-1.5 px-2">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">
                 ✦ 100% NATURAL • CHARCOAL FREE ✦
             </span>
-            <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-[44px] font-normal uppercase text-[#2B1810] font-heading tracking-[0.06em] leading-tight whitespace-nowrap">
+            <h2 class="main-section-title font-normal uppercase text-[#2B1810] font-heading">
                 Product Categories
             </h2>
         </div>
@@ -767,9 +767,9 @@
 <section class="py-[40px] bg-white border-b border-[#EAE3D9]">
     <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
         
-        <div class="text-center max-w-4xl mx-auto mb-4 sm:mb-6 space-y-1.5">
+        <div class="text-center max-w-5xl mx-auto mb-4 sm:mb-6 space-y-1.5 px-2">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ DAILY RITUAL GUIDES ✦</span>
-            <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-[44px] font-normal uppercase text-[#121212] font-heading tracking-[0.06em] leading-tight whitespace-nowrap">
+            <h2 class="main-section-title font-normal uppercase text-[#121212] font-heading">
                 Devotional Moments of Peace
             </h2>
         </div>
@@ -1207,9 +1207,9 @@
     <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
         
         <!-- Clean Standard Eyebrow Header -->
-        <div class="text-center max-w-4xl mx-auto mb-4 sm:mb-6 space-y-1.5">
+        <div class="text-center max-w-5xl mx-auto mb-4 sm:mb-6 space-y-1.5 px-2">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ CRAFTED WITH CARE ✦</span>
-            <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-[44px] font-heading font-normal uppercase text-[#2B1810] tracking-[0.06em] leading-tight whitespace-nowrap">
+            <h2 class="main-section-title font-heading font-normal uppercase text-[#2B1810]">
                 Rooted in Purity
             </h2>
             <!-- <p class="text-xs sm:text-sm md:text-base text-gray-600 font-normal font-body">
@@ -1301,9 +1301,9 @@
         <div class="max-w-5xl lg:max-w-[1100px] mx-auto space-y-6 sm:space-y-8">
         
         <!-- Section Header -->
-        <div class="text-center max-w-4xl mx-auto mb-4 sm:mb-6 space-y-1.5">
+        <div class="text-center max-w-5xl mx-auto mb-4 sm:mb-6 space-y-1.5 px-2">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ CLARITY &amp; VIDHI ✦</span>
-            <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-[44px] font-normal uppercase text-[#121212] font-heading tracking-[0.06em] leading-tight whitespace-nowrap">
+            <h2 class="main-section-title font-normal uppercase text-[#121212] font-heading">
                 Frequently Asked Questions
             </h2>
         </div>
