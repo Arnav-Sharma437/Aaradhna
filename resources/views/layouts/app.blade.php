@@ -8,7 +8,11 @@
     @php
         $siteTitle = $storeSettings['store_name'] ?? 'ISHANAA';
     @endphp
-    <title>@hasSection('title')@yield('title')@else{{ $siteTitle }} — Pure Vedic Living@endif</title>
+    <title>@hasSection('title')
+@yield('title')
+@else
+{{ $siteTitle }} — Pure Vedic Living
+@endif</title>
     <meta name="description" content="@yield('meta_description', 'Pooja Samagri & Vidhi — शुद्धं समर्पयामि. Non-irritating bambooless incense sticks, organic havan cups, charcoal-free dhoop cones & alcohol-free attar sprays.')">
 
     <!-- OpenGraph Meta -->
