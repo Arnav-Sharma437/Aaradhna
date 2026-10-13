@@ -64,10 +64,10 @@
 
                     <!-- Seva Card 1: WhatsApp Direct Helpdesk -->
                     @php
-                        $contactWa = preg_replace('/[^0-9]/', '', $storeSettings['support_whatsapp'] ?? '919876543210');
-                        $contactPhone = $storeSettings['support_phone'] ?? '+91 98765 43210';
-                        $contactEmail = $storeSettings['support_email'] ?? 'care@ishanaa.com';
-                        $contactAddress = $storeSettings['store_address'] ?? 'Plot 42, Industrial Area, Varanasi, Uttar Pradesh 221001';
+                        $contactWa = preg_replace('/[^0-9]/', '', $storeSettings['support_whatsapp'] ?? '917807211102');
+                        $contactPhone = $storeSettings['support_phone'] ?? '+91 78072 11102';
+                        $contactEmail = $storeSettings['support_email'] ?? 'hello.ishanaa@gmail.com';
+                        $contactAddress = $storeSettings['store_address'] ?? 'Building 256, Kachari Adda, Chilgari, Dharamshala, Himachal Pradesh 176215';
                     @endphp
                     <div class="bg-[#FAF7F2] border border-[#EADBCC] rounded-[18px] p-5 shadow-xs flex items-start space-x-4">
                         <div class="w-12 h-12 rounded-full bg-[#25D366] text-white flex items-center justify-center shrink-0 shadow-sm">
