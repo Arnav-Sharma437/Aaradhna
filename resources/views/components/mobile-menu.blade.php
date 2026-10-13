@@ -25,7 +25,7 @@
 
         <!-- Brand Logo -->
         <a href="{{ route('home') }}" class="flex items-center">
-            <img src="{{ asset('assets/images/Ishanaa-logo.png') }}" alt="ISHANAA" class="h-8 sm:h-9 w-auto object-contain">
+            <img src="{{ asset('assets/images/ishanaa-header-logo.png') }}" alt="ISHANAA" class="h-9 sm:h-10 w-auto object-contain">
         </a>
 
         <!-- Right Quick Actions -->

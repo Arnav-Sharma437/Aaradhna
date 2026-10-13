@@ -19,9 +19,9 @@
                 <!-- Brand Logo (Desktop Left-aligned) -->
                 <a href="{{ route('home') }}" class="hidden lg:flex items-center py-1" aria-label="ISHANAA - Pure Sacred Rituals">
                     <img 
-                        src="{{ asset('assets/images/Ishanaa-logo.png') }}" 
+                        src="{{ asset('assets/images/ishanaa-header-logo.png') }}" 
                         alt="ISHANAA" 
-                        class="h-8 lg:h-9 xl:h-10 w-auto max-w-[120px] lg:max-w-[135px] xl:max-w-[150px] object-contain"
+                        class="h-10 lg:h-11 xl:h-12 w-auto max-w-[150px] lg:max-w-[175px] xl:max-w-[195px] object-contain transition-transform duration-200 hover:scale-105"
                     >
                 </a>
             </div>
@@ -30,9 +30,9 @@
             <div class="lg:hidden absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-auto">
                 <a href="{{ route('home') }}" class="flex items-center py-1" aria-label="ISHANAA - Pure Sacred Rituals">
                     <img 
-                        src="{{ asset('assets/images/Ishanaa-logo.png') }}" 
+                        src="{{ asset('assets/images/ishanaa-header-logo.png') }}" 
                         alt="ISHANAA" 
-                        class="h-9 sm:h-11 w-auto max-w-[130px] sm:max-w-[150px] object-contain"
+                        class="h-10 sm:h-12 w-auto max-w-[150px] sm:max-w-[170px] object-contain"
                     >
                 </a>
             </div>
