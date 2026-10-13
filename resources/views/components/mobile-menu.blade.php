@@ -24,9 +24,8 @@
         </button>
 
         <!-- Brand Logo -->
-        <a href="{{ route('home') }}" class="flex items-center space-x-2">
-            <img src="{{ asset('assets/images/ishanaa-header-logo.png') }}" alt="ISHANAA" class="h-7 sm:h-8 w-auto object-contain">
-            <img src="{{ asset('assets/images/ishanaa-header-logo-secondary.png') }}" alt="ISHANAA Puja Essentials & Fragrances" class="h-6 sm:h-7 w-auto object-contain">
+        <a href="{{ route('home') }}" class="flex items-center">
+            <img src="{{ asset('assets/images/ishanaa-header-logo.png') }}" alt="ISHANAA - Puja Essentials & Fragrances" class="h-9 sm:h-10 w-auto object-contain">
         </a>
 
         <!-- Right Quick Actions -->
