@@ -103,9 +103,12 @@
     }
 
     // Pack labels
-    $packCount = str_contains($product->slug, '100') || str_contains($product->slug, 'refill') ? '100' : (str_contains($product->slug, 'six') || str_contains($product->slug, '240') ? '240' : (str_contains($product->slug, 'pitambara') ? '1' : '40'));
-    $packUnit = str_contains($product->slug, 'pitambara') ? 'pack' : 'sticks';
-    $packColor = str_contains($product->slug, '100') ? 'text-[#8B2626]' : (str_contains($product->slug, 'oudh') ? 'text-[#7A3A22]' : 'text-[#3E2D22]');
+    $isCup = str_contains($product->slug, 'cup') || str_contains($product->slug, 'havan');
+    $isCone = str_contains($product->slug, 'cone');
+    $packPrefix = $isCup ? 'BOX OF' : 'PACK OF';
+    $packCount = str_contains($product->slug, '100') || str_contains($product->slug, 'refill') ? '100' : (str_contains($product->slug, 'six') || str_contains($product->slug, '240') ? '240' : (str_contains($product->slug, 'pitambara') ? '1' : ($isCup ? '12' : ($isCone ? '30' : '40'))));
+    $packUnit = str_contains($product->slug, 'pitambara') ? 'PACK' : ($isCup ? 'CUPS' : ($isCone ? 'CONES' : 'STICKS'));
+    $packColor = str_contains($product->slug, '100') ? 'text-[#8B2626]' : ($isCup || $isCone ? 'text-[#965A15]' : (str_contains($product->slug, 'oudh') ? 'text-[#7A3A22]' : 'text-[#3E2D22]'));
 
     $reviewCount = $product->approvedReviews->count() ?: (200 + (abs(crc32($product->slug)) % 90));
     $mrpPrice = $product->base_price > $product->active_price ? $product->base_price : ($product->active_price * 1.4);
@@ -115,11 +118,11 @@
     
     @if(!empty($topBadge))
     <!-- Centered Overlapping Top Border Pill Badge with Sparkles -->
-    <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
-        <span class="inline-flex items-center space-x-1 bg-white px-3 sm:px-4 py-0.5 rounded-full border border-[#D38928] text-[10px] sm:text-[11px] font-bold tracking-widest text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading">
-            <span class="text-[#D38928] text-xs">✨</span>
+    <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
+        <span class="inline-flex items-center space-x-1 bg-white px-2 sm:px-2.5 py-[2px] rounded-full border border-[#D38928] text-[8.5px] sm:text-[9px] font-bold tracking-wider text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading leading-tight">
+            <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
             <span>{{ $topBadge }}</span>
-            <span class="text-[#D38928] text-xs">✨</span>
+            <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
         </span>
     </div>
     @endif
@@ -143,11 +146,11 @@
                 >
             </a>
 
-            <!-- Top Right Pack Info -->
-            <div class="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 text-right pointer-events-none select-none leading-none z-10">
-                <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-gray-500 block tracking-wider">PACK OF</span>
-                <span class="text-xl sm:text-2xl font-black font-heading {{ $packColor }} block my-0.5">{{ $packCount }}</span>
-                <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-gray-500 block tracking-wider">{{ $packUnit }}</span>
+            <!-- Top Right Ribbon / Tag Badge -->
+            <div class="absolute top-0 right-2.5 sm:right-3 bg-white/95 backdrop-blur-xs border-x border-b border-[#D38928]/35 rounded-b-[7px] px-2 py-1 sm:py-1.5 shadow-2xs text-center pointer-events-none select-none z-10 flex flex-col items-center justify-center min-w-[42px] sm:min-w-[46px]">
+                <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">{{ $packPrefix }}</span>
+                <span class="text-[17px] sm:text-[19px] font-black font-heading {{ $packColor }} leading-none my-0.5">{{ $packCount }}</span>
+                <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">{{ $packUnit }}</span>
             </div>
 
             <!-- Free Ceramic Stand Banner for Devi / Specials -->

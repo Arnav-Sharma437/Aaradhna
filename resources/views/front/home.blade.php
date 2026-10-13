@@ -123,9 +123,9 @@
     <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
         
         <!-- Section Header -->
-        <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12 space-y-1.5">
+        <div class="text-center max-w-4xl mx-auto mb-5 sm:mb-6 space-y-1.5">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ PURE VEDIC BLESSINGS ✦</span>
-            <h2 class="text-xl sm:text-[22px] lg:text-[26px] font-normal uppercase text-[#121212] font-heading tracking-[0.12em] leading-snug">
+            <h2 class="text-[18px] sm:text-[26px] md:text-[34px] lg:text-[44px] font-normal uppercase text-[#121212] font-heading tracking-[0.06em] leading-tight whitespace-nowrap">
                 Bestseller of the Month
             </h2>
         </div>
@@ -156,11 +156,11 @@
                 <!-- Card 1: Swarna Pushpa -->
                 <div class="product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
                     <!-- Top Pill Badge -->
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
-                        <span class="inline-flex items-center space-x-1 bg-white px-3 sm:px-4 py-0.5 rounded-full border border-[#D38928] text-[10px] sm:text-[11px] font-bold tracking-widest text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading">
-                            <span class="text-[#D38928] text-xs">✨</span>
+                    <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
+                        <span class="inline-flex items-center space-x-1 bg-white px-2 sm:px-2.5 py-[2px] rounded-full border border-[#D38928] text-[8.5px] sm:text-[9px] font-bold tracking-wider text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading leading-tight">
+                            <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
                             <span>BUY 2 GET 1 FREE</span>
-                            <span class="text-[#D38928] text-xs">✨</span>
+                            <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
                         </span>
                     </div>
                     <!-- Image Box (5px Inner Padding) -->
@@ -170,10 +170,11 @@
                                 <img src="{{ asset('assets/images/oudh-pack-card.jpg') }}" alt="Swarna Pushpa Bambooless" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
                                 <img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Swarna Pushpa (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                             </a>
-                            <div class="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 text-right pointer-events-none select-none leading-none z-10">
-                                <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-gray-500 block tracking-wider">PACK OF</span>
-                                <span class="text-xl sm:text-2xl font-black font-heading text-[#8B2626] block my-0.5">40</span>
-                                <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-gray-500 block tracking-wider">STICKS</span>
+                            <!-- Top Right Ribbon / Tag Badge -->
+                            <div class="absolute top-0 right-2.5 sm:right-3 bg-white/95 backdrop-blur-xs border-x border-b border-[#D38928]/35 rounded-b-[7px] px-2 py-1 sm:py-1.5 shadow-2xs text-center pointer-events-none select-none z-10 flex flex-col items-center justify-center min-w-[42px] sm:min-w-[46px]">
+                                <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">PACK OF</span>
+                                <span class="text-[17px] sm:text-[19px] font-black font-heading text-[#8B2626] leading-none my-0.5">40</span>
+                                <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">STICKS</span>
                             </div>
                         </div>
                     </div>
@@ -203,11 +204,11 @@
                 <!-- Card 2: Chandan Saanjh -->
                 <div class="product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
                     <!-- Top Pill Badge -->
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
-                        <span class="inline-flex items-center space-x-1 bg-white px-3 sm:px-4 py-0.5 rounded-full border border-[#D38928] text-[10px] sm:text-[11px] font-bold tracking-widest text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading">
-                            <span class="text-[#D38928] text-xs">✨</span>
+                    <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
+                        <span class="inline-flex items-center space-x-1 bg-white px-2 sm:px-2.5 py-[2px] rounded-full border border-[#D38928] text-[8.5px] sm:text-[9px] font-bold tracking-wider text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading leading-tight">
+                            <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
                             <span>BUY 2 GET 1 FREE</span>
-                            <span class="text-[#D38928] text-xs">✨</span>
+                            <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
                         </span>
                     </div>
                     <!-- Image Box (5px Inner Padding) -->
@@ -217,10 +218,11 @@
                                 <img src="{{ asset('assets/images/incense-pack.jpg') }}" alt="Chandan Saanjh Incense" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
                                 <img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Chandan Saanjh (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                             </a>
-                            <div class="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 text-right pointer-events-none select-none leading-none z-10">
-                                <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-gray-500 block tracking-wider">PACK OF</span>
-                                <span class="text-xl sm:text-2xl font-black font-heading text-[#3E2D22] block my-0.5">40</span>
-                                <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-gray-500 block tracking-wider">STICKS</span>
+                            <!-- Top Right Ribbon / Tag Badge -->
+                            <div class="absolute top-0 right-2.5 sm:right-3 bg-white/95 backdrop-blur-xs border-x border-b border-[#D38928]/35 rounded-b-[7px] px-2 py-1 sm:py-1.5 shadow-2xs text-center pointer-events-none select-none z-10 flex flex-col items-center justify-center min-w-[42px] sm:min-w-[46px]">
+                                <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">PACK OF</span>
+                                <span class="text-[17px] sm:text-[19px] font-black font-heading text-[#3E2D22] leading-none my-0.5">40</span>
+                                <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">STICKS</span>
                             </div>
                         </div>
                     </div>
@@ -250,11 +252,11 @@
                 <!-- Card 3: Royal Oudh -->
                 <div class="product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
                     <!-- Top Pill Badge -->
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
-                        <span class="inline-flex items-center space-x-1 bg-white px-3 sm:px-4 py-0.5 rounded-full border border-[#D38928] text-[10px] sm:text-[11px] font-bold tracking-widest text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading">
-                            <span class="text-[#D38928] text-xs">✨</span>
+                    <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
+                        <span class="inline-flex items-center space-x-1 bg-white px-2 sm:px-2.5 py-[2px] rounded-full border border-[#D38928] text-[8.5px] sm:text-[9px] font-bold tracking-wider text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading leading-tight">
+                            <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
                             <span>BUY 2 GET 1 FREE</span>
-                            <span class="text-[#D38928] text-xs">✨</span>
+                            <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
                         </span>
                     </div>
                     <!-- Image Box (5px Inner Padding) -->
@@ -264,10 +266,11 @@
                                 <img src="{{ asset('assets/images/oudh-pack-card.jpg') }}" alt="Royal Oudh Incense" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
                                 <img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Royal Oudh (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                             </a>
-                            <div class="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 text-right pointer-events-none select-none leading-none z-10">
-                                <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-gray-500 block tracking-wider">PACK OF</span>
-                                <span class="text-xl sm:text-2xl font-black font-heading text-[#7A3A22] block my-0.5">40</span>
-                                <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-gray-500 block tracking-wider">STICKS</span>
+                            <!-- Top Right Ribbon / Tag Badge -->
+                            <div class="absolute top-0 right-2.5 sm:right-3 bg-white/95 backdrop-blur-xs border-x border-b border-[#D38928]/35 rounded-b-[7px] px-2 py-1 sm:py-1.5 shadow-2xs text-center pointer-events-none select-none z-10 flex flex-col items-center justify-center min-w-[42px] sm:min-w-[46px]">
+                                <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">PACK OF</span>
+                                <span class="text-[17px] sm:text-[19px] font-black font-heading text-[#7A3A22] leading-none my-0.5">40</span>
+                                <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">STICKS</span>
                             </div>
                         </div>
                     </div>
@@ -297,11 +300,11 @@
                 <!-- Card 4: Google Dhoop Havan Cup -->
                 <div class="product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
                     <!-- Top Pill Badge -->
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
-                        <span class="inline-flex items-center space-x-1 bg-white px-3 sm:px-4 py-0.5 rounded-full border border-[#D38928] text-[10px] sm:text-[11px] font-bold tracking-widest text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading">
-                            <span class="text-[#D38928] text-xs">✨</span>
-                            <span>TOP PICKS</span>
-                            <span class="text-[#D38928] text-xs">✨</span>
+                    <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
+                        <span class="inline-flex items-center space-x-1 bg-white px-2 sm:px-2.5 py-[2px] rounded-full border border-[#D38928] text-[8.5px] sm:text-[9px] font-bold tracking-wider text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading leading-tight">
+                            <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
+                            <span>BUY 2 GET 1 FREE</span>
+                            <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
                         </span>
                     </div>
                     <!-- Image Box (5px Inner Padding) -->
@@ -311,10 +314,11 @@
                                 <img src="{{ asset('assets/images/havan-cup.jpg') }}" alt="Google Dhoop Havan Cup" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
                                 <img src="{{ asset('assets/images/single-havan-cup.jpg') }}" alt="Google Dhoop (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                             </a>
-                            <div class="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 text-right pointer-events-none select-none leading-none z-10">
-                                <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-gray-500 block tracking-wider">BOX OF</span>
-                                <span class="text-xl sm:text-2xl font-black font-heading text-[#965A15] block my-0.5">12</span>
-                                <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-gray-500 block tracking-wider">CUPS</span>
+                            <!-- Top Right Ribbon / Tag Badge -->
+                            <div class="absolute top-0 right-2.5 sm:right-3 bg-white/95 backdrop-blur-xs border-x border-b border-[#D38928]/35 rounded-b-[7px] px-2 py-1 sm:py-1.5 shadow-2xs text-center pointer-events-none select-none z-10 flex flex-col items-center justify-center min-w-[42px] sm:min-w-[46px]">
+                                <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">BOX OF</span>
+                                <span class="text-[17px] sm:text-[19px] font-black font-heading text-[#965A15] leading-none my-0.5">12</span>
+                                <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">CUPS</span>
                             </div>
                         </div>
                     </div>
@@ -343,11 +347,11 @@
 
                 <!-- Card 5: Divya Naagchampa (Sticks) -->
                 <div class="bestseller-extra-card sm:hidden product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
-                        <span class="inline-flex items-center space-x-1 bg-white px-3 sm:px-4 py-0.5 rounded-full border border-[#D38928] text-[10px] sm:text-[11px] font-bold tracking-widest text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading">
-                            <span class="text-[#D38928] text-xs">✨</span>
+                    <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
+                        <span class="inline-flex items-center space-x-1 bg-white px-2 sm:px-2.5 py-[2px] rounded-full border border-[#D38928] text-[8.5px] sm:text-[9px] font-bold tracking-wider text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading leading-tight">
+                            <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
                             <span>BUY 2 GET 1 FREE</span>
-                            <span class="text-[#D38928] text-xs">✨</span>
+                            <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
                         </span>
                     </div>
                     <div class="p-[5px] pb-0">
@@ -355,10 +359,11 @@
                             <a href="{{ route('products.show', 'divya-naagchampa') }}" class="block w-full h-full">
                                 <img src="{{ asset('assets/images/incense-pack.jpg') }}" alt="Divya Naagchampa Bambooless" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105"><img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Divya Naagchampa (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                             </a>
-                            <div class="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 text-right pointer-events-none select-none leading-none z-10">
-                                <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-gray-500 block tracking-wider">PACK OF</span>
-                                <span class="text-xl sm:text-2xl font-black font-heading text-[#3E2D22] block my-0.5">40</span>
-                                <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-gray-500 block tracking-wider">STICKS</span>
+                            <!-- Top Right Ribbon / Tag Badge -->
+                            <div class="absolute top-0 right-2.5 sm:right-3 bg-white/95 backdrop-blur-xs border-x border-b border-[#D38928]/35 rounded-b-[7px] px-2 py-1 sm:py-1.5 shadow-2xs text-center pointer-events-none select-none z-10 flex flex-col items-center justify-center min-w-[42px] sm:min-w-[46px]">
+                                <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">PACK OF</span>
+                                <span class="text-[17px] sm:text-[19px] font-black font-heading text-[#3E2D22] leading-none my-0.5">40</span>
+                                <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">STICKS</span>
                             </div>
                         </div>
                     </div>
@@ -387,11 +392,11 @@
 
                 <!-- Card 6: Mogra Noor (Sticks) -->
                 <div class="bestseller-extra-card sm:hidden product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
-                        <span class="inline-flex items-center space-x-1 bg-white px-3 sm:px-4 py-0.5 rounded-full border border-[#D38928] text-[10px] sm:text-[11px] font-bold tracking-widest text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading">
-                            <span class="text-[#D38928] text-xs">✨</span>
+                    <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
+                        <span class="inline-flex items-center space-x-1 bg-white px-2 sm:px-2.5 py-[2px] rounded-full border border-[#D38928] text-[8.5px] sm:text-[9px] font-bold tracking-wider text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading leading-tight">
+                            <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
                             <span>BUY 2 GET 1 FREE</span>
-                            <span class="text-[#D38928] text-xs">✨</span>
+                            <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
                         </span>
                     </div>
                     <div class="p-[5px] pb-0">
@@ -400,10 +405,11 @@
                                 <img src="{{ asset('assets/images/incense-pack.jpg') }}" alt="Mogra Noor Bambooless" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
                                 <img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Mogra Noor (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                             </a>
-                            <div class="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 text-right pointer-events-none select-none leading-none z-10">
-                                <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-gray-500 block tracking-wider">PACK OF</span>
-                                <span class="text-xl sm:text-2xl font-black font-heading text-[#3E2D22] block my-0.5">40</span>
-                                <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-gray-500 block tracking-wider">STICKS</span>
+                            <!-- Top Right Ribbon / Tag Badge -->
+                            <div class="absolute top-0 right-2.5 sm:right-3 bg-white/95 backdrop-blur-xs border-x border-b border-[#D38928]/35 rounded-b-[7px] px-2 py-1 sm:py-1.5 shadow-2xs text-center pointer-events-none select-none z-10 flex flex-col items-center justify-center min-w-[42px] sm:min-w-[46px]">
+                                <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">PACK OF</span>
+                                <span class="text-[17px] sm:text-[19px] font-black font-heading text-[#3E2D22] leading-none my-0.5">40</span>
+                                <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">STICKS</span>
                             </div>
                         </div>
                     </div>
@@ -432,11 +438,11 @@
 
                 <!-- Card 7: Gulab Rooh (Sticks) -->
                 <div class="bestseller-extra-card sm:hidden product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
-                        <span class="inline-flex items-center space-x-1 bg-white px-3 sm:px-4 py-0.5 rounded-full border border-[#D38928] text-[10px] sm:text-[11px] font-bold tracking-widest text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading">
-                            <span class="text-[#D38928] text-xs">✨</span>
+                    <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
+                        <span class="inline-flex items-center space-x-1 bg-white px-2 sm:px-2.5 py-[2px] rounded-full border border-[#D38928] text-[8.5px] sm:text-[9px] font-bold tracking-wider text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading leading-tight">
+                            <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
                             <span>BUY 2 GET 1 FREE</span>
-                            <span class="text-[#D38928] text-xs">✨</span>
+                            <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
                         </span>
                     </div>
                     <div class="p-[5px] pb-0">
@@ -445,10 +451,11 @@
                                 <img src="{{ asset('assets/images/incense-pack.jpg') }}" alt="Gulab Rooh Bambooless" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
                                 <img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Gulab Rooh (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                             </a>
-                            <div class="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 text-right pointer-events-none select-none leading-none z-10">
-                                <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-gray-500 block tracking-wider">PACK OF</span>
-                                <span class="text-xl sm:text-2xl font-black font-heading text-[#3E2D22] block my-0.5">40</span>
-                                <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-gray-500 block tracking-wider">STICKS</span>
+                            <!-- Top Right Ribbon / Tag Badge -->
+                            <div class="absolute top-0 right-2.5 sm:right-3 bg-white/95 backdrop-blur-xs border-x border-b border-[#D38928]/35 rounded-b-[7px] px-2 py-1 sm:py-1.5 shadow-2xs text-center pointer-events-none select-none z-10 flex flex-col items-center justify-center min-w-[42px] sm:min-w-[46px]">
+                                <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">PACK OF</span>
+                                <span class="text-[17px] sm:text-[19px] font-black font-heading text-[#3E2D22] leading-none my-0.5">40</span>
+                                <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">STICKS</span>
                             </div>
                         </div>
                     </div>
@@ -477,11 +484,11 @@
 
                 <!-- Card 8: Lavender Veda (Sticks) -->
                 <div class="bestseller-extra-card sm:hidden product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
-                        <span class="inline-flex items-center space-x-1 bg-white px-3 sm:px-4 py-0.5 rounded-full border border-[#D38928] text-[10px] sm:text-[11px] font-bold tracking-widest text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading">
-                            <span class="text-[#D38928] text-xs">✨</span>
+                    <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
+                        <span class="inline-flex items-center space-x-1 bg-white px-2 sm:px-2.5 py-[2px] rounded-full border border-[#D38928] text-[8.5px] sm:text-[9px] font-bold tracking-wider text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading leading-tight">
+                            <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
                             <span>BUY 2 GET 1 FREE</span>
-                            <span class="text-[#D38928] text-xs">✨</span>
+                            <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
                         </span>
                     </div>
                     <div class="p-[5px] pb-0">
@@ -490,10 +497,11 @@
                                 <img src="{{ asset('assets/images/incense-pack.jpg') }}" alt="Lavender Veda Bambooless" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
                                 <img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Lavender Veda (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                             </a>
-                            <div class="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 text-right pointer-events-none select-none leading-none z-10">
-                                <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-gray-500 block tracking-wider">PACK OF</span>
-                                <span class="text-xl sm:text-2xl font-black font-heading text-[#3E2D22] block my-0.5">40</span>
-                                <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-gray-500 block tracking-wider">STICKS</span>
+                            <!-- Top Right Ribbon / Tag Badge -->
+                            <div class="absolute top-0 right-2.5 sm:right-3 bg-white/95 backdrop-blur-xs border-x border-b border-[#D38928]/35 rounded-b-[7px] px-2 py-1 sm:py-1.5 shadow-2xs text-center pointer-events-none select-none z-10 flex flex-col items-center justify-center min-w-[42px] sm:min-w-[46px]">
+                                <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">PACK OF</span>
+                                <span class="text-[17px] sm:text-[19px] font-black font-heading text-[#3E2D22] leading-none my-0.5">40</span>
+                                <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">STICKS</span>
                             </div>
                         </div>
                     </div>
@@ -625,11 +633,11 @@
     <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
         
         <!-- Section Header -->
-        <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-16 space-y-1.5">
+        <div class="text-center max-w-4xl mx-auto mb-6 sm:mb-10 space-y-1.5">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">
                 ✦ 100% NATURAL • CHARCOAL FREE ✦
             </span>
-            <h2 class="text-xl sm:text-[22px] lg:text-[26px] font-normal uppercase text-[#2B1810] font-heading tracking-[0.12em] leading-snug">
+            <h2 class="text-[18px] sm:text-[26px] md:text-[34px] lg:text-[44px] font-normal uppercase text-[#2B1810] font-heading tracking-[0.06em] leading-tight whitespace-nowrap">
                 Product Categories
             </h2>
         </div>
@@ -772,10 +780,10 @@
 <section class="py-[40px] bg-white border-b border-[#EAE3D9]">
     <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
         
-        <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12 space-y-1.5">
+        <div class="text-center max-w-4xl mx-auto mb-5 sm:mb-6 space-y-1.5">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ DAILY RITUAL GUIDES ✦</span>
-            <h2 class="text-xl sm:text-[22px] lg:text-[26px] font-normal uppercase text-[#121212] font-heading tracking-[0.12em] leading-snug">
-                Devotional Moments of Peace
+            <h2 class="text-[18px] sm:text-[26px] md:text-[34px] lg:text-[44px] font-normal uppercase text-[#121212] font-heading tracking-[0.06em] leading-tight whitespace-nowrap">
+                Devotional Moments
             </h2>
         </div>
 
@@ -783,11 +791,11 @@
             
             <!-- Card 1: Swarna Pushpa Refill Pack -->
             <div class="product-card group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
-                <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
-                    <span class="inline-flex items-center space-x-1 bg-white px-3 sm:px-4 py-0.5 rounded-full border border-[#D38928] text-[10px] sm:text-[11px] font-bold tracking-widest text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading">
-                        <span class="text-[#D38928] text-xs">✨</span>
+                <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
+                    <span class="inline-flex items-center space-x-1 bg-white px-2 sm:px-2.5 py-[2px] rounded-full border border-[#D38928] text-[8.5px] sm:text-[9px] font-bold tracking-wider text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading leading-tight">
+                        <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
                         <span>MORNING SANDHYA</span>
-                        <span class="text-[#D38928] text-xs">✨</span>
+                        <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
                     </span>
                 </div>
                 <div class="p-[5px] pb-0">
@@ -796,10 +804,11 @@
                             <img src="{{ asset('assets/images/devi-refill-pack-card.jpg') }}" alt="Swarna Pushpa Refill Pack" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
                             <img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Swarna Pushpa Refill Pack (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                         </a>
-                        <div class="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 text-right pointer-events-none select-none leading-none z-10">
-                            <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-gray-500 block tracking-wider">PACK OF</span>
-                            <span class="text-xl sm:text-2xl font-black font-heading text-[#8B2626] block my-0.5">100</span>
-                            <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-gray-500 block tracking-wider">STICKS</span>
+                        <!-- Top Right Ribbon / Tag Badge -->
+                        <div class="absolute top-0 right-2.5 sm:right-3 bg-white/95 backdrop-blur-xs border-x border-b border-[#D38928]/35 rounded-b-[7px] px-2 py-1 sm:py-1.5 shadow-2xs text-center pointer-events-none select-none z-10 flex flex-col items-center justify-center min-w-[42px] sm:min-w-[46px]">
+                            <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">PACK OF</span>
+                            <span class="text-[17px] sm:text-[19px] font-black font-heading text-[#8B2626] leading-none my-0.5">100</span>
+                            <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">STICKS</span>
                         </div>
                     </div>
                 </div>
@@ -827,11 +836,11 @@
 
             <!-- Card 2: Divya Naagchampa Refill Pack -->
             <div class="product-card group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
-                <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
-                    <span class="inline-flex items-center space-x-1 bg-white px-3 sm:px-4 py-0.5 rounded-full border border-[#D38928] text-[10px] sm:text-[11px] font-bold tracking-widest text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading">
-                        <span class="text-[#D38928] text-xs">✨</span>
+                <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
+                    <span class="inline-flex items-center space-x-1 bg-white px-2 sm:px-2.5 py-[2px] rounded-full border border-[#D38928] text-[8.5px] sm:text-[9px] font-bold tracking-wider text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading leading-tight">
+                        <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
                         <span>TEMPLE AARTI</span>
-                        <span class="text-[#D38928] text-xs">✨</span>
+                        <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
                     </span>
                 </div>
                 <div class="p-[5px] pb-0">
@@ -840,10 +849,11 @@
                             <img src="{{ asset('assets/images/camphor-refill-pack-card.jpg') }}" alt="Divya Naagchampa Refill Pack" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
                             <img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Divya Naagchampa Refill Pack (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                         </a>
-                        <div class="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 text-right pointer-events-none select-none leading-none z-10">
-                            <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-gray-500 block tracking-wider">PACK OF</span>
-                            <span class="text-xl sm:text-2xl font-black font-heading text-[#3E2D22] block my-0.5">100</span>
-                            <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-gray-500 block tracking-wider">STICKS</span>
+                        <!-- Top Right Ribbon / Tag Badge -->
+                        <div class="absolute top-0 right-2.5 sm:right-3 bg-white/95 backdrop-blur-xs border-x border-b border-[#D38928]/35 rounded-b-[7px] px-2 py-1 sm:py-1.5 shadow-2xs text-center pointer-events-none select-none z-10 flex flex-col items-center justify-center min-w-[42px] sm:min-w-[46px]">
+                            <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">PACK OF</span>
+                            <span class="text-[17px] sm:text-[19px] font-black font-heading text-[#3E2D22] leading-none my-0.5">100</span>
+                            <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">STICKS</span>
                         </div>
                     </div>
                 </div>
@@ -871,11 +881,11 @@
 
             <!-- Card 3: Royal Oudh Sticks -->
             <div class="product-card group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
-                <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
-                    <span class="inline-flex items-center space-x-1 bg-white px-3 sm:px-4 py-0.5 rounded-full border border-[#D38928] text-[10px] sm:text-[11px] font-bold tracking-widest text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading">
-                        <span class="text-[#D38928] text-xs">✨</span>
+                <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
+                    <span class="inline-flex items-center space-x-1 bg-white px-2 sm:px-2.5 py-[2px] rounded-full border border-[#D38928] text-[8.5px] sm:text-[9px] font-bold tracking-wider text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading leading-tight">
+                        <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
                         <span>EVENING DHYAN</span>
-                        <span class="text-[#D38928] text-xs">✨</span>
+                        <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
                     </span>
                 </div>
                 <div class="p-[5px] pb-0">
@@ -884,10 +894,11 @@
                             <img src="{{ asset('assets/images/oudh-pack-card.jpg') }}" alt="Royal Oudh Bambooless Sticks" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
                             <img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Royal Oudh Bambooless Sticks (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                         </a>
-                        <div class="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 text-right pointer-events-none select-none leading-none z-10">
-                            <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-gray-500 block tracking-wider">PACK OF</span>
-                            <span class="text-xl sm:text-2xl font-black font-heading text-[#7A3A22] block my-0.5">40</span>
-                            <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-gray-500 block tracking-wider">STICKS</span>
+                        <!-- Top Right Ribbon / Tag Badge -->
+                        <div class="absolute top-0 right-2.5 sm:right-3 bg-white/95 backdrop-blur-xs border-x border-b border-[#D38928]/35 rounded-b-[7px] px-2 py-1 sm:py-1.5 shadow-2xs text-center pointer-events-none select-none z-10 flex flex-col items-center justify-center min-w-[42px] sm:min-w-[46px]">
+                            <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">PACK OF</span>
+                            <span class="text-[17px] sm:text-[19px] font-black font-heading text-[#7A3A22] leading-none my-0.5">40</span>
+                            <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">STICKS</span>
                         </div>
                     </div>
                 </div>
@@ -915,11 +926,11 @@
 
             <!-- Card 4: Chandan Saanjh Sticks -->
             <div class="product-card group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
-                <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
-                    <span class="inline-flex items-center space-x-1 bg-white px-3 sm:px-4 py-0.5 rounded-full border border-[#D38928] text-[10px] sm:text-[11px] font-bold tracking-widest text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading">
-                        <span class="text-[#D38928] text-xs">✨</span>
+                <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
+                    <span class="inline-flex items-center space-x-1 bg-white px-2 sm:px-2.5 py-[2px] rounded-full border border-[#D38928] text-[8.5px] sm:text-[9px] font-bold tracking-wider text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading leading-tight">
+                        <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
                         <span>DAILY HAVAN</span>
-                        <span class="text-[#D38928] text-xs">✨</span>
+                        <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
                     </span>
                 </div>
                 <div class="p-[5px] pb-0">
@@ -928,10 +939,11 @@
                             <img src="{{ asset('assets/images/chandan-cones-card.jpg') }}" alt="Chandan Saanjh Sticks" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
                             <img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Chandan Saanjh Sticks (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                         </a>
-                        <div class="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 text-right pointer-events-none select-none leading-none z-10">
-                            <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-gray-500 block tracking-wider">PACK OF</span>
-                            <span class="text-xl sm:text-2xl font-black font-heading text-[#3E2D22] block my-0.5">40</span>
-                            <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-gray-500 block tracking-wider">STICKS</span>
+                        <!-- Top Right Ribbon / Tag Badge -->
+                        <div class="absolute top-0 right-2.5 sm:right-3 bg-white/95 backdrop-blur-xs border-x border-b border-[#D38928]/35 rounded-b-[7px] px-2 py-1 sm:py-1.5 shadow-2xs text-center pointer-events-none select-none z-10 flex flex-col items-center justify-center min-w-[42px] sm:min-w-[46px]">
+                            <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">PACK OF</span>
+                            <span class="text-[17px] sm:text-[19px] font-black font-heading text-[#3E2D22] leading-none my-0.5">40</span>
+                            <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">STICKS</span>
                         </div>
                     </div>
                 </div>
@@ -969,9 +981,9 @@
     <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
         
         <!-- Header -->
-        <div class="text-center max-w-2xl mx-auto space-y-1.5 mb-6 sm:mb-8">
+        <div class="text-center max-w-4xl mx-auto space-y-1.5 mb-5 sm:mb-6">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ 50,000+ BLESSED DEVOTEES ✦</span>
-            <h2 class="text-xl sm:text-[22px] lg:text-[26px] font-normal uppercase text-[#121212] font-heading tracking-[0.12em] leading-snug">
+            <h2 class="text-[18px] sm:text-[26px] md:text-[34px] lg:text-[44px] font-normal uppercase text-[#121212] font-heading tracking-[0.06em] leading-tight whitespace-nowrap">
                 Customer Testimonials
             </h2>
         </div>
@@ -1212,9 +1224,9 @@
     <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
         
         <!-- Clean Standard Eyebrow Header -->
-        <div class="text-center max-w-2xl mx-auto mb-4 sm:mb-6 space-y-1.5">
+        <div class="text-center max-w-4xl mx-auto mb-4 sm:mb-6 space-y-1.5">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ CRAFTED WITH CARE ✦</span>
-            <h2 class="text-xl sm:text-[22px] lg:text-[26px] font-heading font-normal uppercase text-[#2B1810] tracking-[0.12em] leading-snug">
+            <h2 class="text-[18px] sm:text-[26px] md:text-[34px] lg:text-[44px] font-heading font-normal uppercase text-[#2B1810] tracking-[0.06em] leading-tight whitespace-nowrap">
                 Rooted in Purity
             </h2>
             <!-- <p class="text-xs sm:text-sm md:text-base text-gray-600 font-normal font-body">
@@ -1306,9 +1318,9 @@
         <div class="max-w-5xl lg:max-w-[1100px] mx-auto space-y-6 sm:space-y-8">
         
         <!-- Section Header -->
-        <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-10 space-y-1.5">
+        <div class="text-center max-w-4xl mx-auto mb-6 sm:mb-8 space-y-1.5">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ CLARITY &amp; VIDHI ✦</span>
-            <h2 class="text-xl sm:text-[22px] lg:text-[26px] font-normal uppercase text-[#121212] font-heading tracking-[0.12em] leading-snug">
+            <h2 class="text-[18px] sm:text-[26px] md:text-[34px] lg:text-[44px] font-normal uppercase text-[#121212] font-heading tracking-[0.06em] leading-tight whitespace-nowrap">
                 Frequently Asked Questions
             </h2>
         </div>
