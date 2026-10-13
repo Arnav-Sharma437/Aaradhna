@@ -125,7 +125,7 @@
         <!-- Section Header -->
         <div class="text-center max-w-4xl mx-auto mb-5 sm:mb-6 space-y-1.5">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ PURE VEDIC BLESSINGS ✦</span>
-            <h2 class="text-[18px] sm:text-[26px] md:text-[34px] lg:text-[44px] font-normal uppercase text-[#121212] font-heading tracking-[0.06em] leading-tight whitespace-nowrap">
+            <h2 class="text-[18px] sm:text-[24px] md:text-[28px] lg:text-[34px] font-normal capitalize text-[#121212] font-heading tracking-[0.06em] leading-tight whitespace-nowrap">
                 Bestseller of the Month
             </h2>
         </div>
@@ -170,12 +170,6 @@
                                 <img src="{{ asset('assets/images/oudh-pack-card.jpg') }}" alt="Swarna Pushpa Bambooless" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
                                 <img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Swarna Pushpa (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                             </a>
-                            <!-- Top Right Ribbon / Tag Badge -->
-                            <div class="absolute top-0 right-2.5 sm:right-3 bg-white/95 backdrop-blur-xs border-x border-b border-[#D38928]/35 rounded-b-[7px] px-2 py-1 sm:py-1.5 shadow-2xs text-center pointer-events-none select-none z-10 flex flex-col items-center justify-center min-w-[42px] sm:min-w-[46px]">
-                                <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">PACK OF</span>
-                                <span class="text-[17px] sm:text-[19px] font-black font-heading text-[#8B2626] leading-none my-0.5">40</span>
-                                <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">STICKS</span>
-                            </div>
                         </div>
                     </div>
                     <!-- Content -->
@@ -218,12 +212,6 @@
                                 <img src="{{ asset('assets/images/incense-pack.jpg') }}" alt="Chandan Saanjh Incense" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
                                 <img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Chandan Saanjh (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                             </a>
-                            <!-- Top Right Ribbon / Tag Badge -->
-                            <div class="absolute top-0 right-2.5 sm:right-3 bg-white/95 backdrop-blur-xs border-x border-b border-[#D38928]/35 rounded-b-[7px] px-2 py-1 sm:py-1.5 shadow-2xs text-center pointer-events-none select-none z-10 flex flex-col items-center justify-center min-w-[42px] sm:min-w-[46px]">
-                                <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">PACK OF</span>
-                                <span class="text-[17px] sm:text-[19px] font-black font-heading text-[#3E2D22] leading-none my-0.5">40</span>
-                                <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">STICKS</span>
-                            </div>
                         </div>
                     </div>
                     <!-- Content -->
@@ -266,12 +254,6 @@
                                 <img src="{{ asset('assets/images/oudh-pack-card.jpg') }}" alt="Royal Oudh Incense" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
                                 <img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Royal Oudh (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                             </a>
-                            <!-- Top Right Ribbon / Tag Badge -->
-                            <div class="absolute top-0 right-2.5 sm:right-3 bg-white/95 backdrop-blur-xs border-x border-b border-[#D38928]/35 rounded-b-[7px] px-2 py-1 sm:py-1.5 shadow-2xs text-center pointer-events-none select-none z-10 flex flex-col items-center justify-center min-w-[42px] sm:min-w-[46px]">
-                                <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">PACK OF</span>
-                                <span class="text-[17px] sm:text-[19px] font-black font-heading text-[#7A3A22] leading-none my-0.5">40</span>
-                                <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">STICKS</span>
-                            </div>
                         </div>
                     </div>
                     <!-- Content -->
@@ -314,12 +296,6 @@
                                 <img src="{{ asset('assets/images/havan-cup.jpg') }}" alt="Google Dhoop Havan Cup" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
                                 <img src="{{ asset('assets/images/single-havan-cup.jpg') }}" alt="Google Dhoop (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                             </a>
-                            <!-- Top Right Ribbon / Tag Badge -->
-                            <div class="absolute top-0 right-2.5 sm:right-3 bg-white/95 backdrop-blur-xs border-x border-b border-[#D38928]/35 rounded-b-[7px] px-2 py-1 sm:py-1.5 shadow-2xs text-center pointer-events-none select-none z-10 flex flex-col items-center justify-center min-w-[42px] sm:min-w-[46px]">
-                                <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">BOX OF</span>
-                                <span class="text-[17px] sm:text-[19px] font-black font-heading text-[#965A15] leading-none my-0.5">12</span>
-                                <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">CUPS</span>
-                            </div>
                         </div>
                     </div>
                     <!-- Content -->
@@ -359,12 +335,6 @@
                             <a href="{{ route('products.show', 'divya-naagchampa') }}" class="block w-full h-full">
                                 <img src="{{ asset('assets/images/incense-pack.jpg') }}" alt="Divya Naagchampa Bambooless" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105"><img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Divya Naagchampa (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                             </a>
-                            <!-- Top Right Ribbon / Tag Badge -->
-                            <div class="absolute top-0 right-2.5 sm:right-3 bg-white/95 backdrop-blur-xs border-x border-b border-[#D38928]/35 rounded-b-[7px] px-2 py-1 sm:py-1.5 shadow-2xs text-center pointer-events-none select-none z-10 flex flex-col items-center justify-center min-w-[42px] sm:min-w-[46px]">
-                                <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">PACK OF</span>
-                                <span class="text-[17px] sm:text-[19px] font-black font-heading text-[#3E2D22] leading-none my-0.5">40</span>
-                                <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">STICKS</span>
-                            </div>
                         </div>
                     </div>
                     <!-- Content -->
@@ -405,12 +375,6 @@
                                 <img src="{{ asset('assets/images/incense-pack.jpg') }}" alt="Mogra Noor Bambooless" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
                                 <img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Mogra Noor (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                             </a>
-                            <!-- Top Right Ribbon / Tag Badge -->
-                            <div class="absolute top-0 right-2.5 sm:right-3 bg-white/95 backdrop-blur-xs border-x border-b border-[#D38928]/35 rounded-b-[7px] px-2 py-1 sm:py-1.5 shadow-2xs text-center pointer-events-none select-none z-10 flex flex-col items-center justify-center min-w-[42px] sm:min-w-[46px]">
-                                <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">PACK OF</span>
-                                <span class="text-[17px] sm:text-[19px] font-black font-heading text-[#3E2D22] leading-none my-0.5">40</span>
-                                <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">STICKS</span>
-                            </div>
                         </div>
                     </div>
                     <!-- Content -->
@@ -451,12 +415,6 @@
                                 <img src="{{ asset('assets/images/incense-pack.jpg') }}" alt="Gulab Rooh Bambooless" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
                                 <img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Gulab Rooh (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                             </a>
-                            <!-- Top Right Ribbon / Tag Badge -->
-                            <div class="absolute top-0 right-2.5 sm:right-3 bg-white/95 backdrop-blur-xs border-x border-b border-[#D38928]/35 rounded-b-[7px] px-2 py-1 sm:py-1.5 shadow-2xs text-center pointer-events-none select-none z-10 flex flex-col items-center justify-center min-w-[42px] sm:min-w-[46px]">
-                                <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">PACK OF</span>
-                                <span class="text-[17px] sm:text-[19px] font-black font-heading text-[#3E2D22] leading-none my-0.5">40</span>
-                                <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">STICKS</span>
-                            </div>
                         </div>
                     </div>
                     <!-- Content -->
@@ -497,12 +455,6 @@
                                 <img src="{{ asset('assets/images/incense-pack.jpg') }}" alt="Lavender Veda Bambooless" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
                                 <img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Lavender Veda (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                             </a>
-                            <!-- Top Right Ribbon / Tag Badge -->
-                            <div class="absolute top-0 right-2.5 sm:right-3 bg-white/95 backdrop-blur-xs border-x border-b border-[#D38928]/35 rounded-b-[7px] px-2 py-1 sm:py-1.5 shadow-2xs text-center pointer-events-none select-none z-10 flex flex-col items-center justify-center min-w-[42px] sm:min-w-[46px]">
-                                <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">PACK OF</span>
-                                <span class="text-[17px] sm:text-[19px] font-black font-heading text-[#3E2D22] leading-none my-0.5">40</span>
-                                <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">STICKS</span>
-                            </div>
                         </div>
                     </div>
                     <!-- Content -->
@@ -637,7 +589,7 @@
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">
                 ✦ 100% NATURAL • CHARCOAL FREE ✦
             </span>
-            <h2 class="text-[18px] sm:text-[26px] md:text-[34px] lg:text-[44px] font-normal uppercase text-[#2B1810] font-heading tracking-[0.06em] leading-tight whitespace-nowrap">
+            <h2 class="text-[18px] sm:text-[24px] md:text-[28px] lg:text-[34px] font-normal capitalize text-[#2B1810] font-heading tracking-[0.06em] leading-tight whitespace-nowrap">
                 Product Categories
             </h2>
         </div>
@@ -782,7 +734,7 @@
         
         <div class="text-center max-w-4xl mx-auto mb-5 sm:mb-6 space-y-1.5">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ DAILY RITUAL GUIDES ✦</span>
-            <h2 class="text-[18px] sm:text-[26px] md:text-[34px] lg:text-[44px] font-normal uppercase text-[#121212] font-heading tracking-[0.06em] leading-tight whitespace-nowrap">
+            <h2 class="text-[18px] sm:text-[24px] md:text-[28px] lg:text-[34px] font-normal capitalize text-[#121212] font-heading tracking-[0.06em] leading-tight whitespace-nowrap">
                 Devotional Moments
             </h2>
         </div>
@@ -804,12 +756,6 @@
                             <img src="{{ asset('assets/images/devi-refill-pack-card.jpg') }}" alt="Swarna Pushpa Refill Pack" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
                             <img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Swarna Pushpa Refill Pack (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                         </a>
-                        <!-- Top Right Ribbon / Tag Badge -->
-                        <div class="absolute top-0 right-2.5 sm:right-3 bg-white/95 backdrop-blur-xs border-x border-b border-[#D38928]/35 rounded-b-[7px] px-2 py-1 sm:py-1.5 shadow-2xs text-center pointer-events-none select-none z-10 flex flex-col items-center justify-center min-w-[42px] sm:min-w-[46px]">
-                            <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">PACK OF</span>
-                            <span class="text-[17px] sm:text-[19px] font-black font-heading text-[#8B2626] leading-none my-0.5">100</span>
-                            <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">STICKS</span>
-                        </div>
                     </div>
                 </div>
                 <div class="p-3.5 sm:p-4 pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
@@ -849,12 +795,6 @@
                             <img src="{{ asset('assets/images/camphor-refill-pack-card.jpg') }}" alt="Divya Naagchampa Refill Pack" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
                             <img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Divya Naagchampa Refill Pack (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                         </a>
-                        <!-- Top Right Ribbon / Tag Badge -->
-                        <div class="absolute top-0 right-2.5 sm:right-3 bg-white/95 backdrop-blur-xs border-x border-b border-[#D38928]/35 rounded-b-[7px] px-2 py-1 sm:py-1.5 shadow-2xs text-center pointer-events-none select-none z-10 flex flex-col items-center justify-center min-w-[42px] sm:min-w-[46px]">
-                            <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">PACK OF</span>
-                            <span class="text-[17px] sm:text-[19px] font-black font-heading text-[#3E2D22] leading-none my-0.5">100</span>
-                            <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">STICKS</span>
-                        </div>
                     </div>
                 </div>
                 <div class="p-3.5 sm:p-4 pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
@@ -894,12 +834,6 @@
                             <img src="{{ asset('assets/images/oudh-pack-card.jpg') }}" alt="Royal Oudh Bambooless Sticks" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
                             <img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Royal Oudh Bambooless Sticks (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                         </a>
-                        <!-- Top Right Ribbon / Tag Badge -->
-                        <div class="absolute top-0 right-2.5 sm:right-3 bg-white/95 backdrop-blur-xs border-x border-b border-[#D38928]/35 rounded-b-[7px] px-2 py-1 sm:py-1.5 shadow-2xs text-center pointer-events-none select-none z-10 flex flex-col items-center justify-center min-w-[42px] sm:min-w-[46px]">
-                            <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">PACK OF</span>
-                            <span class="text-[17px] sm:text-[19px] font-black font-heading text-[#7A3A22] leading-none my-0.5">40</span>
-                            <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">STICKS</span>
-                        </div>
                     </div>
                 </div>
                 <div class="p-3.5 sm:p-4 pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
@@ -939,12 +873,6 @@
                             <img src="{{ asset('assets/images/chandan-cones-card.jpg') }}" alt="Chandan Saanjh Sticks" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
                             <img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Chandan Saanjh Sticks (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
                         </a>
-                        <!-- Top Right Ribbon / Tag Badge -->
-                        <div class="absolute top-0 right-2.5 sm:right-3 bg-white/95 backdrop-blur-xs border-x border-b border-[#D38928]/35 rounded-b-[7px] px-2 py-1 sm:py-1.5 shadow-2xs text-center pointer-events-none select-none z-10 flex flex-col items-center justify-center min-w-[42px] sm:min-w-[46px]">
-                            <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">PACK OF</span>
-                            <span class="text-[17px] sm:text-[19px] font-black font-heading text-[#3E2D22] leading-none my-0.5">40</span>
-                            <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">STICKS</span>
-                        </div>
                     </div>
                 </div>
                 <div class="p-3.5 sm:p-4 pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
@@ -983,7 +911,7 @@
         <!-- Header -->
         <div class="text-center max-w-4xl mx-auto space-y-1.5 mb-5 sm:mb-6">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ 50,000+ BLESSED DEVOTEES ✦</span>
-            <h2 class="text-[18px] sm:text-[26px] md:text-[34px] lg:text-[44px] font-normal uppercase text-[#121212] font-heading tracking-[0.06em] leading-tight whitespace-nowrap">
+            <h2 class="text-[18px] sm:text-[24px] md:text-[28px] lg:text-[34px] font-normal capitalize text-[#121212] font-heading tracking-[0.06em] leading-tight whitespace-nowrap">
                 Customer Testimonials
             </h2>
         </div>
@@ -1226,7 +1154,7 @@
         <!-- Clean Standard Eyebrow Header -->
         <div class="text-center max-w-4xl mx-auto mb-4 sm:mb-6 space-y-1.5">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ CRAFTED WITH CARE ✦</span>
-            <h2 class="text-[18px] sm:text-[26px] md:text-[34px] lg:text-[44px] font-heading font-normal uppercase text-[#2B1810] tracking-[0.06em] leading-tight whitespace-nowrap">
+            <h2 class="text-[18px] sm:text-[24px] md:text-[28px] lg:text-[34px] font-heading font-normal capitalize text-[#2B1810] tracking-[0.06em] leading-tight whitespace-nowrap">
                 Rooted in Purity
             </h2>
             <!-- <p class="text-xs sm:text-sm md:text-base text-gray-600 font-normal font-body">
@@ -1320,7 +1248,7 @@
         <!-- Section Header -->
         <div class="text-center max-w-4xl mx-auto mb-6 sm:mb-8 space-y-1.5">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ CLARITY &amp; VIDHI ✦</span>
-            <h2 class="text-[18px] sm:text-[26px] md:text-[34px] lg:text-[44px] font-normal uppercase text-[#121212] font-heading tracking-[0.06em] leading-tight whitespace-nowrap">
+            <h2 class="text-[18px] sm:text-[24px] md:text-[28px] lg:text-[34px] font-normal capitalize text-[#121212] font-heading tracking-[0.06em] leading-tight whitespace-nowrap">
                 Frequently Asked Questions
             </h2>
         </div>
@@ -1568,10 +1496,10 @@
         // 3. TOAST NOTIFICATION UTILITY
         // -------------------------------------------------------------
         function showNotification(title, message, iconType = 'cart') {
-            let toast = document.getElementById('manglam-live-toast');
+            let toast = document.getElementById('ishanaa-live-toast');
             if (!toast) {
                 toast = document.createElement('div');
-                toast.id = 'manglam-live-toast';
+                toast.id = 'ishanaa-live-toast';
                 toast.className = 'fixed bottom-6 right-6 z-50 bg-[#121212] text-white px-5 py-3.5 rounded-[12px] shadow-2xl border border-[#D38928]/50 flex items-center space-x-3 transition-all duration-300 transform translate-y-20 opacity-0 font-body';
                 document.body.appendChild(toast);
             }

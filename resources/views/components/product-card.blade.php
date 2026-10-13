@@ -102,14 +102,6 @@
         $topBadge = null;
     }
 
-    // Pack labels
-    $isCup = str_contains($product->slug, 'cup') || str_contains($product->slug, 'havan');
-    $isCone = str_contains($product->slug, 'cone');
-    $packPrefix = $isCup ? 'BOX OF' : 'PACK OF';
-    $packCount = str_contains($product->slug, '100') || str_contains($product->slug, 'refill') ? '100' : (str_contains($product->slug, 'six') || str_contains($product->slug, '240') ? '240' : (str_contains($product->slug, 'pitambara') ? '1' : ($isCup ? '12' : ($isCone ? '30' : '40'))));
-    $packUnit = str_contains($product->slug, 'pitambara') ? 'PACK' : ($isCup ? 'CUPS' : ($isCone ? 'CONES' : 'STICKS'));
-    $packColor = str_contains($product->slug, '100') ? 'text-[#8B2626]' : ($isCup || $isCone ? 'text-[#965A15]' : (str_contains($product->slug, 'oudh') ? 'text-[#7A3A22]' : 'text-[#3E2D22]'));
-
     $reviewCount = $product->approvedReviews->count() ?: (200 + (abs(crc32($product->slug)) % 90));
     $mrpPrice = $product->base_price > $product->active_price ? $product->base_price : ($product->active_price * 1.4);
 @endphp
@@ -145,13 +137,6 @@
                     loading="lazy"
                 >
             </a>
-
-            <!-- Top Right Ribbon / Tag Badge -->
-            <div class="absolute top-0 right-2.5 sm:right-3 bg-white/95 backdrop-blur-xs border-x border-b border-[#D38928]/35 rounded-b-[7px] px-2 py-1 sm:py-1.5 shadow-2xs text-center pointer-events-none select-none z-10 flex flex-col items-center justify-center min-w-[42px] sm:min-w-[46px]">
-                <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">{{ $packPrefix }}</span>
-                <span class="text-[17px] sm:text-[19px] font-black font-heading {{ $packColor }} leading-none my-0.5">{{ $packCount }}</span>
-                <span class="text-[7.5px] sm:text-[8px] font-bold uppercase tracking-wider text-gray-500 leading-tight">{{ $packUnit }}</span>
-            </div>
 
             <!-- Free Ceramic Stand Banner for Devi / Specials -->
             @if(str_contains($product->slug, 'devi'))

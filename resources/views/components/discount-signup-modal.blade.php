@@ -612,7 +612,7 @@
 
                     // Save coupon in localStorage so Cart / Checkout automatically autofills or applies it
                     try {
-                        localStorage.setItem('manglam_applied_coupon', body.coupon_code);
+                        localStorage.setItem('ishanaa_applied_coupon', body.coupon_code);
                     } catch (e) {}
 
                     window.goToDiscountStep(4);

@@ -1,10 +1,10 @@
 <!-- ========================================================================= -->
 <!-- LUXURY SACRED VEDIC FOOTER — ISHANAA™                                   -->
 <!-- ========================================================================= -->
-<footer class="text-white font-body relative overflow-hidden bg-[#C28430] border-t-2 border-[#D99B4A] select-none">
+<footer class="text-white font-body relative overflow-hidden bg-[#BC7C1C] border-t-2 border-[#BC7C1C] select-none">
     
     <!-- Solid Announcement Bar Warm Gold Background -->
-    <div class="absolute inset-0 bg-[#C28430] pointer-events-none"></div>
+    <div class="absolute inset-0 bg-[#BC7C1C] pointer-events-none"></div>
 
     <!-- Soft Warm Amber Glow -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
@@ -42,9 +42,9 @@
             <div class="lg:col-span-4 space-y-5">
                 <a href="{{ route('home') }}" class="inline-block py-1" aria-label="ISHANAA Home">
                     <img 
-                        src="{{ asset('assets/images/White Logo.png') }}" 
+                        src="{{ asset('assets/images/Ishanaa-logo.png') }}" 
                         alt="ISHANAA" 
-                        class="h-11 sm:h-13 w-auto max-w-[170px] object-contain"
+                        class="h-11 sm:h-13 w-auto max-w-[170px] object-contain brightness-0 invert"
                     >
                 </a>
                 
@@ -59,7 +59,7 @@
                         href="https://www.instagram.com/ishanaa_shop/" 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        class="w-10 h-10 rounded-full border border-white/40 hover:border-white text-[#C28430] bg-white hover:bg-[#FFF8EE] flex items-center justify-center transition-all transform hover:scale-105 shadow-2xs"
+                        class="w-10 h-10 rounded-full border border-white/40 hover:border-white text-[#BC7C1C] bg-white hover:bg-[#FFF8EE] flex items-center justify-center transition-all transform hover:scale-105 shadow-2xs"
                         aria-label="Instagram"
                     >
                         <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -74,7 +74,7 @@
                         href="https://www.facebook.com/profile.php?id=61594948600545" 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        class="w-10 h-10 rounded-full border border-white/40 hover:border-white text-[#C28430] bg-white hover:bg-[#FFF8EE] flex items-center justify-center transition-all transform hover:scale-105 shadow-2xs"
+                        class="w-10 h-10 rounded-full border border-white/40 hover:border-white text-[#BC7C1C] bg-white hover:bg-[#FFF8EE] flex items-center justify-center transition-all transform hover:scale-105 shadow-2xs"
                         aria-label="Facebook"
                     >
                         <svg class="w-4.5 h-4.5" fill="currentColor" viewBox="0 0 24 24">
@@ -87,7 +87,7 @@
                         href="{{ $storeSettings['youtube_url'] ?? 'https://youtube.com' }}" 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        class="w-10 h-10 rounded-full border border-white/40 hover:border-white text-[#C28430] bg-white hover:bg-[#FFF8EE] flex items-center justify-center transition-all transform hover:scale-105 shadow-2xs"
+                        class="w-10 h-10 rounded-full border border-white/40 hover:border-white text-[#BC7C1C] bg-white hover:bg-[#FFF8EE] flex items-center justify-center transition-all transform hover:scale-105 shadow-2xs"
                         aria-label="YouTube"
                     >
                         <svg class="w-4.5 h-4.5" fill="currentColor" viewBox="0 0 24 24">
@@ -222,7 +222,7 @@
                 <!-- Newsletter Clickable Interactive Bar (Opens Multi-step Modal) -->
                 <div class="pt-2">
                     <div class="relative flex items-center w-full rounded-full border border-white/40 bg-white p-1 pl-4 hover:border-white group-hover/newsletter:border-white transition-colors shadow-2xs cursor-pointer">
-                        <svg class="w-4.5 h-4.5 text-[#C28430] mr-2.5 shrink-0 group-hover/newsletter:text-[#A86E20] transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <svg class="w-4.5 h-4.5 text-[#BC7C1C] mr-2.5 shrink-0 group-hover/newsletter:text-[#965A15] transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                         </svg>
                         <input 
@@ -232,7 +232,7 @@
                             class="footer-email-input bg-transparent text-[#2B1810] placeholder-[#554035]/70 text-xs sm:text-sm focus:outline-none flex-1 min-w-0 pr-2 font-body cursor-pointer pointer-events-none"
                         >
                         <div 
-                            class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#C28430] hover:bg-[#A86E20] text-white flex items-center justify-center font-bold transition-all transform group-hover/newsletter:scale-105 shrink-0 shadow-xs cursor-pointer"
+                            class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#BC7C1C] hover:bg-[#965A15] text-white flex items-center justify-center font-bold transition-all transform group-hover/newsletter:scale-105 shrink-0 shadow-xs cursor-pointer"
                             aria-label="Get 10% OFF"
                         >
                             <svg class="w-4 h-4 sm:w-4.5 sm:h-4.5 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">

@@ -60,11 +60,11 @@
                         type="email" 
                         id="email" 
                         name="email" 
-                        value="{{ old('email', 'admin@manglam.co') }}" 
+                        value="{{ old('email', 'admin@ishanaa.com') }}" 
                         required 
                         autofocus
                         class="w-full px-4 py-3 bg-black/50 border {{ $errors->has('email') ? 'border-rose-500' : 'border-white/15' }} focus:border-[#D38928] rounded-[12px] text-sm text-white placeholder-white/30 focus:outline-none transition-colors"
-                        placeholder="admin@manglam.co"
+                        placeholder="admin@ishanaa.com"
                     >
                     @error('email')
                         <p class="text-[11px] font-bold text-rose-400 mt-1">{{ $message }}</p>

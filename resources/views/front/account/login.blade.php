@@ -73,7 +73,7 @@
                             name="email" 
                             id="email" 
                             required 
-                            value="{{ old('email', 'devotee@manglam.co') }}" 
+                            value="{{ old('email', 'devotee@ishanaa.com') }}" 
                             placeholder="Enter email or 10-digit mobile"
                             class="w-full px-4 py-3 bg-[#FAF7F2] border border-[#EADBCC] rounded-[10px] text-sm text-[#121212] focus:outline-none focus:border-[#D38928] focus:bg-white transition-colors"
                         >

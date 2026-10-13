@@ -2,14 +2,16 @@ import './bootstrap';
 
 /**
  * =========================================================================
- * MANGALAM.CO™ - UNIFIED CLIENT-SIDE STATE MANAGEMENT & REACTIVE STORE
+ * ISHANAA™ - UNIFIED CLIENT-SIDE STATE MANAGEMENT & REACTIVE STORE
  * =========================================================================
  * Pure, reliable LocalStorage management for Cart & Wishlist with zero phantom
  * initial data, persistent cross-page sync, reactive button states, and accurate calculations.
  */
 
-const CART_STORAGE_KEY = 'mangalam_cart_items_v2';
-const WISHLIST_STORAGE_KEY = 'mangalam_wishlist_items_v2';
+const CART_STORAGE_KEY = 'ishanaa_cart_items_v2';
+const LEGACY_CART_STORAGE_KEY = 'mangalam_cart_items_v2';
+const WISHLIST_STORAGE_KEY = 'ishanaa_wishlist_items_v2';
+const LEGACY_WISHLIST_STORAGE_KEY = 'mangalam_wishlist_items_v2';
 
 let activeCouponDiscount = 0; // percentage e.g. 0.10
 
@@ -18,7 +20,7 @@ let activeCouponDiscount = 0; // percentage e.g. 0.10
 // -------------------------------------------------------------------------
 export const getCart = () => {
     try {
-        const stored = localStorage.getItem(CART_STORAGE_KEY);
+        const stored = localStorage.getItem(CART_STORAGE_KEY) || localStorage.getItem(LEGACY_CART_STORAGE_KEY);
         return stored ? JSON.parse(stored) : [];
     } catch (e) {
         return [];
@@ -27,17 +29,20 @@ export const getCart = () => {
 
 export const saveCart = (items) => {
     localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items));
+    window.dispatchEvent(new CustomEvent('ishanaa:cart-updated', { detail: { items } }));
     window.dispatchEvent(new CustomEvent('mangalam:cart-updated', { detail: { items } }));
 };
 
 export const clearCart = () => {
     localStorage.removeItem(CART_STORAGE_KEY);
+    localStorage.removeItem(LEGACY_CART_STORAGE_KEY);
+    window.dispatchEvent(new CustomEvent('ishanaa:cart-updated', { detail: { items: [] } }));
     window.dispatchEvent(new CustomEvent('mangalam:cart-updated', { detail: { items: [] } }));
 };
 
 export const getWishlist = () => {
     try {
-        const stored = localStorage.getItem(WISHLIST_STORAGE_KEY);
+        const stored = localStorage.getItem(WISHLIST_STORAGE_KEY) || localStorage.getItem(LEGACY_WISHLIST_STORAGE_KEY);
         return stored ? JSON.parse(stored) : [];
     } catch (e) {
         return [];
@@ -46,6 +51,7 @@ export const getWishlist = () => {
 
 export const saveWishlist = (items) => {
     localStorage.setItem(WISHLIST_STORAGE_KEY, JSON.stringify(items));
+    window.dispatchEvent(new CustomEvent('ishanaa:wishlist-updated', { detail: { items } }));
     window.dispatchEvent(new CustomEvent('mangalam:wishlist-updated', { detail: { items } }));
 };
 
@@ -328,11 +334,13 @@ document.addEventListener('DOMContentLoaded', () => {
     renderCartPage();
 
     // Listen to custom store events
-    window.addEventListener('mangalam:cart-updated', () => {
+    const onCartUpdated = () => {
         updateHeaderBadges();
         renderCartDrawer();
         renderCartPage();
-    });
+    };
+    window.addEventListener('ishanaa:cart-updated', onCartUpdated);
+    window.addEventListener('mangalam:cart-updated', onCartUpdated);
 
     // Delegated click handler for Add-To-Cart across all pages
     document.addEventListener('click', (e) => {

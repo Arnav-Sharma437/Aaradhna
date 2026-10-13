@@ -42,7 +42,7 @@
 
                 <div>
                     <label class="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-1">Support Email</label>
-                    <input type="email" name="support_email" value="{{ $settings['support_email'] ?? 'care@manglam.co' }}" class="w-full px-3.5 py-2.5 rounded-[8px] border border-gray-300 text-xs focus:ring-[#D38928] focus:border-[#D38928]">
+                    <input type="email" name="support_email" value="{{ $settings['support_email'] ?? 'care@ishanaa.com' }}" class="w-full px-3.5 py-2.5 rounded-[8px] border border-gray-300 text-xs focus:ring-[#D38928] focus:border-[#D38928]">
                 </div>
 
                 <div>
@@ -180,12 +180,12 @@
 
                 <div>
                     <label class="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-1">YouTube Channel URL</label>
-                    <input type="url" name="youtube_url" value="{{ $settings['youtube_url'] ?? 'https://youtube.com/@manglam' }}" class="w-full px-3.5 py-2.5 rounded-[8px] border border-gray-300 text-xs focus:ring-[#D38928] focus:border-[#D38928]">
+                    <input type="url" name="youtube_url" value="{{ $settings['youtube_url'] ?? 'https://youtube.com/@ishanaa' }}" class="w-full px-3.5 py-2.5 rounded-[8px] border border-gray-300 text-xs focus:ring-[#D38928] focus:border-[#D38928]">
                 </div>
 
                 <div>
                     <label class="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-1">Twitter / X Profile URL</label>
-                    <input type="url" name="twitter_url" value="{{ $settings['twitter_url'] ?? 'https://x.com/manglam' }}" class="w-full px-3.5 py-2.5 rounded-[8px] border border-gray-300 text-xs focus:ring-[#D38928] focus:border-[#D38928]">
+                    <input type="url" name="twitter_url" value="{{ $settings['twitter_url'] ?? 'https://x.com/ishanaa' }}" class="w-full px-3.5 py-2.5 rounded-[8px] border border-gray-300 text-xs focus:ring-[#D38928] focus:border-[#D38928]">
                 </div>
             </div>
         </div>

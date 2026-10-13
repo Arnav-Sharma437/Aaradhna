@@ -141,7 +141,7 @@
             <div class="flex items-center space-x-2 sm:space-x-3">
                 <!-- Locked Free Gift Slot -->
                 <div class="relative w-12 h-12 sm:w-14 sm:h-14 rounded-[12px] border-2 border-emerald-600 bg-emerald-50 flex items-center justify-center overflow-hidden shadow-2xs ring-2 ring-emerald-400/30 shrink-0" title="Free Chandan Trial Pack">
-                    <img src="{{ asset('assets/images/mangalam-agarbatti-box.jpg') }}" alt="Free Gift" class="w-full h-full object-cover">
+                    <img src="{{ asset('assets/images/incense-pack.jpg') }}" alt="Free Gift" class="w-full h-full object-cover">
                     <span class="absolute bottom-0 inset-x-0 bg-emerald-700 text-white text-[7px] sm:text-[7.5px] font-black uppercase text-center py-0.5 tracking-wider leading-none">FREE GIFT</span>
                 </div>
 

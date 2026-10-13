@@ -80,7 +80,7 @@
             asset('assets/images/havan-cup.jpg'),
             asset('assets/images/hero-sacred-hawan-cups.jpg'),
             asset('assets/images/hero-ram-uphaar-banner.jpg'),
-            asset('assets/images/mangalam-havan-cups.jpg'),
+            asset('assets/images/havan-cup.jpg'),
         ];
     } else {
         $fallbacks = [
@@ -1458,10 +1458,10 @@
 
         // 6. Share Functionality (Native Web Share API + Clipboard Copy fallback with Toast)
         const showShareToast = (message) => {
-            let toast = document.getElementById('manglam-share-toast');
+            let toast = document.getElementById('ishanaa-share-toast');
             if (!toast) {
                 toast = document.createElement('div');
-                toast.id = 'manglam-share-toast';
+                toast.id = 'ishanaa-share-toast';
                 toast.className = 'fixed bottom-6 right-6 z-50 bg-[#1A1A1A] text-white px-5 py-3 rounded-[12px] border border-[#D38928] shadow-2xl text-xs sm:text-sm font-semibold flex items-center space-x-2 transition-all duration-300 transform translate-y-20 opacity-0 font-body';
                 document.body.appendChild(toast);
             }

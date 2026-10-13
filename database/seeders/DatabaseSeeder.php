@@ -23,9 +23,9 @@ class DatabaseSeeder extends Seeder
     {
         // 1. Admin & Test User
         $user = User::firstOrCreate(
-            ['email' => 'admin@mangalam.co'],
+            ['email' => 'admin@ishanaa.com'],
             [
-                'name' => 'Mangalam Admin',
+                'name' => 'ISHANAA Admin',
                 'phone' => '9999999999',
                 'role' => 'admin',
                 'is_active' => true,

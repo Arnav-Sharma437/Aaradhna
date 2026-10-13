@@ -22,7 +22,7 @@ class BundleController extends Controller
                 'rating' => 4.72,
                 'reviews' => 67,
                 'pack' => '24 sticks',
-                'image' => 'assets/images/mangalam-agarbatti-box.jpg',
+                'image' => 'assets/images/incense-pack.jpg',
             ],
             [
                 'id' => 'trial-chandan',
@@ -32,7 +32,7 @@ class BundleController extends Controller
                 'rating' => 4.70,
                 'reviews' => 114,
                 'pack' => '24 sticks',
-                'image' => 'assets/images/mangalam-agarbatti-box.jpg',
+                'image' => 'assets/images/incense-pack.jpg',
             ],
             [
                 'id' => 'trial-oudh',
@@ -42,7 +42,7 @@ class BundleController extends Controller
                 'rating' => 4.76,
                 'reviews' => 121,
                 'pack' => '24 sticks',
-                'image' => 'assets/images/mangalam-agarbatti-box.jpg',
+                'image' => 'assets/images/incense-pack.jpg',
             ],
             [
                 'id' => 'trial-rose',
@@ -52,7 +52,7 @@ class BundleController extends Controller
                 'rating' => 4.83,
                 'reviews' => 71,
                 'pack' => '24 sticks',
-                'image' => 'assets/images/mangalam-agarbatti-box.jpg',
+                'image' => 'assets/images/incense-pack.jpg',
             ],
             [
                 'id' => 'trial-havan',
@@ -62,7 +62,7 @@ class BundleController extends Controller
                 'rating' => 4.81,
                 'reviews' => 82,
                 'pack' => '24 sticks',
-                'image' => 'assets/images/mangalam-agarbatti-box.jpg',
+                'image' => 'assets/images/incense-pack.jpg',
             ],
             [
                 'id' => 'trial-nagchampa',
@@ -72,7 +72,7 @@ class BundleController extends Controller
                 'rating' => 4.72,
                 'reviews' => 72,
                 'pack' => '24 sticks',
-                'image' => 'assets/images/mangalam-agarbatti-box.jpg',
+                'image' => 'assets/images/incense-pack.jpg',
             ],
             [
                 'id' => 'trial-mogra',
@@ -82,7 +82,7 @@ class BundleController extends Controller
                 'rating' => 4.70,
                 'reviews' => 70,
                 'pack' => '24 sticks',
-                'image' => 'assets/images/mangalam-agarbatti-box.jpg',
+                'image' => 'assets/images/incense-pack.jpg',
             ],
             [
                 'id' => 'trial-camphor',
@@ -92,7 +92,7 @@ class BundleController extends Controller
                 'rating' => 4.81,
                 'reviews' => 63,
                 'pack' => '24 sticks',
-                'image' => 'assets/images/mangalam-agarbatti-box.jpg',
+                'image' => 'assets/images/incense-pack.jpg',
             ],
             [
                 'id' => 'trial-devi',
@@ -102,7 +102,7 @@ class BundleController extends Controller
                 'rating' => 4.74,
                 'reviews' => 91,
                 'pack' => '24 sticks',
-                'image' => 'assets/images/mangalam-agarbatti-box.jpg',
+                'image' => 'assets/images/incense-pack.jpg',
             ],
             [
                 'id' => 'trial-bhairav',
@@ -112,7 +112,7 @@ class BundleController extends Controller
                 'rating' => 4.77,
                 'reviews' => 60,
                 'pack' => '24 sticks',
-                'image' => 'assets/images/mangalam-agarbatti-box.jpg',
+                'image' => 'assets/images/incense-pack.jpg',
             ],
             [
                 'id' => 'trial-tulsi',
@@ -122,7 +122,7 @@ class BundleController extends Controller
                 'rating' => 4.76,
                 'reviews' => 66,
                 'pack' => '24 sticks',
-                'image' => 'assets/images/mangalam-agarbatti-box.jpg',
+                'image' => 'assets/images/incense-pack.jpg',
             ],
             [
                 'id' => 'trial-sandalwood',
@@ -132,7 +132,7 @@ class BundleController extends Controller
                 'rating' => 4.70,
                 'reviews' => 114,
                 'pack' => '24 sticks',
-                'image' => 'assets/images/mangalam-agarbatti-box.jpg',
+                'image' => 'assets/images/incense-pack.jpg',
             ],
         ];
 

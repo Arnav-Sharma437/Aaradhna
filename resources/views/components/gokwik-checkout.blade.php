@@ -652,7 +652,7 @@
                         order_id: data.razorpay_order_id,
                         prefill: {
                             name: data.customer?.name || name,
-                            email: data.customer?.email || 'devotee@mangalam.co',
+                            email: data.customer?.email || 'devotee@ishanaa.com',
                             contact: data.customer?.phone || phone
                         },
                         theme: {
