@@ -56,7 +56,7 @@
                         <h3 class="text-base sm:text-lg font-bold text-[#121212] font-heading">3. Return Process</h3>
                         <p>To initiate a return or replacement, please reach out to our Customer Seva desk via:</p>
                         <ul class="list-disc pl-5 space-y-1.5 text-gray-600">
-                            <li><strong>Email:</strong> <a href="mailto:{{ $storeSettings['support_email'] ?? 'care@ishanaa.com' }}" class="text-[#D38928] underline">{{ $storeSettings['support_email'] ?? 'care@ishanaa.com' }}</a></li>
+                            <li><strong>Email:</strong> <a href="mailto:{{ $storeSettings['support_email'] ?? 'hello.ishanaa@gmail.com' }}" class="text-[#D38928] underline">{{ $storeSettings['support_email'] ?? 'hello.ishanaa@gmail.com' }}</a></li>
                             <li><strong>WhatsApp / Phone:</strong> {{ $storeSettings['support_phone'] ?? '+91 98765 43210' }} (Mon–Sat, 10 AM to 7 PM IST)</li>
                         </ul>
                         <p>Once verified, our team will arrange a reverse pickup or provide an instant replacement dispatched via priority courier.</p>

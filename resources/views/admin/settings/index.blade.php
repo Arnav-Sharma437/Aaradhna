@@ -42,7 +42,7 @@
 
                 <div>
                     <label class="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-1">Support Email</label>
-                    <input type="email" name="support_email" value="{{ $settings['support_email'] ?? 'care@ishanaa.com' }}" class="w-full px-3.5 py-2.5 rounded-[8px] border border-gray-300 text-xs focus:ring-[#D38928] focus:border-[#D38928]">
+                    <input type="email" name="support_email" value="{{ $settings['support_email'] ?? 'hello.ishanaa@gmail.com' }}" class="w-full px-3.5 py-2.5 rounded-[8px] border border-gray-300 text-xs focus:ring-[#D38928] focus:border-[#D38928]">
                 </div>
 
                 <div>

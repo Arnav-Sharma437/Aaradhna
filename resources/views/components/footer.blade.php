@@ -98,8 +98,8 @@
 
                 <!-- Customer Support Contacts (WhatsApp & Email - Exact Reference Screenshot) -->
                 @php
-                    $waNumber = preg_replace('/[^0-9]/', '', $storeSettings['support_whatsapp'] ?? '919876543210');
-                    $supportEmail = $storeSettings['support_email'] ?? 'hello.ishanaa@gmail.com';
+                    $waNumber = preg_replace('/[^0-9]/', '', $storeSettings['support_whatsapp'] ?? '917807211102');
+                    $supportEmail = 'hello.ishanaa@gmail.com';
                 @endphp
                 <div class="space-y-2 pt-3 border-t border-white/20 text-xs sm:text-[13.5px] text-[#FFF8EE]">
                     <a href="https://wa.me/{{ $waNumber }}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 hover:text-white transition-colors group">

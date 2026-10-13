@@ -66,7 +66,7 @@
                     @php
                         $contactWa = preg_replace('/[^0-9]/', '', $storeSettings['support_whatsapp'] ?? '917807211102');
                         $contactPhone = $storeSettings['support_phone'] ?? '+91 78072 11102';
-                        $contactEmail = $storeSettings['support_email'] ?? 'hello.ishanaa@gmail.com';
+                        $contactEmail = 'hello.ishanaa@gmail.com';
                         $contactAddress = $storeSettings['store_address'] ?? 'Building 256, Kachari Adda, Chilgari, Dharamshala, Himachal Pradesh 176215';
                     @endphp
                     <div class="bg-[#FAF7F2] border border-[#EADBCC] rounded-[18px] p-5 shadow-xs flex items-start space-x-4">

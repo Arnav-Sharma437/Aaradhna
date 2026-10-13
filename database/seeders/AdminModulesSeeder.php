@@ -221,7 +221,7 @@ class AdminModulesSeeder extends Seeder
         $settingsData = [
             ['group' => 'general', 'key' => 'store_name', 'value' => 'Mangalam.co™ — Pooja Samagri & Vidhi'],
             ['group' => 'general', 'key' => 'store_tagline', 'value' => 'शुद्धं समर्पयामि — 100% Pure Vedic Essentials'],
-            ['group' => 'general', 'key' => 'support_email', 'value' => 'care@mangalam.co'],
+            ['group' => 'general', 'key' => 'support_email', 'value' => 'hello.ishanaa@gmail.com'],
             ['group' => 'general', 'key' => 'support_phone', 'value' => '+91 98765 43210'],
             ['group' => 'general', 'key' => 'support_whatsapp', 'value' => '+91 98765 43210'],
             ['group' => 'general', 'key' => 'store_address', 'value' => 'Seva Kendra, Vrindavan Dham Residency, Mathura, UP - 281001'],
