@@ -18,7 +18,7 @@
         <!-- 1. TOP SECTION: SACRED VEDIC MANTRA & 2 ELEGANT GOLDEN LINES       -->
         <!-- ================================================================= -->
         <div class="text-center relative z-10 space-y-3">
-            <div class="text-white text-lg sm:text-2xl md:text-[27px] font-black font-serif tracking-wide sm:tracking-widest leading-relaxed sm:leading-relaxed drop-shadow-sm">
+            <div class="text-white text-lg sm:text-2xl md:text-[27px] font-black font-bold font-serif tracking-wide sm:tracking-widest leading-relaxed sm:leading-relaxed drop-shadow-sm">
                 <div>मङ्गलं भगवान् विष्णुः, मङ्गलम् गरुडध्वजः ।</div>
                 <div>मङ्गलं पुण्डरी काक्षः, मङ्गलम् तनो हरिः ॥</div>
             </div>
@@ -99,7 +99,7 @@
                 <!-- Customer Support Contacts (WhatsApp & Email - Exact Reference Screenshot) -->
                 @php
                     $waNumber = preg_replace('/[^0-9]/', '', $storeSettings['support_whatsapp'] ?? '919876543210');
-                    $supportEmail = $storeSettings['support_email'] ?? 'care@ishanaa.com';
+                    $supportEmail = $storeSettings['support_email'] ?? 'hello.ishanaa@gmail.com';
                 @endphp
                 <div class="space-y-2 pt-3 border-t border-white/20 text-xs sm:text-[13.5px] text-[#FFF8EE]">
                     <a href="https://wa.me/{{ $waNumber }}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 hover:text-white transition-colors group">
