@@ -11,12 +11,30 @@ use App\Models\ProductVariant;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Illuminate\View\View;
 
 class ProductController extends Controller
 {
+    /**
+     * Auto-heal products table schema if badge_text column does not exist.
+     */
+    private function ensureBadgeColumnExists(): void
+    {
+        try {
+            if (!Schema::hasColumn('products', 'badge_text')) {
+                Schema::table('products', function (Blueprint $table) {
+                    $table->string('badge_text', 100)->nullable()->after('is_bestseller');
+                });
+            }
+        } catch (\Throwable $e) {
+            // Silently continue if cannot alter
+        }
+    }
+
     /**
      * Display a listing of products with search, filters, and pagination.
      */
@@ -115,6 +133,8 @@ class ProductController extends Controller
      */
     public function create(): View
     {
+        $this->ensureBadgeColumnExists();
+
         $categories = Category::orderBy('name')->get();
         $collections = Collection::orderBy('title')->get();
 
@@ -126,6 +146,8 @@ class ProductController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+        $this->ensureBadgeColumnExists();
+
         $validated = $request->validate([
             'title' => ['required', 'string', 'max:255'],
             'hindi_title' => ['nullable', 'string', 'max:255'],
@@ -172,7 +194,7 @@ class ProductController extends Controller
                 $counter++;
             }
 
-            $product = Product::create([
+            $productData = [
                 'category_id' => $validated['category_id'] ?? null,
                 'title' => $validated['title'],
                 'hindi_title' => $validated['hindi_title'] ?? null,
@@ -190,11 +212,16 @@ class ProductController extends Controller
                 'track_inventory' => true,
                 'is_featured' => $request->boolean('is_featured'),
                 'is_bestseller' => $request->boolean('is_bestseller'),
-                'badge_text' => $request->filled('badge_text') ? trim($request->badge_text) : null,
                 'status' => $validated['status'],
                 'meta_title' => $validated['meta_title'] ?? null,
                 'meta_description' => $validated['meta_description'] ?? null,
-            ]);
+            ];
+
+            if (Schema::hasColumn('products', 'badge_text')) {
+                $productData['badge_text'] = $request->filled('badge_text') ? trim($request->badge_text) : null;
+            }
+
+            $product = Product::create($productData);
 
             // Sync Collections
             if (!empty($validated['collections'])) {
@@ -294,6 +321,8 @@ class ProductController extends Controller
      */
     public function edit(Product $product): View
     {
+        $this->ensureBadgeColumnExists();
+
         $product->load(['category', 'collections', 'variants', 'images']);
         $categories = Category::orderBy('name')->get();
         $collections = Collection::orderBy('title')->get();
@@ -306,6 +335,8 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product): RedirectResponse
     {
+        $this->ensureBadgeColumnExists();
+
         $validated = $request->validate([
             'title' => ['required', 'string', 'max:255'],
             'hindi_title' => ['nullable', 'string', 'max:255'],
@@ -349,7 +380,7 @@ class ProductController extends Controller
 
         DB::beginTransaction();
         try {
-            $product->update([
+            $productData = [
                 'category_id' => $validated['category_id'] ?? null,
                 'title' => $validated['title'],
                 'hindi_title' => $validated['hindi_title'] ?? null,
@@ -366,11 +397,16 @@ class ProductController extends Controller
                 'stock_quantity' => $validated['stock_quantity'],
                 'is_featured' => $request->boolean('is_featured'),
                 'is_bestseller' => $request->boolean('is_bestseller'),
-                'badge_text' => $request->filled('badge_text') ? trim($request->badge_text) : null,
                 'status' => $validated['status'],
                 'meta_title' => $validated['meta_title'] ?? null,
                 'meta_description' => $validated['meta_description'] ?? null,
-            ]);
+            ];
+
+            if (Schema::hasColumn('products', 'badge_text')) {
+                $productData['badge_text'] = $request->filled('badge_text') ? trim($request->badge_text) : null;
+            }
+
+            $product->update($productData);
 
             // Sync Collections
             $product->collections()->sync($validated['collections'] ?? []);

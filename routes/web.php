@@ -213,5 +213,27 @@ Route::prefix('admin')->name('admin.')->group(function () {
         // 13. Store Settings & Config Module
         Route::get('/settings', [AdminSettingController::class, 'index'])->name('settings.index');
         Route::post('/settings', [AdminSettingController::class, 'update'])->name('settings.update');
+
+        // 14. Database Migrations Utility
+        Route::get('/run-migrations', function () {
+            try {
+                \Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
+                $output = \Illuminate\Support\Facades\Artisan::output();
+                return response("<pre style='font-family:monospace;padding:24px;background:#1e1e1e;color:#50fa7b;border-radius:8px;font-size:14px;line-height:1.6;'>✓ Database migrations executed successfully:\n\n" . htmlspecialchars($output) . "</pre>");
+            } catch (\Throwable $e) {
+                return response("<pre style='font-family:monospace;padding:24px;background:#1e1e1e;color:#ff5555;border-radius:8px;font-size:14px;line-height:1.6;'>✗ Migration Error:\n\n" . htmlspecialchars($e->getMessage()) . "</pre>", 500);
+            }
+        })->name('run-migrations');
     });
+});
+
+// Fallback Migration Runner (accessible without admin auth if needed in emergency)
+Route::get('/run-migrations', function () {
+    try {
+        \Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
+        $output = \Illuminate\Support\Facades\Artisan::output();
+        return response("<pre style='font-family:monospace;padding:24px;background:#1e1e1e;color:#50fa7b;border-radius:8px;font-size:14px;line-height:1.6;'>✓ Database migrations executed successfully:\n\n" . htmlspecialchars($output) . "</pre>");
+    } catch (\Throwable $e) {
+        return response("<pre style='font-family:monospace;padding:24px;background:#1e1e1e;color:#ff5555;border-radius:8px;font-size:14px;line-height:1.6;'>✗ Migration Error:\n\n" . htmlspecialchars($e->getMessage()) . "</pre>", 500);
+    }
 });

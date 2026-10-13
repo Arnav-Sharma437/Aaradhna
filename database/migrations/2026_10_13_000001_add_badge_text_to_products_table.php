@@ -8,15 +8,19 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::table('products', function (Blueprint $table) {
-            $table->string('badge_text')->nullable()->after('is_bestseller');
-        });
+        if (!Schema::hasColumn('products', 'badge_text')) {
+            Schema::table('products', function (Blueprint $table) {
+                $table->string('badge_text')->nullable()->after('is_bestseller');
+            });
+        }
     }
 
     public function down(): void
     {
-        Schema::table('products', function (Blueprint $table) {
-            $table->dropColumn('badge_text');
-        });
+        if (Schema::hasColumn('products', 'badge_text')) {
+            Schema::table('products', function (Blueprint $table) {
+                $table->dropColumn('badge_text');
+            });
+        }
     }
 };
