@@ -232,53 +232,73 @@
                     </div>
                 </div>
 
-                <!-- Card 5: Variants / Pack Sizes -->
+                <!-- Card 5: Variants / Pack Sizes (Dynamic Multi-Variant System) -->
                 <div class="bg-white rounded-[14px] border border-[#E1E3E5] p-5 sm:p-6 shadow-2xs space-y-4">
                     <div class="flex items-center justify-between border-b border-gray-100 pb-3">
                         <div>
                             <h3 class="text-sm font-bold text-[#202223] font-heading">
                                 Variants &amp; Pack Sizes
                             </h3>
-                            <p class="text-xs text-gray-400">Offer multiple pack options (e.g. Pack of 40, Pack of 100 Refill)</p>
+                            <p class="text-xs text-gray-400">Offer multiple options (e.g. Pack of 40, Pack of 100 Refill, Pack of 2)</p>
                         </div>
+                        <button 
+                            type="button" 
+                            id="add-variant-btn"
+                            class="inline-flex items-center space-x-1.5 px-3 py-1.5 bg-[#FAF3EA] hover:bg-[#D38928] text-[#965A15] hover:text-white rounded-[8px] text-xs font-bold transition-all duration-200 cursor-pointer font-heading border border-[#EADBCC]"
+                        >
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/></svg>
+                            <span>Add Variant</span>
+                        </button>
                     </div>
 
                     <div class="space-y-3" id="variants-container">
-                        <div class="p-3.5 rounded-[10px] bg-[#FAF8F5] border border-[#E1E3E5] grid grid-cols-1 sm:grid-cols-5 gap-3 items-center">
+                        <!-- Variant Row 0 (Default) -->
+                        <div class="variant-row p-3.5 rounded-[10px] bg-[#FAF8F5] border border-[#E1E3E5] grid grid-cols-1 sm:grid-cols-12 gap-3 items-center transition-all">
+                            <div class="sm:col-span-5">
+                                <label class="text-[10px] font-bold text-gray-500 uppercase block mb-1">Pack Title / Option Name <span class="text-rose-500">*</span></label>
+                                <input type="text" name="variants[0][title]" value="Pack of 40 Sticks" required placeholder="e.g. Pack of 40 Sticks" class="w-full p-2 bg-white border border-[#D2D5D8] rounded-[6px] text-xs font-medium focus:outline-none focus:border-[#D38928]">
+                            </div>
                             <div class="sm:col-span-2">
-                                <label class="text-[10px] font-bold text-gray-500 uppercase block">Pack Option Title</label>
-                                <input type="text" name="variants[0][title]" value="Pack of 40 Sticks" class="w-full p-2 bg-white border border-[#D2D5D8] rounded-[6px] text-xs font-medium focus:outline-none">
+                                <label class="text-[10px] font-bold text-gray-500 uppercase block mb-1">Price (₹)</label>
+                                <input type="number" step="0.01" name="variants[0][price]" value="289.00" placeholder="289.00" class="w-full p-2 bg-white border border-[#D2D5D8] rounded-[6px] text-xs font-bold focus:outline-none focus:border-[#D38928] font-heading">
                             </div>
-                            <div>
-                                <label class="text-[10px] font-bold text-gray-500 uppercase block">Price (₹)</label>
-                                <input type="number" step="0.01" name="variants[0][price]" value="289.00" class="w-full p-2 bg-white border border-[#D2D5D8] rounded-[6px] text-xs font-bold focus:outline-none font-heading">
+                            <div class="sm:col-span-2">
+                                <label class="text-[10px] font-bold text-gray-500 uppercase block mb-1">MRP (₹)</label>
+                                <input type="number" step="0.01" name="variants[0][compare_at_price]" value="375.00" placeholder="375.00" class="w-full p-2 bg-white border border-[#D2D5D8] rounded-[6px] text-xs font-bold focus:outline-none focus:border-[#D38928] font-heading text-gray-500">
                             </div>
-                            <div>
-                                <label class="text-[10px] font-bold text-gray-500 uppercase block">Compare (₹)</label>
-                                <input type="number" step="0.01" name="variants[0][compare_at_price]" value="375.00" class="w-full p-2 bg-white border border-[#D2D5D8] rounded-[6px] text-xs font-bold focus:outline-none font-heading">
+                            <div class="sm:col-span-2">
+                                <label class="text-[10px] font-bold text-gray-500 uppercase block mb-1">Stock</label>
+                                <input type="number" name="variants[0][stock]" value="60" min="0" class="w-full p-2 bg-white border border-[#D2D5D8] rounded-[6px] text-xs font-bold focus:outline-none focus:border-[#D38928]">
                             </div>
-                            <div>
-                                <label class="text-[10px] font-bold text-gray-500 uppercase block">Stock</label>
-                                <input type="number" name="variants[0][stock]" value="60" class="w-full p-2 bg-white border border-[#D2D5D8] rounded-[6px] text-xs font-bold focus:outline-none">
+                            <div class="sm:col-span-1 text-right sm:pt-4">
+                                <button type="button" class="remove-variant-btn text-gray-400 hover:text-rose-600 p-1.5 rounded hover:bg-rose-50 transition-colors cursor-pointer" title="Delete variant">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                                </button>
                             </div>
                         </div>
 
-                        <div class="p-3.5 rounded-[10px] bg-[#FAF8F5] border border-[#E1E3E5] grid grid-cols-1 sm:grid-cols-5 gap-3 items-center">
+                        <!-- Variant Row 1 (Refill) -->
+                        <div class="variant-row p-3.5 rounded-[10px] bg-[#FAF8F5] border border-[#E1E3E5] grid grid-cols-1 sm:grid-cols-12 gap-3 items-center transition-all">
+                            <div class="sm:col-span-5">
+                                <label class="text-[10px] font-bold text-gray-500 uppercase block mb-1">Pack Title / Option Name <span class="text-rose-500">*</span></label>
+                                <input type="text" name="variants[1][title]" value="Pack of 100 Sticks Refill" required placeholder="e.g. Pack of 100 Sticks Refill" class="w-full p-2 bg-white border border-[#D2D5D8] rounded-[6px] text-xs font-medium focus:outline-none focus:border-[#D38928]">
+                            </div>
                             <div class="sm:col-span-2">
-                                <label class="text-[10px] font-bold text-gray-500 uppercase block">Pack Option Title</label>
-                                <input type="text" name="variants[1][title]" value="Pack of 100 Sticks Refill" class="w-full p-2 bg-white border border-[#D2D5D8] rounded-[6px] text-xs font-medium focus:outline-none">
+                                <label class="text-[10px] font-bold text-gray-500 uppercase block mb-1">Price (₹)</label>
+                                <input type="number" step="0.01" name="variants[1][price]" value="599.00" placeholder="599.00" class="w-full p-2 bg-white border border-[#D2D5D8] rounded-[6px] text-xs font-bold focus:outline-none focus:border-[#D38928] font-heading">
                             </div>
-                            <div>
-                                <label class="text-[10px] font-bold text-gray-500 uppercase block">Price (₹)</label>
-                                <input type="number" step="0.01" name="variants[1][price]" value="599.00" class="w-full p-2 bg-white border border-[#D2D5D8] rounded-[6px] text-xs font-bold focus:outline-none font-heading">
+                            <div class="sm:col-span-2">
+                                <label class="text-[10px] font-bold text-gray-500 uppercase block mb-1">MRP (₹)</label>
+                                <input type="number" step="0.01" name="variants[1][compare_at_price]" value="750.00" placeholder="750.00" class="w-full p-2 bg-white border border-[#D2D5D8] rounded-[6px] text-xs font-bold focus:outline-none focus:border-[#D38928] font-heading text-gray-500">
                             </div>
-                            <div>
-                                <label class="text-[10px] font-bold text-gray-500 uppercase block">Compare (₹)</label>
-                                <input type="number" step="0.01" name="variants[1][compare_at_price]" value="750.00" class="w-full p-2 bg-white border border-[#D2D5D8] rounded-[6px] text-xs font-bold focus:outline-none font-heading">
+                            <div class="sm:col-span-2">
+                                <label class="text-[10px] font-bold text-gray-500 uppercase block mb-1">Stock</label>
+                                <input type="number" name="variants[1][stock]" value="40" min="0" class="w-full p-2 bg-white border border-[#D2D5D8] rounded-[6px] text-xs font-bold focus:outline-none focus:border-[#D38928]">
                             </div>
-                            <div>
-                                <label class="text-[10px] font-bold text-gray-500 uppercase block">Stock</label>
-                                <input type="number" name="variants[1][stock]" value="40" class="w-full p-2 bg-white border border-[#D2D5D8] rounded-[6px] text-xs font-bold focus:outline-none">
+                            <div class="sm:col-span-1 text-right sm:pt-4">
+                                <button type="button" class="remove-variant-btn text-gray-400 hover:text-rose-600 p-1.5 rounded hover:bg-rose-50 transition-colors cursor-pointer" title="Delete variant">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -319,20 +339,48 @@
                 </div>
 
                 <!-- Badges & Highlight Toggles -->
-                <div class="bg-white rounded-[14px] border border-[#E1E3E5] p-5 shadow-2xs space-y-3">
+                <div class="bg-white rounded-[14px] border border-[#E1E3E5] p-5 shadow-2xs space-y-4">
                     <h3 class="text-xs font-bold uppercase tracking-wider text-gray-500 font-heading">
-                        Storefront Badges
+                        Storefront Badges &amp; Tags
                     </h3>
 
                     <label class="flex items-center space-x-2.5 p-2 rounded-[8px] hover:bg-gray-50 cursor-pointer">
                         <input type="checkbox" name="is_bestseller" value="1" {{ old('is_bestseller', true) ? 'checked' : '' }} class="w-4 h-4 text-[#D38928] rounded border-gray-300">
-                        <span class="text-xs font-semibold text-gray-800">★ Mark as Bestseller</span>
+                        <span class="text-xs font-semibold text-gray-800">★ Mark as Bestseller (Show on Homepage)</span>
                     </label>
 
                     <label class="flex items-center space-x-2.5 p-2 rounded-[8px] hover:bg-gray-50 cursor-pointer">
                         <input type="checkbox" name="is_featured" value="1" {{ old('is_featured', true) ? 'checked' : '' }} class="w-4 h-4 text-[#D38928] rounded border-gray-300">
                         <span class="text-xs font-semibold text-gray-800">✦ Featured Product</span>
                     </label>
+
+                    <!-- Top Card Floating Tag / Badge -->
+                    <div class="pt-3 border-t border-gray-100 space-y-2">
+                        <div class="flex items-center justify-between">
+                            <label for="badge_text" class="block text-xs font-bold uppercase tracking-wider text-gray-700 font-heading">
+                                Card Top Badge / Tag
+                            </label>
+                            <span class="text-[10px] text-gray-400">Floating pill</span>
+                        </div>
+                        <input 
+                            type="text" 
+                            id="badge_text" 
+                            name="badge_text" 
+                            value="{{ old('badge_text', 'BUY 2 GET 1 FREE') }}" 
+                            placeholder="e.g. BUY 2 GET 1 FREE (or leave empty)"
+                            class="w-full px-3 py-2 bg-white border border-[#D2D5D8] focus:border-[#D38928] rounded-[8px] text-xs font-bold text-[#965A15] placeholder-gray-400 focus:outline-none uppercase"
+                        >
+                        <p class="text-[11px] text-gray-400 leading-tight">Leave completely blank if you do not want a badge on this product card.</p>
+                        
+                        <!-- Quick Tag Presets -->
+                        <div class="flex flex-wrap gap-1.5 pt-1">
+                            <button type="button" onclick="document.getElementById('badge_text').value='BUY 2 GET 1 FREE'" class="px-2 py-0.5 bg-amber-50 hover:bg-amber-100 text-[#965A15] text-[10px] font-bold rounded border border-amber-200 cursor-pointer">BUY 2 GET 1 FREE</button>
+                            <button type="button" onclick="document.getElementById('badge_text').value='BESTSELLER'" class="px-2 py-0.5 bg-amber-50 hover:bg-amber-100 text-[#965A15] text-[10px] font-bold rounded border border-amber-200 cursor-pointer">BESTSELLER</button>
+                            <button type="button" onclick="document.getElementById('badge_text').value='NEW LAUNCH'" class="px-2 py-0.5 bg-amber-50 hover:bg-amber-100 text-[#965A15] text-[10px] font-bold rounded border border-amber-200 cursor-pointer">NEW LAUNCH</button>
+                            <button type="button" onclick="document.getElementById('badge_text').value='FLAT 20% OFF'" class="px-2 py-0.5 bg-amber-50 hover:bg-amber-100 text-[#965A15] text-[10px] font-bold rounded border border-amber-200 cursor-pointer">FLAT 20% OFF</button>
+                            <button type="button" onclick="document.getElementById('badge_text').value=''" class="px-2 py-0.5 bg-gray-100 hover:bg-gray-200 text-gray-600 text-[10px] font-bold rounded border border-gray-300 cursor-pointer">✕ No Badge</button>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Product Organization: Category -->
@@ -377,4 +425,58 @@
     </form>
 
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const container = document.getElementById('variants-container');
+    const addBtn = document.getElementById('add-variant-btn');
+    let nextIndex = container ? container.querySelectorAll('.variant-row').length : 2;
+
+    if (addBtn && container) {
+        addBtn.addEventListener('click', function () {
+            const basePrice = document.getElementById('sale_price')?.value || document.getElementById('base_price')?.value || '';
+            const mrpPrice = document.getElementById('base_price')?.value || '';
+            const row = document.createElement('div');
+            row.className = 'variant-row p-3.5 rounded-[10px] bg-[#FAF8F5] border border-[#E1E3E5] grid grid-cols-1 sm:grid-cols-12 gap-3 items-center transition-all animate-fadeIn';
+            row.innerHTML = `
+                <div class="sm:col-span-5">
+                    <label class="text-[10px] font-bold text-gray-500 uppercase block mb-1">Pack Title / Option Name <span class="text-rose-500">*</span></label>
+                    <input type="text" name="variants[${nextIndex}][title]" required placeholder="e.g. Pack of 2 Combos" class="w-full p-2 bg-white border border-[#D2D5D8] rounded-[6px] text-xs font-medium focus:outline-none focus:border-[#D38928]">
+                </div>
+                <div class="sm:col-span-2">
+                    <label class="text-[10px] font-bold text-gray-500 uppercase block mb-1">Price (₹)</label>
+                    <input type="number" step="0.01" name="variants[${nextIndex}][price]" value="${basePrice}" placeholder="Price" class="w-full p-2 bg-white border border-[#D2D5D8] rounded-[6px] text-xs font-bold focus:outline-none focus:border-[#D38928] font-heading">
+                </div>
+                <div class="sm:col-span-2">
+                    <label class="text-[10px] font-bold text-gray-500 uppercase block mb-1">MRP (₹)</label>
+                    <input type="number" step="0.01" name="variants[${nextIndex}][compare_at_price]" value="${mrpPrice}" placeholder="MRP" class="w-full p-2 bg-white border border-[#D2D5D8] rounded-[6px] text-xs font-bold focus:outline-none focus:border-[#D38928] font-heading text-gray-500">
+                </div>
+                <div class="sm:col-span-2">
+                    <label class="text-[10px] font-bold text-gray-500 uppercase block mb-1">Stock</label>
+                    <input type="number" name="variants[${nextIndex}][stock]" value="50" min="0" class="w-full p-2 bg-white border border-[#D2D5D8] rounded-[6px] text-xs font-bold focus:outline-none focus:border-[#D38928]">
+                </div>
+                <div class="sm:col-span-1 text-right sm:pt-4">
+                    <button type="button" class="remove-variant-btn text-gray-400 hover:text-rose-600 p-1.5 rounded hover:bg-rose-50 transition-colors cursor-pointer" title="Delete variant">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                    </button>
+                </div>
+            `;
+            container.appendChild(row);
+            nextIndex++;
+        });
+
+        container.addEventListener('click', function (e) {
+            const btn = e.target.closest('.remove-variant-btn');
+            if (btn) {
+                const rows = container.querySelectorAll('.variant-row');
+                if (rows.length > 1) {
+                    btn.closest('.variant-row').remove();
+                } else {
+                    alert('You must have at least one variant. You can change its name or price.');
+                }
+            }
+        });
+    }
+});
+</script>
 @endsection

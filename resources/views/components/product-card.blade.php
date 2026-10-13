@@ -1,112 +1,29 @@
 @props(['product'])
 
 @php
-    $imageMap = [
-        'swarna-pushpa' => 'assets/images/oudh-pack-card.jpg',
-        'swarna-pushpa-100' => 'assets/images/devi-refill-pack-card.jpg',
-        'divya-naagchampa' => 'assets/images/incense-pack.jpg',
-        'divya-naagchampa-100' => 'assets/images/camphor-refill-pack-card.jpg',
-        'chandan-saanjh' => 'assets/images/incense-pack.jpg',
-        'chandan-saanjh-100' => 'assets/images/devi-refill-pack-card.jpg',
-        'royal-oudh' => 'assets/images/oudh-pack-card.jpg',
-        'royal-oudh-100' => 'assets/images/oudh-pack-card.jpg',
-        'mogra-noor' => 'assets/images/incense-pack.jpg',
-        'mogra-noor-100' => 'assets/images/incense-pack.jpg',
-        'gulab-rooh' => 'assets/images/incense-pack.jpg',
-        'gulab-rooh-100' => 'assets/images/devi-refill-pack-card.jpg',
-        'lavender-veda' => 'assets/images/incense-pack.jpg',
-        'lavender-veda-100' => 'assets/images/camphor-refill-pack-card.jpg',
-        'pack-of-six' => 'assets/images/oudh-pack-card.jpg',
-        'pitambara-havan' => 'assets/images/pitambara-pack.jpg',
-        // Dhoop Cones
-        'rooh-rose' => 'assets/images/dhoop-cones.jpg',
-        'jasmine' => 'assets/images/dhoop-cones.jpg',
-        'sandalwood-dhoop-cones' => 'assets/images/chandan-cones-card.jpg',
-        'forest-wood' => 'assets/images/dhoop-cones.jpg',
-        'lavender' => 'assets/images/dhoop-cones.jpg',
-        'patchouli' => 'assets/images/dhoop-cones.jpg',
-        'dhoop-cones-2-combo-pack' => 'assets/images/dhoop-cones.jpg',
-        'dhoop-cones-3-combo-pack' => 'assets/images/chandan-cones-card.jpg',
-        // Havan Cups
-        'google-dhoop' => 'assets/images/havan-cup.jpg',
-        'loban' => 'assets/images/havan-cup.jpg',
-        'havan-cup' => 'assets/images/havan-cup.jpg',
-        'havan-cups-2-combo-pack' => 'assets/images/havan-cup.jpg',
-        'havan-cups-3-combo-pack' => 'assets/images/havan-cup.jpg',
-    ];
-
-    $hoverImageMap = [
-        'swarna-pushpa' => 'assets/images/single-bambooless-stick.jpg',
-        'swarna-pushpa-100' => 'assets/images/single-bambooless-stick.jpg',
-        'divya-naagchampa' => 'assets/images/single-bambooless-stick.jpg',
-        'divya-naagchampa-100' => 'assets/images/single-bambooless-stick.jpg',
-        'chandan-saanjh' => 'assets/images/single-bambooless-stick.jpg',
-        'chandan-saanjh-100' => 'assets/images/single-bambooless-stick.jpg',
-        'royal-oudh' => 'assets/images/single-bambooless-stick.jpg',
-        'royal-oudh-100' => 'assets/images/single-bambooless-stick.jpg',
-        'mogra-noor' => 'assets/images/single-bambooless-stick.jpg',
-        'mogra-noor-100' => 'assets/images/single-bambooless-stick.jpg',
-        'gulab-rooh' => 'assets/images/single-bambooless-stick.jpg',
-        'gulab-rooh-100' => 'assets/images/single-bambooless-stick.jpg',
-        'lavender-veda' => 'assets/images/single-bambooless-stick.jpg',
-        'lavender-veda-100' => 'assets/images/single-bambooless-stick.jpg',
-        'pack-of-six' => 'assets/images/single-bambooless-stick.jpg',
-        'pitambara-havan' => 'assets/images/pitambara-pack.jpg',
-        // Dhoop Cones
-        'rooh-rose' => 'assets/images/single-dhoop-cone.jpg',
-        'jasmine' => 'assets/images/single-dhoop-cone.jpg',
-        'sandalwood-dhoop-cones' => 'assets/images/single-dhoop-cone.jpg',
-        'forest-wood' => 'assets/images/single-dhoop-cone.jpg',
-        'lavender' => 'assets/images/single-dhoop-cone.jpg',
-        'patchouli' => 'assets/images/single-dhoop-cone.jpg',
-        'dhoop-cones-2-combo-pack' => 'assets/images/single-dhoop-cone.jpg',
-        'dhoop-cones-3-combo-pack' => 'assets/images/single-dhoop-cone.jpg',
-        // Havan Cups
-        'google-dhoop' => 'assets/images/single-havan-cup.jpg',
-        'loban' => 'assets/images/single-havan-cup.jpg',
-        'havan-cup' => 'assets/images/single-havan-cup.jpg',
-        'havan-cups-2-combo-pack' => 'assets/images/single-havan-cup.jpg',
-        'havan-cups-3-combo-pack' => 'assets/images/single-havan-cup.jpg',
-    ];
-
-    $primaryDbImage = $product->primaryImage ? $product->primaryImage->image_path : ($product->images->first() ? $product->images->first()->image_path : null);
-    $imageSrc = $primaryDbImage ?? ($imageMap[$product->slug] ?? 'assets/images/incense-pack.jpg');
-    
-    // Check if secondary image exists in DB or fallback to hoverImageMap
-    $secondaryDbImage = $product->images->count() > 1 ? $product->images->get(1)->image_path : null;
-    $hoverImageSrc = $secondaryDbImage ?? ($hoverImageMap[$product->slug] ?? 'assets/images/single-bambooless-stick.jpg');
-
+    $imageSrc = $product->primary_image_url;
+    $hoverImageSrc = $product->secondary_image_url;
     $isSoldOut = $product->stock_quantity <= 0;
     
-    // Top border pill badges
-    $topBadges = [
-        'swarna-pushpa' => 'BUY 2 GET 1 FREE',
-        'swarna-pushpa-100' => 'BUY 2 GET 1 FREE',
-        'divya-naagchampa' => 'BUY 2 GET 1 FREE',
-        'divya-naagchampa-100' => 'BUY 2 GET 1 FREE',
-        'chandan-saanjh' => 'BUY 2 GET 1 FREE',
-        'chandan-saanjh-100' => 'BUY 2 GET 1 FREE',
-        'royal-oudh' => 'BUY 2 GET 1 FREE',
-        'royal-oudh-100' => 'BUY 2 GET 1 FREE',
-        'mogra-noor' => 'BUY 2 GET 1 FREE',
-        'mogra-noor-100' => 'BUY 2 GET 1 FREE',
-        'gulab-rooh' => 'BUY 2 GET 1 FREE',
-        'gulab-rooh-100' => 'BUY 2 GET 1 FREE',
-        'lavender-veda' => 'BUY 2 GET 1 FREE',
-        'lavender-veda-100' => 'BUY 2 GET 1 FREE',
-        'pack-of-six' => 'COMBO (240 STICKS)',
-        'pitambara-havan' => 'COMING SOON 🔥',
-    ];
-    $topBadge = $product->badge_text ?? $product->tag ?? ($topBadges[$product->slug] ?? ($product->is_bestseller ? 'TOP PICKS' : null));
-    if ($topBadge === 'none' || $topBadge === 'null' || $topBadge === '0') {
-        $topBadge = null;
+    // Top border pill badge: strictly controlled by admin badge_text
+    $topBadge = null;
+    if (!empty($product->badge_text)) {
+        $val = trim($product->badge_text);
+        if (!in_array(strtolower($val), ['none', 'null', '0', 'no badge', 'no'])) {
+            $topBadge = $val;
+        }
     }
 
-    $reviewCount = $product->approvedReviews->count() ?: (200 + (abs(crc32($product->slug)) % 90));
-    $mrpPrice = $product->base_price > $product->active_price ? $product->base_price : ($product->active_price * 1.4);
+    $reviewCount = ($product->approvedReviews && $product->approvedReviews->count() > 0) 
+        ? $product->approvedReviews->count() 
+        : (200 + (abs(crc32($product->slug ?? $product->id)) % 90));
+        
+    $mrpPrice = $product->base_price > $product->active_price 
+        ? $product->base_price 
+        : ($product->active_price * 1.35);
 @endphp
 
-<div class="product-card group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
+<div {{ $attributes->merge(['class' => 'product-card group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body']) }}>
     
     @if(!empty($topBadge))
     <!-- Centered Overlapping Top Border Pill Badge with Sparkles -->
@@ -125,13 +42,14 @@
             <a href="{{ route('products.show', $product->slug) }}" class="block w-full h-full relative overflow-hidden">
                 <!-- Primary Image -->
                 <img 
-                    src="{{ asset($imageSrc) }}" 
+                    src="{{ $imageSrc }}" 
                     alt="{{ $product->title }}" 
                     class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105"
+                    loading="lazy"
                 >
                 <!-- Secondary / Hover Image -->
                 <img 
-                    src="{{ asset($hoverImageSrc) }}" 
+                    src="{{ $hoverImageSrc }}" 
                     alt="{{ $product->title }} (Detail)" 
                     class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out"
                     loading="lazy"
@@ -139,7 +57,7 @@
             </a>
 
             <!-- Free Ceramic Stand Banner for Devi / Specials -->
-            @if(str_contains($product->slug, 'devi'))
+            @if(str_contains(strtolower($product->slug), 'devi'))
                 <div class="absolute bottom-1.5 left-1.5 right-1.5 sm:bottom-2 sm:left-2 sm:right-2 bg-black/65 backdrop-blur-xs py-1 sm:py-1.5 px-1.5 sm:px-2 rounded-[6px] text-center text-white text-[10px] sm:text-xs font-bold tracking-wider z-10">
                     FREE STAND <span class="text-[#F6DAA8] font-normal hidden sm:inline">₹150/-</span>
                 </div>
@@ -148,7 +66,7 @@
         </div>
     </div>
 
-    <!-- Product Card Content (Normal Content Padding) -->
+    <!-- Product Card Content -->
     <div class="p-3.5 sm:p-4 pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
         
         <div class="space-y-1">
@@ -158,7 +76,7 @@
                 </a>
             </h3>
 
-            <!-- 5 Star Golden Rating Strip with Matching Gold Subtle Count -->
+            <!-- 5 Star Golden Rating Strip with Matching Gold Count -->
             <div class="flex items-center space-x-1 text-[#D38928]">
                 <div class="flex text-[11px] sm:text-xs leading-none space-x-0.5">
                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
@@ -194,7 +112,7 @@
                     data-product-title="{{ $product->title }}"
                     data-product-slug="{{ $product->slug }}"
                     data-product-price="{{ $product->active_price }}"
-                    data-product-image="{{ asset($imageSrc) }}"
+                    data-product-image="{{ $imageSrc }}"
                 >
                     <span class="font-normal">Add to cart</span>
                 </button>

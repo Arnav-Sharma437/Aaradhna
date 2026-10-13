@@ -27,4 +27,19 @@ class ProductImage extends Model
     {
         return $this->belongsTo(Product::class);
     }
+
+    public function getUrlAttribute(): string
+    {
+        $path = $this->image_path;
+        if (empty($path)) {
+            return asset('assets/images/incense-pack.jpg');
+        }
+        if (str_starts_with($path, 'http://') || str_starts_with($path, 'https://')) {
+            return $path;
+        }
+        if (str_starts_with($path, 'storage/') || str_starts_with($path, 'assets/')) {
+            return asset($path);
+        }
+        return asset('storage/' . ltrim($path, '/'));
+    }
 }

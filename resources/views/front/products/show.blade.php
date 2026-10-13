@@ -46,27 +46,28 @@
         'dhoop-cones-3-combo-pack' => 'assets/images/chandan-cones-card.jpg',
     ];
 
-    $primaryDbImage = $product->primaryImage ? $product->primaryImage->image_path : ($product->images->first() ? $product->images->first()->image_path : null);
-    $mainImg = $primaryDbImage ?? ($imageMap[$product->slug] ?? 'assets/images/incense-pack.jpg');
+    $mainImg = $product->primary_image_url;
     $isSoldOut = $product->stock_quantity <= 0;
     $hasDiscount = $product->sale_price && ($product->base_price > $product->sale_price);
     $discountPercent = $product->discount_percentage ?: 30;
     $mrpPrice = $product->base_price > $product->active_price ? $product->base_price : ($product->active_price * 1.43);
     $actualReviewCount = $product->approvedReviews ? $product->approvedReviews->count() : 0;
-    $reviewCount = $actualReviewCount > 0 ? $actualReviewCount : (1386 + (abs(crc32($product->slug)) % 150));
+    $reviewCount = $actualReviewCount > 0 ? $actualReviewCount : (1386 + (abs(crc32($product->slug ?? $product->id)) % 150));
 
     // Gallery images array (Up to 6 high-resolution visuals)
     $galleryImages = [];
     if ($product->images && $product->images->count() > 0) {
         foreach ($product->images as $img) {
-            $galleryImages[] = asset($img->image_path);
+            $galleryImages[] = $img->url;
         }
+    } else {
+        $galleryImages[] = $mainImg;
     }
     
     // Category-specific fallbacks to guarantee 6 distinct high-res visuals
     if ($product->category && str_contains(strtolower($product->category->slug), 'cone')) {
         $fallbacks = [
-            asset($mainImg),
+            $mainImg,
             asset('assets/images/single-dhoop-cone.jpg'),
             asset('assets/images/chandan-cones-card.jpg'),
             asset('assets/images/hero-sacred-cones.jpg'),
@@ -75,7 +76,7 @@
         ];
     } elseif ($product->category && str_contains(strtolower($product->category->slug), 'cup')) {
         $fallbacks = [
-            asset($mainImg),
+            $mainImg,
             asset('assets/images/single-havan-cup.jpg'),
             asset('assets/images/havan-cup.jpg'),
             asset('assets/images/hero-sacred-hawan-cups.jpg'),
@@ -84,7 +85,7 @@
         ];
     } else {
         $fallbacks = [
-            asset($mainImg),
+            $mainImg,
             asset('assets/images/single-bambooless-stick.jpg'),
             asset('assets/images/hero-incense-banner.jpg'),
             asset('assets/images/camphor-refill-pack-card.jpg'),
@@ -353,6 +354,36 @@
                     </div>
 
                 </div>
+
+                <!-- Dynamic Variant / Pack Option Selector (When Multiple Variants Exist) -->
+                @if($product->variants && $product->variants->count() > 1)
+                <div class="space-y-2 pt-2 pb-1 border-t border-[#F0E6D8]">
+                    <div class="flex items-center justify-between">
+                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 font-heading">
+                            Select Pack Option:
+                        </label>
+                        <span id="selected-variant-label" class="text-xs font-bold text-[#D38928] font-heading">
+                            {{ $product->variants->first()->title }}
+                        </span>
+                    </div>
+                    <div class="flex flex-wrap gap-2" id="variant-selector-buttons">
+                        @foreach($product->variants as $vIdx => $v)
+                            <button 
+                                type="button" 
+                                class="variant-select-btn px-3.5 py-2 rounded-[8px] border text-xs font-bold transition-all cursor-pointer font-heading {{ $loop->first ? 'border-[#D38928] bg-[#FFF9F2] text-[#965A15] shadow-2xs ring-1 ring-[#D38928]' : 'border-gray-200 bg-white text-gray-700 hover:border-[#D38928]/60' }}"
+                                data-variant-id="{{ $v->id }}"
+                                data-variant-title="{{ $v->title }}"
+                                data-variant-price="{{ $v->price }}"
+                                data-variant-compare="{{ $v->compare_at_price }}"
+                                data-variant-stock="{{ $v->stock_quantity }}"
+                            >
+                                <span>{{ $v->title }}</span>
+                                <span class="ml-1 text-[11px] font-normal text-gray-500">₹{{ number_format($v->price, 0) }}</span>
+                            </button>
+                        @endforeach
+                    </div>
+                </div>
+                @endif
 
                 <!-- 6. Quantity Stepper + Add to Cart CTA Row (Matching Website Button Radius: 8px/10px) -->
                 <div class="space-y-2.5 pt-1">
@@ -1715,6 +1746,37 @@
         if (e.key === 'Escape') {
             window.closeReviewImageModal();
         }
+    });
+
+    // Variant Selection Handling
+    const variantButtons = document.querySelectorAll('.variant-select-btn');
+    const selectedVariantLabel = document.getElementById('selected-variant-label');
+    const displaySalePrice = document.getElementById('display-sale-price');
+    const addToCartBtn = document.getElementById('main-add-to-cart-btn');
+
+    variantButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            variantButtons.forEach(b => {
+                b.classList.remove('border-[#D38928]', 'bg-[#FFF9F2]', 'text-[#965A15]', 'shadow-2xs', 'ring-1', 'ring-[#D38928]');
+                b.classList.add('border-gray-200', 'bg-white', 'text-gray-700');
+            });
+            btn.classList.remove('border-gray-200', 'bg-white', 'text-gray-700');
+            btn.classList.add('border-[#D38928]', 'bg-[#FFF9F2]', 'text-[#965A15]', 'shadow-2xs', 'ring-1', 'ring-[#D38928]');
+
+            const title = btn.dataset.variantTitle;
+            const price = parseFloat(btn.dataset.variantPrice);
+            const variantId = btn.dataset.variantId;
+
+            if (selectedVariantLabel) selectedVariantLabel.textContent = title;
+            if (displaySalePrice && !isNaN(price)) {
+                displaySalePrice.textContent = `₹${price.toFixed(2)}`;
+            }
+            if (addToCartBtn) {
+                addToCartBtn.dataset.productPrice = price;
+                addToCartBtn.dataset.variantId = variantId;
+                addToCartBtn.dataset.variantTitle = title;
+            }
+        });
     });
 </script>
 @endpush

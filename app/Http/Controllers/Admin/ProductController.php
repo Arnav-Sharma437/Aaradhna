@@ -143,6 +143,7 @@ class ProductController extends Controller
             'how_to_use' => ['nullable', 'string'],
             'is_featured' => ['nullable', 'boolean'],
             'is_bestseller' => ['nullable', 'boolean'],
+            'badge_text' => ['nullable', 'string', 'max:100'],
             'status' => ['required', 'in:active,draft,archived'],
             'meta_title' => ['nullable', 'string', 'max:255'],
             'meta_description' => ['nullable', 'string', 'max:500'],
@@ -189,6 +190,7 @@ class ProductController extends Controller
                 'track_inventory' => true,
                 'is_featured' => $request->boolean('is_featured'),
                 'is_bestseller' => $request->boolean('is_bestseller'),
+                'badge_text' => $request->filled('badge_text') ? trim($request->badge_text) : null,
                 'status' => $validated['status'],
                 'meta_title' => $validated['meta_title'] ?? null,
                 'meta_description' => $validated['meta_description'] ?? null,
@@ -321,6 +323,7 @@ class ProductController extends Controller
             'how_to_use' => ['nullable', 'string'],
             'is_featured' => ['nullable', 'boolean'],
             'is_bestseller' => ['nullable', 'boolean'],
+            'badge_text' => ['nullable', 'string', 'max:100'],
             'status' => ['required', 'in:active,draft,archived'],
             'meta_title' => ['nullable', 'string', 'max:255'],
             'meta_description' => ['nullable', 'string', 'max:500'],
@@ -363,6 +366,7 @@ class ProductController extends Controller
                 'stock_quantity' => $validated['stock_quantity'],
                 'is_featured' => $request->boolean('is_featured'),
                 'is_bestseller' => $request->boolean('is_bestseller'),
+                'badge_text' => $request->filled('badge_text') ? trim($request->badge_text) : null,
                 'status' => $validated['status'],
                 'meta_title' => $validated['meta_title'] ?? null,
                 'meta_description' => $validated['meta_description'] ?? null,
@@ -450,6 +454,19 @@ class ProductController extends Controller
                         }
                     }
                 }
+            }
+
+            // Ensure product has at least one default variant
+            if ($product->variants()->count() === 0) {
+                $product->variants()->create([
+                    'title' => 'Standard Pack',
+                    'sku' => $product->sku,
+                    'price' => $product->sale_price ?? $product->base_price,
+                    'compare_at_price' => $product->base_price,
+                    'stock_quantity' => $product->stock_quantity,
+                    'sort_order' => 0,
+                    'is_default' => true,
+                ]);
             }
 
             DB::commit();

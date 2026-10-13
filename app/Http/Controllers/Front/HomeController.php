@@ -31,14 +31,20 @@ class HomeController extends Controller
             $bestsellers = Product::where('status', 'active')
                 ->where('is_bestseller', true)
                 ->with(['category', 'primaryImage', 'images', 'variants', 'approvedReviews'])
+                ->latest()
                 ->take(8)
                 ->get();
 
-            if ($bestsellers->count() < 4) {
-                $bestsellers = Product::where('status', 'active')
+            // If fewer than 8 marked bestsellers, append other active products so section has full display
+            if ($bestsellers->count() < 8) {
+                $excludeIds = $bestsellers->pluck('id')->toArray();
+                $additional = Product::where('status', 'active')
+                    ->whereNotIn('id', $excludeIds)
                     ->with(['category', 'primaryImage', 'images', 'variants', 'approvedReviews'])
-                    ->take(8)
+                    ->latest()
+                    ->take(8 - $bestsellers->count())
                     ->get();
+                $bestsellers = $bestsellers->concat($additional);
             }
         } catch (\Throwable $e) {
             $bestsellers = collect();

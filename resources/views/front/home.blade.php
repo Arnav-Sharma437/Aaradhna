@@ -150,356 +150,55 @@
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
             </button>
 
-            <!-- 8-Card Luxury Grid (Mobile Swipeable Slider + Desktop Grid) -->
+            <!-- Dynamic Bestseller Grid (Mobile Swipeable Slider + Desktop Grid) -->
             <div id="bestseller-grid" class="flex sm:grid overflow-x-auto sm:overflow-visible scrollbar-none snap-x snap-mandatory sm:grid-cols-2 lg:grid-cols-4 gap-[10px] pt-4 sm:pt-5 pb-4 sm:pb-0 -mx-5 px-5 sm:mx-0 sm:px-0 scroll-smooth">
-                
-                <!-- Card 1: Swarna Pushpa -->
-                <div class="product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
-                    <!-- Top Pill Badge -->
-                    <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
-                        <span class="inline-flex items-center space-x-1 bg-white px-2 sm:px-2.5 py-[2px] rounded-full border border-[#D38928] text-[8.5px] sm:text-[9px] font-bold tracking-wider text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading leading-tight">
-                            <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
-                            <span>BUY 2 GET 1 FREE</span>
-                            <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
-                        </span>
-                    </div>
-                    <!-- Image Box (5px Inner Padding) -->
-                    <div class="p-[5px] pb-0">
-                        <div class="relative w-full aspect-[4/4.8] rounded-[16px] sm:rounded-[20px] overflow-hidden bg-[#FAF7F2] shadow-2xs">
-                            <a href="{{ route('products.show', 'swarna-pushpa') }}" class="block w-full h-full relative overflow-hidden">
-                                <img src="{{ asset('assets/images/oudh-pack-card.jpg') }}" alt="Swarna Pushpa Bambooless" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
-                                <img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Swarna Pushpa (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
-                            </a>
+                @forelse($bestsellers as $product)
+                    <x-product-card 
+                        :product="$product" 
+                        class="w-[260px] sm:w-auto shrink-0 sm:shrink snap-start {{ $loop->index >= 4 ? 'bestseller-extra-card sm:hidden' : '' }}" 
+                    />
+                @empty
+                    <div class="w-full col-span-full py-12 text-center">
+                        <div class="w-14 h-14 mx-auto mb-3 rounded-full bg-[#FAF3EA] flex items-center justify-center text-[#965A15]">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
                         </div>
+                        <h3 class="text-base font-bold text-gray-800 font-heading">New Products Coming Soon</h3>
+                        <p class="text-xs text-gray-500 mt-1">Our sacred fragrances are being carefully prepared with Vedic devotion.</p>
                     </div>
-                    <!-- Content -->
-                    <div class="p-3.5 sm:p-4 pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
-                        <div class="space-y-1">
-                            <h3 class="text-[15px] sm:text-base font-bold font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
-                                <a href="{{ route('products.show', 'swarna-pushpa') }}">Swarna Pushpa <span class="text-xs font-normal capitalize text-gray-500 ml-0.5">(Marygold)</span></a>
-                            </h3>
-                            <div class="flex items-center space-x-1 text-[#D38928]">
-                                <div class="flex text-[11px] sm:text-xs leading-none space-x-0.5"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                                <span class="text-[11px] sm:text-xs text-[#D38928] font-medium leading-none">(277)</span>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex items-baseline space-x-1.5 pt-0.5 pb-2 sm:pb-3 font-body">
-                                <span class="text-xs sm:text-sm text-gray-400 line-through font-medium">₹499</span>
-                                <span class="text-sm sm:text-base font-bold text-[#C87A1E]">₹399.00</span>
-                            </div>
-                            <button type="button" class="quick-add-to-cart-btn w-full py-2 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-normal rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Swarna Pushpa" data-product-price="399.00">
-                                <span>Add to cart</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 2: Chandan Saanjh -->
-                <div class="product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
-                    <!-- Top Pill Badge -->
-                    <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
-                        <span class="inline-flex items-center space-x-1 bg-white px-2 sm:px-2.5 py-[2px] rounded-full border border-[#D38928] text-[8.5px] sm:text-[9px] font-bold tracking-wider text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading leading-tight">
-                            <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
-                            <span>BUY 2 GET 1 FREE</span>
-                            <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
-                        </span>
-                    </div>
-                    <!-- Image Box (5px Inner Padding) -->
-                    <div class="p-[5px] pb-0">
-                        <div class="relative w-full aspect-[4/4.8] rounded-[16px] sm:rounded-[20px] overflow-hidden bg-[#FAF7F2] shadow-2xs">
-                            <a href="{{ route('products.show', 'chandan-saanjh') }}" class="block w-full h-full relative overflow-hidden">
-                                <img src="{{ asset('assets/images/incense-pack.jpg') }}" alt="Chandan Saanjh Incense" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
-                                <img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Chandan Saanjh (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
-                            </a>
-                        </div>
-                    </div>
-                    <!-- Content -->
-                    <div class="p-3.5 sm:p-4 pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
-                        <div class="space-y-1">
-                            <h3 class="text-[15px] sm:text-base font-bold font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
-                                <a href="{{ route('products.show', 'chandan-saanjh') }}">Chandan Saanjh <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(चंदन)</span></a>
-                            </h3>
-                            <div class="flex items-center space-x-1 text-[#D38928]">
-                                <div class="flex text-[11px] sm:text-xs leading-none space-x-0.5"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                                <span class="text-[11px] sm:text-xs text-[#D38928] font-medium leading-none">(218)</span>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex items-baseline space-x-1.5 pt-0.5 pb-2 sm:pb-3 font-body">
-                                <span class="text-xs sm:text-sm text-gray-400 line-through font-medium">₹499</span>
-                                <span class="text-sm sm:text-base font-bold text-[#C87A1E]">₹399.00</span>
-                            </div>
-                            <button type="button" class="quick-add-to-cart-btn w-full py-2 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-normal rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Chandan Saanjh" data-product-price="399.00">
-                                <span>Add to cart</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 3: Royal Oudh -->
-                <div class="product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
-                    <!-- Top Pill Badge -->
-                    <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
-                        <span class="inline-flex items-center space-x-1 bg-white px-2 sm:px-2.5 py-[2px] rounded-full border border-[#D38928] text-[8.5px] sm:text-[9px] font-bold tracking-wider text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading leading-tight">
-                            <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
-                            <span>BUY 2 GET 1 FREE</span>
-                            <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
-                        </span>
-                    </div>
-                    <!-- Image Box (5px Inner Padding) -->
-                    <div class="p-[5px] pb-0">
-                        <div class="relative w-full aspect-[4/4.8] rounded-[16px] sm:rounded-[20px] overflow-hidden bg-[#FAF7F2] shadow-2xs">
-                            <a href="{{ route('products.show', 'royal-oudh') }}" class="block w-full h-full relative overflow-hidden">
-                                <img src="{{ asset('assets/images/oudh-pack-card.jpg') }}" alt="Royal Oudh Incense" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
-                                <img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Royal Oudh (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
-                            </a>
-                        </div>
-                    </div>
-                    <!-- Content -->
-                    <div class="p-3.5 sm:p-4 pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
-                        <div class="space-y-1">
-                            <h3 class="text-[15px] sm:text-base font-bold font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
-                                <a href="{{ route('products.show', 'royal-oudh') }}">Royal Oudh <span class="text-xs font-normal text-gray-500 ml-0.5">(अवध)</span></a>
-                            </h3>
-                            <div class="flex items-center space-x-1 text-[#D38928]">
-                                <div class="flex text-[11px] sm:text-xs leading-none space-x-0.5"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                                <span class="text-[11px] sm:text-xs text-[#D38928] font-medium leading-none">(234)</span>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex items-baseline space-x-1.5 pt-0.5 pb-2 sm:pb-3 font-body">
-                                <span class="text-xs sm:text-sm text-gray-400 line-through font-medium">₹499</span>
-                                <span class="text-sm sm:text-base font-bold text-[#C87A1E]">₹399.00</span>
-                            </div>
-                            <button type="button" class="quick-add-to-cart-btn w-full py-2 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-normal rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Royal Oudh" data-product-price="399.00">
-                                <span>Add to cart</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 4: Google Dhoop Havan Cup -->
-                <div class="product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
-                    <!-- Top Pill Badge -->
-                    <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
-                        <span class="inline-flex items-center space-x-1 bg-white px-2 sm:px-2.5 py-[2px] rounded-full border border-[#D38928] text-[8.5px] sm:text-[9px] font-bold tracking-wider text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading leading-tight">
-                            <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
-                            <span>BUY 2 GET 1 FREE</span>
-                            <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
-                        </span>
-                    </div>
-                    <!-- Image Box (5px Inner Padding) -->
-                    <div class="p-[5px] pb-0">
-                        <div class="relative w-full aspect-[4/4.8] rounded-[16px] sm:rounded-[20px] overflow-hidden bg-[#FAF7F2] shadow-2xs">
-                            <a href="{{ route('products.show', 'google-dhoop') }}" class="block w-full h-full relative overflow-hidden">
-                                <img src="{{ asset('assets/images/havan-cup.jpg') }}" alt="Google Dhoop Havan Cup" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
-                                <img src="{{ asset('assets/images/single-havan-cup.jpg') }}" alt="Google Dhoop (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
-                            </a>
-                        </div>
-                    </div>
-                    <!-- Content -->
-                    <div class="p-3.5 sm:p-4 pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
-                        <div class="space-y-1">
-                            <h3 class="text-[15px] sm:text-base font-bold font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
-                                <a href="{{ route('products.show', 'google-dhoop') }}">Guggal Dhoop <span class="text-xs font-normal text-gray-500 ml-0.5">Havan Cup</span></a>
-                            </h3>
-                            <div class="flex items-center space-x-1 text-[#D38928]">
-                                <div class="flex text-[11px] sm:text-xs leading-none space-x-0.5"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                                <span class="text-[11px] sm:text-xs text-[#D38928] font-medium leading-none">(210)</span>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex items-baseline space-x-1.5 pt-0.5 pb-2 sm:pb-3 font-body">
-                                <span class="text-xs sm:text-sm text-gray-400 line-through font-medium">₹450</span>
-                                <span class="text-sm sm:text-base font-bold text-[#C87A1E]">₹349.00</span>
-                            </div>
-                            <button type="button" class="quick-add-to-cart-btn w-full py-2 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-normal rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Google Dhoop" data-product-price="349.00">
-                                <span>Add to cart</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 5: Divya Naagchampa (Sticks) -->
-                <div class="bestseller-extra-card sm:hidden product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
-                    <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
-                        <span class="inline-flex items-center space-x-1 bg-white px-2 sm:px-2.5 py-[2px] rounded-full border border-[#D38928] text-[8.5px] sm:text-[9px] font-bold tracking-wider text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading leading-tight">
-                            <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
-                            <span>BUY 2 GET 1 FREE</span>
-                            <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
-                        </span>
-                    </div>
-                    <div class="p-[5px] pb-0">
-                        <div class="relative w-full aspect-[4/4.8] rounded-[16px] sm:rounded-[20px] overflow-hidden bg-[#FAF7F2] shadow-2xs">
-                            <a href="{{ route('products.show', 'divya-naagchampa') }}" class="block w-full h-full">
-                                <img src="{{ asset('assets/images/incense-pack.jpg') }}" alt="Divya Naagchampa Bambooless" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105"><img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Divya Naagchampa (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
-                            </a>
-                        </div>
-                    </div>
-                    <!-- Content -->
-                    <div class="p-3.5 sm:p-4 pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
-                        <div class="space-y-1">
-                            <h3 class="text-[15px] sm:text-base font-bold font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
-                                <a href="{{ route('products.show', 'divya-naagchampa') }}">Divya Naagchampa <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(नागचंपा)</span></a>
-                            </h3>
-                            <div class="flex items-center space-x-1 text-[#D38928]">
-                                <div class="flex text-[11px] sm:text-xs leading-none space-x-0.5"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                                <span class="text-[11px] sm:text-xs text-[#D38928] font-medium leading-none">(219)</span>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex items-baseline space-x-1.5 pt-0.5 pb-2 sm:pb-3 font-body">
-                                <span class="text-xs sm:text-sm text-gray-400 line-through font-medium">₹499</span>
-                                <span class="text-sm sm:text-base font-bold text-[#C87A1E]">₹399.00</span>
-                            </div>
-                            <button type="button" class="quick-add-to-cart-btn w-full py-2 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-normal rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Divya Naagchampa" data-product-price="399.00">
-                                <span>Add to cart</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 6: Mogra Noor (Sticks) -->
-                <div class="bestseller-extra-card sm:hidden product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
-                    <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
-                        <span class="inline-flex items-center space-x-1 bg-white px-2 sm:px-2.5 py-[2px] rounded-full border border-[#D38928] text-[8.5px] sm:text-[9px] font-bold tracking-wider text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading leading-tight">
-                            <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
-                            <span>BUY 2 GET 1 FREE</span>
-                            <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
-                        </span>
-                    </div>
-                    <div class="p-[5px] pb-0">
-                        <div class="relative w-full aspect-[4/4.8] rounded-[16px] sm:rounded-[20px] overflow-hidden bg-[#FAF7F2] shadow-2xs">
-                            <a href="{{ route('products.show', 'mogra-noor') }}" class="block w-full h-full relative overflow-hidden">
-                                <img src="{{ asset('assets/images/incense-pack.jpg') }}" alt="Mogra Noor Bambooless" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
-                                <img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Mogra Noor (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
-                            </a>
-                        </div>
-                    </div>
-                    <!-- Content -->
-                    <div class="p-3.5 sm:p-4 pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
-                        <div class="space-y-1">
-                            <h3 class="text-[15px] sm:text-base font-bold font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
-                                <a href="{{ route('products.show', 'mogra-noor') }}">Mogra Noor <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(मोगरा)</span></a>
-                            </h3>
-                            <div class="flex items-center space-x-1 text-[#D38928]">
-                                <div class="flex text-[11px] sm:text-xs leading-none space-x-0.5"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                                <span class="text-[11px] sm:text-xs text-[#D38928] font-medium leading-none">(194)</span>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex items-baseline space-x-1.5 pt-0.5 pb-2 sm:pb-3 font-body">
-                                <span class="text-xs sm:text-sm text-gray-400 line-through font-medium">₹499</span>
-                                <span class="text-sm sm:text-base font-bold text-[#C87A1E]">₹399.00</span>
-                            </div>
-                            <button type="button" class="quick-add-to-cart-btn w-full py-2 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-normal rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Mogra Noor" data-product-price="399.00">
-                                <span>Add to cart</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 7: Gulab Rooh (Sticks) -->
-                <div class="bestseller-extra-card sm:hidden product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
-                    <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
-                        <span class="inline-flex items-center space-x-1 bg-white px-2 sm:px-2.5 py-[2px] rounded-full border border-[#D38928] text-[8.5px] sm:text-[9px] font-bold tracking-wider text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading leading-tight">
-                            <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
-                            <span>BUY 2 GET 1 FREE</span>
-                            <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
-                        </span>
-                    </div>
-                    <div class="p-[5px] pb-0">
-                        <div class="relative w-full aspect-[4/4.8] rounded-[16px] sm:rounded-[20px] overflow-hidden bg-[#FAF7F2] shadow-2xs">
-                            <a href="{{ route('products.show', 'gulab-rooh') }}" class="block w-full h-full relative overflow-hidden">
-                                <img src="{{ asset('assets/images/incense-pack.jpg') }}" alt="Gulab Rooh Bambooless" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
-                                <img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Gulab Rooh (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
-                            </a>
-                        </div>
-                    </div>
-                    <!-- Content -->
-                    <div class="p-3.5 sm:p-4 pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
-                        <div class="space-y-1">
-                            <h3 class="text-[15px] sm:text-base font-bold font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
-                                <a href="{{ route('products.show', 'gulab-rooh') }}">Gulab Rooh <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(गुलाब)</span></a>
-                            </h3>
-                            <div class="flex items-center space-x-1 text-[#D38928]">
-                                <div class="flex text-[11px] sm:text-xs leading-none space-x-0.5"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                                <span class="text-[11px] sm:text-xs text-[#D38928] font-medium leading-none">(212)</span>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex items-baseline space-x-1.5 pt-0.5 pb-2 sm:pb-3 font-body">
-                                <span class="text-xs sm:text-sm text-gray-400 line-through font-medium">₹499</span>
-                                <span class="text-sm sm:text-base font-bold text-[#C87A1E]">₹399.00</span>
-                            </div>
-                            <button type="button" class="quick-add-to-cart-btn w-full py-2 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-normal rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Gulab Rooh" data-product-price="399.00">
-                                <span>Add to cart</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 8: Lavender Veda (Sticks) -->
-                <div class="bestseller-extra-card sm:hidden product-card w-[260px] sm:w-auto shrink-0 sm:shrink snap-start group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
-                    <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
-                        <span class="inline-flex items-center space-x-1 bg-white px-2 sm:px-2.5 py-[2px] rounded-full border border-[#D38928] text-[8.5px] sm:text-[9px] font-bold tracking-wider text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading leading-tight">
-                            <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
-                            <span>BUY 2 GET 1 FREE</span>
-                            <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
-                        </span>
-                    </div>
-                    <div class="p-[5px] pb-0">
-                        <div class="relative w-full aspect-[4/4.8] rounded-[16px] sm:rounded-[20px] overflow-hidden bg-[#FAF7F2] shadow-2xs">
-                            <a href="{{ route('products.show', 'lavender-veda') }}" class="block w-full h-full relative overflow-hidden">
-                                <img src="{{ asset('assets/images/incense-pack.jpg') }}" alt="Lavender Veda Bambooless" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
-                                <img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Lavender Veda (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
-                            </a>
-                        </div>
-                    </div>
-                    <!-- Content -->
-                    <div class="p-3.5 sm:p-4 pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
-                        <div class="space-y-1">
-                            <h3 class="text-[15px] sm:text-base font-bold font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
-                                <a href="{{ route('products.show', 'lavender-veda') }}">Lavender Veda <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(लैवेंडर)</span></a>
-                            </h3>
-                            <div class="flex items-center space-x-1 text-[#D38928]">
-                                <div class="flex text-[11px] sm:text-xs leading-none space-x-0.5"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                                <span class="text-[11px] sm:text-xs text-[#D38928] font-medium leading-none">(178)</span>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex items-baseline space-x-1.5 pt-0.5 pb-2 sm:pb-3 font-body">
-                                <span class="text-xs sm:text-sm text-gray-400 line-through font-medium">₹499</span>
-                                <span class="text-sm sm:text-base font-bold text-[#C87A1E]">₹399.00</span>
-                            </div>
-                            <button type="button" class="quick-add-to-cart-btn w-full py-2 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-normal rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Lavender Veda" data-product-price="399.00">
-                                <span>Add to cart</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
+                @endforelse
             </div>
         </div>
 
-        <!-- Dynamic Action: Simple Load More Text -> Changes to View All Products Button (Only Desktop) -->
-        <div class="mt-8 sm:mt-10 text-center hidden sm:block">
-            <!-- 1. Simple Load More Text Action -->
-            <button 
-                type="button" 
-                id="bestseller-load-more-btn"
-                class="inline-flex items-center space-x-1.5 text-xs sm:text-sm font-bold text-[#D38928] hover:text-[#965A15] border-b-2 border-[#D38928] hover:border-[#965A15] pb-0.5 tracking-wider transition-all duration-200 cursor-pointer font-heading capitalize group"
-            >
-                <span>Load More</span>
-                <svg class="w-3.5 h-3.5 group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-            </button>
+        @if($bestsellers->count() > 4)
+            <!-- Dynamic Action: Simple Load More Text -> Changes to View All Products Button (Only Desktop) -->
+            <div class="mt-8 sm:mt-10 text-center hidden sm:block">
+                <!-- 1. Simple Load More Text Action -->
+                <button 
+                    type="button" 
+                    id="bestseller-load-more-btn"
+                    class="inline-flex items-center space-x-1.5 text-xs sm:text-sm font-bold text-[#D38928] hover:text-[#965A15] border-b-2 border-[#D38928] hover:border-[#965A15] pb-0.5 tracking-wider transition-all duration-200 cursor-pointer font-heading capitalize group"
+                >
+                    <span>Load More</span>
+                    <svg class="w-3.5 h-3.5 group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                </button>
 
-            <!-- 2. Themed 'View All Products' Button (Appears after Load More is clicked) -->
-            <div id="bestseller-view-all-wrapper" style="display: none;">
+                <!-- 2. Themed 'View All Products' Button (Appears after Load More is clicked) -->
+                <div id="bestseller-view-all-wrapper" style="display: none;">
+                    <a 
+                        href="{{ route('collections.show', 'all') }}" 
+                        id="bestseller-view-all-btn"
+                        class="inline-flex items-center space-x-2 px-8 py-3.5 bg-[#D38928] hover:bg-[#B8741E] active:bg-[#965A15] text-white text-xs sm:text-sm font-bold uppercase tracking-widest rounded-[10px] shadow-md hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 font-heading cursor-pointer"
+                        aria-label="View All Products"
+                    >
+                        <span>View All Products</span>
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </a>
+                </div>
+            </div>
+        @elseif($bestsellers->count() > 0)
+            <div class="mt-8 sm:mt-10 text-center hidden sm:block">
                 <a 
                     href="{{ route('collections.show', 'all') }}" 
-                    id="bestseller-view-all-btn"
                     class="inline-flex items-center space-x-2 px-8 py-3.5 bg-[#D38928] hover:bg-[#B8741E] active:bg-[#965A15] text-white text-xs sm:text-sm font-bold uppercase tracking-widest rounded-[10px] shadow-md hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 font-heading cursor-pointer"
                     aria-label="View All Products"
                 >
@@ -507,7 +206,7 @@
                     <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                 </a>
             </div>
-        </div>
+        @endif
 
     </div>
 </section>
@@ -727,8 +426,10 @@
 <x-shoppable-video-reels />
 
 <!-- ========================================================================= -->
-<!-- 6. DAILY DEVOTIONAL RITUALS (Exact Match to User Screenshot Standard) -->
 <!-- ========================================================================= -->
+<!-- 6. DAILY DEVOTIONAL RITUALS (Dynamic Sacred Products) -->
+<!-- ========================================================================= -->
+@if(isset($newLaunches) && $newLaunches->isNotEmpty())
 <section class="py-[40px] bg-white border-b border-[#EAE3D9]">
     <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
         
@@ -740,164 +441,14 @@
         </div>
 
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-[10px] pt-4 sm:pt-5">
-            
-            <!-- Card 1: Swarna Pushpa Refill Pack -->
-            <div class="product-card group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
-                <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
-                    <span class="inline-flex items-center space-x-1 bg-white px-2 sm:px-2.5 py-[2px] rounded-full border border-[#D38928] text-[8.5px] sm:text-[9px] font-bold tracking-wider text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading leading-tight">
-                        <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
-                        <span>MORNING SANDHYA</span>
-                        <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
-                    </span>
-                </div>
-                <div class="p-[5px] pb-0">
-                    <div class="relative w-full aspect-[4/4.8] rounded-[16px] sm:rounded-[20px] overflow-hidden bg-[#FAF7F2] shadow-2xs">
-                        <a href="{{ route('products.show', 'swarna-pushpa') }}" class="block w-full h-full relative overflow-hidden">
-                            <img src="{{ asset('assets/images/devi-refill-pack-card.jpg') }}" alt="Swarna Pushpa Refill Pack" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
-                            <img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Swarna Pushpa Refill Pack (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
-                        </a>
-                    </div>
-                </div>
-                <div class="p-3.5 sm:p-4 pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
-                    <div class="space-y-1">
-                        <h3 class="text-[15px] sm:text-base font-bold font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
-                            <a href="{{ route('products.show', 'swarna-pushpa') }}">Swarna Pushpa <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(Refill 100)</span></a>
-                        </h3>
-                        <div class="flex items-center space-x-1.5 text-[#D38928] leading-none">
-                            <div class="flex text-[11px] sm:text-xs leading-none"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            <span class="text-[11px] sm:text-xs text-[#D38928] font-medium leading-none">(277)</span>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex items-baseline space-x-1.5 pt-0.5 pb-2 sm:pb-3 font-body">
-                            <span class="text-xs sm:text-sm text-gray-400 line-through font-medium">₹999</span>
-                            <span class="text-sm sm:text-base font-bold text-[#C87A1E]">₹499.00</span>
-                        </div>
-                        <button type="button" class="quick-add-to-cart-btn w-full py-2 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-normal rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Swarna Pushpa Refill Pack" data-product-price="499.00">
-                            <span>Add to cart</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 2: Divya Naagchampa Refill Pack -->
-            <div class="product-card group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
-                <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
-                    <span class="inline-flex items-center space-x-1 bg-white px-2 sm:px-2.5 py-[2px] rounded-full border border-[#D38928] text-[8.5px] sm:text-[9px] font-bold tracking-wider text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading leading-tight">
-                        <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
-                        <span>TEMPLE AARTI</span>
-                        <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
-                    </span>
-                </div>
-                <div class="p-[5px] pb-0">
-                    <div class="relative w-full aspect-[4/4.8] rounded-[16px] sm:rounded-[20px] overflow-hidden bg-[#FAF7F2] shadow-2xs">
-                        <a href="{{ route('products.show', 'divya-naagchampa') }}" class="block w-full h-full relative overflow-hidden">
-                            <img src="{{ asset('assets/images/camphor-refill-pack-card.jpg') }}" alt="Divya Naagchampa Refill Pack" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
-                            <img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Divya Naagchampa Refill Pack (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
-                        </a>
-                    </div>
-                </div>
-                <div class="p-3.5 sm:p-4 pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
-                    <div class="space-y-1">
-                        <h3 class="text-[15px] sm:text-base font-bold font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
-                            <a href="{{ route('products.show', 'divya-naagchampa') }}">Divya Naagchampa <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(Refill)</span></a>
-                        </h3>
-                        <div class="flex items-center space-x-1.5 text-[#D38928] leading-none">
-                            <div class="flex text-[11px] sm:text-xs leading-none"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            <span class="text-[11px] sm:text-xs text-[#D38928] font-medium leading-none">(219)</span>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex items-baseline space-x-1.5 pt-0.5 pb-2 sm:pb-3 font-body">
-                            <span class="text-xs sm:text-sm text-gray-400 line-through font-medium">₹999</span>
-                            <span class="text-sm sm:text-base font-bold text-[#C87A1E]">₹499.00</span>
-                        </div>
-                        <button type="button" class="quick-add-to-cart-btn w-full py-2 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-normal rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Divya Naagchampa Refill Pack" data-product-price="499.00">
-                            <span>Add to cart</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 3: Royal Oudh Sticks -->
-            <div class="product-card group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
-                <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
-                    <span class="inline-flex items-center space-x-1 bg-white px-2 sm:px-2.5 py-[2px] rounded-full border border-[#D38928] text-[8.5px] sm:text-[9px] font-bold tracking-wider text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading leading-tight">
-                        <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
-                        <span>EVENING DHYAN</span>
-                        <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
-                    </span>
-                </div>
-                <div class="p-[5px] pb-0">
-                    <div class="relative w-full aspect-[4/4.8] rounded-[16px] sm:rounded-[20px] overflow-hidden bg-[#FAF7F2] shadow-2xs">
-                        <a href="{{ route('products.show', 'royal-oudh') }}" class="block w-full h-full relative overflow-hidden">
-                            <img src="{{ asset('assets/images/oudh-pack-card.jpg') }}" alt="Royal Oudh Bambooless Sticks" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
-                            <img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Royal Oudh Bambooless Sticks (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
-                        </a>
-                    </div>
-                </div>
-                <div class="p-3.5 sm:p-4 pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
-                    <div class="space-y-1">
-                        <h3 class="text-[15px] sm:text-base font-bold font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
-                            <a href="{{ route('products.show', 'royal-oudh') }}">Royal Oudh <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(Sticks)</span></a>
-                        </h3>
-                        <div class="flex items-center space-x-1.5 text-[#D38928] leading-none">
-                            <div class="flex text-[11px] sm:text-xs leading-none"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            <span class="text-[11px] sm:text-xs text-[#D38928] font-medium leading-none">(184)</span>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex items-baseline space-x-1.5 pt-0.5 pb-2 sm:pb-3 font-body">
-                            <span class="text-xs sm:text-sm text-gray-400 line-through font-medium">₹499</span>
-                            <span class="text-sm sm:text-base font-bold text-[#C87A1E]">₹399.00</span>
-                        </div>
-                        <button type="button" class="quick-add-to-cart-btn w-full py-2 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-normal rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Royal Oudh Bambooless Sticks" data-product-price="399.00">
-                            <span>Add to cart</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 4: Chandan Saanjh Sticks -->
-            <div class="product-card group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body">
-                <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
-                    <span class="inline-flex items-center space-x-1 bg-white px-2 sm:px-2.5 py-[2px] rounded-full border border-[#D38928] text-[8.5px] sm:text-[9px] font-bold tracking-wider text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading leading-tight">
-                        <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
-                        <span>DAILY HAVAN</span>
-                        <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
-                    </span>
-                </div>
-                <div class="p-[5px] pb-0">
-                    <div class="relative w-full aspect-[4/4.8] rounded-[16px] sm:rounded-[20px] overflow-hidden bg-[#FAF7F2] shadow-2xs">
-                        <a href="{{ route('products.show', 'chandan-saanjh') }}" class="block w-full h-full relative overflow-hidden">
-                            <img src="{{ asset('assets/images/chandan-cones-card.jpg') }}" alt="Chandan Saanjh Sticks" class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105">
-                            <img src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" alt="Chandan Saanjh Sticks (Detail)" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out" loading="lazy">
-                        </a>
-                    </div>
-                </div>
-                <div class="p-3.5 sm:p-4 pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
-                    <div class="space-y-1">
-                        <h3 class="text-[15px] sm:text-base font-bold font-body text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug">
-                            <a href="{{ route('products.show', 'chandan-saanjh') }}">Chandan Saanjh <span class="text-xs font-normal uppercase text-gray-500 ml-0.5">(Sticks)</span></a>
-                        </h3>
-                        <div class="flex items-center space-x-1.5 text-[#D38928] leading-none">
-                            <div class="flex text-[11px] sm:text-xs leading-none"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            <span class="text-[11px] sm:text-xs text-[#D38928] font-medium leading-none">(198)</span>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex items-baseline space-x-1.5 pt-0.5 pb-2 sm:pb-3 font-body">
-                            <span class="text-xs sm:text-sm text-gray-400 line-through font-medium">₹499</span>
-                            <span class="text-sm sm:text-base font-bold text-[#C87A1E]">₹399.00</span>
-                        </div>
-                        <button type="button" class="quick-add-to-cart-btn w-full py-2 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-normal rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-heading cursor-pointer" data-product-title="Chandan Saanjh Sticks" data-product-price="399.00">
-                            <span>Add to cart</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
+            @foreach($newLaunches as $product)
+                <x-product-card :product="$product" />
+            @endforeach
         </div>
+
+    </div>
+</section>
+@endif
 
     </div>
 </section>

@@ -151,14 +151,14 @@
                 <tbody class="divide-y divide-gray-100 font-medium text-gray-700">
                     @forelse($products as $product)
                         @php
-                            $img = $product->primaryImage->image_path ?? ($product->images->first()->image_path ?? 'assets/images/devi-refill-pack-card.jpg');
+                            $img = $product->primary_image_url;
                         @endphp
                         <tr class="hover:bg-[#F9FAFB] transition-colors group">
                             <!-- Product Title & SKU -->
                             <td class="px-5 py-3.5">
                                 <div class="flex items-center space-x-3.5">
                                     <div class="w-10 h-10 rounded-[8px] bg-[#FAF8F5] border border-[#E1E3E5] overflow-hidden shrink-0 flex items-center justify-center p-0.5">
-                                        <img src="{{ asset($img) }}" alt="{{ $product->title }}" class="w-full h-full object-cover rounded-[6px]">
+                                        <img src="{{ $img }}" alt="{{ $product->title }}" class="w-full h-full object-cover rounded-[6px]">
                                     </div>
                                     <div class="min-w-0">
                                         <a href="{{ route('admin.products.edit', $product) }}" class="font-bold text-[#202223] hover:text-[#D38928] truncate block text-xs">
@@ -171,6 +171,9 @@
                                             @endif
                                             @if($product->is_featured)
                                                 <span class="text-blue-700 font-bold bg-blue-50 px-1.5 py-0.2 rounded font-sans">Featured</span>
+                                            @endif
+                                            @if($product->badge_text)
+                                                <span class="text-purple-700 font-bold bg-purple-50 px-1.5 py-0.2 rounded font-sans">Tag: {{ $product->badge_text }}</span>
                                             @endif
                                         </div>
                                     </div>
