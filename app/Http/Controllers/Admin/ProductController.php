@@ -36,10 +36,90 @@ class ProductController extends Controller
     }
 
     /**
+     * Mirror any images stored in storage/app/public/products to public/uploads/products and public/storage/products.
+     */
+    public static function syncStorageToPublic(): void
+    {
+        try {
+            $sourceDir = storage_path('app/public/products');
+            $targetUploads = public_path('uploads/products');
+            $targetStorage = public_path('storage/products');
+
+            foreach ([$targetUploads, $targetStorage] as $tDir) {
+                if (!file_exists($tDir)) {
+                    @mkdir($tDir, 0775, true);
+                }
+            }
+
+            if (is_dir($sourceDir)) {
+                $files = scandir($sourceDir);
+                foreach ($files as $file) {
+                    if ($file === '.' || $file === '..') continue;
+                    $src = $sourceDir . '/' . $file;
+                    if (is_file($src)) {
+                        $upDest = $targetUploads . '/' . $file;
+                        if (!file_exists($upDest)) {
+                            @copy($src, $upDest);
+                        }
+                        $stDest = $targetStorage . '/' . $file;
+                        if (!file_exists($stDest)) {
+                            @copy($src, $stDest);
+                        }
+                    }
+                }
+            }
+        } catch (\Throwable $e) {
+            // Silently continue
+        }
+    }
+
+    /**
+     * Save an uploaded file directly into public/uploads/products, public/storage/products, and storage/app/public/products.
+     */
+    private function saveProductImage($file, Product $product, string $altText, bool $isPrimary = false, int $sortOrder = 0): void
+    {
+        try {
+            $extension = $file->getClientOriginalExtension() ?: 'jpg';
+            $fileName = 'prod_' . time() . '_' . Str::random(12) . '.' . $extension;
+            $relativePath = 'uploads/products/' . $fileName;
+
+            $publicUploadDir = public_path('uploads/products');
+            $publicStorageDir = public_path('storage/products');
+            $appStorageDir = storage_path('app/public/products');
+
+            foreach ([$publicUploadDir, $publicStorageDir, $appStorageDir] as $dir) {
+                if (!file_exists($dir)) {
+                    @mkdir($dir, 0775, true);
+                }
+            }
+
+            // Move file directly into public/uploads/products
+            $file->move($publicUploadDir, $fileName);
+            $sourceFile = $publicUploadDir . '/' . $fileName;
+
+            // Mirror to public/storage/products and storage/app/public/products
+            if (file_exists($sourceFile)) {
+                @copy($sourceFile, $publicStorageDir . '/' . $fileName);
+                @copy($sourceFile, $appStorageDir . '/' . $fileName);
+            }
+
+            $product->images()->create([
+                'image_path' => $relativePath,
+                'alt_text' => $altText,
+                'sort_order' => $sortOrder,
+                'is_primary' => $isPrimary,
+            ]);
+        } catch (\Throwable $e) {
+            \Illuminate\Support\Facades\Log::error('Image upload failed: ' . $e->getMessage());
+        }
+    }
+
+    /**
      * Display a listing of products with search, filters, and pagination.
      */
     public function index(Request $request): View
     {
+        self::syncStorageToPublic();
         $query = Product::with(['category', 'primaryImage', 'images', 'variants', 'collections']);
 
         // 1. Search Query
@@ -134,6 +214,7 @@ class ProductController extends Controller
     public function create(): View
     {
         $this->ensureBadgeColumnExists();
+        self::syncStorageToPublic();
 
         $categories = Category::orderBy('name')->get();
         $collections = Collection::orderBy('title')->get();
@@ -147,6 +228,7 @@ class ProductController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $this->ensureBadgeColumnExists();
+        self::syncStorageToPublic();
 
         $validated = $request->validate([
             'title' => ['required', 'string', 'max:255'],
@@ -231,13 +313,7 @@ class ProductController extends Controller
             // Image Upload Handling
             $hasPrimary = false;
             if ($request->hasFile('primary_image_file')) {
-                $path = $request->file('primary_image_file')->store('products', 'public');
-                $product->images()->create([
-                    'image_path' => 'storage/' . $path,
-                    'alt_text' => $product->title . ' Primary Image',
-                    'sort_order' => 0,
-                    'is_primary' => true,
-                ]);
+                $this->saveProductImage($request->file('primary_image_file'), $product, $product->title . ' Primary Image', true, 0);
                 $hasPrimary = true;
             } elseif (!empty($validated['image_url'])) {
                 $product->images()->create([
@@ -251,13 +327,7 @@ class ProductController extends Controller
 
             if ($request->hasFile('image_files')) {
                 foreach ($request->file('image_files') as $idx => $imgFile) {
-                    $path = $imgFile->store('products', 'public');
-                    $product->images()->create([
-                        'image_path' => 'storage/' . $path,
-                        'alt_text' => $product->title . ' Gallery Image ' . ($idx + 1),
-                        'sort_order' => $idx + 1,
-                        'is_primary' => !$hasPrimary && $idx === 0,
-                    ]);
+                    $this->saveProductImage($imgFile, $product, $product->title . ' Gallery Image ' . ($idx + 1), !$hasPrimary && $idx === 0, $idx + 1);
                     if (!$hasPrimary && $idx === 0) $hasPrimary = true;
                 }
             }
@@ -322,6 +392,7 @@ class ProductController extends Controller
     public function edit(Product $product): View
     {
         $this->ensureBadgeColumnExists();
+        self::syncStorageToPublic();
 
         $product->load(['category', 'collections', 'variants', 'images']);
         $categories = Category::orderBy('name')->get();
@@ -336,6 +407,7 @@ class ProductController extends Controller
     public function update(Request $request, Product $product): RedirectResponse
     {
         $this->ensureBadgeColumnExists();
+        self::syncStorageToPublic();
 
         $validated = $request->validate([
             'title' => ['required', 'string', 'max:255'],
@@ -418,15 +490,8 @@ class ProductController extends Controller
 
             // Upload new primary image
             if ($request->hasFile('new_primary_file')) {
-                // Clear old primary flag
                 $product->images()->update(['is_primary' => false]);
-                $path = $request->file('new_primary_file')->store('products', 'public');
-                $product->images()->create([
-                    'image_path' => 'storage/' . $path,
-                    'alt_text' => $product->title . ' Primary Image',
-                    'sort_order' => 0,
-                    'is_primary' => true,
-                ]);
+                $this->saveProductImage($request->file('new_primary_file'), $product, $product->title . ' Primary Image', true, 0);
             } elseif (!empty($validated['new_image_url'])) {
                 $product->images()->update(['is_primary' => false]);
                 $product->images()->create([
@@ -443,13 +508,7 @@ class ProductController extends Controller
             // Upload new gallery images
             if ($request->hasFile('new_gallery_files')) {
                 foreach ($request->file('new_gallery_files') as $idx => $imgFile) {
-                    $path = $imgFile->store('products', 'public');
-                    $product->images()->create([
-                        'image_path' => 'storage/' . $path,
-                        'alt_text' => $product->title . ' Gallery Image',
-                        'sort_order' => $product->images()->count() + $idx,
-                        'is_primary' => false,
-                    ]);
+                    $this->saveProductImage($imgFile, $product, $product->title . ' Gallery Image', false, $product->images()->count() + $idx);
                 }
             }
 

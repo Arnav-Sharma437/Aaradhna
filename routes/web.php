@@ -42,30 +42,43 @@ Route::get('/contact-us', [PageController::class, 'contact'])->name('pages.conta
 Route::post('/contact/submit', [PageController::class, 'submitContact'])->name('pages.contact.submit');
 Route::get('/pages/{slug}', [PageController::class, 'policy'])->name('pages.show');
 
-// Storage & Uploads Direct File Fallback Route (Guarantees image delivery even without symlink)
-Route::get('/storage/{path}', function (string $path) {
-    $storageFile = storage_path('app/public/' . $path);
-    if (file_exists($storageFile)) {
-        return response()->file($storageFile);
+// Storage & Uploads Direct File Fallback Routes (Guarantees image delivery with or without symlinks)
+$streamAssetFile = function (string $path) {
+    $clean = ltrim($path, '/');
+    $name = basename($clean);
+    $candidates = [
+        public_path($clean),
+        public_path('uploads/' . $clean),
+        public_path('uploads/products/' . $name),
+        public_path('storage/' . $clean),
+        public_path('storage/products/' . $name),
+        storage_path('app/public/' . $clean),
+        storage_path('app/public/products/' . $name),
+        storage_path('app/' . $clean),
+    ];
+    foreach ($candidates as $file) {
+        if (file_exists($file) && !is_dir($file)) {
+            $mime = mime_content_type($file) ?: 'image/jpeg';
+            return response()->file($file, [
+                'Content-Type' => $mime,
+                'Cache-Control' => 'public, max-age=31536000',
+            ]);
+        }
     }
-    $uploadFile = public_path('uploads/' . $path);
-    if (file_exists($uploadFile)) {
-        return response()->file($uploadFile);
+    // Graceful fallback to default image if file missing
+    $fallback = public_path('assets/images/incense-pack.jpg');
+    if (file_exists($fallback)) {
+        return response()->file($fallback, [
+            'Content-Type' => 'image/jpeg',
+            'Cache-Control' => 'no-cache',
+        ]);
     }
     abort(404);
-})->where('path', '.*');
+};
 
-Route::get('/uploads/{path}', function (string $path) {
-    $uploadFile = public_path('uploads/' . $path);
-    if (file_exists($uploadFile)) {
-        return response()->file($uploadFile);
-    }
-    $storageFile = storage_path('app/public/' . $path);
-    if (file_exists($storageFile)) {
-        return response()->file($storageFile);
-    }
-    abort(404);
-})->where('path', '.*');
+Route::get('/storage/{path}', $streamAssetFile)->where('path', '.*')->withoutMiddleware('web');
+Route::get('/uploads/{path}', $streamAssetFile)->where('path', '.*')->withoutMiddleware('web');
+Route::get('/media/{path}', $streamAssetFile)->where('path', '.*')->withoutMiddleware('web');
 
 // Placeholder Blog Route
 Route::get('/blogs/{slug}', function (string $slug) {
@@ -214,12 +227,16 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/settings', [AdminSettingController::class, 'index'])->name('settings.index');
         Route::post('/settings', [AdminSettingController::class, 'update'])->name('settings.update');
 
-        // 14. Database Migrations Utility
+        // 14. Database Migrations & Media Sync Utility
         Route::get('/run-migrations', function () {
             try {
                 \Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
                 $output = \Illuminate\Support\Facades\Artisan::output();
-                return response("<pre style='font-family:monospace;padding:24px;background:#1e1e1e;color:#50fa7b;border-radius:8px;font-size:14px;line-height:1.6;'>✓ Database migrations executed successfully:\n\n" . htmlspecialchars($output) . "</pre>");
+
+                \App\Http\Controllers\Admin\ProductController::syncStorageToPublic();
+                @\Illuminate\Support\Facades\Artisan::call('storage:link');
+
+                return response("<pre style='font-family:monospace;padding:24px;background:#1e1e1e;color:#50fa7b;border-radius:8px;font-size:14px;line-height:1.6;'>✓ Database migrations executed successfully:\n\n" . htmlspecialchars($output) . "\n✓ Media storage successfully synced to public/uploads/products.</pre>");
             } catch (\Throwable $e) {
                 return response("<pre style='font-family:monospace;padding:24px;background:#1e1e1e;color:#ff5555;border-radius:8px;font-size:14px;line-height:1.6;'>✗ Migration Error:\n\n" . htmlspecialchars($e->getMessage()) . "</pre>", 500);
             }
@@ -227,12 +244,16 @@ Route::prefix('admin')->name('admin.')->group(function () {
     });
 });
 
-// Fallback Migration Runner (accessible without admin auth if needed in emergency)
+// Fallback Migration & Media Runner (accessible without admin auth if needed in emergency)
 Route::get('/run-migrations', function () {
     try {
         \Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
         $output = \Illuminate\Support\Facades\Artisan::output();
-        return response("<pre style='font-family:monospace;padding:24px;background:#1e1e1e;color:#50fa7b;border-radius:8px;font-size:14px;line-height:1.6;'>✓ Database migrations executed successfully:\n\n" . htmlspecialchars($output) . "</pre>");
+
+        \App\Http\Controllers\Admin\ProductController::syncStorageToPublic();
+        @\Illuminate\Support\Facades\Artisan::call('storage:link');
+
+        return response("<pre style='font-family:monospace;padding:24px;background:#1e1e1e;color:#50fa7b;border-radius:8px;font-size:14px;line-height:1.6;'>✓ Database migrations executed successfully:\n\n" . htmlspecialchars($output) . "\n✓ Media storage successfully synced to public/uploads/products.</pre>");
     } catch (\Throwable $e) {
         return response("<pre style='font-family:monospace;padding:24px;background:#1e1e1e;color:#ff5555;border-radius:8px;font-size:14px;line-height:1.6;'>✗ Migration Error:\n\n" . htmlspecialchars($e->getMessage()) . "</pre>", 500);
     }

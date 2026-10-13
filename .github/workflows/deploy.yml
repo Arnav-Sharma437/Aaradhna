@@ -127,6 +127,8 @@ jobs:
             --exclude='.env' \
             --exclude='.env.*' \
             --exclude='node_modules/' \
+            --exclude='public/uploads/*' \
+            --exclude='public/storage/*' \
             --exclude='storage/app/public/*' \
             --exclude='storage/framework/cache/*' \
             --exclude='storage/framework/sessions/*' \
@@ -154,9 +156,14 @@ jobs:
             set -e
             cd "${REMOTE_TARGET_PATH}"
 
-            echo "Ensuring storage directory structure exists..."
+            echo "Ensuring storage and media directories exist..."
             mkdir -p storage/framework/{sessions,views,cache} storage/logs bootstrap/cache
-            chmod -R 775 storage bootstrap/cache 2>/dev/null || true
+            mkdir -p public/uploads/products public/storage/products
+            chmod -R 775 storage bootstrap/cache public/uploads public/storage 2>/dev/null || true
+
+            echo "Syncing any uploaded product media into public directory..."
+            cp -rn storage/app/public/products/* public/uploads/products/ 2>/dev/null || true
+            cp -rn storage/app/public/products/* public/storage/products/ 2>/dev/null || true
 
             echo "Clearing stale framework cache safely..."
             php artisan optimize:clear || php artisan view:clear

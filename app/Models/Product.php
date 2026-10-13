@@ -124,15 +124,8 @@ class Product extends Model
     public function getPrimaryImageUrlAttribute(): string
     {
         $primary = $this->primaryImage ?: $this->images->first();
-        if ($primary && !empty($primary->image_path)) {
-            $path = $primary->image_path;
-            if (str_starts_with($path, 'http://') || str_starts_with($path, 'https://')) {
-                return $path;
-            }
-            if (str_starts_with($path, 'storage/') || str_starts_with($path, 'assets/')) {
-                return asset($path);
-            }
-            return asset('storage/' . ltrim($path, '/'));
+        if ($primary && !empty($primary->url)) {
+            return $primary->url;
         }
         return asset('assets/images/incense-pack.jpg');
     }
@@ -140,14 +133,7 @@ class Product extends Model
     public function getSecondaryImageUrlAttribute(): string
     {
         if ($this->images && $this->images->count() > 1) {
-            $path = $this->images->get(1)->image_path;
-            if (str_starts_with($path, 'http://') || str_starts_with($path, 'https://')) {
-                return $path;
-            }
-            if (str_starts_with($path, 'storage/') || str_starts_with($path, 'assets/')) {
-                return asset($path);
-            }
-            return asset('storage/' . ltrim($path, '/'));
+            return $this->images->get(1)->url;
         }
         return asset('assets/images/single-bambooless-stick.jpg');
     }

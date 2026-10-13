@@ -37,9 +37,36 @@ class ProductImage extends Model
         if (str_starts_with($path, 'http://') || str_starts_with($path, 'https://')) {
             return $path;
         }
-        if (str_starts_with($path, 'storage/') || str_starts_with($path, 'assets/')) {
-            return asset($path);
+
+        $cleanPath = ltrim($path, '/');
+        $fileName = basename($cleanPath);
+
+        // 1. Check if physically present in public/uploads/products/
+        if (file_exists(public_path('uploads/products/' . $fileName))) {
+            return asset('uploads/products/' . $fileName);
         }
-        return asset('storage/' . ltrim($path, '/'));
+
+        // 2. Check if physically present in public/storage/products/
+        if (file_exists(public_path('storage/products/' . $fileName))) {
+            return asset('storage/products/' . $fileName);
+        }
+
+        // 3. Direct match in public folder
+        if (file_exists(public_path($cleanPath))) {
+            return asset($cleanPath);
+        }
+
+        // 4. If path starts with assets/ (static design asset)
+        if (str_starts_with($cleanPath, 'assets/')) {
+            return asset($cleanPath);
+        }
+
+        // 5. Default to uploads/products if path is clean filename or starts with uploads/
+        if (str_starts_with($cleanPath, 'uploads/')) {
+            return asset($cleanPath);
+        }
+
+        // 6. Otherwise serve via storage/
+        return asset($cleanPath);
     }
 }

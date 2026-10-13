@@ -6,10 +6,11 @@ DirectoryIndex index.php
     </IfModule>
 
     RewriteEngine On
-    RewriteBase /dev/aaradhna/
 
     # If requested file exists in public/, rewrite directly to it
-    RewriteCond %{DOCUMENT_ROOT}/dev/aaradhna/public/$1 -f
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteCond %{DOCUMENT_ROOT}/dev/aaradhna/public/$1 -f [OR]
+    RewriteCond %{DOCUMENT_ROOT}/public/$1 -f
     RewriteRule ^(.*)$ public/$1 [L]
 
     # Route all other URLs to index.php

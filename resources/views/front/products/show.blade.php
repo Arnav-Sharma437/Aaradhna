@@ -138,6 +138,7 @@
                             src="{{ $galleryImages[0] }}" 
                             alt="{{ $product->title }}" 
                             class="w-full h-full object-cover transition-opacity duration-200 ease-out"
+                            onerror="this.onerror=null; this.src='{{ asset('assets/images/incense-pack.jpg') }}';"
                         >
                         
                         <!-- Discount Badge top-left -->
@@ -165,7 +166,7 @@
                                 data-index="{{ $index }}"
                                 aria-label="View product image {{ $index + 1 }}"
                             >
-                                <img src="{{ $imgUrl }}" alt="{{ $product->title }} thumbnail {{ $index + 1 }}" class="w-full h-full object-cover">
+                                <img src="{{ $imgUrl }}" alt="{{ $product->title }} thumbnail {{ $index + 1 }}" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='{{ asset('assets/images/incense-pack.jpg') }}';">
                             </button>
                         @endforeach
                     </div>
@@ -176,7 +177,7 @@
                     
                     <!-- Visual 1: Hero Packshot with Ceramic Stand Banner -->
                     <div class="relative aspect-[4/4.8] rounded-[8px] sm:rounded-[10px] overflow-hidden bg-[#FAF7F2] shadow-xs group">
-                        <img src="{{ $galleryImages[0] }}" alt="{{ $product->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="{{ $galleryImages[0] }}" alt="{{ $product->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='{{ asset('assets/images/incense-pack.jpg') }}';">
                         @if($hasDiscount || $discountPercent)
                         <div class="absolute top-2.5 left-2.5 z-10 pointer-events-none">
                             <span class="inline-block bg-[#8B1E1E] text-white text-xs font-bold px-2.5 py-0.5 rounded-[6px] tracking-wide shadow-sm font-body">
@@ -191,7 +192,7 @@
 
                     <!-- Visual 2: Artisanal Pooja Altar & Burning Incense -->
                     <div class="relative aspect-[4/4.8] rounded-[8px] sm:rounded-[10px] overflow-hidden bg-[#FAF7F2] shadow-xs group">
-                        <img src="{{ $galleryImages[1] ?? asset('assets/images/hero-incense-banner.jpg') }}" alt="ISHANAA Sacred Altar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="{{ $galleryImages[1] ?? asset('assets/images/hero-incense-banner.jpg') }}" alt="ISHANAA Sacred Altar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='{{ asset('assets/images/hero-incense-banner.jpg') }}';">
                         <div class="absolute bottom-2.5 left-2.5 right-2.5 bg-black/60 backdrop-blur-xs py-1.5 px-3 rounded-[6px] text-center text-white text-xs font-bold tracking-wider shadow-sm font-body">
                             100% BAMBOO FREE &amp; VEDIC
                         </div>
@@ -199,7 +200,7 @@
 
                     <!-- Visual 3: Sacred Camphor / Temple Crystals / Detail -->
                     <div class="relative aspect-[4/4.8] rounded-[8px] sm:rounded-[10px] overflow-hidden bg-[#FAF7F2] shadow-xs group">
-                        <img src="{{ $galleryImages[2] ?? asset('assets/images/camphor-refill-pack-card.jpg') }}" alt="Pure Temple Ingredients" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="{{ $galleryImages[2] ?? asset('assets/images/camphor-refill-pack-card.jpg') }}" alt="Pure Temple Ingredients" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='{{ asset('assets/images/camphor-refill-pack-card.jpg') }}';">
                         <div class="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full bg-white/95 text-[#965A15] text-[11px] font-bold uppercase tracking-wider font-heading border border-[#D38928]/40 shadow-xs">
                             Zero Charcoal
                         </div>
@@ -207,7 +208,7 @@
 
                     <!-- Visual 4: Devotional Ambient Living Room -->
                     <div class="relative aspect-[4/4.8] rounded-[8px] sm:rounded-[10px] overflow-hidden bg-[#FAF7F2] shadow-xs group">
-                        <img src="{{ $galleryImages[3] ?? asset('assets/images/hero-ram-uphaar-banner.jpg') }}" alt="Sacred Fragrance Ambience" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="{{ $galleryImages[3] ?? asset('assets/images/hero-ram-uphaar-banner.jpg') }}" alt="Sacred Fragrance Ambience" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='{{ asset('assets/images/hero-ram-uphaar-banner.jpg') }}';">
                         <div class="absolute bottom-2.5 left-2.5 right-2.5 bg-black/60 backdrop-blur-xs py-1.5 px-3 rounded-[6px] text-center text-white text-xs font-bold tracking-wider shadow-sm font-body">
                             TEMPLE-GRADE PURITY
                         </div>
@@ -215,7 +216,7 @@
 
                     <!-- Visual 5: Sacred Botanical Ingredients / Close-up -->
                     <div class="relative aspect-[4/4.8] rounded-[8px] sm:rounded-[10px] overflow-hidden bg-[#FAF7F2] shadow-xs group">
-                        <img src="{{ $galleryImages[4] ?? asset('assets/images/single-bambooless-stick.jpg') }}" alt="Sacred Vedic Formulations" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="{{ $galleryImages[4] ?? asset('assets/images/single-bambooless-stick.jpg') }}" alt="Sacred Vedic Formulations" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='{{ asset('assets/images/single-bambooless-stick.jpg') }}';">
                         <div class="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full bg-white/95 text-[#965A15] text-[11px] font-bold uppercase tracking-wider font-heading border border-[#D38928]/40 shadow-xs">
                             100% Herbal
                         </div>
@@ -223,7 +224,7 @@
 
                     <!-- Visual 6: Sacred Packaging & Ritual Heritage -->
                     <div class="relative aspect-[4/4.8] rounded-[8px] sm:rounded-[10px] overflow-hidden bg-[#FAF7F2] shadow-xs group">
-                        <img src="{{ $galleryImages[5] ?? asset('assets/images/devi-refill-pack-card.jpg') }}" alt="Auspicious Divine Blessing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="{{ $galleryImages[5] ?? asset('assets/images/devi-refill-pack-card.jpg') }}" alt="Auspicious Divine Blessing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='{{ asset('assets/images/devi-refill-pack-card.jpg') }}';">
                         <div class="absolute bottom-2.5 left-2.5 right-2.5 bg-black/60 backdrop-blur-xs py-1.5 px-3 rounded-[6px] text-center text-white text-xs font-bold tracking-wider shadow-sm font-body">
                             AUSPICIOUS BLISS
                         </div>
