@@ -1,6 +1,6 @@
 <header class="sticky top-0 z-40 bg-white/98 backdrop-blur-md border-b border-[#EAE3D9] transition-all duration-200 shadow-xs font-body">
     <div class="w-full max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8 xl:px-10">
-        <div class="relative flex items-center justify-between h-18 sm:h-20 lg:h-22 gap-2 sm:gap-4">
+        <div class="relative flex items-center justify-between h-20 sm:h-22 lg:h-24 gap-2 sm:gap-4">
             
             <!-- LEFT: Mobile Menu Button (Mobile only) + Desktop Brand Logo -->
             <div class="flex items-center space-x-2 sm:space-x-3 shrink-0">
@@ -27,7 +27,7 @@
                     <img 
                         src="{{ $headerLogoSrc }}" 
                         alt="{{ $storeBrandName }}" 
-                        class="h-11 lg:h-12 xl:h-13 w-auto max-w-[210px] lg:max-w-[245px] xl:max-w-[275px] object-contain transition-transform duration-200 hover:scale-105"
+                        class="h-13 lg:h-14 xl:h-16 w-auto max-w-[250px] lg:max-w-[270px] xl:max-w-[290px] object-contain transition-transform duration-200 hover:scale-105"
                     >
                 </a>
             </div>
