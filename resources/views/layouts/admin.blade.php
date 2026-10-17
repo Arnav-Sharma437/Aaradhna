@@ -12,8 +12,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 
-    <link rel="icon" type="image/jpeg" href="{{ asset('assets/images/Ishana-fav-icon.jpeg') }}?v={{ filemtime(public_path('assets/images/Ishana-fav-icon.jpeg')) }}">
-    <link rel="shortcut icon" type="image/jpeg" href="{{ asset('assets/images/Ishana-fav-icon.jpeg') }}?v={{ filemtime(public_path('assets/images/Ishana-fav-icon.jpeg')) }}">
+    @php
+        $adminFav = !empty($storeSettings['favicon']) ? $storeSettings['favicon'] : 'assets/images/Ishana-fav-icon.jpeg';
+        $adminFavFull = public_path($adminFav);
+        $adminFavVer = file_exists($adminFavFull) ? filemtime($adminFavFull) : time();
+        $adminFavUrl = asset($adminFav) . '?v=' . $adminFavVer;
+        $adminFavExt = strtolower(pathinfo($adminFav, PATHINFO_EXTENSION));
+        $adminFavMime = match($adminFavExt) {
+            'png' => 'image/png',
+            'ico' => 'image/x-icon',
+            'svg' => 'image/svg+xml',
+            'webp' => 'image/webp',
+            default => 'image/jpeg',
+        };
+    @endphp
+    <link rel="icon" type="{{ $adminFavMime }}" href="{{ $adminFavUrl }}">
+    <link rel="shortcut icon" type="{{ $adminFavMime }}" href="{{ $adminFavUrl }}">
 
     <!-- Styles / Scripts via Vite -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -52,7 +66,7 @@
                     <div class="h-14 px-4 bg-[#141414] border-b border-[#2C2C2C] flex items-center justify-between">
                         <div class="flex items-center space-x-2.5 min-w-0">
                             <div class="h-8 bg-white px-2 py-1 rounded-[8px] flex items-center justify-center shadow-md shrink-0">
-                                <img src="{{ asset('assets/images/Ishanaa-logo.png') }}" alt="ISHANAA" class="h-full w-auto object-contain">
+                                <img src="{{ !empty($storeSettings['header_logo']) ? asset($storeSettings['header_logo']) : asset('assets/images/Ishanaa-logo.png') }}" alt="{{ $storeSettings['store_name'] ?? 'ISHANAA' }}" class="h-full w-auto object-contain">
                             </div>
                             <div class="min-w-0">
                                 <span class="text-xs font-bold text-white tracking-wide truncate block font-heading">Admin Portal</span>

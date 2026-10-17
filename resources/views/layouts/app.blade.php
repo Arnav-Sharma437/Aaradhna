@@ -28,9 +28,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/jpeg" href="{{ asset('assets/images/Ishana-fav-icon.jpeg') }}?v={{ filemtime(public_path('assets/images/Ishana-fav-icon.jpeg')) }}">
-    <link rel="shortcut icon" type="image/jpeg" href="{{ asset('assets/images/Ishana-fav-icon.jpeg') }}?v={{ filemtime(public_path('assets/images/Ishana-fav-icon.jpeg')) }}">
-    <link rel="apple-touch-icon" href="{{ asset('assets/images/Ishana-fav-icon.jpeg') }}">
+    @php
+        $favRelative = !empty($storeSettings['favicon']) ? $storeSettings['favicon'] : 'assets/images/Ishana-fav-icon.jpeg';
+        $favFull = public_path($favRelative);
+        $favVersion = file_exists($favFull) ? filemtime($favFull) : time();
+        $favUrl = asset($favRelative) . '?v=' . $favVersion;
+        $favExt = strtolower(pathinfo($favRelative, PATHINFO_EXTENSION));
+        $favMime = match($favExt) {
+            'png' => 'image/png',
+            'ico' => 'image/x-icon',
+            'svg' => 'image/svg+xml',
+            'webp' => 'image/webp',
+            default => 'image/jpeg',
+        };
+    @endphp
+    <link rel="icon" type="{{ $favMime }}" href="{{ $favUrl }}">
+    <link rel="shortcut icon" type="{{ $favMime }}" href="{{ $favUrl }}">
+    <link rel="apple-touch-icon" href="{{ $favUrl }}">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('styles')

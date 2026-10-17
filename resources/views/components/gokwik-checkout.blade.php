@@ -53,7 +53,7 @@
             <div class="bg-[#FAF5EE] rounded-[16px] border border-[#EADBCC] p-3.5 space-y-2">
                 <div class="flex items-center justify-between text-xs font-bold text-[#121212] font-heading">
                     <span class="flex items-center gap-1.5">
-                        <img src="{{ asset('assets/images/Ishanaa-logo.png') }}" alt="ISHANAA" class="h-4 w-auto object-contain inline">
+                        <img src="{{ !empty($storeSettings['header_logo']) ? asset($storeSettings['header_logo']) : asset('assets/images/Ishanaa-logo.png') }}" alt="{{ $storeSettings['store_name'] ?? 'ISHANAA' }}" class="h-4 w-auto object-contain inline">
                         <span>Order Summary</span>
                     </span>
                     <span id="gokwik-items-count" class="text-gray-500 font-normal">0 Items in Cart</span>

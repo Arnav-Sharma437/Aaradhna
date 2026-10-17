@@ -40,11 +40,17 @@
             
             <!-- Col 1: Brand Logo, Tagline & Social Media (4.5 Cols) -->
             <div class="lg:col-span-4 space-y-5">
-                <a href="{{ route('home') }}" class="inline-block py-1" aria-label="ISHANAA Home">
+                @php
+                    $footerLogoPath = !empty($storeSettings['footer_logo']) ? $storeSettings['footer_logo'] : 'assets/images/Ishanaa-logo.png';
+                    $footerLogoSrc = asset($footerLogoPath);
+                    $footerLogoInvert = ($storeSettings['footer_logo_invert'] ?? '1') === '1';
+                    $storeBrandName = $storeSettings['store_name'] ?? 'ISHANAA';
+                @endphp
+                <a href="{{ route('home') }}" class="inline-block py-1" aria-label="{{ $storeBrandName }} Home">
                     <img 
-                        src="{{ asset('assets/images/Ishanaa-logo.png') }}" 
-                        alt="ISHANAA" 
-                        class="h-11 sm:h-13 w-auto max-w-[170px] object-contain brightness-0 invert"
+                        src="{{ $footerLogoSrc }}" 
+                        alt="{{ $storeBrandName }}" 
+                        class="h-11 sm:h-13 w-auto max-w-[170px] object-contain {{ $footerLogoInvert ? 'brightness-0 invert' : '' }}"
                     >
                 </a>
                 

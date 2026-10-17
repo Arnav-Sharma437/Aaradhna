@@ -21,8 +21,8 @@
         <div class="p-4 sm:p-5 pb-3 border-b border-white/15 flex items-center justify-between relative z-10">
             <div class="flex items-center space-x-3">
                 <img 
-                    src="{{ asset('assets/images/Ishanaa-logo.png') }}" 
-                    alt="ISHANAA" 
+                    src="{{ !empty($storeSettings['header_logo']) ? asset($storeSettings['header_logo']) : asset('assets/images/Ishanaa-logo.png') }}" 
+                    alt="{{ $storeSettings['store_name'] ?? 'ISHANAA' }}" 
                     class="h-7 sm:h-8 w-auto object-contain"
                 >
                 <span class="text-xs font-bold uppercase tracking-widest text-[#F6DAA8] font-heading border-l border-white/20 pl-3">

@@ -14,8 +14,174 @@
     </div>
 
     <!-- Main Settings Form -->
-    <form method="POST" action="{{ route('admin.settings.update') }}" class="space-y-6">
+    <form method="POST" action="{{ route('admin.settings.update') }}" enctype="multipart/form-data" class="space-y-6">
         @csrf
+
+        <!-- 0. Store Logos & Favicon (Branding Assets) -->
+        <div class="bg-white rounded-[16px] border border-[#E1E3E5] shadow-xs p-6 space-y-6">
+            <div class="flex items-center justify-between pb-4 border-b border-gray-100">
+                <div class="flex items-center space-x-3">
+                    <div class="w-9 h-9 rounded-xl bg-[#FAF5EE] text-[#D38928] flex items-center justify-center font-bold text-base shadow-xs">
+                        🎨
+                    </div>
+                    <div>
+                        <h2 class="text-sm sm:text-base font-bold text-gray-900 font-heading">Store Logos &amp; Favicon</h2>
+                        <p class="text-xs text-gray-500">Upload and manage brand visuals for the website header, footer, and browser tab.</p>
+                    </div>
+                </div>
+                <span class="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200/60">
+                    Live Dynamic Sync
+                </span>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+                <!-- A. Header Logo Card -->
+                <div class="flex flex-col justify-between p-4 rounded-xl border border-gray-200 bg-stone-50/50 hover:border-[#D38928]/40 transition-colors">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold text-gray-800 uppercase tracking-wider flex items-center gap-1.5">
+                                <svg class="w-4 h-4 text-[#D38928]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16"/></svg>
+                                Header Logo
+                            </span>
+                            <span class="text-[10px] text-gray-400 font-medium">Desktop &amp; Mobile Nav</span>
+                        </div>
+                        <p class="text-[11px] text-gray-500 mb-3">Visible at top header navbar &amp; mobile drawer menu.</p>
+
+                        <!-- Preview Box -->
+                        <div class="h-24 w-full rounded-lg bg-white border border-gray-200 flex items-center justify-center p-3 relative overflow-hidden shadow-2xs">
+                            @php
+                                $headerLogoPreview = !empty($settings['header_logo']) ? asset($settings['header_logo']) : asset('assets/images/ishanaa-header-logo.png');
+                            @endphp
+                            <img id="header-logo-preview" src="{{ $headerLogoPreview }}" alt="Header Logo" class="max-h-16 max-w-full object-contain">
+                        </div>
+                    </div>
+
+                    <div class="mt-4 space-y-2">
+                        <label class="block">
+                            <span class="sr-only">Choose Header Logo File</span>
+                            <input 
+                                type="file" 
+                                name="header_logo_file" 
+                                id="header_logo_input" 
+                                accept="image/png,image/jpeg,image/webp,image/svg+xml"
+                                class="block w-full text-xs text-gray-600 file:mr-2.5 file:py-1.5 file:px-3 file:rounded-md file:border-0 file:text-[11px] file:font-bold file:bg-[#121212] file:text-white hover:file:bg-[#2A2A2A] file:cursor-pointer cursor-pointer"
+                            >
+                        </label>
+                        <p class="text-[10px] text-gray-400">PNG, SVG, WEBP, or JPG (Max 5MB). Transparent recommended.</p>
+
+                        @if(!empty($settings['header_logo']))
+                        <div class="pt-1 flex items-center">
+                            <label class="flex items-center space-x-1.5 text-[11px] text-rose-600 cursor-pointer hover:text-rose-700">
+                                <input type="checkbox" name="remove_header_logo" value="1" class="rounded text-rose-600 focus:ring-rose-500 text-xs">
+                                <span>Reset to Default Header Logo</span>
+                            </label>
+                        </div>
+                        @endif
+                    </div>
+                </div>
+
+                <!-- B. Footer Logo Card -->
+                <div class="flex flex-col justify-between p-4 rounded-xl border border-gray-200 bg-stone-50/50 hover:border-[#D38928]/40 transition-colors">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold text-gray-800 uppercase tracking-wider flex items-center gap-1.5">
+                                <svg class="w-4 h-4 text-[#BC7C1C]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                                Footer Logo
+                            </span>
+                            <span class="text-[10px] text-gray-400 font-medium">Footer Section</span>
+                        </div>
+                        <p class="text-[11px] text-gray-500 mb-3">Visible at bottom footer on background (#BC7C1C).</p>
+
+                        <!-- Preview Box on real footer color -->
+                        <div class="h-24 w-full rounded-lg bg-[#BC7C1C] border border-[#a66a14] flex items-center justify-center p-3 relative overflow-hidden shadow-inner">
+                            @php
+                                $footerLogoPreview = !empty($settings['footer_logo']) ? asset($settings['footer_logo']) : asset('assets/images/Ishanaa-logo.png');
+                                $footerInvert = ($settings['footer_logo_invert'] ?? '1') === '1';
+                            @endphp
+                            <img id="footer-logo-preview" src="{{ $footerLogoPreview }}" alt="Footer Logo" class="max-h-16 max-w-full object-contain {{ $footerInvert ? 'brightness-0 invert' : '' }}">
+                        </div>
+                    </div>
+
+                    <div class="mt-4 space-y-2">
+                        <label class="block">
+                            <span class="sr-only">Choose Footer Logo File</span>
+                            <input 
+                                type="file" 
+                                name="footer_logo_file" 
+                                id="footer_logo_input" 
+                                accept="image/png,image/jpeg,image/webp,image/svg+xml"
+                                class="block w-full text-xs text-gray-600 file:mr-2.5 file:py-1.5 file:px-3 file:rounded-md file:border-0 file:text-[11px] file:font-bold file:bg-[#121212] file:text-white hover:file:bg-[#2A2A2A] file:cursor-pointer cursor-pointer"
+                            >
+                        </label>
+                        <p class="text-[10px] text-gray-400">PNG, SVG, WEBP, or JPG (Max 5MB).</p>
+
+                        <div class="pt-1 space-y-1">
+                            <label class="flex items-center space-x-1.5 text-[11px] text-gray-700 cursor-pointer">
+                                <input type="checkbox" name="footer_logo_invert" id="footer_logo_invert" value="1" {{ $footerInvert ? 'checked' : '' }} class="rounded text-[#D38928] focus:ring-[#D38928]">
+                                <span class="font-medium">Auto-White Filter (for dark footer)</span>
+                            </label>
+
+                            @if(!empty($settings['footer_logo']))
+                            <label class="flex items-center space-x-1.5 text-[11px] text-rose-600 cursor-pointer hover:text-rose-700">
+                                <input type="checkbox" name="remove_footer_logo" value="1" class="rounded text-rose-600 focus:ring-rose-500 text-xs">
+                                <span>Reset to Default Footer Logo</span>
+                            </label>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+
+                <!-- C. Favicon Card -->
+                <div class="flex flex-col justify-between p-4 rounded-xl border border-gray-200 bg-stone-50/50 hover:border-[#D38928]/40 transition-colors">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold text-gray-800 uppercase tracking-wider flex items-center gap-1.5">
+                                <svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+                                Website Favicon
+                            </span>
+                            <span class="text-[10px] text-gray-400 font-medium">Browser Tab Icon</span>
+                        </div>
+                        <p class="text-[11px] text-gray-500 mb-3">Visible on browser tabs, bookmarks &amp; mobile shortcuts.</p>
+
+                        <!-- Simulated Browser Tab Preview -->
+                        <div class="h-24 w-full rounded-lg bg-gray-200/70 border border-gray-300 flex items-center justify-center p-3 relative overflow-hidden">
+                            <div class="w-full max-w-[220px] bg-white rounded-t-md shadow-xs px-2.5 py-1.5 flex items-center space-x-2 border-t border-x border-gray-300">
+                                @php
+                                    $favPreview = !empty($settings['favicon']) ? asset($settings['favicon']) : asset('assets/images/Ishana-fav-icon.jpeg');
+                                @endphp
+                                <img id="favicon-preview" src="{{ $favPreview }}" alt="Favicon" class="w-4 h-4 rounded-xs object-cover shrink-0">
+                                <span class="text-[11px] font-medium text-gray-700 truncate">ISHANAA | Pure Sacred Rituals</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 space-y-2">
+                        <label class="block">
+                            <span class="sr-only">Choose Favicon File</span>
+                            <input 
+                                type="file" 
+                                name="favicon_file" 
+                                id="favicon_input" 
+                                accept="image/x-icon,image/png,image/jpeg,image/svg+xml,image/webp"
+                                class="block w-full text-xs text-gray-600 file:mr-2.5 file:py-1.5 file:px-3 file:rounded-md file:border-0 file:text-[11px] file:font-bold file:bg-[#121212] file:text-white hover:file:bg-[#2A2A2A] file:cursor-pointer cursor-pointer"
+                            >
+                        </label>
+                        <p class="text-[10px] text-gray-400">ICO, PNG, SVG or JPG (Square 32x32 / 64x64, max 2MB).</p>
+
+                        @if(!empty($settings['favicon']))
+                        <div class="pt-1 flex items-center">
+                            <label class="flex items-center space-x-1.5 text-[11px] text-rose-600 cursor-pointer hover:text-rose-700">
+                                <input type="checkbox" name="remove_favicon" value="1" class="rounded text-rose-600 focus:ring-rose-500 text-xs">
+                                <span>Reset to Default Favicon</span>
+                            </label>
+                        </div>
+                        @endif
+                    </div>
+                </div>
+
+            </div>
+        </div>
 
         <!-- 1. General Branding & Store Information -->
         <div class="bg-white rounded-[16px] border border-[#E1E3E5] shadow-xs p-6 space-y-5">
@@ -202,3 +368,43 @@
 
 </div>
 @endsection
+
+@push('scripts')
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        function setupLivePreview(inputId, previewId) {
+            const input = document.getElementById(inputId);
+            const preview = document.getElementById(previewId);
+            if (!input || !preview) return;
+
+            input.addEventListener('change', function (e) {
+                const file = e.target.files && e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function (evt) {
+                        preview.src = evt.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        }
+
+        setupLivePreview('header_logo_input', 'header-logo-preview');
+        setupLivePreview('footer_logo_input', 'footer-logo-preview');
+        setupLivePreview('favicon_input', 'favicon-preview');
+
+        // Toggle footer logo invert preview live
+        const invertCheckbox = document.getElementById('footer_logo_invert');
+        const footerPreview = document.getElementById('footer-logo-preview');
+        if (invertCheckbox && footerPreview) {
+            invertCheckbox.addEventListener('change', function () {
+                if (this.checked) {
+                    footerPreview.classList.add('brightness-0', 'invert');
+                } else {
+                    footerPreview.classList.remove('brightness-0', 'invert');
+                }
+            });
+        }
+    });
+</script>
+@endpush

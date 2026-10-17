@@ -24,8 +24,13 @@
         </button>
 
         <!-- Brand Logo -->
+        @php
+            $headerLogoPath = !empty($storeSettings['header_logo']) ? $storeSettings['header_logo'] : 'assets/images/ishanaa-header-logo.png';
+            $headerLogoSrc = asset($headerLogoPath);
+            $storeBrandName = $storeSettings['store_name'] ?? 'ISHANAA - Puja Essentials & Fragrances';
+        @endphp
         <a href="{{ route('home') }}" class="flex items-center">
-            <img src="{{ asset('assets/images/ishanaa-header-logo.png') }}" alt="ISHANAA - Puja Essentials & Fragrances" class="h-9 sm:h-10 w-auto object-contain">
+            <img src="{{ $headerLogoSrc }}" alt="{{ $storeBrandName }}" class="h-9 sm:h-10 w-auto object-contain">
         </a>
 
         <!-- Right Quick Actions -->

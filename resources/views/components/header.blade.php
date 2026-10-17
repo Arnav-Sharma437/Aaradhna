@@ -16,11 +16,17 @@
                     </svg>
                 </button>
 
+                @php
+                    $headerLogoPath = !empty($storeSettings['header_logo']) ? $storeSettings['header_logo'] : 'assets/images/ishanaa-header-logo.png';
+                    $headerLogoSrc = asset($headerLogoPath);
+                    $storeBrandName = $storeSettings['store_name'] ?? 'ISHANAA - Puja Essentials & Fragrances';
+                @endphp
+
                 <!-- Brand Logo (Desktop Left-aligned) -->
-                <a href="{{ route('home') }}" class="hidden lg:flex items-center py-1" aria-label="ISHANAA - Pure Sacred Rituals">
+                <a href="{{ route('home') }}" class="hidden lg:flex items-center py-1" aria-label="{{ $storeBrandName }}">
                     <img 
-                        src="{{ asset('assets/images/ishanaa-header-logo.png') }}" 
-                        alt="ISHANAA - Puja Essentials & Fragrances" 
+                        src="{{ $headerLogoSrc }}" 
+                        alt="{{ $storeBrandName }}" 
                         class="h-10 lg:h-11 xl:h-12 w-auto max-w-[150px] lg:max-w-[175px] xl:max-w-[195px] object-contain transition-transform duration-200 hover:scale-105"
                     >
                 </a>
@@ -28,10 +34,10 @@
 
             <!-- CENTER: Brand Logo (Mobile Centered) -->
             <div class="lg:hidden absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-auto">
-                <a href="{{ route('home') }}" class="flex items-center py-1" aria-label="ISHANAA - Pure Sacred Rituals">
+                <a href="{{ route('home') }}" class="flex items-center py-1" aria-label="{{ $storeBrandName }}">
                     <img 
-                        src="{{ asset('assets/images/ishanaa-header-logo.png') }}" 
-                        alt="ISHANAA - Puja Essentials & Fragrances" 
+                        src="{{ $headerLogoSrc }}" 
+                        alt="{{ $storeBrandName }}" 
                         class="h-10 sm:h-12 w-auto max-w-[150px] sm:max-w-[170px] object-contain"
                     >
                 </a>
