@@ -6,116 +6,112 @@
 @section('content')
 
 <!-- ========================================================================= -->
-<!-- 1. FULL LUXURY HERO BANNER (CONTAINERIZED WITH PRODUCT CARD RADIUS)         -->
+<!-- 1. FULL-WIDTH CLEAN LUXURY HERO BANNER                                     -->
 <!-- ========================================================================= -->
-<section class="relative w-full bg-white select-none py-3 sm:py-4 lg:py-6 font-body" id="hero-banner-carousel">
-    <div class="w-full max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8 xl:px-10">
-        <div class="relative w-full">
-            
-            <!-- Slides Wrapper (Responsive Hero Banner with Product Card Border Radius) -->
-            <div class="hero-banner-wrapper relative w-full overflow-hidden rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] shadow-xs bg-white">
-                
-                @if(isset($banners) && $banners->isNotEmpty())
-                    @foreach($banners as $index => $banner)
-                        <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out {{ $index === 0 ? 'opacity-100 pointer-events-auto z-10' : 'opacity-0 pointer-events-none z-0' }} flex items-center justify-center bg-white" data-slide="{{ $index }}">
-                            <a href="{{ $banner->button_link ?: route('collections.show', 'bambooless') }}" class="block w-full h-full relative cursor-pointer" aria-label="{{ $banner->title }}">
-                                @if($banner->mobile_image_path)
-                                    <picture class="w-full h-full block">
-                                        <source media="(max-width: 768px)" srcset="{{ asset($banner->mobile_image_path) }}">
-                                        <img 
-                                            src="{{ asset($banner->desktop_image_path) }}" 
-                                            alt="{{ $banner->title }}" 
-                                            class="w-full h-full object-cover object-center rounded-[20px] sm:rounded-[24px]"
-                                            {{ $index > 0 ? 'loading=lazy' : '' }}
-                                        >
-                                    </picture>
-                                @else
-                                    <img 
-                                        src="{{ asset($banner->desktop_image_path) }}" 
-                                        alt="{{ $banner->title }}" 
-                                        class="w-full h-full object-cover object-center rounded-[20px] sm:rounded-[24px]"
-                                        {{ $index > 0 ? 'loading=lazy' : '' }}
-                                    >
-                                @endif
-                            </a>
-                        </div>
-                    @endforeach
-                @else
-                    <!-- SLIDE 1: SACRED BAMBOOLEES COLLECTION -->
-                    <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-100 pointer-events-auto z-10 flex items-center justify-center bg-white" data-slide="0">
-                        <a href="{{ route('collections.show', 'bambooless') }}" class="block w-full h-full relative cursor-pointer" aria-label="Explore Sacred Bambooless Incense Collection">
+<section class="relative w-full bg-white overflow-hidden select-none border-b border-[#EAE3D9] font-body" id="hero-banner-carousel">
+    
+    <!-- Slides Wrapper (Responsive Hero Banner Wrapper for 100%, 110%, 125%, 150% Zoom & Mac) -->
+    <div class="hero-banner-wrapper relative w-full overflow-hidden bg-white">
+        
+        @if(isset($banners) && $banners->isNotEmpty())
+            @foreach($banners as $index => $banner)
+                <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out {{ $index === 0 ? 'opacity-100 pointer-events-auto z-10' : 'opacity-0 pointer-events-none z-0' }} flex items-center justify-center bg-white" data-slide="{{ $index }}">
+                    <a href="{{ $banner->button_link ?: route('collections.show', 'bambooless') }}" class="block w-full h-full relative cursor-pointer" aria-label="{{ $banner->title }}">
+                        @if($banner->mobile_image_path)
                             <picture class="w-full h-full block">
-                                <source media="(max-width: 768px)" srcset="{{ asset('assets/images/hero-sacred-mobile.jpg') }}">
+                                <source media="(max-width: 768px)" srcset="{{ asset($banner->mobile_image_path) }}">
                                 <img 
-                                    src="{{ asset('assets/images/hero-sacred.jpg') }}" 
-                                    alt="ISHANAA Sacred Bambooless Collection" 
-                                    class="w-full h-full object-cover object-center rounded-[20px] sm:rounded-[24px]"
+                                    src="{{ asset($banner->desktop_image_path) }}" 
+                                    alt="{{ $banner->title }}" 
+                                    class="w-full h-full object-cover object-center"
+                                    {{ $index > 0 ? 'loading=lazy' : '' }}
                                 >
                             </picture>
-                        </a>
-                    </div>
-
-                    <!-- SLIDE 2: SACRED HAVAN CUPS COLLECTION (RESPONSIVE DESKTOP & MOBILE BANNER) -->
-                    <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 pointer-events-none z-0 flex items-center justify-center bg-white" data-slide="1">
-                        <a href="{{ route('collections.show', 'havan-cups') }}" class="block w-full h-full relative cursor-pointer" aria-label="Explore Sacred Havan Cups Collection">
-                            <picture class="w-full h-full block">
-                                <source media="(max-width: 768px)" srcset="{{ asset('assets/images/hero-sacred-hawan-cups-mobile.jpg') }}">
-                                <img 
-                                    src="{{ asset('assets/images/hero-sacred-hawan-cups.jpg') }}" 
-                                    alt="ISHANAA Sacred Havan Cups Collection" 
-                                    class="w-full h-full object-cover object-center rounded-[20px] sm:rounded-[24px]"
-                                >
-                            </picture>
-                        </a>
-                    </div>
-
-                    <!-- SLIDE 3: SACRED DHOOP CONES COLLECTION (RESPONSIVE DESKTOP & MOBILE BANNER) -->
-                    <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 pointer-events-none z-0 flex items-center justify-center bg-white" data-slide="2">
-                        <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block w-full h-full relative cursor-pointer" aria-label="Explore Sacred Dhoop Cones Collection">
-                            <picture class="w-full h-full block">
-                                <source media="(max-width: 768px)" srcset="{{ asset('assets/images/hera-sacred-dhoop-cones-mobile.jpg') }}">
-                                <img 
-                                    src="{{ asset('assets/images/hera-sacred-dhoop-cones.jpg') }}" 
-                                    alt="ISHANAA Sacred Dhoop Cones Collection" 
-                                    class="w-full h-full object-cover object-center rounded-[20px] sm:rounded-[24px]"
-                                >
-                            </picture>
-                        </a>
-                    </div>
-                @endif
-
+                        @else
+                            <img 
+                                src="{{ asset($banner->desktop_image_path) }}" 
+                                alt="{{ $banner->title }}" 
+                                class="w-full h-full object-cover object-center"
+                                {{ $index > 0 ? 'loading=lazy' : '' }}
+                            >
+                        @endif
+                    </a>
+                </div>
+            @endforeach
+        @else
+            <!-- SLIDE 1: SACRED BAMBOOLEES COLLECTION -->
+            <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-100 pointer-events-auto z-10 flex items-center justify-center bg-white" data-slide="0">
+                <a href="{{ route('collections.show', 'bambooless') }}" class="block w-full h-full relative cursor-pointer" aria-label="Explore Sacred Bambooless Incense Collection">
+                    <picture class="w-full h-full block">
+                        <source media="(max-width: 768px)" srcset="{{ asset('assets/images/hero-sacred-mobile.jpg') }}">
+                        <img 
+                            src="{{ asset('assets/images/hero-sacred.jpg') }}" 
+                            alt="ISHANAA Sacred Bambooless Collection" 
+                            class="w-full h-full object-cover object-center"
+                        >
+                    </picture>
+                </a>
             </div>
 
-            <!-- Luxury Premium Carousel Arrow Controls (Desktop only - hidden on mobile) -->
-            <button 
-                type="button" 
-                id="hero-slider-prev"
-                class="hidden md:flex absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/85 hover:bg-[#D38928] text-[#1F1F1F] hover:text-white items-center justify-center backdrop-blur-md border border-[#D38928]/40 hover:border-[#F6DAA8] shadow-lg transition-all duration-300 transform hover:scale-105 active:scale-95 focus:outline-none cursor-pointer group"
-                aria-label="Previous Slide"
-            >
-                <svg class="w-5 h-5 group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
-            </button>
-            <button 
-                type="button" 
-                id="hero-slider-next"
-                class="hidden md:flex absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/85 hover:bg-[#D38928] text-[#1F1F1F] hover:text-white items-center justify-center backdrop-blur-md border border-[#D38928]/40 hover:border-[#F6DAA8] shadow-lg transition-all duration-300 transform hover:scale-105 active:scale-95 focus:outline-none cursor-pointer group"
-                aria-label="Next Slide"
-            >
-                <svg class="w-5 h-5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-            </button>
-
-            <!-- Carousel Pagination Dots (Below Banner) -->
-            @php
-                $slideCount = (isset($banners) && $banners->isNotEmpty()) ? $banners->count() : 3;
-            @endphp
-            <div class="flex pt-3 sm:pt-3.5 justify-center items-center space-x-2 sm:space-x-2.5 relative z-20" id="hero-slider-dots">
-                @for($i = 0; $i < $slideCount; $i++)
-                    <button type="button" class="{{ $i === 0 ? 'w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-[#D38928]' : 'w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-[#D38928]/30 hover:bg-[#D38928]/60' }} transition-all duration-300 cursor-pointer" data-index="{{ $i }}" aria-label="Slide {{ $i + 1 }}"></button>
-                @endfor
+            <!-- SLIDE 2: SACRED HAVAN CUPS COLLECTION (RESPONSIVE DESKTOP & MOBILE BANNER) -->
+            <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 pointer-events-none z-0 flex items-center justify-center bg-white" data-slide="1">
+                <a href="{{ route('collections.show', 'havan-cups') }}" class="block w-full h-full relative cursor-pointer" aria-label="Explore Sacred Havan Cups Collection">
+                    <picture class="w-full h-full block">
+                        <source media="(max-width: 768px)" srcset="{{ asset('assets/images/hero-sacred-hawan-cups-mobile.jpg') }}">
+                        <img 
+                            src="{{ asset('assets/images/hero-sacred-hawan-cups.jpg') }}" 
+                            alt="ISHANAA Sacred Havan Cups Collection" 
+                            class="w-full h-full object-cover object-center"
+                        >
+                    </picture>
+                </a>
             </div>
 
-        </div>
+            <!-- SLIDE 3: SACRED DHOOP CONES COLLECTION (RESPONSIVE DESKTOP & MOBILE BANNER) -->
+            <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 pointer-events-none z-0 flex items-center justify-center bg-white" data-slide="2">
+                <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block w-full h-full relative cursor-pointer" aria-label="Explore Sacred Dhoop Cones Collection">
+                    <picture class="w-full h-full block">
+                        <source media="(max-width: 768px)" srcset="{{ asset('assets/images/hera-sacred-dhoop-cones-mobile.jpg') }}">
+                        <img 
+                            src="{{ asset('assets/images/hera-sacred-dhoop-cones.jpg') }}" 
+                            alt="ISHANAA Sacred Dhoop Cones Collection" 
+                            class="w-full h-full object-cover object-center"
+                        >
+                    </picture>
+                </a>
+            </div>
+        @endif
+
     </div>
+
+    <!-- Luxury Premium Carousel Arrow Controls (Desktop only - hidden on mobile) -->
+    <button 
+        type="button" 
+        id="hero-slider-prev"
+        class="hidden md:flex absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/85 hover:bg-[#D38928] text-[#1F1F1F] hover:text-white items-center justify-center backdrop-blur-md border border-[#D38928]/40 hover:border-[#F6DAA8] shadow-lg transition-all duration-300 transform hover:scale-105 active:scale-95 focus:outline-none cursor-pointer group"
+        aria-label="Previous Slide"
+    >
+        <svg class="w-5 h-5 group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+    </button>
+    <button 
+        type="button" 
+        id="hero-slider-next"
+        class="hidden md:flex absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/85 hover:bg-[#D38928] text-[#1F1F1F] hover:text-white items-center justify-center backdrop-blur-md border border-[#D38928]/40 hover:border-[#F6DAA8] shadow-lg transition-all duration-300 transform hover:scale-105 active:scale-95 focus:outline-none cursor-pointer group"
+        aria-label="Next Slide"
+    >
+        <svg class="w-5 h-5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+    </button>
+
+    <!-- Carousel Pagination Dots (Below Banner on both Mobile & Desktop) -->
+    @php
+        $slideCount = (isset($banners) && $banners->isNotEmpty()) ? $banners->count() : 3;
+    @endphp
+    <div class="flex py-3 sm:py-3.5 bg-white justify-center items-center space-x-2 sm:space-x-2.5 relative z-20" id="hero-slider-dots">
+        @for($i = 0; $i < $slideCount; $i++)
+            <button type="button" class="{{ $i === 0 ? 'w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-[#D38928]' : 'w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-[#D38928]/30 hover:bg-[#D38928]/60' }} transition-all duration-300 cursor-pointer" data-index="{{ $i }}" aria-label="Slide {{ $i + 1 }}"></button>
+        @endfor
+    </div>
+
 </section>
 
 
