@@ -1,51 +1,23 @@
 <header class="sticky top-0 z-40 bg-white/98 backdrop-blur-md border-b border-[#EAE3D9] transition-all duration-200 shadow-xs font-body">
     <div class="w-full max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8 xl:px-10">
-        <div class="relative flex items-center justify-between h-18 sm:h-20 lg:h-22 gap-2 sm:gap-4">
+        <div class="relative flex items-center justify-between h-20 sm:h-22 lg:h-24 gap-2 sm:gap-4">
             
-            <!-- LEFT: Mobile Menu Button (Mobile only) + Desktop Brand Logo -->
-            <div class="flex items-center space-x-2 sm:space-x-3 shrink-0">
-                <!-- Mobile Menu Button (Mobile / Tablet Only) -->
+            <!-- MOBILE LEFT: Hamburger Menu Button -->
+            <div class="flex lg:hidden items-center shrink-0">
                 <button 
                     type="button" 
                     id="mobile-menu-trigger"
-                    class="lg:hidden p-2 -ml-1.5 text-[#121212] hover:text-[#D38928] focus:outline-none transition-colors rounded-lg hover:bg-stone-100/60 cursor-pointer z-10"
+                    class="p-2 -ml-1.5 text-[#121212] hover:text-[#D38928] focus:outline-none transition-colors rounded-lg hover:bg-stone-100/60 cursor-pointer z-10"
                     aria-label="Open Mobile Menu"
                 >
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
                 </button>
-
-                @php
-                    $headerLogoPath = !empty($storeSettings['header_logo']) ? $storeSettings['header_logo'] : 'assets/images/ishanaa-header-logo.png';
-                    $headerLogoSrc = asset($headerLogoPath);
-                    $storeBrandName = $storeSettings['store_name'] ?? 'ISHANAA - Puja Essentials & Fragrances';
-                @endphp
-
-                <!-- Brand Logo (Desktop Left-aligned) -->
-                <a href="{{ route('home') }}" class="hidden lg:flex items-center py-1" aria-label="{{ $storeBrandName }}">
-                    <img 
-                        src="{{ $headerLogoSrc }}" 
-                        alt="{{ $storeBrandName }}" 
-                        class="h-10 lg:h-11 xl:h-12 w-auto max-w-[150px] lg:max-w-[175px] xl:max-w-[195px] object-contain transition-transform duration-200 hover:scale-105"
-                    >
-                </a>
             </div>
 
-            <!-- CENTER: Brand Logo (Mobile Centered) -->
-            <div class="lg:hidden absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-auto">
-                <a href="{{ route('home') }}" class="flex items-center py-1" aria-label="{{ $storeBrandName }}">
-                    <img 
-                        src="{{ $headerLogoSrc }}" 
-                        alt="{{ $storeBrandName }}" 
-                        class="h-10 sm:h-12 w-auto max-w-[150px] sm:max-w-[170px] object-contain"
-                    >
-                </a>
-            </div>
-
-            <!-- CENTER: Navigation Menu (Desktop & Laptop) - Fluid Auto Spacing -->
-            <nav class="hidden lg:flex items-center justify-center flex-1 min-w-0 space-x-3 lg:space-x-4 xl:space-x-6 2xl:space-x-7 px-1 xl:px-2 font-body">
-                
+            <!-- DESKTOP LEFT: Navigation 1-3 (Bambooless, Havan Cups, Dhoop Cones) -->
+            <nav class="hidden lg:flex items-center justify-end flex-1 min-w-0 space-x-3.5 xl:space-x-5 2xl:space-x-7 font-body pr-3 xl:pr-6">
                 <!-- 1. Bambooless -->
                 @php $isBambooless = request()->is('collections/bambooless'); @endphp
                 <div class="py-2 xl:py-3 flex items-center">
@@ -78,7 +50,26 @@
                         <span>Dhoop Cones</span>
                     </a>
                 </div>
+            </nav>
 
+            <!-- CENTER BRAND LOGO (Desktop & Mobile - Centered with Enlarged Legible Width) -->
+            @php
+                $headerLogoPath = !empty($storeSettings['header_logo']) ? $storeSettings['header_logo'] : 'assets/images/ishanaa-header-logo.png';
+                $headerLogoSrc = asset($headerLogoPath);
+                $storeBrandName = $storeSettings['store_name'] ?? 'ISHANAA - Puja Essentials & Fragrances';
+            @endphp
+            <div class="flex items-center justify-center shrink-0 px-2 sm:px-4 lg:px-6">
+                <a href="{{ route('home') }}" class="flex items-center justify-center py-1 transition-transform duration-200 hover:scale-105" aria-label="{{ $storeBrandName }}">
+                    <img 
+                        src="{{ $headerLogoSrc }}" 
+                        alt="{{ $storeBrandName }}" 
+                        class="h-11 sm:h-12 lg:h-14 xl:h-16 w-auto max-w-[170px] sm:max-w-[210px] lg:max-w-[250px] xl:max-w-[290px] object-contain"
+                    >
+                </a>
+            </div>
+
+            <!-- DESKTOP RIGHT: Navigation 4-6 (Offers, Best Seller, Pitambara) + Action Icons -->
+            <div class="hidden lg:flex items-center justify-start flex-1 min-w-0 space-x-3.5 xl:space-x-5 2xl:space-x-6 font-body pl-3 xl:pl-6">
                 <!-- 4. Super Save Offers (Interactive Mega Menu) -->
                 @php $isSuperSave = request()->is('bundles*') || request()->is('collections/super-save-offers'); @endphp
                 <div class="relative group py-2 xl:py-3 flex items-center">
@@ -92,8 +83,8 @@
                         </svg>
                     </button>
                     
-                    <!-- Mega Menu with Dynamic Image Preview (Enlarged Luxury Dimensions) -->
-                    <div class="absolute -left-20 top-full -mt-0.5 w-[680px] bg-white rounded-2xl shadow-2xl border border-[#EADBCC] p-5 sm:p-6 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top group-hover:translate-y-0 translate-y-1 pointer-events-none group-hover:pointer-events-auto">
+                    <!-- Mega Menu with Dynamic Image Preview (Positioned comfortably) -->
+                    <div class="absolute -left-10 xl:left-0 top-full -mt-0.5 w-[680px] bg-white rounded-2xl shadow-2xl border border-[#EADBCC] p-5 sm:p-6 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top group-hover:translate-y-0 translate-y-1 pointer-events-none group-hover:pointer-events-auto">
                         <div class="grid grid-cols-12 gap-5 items-center">
                             
                             <!-- Left: 2 Offer Items (7 Cols) -->
@@ -137,7 +128,7 @@
                                 </div>
                             </div>
 
-                            <!-- Right: Dynamic Hover Image Preview Box (5px Padding & Subtle Border) -->
+                            <!-- Right: Dynamic Hover Image Preview Box -->
                             <div class="col-span-5 p-[5px] bg-[#FFFDF9] border border-[#EADBCC] rounded-[18px] shadow-2xs">
                                 <div class="relative w-full h-[205px] rounded-[14px] overflow-hidden bg-[#FAF7F2] border border-[#EADBCC]/60 shadow-inner">
                                     <img 
@@ -181,57 +172,96 @@
                     </a>
                 </div>
 
-            </nav>
+                <!-- Subtle Vertical Divider -->
+                <div class="h-5 w-px bg-[#EAE3D9] mx-1 xl:mx-2 shrink-0"></div>
 
-            <!-- RIGHT: Clean Compact Action Icons (Search + Account + Wishlist + Cart) -->
-            <div class="flex items-center justify-end space-x-1 sm:space-x-1.5 lg:space-x-2 shrink-0">
-                
-                <!-- 1. Search Icon Button -->
+                <!-- Action Icons (Search, Account, Cart) -->
+                <div class="flex items-center space-x-1 sm:space-x-1.5 shrink-0 ml-auto">
+                    <!-- Search Icon Button -->
+                    <button 
+                        type="button" 
+                        class="p-2 text-[#1F1F1F] hover:text-[#C28430] transition-colors focus:outline-none shrink-0 cursor-pointer rounded-full hover:bg-stone-50 search-modal-opener" 
+                        aria-label="Open Search"
+                    >
+                        <svg class="w-5 h-5 xl:w-[22px] xl:h-[22px]" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                    </button>
+
+                    <!-- Customer Account -->
+                    <a 
+                        href="{{ auth()->check() ? route('account.index') : route('account.login') }}" 
+                        class="p-1.5 sm:p-2 text-[#1F1F1F] hover:text-[#C28430] transition-colors inline-flex items-center justify-center shrink-0 rounded-full hover:bg-stone-50 relative group"
+                        aria-label="Customer Account"
+                        title="{{ auth()->check() ? 'My Devotee Account (' . auth()->user()->name . ')' : 'Sign In to Devotee Account' }}"
+                    >
+                        <div class="relative">
+                            <svg class="w-5 h-5 xl:w-[22px] xl:h-[22px] {{ auth()->check() ? 'text-[#C28430]' : '' }}" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                            </svg>
+                            <span class="absolute -top-1 -right-1 text-[#D38928] text-[10px] leading-none font-bold">⚡</span>
+                        </div>
+                    </a>
+
+                    <!-- Shopping Bag / Cart -->
+                    <a 
+                        href="{{ route('cart.index') }}" 
+                        class="p-1.5 sm:p-2 text-[#1F1F1F] hover:text-[#C28430] transition-colors relative inline-flex items-center justify-center shrink-0 cursor-pointer rounded-full hover:bg-stone-50 cart-drawer-opener" 
+                        aria-label="Cart"
+                    >
+                        <svg class="w-5 h-5 xl:w-[22px] xl:h-[22px]" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+                        </svg>
+                        
+                        <span 
+                            class="header-cart-badge absolute top-0.5 right-0 bg-[#831F2E] text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center leading-none ring-1 ring-white"
+                        >
+                            {{ session('cart_count', 0) }}
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- MOBILE RIGHT: Action Icons -->
+            <div class="flex lg:hidden items-center justify-end space-x-1 sm:space-x-1.5 shrink-0">
                 <button 
                     type="button" 
                     id="search-modal-trigger" 
-                    class="p-2 text-[#1F1F1F] hover:text-[#C28430] transition-colors focus:outline-none shrink-0 cursor-pointer rounded-full hover:bg-stone-50" 
+                    class="p-2 text-[#1F1F1F] hover:text-[#C28430] transition-colors focus:outline-none shrink-0 cursor-pointer rounded-full hover:bg-stone-50 search-modal-opener" 
                     aria-label="Open Search"
                 >
-                    <svg class="w-6 h-6 sm:w-[25px] sm:h-[25px]" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
                     </svg>
                 </button>
 
-                <!-- 2. Customer Account (Visible on all screens) -->
                 <a 
                     href="{{ auth()->check() ? route('account.index') : route('account.login') }}" 
                     class="p-1.5 sm:p-2 text-[#1F1F1F] hover:text-[#C28430] transition-colors inline-flex items-center justify-center shrink-0 rounded-full hover:bg-stone-50 relative group"
                     aria-label="Customer Account"
-                    title="{{ auth()->check() ? 'My Devotee Account (' . auth()->user()->name . ')' : 'Sign In to Devotee Account' }}"
                 >
-                    <div class="relative">
-                        <svg class="w-5 h-5 sm:w-6 sm:h-6 {{ auth()->check() ? 'text-[#C28430]' : '' }}" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
-                        </svg>
-                        <span class="absolute -top-1 -right-1 text-[#D38928] text-[10px] leading-none font-bold">⚡</span>
-                    </div>
+                    <svg class="w-5 h-5 {{ auth()->check() ? 'text-[#C28430]' : '' }}" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                    </svg>
                 </a>
 
-                <!-- 3. Shopping Bag / Cart with live badge -->
                 <a 
                     href="{{ route('cart.index') }}" 
                     id="cart-drawer-trigger" 
-                    class="p-1.5 sm:p-2 text-[#1F1F1F] hover:text-[#C28430] transition-colors relative inline-flex items-center justify-center shrink-0 cursor-pointer rounded-full hover:bg-stone-50" 
+                    class="p-1.5 sm:p-2 text-[#1F1F1F] hover:text-[#C28430] transition-colors relative inline-flex items-center justify-center shrink-0 cursor-pointer rounded-full hover:bg-stone-50 cart-drawer-opener" 
                     aria-label="Cart"
                 >
-                    <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
                     </svg>
                     
                     <span 
                         id="header-cart-badge"
-                        class="absolute top-0.5 right-0 bg-[#831F2E] text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center leading-none ring-1 ring-white"
+                        class="header-cart-badge absolute top-0.5 right-0 bg-[#831F2E] text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center leading-none ring-1 ring-white"
                     >
                         {{ session('cart_count', 0) }}
                     </span>
                 </a>
-
             </div>
 
         </div>
