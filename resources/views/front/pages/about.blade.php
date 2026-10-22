@@ -291,12 +291,12 @@
                 Into Your Daily Pooja
             </h2>
             <p class="text-stone-300 text-xs sm:text-sm max-w-lg mx-auto">
-                Explore our full collection of bambooless sticks, organic havan cups, and charcoal-free dhoop cones.
+                Explore our full collection of incense sticks, organic havan cups, and charcoal-free dhoop cones.
             </p>
             <div class="pt-2">
                 <a 
                     href="{{ route('collections.show', 'bambooless') }}" 
-                    class="inline-flex items-center space-x-2 px-8 py-3.5 bg-[#D38928] hover:bg-[#b8741e] text-white text-xs sm:text-sm font-bold uppercase tracking-widest rounded-[10px] shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 font-heading"
+                    class="inline-flex items-center space-x-2 px-8 py-3.5 bg-[#D38928] hover:bg-[#b8741e] text-white text-xs sm:text-sm font-bold uppercase tracking-widest rounded-none shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 font-heading"
                 >
                     <span>Shop Sacred Collection</span>
                     <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>

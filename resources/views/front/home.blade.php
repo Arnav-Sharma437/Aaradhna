@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
-@section('title', 'ISHANAA™ — 100% Pure Bambooless Agarbatti & Vedic Pooja Samagri')
-@section('meta_description', 'Shri Ram Uphaar, Bambooless Incense Sticks, Havan Cups, Dhoop Cones, and Natural Attar Sprays crafted as per Vedic Vidhi.')
+@section('title', 'ISHANAA™ — 100% Pure Incense Sticks & Vedic Pooja Samagri')
+@section('meta_description', 'Shri Ram Uphaar, Pure Incense Sticks, Havan Cups, Dhoop Cones, and Natural Attar Sprays crafted as per Vedic Vidhi.')
 
 @section('content')
 
 <!-- ========================================================================= -->
 <!-- 1. FULL-WIDTH CLEAN LUXURY HERO BANNER                                     -->
 <!-- ========================================================================= -->
-<section class="relative w-full bg-[#f5ecda] overflow-hidden select-none font-body" id="hero-banner-carousel">
+<section class="relative w-full bg-white overflow-hidden select-none font-body" id="hero-banner-carousel">
     
     <!-- Full-Width Glass Announcement Bar Attached to Top of Hero Banner -->
     <div class="absolute top-0 inset-x-0 w-full z-25 pointer-events-auto">
@@ -16,7 +16,7 @@
     </div>
 
     <!-- Slides Wrapper (Responsive Hero Banner Wrapper for 100%, 110%, 125%, 150% Zoom & Mac) -->
-    <div class="hero-banner-wrapper relative w-full overflow-hidden bg-[#f5ecda]">
+    <div class="hero-banner-wrapper relative w-full overflow-hidden bg-white">
         
         @if(isset($banners) && $banners->isNotEmpty())
             @foreach($banners as $index => $banner)
@@ -44,14 +44,14 @@
                 </div>
             @endforeach
         @else
-            <!-- SLIDE 1: SACRED BAMBOOLEES COLLECTION -->
+            <!-- SLIDE 1: SACRED INCENSE STICKS COLLECTION -->
             <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-100 pointer-events-auto z-10 flex items-center justify-center bg-white" data-slide="0">
-                <a href="{{ route('collections.show', 'bambooless') }}" class="block w-full h-full relative cursor-pointer" aria-label="Explore Sacred Bambooless Incense Collection">
+                <a href="{{ route('collections.show', 'bambooless') }}" class="block w-full h-full relative cursor-pointer" aria-label="Explore Sacred Incense Sticks Collection">
                     <picture class="w-full h-full block">
                         <source media="(max-width: 768px)" srcset="{{ asset('assets/images/hero-sacred-mobile.jpg') }}">
                         <img 
                             src="{{ asset('assets/images/hero-sacred.jpg') }}" 
-                            alt="ISHANAA Sacred Bambooless Collection" 
+                            alt="ISHANAA Sacred Incense Sticks Collection" 
                             class="w-full h-full object-cover object-center"
                         >
                     </picture>
@@ -89,13 +89,13 @@
 
     </div>
 
-    <!-- Carousel Pagination Dots (Below Banner on both Mobile & Desktop) -->
+    <!-- Carousel Pagination Indicators (Square, Below Banner on both Mobile & Desktop) -->
     @php
         $slideCount = (isset($banners) && $banners->isNotEmpty()) ? $banners->count() : 3;
     @endphp
-    <div class="flex py-3 sm:py-3.5 bg-[#f5ecda] justify-center items-center space-x-2 sm:space-x-2.5 relative z-20" id="hero-slider-dots">
+    <div class="flex py-3 sm:py-3.5 bg-white justify-center items-center space-x-2 sm:space-x-2.5 relative z-20" id="hero-slider-dots">
         @for($i = 0; $i < $slideCount; $i++)
-            <button type="button" class="{{ $i === 0 ? 'w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-[#C18129]' : 'w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-[#C18129]/30 hover:bg-[#C18129]/60' }} transition-all duration-300 cursor-pointer" data-index="{{ $i }}" aria-label="Slide {{ $i + 1 }}"></button>
+            <button type="button" class="{{ $i === 0 ? 'w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-none bg-[#C18129]' : 'w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-none bg-[#C18129]/30 hover:bg-[#C18129]/60' }} transition-all duration-300 cursor-pointer" data-index="{{ $i }}" aria-label="Slide {{ $i + 1 }}"></button>
         @endfor
     </div>
 
@@ -106,7 +106,7 @@
 <!-- ========================================================================= -->
 <!-- 2. BESTSELLER OF THE MONTH (All 8 Products in Mobile Slider & Desktop Grid) -->
 <!-- ========================================================================= -->
-<section class="py-[40px] bg-[#f5ecda] overflow-hidden">
+<section class="py-[40px] bg-white overflow-hidden">
     <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
         
         <!-- Section Header -->
@@ -119,11 +119,11 @@
 
         <!-- Bestseller Section Container with Mobile Slider Arrows -->
         <div class="relative">
-            <!-- Left / Right Mobile Navigation Buttons -->
+            <!-- Left / Right Mobile Navigation Buttons (Square) -->
             <button 
                 type="button" 
                 id="bestseller-prev-btn" 
-                class="sm:hidden absolute -left-2 top-[38%] -translate-y-1/2 z-30 w-8 h-8 rounded-full bg-white border border-[#EADBCC] text-[#965A15] flex items-center justify-center active:scale-95 transition-all cursor-pointer"
+                class="sm:hidden absolute -left-2 top-[38%] -translate-y-1/2 z-30 w-8 h-8 rounded-none bg-white border border-[#EADBCC] text-[#965A15] flex items-center justify-center active:scale-95 transition-all cursor-pointer"
                 aria-label="Previous Slide"
             >
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg>
@@ -131,7 +131,7 @@
             <button 
                 type="button" 
                 id="bestseller-next-btn" 
-                class="sm:hidden absolute -right-2 top-[38%] -translate-y-1/2 z-30 w-8 h-8 rounded-full bg-white border border-[#EADBCC] text-[#965A15] flex items-center justify-center active:scale-95 transition-all cursor-pointer"
+                class="sm:hidden absolute -right-2 top-[38%] -translate-y-1/2 z-30 w-8 h-8 rounded-none bg-white border border-[#EADBCC] text-[#965A15] flex items-center justify-center active:scale-95 transition-all cursor-pointer"
                 aria-label="Next Slide"
             >
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
@@ -174,7 +174,7 @@
                     <a 
                         href="{{ route('collections.show', 'all') }}" 
                         id="bestseller-view-all-btn"
-                        class="inline-flex items-center space-x-2 px-8 py-3.5 bg-[#D38928] hover:bg-[#B8741E] active:bg-[#965A15] text-white text-xs sm:text-sm font-bold uppercase tracking-widest rounded-[10px] shadow-md hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 font-heading cursor-pointer"
+                        class="inline-flex items-center space-x-2 px-8 py-3.5 bg-[#D38928] hover:bg-[#B8741E] active:bg-[#965A15] text-white text-xs sm:text-sm font-bold uppercase tracking-widest rounded-none transition-all duration-200 transform hover:-translate-y-0.5 font-heading cursor-pointer"
                         aria-label="View All Products"
                     >
                         <span>View All Products</span>
@@ -186,7 +186,7 @@
             <div class="mt-8 sm:mt-10 text-center hidden sm:block">
                 <a 
                     href="{{ route('collections.show', 'all') }}" 
-                    class="inline-flex items-center space-x-2 px-8 py-3.5 bg-[#D38928] hover:bg-[#B8741E] active:bg-[#965A15] text-white text-xs sm:text-sm font-bold uppercase tracking-widest rounded-[10px] shadow-md hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 font-heading cursor-pointer"
+                    class="inline-flex items-center space-x-2 px-8 py-3.5 bg-[#D38928] hover:bg-[#B8741E] active:bg-[#965A15] text-white text-xs sm:text-sm font-bold uppercase tracking-widest rounded-none transition-all duration-200 transform hover:-translate-y-0.5 font-heading cursor-pointer"
                     aria-label="View All Products"
                 >
                     <span>View All Products</span>
@@ -265,7 +265,7 @@
 </script>
 
 <!-- ========================================================================= -->
-<!-- 3. PRODUCTS CATEGORY (Clean Large Single-Item Circles on #f5ecda)         -->
+<!-- 3. PRODUCTS CATEGORY (Clean Large Single-Item Square Tiles on #f5ecda)   -->
 <!-- ========================================================================= -->
 <section class="py-10 sm:py-14 lg:py-16 bg-[#f5ecda] font-body select-none">
     <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
@@ -280,17 +280,17 @@
             </h2>
         </div>
 
-        <!-- 3 Big Single-Product Category Circles (Centered Grid & Balanced Spacing) -->
+        <!-- 3 Big Single-Product Category Square Tiles (Centered Grid & Balanced Spacing) -->
         <div id="category-slider" class="flex sm:grid overflow-x-auto sm:overflow-visible scrollbar-none snap-x snap-mandatory sm:grid-cols-3 justify-start sm:justify-center items-start gap-4 sm:gap-6 lg:gap-8 max-w-4xl mx-auto pb-3 sm:pb-0 -mx-4 px-4 sm:mx-auto sm:px-0 w-full">
             
-            <!-- Category 1: Single Bamboo-less Dhoop Stick -->
+            <!-- Category 1: Single Incense Sticks -->
             <div class="w-[165px] sm:w-auto shrink-0 snap-start group flex flex-col items-center text-center space-y-2.5 sm:space-y-3">
-                <a href="{{ route('collections.show', 'bambooless') }}" class="block relative w-full max-w-[195px] sm:max-w-[230px] lg:max-w-[245px] aspect-square rounded-full p-2.5 sm:p-3 bg-white border border-[#EADBCC] hover:border-[#C18129] group-hover:scale-105 transition-all duration-500 cursor-pointer">
-                    <div class="w-full h-full rounded-full overflow-hidden bg-white p-1.5 sm:p-2 flex items-center justify-center relative">
+                <a href="{{ route('collections.show', 'bambooless') }}" class="block relative w-full max-w-[195px] sm:max-w-[230px] lg:max-w-[245px] aspect-square rounded-none p-3 sm:p-3.5 bg-white border border-[#EADBCC] hover:border-[#C18129] group-hover:scale-105 transition-all duration-500 cursor-pointer">
+                    <div class="w-full h-full rounded-none overflow-hidden bg-white p-1.5 sm:p-2 flex items-center justify-center relative">
                         <img 
                             src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" 
-                            alt="Bamboo-less Dhoop Stick" 
-                            class="w-full h-full object-contain rounded-full scale-105 group-hover:scale-115 transition-transform duration-500"
+                            alt="Incense Sticks" 
+                            class="w-full h-full object-contain rounded-none scale-105 group-hover:scale-115 transition-transform duration-500"
                         >
                     </div>
                 </a>
@@ -298,22 +298,22 @@
                 <!-- Category Details -->
                 <div class="space-y-0.5 max-w-xs flex flex-col items-center">
                     <h3 class="text-sm sm:text-base lg:text-[17px] font-normal capitalize tracking-wide text-[#121212] hover:text-[#C18129] transition-colors font-heading block">
-                        <a href="{{ route('collections.show', 'bambooless') }}">Dhoop Stick</a>
+                        <a href="{{ route('collections.show', 'bambooless') }}">Incense Sticks</a>
                     </h3>
                     <p class="text-[11px] sm:text-xs text-[#7A7A7A] font-medium leading-tight">
-                        Bamboo-less Dhoop Stick
+                        Pure Incense Sticks
                     </p>
                 </div>
             </div>
 
             <!-- Category 2: Single Dhoop Cone -->
             <div class="w-[165px] sm:w-auto shrink-0 snap-start group flex flex-col items-center text-center space-y-2.5 sm:space-y-3">
-                <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block relative w-full max-w-[195px] sm:max-w-[230px] lg:max-w-[245px] aspect-square rounded-full p-2.5 sm:p-3 bg-white border border-[#EADBCC] hover:border-[#C18129] group-hover:scale-105 transition-all duration-500 cursor-pointer">
-                    <div class="w-full h-full rounded-full overflow-hidden bg-white p-1.5 sm:p-2 flex items-center justify-center relative">
+                <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block relative w-full max-w-[195px] sm:max-w-[230px] lg:max-w-[245px] aspect-square rounded-none p-3 sm:p-3.5 bg-white border border-[#EADBCC] hover:border-[#C18129] group-hover:scale-105 transition-all duration-500 cursor-pointer">
+                    <div class="w-full h-full rounded-none overflow-hidden bg-white p-1.5 sm:p-2 flex items-center justify-center relative">
                         <img 
                             src="{{ asset('assets/images/single-dhoop-cone.jpg') }}" 
                             alt="Easy to Use Dhoop Cone" 
-                            class="w-full h-full object-contain rounded-full scale-105 group-hover:scale-115 transition-transform duration-500"
+                            class="w-full h-full object-contain rounded-none scale-105 group-hover:scale-115 transition-transform duration-500"
                         >
                     </div>
                 </a>
@@ -331,12 +331,12 @@
 
             <!-- Category 3: Single 100% Organic Havan Cup -->
             <div class="w-[165px] sm:w-auto shrink-0 snap-start group flex flex-col items-center text-center space-y-2.5 sm:space-y-3">
-                <a href="{{ route('collections.show', 'havan-cups') }}" class="block relative w-full max-w-[195px] sm:max-w-[230px] lg:max-w-[245px] aspect-square rounded-full p-2.5 sm:p-3 bg-white border border-[#EADBCC] hover:border-[#C18129] group-hover:scale-105 transition-all duration-500 cursor-pointer">
-                    <div class="w-full h-full rounded-full overflow-hidden bg-white p-1.5 sm:p-2 flex items-center justify-center relative">
+                <a href="{{ route('collections.show', 'havan-cups') }}" class="block relative w-full max-w-[195px] sm:max-w-[230px] lg:max-w-[245px] aspect-square rounded-none p-3 sm:p-3.5 bg-white border border-[#EADBCC] hover:border-[#C18129] group-hover:scale-105 transition-all duration-500 cursor-pointer">
+                    <div class="w-full h-full rounded-none overflow-hidden bg-white p-1.5 sm:p-2 flex items-center justify-center relative">
                         <img 
                             src="{{ asset('assets/images/single-havan-cup.jpg') }}" 
                             alt="100% Organic Havan Cups" 
-                            class="w-full h-full object-contain rounded-full scale-105 group-hover:scale-115 transition-transform duration-500"
+                            class="w-full h-full object-contain rounded-none scale-105 group-hover:scale-115 transition-transform duration-500"
                         >
                     </div>
                 </a>
@@ -356,8 +356,8 @@
 
         <!-- Mobile Scroll Indicator Line -->
         <div class="sm:hidden flex justify-center mt-5">
-            <div class="w-28 h-1 bg-[#EADBCC] rounded-full overflow-hidden relative">
-                <div id="category-scroll-bar" class="w-10 h-full bg-[#C18129] rounded-full transition-transform duration-75"></div>
+            <div class="w-28 h-1 bg-[#EADBCC] rounded-none overflow-hidden relative">
+                <div id="category-scroll-bar" class="w-10 h-full bg-[#C18129] rounded-none transition-transform duration-75"></div>
             </div>
         </div>
 
@@ -367,7 +367,7 @@
 <!-- ========================================================================= -->
 <!-- 4. STANDALONE PROMO BANNER: BUY 5 TRIAL PACKS @ 799 (Full Width Edge-to-Edge) -->
 <!-- ========================================================================= -->
-<section class="w-full bg-[#f5ecda] overflow-hidden select-none">
+<section class="w-full bg-white overflow-hidden select-none">
     <a href="{{ route('bundles.trial-packs') }}" class="block w-full group focus:outline-none">
         <picture class="block w-full">
             <source media="(max-width: 640px)" srcset="{{ asset('assets/images/festive-offer-mobile-banner.png') }}">
@@ -391,7 +391,7 @@
 <!-- 6. DAILY DEVOTIONAL RITUALS (Dynamic Sacred Products) -->
 <!-- ========================================================================= -->
 @if(isset($newLaunches) && $newLaunches->isNotEmpty())
-<section class="py-[40px] bg-[#f5ecda]">
+<section class="py-[40px] bg-white">
     <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
         
         <div class="text-center max-w-4xl mx-auto mb-5 sm:mb-6 space-y-1.5">
@@ -414,7 +414,7 @@
 <!-- ========================================================================= -->
 <!-- 5. DEVOTEE TESTIMONIALS (2-Row Continuous Smooth Marquee Ticker)         -->
 <!-- ========================================================================= -->
-<section class="py-[40px] bg-[#f5ecda] overflow-hidden select-none" id="testimonials-marquee-section">
+<section class="py-[40px] bg-white overflow-hidden select-none" id="testimonials-marquee-section">
     <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
         
         <!-- Header -->
@@ -429,8 +429,8 @@
         <div class="relative w-full space-y-4 sm:space-y-5 overflow-hidden marquee-track-pause">
             
             <!-- Left & Right Edge Fade Gradients -->
-            <div class="absolute top-0 bottom-0 left-0 w-12 sm:w-28 z-20 pointer-events-none bg-gradient-to-r from-[#f5ecda] via-[#f5ecda]/90 to-transparent"></div>
-            <div class="absolute top-0 bottom-0 right-0 w-12 sm:w-28 z-20 pointer-events-none bg-gradient-to-l from-[#f5ecda] via-[#f5ecda]/90 to-transparent"></div>
+            <div class="absolute top-0 bottom-0 left-0 w-12 sm:w-28 z-20 pointer-events-none bg-gradient-to-r from-white via-white/90 to-transparent"></div>
+            <div class="absolute top-0 bottom-0 right-0 w-12 sm:w-28 z-20 pointer-events-none bg-gradient-to-l from-white via-white/90 to-transparent"></div>
         
             <!-- ========================================== -->
             <!-- ROW 1: RIGHT TO LEFT (Continuous Scroll)   -->
@@ -446,7 +446,7 @@
                             'initials' => 'PS',
                             'avatar_bg' => 'bg-[#D38928]',
                             'product' => 'Chandan Saanjh',
-                            'quote' => 'Mandi me itni authentic bambooless agarbatti pehli baar try ki. Mandir me subah aarti ke baad shaam tak natural sandalwood aur camphor ki gentle fragrance rehti hai. Pure natural!'
+                            'quote' => 'Mandi me itni authentic pure incense sticks agarbatti pehli baar try ki. Mandir me subah aarti ke baad shaam tak natural sandalwood aur camphor ki gentle fragrance rehti hai. Pure natural!'
                         ],
                         [
                             'name' => 'अनिल डोगरा',
@@ -454,14 +454,14 @@
                             'initials' => 'AD',
                             'avatar_bg' => 'bg-[#831F2E]',
                             'product' => 'Swarna Pushpa',
-                            'quote' => 'कांगड़ा में हमारे घर में रोजाना पूजा होती है। बिल्कुल शुद्ध धुआं है और आंखों में कोई जलन नहीं होती। शास्त्रों के अनुसार बिना बांस वाली अगरबत्ती से बहुत ही पवित्र अनुभव मिलता है।'
+                            'quote' => 'कांगड़ा में हमारे घर में रोजाना पूजा होती है। बिल्कुल शुद्ध धुआं है और आंखों में कोई जलन नहीं होती। शास्त्रों के अनुसार शुद्ध अगरबत्ती से बहुत ही पवित्र अनुभव मिलता है।'
                         ],
                         [
                             'name' => 'Sunil Thakur',
                             'city' => 'Chamba, Himachal Pradesh',
                             'initials' => 'ST',
                             'avatar_bg' => 'bg-[#3E2314]',
-                            'product' => 'Devi Bambooless Pack',
+                            'product' => 'Devi Incense Stick Pack',
                             'quote' => 'Ordered the 100 sticks refill cylinder from Chamba. Exceptional quality and true chemical-free formulation. The complimentary handcrafted ceramic stand is very beautiful.'
                         ],
                         [
@@ -477,7 +477,7 @@
                             'city' => 'हमीरपुर, हिमाचल प्रदेश',
                             'initials' => 'RD',
                             'avatar_bg' => 'bg-[#831F2E]',
-                            'product' => 'Bambooless Incense',
+                            'product' => 'Incense Sticks',
                             'quote' => 'हमीरपुर से मंगवाया था। पहले बाजार वाली धूप से कमरे में भारीपन और सिरदर्द होता था, लेकिन इसमें सिर्फ शुद्ध जड़ी-बूटियों की महक है। बहुत ही शांत वातावरण बनता है।'
                         ],
                         [
@@ -486,14 +486,14 @@
                             'initials' => 'SK',
                             'avatar_bg' => 'bg-[#3E2314]',
                             'product' => 'Organic Havan Cups',
-                            'quote' => 'Being from Kangra, I always prefer clean, organic products for home prayer. ISHANAA bambooless sticks emit gentle white smoke that keeps our living room fragrant and tranquil.'
+                            'quote' => 'Being from Kangra, I always prefer clean, organic products for home prayer. ISHANAA incense sticks emit gentle white smoke that keeps our living room fragrant and tranquil.'
                         ]
                     ];
                 @endphp
 
                 <!-- First Pass -->
                 @foreach($row1Testimonials as $t)
-                    <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[380px] h-[180px] bg-white rounded-[16px] p-5 border border-[#EADBCC] hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between">
+                    <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[380px] h-[180px] bg-white rounded-none p-5 border border-[#EADBCC] hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between">
                         <div class="space-y-2">
                             <div class="flex items-center space-x-1 text-[#D38928] text-lg sm:text-xl leading-none">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
@@ -504,7 +504,7 @@
                         </div>
                         <div class="flex items-center justify-between pt-3 border-t border-[#EAE3D9] mt-2">
                             <div class="flex items-center space-x-2.5">
-                                <div class="w-9 h-9 rounded-full {{ $t['avatar_bg'] }} text-white flex items-center justify-center font-bold text-xs shadow-xs font-heading shrink-0">
+                                <div class="w-9 h-9 rounded-none {{ $t['avatar_bg'] }} text-white flex items-center justify-center font-bold text-xs font-heading shrink-0">
                                     {{ $t['initials'] }}
                                 </div>
                                 <div>
@@ -518,7 +518,7 @@
 
                 <!-- Second Duplicate Pass for Infinite Seamless Marquee -->
                 @foreach($row1Testimonials as $t)
-                    <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[380px] h-[180px] bg-white rounded-[16px] p-5 border border-[#EADBCC] hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between" aria-hidden="true">
+                    <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[380px] h-[180px] bg-white rounded-none p-5 border border-[#EADBCC] hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between" aria-hidden="true">
                         <div class="space-y-2">
                             <div class="flex items-center space-x-1 text-[#D38928] text-lg sm:text-xl leading-none">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
@@ -529,7 +529,7 @@
                         </div>
                         <div class="flex items-center justify-between pt-3 border-t border-[#EAE3D9] mt-2">
                             <div class="flex items-center space-x-2.5">
-                                <div class="w-9 h-9 rounded-full {{ $t['avatar_bg'] }} text-white flex items-center justify-center font-bold text-xs shadow-xs font-heading shrink-0">
+                                <div class="w-9 h-9 rounded-none {{ $t['avatar_bg'] }} text-white flex items-center justify-center font-bold text-xs font-heading shrink-0">
                                     {{ $t['initials'] }}
                                 </div>
                                 <div>
@@ -599,7 +599,7 @@
 
                 <!-- First Pass -->
                 @foreach($row2Testimonials as $t)
-                    <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[380px] h-[180px] bg-white rounded-[16px] p-5 border border-[#EADBCC] hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between">
+                    <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[380px] h-[180px] bg-white rounded-none p-5 border border-[#EADBCC] hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between">
                         <div class="space-y-2">
                             <div class="flex items-center space-x-1 text-[#D38928] text-lg sm:text-xl leading-none">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
@@ -610,7 +610,7 @@
                         </div>
                         <div class="flex items-center justify-between pt-3 border-t border-[#EAE3D9] mt-2">
                             <div class="flex items-center space-x-2.5">
-                                <div class="w-9 h-9 rounded-full {{ $t['avatar_bg'] }} text-white flex items-center justify-center font-bold text-xs shadow-xs font-heading shrink-0">
+                                <div class="w-9 h-9 rounded-none {{ $t['avatar_bg'] }} text-white flex items-center justify-center font-bold text-xs font-heading shrink-0">
                                     {{ $t['initials'] }}
                                 </div>
                                 <div>
@@ -624,7 +624,7 @@
 
                 <!-- Second Duplicate Pass for Infinite Seamless Marquee -->
                 @foreach($row2Testimonials as $t)
-                    <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[380px] h-[180px] bg-white rounded-[16px] p-5 border border-[#EADBCC] hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between" aria-hidden="true">
+                    <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[380px] h-[180px] bg-white rounded-none p-5 border border-[#EADBCC] hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between" aria-hidden="true">
                         <div class="space-y-2">
                             <div class="flex items-center space-x-1 text-[#D38928] text-lg sm:text-xl leading-none">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
@@ -635,7 +635,7 @@
                         </div>
                         <div class="flex items-center justify-between pt-3 border-t border-[#EAE3D9] mt-2">
                             <div class="flex items-center space-x-2.5">
-                                <div class="w-9 h-9 rounded-full {{ $t['avatar_bg'] }} text-white flex items-center justify-center font-bold text-xs shadow-xs font-heading shrink-0">
+                                <div class="w-9 h-9 rounded-none {{ $t['avatar_bg'] }} text-white flex items-center justify-center font-bold text-xs font-heading shrink-0">
                                     {{ $t['initials'] }}
                                 </div>
                                 <div>
@@ -657,7 +657,7 @@
 <!-- ========================================================================= -->
 <!-- 6. ROOTED IN PURITY (Exact Matching Reference Screenshot Styling)         -->
 <!-- ========================================================================= -->
-<section class="py-12 sm:py-16 bg-[#f5ecda] select-none font-body">
+<section class="py-12 sm:py-16 bg-[#FFFDF9] select-none font-body">
     <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
         
         <!-- Clean Standard Eyebrow Header -->
@@ -666,18 +666,15 @@
             <h2 class="text-[18px] sm:text-[24px] md:text-[28px] lg:text-[34px] font-heading font-normal capitalize text-[#2B1810] tracking-[0.06em] leading-tight whitespace-nowrap">
                 Rooted in Purity
             </h2>
-            <!-- <p class="text-xs sm:text-sm md:text-base text-gray-600 font-normal font-body">
-                Traditional wisdom. Thoughtfully crafted.
-            </p> -->
         </div>
 
-        <!-- Slim & Wide Elegant Card Container (8px Radius, Soft Gold Border matching icon borders, Inset Gold Divider Lines) -->
-        <div class="bg-white rounded-[8px] border-2 border-[#D38928]/40 max-w-[1260px] mx-auto overflow-hidden">
+        <!-- Slim & Wide Elegant Card Container (Square Corners, Soft Gold Border) -->
+        <div class="bg-white rounded-none border-2 border-[#D38928]/40 max-w-[1260px] mx-auto overflow-hidden">
             <div class="grid grid-cols-1 md:grid-cols-3 relative">
                 
                 <!-- Column 1: Ancient Recipes -->
                 <div class="relative py-7 sm:py-9 lg:py-10 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center space-y-3 group">
-                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#FAF5EE] border-2 border-[#D38928]/40 flex items-center justify-center text-[#C28430] group-hover:scale-105 transition-transform">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-none bg-[#FAF5EE] border-2 border-[#D38928]/40 flex items-center justify-center text-[#C28430] group-hover:scale-105 transition-transform">
                         <svg class="w-8 h-8 sm:w-10 sm:h-10" viewBox="0 0 64 64" fill="none" stroke="#C28430" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M16 34h32c0 10-7.2 18-16 18s-16-8-16-18Z"/>
                             <path d="M24 52h16"/>
@@ -700,7 +697,7 @@
 
                 <!-- Column 2: Purest Ingredients -->
                 <div class="relative py-7 sm:py-9 lg:py-10 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center space-y-3 group">
-                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#FAF5EE] border-2 border-[#D38928]/40 flex items-center justify-center text-[#C28430] group-hover:scale-105 transition-transform">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-none bg-[#FAF5EE] border-2 border-[#D38928]/40 flex items-center justify-center text-[#C28430] group-hover:scale-105 transition-transform">
                         <svg class="w-8 h-8 sm:w-10 sm:h-10" viewBox="0 0 64 64" fill="none" stroke="#C28430" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <!-- Sacred Flames & Kund -->
                             <path d="M32 16c-3 4-3 9 0 12 3-3 3-8 0-12Z"/>
@@ -724,7 +721,7 @@
 
                 <!-- Column 3: Eco-conscious -->
                 <div class="relative py-7 sm:py-9 lg:py-10 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center space-y-3 group">
-                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#FAF5EE] border-2 border-[#D38928]/40 flex items-center justify-center text-[#C28430] group-hover:scale-105 transition-transform">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-none bg-[#FAF5EE] border-2 border-[#D38928]/40 flex items-center justify-center text-[#C28430] group-hover:scale-105 transition-transform">
                         <svg class="w-8 h-8 sm:w-10 sm:h-10" viewBox="0 0 64 64" fill="none" stroke="#C28430" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <!-- Box & Leaf -->
                             <path d="M19 24l13-8 13 8v22l-13 8-13-8V24Z"/>
@@ -750,7 +747,7 @@
 <!-- ========================================================================= -->
 <!-- 8. FREQUENTLY ASKED QUESTIONS (Pure White Background, 10px Padding, 8px)  -->
 <!-- ========================================================================= -->
-<section class="py-[40px] bg-[#f5ecda] select-none">
+<section class="py-[40px] bg-white select-none">
     <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
         <div class="max-w-5xl lg:max-w-[1100px] mx-auto space-y-6 sm:space-y-8">
         
@@ -762,16 +759,16 @@
             </h2>
         </div>
 
-        <!-- Seamless Accordion Container (8px Border Radius & 10px Inner Padding) -->
-        <div class="bg-white rounded-[8px] border border-[#EADBCC] divide-y divide-[#EADBCC] overflow-hidden">
+        <!-- Seamless Accordion Container (Square Corners & 10px Inner Padding) -->
+        <div class="bg-white rounded-none border border-[#EADBCC] divide-y divide-[#EADBCC] overflow-hidden">
             
             <!-- FAQ 1 -->
             <div class="faq-item">
                 <button type="button" class="faq-toggle w-full p-[10px] px-3.5 sm:px-4 flex items-center justify-between text-left focus:outline-none cursor-pointer group hover:bg-[#FAF7F2]/60 transition-colors">
                     <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
-                        What makes ISHANAA bambooless incense sticks and havan cups unique?
+                        What makes ISHANAA pure incense sticks and havan cups unique?
                     </span>
-                    <div class="w-6 h-6 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                    <div class="w-6 h-6 rounded-none bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
                         <svg class="faq-icon w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                         </svg>
@@ -779,7 +776,7 @@
                 </button>
                 <div class="faq-content hidden px-3.5 sm:px-4 pb-[10px] pt-1 text-xs sm:text-[13px] text-gray-600 leading-relaxed bg-[#FAF7F2]/30">
                     <p>
-                        Our incense is <strong>100% bamboo-free</strong> (compliant with Vedic and Vastu scriptures) and <strong>0% toxic charcoal</strong>. Handcrafted using upcycled temple flower powders, pure Bhimseni camphor, natural Loban, and Guggal resins, it produces a soothing herbal aroma that leaves behind clean, auspicious white ash without causing any eye irritation or coughing.
+                        Our incense is <strong>100% natural</strong> (compliant with Vedic and Vastu scriptures) and <strong>0% toxic charcoal</strong>. Handcrafted using upcycled temple flower powders, pure Bhimseni camphor, natural Loban, and Guggal resins, it produces a soothing herbal aroma that leaves behind clean, auspicious white ash without causing any eye irritation or coughing.
                     </p>
                 </div>
             </div>
@@ -790,7 +787,7 @@
                     <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
                         How long do they burn, and does the temple fragrance linger in the room?
                     </span>
-                    <div class="w-6 h-6 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                    <div class="w-6 h-6 rounded-none bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
                         <svg class="faq-icon w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                         </svg>
@@ -798,7 +795,7 @@
                 </button>
                 <div class="faq-content hidden px-3.5 sm:px-4 pb-[10px] pt-1 text-xs sm:text-[13px] text-gray-600 leading-relaxed bg-[#FAF7F2]/30">
                     <p>
-                        Each 9-inch Bambooless Stick burns continuously for <strong>45 to 50 minutes</strong>, while our organic Sambrani Havan Cups burn intensely for <strong>25 to 30 minutes</strong>. Due to our rich botanical essential oil concentration, the uplifting sacred fragrance lingers throughout your home for <strong>4 to 6 hours</strong> after burning.
+                        Each 9-inch Incense Stick burns continuously for <strong>45 to 50 minutes</strong>, while our organic Sambrani Havan Cups burn intensely for <strong>25 to 30 minutes</strong>. Due to our rich botanical essential oil concentration, the uplifting sacred fragrance lingers throughout your home for <strong>4 to 6 hours</strong> after burning.
                     </p>
                 </div>
             </div>
@@ -809,7 +806,7 @@
                     <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
                         Are ISHANAA products safe to use around babies, elders, and pets?
                     </span>
-                    <div class="w-6 h-6 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                    <div class="w-6 h-6 rounded-none bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
                         <svg class="faq-icon w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                         </svg>
@@ -826,9 +823,9 @@
             <div class="faq-item">
                 <button type="button" class="faq-toggle w-full p-[10px] px-3.5 sm:px-4 flex items-center justify-between text-left focus:outline-none cursor-pointer group hover:bg-[#FAF7F2]/60 transition-colors">
                     <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
-                        What is the spiritual significance of burning 100% Bamboo-Free Agarbatti?
+                        What is the spiritual significance of burning 100% Pure Vedic Agarbatti?
                     </span>
-                    <div class="w-6 h-6 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                    <div class="w-6 h-6 rounded-none bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
                         <svg class="faq-icon w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                         </svg>
@@ -836,7 +833,7 @@
                 </button>
                 <div class="faq-content hidden px-3.5 sm:px-4 pb-[10px] pt-1 text-xs sm:text-[13px] text-gray-600 leading-relaxed bg-[#FAF7F2]/30">
                     <p>
-                        In Sanatana Dharma and ancient Vedic scriptures, bamboo (Vamsha) is revered as a sacred symbol of family lineage and ancestral continuity. Burning bamboo is strictly forbidden in sacred yagnas and daily poojas because it creates negative energies and emits toxic heavy-metal vapors. ISHANAA adheres strictly to traditional Vidhi by crafting pure bambooless incense.
+                        In Sanatana Dharma and ancient Vedic scriptures, incense is revered for purifying space and inviting positive energies into the home. ISHANAA adheres strictly to traditional Vidhi by crafting pure incense sticks without toxic charcoal or artificial chemicals.
                     </p>
                 </div>
             </div>
@@ -847,7 +844,7 @@
                     <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
                         How do I properly ignite and use organic Sambrani Havan Cups &amp; Dhoop Cones?
                     </span>
-                    <div class="w-6 h-6 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                    <div class="w-6 h-6 rounded-none bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
                         <svg class="faq-icon w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                         </svg>
@@ -866,7 +863,7 @@
                     <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
                         What sacred ingredients and temple flowers are used in handcrafting?
                     </span>
-                    <div class="w-6 h-6 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                    <div class="w-6 h-6 rounded-none bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
                         <svg class="faq-icon w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                         </svg>
@@ -885,7 +882,7 @@
                     <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
                         Do you offer nationwide shipping, COD, and complimentary ceramic holders?
                     </span>
-                    <div class="w-6 h-6 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                    <div class="w-6 h-6 rounded-none bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
                         <svg class="faq-icon w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                         </svg>
@@ -1009,7 +1006,7 @@
             if (!toast) {
                 toast = document.createElement('div');
                 toast.id = 'ishanaa-live-toast';
-                toast.className = 'fixed bottom-6 right-6 z-50 bg-[#121212] text-white px-5 py-3.5 rounded-[12px] shadow-2xl border border-[#D38928]/50 flex items-center space-x-3 transition-all duration-300 transform translate-y-20 opacity-0 font-body';
+                toast.className = 'fixed bottom-6 right-6 z-50 bg-[#121212] text-white px-5 py-3.5 rounded-none shadow-2xl border border-[#D38928]/50 flex items-center space-x-3 transition-all duration-300 transform translate-y-20 opacity-0 font-body';
                 document.body.appendChild(toast);
             }
 

@@ -359,9 +359,9 @@
                                 <div class="text-4xl">🪔</div>
                                 <h3 class="text-lg font-bold text-[#121212] font-heading">No sacred orders placed yet</h3>
                                 <p class="text-xs sm:text-sm text-gray-500 max-w-sm mx-auto">
-                                    Explore our charcoal-free bambooless sticks, organic havan cups, and super-saver combos.
+                                    Explore our charcoal-free incense sticks, organic havan cups, and super-saver combos.
                                 </p>
-                                <a href="{{ route('collections.show', 'all') }}" class="inline-block px-6 py-3 bg-[#D38928] text-white text-xs font-bold uppercase tracking-wider rounded-[10px] font-heading">
+                                <a href="{{ route('collections.show', 'all') }}" class="inline-block px-6 py-3 bg-[#D38928] text-white text-xs font-bold uppercase tracking-wider rounded-none font-heading">
                                     Explore Sacred Catalog ➔
                                 </a>
                             </div>

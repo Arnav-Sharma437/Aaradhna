@@ -250,7 +250,7 @@
                         {{ $product->title }}
                     </h1>
                     <div class="text-xs sm:text-[13px] text-gray-500 capitalize font-medium pt-0.5 font-body">
-                        {{ $product->category ? ucwords(strtolower($product->category->name)) : 'Bambooless Incense' }}
+                        {{ $product->category ? ucwords(strtolower($product->category->name)) : 'Incense Sticks' }}
                     </div>
                 </div>
 
@@ -635,7 +635,7 @@
                         </div>
                         <div class="py-[5px] flex items-center justify-between text-xs sm:text-[13.5px]">
                             <span class="text-gray-700 font-medium">Item Form</span>
-                            <span class="text-gray-900 font-bold">{{ $product->item_form ?? 'Bambooless Incense' }}</span>
+                            <span class="text-gray-900 font-bold">{{ $product->item_form ?? 'Incense Sticks' }}</span>
                         </div>
                         <div class="py-[5px] flex items-center justify-between text-xs sm:text-[13.5px]">
                             <span class="text-gray-700 font-medium">Key Herb / Essence</span>
@@ -819,7 +819,7 @@
                     </button>
                     <div class="faq-content hidden px-3.5 sm:px-4 pb-[10px] pt-1 text-xs sm:text-[13px] text-gray-600 leading-relaxed bg-[#FAF7F2]/30">
                         <p>
-                            Each 9-inch Bambooless Stick burns continuously for <strong>45 to 50 minutes</strong>, while our organic Sambrani Havan Cups burn intensely for <strong>25 to 30 minutes</strong>. Due to our rich botanical essential oil concentration, the uplifting sacred fragrance lingers throughout your home for <strong>4 to 6 hours</strong> after burning.
+                            Each 9-inch Incense Stick burns continuously for <strong>45 to 50 minutes</strong>, while our organic Sambrani Havan Cups burn intensely for <strong>25 to 30 minutes</strong>. Due to our rich botanical essential oil concentration, the uplifting sacred fragrance lingers throughout your home for <strong>4 to 6 hours</strong> after burning.
                         </p>
                     </div>
                 </div>
@@ -857,7 +857,7 @@
                     </button>
                     <div class="faq-content hidden px-3.5 sm:px-4 pb-[10px] pt-1 text-xs sm:text-[13px] text-gray-600 leading-relaxed bg-[#FAF7F2]/30">
                         <p>
-                            In Sanatana Dharma and ancient Vedic scriptures, bamboo (Vamsha) is revered as a sacred symbol of family lineage and ancestral continuity. Burning bamboo is strictly forbidden in sacred yagnas and daily poojas because it creates negative energies and emits toxic heavy-metal vapors. ISHANAA adheres strictly to traditional Vidhi by crafting pure bambooless incense.
+                            In Sanatana Dharma and ancient Vedic scriptures, bamboo (Vamsha) is revered as a sacred symbol of family lineage and ancestral continuity. Burning bamboo is strictly forbidden in sacred yagnas and daily poojas because it creates negative energies and emits toxic heavy-metal vapors. ISHANAA adheres strictly to traditional Vidhi by crafting pure incense sticks.
                         </p>
                     </div>
                 </div>

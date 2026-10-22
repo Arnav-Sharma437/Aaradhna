@@ -1,7 +1,7 @@
 @props([
     'categories' => [
         [
-            'name' => 'Bambooless',
+            'name' => 'Incense Sticks',
             'subtitle' => 'Non-irritating. Pure fragrances.',
             'slug' => 'bambooless',
             'icon' => 'incense'
@@ -40,13 +40,13 @@
 
 <div 
     id="pooja-shop-mega-menu"
-    class="mega-menu-dropdown invisible opacity-0 translate-y-2 pointer-events-none absolute left-0 top-full w-[840px] lg:w-[880px] bg-white rounded-[20px] shadow-2xl border border-gray-100 transition-all duration-200 ease-out z-50 p-6 font-body text-left"
+    class="mega-menu-dropdown invisible opacity-0 translate-y-2 pointer-events-none absolute left-0 top-full w-[840px] lg:w-[880px] bg-white rounded-none shadow-2xl border border-gray-100 transition-all duration-200 ease-out z-50 p-6 font-body text-left"
     aria-label="Pooja Shop Mega Menu"
 >
     <div class="grid grid-cols-12 gap-6 items-stretch">
         
         <!-- Left: Large Brass Thali Image (Column 1 - 4.5 cols) -->
-        <div class="col-span-5 rounded-[14px] overflow-hidden bg-[#FBF9F5] border border-[#EAE3D9]/60 aspect-square flex items-center justify-center relative group shadow-xs">
+        <div class="col-span-5 rounded-none overflow-hidden bg-[#FBF9F5] border border-[#EAE3D9]/60 aspect-square flex items-center justify-center relative group shadow-xs">
             <img 
                 src="{{ asset('assets/images/mega-menu-thali.jpg') }}" 
                 alt="Sacred Brass Pooja Thali" 
@@ -60,7 +60,7 @@
             @foreach($categories as $index => $category)
                 <a 
                     href="{{ route('collections.show', $category['slug']) }}"
-                    class="flex items-center justify-between px-3.5 py-2.5 rounded-[10px] transition-all group {{ $index === 0 ? 'bg-[#F6F5F2]' : 'hover:bg-[#F9F8F6]' }}"
+                    class="flex items-center justify-between px-3.5 py-2.5 rounded-none transition-all group {{ $index === 0 ? 'bg-[#F6F5F2]' : 'hover:bg-[#F9F8F6]' }}"
                 >
                     <div class="flex items-center space-x-3.5">
                         <div class="w-7 h-7 flex items-center justify-center text-[#2A2A2A] shrink-0">
@@ -112,7 +112,7 @@
             @foreach($packOptions as $pack)
                 <a 
                     href="{{ $pack['url'] }}" 
-                    class="flex items-start space-x-3.5 p-2 rounded-[10px] hover:bg-[#F9F8F6] transition-colors group"
+                    class="flex items-start space-x-3.5 p-2 rounded-none hover:bg-[#F9F8F6] transition-colors group"
                 >
                     <div class="w-6 h-6 flex items-center justify-center text-[#2A2A2A] mt-0.5 shrink-0">
                         <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">

@@ -126,7 +126,7 @@
                             <span>TEMPLE &amp; WEDDING BULK ORDERS</span>
                         </div>
                         <p class="text-xs text-stone-300 leading-relaxed">
-                            Looking for pure bambooless samagri in bulk for temple trusts, ashrams, or wedding return gifts? Contact our dedicated Mandir desk for sacred wholesale pricing.
+                            Looking for pure incense sticks &amp; samagri in bulk for temple trusts, ashrams, or wedding return gifts? Contact our dedicated Mandir desk for sacred wholesale pricing.
                         </p>
                     </div>
 

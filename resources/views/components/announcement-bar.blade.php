@@ -5,7 +5,7 @@
         <button 
             type="button" 
             id="announcement-prev-btn" 
-            class="p-0.5 sm:p-1 text-white/80 hover:text-white transition-all transform hover:scale-110 active:scale-95 cursor-pointer focus:outline-none shrink-0 flex items-center justify-center rounded-full hover:bg-white/10" 
+            class="p-0.5 sm:p-1 text-white/80 hover:text-white transition-all transform hover:scale-110 active:scale-95 cursor-pointer focus:outline-none shrink-0 flex items-center justify-center rounded-none hover:bg-white/10" 
             aria-label="Previous Announcement"
         >
             <svg class="w-2.5 h-2.5 sm:w-3 sm:h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
@@ -30,7 +30,7 @@
             <!-- Slide 2 -->
             <div class="announcement-slide absolute inset-0 flex items-center justify-center text-center transition-all duration-500 ease-in-out opacity-0 translate-x-8 pointer-events-none">
                 <p class="text-[11px] sm:text-xs font-medium tracking-wide text-white truncate px-1">
-                    <span class="font-bold text-[#F3CD72]">100% Charcoal Free</span> <span class="text-[#F3CD72] mx-1.5 font-bold">•</span> Pure Bamboo-Less Incense
+                    <span class="font-bold text-[#F3CD72]">100% Charcoal Free</span> <span class="text-[#F3CD72] mx-1.5 font-bold">•</span> Pure Incense Sticks
                 </p>
             </div>
 
@@ -61,7 +61,7 @@
         <button 
             type="button" 
             id="announcement-next-btn" 
-            class="p-0.5 sm:p-1 text-white/80 hover:text-white transition-all transform hover:scale-110 active:scale-95 cursor-pointer focus:outline-none shrink-0 flex items-center justify-center rounded-full hover:bg-white/10" 
+            class="p-0.5 sm:p-1 text-white/80 hover:text-white transition-all transform hover:scale-110 active:scale-95 cursor-pointer focus:outline-none shrink-0 flex items-center justify-center rounded-none hover:bg-white/10" 
             aria-label="Next Announcement"
         >
             <svg class="w-2.5 h-2.5 sm:w-3 sm:h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">

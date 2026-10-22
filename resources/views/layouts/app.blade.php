@@ -13,7 +13,7 @@
 @else
 {{ $siteTitle }} — Pure Vedic Living
 @endif</title>
-    <meta name="description" content="@yield('meta_description', 'Pooja Samagri & Vidhi — शुद्धं समर्पयामि. Non-irritating bambooless incense sticks, organic havan cups, charcoal-free dhoop cones & alcohol-free attar sprays.')">
+    <meta name="description" content="@yield('meta_description', 'Pooja Samagri & Vidhi — शुद्धं समर्पयामि. Non-irritating pure incense sticks, organic havan cups, charcoal-free dhoop cones & alcohol-free attar sprays.')">
 
     <!-- OpenGraph Meta -->
     <meta property="og:site_name" content="{{ $siteTitle }}™">
@@ -49,7 +49,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('styles')
 </head>
-<body class="antialiased text-[#2B1810] bg-[#f5ecda] min-h-screen flex flex-col font-body selection:bg-[#F3CD72] selection:text-[#2B1810]">
+<body class="antialiased text-[#2B1810] bg-white min-h-screen flex flex-col font-body selection:bg-[#F3CD72] selection:text-[#2B1810]">
 
     <!-- 1. Sticky Desktop / Mobile Header -->
     <x-header />

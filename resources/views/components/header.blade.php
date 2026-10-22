@@ -1,4 +1,4 @@
-<header class="sticky top-0 z-40 bg-[#f5ecda] border-b border-[#EAE3D9] transition-all duration-200 font-body">
+<header class="sticky top-0 z-40 bg-[#FFF9ED] border-b border-[#EAE3D9] transition-all duration-200 font-body">
     <div class="w-full max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8 xl:px-10">
         <div class="relative flex items-center justify-between h-18 sm:h-20 lg:h-22 gap-2 sm:gap-4">
             
@@ -8,7 +8,7 @@
                 <button 
                     type="button" 
                     id="mobile-menu-trigger"
-                    class="lg:hidden p-2 -ml-1.5 text-[#A86911] hover:text-[#C18129] focus:outline-none transition-colors rounded-lg hover:bg-black/5 cursor-pointer z-10"
+                    class="lg:hidden p-2 -ml-1.5 text-[#A86911] hover:text-[#C18129] focus:outline-none transition-colors rounded-none hover:bg-black/5 cursor-pointer z-10"
                     aria-label="Open Mobile Menu"
                 >
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -46,14 +46,14 @@
             <!-- CENTER: Navigation Menu (Desktop & Laptop) - Fluid Auto Spacing -->
             <nav class="hidden lg:flex items-center justify-center flex-1 min-w-0 space-x-3 lg:space-x-3.5 xl:space-x-5 2xl:space-x-6 px-1 xl:px-2 font-body">
                 
-                <!-- 1. Bambooless -->
-                @php $isBambooless = request()->is('collections/bambooless'); @endphp
+                <!-- 1. Incense Sticks -->
+                @php $isIncenseSticks = request()->is('collections/bambooless'); @endphp
                 <div class="py-2 xl:py-3 flex items-center">
                     <a 
                         href="{{ route('collections.show', 'bambooless') }}" 
-                        class="text-[13.5px] lg:text-[14px] xl:text-[14.5px] {{ $isBambooless ? 'font-bold text-[#C18129] border-b-2 border-[#C18129] pb-0.5' : 'font-medium text-[#444444] hover:text-[#C18129]' }} transition-colors whitespace-nowrap tracking-normal"
+                        class="text-[13.5px] lg:text-[14px] xl:text-[14.5px] {{ $isIncenseSticks ? 'font-bold text-[#C18129] border-b-2 border-[#C18129] pb-0.5' : 'font-medium text-[#444444] hover:text-[#C18129]' }} transition-colors whitespace-nowrap tracking-normal"
                     >
-                        <span>Bambooless</span>
+                        <span>Incense Sticks</span>
                     </a>
                 </div>
 
@@ -179,7 +179,7 @@
                 <button 
                     type="button" 
                     id="search-modal-trigger" 
-                    class="p-2 text-[#A86911] hover:text-[#C18129] transition-colors focus:outline-none shrink-0 cursor-pointer rounded-full hover:bg-black/5 search-modal-opener" 
+                    class="p-2 text-[#A86911] hover:text-[#C18129] transition-colors focus:outline-none shrink-0 cursor-pointer rounded-none hover:bg-black/5 search-modal-opener" 
                     aria-label="Open Search"
                 >
                     <svg class="w-6 h-6 sm:w-[25px] sm:h-[25px]" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
@@ -190,7 +190,7 @@
                 <!-- 2. Customer Account (Visible on all screens) -->
                 <a 
                     href="{{ auth()->check() ? route('account.index') : route('account.login') }}" 
-                    class="p-1.5 sm:p-2 text-[#A86911] hover:text-[#C18129] transition-colors inline-flex items-center justify-center shrink-0 rounded-full hover:bg-black/5 relative group"
+                    class="p-1.5 sm:p-2 text-[#A86911] hover:text-[#C18129] transition-colors inline-flex items-center justify-center shrink-0 rounded-none hover:bg-black/5 relative group"
                     aria-label="Customer Account"
                     title="{{ auth()->check() ? 'My Devotee Account (' . auth()->user()->name . ')' : 'Sign In to Devotee Account' }}"
                 >
@@ -206,7 +206,7 @@
                 <a 
                     href="{{ route('cart.index') }}" 
                     id="cart-drawer-trigger" 
-                    class="p-1.5 sm:p-2 text-[#A86911] hover:text-[#C18129] transition-colors relative inline-flex items-center justify-center shrink-0 cursor-pointer rounded-full hover:bg-black/5 cart-drawer-opener" 
+                    class="p-1.5 sm:p-2 text-[#A86911] hover:text-[#C18129] transition-colors relative inline-flex items-center justify-center shrink-0 cursor-pointer rounded-none hover:bg-black/5 cart-drawer-opener" 
                     aria-label="Cart"
                 >
                     <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
@@ -215,7 +215,7 @@
                     
                     <span 
                         id="header-cart-badge"
-                        class="header-cart-badge absolute top-0.5 right-0 bg-[#831F2E] text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center leading-none ring-1 ring-white"
+                        class="header-cart-badge absolute top-0.5 right-0 bg-[#831F2E] text-white text-[9px] font-bold w-4 h-4 rounded-none flex items-center justify-center leading-none ring-1 ring-white"
                     >
                         {{ session('cart_count', 0) }}
                     </span>
@@ -227,21 +227,21 @@
     </div>
 
     <!-- Mobile Horizontal Quick Category & Offer Pills Strip (Matches Reference Screenshot) -->
-    <div class="lg:hidden w-full border-t border-[#EAE3D9]/70 bg-[#f5ecda] py-2 px-3 overflow-x-auto scrollbar-none">
+    <div class="lg:hidden w-full border-t border-[#EAE3D9]/70 bg-[#FFF9ED] py-2 px-3 overflow-x-auto scrollbar-none">
         <div class="flex items-center space-x-2 whitespace-nowrap text-xs font-semibold">
-            <a href="{{ route('bundles.buy2get1') }}" class="px-3.5 py-1 rounded-full border border-[#831F2E]/40 bg-[#FFF8F8] text-[#831F2E] hover:bg-[#831F2E] hover:text-white transition-colors shrink-0 shadow-2xs font-heading">
+            <a href="{{ route('bundles.buy2get1') }}" class="px-3.5 py-1 rounded-none border border-[#831F2E]/40 bg-[#FFF8F8] text-[#831F2E] hover:bg-[#831F2E] hover:text-white transition-colors shrink-0 font-heading">
                 Buy 2 Get 1 free
             </a>
-            <a href="{{ route('collections.show', 'bambooless') }}" class="px-3.5 py-1 rounded-full border border-[#C18129] bg-white text-[#121212] hover:bg-[#C18129] hover:text-white transition-colors shrink-0 shadow-2xs">
-                Premium Incense
+            <a href="{{ route('collections.show', 'bambooless') }}" class="px-3.5 py-1 rounded-none border border-[#C18129] bg-white text-[#121212] hover:bg-[#C18129] hover:text-white transition-colors shrink-0">
+                Incense Sticks
             </a>
-            <a href="{{ route('collections.show', 'dhoop-cones') }}" class="px-3.5 py-1 rounded-full border border-[#C18129] bg-white text-[#121212] hover:bg-[#C18129] hover:text-white transition-colors shrink-0 shadow-2xs">
+            <a href="{{ route('collections.show', 'dhoop-cones') }}" class="px-3.5 py-1 rounded-none border border-[#C18129] bg-white text-[#121212] hover:bg-[#C18129] hover:text-white transition-colors shrink-0">
                 Dhoop Cones
             </a>
-            <a href="{{ route('bundles.trial-packs') }}" class="px-3.5 py-1 rounded-full border border-[#C18129] bg-white text-[#121212] hover:bg-[#C18129] hover:text-white transition-colors shrink-0 shadow-2xs">
+            <a href="{{ route('bundles.trial-packs') }}" class="px-3.5 py-1 rounded-none border border-[#C18129] bg-white text-[#121212] hover:bg-[#C18129] hover:text-white transition-colors shrink-0">
                 Trial Packs @ 799
             </a>
-            <a href="{{ route('collections.show', 'havan-cups') }}" class="px-3.5 py-1 rounded-full border border-[#C18129] bg-white text-[#121212] hover:bg-[#C18129] hover:text-white transition-colors shrink-0 shadow-2xs">
+            <a href="{{ route('collections.show', 'havan-cups') }}" class="px-3.5 py-1 rounded-none border border-[#C18129] bg-white text-[#121212] hover:bg-[#C18129] hover:text-white transition-colors shrink-0">
                 Havan Cups
             </a>
         </div>

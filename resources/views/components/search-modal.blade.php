@@ -11,7 +11,7 @@
     <div class="min-h-screen px-3 sm:px-4 text-center flex items-start justify-center pt-12 sm:pt-20">
         
         <!-- Modal Content Container -->
-        <div class="relative bg-white w-full max-w-3xl rounded-[16px] shadow-2xl p-5 sm:p-7 text-left z-10 border border-[#EADBCC] space-y-5" onclick="event.stopPropagation()">
+        <div class="relative bg-white w-full max-w-3xl rounded-none shadow-2xl p-5 sm:p-7 text-left z-10 border border-[#EADBCC] space-y-5" onclick="event.stopPropagation()">
             
             <!-- Search Header & Input Form -->
             <form id="search-modal-form" action="{{ route('search.index') }}" method="GET" class="m-0">
@@ -41,7 +41,7 @@
                     <button 
                         type="button" 
                         id="search-modal-close"
-                        class="p-2 text-gray-400 hover:text-[#121212] rounded-full hover:bg-gray-100 transition-colors focus:outline-none shrink-0"
+                        class="p-2 text-gray-400 hover:text-[#121212] rounded-none hover:bg-gray-100 transition-colors focus:outline-none shrink-0"
                         aria-label="Close search"
                     >
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -66,22 +66,22 @@
                         Popular Searches
                     </h5>
                     <div class="flex flex-wrap gap-2 font-body">
-                        <button type="button" class="search-tag px-3 py-1.5 bg-[#FAF7F2] text-xs font-semibold text-[#121212] rounded-full border border-[#EADBCC] hover:border-[#D38928] hover:text-[#D38928] hover:bg-white transition-all font-body">
+                        <button type="button" class="search-tag px-3 py-1.5 bg-[#FAF7F2] text-xs font-semibold text-[#121212] rounded-none border border-[#EADBCC] hover:border-[#D38928] hover:text-[#D38928] hover:bg-white transition-all font-body">
                             Camphor (कपूर)
                         </button>
-                        <button type="button" class="search-tag px-3 py-1.5 bg-[#FAF7F2] text-xs font-semibold text-[#121212] rounded-full border border-[#EADBCC] hover:border-[#D38928] hover:text-[#D38928] hover:bg-white transition-all font-body">
+                        <button type="button" class="search-tag px-3 py-1.5 bg-[#FAF7F2] text-xs font-semibold text-[#121212] rounded-none border border-[#EADBCC] hover:border-[#D38928] hover:text-[#D38928] hover:bg-white transition-all font-body">
                             Sandalwood Havan Cup
                         </button>
-                        <button type="button" class="search-tag px-3 py-1.5 bg-[#FAF7F2] text-xs font-semibold text-[#121212] rounded-full border border-[#EADBCC] hover:border-[#D38928] hover:text-[#D38928] hover:bg-white transition-all font-body">
+                        <button type="button" class="search-tag px-3 py-1.5 bg-[#FAF7F2] text-xs font-semibold text-[#121212] rounded-none border border-[#EADBCC] hover:border-[#D38928] hover:text-[#D38928] hover:bg-white transition-all font-body">
                             Trial Pack Combo
                         </button>
-                        <button type="button" class="search-tag px-3 py-1.5 bg-[#FAF7F2] text-xs font-semibold text-[#121212] rounded-full border border-[#EADBCC] hover:border-[#D38928] hover:text-[#D38928] hover:bg-white transition-all font-body">
-                            Bambooless Incense
+                        <button type="button" class="search-tag px-3 py-1.5 bg-[#FAF7F2] text-xs font-semibold text-[#121212] rounded-none border border-[#EADBCC] hover:border-[#D38928] hover:text-[#D38928] hover:bg-white transition-all font-body">
+                            Incense Sticks
                         </button>
-                        <button type="button" class="search-tag px-3 py-1.5 bg-[#FAF7F2] text-xs font-semibold text-[#121212] rounded-full border border-[#EADBCC] hover:border-[#D38928] hover:text-[#D38928] hover:bg-white transition-all font-body">
+                        <button type="button" class="search-tag px-3 py-1.5 bg-[#FAF7F2] text-xs font-semibold text-[#121212] rounded-none border border-[#EADBCC] hover:border-[#D38928] hover:text-[#D38928] hover:bg-white transition-all font-body">
                             Devi Refill Pack
                         </button>
-                        <button type="button" class="search-tag px-3 py-1.5 bg-[#FAF7F2] text-xs font-semibold text-[#121212] rounded-full border border-[#EADBCC] hover:border-[#D38928] hover:text-[#D38928] hover:bg-white transition-all font-body">
+                        <button type="button" class="search-tag px-3 py-1.5 bg-[#FAF7F2] text-xs font-semibold text-[#121212] rounded-none border border-[#EADBCC] hover:border-[#D38928] hover:text-[#D38928] hover:bg-white transition-all font-body">
                             Natural Attar Spray
                         </button>
                     </div>
@@ -103,14 +103,14 @@
 
                     <!-- Empty State (When no results found) -->
                     <div id="search-empty-state" class="hidden py-10 text-center space-y-3 font-body">
-                        <div class="w-12 h-12 mx-auto bg-[#FAF7F2] rounded-full flex items-center justify-center text-2xl">
+                        <div class="w-12 h-12 mx-auto bg-[#FAF7F2] rounded-none flex items-center justify-center text-2xl">
                             🔍
                         </div>
                         <h4 class="text-sm font-bold text-[#121212] font-body">No sacred products found</h4>
                         <p class="text-xs text-gray-400 max-w-xs mx-auto font-body">
                             We couldn't find any products matching your search. Try checking for typos or searching by keyword.
                         </p>
-                        <a href="{{ route('collections.show', 'all') }}" class="inline-block px-4 py-2 bg-[#D38928] text-white text-xs font-bold rounded-[8px] font-body">
+                        <a href="{{ route('collections.show', 'all') }}" class="inline-block px-4 py-2 bg-[#D38928] text-white text-xs font-bold rounded-none font-body">
                             Browse All Collections
                         </a>
                     </div>
@@ -120,7 +120,7 @@
 
             <!-- Modal Bottom Help & All Products Link -->
             <div class="pt-3 border-t border-[#EADBCC] flex items-center justify-between text-xs text-gray-400 font-body">
-                <span class="hidden sm:inline">Press <kbd class="px-1.5 py-0.5 bg-gray-100 border border-gray-300 rounded text-[10px] font-mono text-gray-700">ESC</kbd> to close</span>
+                <span class="hidden sm:inline">Press <kbd class="px-1.5 py-0.5 bg-gray-100 border border-gray-300 rounded-none text-[10px] font-mono text-gray-700">ESC</kbd> to close</span>
                 <a href="{{ route('collections.show', 'all') }}" class="text-[#D38928] font-bold hover:underline font-body">View full collection &rarr;</a>
             </div>
 

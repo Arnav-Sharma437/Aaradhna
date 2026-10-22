@@ -77,7 +77,7 @@
                         </label>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-2" id="group-product-interest">
                             @foreach([
-                                'Bambooless Incense Sticks',
+                                'Incense Sticks',
                                 'Havan Cups',
                                 'Dhoop Cones',
                                 'Attar Sprays',

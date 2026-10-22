@@ -23,12 +23,12 @@
         : ($product->active_price * 1.35);
 @endphp
 
-<div {{ $attributes->merge(['class' => 'product-card group relative flex flex-col bg-[#FFFDF9] rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body']) }}>
+<div {{ $attributes->merge(['class' => 'product-card group relative flex flex-col bg-white rounded-none border border-[#EADBCC] hover:border-[#D38928] transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body']) }}>
     
     @if(!empty($topBadge))
     <!-- Centered Overlapping Top Border Pill Badge with Sparkles -->
     <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
-        <span class="inline-flex items-center space-x-1 bg-white px-2 sm:px-2.5 py-[2px] rounded-full border border-[#D38928] text-[8.5px] sm:text-[9px] font-bold tracking-wider text-[#965A15] uppercase shadow-2xs whitespace-nowrap font-heading leading-tight">
+        <span class="inline-flex items-center space-x-1 bg-white px-2 sm:px-2.5 py-[2px] rounded-none border border-[#D38928] text-[8.5px] sm:text-[9px] font-bold tracking-wider text-[#965A15] uppercase whitespace-nowrap font-heading leading-tight">
             <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
             <span>{{ $topBadge }}</span>
             <span class="text-[#D38928] text-[8px] sm:text-[9px]">✨</span>
@@ -38,7 +38,7 @@
 
     <!-- Product Image Box (5px Inner Padding) -->
     <div class="p-[5px] pb-0">
-        <div class="relative w-full aspect-[4/4.8] rounded-[16px] sm:rounded-[20px] overflow-hidden bg-[#FAF7F2] shadow-2xs">
+        <div class="relative w-full aspect-[4/4.8] rounded-none overflow-hidden bg-[#FAF7F2]">
             <a href="{{ route('products.show', $product->slug) }}" class="block w-full h-full relative overflow-hidden">
                 <!-- Primary Image -->
                 <img 
@@ -60,7 +60,7 @@
 
             <!-- Free Ceramic Stand Banner for Devi / Specials -->
             @if(str_contains(strtolower($product->slug), 'devi'))
-                <div class="absolute bottom-1.5 left-1.5 right-1.5 sm:bottom-2 sm:left-2 sm:right-2 bg-black/65 backdrop-blur-xs py-1 sm:py-1.5 px-1.5 sm:px-2 rounded-[6px] text-center text-white text-[10px] sm:text-xs font-bold tracking-wider z-10">
+                <div class="absolute bottom-1.5 left-1.5 right-1.5 sm:bottom-2 sm:left-2 sm:right-2 bg-black/65 backdrop-blur-xs py-1 sm:py-1.5 px-1.5 sm:px-2 rounded-none text-center text-white text-[10px] sm:text-xs font-bold tracking-wider z-10">
                     FREE STAND <span class="text-[#F6DAA8] font-normal hidden sm:inline">₹150/-</span>
                 </div>
             @endif
@@ -102,14 +102,14 @@
                 <button 
                     type="button" 
                     disabled
-                    class="w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-gray-200 text-gray-500 text-xs sm:text-sm font-bold uppercase tracking-wider rounded-[8px] sm:rounded-[10px] cursor-not-allowed font-heading text-center"
+                    class="w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-gray-200 text-gray-500 text-xs sm:text-sm font-bold uppercase tracking-wider rounded-none cursor-not-allowed font-heading text-center"
                 >
                     Sold Out
                 </button>
             @else
                 <button 
                     type="button" 
-                    class="quick-add-to-cart-btn w-full py-2 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-normal rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-body cursor-pointer"
+                    class="quick-add-to-cart-btn w-full py-2 px-2 sm:px-4 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-normal rounded-none transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-body cursor-pointer"
                     data-product-id="{{ $product->id }}"
                     data-product-title="{{ $product->title }}"
                     data-product-slug="{{ $product->slug }}"

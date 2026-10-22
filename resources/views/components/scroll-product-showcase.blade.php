@@ -7,9 +7,9 @@
     $items = $products ?? collect([
         (object)[
             'id' => 1,
-            'title' => 'Swarna Pushpa Bambooless',
+            'title' => 'Swarna Pushpa Incense Sticks',
             'slug' => 'swarna-pushpa',
-            'subtitle' => '40 Bambooless Sticks • Sacred Marigold & Saffron',
+            'subtitle' => '40 Incense Sticks • Sacred Marigold & Saffron',
             'active_price' => 399.00,
             'image' => 'assets/images/oudh-pack-card.jpg',
             'lifestyle' => 'assets/images/oudh-pack-card.jpg',

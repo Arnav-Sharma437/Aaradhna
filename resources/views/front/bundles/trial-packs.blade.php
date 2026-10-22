@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Buy Any 5 Trial Packs @ ₹799 — ISHANAA™')
-@section('meta_description', 'Choose any 5 sacred trial packs at just ₹799. 100% Bambooless & Charcoal Free Vedic Agarbatti.')
+@section('meta_description', 'Choose any 5 sacred trial packs at just ₹799. 100% Pure & Charcoal Free Vedic Incense Sticks.')
 
 @section('content')
 <div class="bg-white min-h-screen pb-36 font-body">
