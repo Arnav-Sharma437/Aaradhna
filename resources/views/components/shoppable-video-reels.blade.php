@@ -214,12 +214,12 @@
 <!-- ========================================================================= -->
 <!-- SHOPPABLE VIDEO REELS SECTION                                             -->
 <!-- ========================================================================= -->
-<section class="py-[40px] bg-white border-b border-[#EAE3D9] overflow-hidden font-body select-none relative" id="shoppable-reels-section">
+<section class="py-[40px] bg-white overflow-hidden font-body select-none relative" id="shoppable-reels-section">
     <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
         
         <!-- Section Header -->
         <div class="text-center max-w-4xl mx-auto mb-6 sm:mb-8 space-y-1.5">
-            <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ SACRED UNBOXING &amp; RITUALS ✦</span>
+            <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#C18129] font-heading">✦ SACRED UNBOXING &amp; RITUALS ✦</span>
             <h2 class="text-[18px] sm:text-[24px] md:text-[28px] lg:text-[34px] font-normal capitalize text-[#121212] font-heading tracking-[0.06em] leading-tight whitespace-nowrap">
                 Experience Divine Fragrance
             </h2>

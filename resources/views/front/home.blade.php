@@ -8,7 +8,7 @@
 <!-- ========================================================================= -->
 <!-- 1. FULL-WIDTH CLEAN LUXURY HERO BANNER                                     -->
 <!-- ========================================================================= -->
-<section class="relative w-full bg-white overflow-hidden select-none border-b border-[#EAE3D9] font-body" id="hero-banner-carousel">
+<section class="relative w-full bg-white overflow-hidden select-none font-body" id="hero-banner-carousel">
     
     <!-- Slides Wrapper (Responsive Hero Banner Wrapper for 100%, 110%, 125%, 150% Zoom & Mac) -->
     <div class="hero-banner-wrapper relative w-full overflow-hidden bg-white">
@@ -101,12 +101,12 @@
 <!-- ========================================================================= -->
 <!-- 2. BESTSELLER OF THE MONTH (All 8 Products in Mobile Slider & Desktop Grid) -->
 <!-- ========================================================================= -->
-<section class="py-[40px] bg-white border-b border-[#EAE3D9] overflow-hidden">
+<section class="py-[40px] bg-white overflow-hidden">
     <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
         
         <!-- Section Header -->
         <div class="text-center max-w-4xl mx-auto mb-5 sm:mb-6 space-y-1.5">
-            <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ PURE VEDIC BLESSINGS ✦</span>
+            <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#C18129] font-heading">✦ PURE VEDIC BLESSINGS ✦</span>
             <h2 class="text-[18px] sm:text-[24px] md:text-[28px] lg:text-[34px] font-normal capitalize text-[#121212] font-heading tracking-[0.06em] leading-tight whitespace-nowrap">
                 Bestseller of the Month
             </h2>
@@ -260,104 +260,106 @@
 </script>
 
 <!-- ========================================================================= -->
-<!-- 3. PRODUCTS CATEGORY (Clean Large Single-Item Circles on Pure White)      -->
+<!-- 3. PRODUCTS CATEGORY (Outer Dark with Center White Card & Dark Category Circles) -->
 <!-- ========================================================================= -->
-<section class="py-[40px] bg-white border-b border-[#EAE3D9] font-body select-none">
-    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
+<section class="py-8 sm:py-12 lg:py-16 bg-[#121212] font-body select-none">
+    <div class="w-full max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-10">
         
-        <!-- Section Header -->
-        <div class="text-center max-w-4xl mx-auto mb-6 sm:mb-10 space-y-1.5">
-            <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">
-                ✦ 100% NATURAL • CHARCOAL FREE ✦
-            </span>
-            <h2 class="text-[18px] sm:text-[24px] md:text-[28px] lg:text-[34px] font-normal capitalize text-[#2B1810] font-heading tracking-[0.06em] leading-tight whitespace-nowrap">
-                Product Categories
-            </h2>
-        </div>
-
-        <!-- 3 Big Single-Product Category Circles (Centered Grid & Balanced Spacing) -->
-        <div id="category-slider" class="flex sm:grid overflow-x-auto sm:overflow-visible scrollbar-none snap-x snap-mandatory sm:grid-cols-3 justify-start sm:justify-center items-start gap-4 sm:gap-6 lg:gap-8 max-w-4xl mx-auto pb-3 sm:pb-0 -mx-4 px-4 sm:mx-auto sm:px-0 w-full">
+        <!-- Center White Card Frame -->
+        <div class="bg-white rounded-2xl sm:rounded-3xl lg:rounded-[36px] py-10 sm:py-14 px-4 sm:px-8 lg:px-12 shadow-sm">
             
-            <!-- Category 1: Single Bamboo-less Dhoop Stick -->
-            <div class="w-[145px] sm:w-auto shrink-0 snap-start group flex flex-col items-center text-center space-y-2.5 sm:space-y-3">
-                <a href="{{ route('collections.show', 'bambooless') }}" class="block relative w-full max-w-[170px] sm:max-w-[200px] lg:max-w-[210px] aspect-square rounded-full p-2 bg-white border border-[#EADBCC] hover:border-[#D38928] group-hover:scale-105 transition-all duration-500 cursor-pointer">
-                    <div class="w-full h-full rounded-full overflow-hidden bg-white p-1 sm:p-2 flex items-center justify-center relative">
-                        <img 
-                            src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" 
-                            alt="Bamboo-less Dhoop Stick" 
-                            class="w-full h-full object-contain rounded-full scale-105 group-hover:scale-115 transition-transform duration-500"
-                        >
-                    </div>
-                </a>
-
-                <!-- Category Details -->
-                <div class="space-y-0.5 max-w-xs flex flex-col items-center">
-                    <h3 class="text-sm sm:text-base lg:text-[17px] font-normal capitalize tracking-wide text-[#121212] hover:text-[#D38928] transition-colors font-heading block">
-                        <a href="{{ route('collections.show', 'bambooless') }}">Dhoop Stick</a>
-                    </h3>
-                    <p class="text-[11px] sm:text-xs text-[#7A7A7A] font-medium leading-tight">
-                        Bamboo-less Dhoop Stick
-                    </p>
-                </div>
+            <!-- Section Header -->
+            <div class="text-center max-w-4xl mx-auto mb-6 sm:mb-10 space-y-1.5">
+                <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#C18129] font-heading">
+                    ✦ 100% NATURAL • CHARCOAL FREE ✦
+                </span>
+                <h2 class="text-[18px] sm:text-[24px] md:text-[28px] lg:text-[34px] font-normal capitalize text-[#121212] font-heading tracking-[0.06em] leading-tight whitespace-nowrap">
+                    Product Categories
+                </h2>
             </div>
 
-            <!-- Category 2: Single Dhoop Cone -->
-            <div class="w-[145px] sm:w-auto shrink-0 snap-start group flex flex-col items-center text-center space-y-2.5 sm:space-y-3">
-                <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block relative w-full max-w-[170px] sm:max-w-[200px] lg:max-w-[210px] aspect-square rounded-full p-2 bg-white border border-[#EADBCC] hover:border-[#D38928] group-hover:scale-105 transition-all duration-500 cursor-pointer">
-                    <div class="w-full h-full rounded-full overflow-hidden bg-white p-1 sm:p-2 flex items-center justify-center relative">
-                        <img 
-                            src="{{ asset('assets/images/single-dhoop-cone.jpg') }}" 
-                            alt="Easy to Use Dhoop Cone" 
-                            class="w-full h-full object-contain rounded-full scale-105 group-hover:scale-115 transition-transform duration-500"
-                        >
-                    </div>
-                </a>
+            <!-- 3 Big Single-Product Category Circles (Centered Grid & Balanced Spacing) -->
+            <div id="category-slider" class="flex sm:grid overflow-x-auto sm:overflow-visible scrollbar-none snap-x snap-mandatory sm:grid-cols-3 justify-start sm:justify-center items-start gap-4 sm:gap-6 lg:gap-8 max-w-4xl mx-auto pb-3 sm:pb-0 -mx-4 px-4 sm:mx-auto sm:px-0 w-full">
+                
+                <!-- Category 1: Single Bamboo-less Dhoop Stick -->
+                <div class="w-[145px] sm:w-auto shrink-0 snap-start group flex flex-col items-center text-center space-y-2.5 sm:space-y-3">
+                    <a href="{{ route('collections.show', 'bambooless') }}" class="block relative w-full max-w-[170px] sm:max-w-[200px] lg:max-w-[210px] aspect-square rounded-full p-2 bg-[#121212] border border-[#C18129]/30 hover:border-[#C18129] group-hover:scale-105 transition-all duration-500 cursor-pointer shadow-md">
+                        <div class="w-full h-full rounded-full overflow-hidden bg-[#121212] p-1 sm:p-2 flex items-center justify-center relative">
+                            <img 
+                                src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" 
+                                alt="Bamboo-less Dhoop Stick" 
+                                class="w-full h-full object-contain rounded-full scale-105 group-hover:scale-115 transition-transform duration-500"
+                            >
+                        </div>
+                    </a>
 
-                <!-- Category Details -->
-                <div class="space-y-0.5 max-w-xs flex flex-col items-center">
-                    <h3 class="text-sm sm:text-base lg:text-[17px] font-normal capitalize tracking-wide text-[#121212] hover:text-[#D38928] transition-colors font-heading block">
-                        <a href="{{ route('collections.show', 'dhoop-cones') }}">Dhoop Cones</a>
-                    </h3>
-                    <p class="text-[11px] sm:text-xs text-[#7A7A7A] font-medium leading-tight">
-                        Easy to Use Dhoop Cone
-                    </p>
+                    <!-- Category Details -->
+                    <div class="space-y-0.5 max-w-xs flex flex-col items-center">
+                        <h3 class="text-sm sm:text-base lg:text-[17px] font-normal capitalize tracking-wide text-[#121212] hover:text-[#C18129] transition-colors font-heading block">
+                            <a href="{{ route('collections.show', 'bambooless') }}">Dhoop Stick</a>
+                        </h3>
+                        <p class="text-[11px] sm:text-xs text-[#7A7A7A] font-medium leading-tight">
+                            Bamboo-less Dhoop Stick
+                        </p>
+                    </div>
                 </div>
+
+                <!-- Category 2: Single Dhoop Cone -->
+                <div class="w-[145px] sm:w-auto shrink-0 snap-start group flex flex-col items-center text-center space-y-2.5 sm:space-y-3">
+                    <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block relative w-full max-w-[170px] sm:max-w-[200px] lg:max-w-[210px] aspect-square rounded-full p-2 bg-[#121212] border border-[#C18129]/30 hover:border-[#C18129] group-hover:scale-105 transition-all duration-500 cursor-pointer shadow-md">
+                        <div class="w-full h-full rounded-full overflow-hidden bg-[#121212] p-1 sm:p-2 flex items-center justify-center relative">
+                            <img 
+                                src="{{ asset('assets/images/single-dhoop-cone.jpg') }}" 
+                                alt="Easy to Use Dhoop Cone" 
+                                class="w-full h-full object-contain rounded-full scale-105 group-hover:scale-115 transition-transform duration-500"
+                            >
+                        </div>
+                    </a>
+
+                    <!-- Category Details -->
+                    <div class="space-y-0.5 max-w-xs flex flex-col items-center">
+                        <h3 class="text-sm sm:text-base lg:text-[17px] font-normal capitalize tracking-wide text-[#121212] hover:text-[#C18129] transition-colors font-heading block">
+                            <a href="{{ route('collections.show', 'dhoop-cones') }}">Dhoop Cones</a>
+                        </h3>
+                        <p class="text-[11px] sm:text-xs text-[#7A7A7A] font-medium leading-tight">
+                            Easy to Use Dhoop Cone
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Category 3: Single 100% Organic Havan Cup -->
+                <div class="w-[145px] sm:w-auto shrink-0 snap-start group flex flex-col items-center text-center space-y-2.5 sm:space-y-3">
+                    <a href="{{ route('collections.show', 'havan-cups') }}" class="block relative w-full max-w-[170px] sm:max-w-[200px] lg:max-w-[210px] aspect-square rounded-full p-2 bg-[#121212] border border-[#C18129]/30 hover:border-[#C18129] group-hover:scale-105 transition-all duration-500 cursor-pointer shadow-md">
+                        <div class="w-full h-full rounded-full overflow-hidden bg-[#121212] p-1 sm:p-2 flex items-center justify-center relative">
+                            <img 
+                                src="{{ asset('assets/images/single-havan-cup.jpg') }}" 
+                                alt="100% Organic Havan Cups" 
+                                class="w-full h-full object-contain rounded-full scale-105 group-hover:scale-115 transition-transform duration-500"
+                            >
+                        </div>
+                    </a>
+
+                    <!-- Category Details -->
+                    <div class="space-y-0.5 max-w-xs flex flex-col items-center">
+                        <h3 class="text-sm sm:text-base lg:text-[17px] font-normal capitalize tracking-wide text-[#121212] hover:text-[#C18129] transition-colors font-heading block">
+                            <a href="{{ route('collections.show', 'havan-cups') }}">Havan Cup</a>
+                        </h3>
+                        <p class="text-[11px] sm:text-xs text-[#7A7A7A] font-medium leading-tight">
+                            100% Organic Havan Cups
+                        </p>
+                    </div>
+                </div>
+
             </div>
 
-            <!-- Category 3: Single 100% Organic Havan Cup -->
-            <div class="w-[145px] sm:w-auto shrink-0 snap-start group flex flex-col items-center text-center space-y-2.5 sm:space-y-3">
-                <a href="{{ route('collections.show', 'havan-cups') }}" class="block relative w-full max-w-[170px] sm:max-w-[200px] lg:max-w-[210px] aspect-square rounded-full p-2 bg-white border border-[#EADBCC] hover:border-[#D38928] group-hover:scale-105 transition-all duration-500 cursor-pointer">
-                    <div class="w-full h-full rounded-full overflow-hidden bg-white p-1 sm:p-2 flex items-center justify-center relative">
-                        <img 
-                            src="{{ asset('assets/images/single-havan-cup.jpg') }}" 
-                            alt="100% Organic Havan Cups" 
-                            class="w-full h-full object-contain rounded-full scale-105 group-hover:scale-115 transition-transform duration-500"
-                        >
-                    </div>
-                </a>
-
-                <!-- Category Details -->
-                <div class="space-y-0.5 max-w-xs flex flex-col items-center">
-                    <h3 class="text-sm sm:text-base lg:text-[17px] font-normal capitalize tracking-wide text-[#121212] hover:text-[#D38928] transition-colors font-heading block">
-                        <a href="{{ route('collections.show', 'havan-cups') }}">Havan Cup</a>
-                    </h3>
-                    <p class="text-[11px] sm:text-xs text-[#7A7A7A] font-medium leading-tight">
-                        100% Organic Havan Cups
-                    </p>
+            <!-- Mobile Scroll Indicator Line -->
+            <div class="sm:hidden flex justify-center mt-5">
+                <div class="w-28 h-1 bg-[#EADBCC] rounded-full overflow-hidden relative">
+                    <div id="category-scroll-bar" class="w-10 h-full bg-[#C18129] rounded-full transition-transform duration-75"></div>
                 </div>
             </div>
 
         </div>
-
-        <!-- Mobile Scroll Indicator Line (media_1790947081514.png) -->
-        <div class="sm:hidden flex justify-center mt-5">
-            <div class="w-28 h-1 bg-[#EADBCC] rounded-full overflow-hidden relative">
-                <div id="category-scroll-bar" class="w-10 h-full bg-[#D38928] rounded-full transition-transform duration-75"></div>
-            </div>
-        </div>
-
-    </div>
-</section>
 
     </div>
 </section>
@@ -389,11 +391,11 @@
 <!-- 6. DAILY DEVOTIONAL RITUALS (Dynamic Sacred Products) -->
 <!-- ========================================================================= -->
 @if(isset($newLaunches) && $newLaunches->isNotEmpty())
-<section class="py-[40px] bg-white border-b border-[#EAE3D9]">
+<section class="py-[40px] bg-white">
     <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
         
         <div class="text-center max-w-4xl mx-auto mb-5 sm:mb-6 space-y-1.5">
-            <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ DAILY RITUAL GUIDES ✦</span>
+            <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#C18129] font-heading">✦ DAILY RITUAL GUIDES ✦</span>
             <h2 class="text-[18px] sm:text-[24px] md:text-[28px] lg:text-[34px] font-normal capitalize text-[#121212] font-heading tracking-[0.06em] leading-tight whitespace-nowrap">
                 Devotional Moments
             </h2>
@@ -409,18 +411,15 @@
 </section>
 @endif
 
-    </div>
-</section>
-
 <!-- ========================================================================= -->
 <!-- 5. DEVOTEE TESTIMONIALS (2-Row Continuous Smooth Marquee Ticker)         -->
 <!-- ========================================================================= -->
-<section class="py-[40px] bg-white border-b border-[#EAE3D9] overflow-hidden select-none" id="testimonials-marquee-section">
+<section class="py-[40px] bg-white overflow-hidden select-none" id="testimonials-marquee-section">
     <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
         
         <!-- Header -->
         <div class="text-center max-w-4xl mx-auto space-y-1.5 mb-5 sm:mb-6">
-            <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ 50,000+ BLESSED DEVOTEES ✦</span>
+            <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#C18129] font-heading">✦ 50,000+ BLESSED DEVOTEES ✦</span>
             <h2 class="text-[18px] sm:text-[24px] md:text-[28px] lg:text-[34px] font-normal capitalize text-[#121212] font-heading tracking-[0.06em] leading-tight whitespace-nowrap">
                 Customer Testimonials
             </h2>
@@ -658,12 +657,12 @@
 <!-- ========================================================================= -->
 <!-- 6. ROOTED IN PURITY (Exact Matching Reference Screenshot Styling)         -->
 <!-- ========================================================================= -->
-<section class="py-12 sm:py-16 bg-[#FFFDF9] border-b border-[#EADBCC] select-none font-body">
+<section class="py-12 sm:py-16 bg-[#FFFDF9] select-none font-body">
     <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
         
         <!-- Clean Standard Eyebrow Header -->
         <div class="text-center max-w-4xl mx-auto mb-4 sm:mb-6 space-y-1.5">
-            <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ CRAFTED WITH CARE ✦</span>
+            <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#C18129] font-heading">✦ CRAFTED WITH CARE ✦</span>
             <h2 class="text-[18px] sm:text-[24px] md:text-[28px] lg:text-[34px] font-heading font-normal capitalize text-[#2B1810] tracking-[0.06em] leading-tight whitespace-nowrap">
                 Rooted in Purity
             </h2>
@@ -751,13 +750,13 @@
 <!-- ========================================================================= -->
 <!-- 8. FREQUENTLY ASKED QUESTIONS (Pure White Background, 10px Padding, 8px)  -->
 <!-- ========================================================================= -->
-<section class="py-[40px] bg-white border-b border-[#EAE3D9] select-none">
+<section class="py-[40px] bg-white select-none">
     <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
         <div class="max-w-5xl lg:max-w-[1100px] mx-auto space-y-6 sm:space-y-8">
         
         <!-- Section Header -->
         <div class="text-center max-w-4xl mx-auto mb-6 sm:mb-8 space-y-1.5">
-            <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ CLARITY &amp; VIDHI ✦</span>
+            <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#C18129] font-heading">✦ CLARITY &amp; VIDHI ✦</span>
             <h2 class="text-[18px] sm:text-[24px] md:text-[28px] lg:text-[34px] font-normal capitalize text-[#121212] font-heading tracking-[0.06em] leading-tight whitespace-nowrap">
                 Frequently Asked Questions
             </h2>
