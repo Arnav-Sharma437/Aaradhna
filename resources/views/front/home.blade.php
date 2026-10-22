@@ -10,11 +10,9 @@
 <!-- ========================================================================= -->
 <section class="relative w-full bg-white overflow-hidden select-none border-b border-[#EAE3D9] font-body" id="hero-banner-carousel">
     
-    <!-- Floating Glass Announcement Bar (Centered Half-Width Over Hero Banner) -->
-    <div class="absolute top-3 sm:top-4 md:top-5 lg:top-6 left-0 right-0 z-25 flex justify-center pointer-events-none px-3 sm:px-4">
-        <div class="w-full sm:w-[85%] md:w-[70%] lg:w-1/2 max-w-xl pointer-events-auto">
-            <x-announcement-bar />
-        </div>
+    <!-- Full-Width Glass Announcement Bar Attached to Top of Hero Banner -->
+    <div class="absolute top-0 inset-x-0 w-full z-25 pointer-events-auto">
+        <x-announcement-bar />
     </div>
 
     <!-- Slides Wrapper (Responsive Hero Banner Wrapper for 100%, 110%, 125%, 150% Zoom & Mac) -->
@@ -300,8 +298,8 @@
             </h2>
         </div>
 
-        <!-- 4 Big Single-Product Category Circles (Centered Grid & Tighter Spacing) -->
-        <div id="category-slider" class="flex sm:grid overflow-x-auto sm:overflow-visible scrollbar-none snap-x snap-mandatory sm:grid-cols-4 justify-start sm:justify-center items-start gap-3.5 sm:gap-5 lg:gap-6 max-w-5xl mx-auto pb-3 sm:pb-0 -mx-4 px-4 sm:mx-auto sm:px-0 w-full">
+        <!-- 3 Big Single-Product Category Circles (Centered Grid & Balanced Spacing) -->
+        <div id="category-slider" class="flex sm:grid overflow-x-auto sm:overflow-visible scrollbar-none snap-x snap-mandatory sm:grid-cols-3 justify-start sm:justify-center items-start gap-4 sm:gap-6 lg:gap-8 max-w-4xl mx-auto pb-3 sm:pb-0 -mx-4 px-4 sm:mx-auto sm:px-0 w-full">
             
             <!-- Category 1: Single Bamboo-less Dhoop Stick -->
             <div class="w-[145px] sm:w-auto shrink-0 snap-start group flex flex-col items-center text-center space-y-2.5 sm:space-y-3">
@@ -368,29 +366,6 @@
                     </h3>
                     <p class="text-[11px] sm:text-xs text-[#7A7A7A] font-medium leading-tight">
                         100% Organic Havan Cups
-                    </p>
-                </div>
-            </div>
-
-            <!-- Category 4: ISHANAA Pitambara Havan Pack -->
-            <div class="w-[145px] sm:w-auto shrink-0 snap-start group flex flex-col items-center text-center space-y-2.5 sm:space-y-3">
-                <a href="{{ route('products.pitambara') }}" class="block relative w-full max-w-[170px] sm:max-w-[200px] lg:max-w-[210px] aspect-square rounded-full p-2 bg-white border border-[#EADBCC] hover:border-[#D38928] group-hover:scale-105 transition-all duration-500 cursor-pointer">
-                    <div class="w-full h-full rounded-full overflow-hidden bg-white p-1 sm:p-2 flex items-center justify-center relative">
-                        <img 
-                            src="{{ asset('assets/images/pitambara-pack.jpg') }}" 
-                            alt="Pitambara Havan Pack" 
-                            class="w-full h-full object-contain rounded-full scale-105 group-hover:scale-115 transition-transform duration-500"
-                        >
-                    </div>
-                </a>
-
-                <!-- Category Details -->
-                <div class="space-y-0.5 max-w-xs flex flex-col items-center">
-                    <h3 class="text-sm sm:text-base lg:text-[17px] font-normal capitalize tracking-wide text-[#121212] hover:text-[#D38928] transition-colors font-heading block">
-                        <a href="{{ route('products.pitambara') }}">Pitambara Havan Pack</a>
-                    </h3>
-                    <p class="text-[11px] sm:text-xs text-[#7A7A7A] font-medium leading-tight">
-                        Sacred Vedic Samagri
                     </p>
                 </div>
             </div>
@@ -534,7 +509,7 @@
                             'city' => 'Kangra, Himachal Pradesh',
                             'initials' => 'SK',
                             'avatar_bg' => 'bg-[#3E2314]',
-                            'product' => 'Pitambara Havan Cups',
+                            'product' => 'Organic Havan Cups',
                             'quote' => 'Being from Kangra, I always prefer clean, organic products for home prayer. ISHANAA bambooless sticks emit gentle white smoke that keeps our living room fragrant and tranquil.'
                         ]
                     ];

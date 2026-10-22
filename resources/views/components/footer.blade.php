@@ -166,12 +166,6 @@
                             Buy 2 Get 1 Free
                         </a>
                     </li>
-                    <li>
-                        <a href="{{ route('products.pitambara') }}" class="text-white font-bold hover:text-white hover:underline transition-colors inline-flex items-center gap-1.5 py-0.5">
-                            <span class="text-[#FFF2DC]">✦</span>
-                            <span>Pitambara Havan</span>
-                        </a>
-                    </li>
                 </ul>
             </div>
 

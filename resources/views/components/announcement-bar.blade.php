@@ -1,5 +1,5 @@
-<div class="w-full bg-black/40 backdrop-blur-md border border-white/25 text-white text-xs py-1.5 px-3 sm:px-4 rounded-full shadow-xl font-body select-none relative overflow-hidden transition-all duration-300" id="announcement-bar">
-    <div class="w-full flex items-center justify-between">
+<div class="w-full bg-black/40 backdrop-blur-md border-b border-white/20 text-white text-xs py-2 px-3 sm:px-6 shadow-xs font-body select-none relative overflow-hidden transition-all duration-300" id="announcement-bar">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
         
         <!-- Left Navigation Arrow -->
         <button 
@@ -14,7 +14,7 @@
         </button>
 
         <!-- Center Rotating Announcement Text -->
-        <div class="w-[82%] sm:w-[86%] mx-auto overflow-hidden relative h-5 flex items-center justify-center text-center" id="announcement-slider">
+        <div class="w-[85%] sm:w-[90%] mx-auto overflow-hidden relative h-5 flex items-center justify-center text-center" id="announcement-slider">
             
             <!-- Slide 1 -->
             <div class="announcement-slide absolute inset-0 flex items-center justify-center text-center transition-all duration-500 ease-in-out opacity-100 translate-x-0">

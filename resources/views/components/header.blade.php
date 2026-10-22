@@ -170,17 +170,6 @@
                     </a>
                 </div>
 
-                <!-- 6. Pitambara Havan -->
-                @php $isPitambara = request()->is('pitambara-havan'); @endphp
-                <div class="py-2 xl:py-3 flex items-center">
-                    <a 
-                        href="{{ route('products.pitambara') }}" 
-                        class="text-[13.5px] lg:text-[14px] xl:text-[14.5px] {{ $isPitambara ? 'font-bold text-[#C28430] border-b-2 border-[#C28430] pb-0.5' : 'font-medium text-[#C28430] hover:text-[#A66B1F]' }} transition-colors whitespace-nowrap tracking-normal"
-                    >
-                        <span>Pitambara Havan</span>
-                    </a>
-                </div>
-
             </nav>
 
             <!-- RIGHT: Clean Compact Action Icons (Search + Account + Wishlist + Cart) -->
@@ -254,9 +243,6 @@
             </a>
             <a href="{{ route('collections.show', 'havan-cups') }}" class="px-3.5 py-1 rounded-full border border-[#D38928] bg-white text-[#121212] hover:bg-[#D38928] hover:text-white transition-colors shrink-0 shadow-2xs">
                 Havan Cups
-            </a>
-            <a href="{{ route('products.pitambara') }}" class="px-3.5 py-1 rounded-full border border-[#C28430] bg-white text-[#C28430] hover:bg-[#C28430] hover:text-white transition-colors shrink-0 shadow-2xs">
-                Pitambara Special
             </a>
         </div>
     </div>

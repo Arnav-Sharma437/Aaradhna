@@ -132,15 +132,7 @@
                 <span>Best Seller Combo</span>
             </a>
 
-            <!-- 6. Shri Ram Pitambara Havan -->
-            <a 
-                href="{{ route('products.pitambara') }}" 
-                class="block py-4 px-5 text-base sm:text-lg font-bold font-serif tracking-wide text-white hover:bg-black/10 transition-colors"
-            >
-                <span>Shri Ram Uphaar</span>
-            </a>
-
-            <!-- 7. Contact Us -->
+            <!-- 6. Contact Us -->
             <a 
                 href="{{ route('pages.contact') }}" 
                 class="block py-4 px-5 text-base sm:text-lg font-bold font-serif tracking-wide text-white hover:bg-black/10 transition-colors"
