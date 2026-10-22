@@ -10,11 +10,6 @@
 <!-- ========================================================================= -->
 <section class="relative w-full bg-white overflow-hidden select-none border-b border-[#EAE3D9] font-body" id="hero-banner-carousel">
     
-    <!-- Full-Width Glass Announcement Bar Attached to Top of Hero Banner -->
-    <div class="absolute top-0 inset-x-0 w-full z-25 pointer-events-auto">
-        <x-announcement-bar />
-    </div>
-
     <!-- Slides Wrapper (Responsive Hero Banner Wrapper for 100%, 110%, 125%, 150% Zoom & Mac) -->
     <div class="hero-banner-wrapper relative w-full overflow-hidden bg-white">
         
@@ -89,31 +84,13 @@
 
     </div>
 
-    <!-- Luxury Premium Carousel Arrow Controls (Desktop only - hidden on mobile) -->
-    <button 
-        type="button" 
-        id="hero-slider-prev"
-        class="hidden md:flex absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/85 hover:bg-[#D38928] text-[#1F1F1F] hover:text-white items-center justify-center backdrop-blur-md border border-[#D38928]/40 hover:border-[#F6DAA8] shadow-lg transition-all duration-300 transform hover:scale-105 active:scale-95 focus:outline-none cursor-pointer group"
-        aria-label="Previous Slide"
-    >
-        <svg class="w-5 h-5 group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
-    </button>
-    <button 
-        type="button" 
-        id="hero-slider-next"
-        class="hidden md:flex absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/85 hover:bg-[#D38928] text-[#1F1F1F] hover:text-white items-center justify-center backdrop-blur-md border border-[#D38928]/40 hover:border-[#F6DAA8] shadow-lg transition-all duration-300 transform hover:scale-105 active:scale-95 focus:outline-none cursor-pointer group"
-        aria-label="Next Slide"
-    >
-        <svg class="w-5 h-5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-    </button>
-
     <!-- Carousel Pagination Dots (Below Banner on both Mobile & Desktop) -->
     @php
         $slideCount = (isset($banners) && $banners->isNotEmpty()) ? $banners->count() : 3;
     @endphp
     <div class="flex py-3 sm:py-3.5 bg-white justify-center items-center space-x-2 sm:space-x-2.5 relative z-20" id="hero-slider-dots">
         @for($i = 0; $i < $slideCount; $i++)
-            <button type="button" class="{{ $i === 0 ? 'w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-[#D38928]' : 'w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-[#D38928]/30 hover:bg-[#D38928]/60' }} transition-all duration-300 cursor-pointer" data-index="{{ $i }}" aria-label="Slide {{ $i + 1 }}"></button>
+            <button type="button" class="{{ $i === 0 ? 'w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-[#C18129]' : 'w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-[#C18129]/30 hover:bg-[#C18129]/60' }} transition-all duration-300 cursor-pointer" data-index="{{ $i }}" aria-label="Slide {{ $i + 1 }}"></button>
         @endfor
     </div>
 
@@ -959,9 +936,9 @@
 
                 dots.forEach((dot, idx) => {
                     if (idx === currentSlide) {
-                        dot.className = 'w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-[#D38928] transition-all duration-300 cursor-pointer';
+                        dot.className = 'w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-[#C18129] transition-all duration-300 cursor-pointer';
                     } else {
-                        dot.className = 'w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-[#D38928]/30 hover:bg-[#D38928]/60 transition-all duration-300 cursor-pointer';
+                        dot.className = 'w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-[#C18129]/30 hover:bg-[#C18129]/60 transition-all duration-300 cursor-pointer';
                     }
                 });
             }

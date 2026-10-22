@@ -55,11 +55,13 @@
     --font-spiritual: 'Agatho', Georgia, serif;
     --font-cinzel: 'Agatho', Georgia, serif;
 
-    /* Design Tokens */
+    /* Design Tokens (Updated Vedic Gold & Amber Palette) */
     --color-primary: #121212;
-    --color-gold: #D38928;
-    --color-light-gold: #F6DAA8;
-    --color-maroon: #C28430;
+    --color-gold: #C18129;
+    --color-amber-ochre: #A86911;
+    --color-bright-gold: #D5A23D;
+    --color-light-gold: #F3CD72;
+    --color-maroon: #A86911;
     --color-warm-bg: #FDF5EB;
     --color-secondary-bg: #F9F9F9;
     --color-secondary-alt-bg: #F3F3F3;
@@ -67,11 +69,15 @@
     --color-muted-alt: #7B7B7B;
     --color-border-light: #E5E7EB;
 
-    /* Semantic Aliases */
+    /* Semantic Aliases & New Color System */
     --color-[#2B1810]: #121212;
-    --color-[#D38928]: #D38928;
-    --color-[#F6DAA8]: #F6DAA8;
-    --color-ishanaa-gold: #BC7C1C;
+    --color-[#D38928]: #C18129;
+    --color-[#C28430]: #C18129;
+    --color-[#A86911]: #A86911;
+    --color-[#D5A23D]: #D5A23D;
+    --color-[#F3CD72]: #F3CD72;
+    --color-[#F6DAA8]: #F3CD72;
+    --color-ishanaa-gold: #C18129;
     --color-[#FAF5EE]: #FDF5EB;
     --color-ishanaa-bg-gray: #F9F9F9;
     --color-ishanaa-bg-alt: #F3F3F3;

@@ -8,7 +8,7 @@
                 <button 
                     type="button" 
                     id="mobile-menu-trigger"
-                    class="lg:hidden p-2 -ml-1.5 text-[#121212] hover:text-[#D38928] focus:outline-none transition-colors rounded-lg hover:bg-stone-100/60 cursor-pointer z-10"
+                    class="lg:hidden p-2 -ml-1.5 text-[#A86911] hover:text-[#C18129] focus:outline-none transition-colors rounded-lg hover:bg-black/5 cursor-pointer z-10"
                     aria-label="Open Mobile Menu"
                 >
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -51,7 +51,7 @@
                 <div class="py-2 xl:py-3 flex items-center">
                     <a 
                         href="{{ route('collections.show', 'bambooless') }}" 
-                        class="text-[13.5px] lg:text-[14px] xl:text-[14.5px] {{ $isBambooless ? 'font-bold text-[#C28430] border-b-2 border-[#C28430] pb-0.5' : 'font-medium text-[#444444] hover:text-[#C28430]' }} transition-colors whitespace-nowrap tracking-normal"
+                        class="text-[13.5px] lg:text-[14px] xl:text-[14.5px] {{ $isBambooless ? 'font-bold text-[#C18129] border-b-2 border-[#C18129] pb-0.5' : 'font-medium text-[#444444] hover:text-[#C18129]' }} transition-colors whitespace-nowrap tracking-normal"
                     >
                         <span>Bambooless</span>
                     </a>
@@ -62,7 +62,7 @@
                 <div class="py-2 xl:py-3 flex items-center">
                     <a 
                         href="{{ route('collections.show', 'havan-cups') }}" 
-                        class="text-[13.5px] lg:text-[14px] xl:text-[14.5px] {{ $isHavanCups ? 'font-bold text-[#C28430] border-b-2 border-[#C28430] pb-0.5' : 'font-medium text-[#444444] hover:text-[#C28430]' }} transition-colors whitespace-nowrap tracking-normal"
+                        class="text-[13.5px] lg:text-[14px] xl:text-[14.5px] {{ $isHavanCups ? 'font-bold text-[#C18129] border-b-2 border-[#C18129] pb-0.5' : 'font-medium text-[#444444] hover:text-[#C18129]' }} transition-colors whitespace-nowrap tracking-normal"
                     >
                         <span>Havan Cups</span>
                     </a>
@@ -73,7 +73,7 @@
                 <div class="py-2 xl:py-3 flex items-center">
                     <a 
                         href="{{ route('collections.show', 'dhoop-cones') }}" 
-                        class="text-[13.5px] lg:text-[14px] xl:text-[14.5px] {{ $isDhoopCones ? 'font-bold text-[#C28430] border-b-2 border-[#C28430] pb-0.5' : 'font-medium text-[#444444] hover:text-[#C28430]' }} transition-colors whitespace-nowrap tracking-normal"
+                        class="text-[13.5px] lg:text-[14px] xl:text-[14.5px] {{ $isDhoopCones ? 'font-bold text-[#C18129] border-b-2 border-[#C18129] pb-0.5' : 'font-medium text-[#444444] hover:text-[#C18129]' }} transition-colors whitespace-nowrap tracking-normal"
                     >
                         <span>Dhoop Cones</span>
                     </a>
@@ -84,10 +84,10 @@
                 <div class="relative group py-2 xl:py-3 flex items-center">
                     <button 
                         type="button"
-                        class="flex items-center space-x-1 text-[13.5px] lg:text-[14px] xl:text-[14.5px] {{ $isSuperSave ? 'font-bold text-[#C28430] border-b-2 border-[#C28430] pb-0.5' : 'font-medium text-[#444444] group-hover:text-[#C28430]' }} transition-colors whitespace-nowrap tracking-normal cursor-pointer focus:outline-none"
+                        class="flex items-center space-x-1 text-[13.5px] lg:text-[14px] xl:text-[14.5px] {{ $isSuperSave ? 'font-bold text-[#C18129] border-b-2 border-[#C18129] pb-0.5' : 'font-medium text-[#444444] group-hover:text-[#C18129]' }} transition-colors whitespace-nowrap tracking-normal cursor-pointer focus:outline-none"
                     >
                         <span>Super Save Offers</span>
-                        <svg class="w-3.5 h-3.5 text-[#8C827A] group-hover:text-[#C28430] group-hover:rotate-180 transition-transform duration-200 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-3.5 h-3.5 text-[#8C827A] group-hover:text-[#C18129] group-hover:rotate-180 transition-transform duration-200 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                         </svg>
                     </button>
@@ -164,7 +164,7 @@
                 <div class="py-2 xl:py-3 flex items-center">
                     <a 
                         href="{{ route('products.show', 'pack-of-six') }}" 
-                        class="text-[13.5px] lg:text-[14px] xl:text-[14.5px] {{ $isBestSeller ? 'font-bold text-[#C28430] border-b-2 border-[#C28430] pb-0.5' : 'font-medium text-[#444444] hover:text-[#C28430]' }} transition-colors whitespace-nowrap tracking-normal"
+                        class="text-[13.5px] lg:text-[14px] xl:text-[14.5px] {{ $isBestSeller ? 'font-bold text-[#C18129] border-b-2 border-[#C18129] pb-0.5' : 'font-medium text-[#444444] hover:text-[#C18129]' }} transition-colors whitespace-nowrap tracking-normal"
                     >
                         <span>Best Seller Combo</span>
                     </a>
@@ -179,7 +179,7 @@
                 <button 
                     type="button" 
                     id="search-modal-trigger" 
-                    class="p-2 text-[#1F1F1F] hover:text-[#C28430] transition-colors focus:outline-none shrink-0 cursor-pointer rounded-full hover:bg-stone-50 search-modal-opener" 
+                    class="p-2 text-[#A86911] hover:text-[#C18129] transition-colors focus:outline-none shrink-0 cursor-pointer rounded-full hover:bg-black/5 search-modal-opener" 
                     aria-label="Open Search"
                 >
                     <svg class="w-6 h-6 sm:w-[25px] sm:h-[25px]" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
@@ -190,15 +190,15 @@
                 <!-- 2. Customer Account (Visible on all screens) -->
                 <a 
                     href="{{ auth()->check() ? route('account.index') : route('account.login') }}" 
-                    class="p-1.5 sm:p-2 text-[#1F1F1F] hover:text-[#C28430] transition-colors inline-flex items-center justify-center shrink-0 rounded-full hover:bg-stone-50 relative group"
+                    class="p-1.5 sm:p-2 text-[#A86911] hover:text-[#C18129] transition-colors inline-flex items-center justify-center shrink-0 rounded-full hover:bg-black/5 relative group"
                     aria-label="Customer Account"
                     title="{{ auth()->check() ? 'My Devotee Account (' . auth()->user()->name . ')' : 'Sign In to Devotee Account' }}"
                 >
                     <div class="relative">
-                        <svg class="w-5 h-5 sm:w-6 sm:h-6 {{ auth()->check() ? 'text-[#C28430]' : '' }}" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6 {{ auth()->check() ? 'text-[#C18129]' : 'text-[#A86911]' }}" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
                         </svg>
-                        <span class="absolute -top-1 -right-1 text-[#D38928] text-[10px] leading-none font-bold">⚡</span>
+                        <span class="absolute -top-1 -right-1 text-[#D5A23D] text-[10px] leading-none font-bold">⚡</span>
                     </div>
                 </a>
 
@@ -206,7 +206,7 @@
                 <a 
                     href="{{ route('cart.index') }}" 
                     id="cart-drawer-trigger" 
-                    class="p-1.5 sm:p-2 text-[#1F1F1F] hover:text-[#C28430] transition-colors relative inline-flex items-center justify-center shrink-0 cursor-pointer rounded-full hover:bg-stone-50 cart-drawer-opener" 
+                    class="p-1.5 sm:p-2 text-[#A86911] hover:text-[#C18129] transition-colors relative inline-flex items-center justify-center shrink-0 cursor-pointer rounded-full hover:bg-black/5 cart-drawer-opener" 
                     aria-label="Cart"
                 >
                     <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
@@ -232,18 +232,31 @@
             <a href="{{ route('bundles.buy2get1') }}" class="px-3.5 py-1 rounded-full border border-[#831F2E]/40 bg-[#FFF8F8] text-[#831F2E] hover:bg-[#831F2E] hover:text-white transition-colors shrink-0 shadow-2xs font-heading">
                 Buy 2 Get 1 free
             </a>
-            <a href="{{ route('collections.show', 'bambooless') }}" class="px-3.5 py-1 rounded-full border border-[#D38928] bg-white text-[#121212] hover:bg-[#D38928] hover:text-white transition-colors shrink-0 shadow-2xs">
+            <a href="{{ route('collections.show', 'bambooless') }}" class="px-3.5 py-1 rounded-full border border-[#C18129] bg-white text-[#121212] hover:bg-[#C18129] hover:text-white transition-colors shrink-0 shadow-2xs">
                 Premium Incense
             </a>
-            <a href="{{ route('collections.show', 'dhoop-cones') }}" class="px-3.5 py-1 rounded-full border border-[#D38928] bg-white text-[#121212] hover:bg-[#D38928] hover:text-white transition-colors shrink-0 shadow-2xs">
+            <a href="{{ route('collections.show', 'dhoop-cones') }}" class="px-3.5 py-1 rounded-full border border-[#C18129] bg-white text-[#121212] hover:bg-[#C18129] hover:text-white transition-colors shrink-0 shadow-2xs">
                 Dhoop Cones
             </a>
-            <a href="{{ route('bundles.trial-packs') }}" class="px-3.5 py-1 rounded-full border border-[#D38928] bg-white text-[#121212] hover:bg-[#D38928] hover:text-white transition-colors shrink-0 shadow-2xs">
+            <a href="{{ route('bundles.trial-packs') }}" class="px-3.5 py-1 rounded-full border border-[#C18129] bg-white text-[#121212] hover:bg-[#C18129] hover:text-white transition-colors shrink-0 shadow-2xs">
                 Trial Packs @ 799
             </a>
-            <a href="{{ route('collections.show', 'havan-cups') }}" class="px-3.5 py-1 rounded-full border border-[#D38928] bg-white text-[#121212] hover:bg-[#D38928] hover:text-white transition-colors shrink-0 shadow-2xs">
+            <a href="{{ route('collections.show', 'havan-cups') }}" class="px-3.5 py-1 rounded-full border border-[#C18129] bg-white text-[#121212] hover:bg-[#C18129] hover:text-white transition-colors shrink-0 shadow-2xs">
                 Havan Cups
             </a>
+        </div>
+    </div>
+
+    <!-- Sticky Morphing Announcement Bar Attached to Header Bottom Seam -->
+    <div 
+        id="announcement-morph-wrapper" 
+        class="absolute left-0 right-0 top-full z-50 pointer-events-none flex justify-center transition-all duration-300 ease-out {{ request()->routeIs('home') ? 'translate-y-0 px-0' : '-translate-y-1/2 px-3 sm:px-4 opacity-0 pointer-events-none' }}"
+    >
+        <div 
+            id="announcement-morph-inner" 
+            class="pointer-events-auto transition-all duration-300 ease-out {{ request()->routeIs('home') ? 'w-full' : 'w-[92%] sm:w-[82%] md:w-[65%] lg:w-[48%] max-w-xl' }}"
+        >
+            <x-announcement-bar />
         </div>
     </div>
 </header>

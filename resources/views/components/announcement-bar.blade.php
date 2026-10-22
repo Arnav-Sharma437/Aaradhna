@@ -22,7 +22,7 @@
                     @if(!empty($storeSettings['announcement_text']))
                         {{ $storeSettings['announcement_text'] }}
                     @else
-                        Free Shipping on Orders Above ₹{{ $storeSettings['free_shipping_threshold'] ?? '499' }} <span class="text-[#F6DAA8] mx-1.5 font-bold">•</span> COD Available Above ₹699
+                        Free Shipping on Orders Above ₹{{ $storeSettings['free_shipping_threshold'] ?? '499' }} <span class="text-[#F3CD72] mx-1.5 font-bold">•</span> COD Available Above ₹699
                     @endif
                 </p>
             </div>
@@ -30,28 +30,28 @@
             <!-- Slide 2 -->
             <div class="announcement-slide absolute inset-0 flex items-center justify-center text-center transition-all duration-500 ease-in-out opacity-0 translate-x-8 pointer-events-none">
                 <p class="text-[11px] sm:text-xs font-medium tracking-wide text-white truncate px-1">
-                    <span class="font-bold text-[#F6DAA8]">100% Charcoal Free</span> <span class="text-[#F6DAA8] mx-1.5 font-bold">•</span> Pure Bamboo-Less Incense
+                    <span class="font-bold text-[#F3CD72]">100% Charcoal Free</span> <span class="text-[#F3CD72] mx-1.5 font-bold">•</span> Pure Bamboo-Less Incense
                 </p>
             </div>
 
             <!-- Slide 3 -->
             <div class="announcement-slide absolute inset-0 flex items-center justify-center text-center transition-all duration-500 ease-in-out opacity-0 translate-x-8 pointer-events-none">
                 <p class="text-[11px] sm:text-xs font-medium tracking-wide text-white truncate px-1">
-                    Handcrafted From Sacred Temple Flowers <span class="text-[#F6DAA8] mx-1.5 font-bold">•</span> <span class="font-bold tracking-wider uppercase text-[#F6DAA8]">शुद्धं समर्पयामि</span>
+                    Handcrafted From Sacred Temple Flowers <span class="text-[#F3CD72] mx-1.5 font-bold">•</span> <span class="font-bold tracking-wider uppercase text-[#F3CD72]">शुद्धं समर्पयामि</span>
                 </p>
             </div>
 
             <!-- Slide 4 -->
             <div class="announcement-slide absolute inset-0 flex items-center justify-center text-center transition-all duration-500 ease-in-out opacity-0 translate-x-8 pointer-events-none">
                 <p class="text-[11px] sm:text-xs font-medium tracking-wide text-white truncate px-1">
-                    Super Save Offer: <span class="font-bold text-[#F6DAA8]">Buy 2 Get 1 Free</span> on Sacred Combos
+                    Super Save Offer: <span class="font-bold text-[#F3CD72]">Buy 2 Get 1 Free</span> on Sacred Combos
                 </p>
             </div>
 
             <!-- Slide 5 -->
             <div class="announcement-slide absolute inset-0 flex items-center justify-center text-center transition-all duration-500 ease-in-out opacity-0 translate-x-8 pointer-events-none">
                 <p class="text-[11px] sm:text-xs font-medium tracking-wide text-white truncate px-1">
-                    Guaranteed Purity & Devotional Bliss <span class="text-[#F6DAA8] mx-1.5 font-bold">•</span> Hand-Rolled with Natural Herbs
+                    Guaranteed Purity & Devotional Bliss <span class="text-[#F3CD72] mx-1.5 font-bold">•</span> Hand-Rolled with Natural Herbs
                 </p>
             </div>
 
@@ -164,10 +164,61 @@
             startTimer();
         }
 
+        function initAnnouncementMorph() {
+            const wrapper = document.getElementById('announcement-morph-wrapper');
+            const inner = document.getElementById('announcement-morph-inner');
+            const bar = document.getElementById('announcement-bar');
+            if (!wrapper || !inner || !bar) return;
+
+            const isHome = {{ request()->routeIs('home') ? 'true' : 'false' }};
+            let isScrolled = null;
+
+            function handleScroll() {
+                const scrolled = window.scrollY > 40;
+                if (scrolled === isScrolled) return;
+                isScrolled = scrolled;
+
+                if (scrolled) {
+                    wrapper.classList.remove('translate-y-0', 'px-0');
+                    wrapper.classList.add('-translate-y-1/2', 'px-3', 'sm:px-4');
+
+                    if (!isHome) {
+                        wrapper.classList.remove('opacity-0', 'pointer-events-none');
+                    }
+
+                    inner.classList.remove('w-full');
+                    inner.classList.add('w-[92%]', 'sm:w-[82%]', 'md:w-[65%]', 'lg:w-[48%]', 'max-w-xl');
+
+                    bar.classList.remove('rounded-none', 'border-b', 'bg-black/40');
+                    bar.classList.add('rounded-full', 'border', 'border-white/30', 'shadow-2xl', 'bg-black/65');
+                } else {
+                    if (isHome) {
+                        wrapper.classList.add('translate-y-0', 'px-0');
+                        wrapper.classList.remove('-translate-y-1/2', 'px-3', 'sm:px-4');
+
+                        inner.classList.add('w-full');
+                        inner.classList.remove('w-[92%]', 'sm:w-[82%]', 'md:w-[65%]', 'lg:w-[48%]', 'max-w-xl');
+
+                        bar.classList.add('rounded-none', 'border-b', 'bg-black/40');
+                        bar.classList.remove('rounded-full', 'border', 'border-white/30', 'shadow-2xl', 'bg-black/65');
+                    } else {
+                        wrapper.classList.add('opacity-0', 'pointer-events-none');
+                    }
+                }
+            }
+
+            window.addEventListener('scroll', handleScroll, { passive: true });
+            handleScroll();
+        }
+
         if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initAnnouncementSlider);
+            document.addEventListener('DOMContentLoaded', () => {
+                initAnnouncementSlider();
+                initAnnouncementMorph();
+            });
         } else {
             initAnnouncementSlider();
+            initAnnouncementMorph();
         }
     })();
 </script>
