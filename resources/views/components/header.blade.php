@@ -1,4 +1,4 @@
-<header class="sticky top-0 z-40 bg-white/98 backdrop-blur-md border-b border-[#EAE3D9] transition-all duration-200 shadow-xs font-body">
+<header class="sticky top-0 z-40 bg-[#FFF9ED] border-b border-[#EAE3D9] transition-all duration-200 shadow-xs font-body">
     <div class="w-full max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8 xl:px-10">
         <div class="relative flex items-center justify-between h-18 sm:h-20 lg:h-22 gap-2 sm:gap-4">
             
@@ -238,7 +238,7 @@
     </div>
 
     <!-- Mobile Horizontal Quick Category & Offer Pills Strip (Matches Reference Screenshot) -->
-    <div class="lg:hidden w-full border-t border-[#EAE3D9]/70 bg-[#FFFDF9] py-2 px-3 overflow-x-auto scrollbar-none">
+    <div class="lg:hidden w-full border-t border-[#EAE3D9]/70 bg-[#FFF9ED] py-2 px-3 overflow-x-auto scrollbar-none">
         <div class="flex items-center space-x-2 whitespace-nowrap text-xs font-semibold">
             <a href="{{ route('bundles.buy2get1') }}" class="px-3.5 py-1 rounded-full border border-[#831F2E]/40 bg-[#FFF8F8] text-[#831F2E] hover:bg-[#831F2E] hover:text-white transition-colors shrink-0 shadow-2xs font-heading">
                 Buy 2 Get 1 free
