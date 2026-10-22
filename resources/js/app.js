@@ -165,7 +165,7 @@ function renderCartDrawer() {
     if (cart.length === 0) {
         container.innerHTML = `
             <div class="py-12 px-4 text-center space-y-3 font-body">
-                <div class="w-14 h-14 mx-auto bg-[#FAF7F2] rounded-none flex items-center justify-center text-[#D38928] text-2xl">
+                <div class="w-14 h-14 mx-auto bg-[#FAF7F2] rounded-full flex items-center justify-center text-[#D38928] text-2xl">
                     🛍️
                 </div>
                 <h4 class="text-base font-bold font-heading text-[#121212]">Your Cart is Empty</h4>
@@ -176,8 +176,8 @@ function renderCartDrawer() {
         `;
     } else {
         container.innerHTML = cart.map(item => `
-            <div class="drawer-item-row flex items-center space-x-3 bg-white p-3 rounded-none border border-[#EADBCC] shadow-2xs font-body" data-title="${item.title}" data-slug="${item.slug}" data-price="${item.price}">
-                <div class="w-16 h-16 rounded-none bg-[#FAF7F2] overflow-hidden shrink-0 border border-[#EADBCC]">
+            <div class="drawer-item-row flex items-center space-x-3 bg-white p-3 rounded-[12px] border border-[#EADBCC] shadow-2xs font-body" data-title="${item.title}" data-slug="${item.slug}" data-price="${item.price}">
+                <div class="w-16 h-16 rounded-[8px] bg-[#FAF7F2] overflow-hidden shrink-0 border border-[#EADBCC]">
                     <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover">
                 </div>
                 <div class="flex-1 min-w-0 space-y-1">
@@ -189,7 +189,7 @@ function renderCartDrawer() {
                     </div>
                     <div class="text-[11px] text-gray-500 font-medium truncate">${item.packInfo || '100 sticks'}</div>
                     <div class="flex items-center justify-between pt-1">
-                        <div class="flex items-center border border-[#EADBCC] rounded-none bg-white overflow-hidden text-xs">
+                        <div class="flex items-center border border-[#EADBCC] rounded-[6px] bg-white overflow-hidden text-xs">
                             <button type="button" class="drawer-qty-minus px-2 py-0.5 text-gray-600 hover:bg-gray-100 font-bold" data-title="${item.title}">−</button>
                             <span class="drawer-qty-val px-2.5 py-0.5 font-bold text-[#121212]">${item.quantity}</span>
                             <button type="button" class="drawer-qty-plus px-2 py-0.5 text-gray-600 hover:bg-gray-100 font-bold" data-title="${item.title}">+</button>
@@ -248,7 +248,7 @@ function renderCartPage() {
         container.innerHTML = cart.map(item => `
             <div class="cart-item-row p-4 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 font-body" data-title="${item.title}" data-price="${item.price}">
                 <div class="flex items-center space-x-4 min-w-0">
-                    <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-none bg-[#FAF7F2] border border-[#EADBCC] overflow-hidden shrink-0">
+                    <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-[14px] bg-[#FAF7F2] border border-[#EADBCC] overflow-hidden shrink-0">
                         <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover">
                     </div>
                     <div class="space-y-1 min-w-0">
@@ -262,7 +262,7 @@ function renderCartPage() {
                     </div>
                 </div>
                 <div class="flex items-center justify-between sm:justify-end sm:space-x-6 pt-2 sm:pt-0 border-t sm:border-0 border-gray-100">
-                    <div class="flex items-center border border-[#EADBCC] rounded-none bg-white overflow-hidden">
+                    <div class="flex items-center border border-[#EADBCC] rounded-[10px] bg-white overflow-hidden">
                         <button type="button" class="cart-page-qty-minus px-3.5 py-2 text-gray-500 hover:text-[#121212] font-bold text-base cursor-pointer" data-title="${item.title}">−</button>
                         <input type="number" class="cart-item-qty w-10 text-center text-xs sm:text-sm font-bold border-none focus:ring-0 p-0 text-[#121212]" value="${item.quantity}" readonly>
                         <button type="button" class="cart-page-qty-plus px-3.5 py-2 text-gray-500 hover:text-[#121212] font-bold text-base cursor-pointer" data-title="${item.title}">+</button>
@@ -787,7 +787,7 @@ function initSearchModal() {
                 if (data.categories && data.categories.length > 0) {
                     categoriesSection.classList.remove('hidden');
                     categoriesContainer.innerHTML = data.categories.map(c => `
-                        <a href="${c.url}" class="px-3 py-1.5 bg-[#FAF7F2] text-xs font-bold text-[#D38928] rounded-none border border-[#EADBCC] hover:bg-[#D38928] hover:text-white transition-colors">
+                        <a href="${c.url}" class="px-3 py-1.5 bg-[#FAF7F2] text-xs font-bold text-[#D38928] rounded-full border border-[#EADBCC] hover:bg-[#D38928] hover:text-white transition-colors">
                             📁 ${c.name}
                         </a>
                     `).join('');
@@ -802,14 +802,14 @@ function initSearchModal() {
                 if (resultsContainer) {
                     resultsContainer.classList.remove('hidden');
                     resultsContainer.innerHTML = data.products.map(p => `
-                        <a href="${p.url}" class="flex items-center p-3 rounded-none border border-[#EADBCC] hover:border-[#D38928] hover:bg-[#FAF7F2]/60 transition-all group bg-white shadow-2xs font-body">
-                            <div class="w-16 h-16 bg-[#FAF7F2] rounded-none border border-[#EADBCC] overflow-hidden shrink-0 flex items-center justify-center">
+                        <a href="${p.url}" class="flex items-center p-3 rounded-[12px] border border-[#EADBCC] hover:border-[#D38928] hover:bg-[#FAF7F2]/60 transition-all group bg-white shadow-2xs font-body">
+                            <div class="w-16 h-16 bg-[#FAF7F2] rounded-[8px] border border-[#EADBCC] overflow-hidden shrink-0 flex items-center justify-center">
                                 <img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform" onerror="this.src='/assets/images/devi-refill-pack-card.jpg'">
                             </div>
                             <div class="ml-3.5 flex-1 min-w-0 space-y-1 font-body">
                                 <div class="flex items-center justify-between font-body">
                                     <span class="text-[10px] font-bold text-gray-400 uppercase font-body truncate">${p.category}</span>
-                                    ${!p.is_in_stock ? '<span class="text-[10px] font-bold text-rose-600 bg-rose-50 px-1.5 py-0.5 rounded-none font-body">Sold Out</span>' : ''}
+                                    ${!p.is_in_stock ? '<span class="text-[10px] font-bold text-rose-600 bg-rose-50 px-1.5 py-0.5 rounded font-body">Sold Out</span>' : ''}
                                 </div>
                                 <h6 class="text-xs sm:text-sm font-bold text-[#121212] group-hover:text-[#D38928] truncate font-body">
                                     ${p.title}

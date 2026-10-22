@@ -89,13 +89,13 @@
 
     </div>
 
-    <!-- Carousel Pagination Indicators (Square, Below Banner on both Mobile & Desktop) -->
+    <!-- Carousel Pagination Indicators (Rounded Dots, Below Banner on both Mobile & Desktop) -->
     @php
         $slideCount = (isset($banners) && $banners->isNotEmpty()) ? $banners->count() : 3;
     @endphp
     <div class="flex py-3 sm:py-3.5 bg-white justify-center items-center space-x-2 sm:space-x-2.5 relative z-20" id="hero-slider-dots">
         @for($i = 0; $i < $slideCount; $i++)
-            <button type="button" class="{{ $i === 0 ? 'w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-none bg-[#C18129]' : 'w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-none bg-[#C18129]/30 hover:bg-[#C18129]/60' }} transition-all duration-300 cursor-pointer" data-index="{{ $i }}" aria-label="Slide {{ $i + 1 }}"></button>
+            <button type="button" class="{{ $i === 0 ? 'w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-[#C18129]' : 'w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-[#C18129]/30 hover:bg-[#C18129]/60' }} transition-all duration-300 cursor-pointer" data-index="{{ $i }}" aria-label="Slide {{ $i + 1 }}"></button>
         @endfor
     </div>
 
@@ -119,11 +119,11 @@
 
         <!-- Bestseller Section Container with Mobile Slider Arrows -->
         <div class="relative">
-            <!-- Left / Right Mobile Navigation Buttons (Square) -->
+            <!-- Left / Right Mobile Navigation Buttons (Rounded) -->
             <button 
                 type="button" 
                 id="bestseller-prev-btn" 
-                class="sm:hidden absolute -left-2 top-[38%] -translate-y-1/2 z-30 w-8 h-8 rounded-none bg-white border border-[#EADBCC] text-[#965A15] flex items-center justify-center active:scale-95 transition-all cursor-pointer"
+                class="sm:hidden absolute -left-2 top-[38%] -translate-y-1/2 z-30 w-8 h-8 rounded-full bg-white border border-[#EADBCC] text-[#965A15] flex items-center justify-center active:scale-95 transition-all shadow-xs cursor-pointer"
                 aria-label="Previous Slide"
             >
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg>
@@ -131,7 +131,7 @@
             <button 
                 type="button" 
                 id="bestseller-next-btn" 
-                class="sm:hidden absolute -right-2 top-[38%] -translate-y-1/2 z-30 w-8 h-8 rounded-none bg-white border border-[#EADBCC] text-[#965A15] flex items-center justify-center active:scale-95 transition-all cursor-pointer"
+                class="sm:hidden absolute -right-2 top-[38%] -translate-y-1/2 z-30 w-8 h-8 rounded-full bg-white border border-[#EADBCC] text-[#965A15] flex items-center justify-center active:scale-95 transition-all shadow-xs cursor-pointer"
                 aria-label="Next Slide"
             >
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
@@ -174,7 +174,7 @@
                     <a 
                         href="{{ route('collections.show', 'all') }}" 
                         id="bestseller-view-all-btn"
-                        class="inline-flex items-center space-x-2 px-8 py-3.5 bg-[#D38928] hover:bg-[#B8741E] active:bg-[#965A15] text-white text-xs sm:text-sm font-bold uppercase tracking-widest rounded-none transition-all duration-200 transform hover:-translate-y-0.5 font-heading cursor-pointer"
+                        class="inline-flex items-center space-x-2 px-8 py-3.5 bg-[#A86911] hover:bg-[#8D540A] active:bg-[#744406] text-white text-xs sm:text-sm font-bold uppercase tracking-widest rounded-[8px] sm:rounded-[10px] shadow-sm hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 font-heading cursor-pointer"
                         aria-label="View All Products"
                     >
                         <span>View All Products</span>
@@ -186,7 +186,7 @@
             <div class="mt-8 sm:mt-10 text-center hidden sm:block">
                 <a 
                     href="{{ route('collections.show', 'all') }}" 
-                    class="inline-flex items-center space-x-2 px-8 py-3.5 bg-[#D38928] hover:bg-[#B8741E] active:bg-[#965A15] text-white text-xs sm:text-sm font-bold uppercase tracking-widest rounded-none transition-all duration-200 transform hover:-translate-y-0.5 font-heading cursor-pointer"
+                    class="inline-flex items-center space-x-2 px-8 py-3.5 bg-[#A86911] hover:bg-[#8D540A] active:bg-[#744406] text-white text-xs sm:text-sm font-bold uppercase tracking-widest rounded-[8px] sm:rounded-[10px] shadow-sm hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 font-heading cursor-pointer"
                     aria-label="View All Products"
                 >
                     <span>View All Products</span>
@@ -280,17 +280,17 @@
             </h2>
         </div>
 
-        <!-- 3 Big Single-Product Category Square Tiles (Centered Grid & Balanced Spacing) -->
+        <!-- 3 Big Single-Product Category Circles (Centered Grid & Balanced Spacing) -->
         <div id="category-slider" class="flex sm:grid overflow-x-auto sm:overflow-visible scrollbar-none snap-x snap-mandatory sm:grid-cols-3 justify-start sm:justify-center items-start gap-4 sm:gap-6 lg:gap-8 max-w-4xl mx-auto pb-3 sm:pb-0 -mx-4 px-4 sm:mx-auto sm:px-0 w-full">
             
             <!-- Category 1: Single Incense Sticks -->
             <div class="w-[165px] sm:w-auto shrink-0 snap-start group flex flex-col items-center text-center space-y-2.5 sm:space-y-3">
-                <a href="{{ route('collections.show', 'bambooless') }}" class="block relative w-full max-w-[195px] sm:max-w-[230px] lg:max-w-[245px] aspect-square rounded-none p-3 sm:p-3.5 bg-white border border-[#EADBCC] hover:border-[#C18129] group-hover:scale-105 transition-all duration-500 cursor-pointer">
-                    <div class="w-full h-full rounded-none overflow-hidden bg-white p-1.5 sm:p-2 flex items-center justify-center relative">
+                <a href="{{ route('collections.show', 'bambooless') }}" class="block relative w-full max-w-[195px] sm:max-w-[230px] lg:max-w-[245px] aspect-square rounded-full p-2.5 sm:p-3 bg-white border border-[#EADBCC] hover:border-[#C18129] group-hover:scale-105 transition-all duration-500 cursor-pointer">
+                    <div class="w-full h-full rounded-full overflow-hidden bg-white p-1.5 sm:p-2 flex items-center justify-center relative">
                         <img 
                             src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" 
                             alt="Incense Sticks" 
-                            class="w-full h-full object-contain rounded-none scale-105 group-hover:scale-115 transition-transform duration-500"
+                            class="w-full h-full object-contain rounded-full scale-105 group-hover:scale-115 transition-transform duration-500"
                         >
                     </div>
                 </a>
@@ -308,12 +308,12 @@
 
             <!-- Category 2: Single Dhoop Cone -->
             <div class="w-[165px] sm:w-auto shrink-0 snap-start group flex flex-col items-center text-center space-y-2.5 sm:space-y-3">
-                <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block relative w-full max-w-[195px] sm:max-w-[230px] lg:max-w-[245px] aspect-square rounded-none p-3 sm:p-3.5 bg-white border border-[#EADBCC] hover:border-[#C18129] group-hover:scale-105 transition-all duration-500 cursor-pointer">
-                    <div class="w-full h-full rounded-none overflow-hidden bg-white p-1.5 sm:p-2 flex items-center justify-center relative">
+                <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block relative w-full max-w-[195px] sm:max-w-[230px] lg:max-w-[245px] aspect-square rounded-full p-2.5 sm:p-3 bg-white border border-[#EADBCC] hover:border-[#C18129] group-hover:scale-105 transition-all duration-500 cursor-pointer">
+                    <div class="w-full h-full rounded-full overflow-hidden bg-white p-1.5 sm:p-2 flex items-center justify-center relative">
                         <img 
                             src="{{ asset('assets/images/single-dhoop-cone.jpg') }}" 
                             alt="Easy to Use Dhoop Cone" 
-                            class="w-full h-full object-contain rounded-none scale-105 group-hover:scale-115 transition-transform duration-500"
+                            class="w-full h-full object-contain rounded-full scale-105 group-hover:scale-115 transition-transform duration-500"
                         >
                     </div>
                 </a>
@@ -331,12 +331,12 @@
 
             <!-- Category 3: Single 100% Organic Havan Cup -->
             <div class="w-[165px] sm:w-auto shrink-0 snap-start group flex flex-col items-center text-center space-y-2.5 sm:space-y-3">
-                <a href="{{ route('collections.show', 'havan-cups') }}" class="block relative w-full max-w-[195px] sm:max-w-[230px] lg:max-w-[245px] aspect-square rounded-none p-3 sm:p-3.5 bg-white border border-[#EADBCC] hover:border-[#C18129] group-hover:scale-105 transition-all duration-500 cursor-pointer">
-                    <div class="w-full h-full rounded-none overflow-hidden bg-white p-1.5 sm:p-2 flex items-center justify-center relative">
+                <a href="{{ route('collections.show', 'havan-cups') }}" class="block relative w-full max-w-[195px] sm:max-w-[230px] lg:max-w-[245px] aspect-square rounded-full p-2.5 sm:p-3 bg-white border border-[#EADBCC] hover:border-[#C18129] group-hover:scale-105 transition-all duration-500 cursor-pointer">
+                    <div class="w-full h-full rounded-full overflow-hidden bg-white p-1.5 sm:p-2 flex items-center justify-center relative">
                         <img 
                             src="{{ asset('assets/images/single-havan-cup.jpg') }}" 
                             alt="100% Organic Havan Cups" 
-                            class="w-full h-full object-contain rounded-none scale-105 group-hover:scale-115 transition-transform duration-500"
+                            class="w-full h-full object-contain rounded-full scale-105 group-hover:scale-115 transition-transform duration-500"
                         >
                     </div>
                 </a>
@@ -356,8 +356,8 @@
 
         <!-- Mobile Scroll Indicator Line -->
         <div class="sm:hidden flex justify-center mt-5">
-            <div class="w-28 h-1 bg-[#EADBCC] rounded-none overflow-hidden relative">
-                <div id="category-scroll-bar" class="w-10 h-full bg-[#C18129] rounded-none transition-transform duration-75"></div>
+            <div class="w-28 h-1 bg-[#EADBCC] rounded-full overflow-hidden relative">
+                <div id="category-scroll-bar" class="w-10 h-full bg-[#C18129] rounded-full transition-transform duration-75"></div>
             </div>
         </div>
 
@@ -493,7 +493,7 @@
 
                 <!-- First Pass -->
                 @foreach($row1Testimonials as $t)
-                    <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[380px] h-[180px] bg-white rounded-none p-5 border border-[#EADBCC] hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between">
+                    <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[380px] h-[180px] bg-white rounded-[16px] p-5 border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between">
                         <div class="space-y-2">
                             <div class="flex items-center space-x-1 text-[#D38928] text-lg sm:text-xl leading-none">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
@@ -504,7 +504,7 @@
                         </div>
                         <div class="flex items-center justify-between pt-3 border-t border-[#EAE3D9] mt-2">
                             <div class="flex items-center space-x-2.5">
-                                <div class="w-9 h-9 rounded-none {{ $t['avatar_bg'] }} text-white flex items-center justify-center font-bold text-xs font-heading shrink-0">
+                                <div class="w-9 h-9 rounded-full {{ $t['avatar_bg'] }} text-white flex items-center justify-center font-bold text-xs font-heading shrink-0 shadow-xs">
                                     {{ $t['initials'] }}
                                 </div>
                                 <div>
@@ -518,7 +518,7 @@
 
                 <!-- Second Duplicate Pass for Infinite Seamless Marquee -->
                 @foreach($row1Testimonials as $t)
-                    <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[380px] h-[180px] bg-white rounded-none p-5 border border-[#EADBCC] hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between" aria-hidden="true">
+                    <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[380px] h-[180px] bg-white rounded-[16px] p-5 border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between" aria-hidden="true">
                         <div class="space-y-2">
                             <div class="flex items-center space-x-1 text-[#D38928] text-lg sm:text-xl leading-none">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
@@ -529,7 +529,7 @@
                         </div>
                         <div class="flex items-center justify-between pt-3 border-t border-[#EAE3D9] mt-2">
                             <div class="flex items-center space-x-2.5">
-                                <div class="w-9 h-9 rounded-none {{ $t['avatar_bg'] }} text-white flex items-center justify-center font-bold text-xs font-heading shrink-0">
+                                <div class="w-9 h-9 rounded-full {{ $t['avatar_bg'] }} text-white flex items-center justify-center font-bold text-xs font-heading shrink-0 shadow-xs">
                                     {{ $t['initials'] }}
                                 </div>
                                 <div>
@@ -599,7 +599,7 @@
 
                 <!-- First Pass -->
                 @foreach($row2Testimonials as $t)
-                    <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[380px] h-[180px] bg-white rounded-none p-5 border border-[#EADBCC] hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between">
+                    <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[380px] h-[180px] bg-white rounded-[16px] p-5 border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between">
                         <div class="space-y-2">
                             <div class="flex items-center space-x-1 text-[#D38928] text-lg sm:text-xl leading-none">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
@@ -610,7 +610,7 @@
                         </div>
                         <div class="flex items-center justify-between pt-3 border-t border-[#EAE3D9] mt-2">
                             <div class="flex items-center space-x-2.5">
-                                <div class="w-9 h-9 rounded-none {{ $t['avatar_bg'] }} text-white flex items-center justify-center font-bold text-xs font-heading shrink-0">
+                                <div class="w-9 h-9 rounded-full {{ $t['avatar_bg'] }} text-white flex items-center justify-center font-bold text-xs font-heading shrink-0 shadow-xs">
                                     {{ $t['initials'] }}
                                 </div>
                                 <div>
@@ -624,7 +624,7 @@
 
                 <!-- Second Duplicate Pass for Infinite Seamless Marquee -->
                 @foreach($row2Testimonials as $t)
-                    <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[380px] h-[180px] bg-white rounded-none p-5 border border-[#EADBCC] hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between" aria-hidden="true">
+                    <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[380px] h-[180px] bg-white rounded-[16px] p-5 border border-[#EADBCC] hover:border-[#D38928] shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between" aria-hidden="true">
                         <div class="space-y-2">
                             <div class="flex items-center space-x-1 text-[#D38928] text-lg sm:text-xl leading-none">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
@@ -635,7 +635,7 @@
                         </div>
                         <div class="flex items-center justify-between pt-3 border-t border-[#EAE3D9] mt-2">
                             <div class="flex items-center space-x-2.5">
-                                <div class="w-9 h-9 rounded-none {{ $t['avatar_bg'] }} text-white flex items-center justify-center font-bold text-xs font-heading shrink-0">
+                                <div class="w-9 h-9 rounded-full {{ $t['avatar_bg'] }} text-white flex items-center justify-center font-bold text-xs font-heading shrink-0 shadow-xs">
                                     {{ $t['initials'] }}
                                 </div>
                                 <div>
@@ -668,13 +668,13 @@
             </h2>
         </div>
 
-        <!-- Slim & Wide Elegant Card Container (Square Corners, Soft Gold Border) -->
-        <div class="bg-white rounded-none border-2 border-[#D38928]/40 max-w-[1260px] mx-auto overflow-hidden">
+        <!-- Slim & Wide Elegant Card Container (Rounded Corners, Soft Gold Border) -->
+        <div class="bg-white rounded-[20px] border-2 border-[#D38928]/40 max-w-[1260px] mx-auto overflow-hidden shadow-xs">
             <div class="grid grid-cols-1 md:grid-cols-3 relative">
                 
                 <!-- Column 1: Ancient Recipes -->
                 <div class="relative py-7 sm:py-9 lg:py-10 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center space-y-3 group">
-                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-none bg-[#FAF5EE] border-2 border-[#D38928]/40 flex items-center justify-center text-[#C28430] group-hover:scale-105 transition-transform">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#FAF5EE] border-2 border-[#D38928]/40 flex items-center justify-center text-[#C28430] group-hover:scale-105 transition-transform shadow-2xs">
                         <svg class="w-8 h-8 sm:w-10 sm:h-10" viewBox="0 0 64 64" fill="none" stroke="#C28430" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M16 34h32c0 10-7.2 18-16 18s-16-8-16-18Z"/>
                             <path d="M24 52h16"/>
@@ -697,7 +697,7 @@
 
                 <!-- Column 2: Purest Ingredients -->
                 <div class="relative py-7 sm:py-9 lg:py-10 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center space-y-3 group">
-                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-none bg-[#FAF5EE] border-2 border-[#D38928]/40 flex items-center justify-center text-[#C28430] group-hover:scale-105 transition-transform">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#FAF5EE] border-2 border-[#D38928]/40 flex items-center justify-center text-[#C28430] group-hover:scale-105 transition-transform shadow-2xs">
                         <svg class="w-8 h-8 sm:w-10 sm:h-10" viewBox="0 0 64 64" fill="none" stroke="#C28430" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <!-- Sacred Flames & Kund -->
                             <path d="M32 16c-3 4-3 9 0 12 3-3 3-8 0-12Z"/>
@@ -721,7 +721,7 @@
 
                 <!-- Column 3: Eco-conscious -->
                 <div class="relative py-7 sm:py-9 lg:py-10 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center space-y-3 group">
-                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-none bg-[#FAF5EE] border-2 border-[#D38928]/40 flex items-center justify-center text-[#C28430] group-hover:scale-105 transition-transform">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#FAF5EE] border-2 border-[#D38928]/40 flex items-center justify-center text-[#C28430] group-hover:scale-105 transition-transform shadow-2xs">
                         <svg class="w-8 h-8 sm:w-10 sm:h-10" viewBox="0 0 64 64" fill="none" stroke="#C28430" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <!-- Box & Leaf -->
                             <path d="M19 24l13-8 13 8v22l-13 8-13-8V24Z"/>
@@ -759,8 +759,8 @@
             </h2>
         </div>
 
-        <!-- Seamless Accordion Container (Square Corners & 10px Inner Padding) -->
-        <div class="bg-white rounded-none border border-[#EADBCC] divide-y divide-[#EADBCC] overflow-hidden">
+        <!-- Seamless Accordion Container (8px Rounded Corners & 10px Inner Padding) -->
+        <div class="bg-white rounded-[8px] border border-[#EADBCC] divide-y divide-[#EADBCC] overflow-hidden shadow-xs">
             
             <!-- FAQ 1 -->
             <div class="faq-item">
@@ -768,7 +768,7 @@
                     <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
                         What makes ISHANAA pure incense sticks and havan cups unique?
                     </span>
-                    <div class="w-6 h-6 rounded-none bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                    <div class="w-6 h-6 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
                         <svg class="faq-icon w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                         </svg>
@@ -787,7 +787,7 @@
                     <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
                         How long do they burn, and does the temple fragrance linger in the room?
                     </span>
-                    <div class="w-6 h-6 rounded-none bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                    <div class="w-6 h-6 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
                         <svg class="faq-icon w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                         </svg>
@@ -806,7 +806,7 @@
                     <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
                         Are ISHANAA products safe to use around babies, elders, and pets?
                     </span>
-                    <div class="w-6 h-6 rounded-none bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                    <div class="w-6 h-6 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
                         <svg class="faq-icon w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                         </svg>
@@ -825,7 +825,7 @@
                     <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
                         What is the spiritual significance of burning 100% Pure Vedic Agarbatti?
                     </span>
-                    <div class="w-6 h-6 rounded-none bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                    <div class="w-6 h-6 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
                         <svg class="faq-icon w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                         </svg>
@@ -844,7 +844,7 @@
                     <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
                         How do I properly ignite and use organic Sambrani Havan Cups &amp; Dhoop Cones?
                     </span>
-                    <div class="w-6 h-6 rounded-none bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                    <div class="w-6 h-6 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
                         <svg class="faq-icon w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                         </svg>
@@ -863,7 +863,7 @@
                     <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
                         What sacred ingredients and temple flowers are used in handcrafting?
                     </span>
-                    <div class="w-6 h-6 rounded-none bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                    <div class="w-6 h-6 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
                         <svg class="faq-icon w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                         </svg>
@@ -882,7 +882,7 @@
                     <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
                         Do you offer nationwide shipping, COD, and complimentary ceramic holders?
                     </span>
-                    <div class="w-6 h-6 rounded-none bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                    <div class="w-6 h-6 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
                         <svg class="faq-icon w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                         </svg>
@@ -1006,7 +1006,7 @@
             if (!toast) {
                 toast = document.createElement('div');
                 toast.id = 'ishanaa-live-toast';
-                toast.className = 'fixed bottom-6 right-6 z-50 bg-[#121212] text-white px-5 py-3.5 rounded-none shadow-2xl border border-[#D38928]/50 flex items-center space-x-3 transition-all duration-300 transform translate-y-20 opacity-0 font-body';
+                toast.className = 'fixed bottom-6 right-6 z-50 bg-[#121212] text-white px-5 py-3.5 rounded-[10px] shadow-2xl border border-[#D38928]/50 flex items-center space-x-3 transition-all duration-300 transform translate-y-20 opacity-0 font-body';
                 document.body.appendChild(toast);
             }
 

@@ -15,7 +15,7 @@
         <button 
             type="button" 
             id="mobile-drawer-close"
-            class="p-1.5 -ml-1 text-[#121212] hover:text-[#C28430] transition-colors rounded-none cursor-pointer focus:outline-none"
+            class="p-1.5 -ml-1 text-[#121212] hover:text-[#C28430] transition-colors rounded-full cursor-pointer focus:outline-none"
             aria-label="Close Mobile Menu"
         >
             <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -63,7 +63,7 @@
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
                 </svg>
-                <span class="absolute top-0 right-0 bg-[#C28430] text-white text-[8px] font-bold w-3.5 h-3.5 rounded-none flex items-center justify-center leading-none ring-1 ring-white">
+                <span class="absolute top-0 right-0 bg-[#C28430] text-white text-[8px] font-bold w-3.5 h-3.5 rounded-full flex items-center justify-center leading-none ring-1 ring-white">
                     {{ session('cart_count', 0) }}
                 </span>
             </a>
@@ -115,11 +115,11 @@
                 <div id="mobile-drawer-offers-content" class="hidden bg-black/15 pl-6 pr-5 py-2 space-y-2 font-body">
                     <a href="{{ route('bundles.trial-packs') }}" class="flex items-center justify-between py-2 text-sm font-medium text-white hover:text-white/80 transition-colors">
                         <span>Buy any 5 Trial Pack @ 799</span>
-                        <span class="text-[9px] font-bold text-[#C28430] bg-white px-2 py-0.5 rounded-none shadow-xs">₹799</span>
+                        <span class="text-[9px] font-bold text-[#C28430] bg-white px-2 py-0.5 rounded-full shadow-xs">₹799</span>
                     </a>
                     <a href="{{ route('bundles.buy2get1') }}" class="flex items-center justify-between py-2 text-sm font-medium text-white hover:text-white/80 transition-colors border-t border-white/10">
                         <span>Buy 2 get 1 free</span>
-                        <span class="text-[9px] font-bold text-white bg-[#C28430] px-2 py-0.5 rounded-none">FREE GIFT</span>
+                        <span class="text-[9px] font-bold text-white bg-[#C28430] px-2 py-0.5 rounded-full">FREE GIFT</span>
                     </a>
                 </div>
             </div>
@@ -162,7 +162,7 @@
             @if(auth()->check())
                 <form action="{{ route('account.logout') }}" method="POST" class="pt-1">
                     @csrf
-                    <button type="submit" class="text-xs font-bold text-white bg-black/25 px-2.5 py-1 rounded-none hover:bg-black/40 flex items-center gap-1 cursor-pointer">
+                    <button type="submit" class="text-xs font-bold text-white bg-black/25 px-2.5 py-1 rounded-full hover:bg-black/40 flex items-center gap-1 cursor-pointer">
                         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
                         <span>Sign Out</span>
                     </button>
@@ -186,7 +186,7 @@
 
             <!-- Coupon Pill Button -->
             <div class="pt-1">
-                <div class="inline-flex items-center space-x-1.5 bg-white text-[#D38928] px-4 py-2 rounded-none font-bold text-xs shadow-lg">
+                <div class="inline-flex items-center space-x-1.5 bg-white text-[#D38928] px-4 py-2 rounded-full font-bold text-xs shadow-lg">
                     <span>Use code <strong>ISHANAA10</strong> at checkout</span>
                     <span>🏷️</span>
                 </div>

@@ -361,7 +361,7 @@
                                 <p class="text-xs sm:text-sm text-gray-500 max-w-sm mx-auto">
                                     Explore our charcoal-free incense sticks, organic havan cups, and super-saver combos.
                                 </p>
-                                <a href="{{ route('collections.show', 'all') }}" class="inline-block px-6 py-3 bg-[#D38928] text-white text-xs font-bold uppercase tracking-wider rounded-none font-heading">
+                                <a href="{{ route('collections.show', 'all') }}" class="inline-block px-6 py-3 bg-[#A86911] hover:bg-[#8D540A] text-white text-xs font-bold uppercase tracking-wider rounded-[10px] font-heading transition-colors">
                                     Explore Sacred Catalog ➔
                                 </a>
                             </div>

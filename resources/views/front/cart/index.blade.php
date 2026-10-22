@@ -25,22 +25,22 @@
             <div class="lg:col-span-8 space-y-4">
                 
                 <!-- Free Shipping Progress Meter -->
-                <div class="bg-white rounded-none border border-[#EADBCC] p-5 shadow-xs space-y-2">
+                <div class="bg-white rounded-[16px] border border-[#EADBCC] p-5 shadow-xs space-y-2">
                     <div class="flex items-center justify-between text-xs font-bold font-heading">
                         <span id="free-shipping-msg" class="text-[#D38928]">Add items worth ₹499 to unlock FREE Standard Shipping!</span>
                         <span class="text-emerald-700">🚚 Pan-India Delivery</span>
                     </div>
-                    <div class="w-full h-2.5 bg-gray-100 rounded-none overflow-hidden">
+                    <div class="w-full h-2.5 bg-gray-100 rounded-full overflow-hidden">
                         <div id="shipping-progress-bar" class="h-full bg-gradient-to-r from-[#D38928] to-[#965A15] transition-all duration-300" style="width: 0%;"></div>
                     </div>
                 </div>
 
                 <!-- Items Container (Populated dynamically by JavaScript store) -->
-                <div id="cart-items-container" class="bg-white rounded-none border border-[#EADBCC] divide-y divide-[#EADBCC] shadow-xs overflow-hidden"></div>
+                <div id="cart-items-container" class="bg-white rounded-[20px] border border-[#EADBCC] divide-y divide-[#EADBCC] shadow-xs overflow-hidden"></div>
 
                 <!-- Empty State (Hidden when items present) -->
-                <div id="cart-empty-state" class="hidden bg-white rounded-none border border-[#EADBCC] p-12 text-center space-y-4">
-                    <div class="w-16 h-16 mx-auto bg-[#FAF7F2] rounded-none flex items-center justify-center text-[#D38928] text-3xl">
+                <div id="cart-empty-state" class="hidden bg-white rounded-[20px] border border-[#EADBCC] p-12 text-center space-y-4">
+                    <div class="w-16 h-16 mx-auto bg-[#FAF7F2] rounded-full flex items-center justify-center text-[#D38928] text-3xl">
                         🛍️
                     </div>
                     <h3 class="text-xl sm:text-2xl font-bold font-heading text-[#121212]">Your Sacred Basket is Empty</h3>
@@ -48,7 +48,7 @@
                         Explore our pure incense sticks, havan cups, and sacred temple samagri.
                     </p>
                     <div class="pt-2">
-                        <a href="{{ route('collections.show', 'bambooless') }}" class="inline-block px-8 py-3 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-none shadow-md transition-all font-heading">
+                        <a href="{{ route('collections.show', 'bambooless') }}" class="inline-block px-8 py-3 bg-[#A86911] hover:bg-[#8D540A] text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-[10px] shadow-md transition-all font-heading">
                             Explore Pooja Shop
                         </a>
                     </div>
@@ -66,7 +66,7 @@
             <!-- Right: Order Summary (4 Cols) -->
             <div class="lg:col-span-4 space-y-5">
                 
-                <div class="bg-white rounded-none border border-[#EADBCC] p-6 sm:p-7 shadow-xs space-y-5">
+                <div class="bg-white rounded-[20px] border border-[#EADBCC] p-6 sm:p-7 shadow-xs space-y-5">
                     <h2 class="text-xl font-black font-heading text-[#121212] pb-3 border-b border-[#EADBCC]">
                         Order Summary
                     </h2>
@@ -77,8 +77,8 @@
                             Promo / Festive Coupon
                         </label>
                         <div class="flex space-x-2">
-                            <input type="text" id="coupon-code-input" placeholder="Try: ISHANAA10" class="flex-1 px-3.5 py-2.5 bg-[#FAF7F2] border border-[#EADBCC] rounded-none text-xs font-medium focus:outline-none focus:border-[#D38928] uppercase">
-                            <button type="button" id="apply-coupon-btn" class="px-4 py-2.5 bg-[#121212] hover:bg-[#D38928] text-white text-xs font-bold rounded-none transition-colors font-heading cursor-pointer">
+                            <input type="text" id="coupon-code-input" placeholder="Try: ISHANAA10" class="flex-1 px-3.5 py-2.5 bg-[#FAF7F2] border border-[#EADBCC] rounded-[10px] text-xs font-medium focus:outline-none focus:border-[#D38928] uppercase">
+                            <button type="button" id="apply-coupon-btn" class="px-4 py-2.5 bg-[#121212] hover:bg-[#D38928] text-white text-xs font-bold rounded-[10px] transition-colors font-heading cursor-pointer">
                                 Apply
                             </button>
                         </div>
@@ -110,26 +110,26 @@
                     <button 
                         type="button" 
                         onclick="window.openGoKwikCheckout()"
-                        class="gokwik-checkout-trigger w-full py-4 px-6 bg-[#D38928] hover:bg-[#B8741E] active:bg-[#9E6215] text-white text-sm sm:text-base font-black uppercase tracking-wider rounded-none shadow-md hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 font-heading text-center cursor-pointer flex items-center justify-between"
+                        class="gokwik-checkout-trigger w-full py-4 px-6 bg-[#A86911] hover:bg-[#8D540A] active:bg-[#724308] text-white text-sm sm:text-base font-black uppercase tracking-wider rounded-[10px] shadow-md hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 font-heading text-center cursor-pointer flex items-center justify-between"
                     >
                         <span class="flex items-center gap-2">
                             <span class="text-lg">⚡</span>
                             <span>1-CLICK GOKWIK CHECKOUT</span>
                         </span>
-                        <span class="bg-black/20 px-2.5 py-1 rounded-none text-xs font-mono">UPI / COD ➔</span>
+                        <span class="bg-black/20 px-2.5 py-1 rounded text-xs font-mono">UPI / COD ➔</span>
                     </button>
 
                     <!-- Trust Badges -->
                     <div class="grid grid-cols-3 gap-2 pt-3 border-t border-gray-100 text-center text-[10px] text-gray-500">
-                        <div class="p-2 bg-[#FAF7F2] rounded-none">
+                        <div class="p-2 bg-[#FAF7F2] rounded-[8px]">
                             <strong class="text-[#121212] block">100%</strong>
                             Pure Vedic
                         </div>
-                        <div class="p-2 bg-[#FAF7F2] rounded-none">
+                        <div class="p-2 bg-[#FAF7F2] rounded-[8px]">
                             <strong class="text-[#121212] block">Safe</strong>
                             256-Bit SSL
                         </div>
-                        <div class="p-2 bg-[#FAF7F2] rounded-none">
+                        <div class="p-2 bg-[#FAF7F2] rounded-[8px]">
                             <strong class="text-[#121212] block">Express</strong>
                             Fast Dispatch
                         </div>

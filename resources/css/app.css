@@ -490,19 +490,6 @@ input:-webkit-autofill:active {
     transition: background-color 5000s ease-in-out 0s;
 }
 
-/* ========================================================================= */
-/* STRICT SQUARE AESTHETIC (Zero border-radius for buttons, cards, pills)    */
-/* ========================================================================= */
-button,
-input,
-select,
-textarea,
-.product-card,
-.card,
-.badge,
-[class*="rounded"]:not(.animate-spin):not([class*="blur"]):not([class*="radial"]) {
-    border-radius: 0px !important;
-}
 
 
 

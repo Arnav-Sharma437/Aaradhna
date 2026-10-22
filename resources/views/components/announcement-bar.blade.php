@@ -5,7 +5,7 @@
         <button 
             type="button" 
             id="announcement-prev-btn" 
-            class="p-0.5 sm:p-1 text-white/80 hover:text-white transition-all transform hover:scale-110 active:scale-95 cursor-pointer focus:outline-none shrink-0 flex items-center justify-center rounded-none hover:bg-white/10" 
+            class="p-0.5 sm:p-1 text-white/80 hover:text-white transition-all transform hover:scale-110 active:scale-95 cursor-pointer focus:outline-none shrink-0 flex items-center justify-center rounded-full hover:bg-white/10" 
             aria-label="Previous Announcement"
         >
             <svg class="w-2.5 h-2.5 sm:w-3 sm:h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
@@ -61,7 +61,7 @@
         <button 
             type="button" 
             id="announcement-next-btn" 
-            class="p-0.5 sm:p-1 text-white/80 hover:text-white transition-all transform hover:scale-110 active:scale-95 cursor-pointer focus:outline-none shrink-0 flex items-center justify-center rounded-none hover:bg-white/10" 
+            class="p-0.5 sm:p-1 text-white/80 hover:text-white transition-all transform hover:scale-110 active:scale-95 cursor-pointer focus:outline-none shrink-0 flex items-center justify-center rounded-full hover:bg-white/10" 
             aria-label="Next Announcement"
         >
             <svg class="w-2.5 h-2.5 sm:w-3 sm:h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">

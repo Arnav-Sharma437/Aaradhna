@@ -46,7 +46,7 @@
                         <button 
                             type="button" 
                             id="availability-toggle-btn"
-                            class="px-4 py-2 {{ $availSelectedCount > 0 ? 'bg-[#EEDBC5] border-[#D38928]/60 text-[#2B1810]' : 'bg-[#FAF5EE] hover:bg-[#F3ECE0] border-[#EADBCC]/50 text-[#1F1F1F]' }} rounded-none text-xs sm:text-sm font-medium flex items-center gap-1.5 transition-colors cursor-pointer border"
+                            class="px-4 py-2 {{ $availSelectedCount > 0 ? 'bg-[#EEDBC5] border-[#D38928]/60 text-[#2B1810]' : 'bg-[#FAF5EE] hover:bg-[#F3ECE0] border-[#EADBCC]/50 text-[#1F1F1F]' }} rounded-[10px] text-xs sm:text-sm font-medium flex items-center gap-1.5 transition-colors cursor-pointer border"
                         >
                             <span class="{{ $availSelectedCount > 0 ? 'underline underline-offset-4 decoration-2 decoration-[#121212] font-semibold' : '' }}">Availability</span>
                             <svg class="w-3.5 h-3.5 text-gray-500 transition-transform duration-200" id="availability-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
@@ -55,7 +55,7 @@
                         <!-- Popover Card (Availability) -->
                         <div 
                             id="availability-popover" 
-                            class="hidden absolute top-full left-0 mt-2 w-64 bg-white rounded-none shadow-[0_10px_30px_rgba(0,0,0,0.12)] border border-[#EADBCC] z-50 p-4 font-body"
+                            class="hidden absolute top-full left-0 mt-2 w-64 bg-white rounded-[12px] shadow-[0_10px_30px_rgba(0,0,0,0.12)] border border-[#EADBCC] z-50 p-4 font-body"
                         >
                             <div class="flex items-center justify-between pb-3 border-b border-gray-200 text-xs sm:text-sm">
                                 <span class="text-gray-600">{{ $availSelectedCount }} selected</span>
@@ -74,7 +74,7 @@
                                         value="in_stock" 
                                         onchange="document.getElementById('collection-filter-form').submit()"
                                         {{ in_array('in_stock', $activeAvail) ? 'checked' : '' }}
-                                        class="w-4 h-4 rounded-none border-gray-300 text-[#D38928] focus:ring-[#D38928] cursor-pointer"
+                                        class="w-4 h-4 rounded border-gray-300 text-[#D38928] focus:ring-[#D38928] cursor-pointer"
                                     >
                                     <span>In stock ({{ $inStockCount }})</span>
                                 </label>
@@ -85,7 +85,7 @@
                                         value="out_of_stock" 
                                         onchange="document.getElementById('collection-filter-form').submit()"
                                         {{ in_array('out_of_stock', $activeAvail) ? 'checked' : '' }}
-                                        class="w-4 h-4 rounded-none border-gray-300 text-[#D38928] focus:ring-[#D38928] cursor-pointer"
+                                        class="w-4 h-4 rounded border-gray-300 text-[#D38928] focus:ring-[#D38928] cursor-pointer"
                                     >
                                     <span>Out of stock ({{ $outOfStockCount }})</span>
                                 </label>
@@ -98,7 +98,7 @@
                         <button 
                             type="button" 
                             id="price-toggle-btn"
-                            class="px-4 py-2 {{ $hasPriceFilter ? 'bg-[#EEDBC5] border-[#D38928]/60 text-[#2B1810]' : 'bg-[#FAF5EE] hover:bg-[#F3ECE0] border-[#EADBCC]/50 text-[#1F1F1F]' }} rounded-none text-xs sm:text-sm font-medium flex items-center gap-1.5 transition-colors cursor-pointer border"
+                            class="px-4 py-2 {{ $hasPriceFilter ? 'bg-[#EEDBC5] border-[#D38928]/60 text-[#2B1810]' : 'bg-[#FAF5EE] hover:bg-[#F3ECE0] border-[#EADBCC]/50 text-[#1F1F1F]' }} rounded-[10px] text-xs sm:text-sm font-medium flex items-center gap-1.5 transition-colors cursor-pointer border"
                         >
                             <span class="{{ $hasPriceFilter ? 'underline underline-offset-4 decoration-2 decoration-[#121212] font-semibold' : '' }}">Price</span>
                             <svg class="w-3.5 h-3.5 text-gray-500 transition-transform duration-200" id="price-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
@@ -107,7 +107,7 @@
                         <!-- Popover Card (Price) -->
                         <div 
                             id="price-popover" 
-                            class="hidden absolute top-full left-0 mt-2 w-72 bg-white rounded-none shadow-[0_10px_30px_rgba(0,0,0,0.12)] border border-[#EADBCC] z-50 p-4 font-body"
+                            class="hidden absolute top-full left-0 mt-2 w-72 bg-white rounded-[12px] shadow-[0_10px_30px_rgba(0,0,0,0.12)] border border-[#EADBCC] z-50 p-4 font-body"
                         >
                             <div class="flex items-center justify-between pb-3 border-b border-gray-200 text-xs sm:text-sm">
                                 <span class="text-gray-600">The highest price is ₹{{ number_format($maxProductPrice, 2) }}</span>
@@ -119,7 +119,7 @@
                                 </a>
                             </div>
                             <div class="grid grid-cols-2 gap-3 pt-3">
-                                <div class="flex items-center border border-gray-300 rounded-none px-2.5 py-1.5 focus-within:border-black focus-within:ring-1 focus-within:ring-black">
+                                <div class="flex items-center border border-gray-300 rounded-[6px] px-2.5 py-1.5 focus-within:border-black focus-within:ring-1 focus-within:ring-black">
                                     <span class="text-xs text-gray-500 mr-1.5 font-medium">₹</span>
                                     <input 
                                         type="number" 
@@ -131,7 +131,7 @@
                                         class="w-full text-xs outline-none bg-transparent" 
                                     />
                                 </div>
-                                <div class="flex items-center border border-gray-300 rounded-none px-2.5 py-1.5 focus-within:border-black focus-within:ring-1 focus-within:ring-black">
+                                <div class="flex items-center border border-gray-300 rounded-[6px] px-2.5 py-1.5 focus-within:border-black focus-within:ring-1 focus-within:ring-black">
                                     <span class="text-xs text-gray-500 mr-1.5 font-medium">₹</span>
                                     <input 
                                         type="number" 
@@ -164,7 +164,7 @@
                                 id="sort_by" 
                                 name="sort_by" 
                                 onchange="document.getElementById('collection-filter-form').submit()"
-                                class="appearance-none bg-[#FAF5EE] hover:bg-[#F3ECE0] border border-[#EADBCC]/70 rounded-none pl-3 pr-8 py-2 text-xs sm:text-sm font-medium text-[#1F1F1F] focus:outline-none focus:border-[#D38928] cursor-pointer transition-colors"
+                                class="appearance-none bg-[#FAF5EE] hover:bg-[#F3ECE0] border border-[#EADBCC]/70 rounded-[10px] pl-3 pr-8 py-2 text-xs sm:text-sm font-medium text-[#1F1F1F] focus:outline-none focus:border-[#D38928] cursor-pointer transition-colors"
                             >
                                 <option value="featured" {{ $currentSort === 'featured' ? 'selected' : '' }}>Featured</option>
                                 <option value="best_selling" {{ $currentSort === 'best_selling' ? 'selected' : '' }}>Best selling</option>
@@ -198,7 +198,7 @@
                         @endphp
                         <a 
                             href="{{ request()->fullUrlWithQuery(['availability' => count($newAvail) > 0 ? $newAvail : null, 'page' => null]) }}"
-                            class="inline-flex items-center gap-1.5 px-3 py-1 bg-[#F0E4D4] hover:bg-[#E5D5C1] text-[#2B1810] rounded-none text-xs font-semibold border border-[#D5BEA6] shadow-2xs transition-colors group cursor-pointer"
+                            class="inline-flex items-center gap-1.5 px-3 py-1 bg-[#F0E4D4] hover:bg-[#E5D5C1] text-[#2B1810] rounded-full text-xs font-semibold border border-[#D5BEA6] shadow-2xs transition-colors group cursor-pointer"
                             title="Remove In stock filter"
                         >
                             <span>Availability: In stock</span>
@@ -212,7 +212,7 @@
                         @endphp
                         <a 
                             href="{{ request()->fullUrlWithQuery(['availability' => count($newAvail) > 0 ? $newAvail : null, 'page' => null]) }}"
-                            class="inline-flex items-center gap-1.5 px-3 py-1 bg-[#F0E4D4] hover:bg-[#E5D5C1] text-[#2B1810] rounded-none text-xs font-semibold border border-[#D5BEA6] shadow-2xs transition-colors group cursor-pointer"
+                            class="inline-flex items-center gap-1.5 px-3 py-1 bg-[#F0E4D4] hover:bg-[#E5D5C1] text-[#2B1810] rounded-full text-xs font-semibold border border-[#D5BEA6] shadow-2xs transition-colors group cursor-pointer"
                             title="Remove Out of stock filter"
                         >
                             <span>Availability: Out of stock</span>
@@ -223,7 +223,7 @@
                     @if($hasPriceFilter)
                         <a 
                             href="{{ request()->fullUrlWithQuery(['price_min' => null, 'price_max' => null, 'page' => null]) }}"
-                            class="inline-flex items-center gap-1.5 px-3 py-1 bg-[#F0E4D4] hover:bg-[#E5D5C1] text-[#2B1810] rounded-none text-xs font-semibold border border-[#D5BEA6] shadow-2xs transition-colors group cursor-pointer"
+                            class="inline-flex items-center gap-1.5 px-3 py-1 bg-[#F0E4D4] hover:bg-[#E5D5C1] text-[#2B1810] rounded-full text-xs font-semibold border border-[#D5BEA6] shadow-2xs transition-colors group cursor-pointer"
                             title="Remove Price filter"
                         >
                             <span>Price: ₹{{ request('price_min', 0) }} - ₹{{ request('price_max', $maxProductPrice) }}</span>
@@ -256,7 +256,7 @@
                 <!-- Infinite Scroll Sentinel & Loading Indicator (Automatic Load on Scroll) -->
                 <div id="infinite-scroll-container" class="mt-12 {{ $products->hasMorePages() ? '' : 'hidden' }}">
                     <div id="infinite-scroll-sentinel" class="py-6 flex flex-col items-center justify-center space-y-3" data-next-url="{{ $products->nextPageUrl() }}">
-                        <div class="flex items-center space-x-2.5 px-5 py-2.5 bg-[#FAF5EE] rounded-none border border-[#EADBCC] text-xs font-semibold text-[#8C6239] shadow-2xs">
+                        <div class="flex items-center space-x-2.5 px-5 py-2.5 bg-[#FAF5EE] rounded-full border border-[#EADBCC] text-xs font-semibold text-[#8C6239] shadow-2xs">
                             <svg class="animate-spin h-4 w-4 text-[#D38928]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                 <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                                 <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
@@ -267,8 +267,8 @@
                 </div>
             @else
                 <!-- Empty State -->
-                <div class="bg-white rounded-none border border-[#EADBCC] p-12 sm:p-16 text-center space-y-4 shadow-xs">
-                    <div class="w-16 h-16 mx-auto bg-[#FAF7F2] rounded-none flex items-center justify-center text-[#D38928] text-3xl">
+                <div class="bg-white rounded-[24px] border border-[#EADBCC] p-12 sm:p-16 text-center space-y-4 shadow-xs">
+                    <div class="w-16 h-16 mx-auto bg-[#FAF7F2] rounded-full flex items-center justify-center text-[#D38928] text-3xl">
                         🪔
                     </div>
                     <h3 class="text-xl font-bold font-heading text-[#121212]">No Sacred Items in this Category</h3>
@@ -276,7 +276,7 @@
                         Please explore our complete range of pure incense sticks and havan cups.
                     </p>
                     <div class="pt-2">
-                        <a href="{{ route('collections.show', 'bambooless') }}" class="inline-block px-8 py-3 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-none shadow-md transition-all font-heading">
+                        <a href="{{ route('collections.show', 'bambooless') }}" class="inline-block px-8 py-3 bg-[#A86911] hover:bg-[#8D540A] text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-[10px] shadow-md transition-all font-heading">
                             Explore Incense Sticks
                         </a>
                     </div>
@@ -356,7 +356,7 @@
                             Sacred Incense Sticks for Pure Puja
                         </h3>
                         <p class="text-xs sm:text-[14.5px] text-gray-700 leading-relaxed font-normal">
-                            According to traditional Vedic Shastras, burning bamboo wood is considered inauspicious. Our 100% Pure Incense Sticks are crafted strictly adhering to ancient rituals, preserving absolute spiritual purity and sanctity for your home temple.
+                            According to traditional Vedic Shastras, burning bamboo wood is considered inauspicious. Our 100% Bamboo-less Incense Sticks are crafted strictly adhering to ancient rituals, preserving absolute spiritual purity and sanctity for your home temple.
                         </p>
                         <p class="text-xs sm:text-[14.5px] text-gray-700 leading-relaxed font-normal">
                             Handcrafted with sacred temple flowers and enriched with pure botanical extracts like 
@@ -474,8 +474,8 @@
                     </h2>
                 </div>
 
-                <!-- Seamless Accordion Container (Centered) -->
-                <div class="bg-white rounded-none border border-[#EADBCC] shadow-xs divide-y divide-[#EADBCC] overflow-hidden">
+                <!-- Seamless Accordion Container (8px Border Radius & 10px Inner Padding, Centered) -->
+                <div class="bg-white rounded-[8px] border border-[#EADBCC] shadow-xs divide-y divide-[#EADBCC] overflow-hidden">
                     
                     <!-- FAQ 1 -->
                     <div class="faq-item">
@@ -483,7 +483,7 @@
                             <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
                                 What makes ISHANAA incense sticks and havan cups unique?
                             </span>
-                            <div class="w-6 h-6 rounded-none bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                            <div class="w-6 h-6 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
                                 <svg class="faq-icon w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                                 </svg>
@@ -502,7 +502,7 @@
                             <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
                                 How long do they burn, and does the temple fragrance linger in the room?
                             </span>
-                            <div class="w-6 h-6 rounded-none bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                            <div class="w-6 h-6 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
                                 <svg class="faq-icon w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                                 </svg>
@@ -521,7 +521,7 @@
                             <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
                                 Are ISHANAA products safe to use around babies, elders, and pets?
                             </span>
-                            <div class="w-6 h-6 rounded-none bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                            <div class="w-6 h-6 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
                                 <svg class="faq-icon w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                                 </svg>
@@ -540,7 +540,7 @@
                             <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
                                 What is the spiritual significance of burning 100% Bamboo-Free Agarbatti?
                             </span>
-                            <div class="w-6 h-6 rounded-none bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                            <div class="w-6 h-6 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
                                 <svg class="faq-icon w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                                 </svg>
@@ -559,7 +559,7 @@
                             <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
                                 How do I properly ignite and use organic Sambrani Havan Cups &amp; Dhoop Cones?
                             </span>
-                            <div class="w-6 h-6 rounded-none bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                            <div class="w-6 h-6 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
                                 <svg class="faq-icon w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                                 </svg>
@@ -578,7 +578,7 @@
                             <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
                                 What sacred ingredients and temple flowers are used in handcrafting?
                             </span>
-                            <div class="w-6 h-6 rounded-none bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                            <div class="w-6 h-6 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
                                 <svg class="faq-icon w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                                 </svg>
@@ -597,7 +597,7 @@
                             <span class="text-xs sm:text-[13.5px] font-medium text-[#121212] font-heading group-hover:text-[#D38928] transition-colors pr-4 leading-snug">
                                 Do you offer nationwide shipping, COD, and complimentary ceramic holders?
                             </span>
-                            <div class="w-6 h-6 rounded-none bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
+                            <div class="w-6 h-6 rounded-full bg-[#FAF7F2] group-hover:bg-[#D38928]/10 text-[#D38928] flex items-center justify-center shrink-0 transition-colors">
                                 <svg class="faq-icon w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                                 </svg>

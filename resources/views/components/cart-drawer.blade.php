@@ -24,7 +24,7 @@
             <button 
                 type="button" 
                 id="cart-drawer-close" 
-                class="p-1.5 text-gray-500 hover:text-[#121212] rounded-none hover:bg-gray-100 transition-colors focus:outline-none"
+                class="p-1.5 text-gray-500 hover:text-[#121212] rounded-full hover:bg-gray-100 transition-colors focus:outline-none"
                 aria-label="Close Cart"
             >
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
@@ -42,31 +42,31 @@
         <div class="px-5 py-3.5 bg-[#FAF7F2] border-b border-[#EADBCC] shrink-0">
             <!-- Tier labels -->
             <div class="flex items-center justify-between text-[10px] sm:text-[11px] font-bold font-heading text-[#965A15] mb-2 px-1">
-                <span class="px-2 py-0.5 bg-white rounded-none border border-[#D38928]/40 shadow-2xs">₹499 OFF</span>
-                <span class="px-2 py-0.5 bg-white rounded-none border border-[#D38928]/40 shadow-2xs">FREE GIFT ₹249</span>
-                <span class="px-2 py-0.5 bg-white rounded-none border border-[#D38928]/40 shadow-2xs">FREE GIFT ₹399</span>
+                <span class="px-2 py-0.5 bg-white rounded-full border border-[#D38928]/40 shadow-2xs">₹499 OFF</span>
+                <span class="px-2 py-0.5 bg-white rounded-full border border-[#D38928]/40 shadow-2xs">FREE GIFT ₹249</span>
+                <span class="px-2 py-0.5 bg-white rounded-full border border-[#D38928]/40 shadow-2xs">FREE GIFT ₹399</span>
             </div>
 
             <!-- Progress Bar Track -->
-            <div class="relative w-full h-2 bg-[#EADBCC] rounded-none my-3">
+            <div class="relative w-full h-2 bg-[#EADBCC] rounded-full my-3">
                 <!-- Active Fill -->
-                <div id="drawer-milestone-fill" class="h-full bg-gradient-to-r from-[#D38928] to-[#965A15] rounded-none transition-all duration-300" style="width: 58%;"></div>
+                <div id="drawer-milestone-fill" class="h-full bg-gradient-to-r from-[#D38928] to-[#965A15] rounded-full transition-all duration-300" style="width: 58%;"></div>
                 
                 <!-- Step Pin 1 (₹499) -->
                 <div class="absolute top-1/2 left-[30%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-                    <div class="w-5 h-5 rounded-none bg-[#D38928] text-white text-[9px] font-bold flex items-center justify-center border-2 border-white shadow-xs">✓</div>
+                    <div class="w-5 h-5 rounded-full bg-[#D38928] text-white text-[9px] font-bold flex items-center justify-center border-2 border-white shadow-xs">✓</div>
                     <span class="text-[9px] font-bold text-gray-500 mt-0.5">₹499</span>
                 </div>
 
                 <!-- Step Pin 2 (₹999) -->
                 <div class="absolute top-1/2 left-[65%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-                    <div class="w-5 h-5 rounded-none bg-[#D38928] text-white text-[9px] font-bold flex items-center justify-center border-2 border-white shadow-xs">✓</div>
+                    <div class="w-5 h-5 rounded-full bg-[#D38928] text-white text-[9px] font-bold flex items-center justify-center border-2 border-white shadow-xs">✓</div>
                     <span class="text-[9px] font-bold text-gray-500 mt-0.5">₹999</span>
                 </div>
 
                 <!-- Step Pin 3 (₹1,499) -->
                 <div class="absolute top-1/2 left-[95%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-                    <div class="w-5 h-5 rounded-none bg-white text-gray-400 text-[9px] font-bold flex items-center justify-center border-2 border-[#EADBCC] shadow-xs">🎁</div>
+                    <div class="w-5 h-5 rounded-full bg-white text-gray-400 text-[9px] font-bold flex items-center justify-center border-2 border-[#EADBCC] shadow-xs">🎁</div>
                     <span class="text-[9px] font-bold text-gray-500 mt-0.5">₹1,499</span>
                 </div>
             </div>
@@ -88,40 +88,40 @@
                 <div class="grid grid-cols-3 gap-2">
                     
                     <!-- Upsell 1 -->
-                    <div class="bg-[#FFFDF9] border border-[#EADBCC] rounded-none p-2 flex flex-col justify-between text-center space-y-1 relative">
-                        <span class="absolute top-1 left-1 px-1.5 py-0.2 bg-[#C28430] text-white text-[8px] font-bold rounded-none font-heading">30% OFF</span>
-                        <div class="w-full aspect-square rounded-none overflow-hidden bg-white mb-1">
+                    <div class="bg-[#FFFDF9] border border-[#EADBCC] rounded-[12px] p-2 flex flex-col justify-between text-center space-y-1 relative">
+                        <span class="absolute top-1 left-1 px-1.5 py-0.2 bg-[#C28430] text-white text-[8px] font-bold rounded-full font-heading">30% OFF</span>
+                        <div class="w-full aspect-square rounded-[8px] overflow-hidden bg-white mb-1">
                             <img src="{{ asset('assets/images/devi-refill-pack-card.jpg') }}" alt="Bestseller Combo" class="w-full h-full object-cover">
                         </div>
                         <h5 class="text-[10px] font-bold font-serif text-[#121212] truncate">Bestseller Combo</h5>
                         <div class="text-[11px] font-black text-[#C87A1E] font-heading">₹1,399.00</div>
-                        <button type="button" class="drawer-quick-add w-full py-1 bg-[#D38928] hover:bg-[#B8741E] text-white text-[10px] font-bold rounded-none font-heading transition-colors" data-title="Bestseller Combo" data-price="1399.00">
+                        <button type="button" class="drawer-quick-add w-full py-1 bg-[#A86911] hover:bg-[#8D540A] text-white text-[10px] font-bold rounded-[6px] font-heading transition-colors" data-title="Bestseller Combo" data-price="1399.00">
                             Add to cart
                         </button>
                     </div>
 
                     <!-- Upsell 2 -->
-                    <div class="bg-[#FFFDF9] border border-[#EADBCC] rounded-none p-2 flex flex-col justify-between text-center space-y-1 relative">
-                        <span class="absolute top-1 left-1 px-1.5 py-0.2 bg-[#C28430] text-white text-[8px] font-bold rounded-none font-heading">30% OFF</span>
-                        <div class="w-full aspect-square rounded-none overflow-hidden bg-white mb-1">
+                    <div class="bg-[#FFFDF9] border border-[#EADBCC] rounded-[12px] p-2 flex flex-col justify-between text-center space-y-1 relative">
+                        <span class="absolute top-1 left-1 px-1.5 py-0.2 bg-[#C28430] text-white text-[8px] font-bold rounded-full font-heading">30% OFF</span>
+                        <div class="w-full aspect-square rounded-[8px] overflow-hidden bg-white mb-1">
                             <img src="{{ asset('assets/images/oudh-pack-card.jpg') }}" alt="Bhairav Refill Pack" class="w-full h-full object-cover">
                         </div>
                         <h5 class="text-[10px] font-bold font-serif text-[#121212] truncate">Bhairav Refill Pack</h5>
                         <div class="text-[11px] font-black text-[#C87A1E] font-heading">₹489.00</div>
-                        <button type="button" class="drawer-quick-add w-full py-1 bg-[#D38928] hover:bg-[#B8741E] text-white text-[10px] font-bold rounded-none font-heading transition-colors" data-title="Bhairav Refill Pack" data-price="489.00">
+                        <button type="button" class="drawer-quick-add w-full py-1 bg-[#A86911] hover:bg-[#8D540A] text-white text-[10px] font-bold rounded-[6px] font-heading transition-colors" data-title="Bhairav Refill Pack" data-price="489.00">
                             Add to cart
                         </button>
                     </div>
 
                     <!-- Upsell 3 -->
-                    <div class="bg-[#FFFDF9] border border-[#EADBCC] rounded-none p-2 flex flex-col justify-between text-center space-y-1 relative">
-                        <span class="absolute top-1 left-1 px-1.5 py-0.2 bg-[#C28430] text-white text-[8px] font-bold rounded-none font-heading">51% OFF</span>
-                        <div class="w-full aspect-square rounded-none overflow-hidden bg-white mb-1">
+                    <div class="bg-[#FFFDF9] border border-[#EADBCC] rounded-[12px] p-2 flex flex-col justify-between text-center space-y-1 relative">
+                        <span class="absolute top-1 left-1 px-1.5 py-0.2 bg-[#C28430] text-white text-[8px] font-bold rounded-full font-heading">51% OFF</span>
+                        <div class="w-full aspect-square rounded-[8px] overflow-hidden bg-white mb-1">
                             <img src="{{ asset('assets/images/devi-refill-pack-card.jpg') }}" alt="Devi Refill Pack" class="w-full h-full object-cover">
                         </div>
                         <h5 class="text-[10px] font-bold font-serif text-[#121212] truncate">Devi Refill Pack</h5>
                         <div class="text-[11px] font-black text-[#C87A1E] font-heading">₹489.00</div>
-                        <button type="button" class="drawer-quick-add w-full py-1 bg-[#D38928] hover:bg-[#B8741E] text-white text-[10px] font-bold rounded-none font-heading transition-colors" data-title="Devi Refill Pack" data-price="489.00">
+                        <button type="button" class="drawer-quick-add w-full py-1 bg-[#A86911] hover:bg-[#8D540A] text-white text-[10px] font-bold rounded-[6px] font-heading transition-colors" data-title="Devi Refill Pack" data-price="489.00">
                             Add to cart
                         </button>
                     </div>
@@ -131,14 +131,14 @@
 
             <!-- 5. Unlocked Special Offer: Buy Any Fragrance at ₹99 -->
             <div class="pt-4">
-                <div class="bg-[#FFFDF9] border border-[#D38928]/40 rounded-none p-3 space-y-2">
+                <div class="bg-[#FFFDF9] border border-[#D38928]/40 rounded-[14px] p-3 space-y-2">
                     <div class="flex items-center justify-between text-[11px] font-bold font-heading">
                         <span class="text-[#D38928]">🎉 Unlocked! Buy any fragrance at ₹99</span>
                         <span class="text-[10px] text-gray-500">*Valid Today</span>
                     </div>
 
-                    <div class="flex items-center justify-between gap-3 bg-white p-2.5 rounded-none border border-[#EADBCC]">
-                        <div class="w-12 h-12 rounded-none bg-[#FAF7F2] overflow-hidden shrink-0">
+                    <div class="flex items-center justify-between gap-3 bg-white p-2.5 rounded-[10px] border border-[#EADBCC]">
+                        <div class="w-12 h-12 rounded-[6px] bg-[#FAF7F2] overflow-hidden shrink-0">
                             <img src="{{ asset('assets/images/oudh-pack-card.jpg') }}" alt="Oudh Trial Pack" class="w-full h-full object-cover">
                         </div>
                         <div class="flex-1 min-w-0">
@@ -148,7 +148,7 @@
                                 <span class="text-gray-400 line-through text-[10px]">₹229.00</span>
                             </div>
                         </div>
-                        <button type="button" class="drawer-quick-add px-3 py-1.5 bg-[#D38928] hover:bg-[#B8741E] text-white text-[11px] font-bold rounded-none font-heading whitespace-nowrap" data-title="Oudh Trial Pack" data-price="99.00">
+                        <button type="button" class="drawer-quick-add px-3 py-1.5 bg-[#A86911] hover:bg-[#8D540A] text-white text-[11px] font-bold rounded-[8px] font-heading whitespace-nowrap" data-title="Oudh Trial Pack" data-price="99.00">
                             Buy at ₹99
                         </button>
                     </div>
@@ -161,7 +161,7 @@
         <div class="p-4 pb-6 sm:pb-4 pb-safe bg-white border-t border-[#EADBCC] space-y-3 shrink-0 shadow-lg">
             
             <!-- Trust strip -->
-            <div class="py-1 px-2 bg-[#FAF7F2] rounded-none text-center text-[10px] font-bold text-gray-600 font-heading flex items-center justify-center space-x-2">
+            <div class="py-1 px-2 bg-[#FAF7F2] rounded-[6px] text-center text-[10px] font-bold text-gray-600 font-heading flex items-center justify-center space-x-2">
                 <span class="text-emerald-700">🚚 Free Shipping</span>
                 <span>•</span>
                 <span class="text-emerald-700">💵 COD Available</span>
@@ -189,13 +189,13 @@
             <button 
                 type="button" 
                 onclick="window.openGoKwikCheckout()"
-                class="gokwik-checkout-trigger w-full py-3.5 px-5 bg-[#D38928] hover:bg-[#B8741E] active:bg-[#9E6215] text-white text-sm sm:text-base font-black uppercase tracking-wider rounded-none shadow-md hover:shadow-xl transition-all duration-200 flex items-center justify-between font-heading text-center cursor-pointer"
+                class="gokwik-checkout-trigger w-full py-3.5 px-5 bg-[#A86911] hover:bg-[#8D540A] active:bg-[#724308] text-white text-sm sm:text-base font-black uppercase tracking-wider rounded-[10px] shadow-md hover:shadow-xl transition-all duration-200 flex items-center justify-between font-heading text-center cursor-pointer"
             >
                 <div class="flex items-center space-x-2">
                     <span class="text-base">⚡</span>
                     <span>1-CLICK CHECKOUT</span>
                 </div>
-                <div class="flex items-center space-x-1 bg-black/20 px-2.5 py-1 rounded-none text-[11px] font-mono">
+                <div class="flex items-center space-x-1 bg-black/20 px-2.5 py-1 rounded-md text-[11px] font-mono">
                     <span>UPI / COD / Cards ➔</span>
                 </div>
             </button>

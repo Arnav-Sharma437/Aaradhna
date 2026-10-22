@@ -409,7 +409,7 @@
                         <button 
                             type="button" 
                             id="main-add-to-cart-btn"
-                            class="flex-1 h-11 sm:h-12 bg-[#D38928] hover:bg-[#B8741E] active:bg-[#965A15] text-white text-sm sm:text-base font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 text-center flex items-center justify-center cursor-pointer focus:outline-none font-heading"
+                            class="flex-1 h-11 sm:h-12 bg-[#A86911] hover:bg-[#8D540A] active:bg-[#724308] text-white text-sm sm:text-base font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 text-center flex items-center justify-center cursor-pointer focus:outline-none font-heading"
                             data-product-id="{{ $product->id }}"
                             data-product-title="{{ $product->title }}"
                             data-product-slug="{{ $product->slug }}"
@@ -1360,7 +1360,7 @@
     <button 
         type="button" 
         id="sticky-atc-btn" 
-        class="py-2.5 sm:py-3 px-5 sm:px-7 bg-[#D38928] hover:bg-[#B8741E] active:bg-[#965A15] text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-[10px] shadow-sm hover:shadow-md transition-all font-heading cursor-pointer whitespace-nowrap shrink-0 flex items-center space-x-2"
+        class="py-2.5 sm:py-3 px-5 sm:px-7 bg-[#A86911] hover:bg-[#8D540A] active:bg-[#724308] text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-[10px] shadow-sm hover:shadow-md transition-all font-heading cursor-pointer whitespace-nowrap shrink-0 flex items-center space-x-2"
         data-product-id="{{ $product->id }}"
         data-product-title="{{ $product->title }}"
         data-product-slug="{{ $product->slug }}"

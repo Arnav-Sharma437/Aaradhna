@@ -236,7 +236,7 @@
             >
                 @foreach($reels as $idx => $reel)
                     <div 
-                        class="mobile-reel-card snap-center snap-always shrink-0 w-[220px] aspect-[9/16] rounded-none overflow-hidden bg-black relative transition-all duration-300 transform cursor-pointer select-none {{ $idx === 0 ? 'scale-100 opacity-100 border-2 border-[#D38928]/70 z-20' : 'scale-[0.86] opacity-50 filter blur-[1.5px] border-2 border-transparent' }}"
+                        class="mobile-reel-card snap-center snap-always shrink-0 w-[220px] aspect-[9/16] rounded-[24px] overflow-hidden bg-black relative transition-all duration-300 transform cursor-pointer select-none {{ $idx === 0 ? 'scale-100 opacity-100 shadow-2xl border-2 border-[#D38928]/70 z-20' : 'scale-[0.86] opacity-50 filter blur-[1.5px] border-2 border-transparent' }}"
                         data-index="{{ $idx }}"
                     >
                         <video 
@@ -253,7 +253,7 @@
 
                         <!-- Top Left Views Badge -->
                         <div class="absolute top-3 left-3 pointer-events-none z-10">
-                            <span class="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-none bg-black/60 backdrop-blur-md text-white text-[11px] font-bold border border-white/20">
+                            <span class="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-[11px] font-bold border border-white/20">
                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
                                 <span>{{ $reel['views'] }}</span>
                             </span>
@@ -261,15 +261,15 @@
 
                         <!-- Center Play Indicator -->
                         <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-                            <div class="w-12 h-12 rounded-none bg-black/45 backdrop-blur-md border border-white/30 text-white flex items-center justify-center">
+                            <div class="w-12 h-12 rounded-full bg-black/45 backdrop-blur-md border border-white/30 text-white flex items-center justify-center shadow-xl">
                                 <svg class="w-5 h-5 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                             </div>
                         </div>
 
                         <!-- Bottom Product Thumbnail Badge -->
                         <div class="absolute bottom-3.5 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
-                            <div class="w-13 h-13 rounded-none bg-white p-1 border-2 border-[#D38928] overflow-hidden flex items-center justify-center">
-                                <img src="{{ $reel['thumbnail'] }}" alt="{{ $reel['title'] }}" class="w-full h-full object-cover rounded-none">
+                            <div class="w-13 h-13 rounded-full bg-white p-1 shadow-2xl border-2 border-[#D38928] overflow-hidden flex items-center justify-center">
+                                <img src="{{ $reel['thumbnail'] }}" alt="{{ $reel['title'] }}" class="w-full h-full object-cover rounded-full">
                             </div>
                         </div>
                     </div>
@@ -286,7 +286,7 @@
             <button 
                 type="button" 
                 id="reel-scroll-prev"
-                class="absolute -left-3 lg:-left-5 top-[38%] -translate-y-1/2 z-30 w-11 h-11 lg:w-12 lg:h-12 rounded-none bg-white hover:bg-[#C28430] text-[#121212] hover:text-white border border-[#EADBCC] flex items-center justify-center transition-all duration-300 transform hover:scale-110 active:scale-95 cursor-pointer focus:outline-none"
+                class="absolute -left-3 lg:-left-5 top-[38%] -translate-y-1/2 z-30 w-11 h-11 lg:w-12 lg:h-12 rounded-full bg-white hover:bg-[#C28430] text-[#121212] hover:text-white border border-[#EADBCC] shadow-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 active:scale-95 cursor-pointer focus:outline-none"
                 aria-label="Previous Videos"
             >
                 <svg class="w-5 h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
@@ -296,7 +296,7 @@
             <button 
                 type="button" 
                 id="reel-scroll-next"
-                class="absolute -right-3 lg:-right-5 top-[38%] -translate-y-1/2 z-30 w-11 h-11 lg:w-12 lg:h-12 rounded-none bg-white hover:bg-[#C28430] text-[#121212] hover:text-white border border-[#EADBCC] flex items-center justify-center transition-all duration-300 transform hover:scale-110 active:scale-95 cursor-pointer focus:outline-none"
+                class="absolute -right-3 lg:-right-5 top-[38%] -translate-y-1/2 z-30 w-11 h-11 lg:w-12 lg:h-12 rounded-full bg-white hover:bg-[#C28430] text-[#121212] hover:text-white border border-[#EADBCC] shadow-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 active:scale-95 cursor-pointer focus:outline-none"
                 aria-label="Next Videos"
             >
                 <svg class="w-5 h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
@@ -313,7 +313,7 @@
                         data-reel-index="{{ $index }}"
                     >
                         <!-- 9:16 Video Preview Container -->
-                        <div class="relative w-full aspect-[9/16] rounded-none overflow-hidden bg-neutral-900 border border-[#EADBCC] group-hover:border-[#D38928] transition-all duration-300 transform group-hover:-translate-y-1">
+                        <div class="relative w-full aspect-[9/16] rounded-[16px] overflow-hidden bg-neutral-900 border border-[#EADBCC] shadow-xs group-hover:shadow-xl group-hover:border-[#D38928] transition-all duration-300 transform group-hover:-translate-y-1">
                             <video 
                                 class="reel-preview-video w-full h-full object-cover pointer-events-none" 
                                 src="{{ $reel['video_url'] }}" 
@@ -328,7 +328,7 @@
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 pointer-events-none"></div>
 
                             <!-- Top Right View Counter Pill -->
-                            <div class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-none bg-black/50 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold tracking-wide flex items-center space-x-1 pointer-events-none select-none">
+                            <div class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-full bg-black/50 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold tracking-wide flex items-center space-x-1 pointer-events-none select-none">
                                 <svg class="w-3.5 h-3.5 text-white/90" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
@@ -338,10 +338,10 @@
                         </div>
 
                         <!-- Bottom Product Card Row -->
-                        <div class="mt-2.5 bg-white p-2 sm:p-2.5 rounded-none border border-[#EADBCC] space-y-2">
+                        <div class="mt-2.5 bg-white p-2 sm:p-2.5 rounded-[12px] border border-[#EADBCC] shadow-2xs space-y-2">
                             <div class="flex items-center space-x-2">
-                                <div class="w-10 h-10 rounded-none border border-[#EADBCC] p-0.5 bg-[#FAF7F2] shrink-0 overflow-hidden flex items-center justify-center">
-                                    <img src="{{ $reel['thumbnail'] }}" alt="{{ $reel['title'] }}" class="w-full h-full object-cover rounded-none">
+                                <div class="w-10 h-10 rounded-[6px] border border-[#EADBCC] p-0.5 bg-[#FAF7F2] shrink-0 overflow-hidden flex items-center justify-center">
+                                    <img src="{{ $reel['thumbnail'] }}" alt="{{ $reel['title'] }}" class="w-full h-full object-cover rounded-[4px]">
                                 </div>
                                 <div class="min-w-0 flex-1">
                                     <h4 class="text-[12px] font-medium font-body text-[#1F1F1F] truncate leading-tight">
@@ -358,7 +358,7 @@
                             <!-- Brand Logo Gold Add To Cart Button -->
                             <button 
                                 type="button" 
-                                class="quick-add-to-cart-btn w-full py-2 px-3 bg-[#C28430] hover:bg-[#A66B1F] text-white text-xs font-bold rounded-none transition-all flex items-center justify-center space-x-1 font-heading cursor-pointer active:scale-95"
+                                class="quick-add-to-cart-btn w-full py-2 px-3 bg-[#A86911] hover:bg-[#8D540A] text-white text-xs font-bold rounded-[8px] transition-all flex items-center justify-center space-x-1 font-heading cursor-pointer shadow-xs active:scale-95"
                                 data-product-id="{{ $reel['id'] }}"
                                 data-product-title="{{ $reel['title'] }}"
                                 data-product-slug="{{ $reel['slug'] }}"
@@ -390,7 +390,7 @@
     <button 
         type="button" 
         id="reel-modal-close"
-        class="fixed top-3.5 right-3.5 sm:top-6 sm:right-8 z-50 flex items-center space-x-1.5 px-3 py-1.5 rounded-none bg-black/60 sm:bg-white/20 hover:bg-white text-white hover:text-black backdrop-blur-md border border-white/30 transition-all duration-200 cursor-pointer shadow-2xl focus:outline-none"
+        class="fixed top-3.5 right-3.5 sm:top-6 sm:right-8 z-50 flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-black/60 sm:bg-white/20 hover:bg-white text-white hover:text-black backdrop-blur-md border border-white/30 transition-all duration-200 cursor-pointer shadow-2xl focus:outline-none"
         aria-label="Close Reel"
     >
         <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -401,7 +401,7 @@
     <button 
         type="button" 
         id="modal-desktop-prev-btn"
-        class="hidden sm:flex absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-40 w-12 h-12 lg:w-14 lg:h-14 rounded-none bg-white text-[#121212] hover:bg-[#C28430] hover:text-white items-center justify-center shadow-2xl transition-all duration-200 cursor-pointer focus:outline-none transform hover:scale-105"
+        class="hidden sm:flex absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-40 w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-white text-[#121212] hover:bg-[#C28430] hover:text-white items-center justify-center shadow-2xl transition-all duration-200 cursor-pointer focus:outline-none transform hover:scale-105"
         aria-label="Previous Reel"
     >
         <svg class="w-6 h-6 mr-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
@@ -411,7 +411,7 @@
     <button 
         type="button" 
         id="modal-desktop-next-btn"
-        class="hidden sm:flex absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-40 w-12 h-12 lg:w-14 lg:h-14 rounded-none bg-white text-[#121212] hover:bg-[#C28430] hover:text-white items-center justify-center shadow-2xl transition-all duration-200 cursor-pointer focus:outline-none transform hover:scale-105"
+        class="hidden sm:flex absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-40 w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-white text-[#121212] hover:bg-[#C28430] hover:text-white items-center justify-center shadow-2xl transition-all duration-200 cursor-pointer focus:outline-none transform hover:scale-105"
         aria-label="Next Reel"
     >
         <svg class="w-6 h-6 ml-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
@@ -420,7 +420,7 @@
     <!-- Desktop Flanking Card Left -->
     <div 
         id="modal-desktop-flank-left"
-        class="hidden lg:block absolute left-[12%] xl:left-[16%] top-1/2 -translate-y-1/2 z-20 w-[200px] xl:w-[230px] aspect-[9/16] rounded-none overflow-hidden bg-black shadow-2xl opacity-60 filter blur-[1px] scale-90 cursor-pointer hover:opacity-85 transition-all"
+        class="hidden lg:block absolute left-[12%] xl:left-[16%] top-1/2 -translate-y-1/2 z-20 w-[200px] xl:w-[230px] aspect-[9/16] rounded-[20px] overflow-hidden bg-black shadow-2xl opacity-60 filter blur-[1px] scale-90 cursor-pointer hover:opacity-85 transition-all"
     >
         <video class="w-full h-full object-cover pointer-events-none" id="modal-flank-left-video" loop muted playsinline></video>
         <div class="absolute inset-0 bg-black/40"></div>
@@ -431,7 +431,7 @@
         
         <div 
             id="modal-card-active"
-            class="relative z-30 w-full h-full sm:aspect-[9/16] bg-black sm:rounded-none overflow-hidden sm:border sm:border-white/20 shadow-2xl flex flex-col justify-between"
+            class="relative z-30 w-full h-full sm:aspect-[9/16] bg-black sm:rounded-[24px] overflow-hidden sm:border sm:border-white/20 shadow-2xl flex flex-col justify-between"
         >
             <!-- Scroll Snap Reel Feed (Mobile: Vertical Scroll-Snap Feed; Desktop: Horizontal Left/Right Slide) -->
             <div 
@@ -462,7 +462,7 @@
                         <div class="relative z-20 p-4 pt-4 flex items-center justify-between sm:hidden">
                             <button 
                                 type="button" 
-                                class="feed-mute-btn px-3.5 py-1.5 rounded-none bg-black/60 backdrop-blur-md border border-white/25 text-white text-xs font-bold flex items-center space-x-1.5 cursor-pointer shadow-lg hover:bg-black/80 transition-colors"
+                                class="feed-mute-btn px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/25 text-white text-xs font-bold flex items-center space-x-1.5 cursor-pointer shadow-lg hover:bg-black/80 transition-colors"
                             >
                                 <svg class="feed-vol-icon w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/>
@@ -479,7 +479,7 @@
                                 class="feed-like-btn flex flex-col items-center space-y-1 text-white cursor-pointer group"
                                 aria-label="Like Video"
                             >
-                                <div class="w-10 h-10 rounded-none bg-black/50 backdrop-blur-md border border-white/25 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <div class="w-10 h-10 rounded-full bg-black/50 backdrop-blur-md border border-white/25 flex items-center justify-center group-hover:scale-110 transition-transform">
                                     <svg class="feed-heart-icon w-5 h-5 text-white transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
                                     </svg>
@@ -490,7 +490,7 @@
                             <!-- Options Button -->
                             <button 
                                 type="button" 
-                                class="w-10 h-10 rounded-none bg-black/50 backdrop-blur-md border border-white/25 flex items-center justify-center text-white cursor-pointer hover:scale-110 transition-transform"
+                                class="w-10 h-10 rounded-full bg-black/50 backdrop-blur-md border border-white/25 flex items-center justify-center text-white cursor-pointer hover:scale-110 transition-transform"
                                 aria-label="Options"
                             >
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -502,13 +502,13 @@
                         <!-- Bottom Floating Product Preview Bar -->
                         <div class="relative z-20 p-3.5 pb-6 sm:pb-3.5 mt-auto">
                             <div 
-                                class="feed-open-drawer-btn bg-white rounded-none p-2.5 shadow-2xl border border-white/80 flex items-center justify-between cursor-pointer hover:bg-stone-50 transition-all transform active:scale-[0.99] group"
+                                class="feed-open-drawer-btn bg-white rounded-[16px] p-2.5 shadow-2xl border border-white/80 flex items-center justify-between cursor-pointer hover:bg-stone-50 transition-all transform active:scale-[0.99] group"
                                 title="Tap to see full product details"
                                 data-index="{{ $idx }}"
                             >
                                 <!-- Left Product Info -->
                                 <div class="flex items-center space-x-2.5 min-w-0 flex-1 pointer-events-none">
-                                    <div class="w-11 h-11 rounded-none bg-stone-100 overflow-hidden shrink-0 border border-stone-200">
+                                    <div class="w-11 h-11 rounded-[10px] bg-stone-100 overflow-hidden shrink-0 border border-stone-200">
                                         <img src="{{ $item['thumbnail'] }}" alt="{{ $item['title'] }}" class="w-full h-full object-cover">
                                     </div>
                                     <div class="min-w-0 flex-1 text-left">
@@ -529,7 +529,7 @@
                                 <!-- Quick Add To Cart Button on Bar -->
                                 <button 
                                     type="button" 
-                                    class="quick-add-to-cart-btn shrink-0 ml-2 py-2 px-3.5 bg-[#C28430] hover:bg-[#A66B1F] text-white font-bold text-xs rounded-none shadow-sm transition-all flex items-center space-x-1 font-heading cursor-pointer focus:outline-none"
+                                    class="quick-add-to-cart-btn shrink-0 ml-2 py-2 px-3.5 bg-[#A86911] hover:bg-[#8D540A] text-white font-bold text-xs rounded-[10px] shadow-sm transition-all flex items-center space-x-1 font-heading cursor-pointer focus:outline-none"
                                     data-product-id="{{ $item['id'] }}"
                                     data-product-title="{{ $item['title'] }}"
                                     data-product-slug="{{ $item['slug'] }}"
@@ -549,14 +549,14 @@
             <!-- Slide-Up Product Details Drawer (Overlays Feed) -->
             <div 
                 id="modal-product-drawer"
-                class="absolute inset-x-0 bottom-0 z-40 bg-[#FFFDF9] rounded-t-none shadow-2xl border-t border-[#EADBCC] max-h-[82%] flex flex-col transform translate-y-full transition-transform duration-300 ease-out font-body text-left overflow-hidden"
+                class="absolute inset-x-0 bottom-0 z-40 bg-[#FFFDF9] rounded-t-[24px] shadow-2xl border-t border-[#EADBCC] max-h-[82%] flex flex-col transform translate-y-full transition-transform duration-300 ease-out font-body text-left overflow-hidden"
             >
                 <div class="p-3 pb-1 flex items-center justify-between border-b border-[#F0EBE4] shrink-0 bg-white">
-                    <div class="w-10 h-1 bg-stone-300 rounded-none mx-auto -mr-6"></div>
+                    <div class="w-10 h-1 bg-stone-300 rounded-full mx-auto -mr-6"></div>
                     <button 
                         type="button" 
                         id="modal-drawer-close"
-                        class="p-1 rounded-none text-gray-400 hover:text-black transition-colors cursor-pointer"
+                        class="p-1 rounded-full text-gray-400 hover:text-black transition-colors cursor-pointer"
                         aria-label="Close Details"
                     >
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -565,8 +565,8 @@
 
                 <div class="p-4 overflow-y-auto space-y-4 flex-1">
                     <div class="flex items-start space-x-3.5">
-                        <div class="w-16 h-16 rounded-none bg-white border border-[#EADBCC] p-1 shrink-0 overflow-hidden shadow-xs">
-                            <img id="drawer-product-img" src="" alt="Product" class="w-full h-full object-cover rounded-none">
+                        <div class="w-16 h-16 rounded-[12px] bg-white border border-[#EADBCC] p-1 shrink-0 overflow-hidden shadow-xs">
+                            <img id="drawer-product-img" src="" alt="Product" class="w-full h-full object-cover rounded-[8px]">
                         </div>
                         <div class="min-w-0 flex-1">
                             <h3 id="drawer-product-title" class="text-sm sm:text-base font-bold text-[#121212] font-heading leading-snug">
@@ -584,7 +584,7 @@
                         </div>
                     </div>
 
-                    <div class="bg-white rounded-none p-3 border border-[#EADBCC]/70 space-y-2">
+                    <div class="bg-white rounded-[14px] p-3 border border-[#EADBCC]/70 space-y-2">
                         <h4 class="text-xs font-bold text-[#C28430] font-heading uppercase tracking-wide flex items-center space-x-1.5">
                             <span>🌿</span>
                             <span>Why Choose this Sacred Blend?</span>
@@ -592,7 +592,7 @@
                         <ul id="drawer-why-choose" class="space-y-1.5 text-xs text-[#444444]"></ul>
                     </div>
 
-                    <div class="bg-white rounded-none p-3 border border-[#EADBCC]/70 space-y-2">
+                    <div class="bg-white rounded-[14px] p-3 border border-[#EADBCC]/70 space-y-2">
                         <h4 class="text-xs font-bold text-[#D38928] font-heading uppercase tracking-wide flex items-center space-x-1.5">
                             <span>🧘</span>
                             <span>Perfect For:</span>
@@ -605,7 +605,7 @@
                     <button 
                         type="button" 
                         id="drawer-add-to-cart-btn"
-                        class="quick-add-to-cart-btn w-full py-3 px-4 bg-[#C28430] hover:bg-[#A66B1F] text-white font-black text-sm rounded-none shadow-md hover:shadow-lg transition-all transform active:scale-95 flex items-center justify-center space-x-2 font-heading cursor-pointer focus:outline-none"
+                        class="quick-add-to-cart-btn w-full py-3 px-4 bg-[#A86911] hover:bg-[#8D540A] text-white font-black text-sm rounded-[12px] shadow-md hover:shadow-lg transition-all transform active:scale-95 flex items-center justify-center space-x-2 font-heading cursor-pointer focus:outline-none"
                         data-product-id="1"
                         data-product-title=""
                         data-product-slug=""
@@ -625,7 +625,7 @@
     <!-- Desktop Flanking Card Right -->
     <div 
         id="modal-desktop-flank-right"
-        class="hidden lg:block absolute right-[12%] xl:right-[16%] top-1/2 -translate-y-1/2 z-20 w-[200px] xl:w-[230px] aspect-[9/16] rounded-none overflow-hidden bg-black shadow-2xl opacity-60 filter blur-[1px] scale-90 cursor-pointer hover:opacity-85 transition-all"
+        class="hidden lg:block absolute right-[12%] xl:right-[16%] top-1/2 -translate-y-1/2 z-20 w-[200px] xl:w-[230px] aspect-[9/16] rounded-[20px] overflow-hidden bg-black shadow-2xl opacity-60 filter blur-[1px] scale-90 cursor-pointer hover:opacity-85 transition-all"
     >
         <video class="w-full h-full object-cover pointer-events-none" id="modal-flank-right-video" loop muted playsinline></video>
         <div class="absolute inset-0 bg-black/40"></div>
