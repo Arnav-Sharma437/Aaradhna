@@ -1,20 +1,20 @@
-<div class="w-full bg-[#C28430] text-white text-xs py-[3px] shadow-xs font-body select-none relative overflow-hidden" id="announcement-bar">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 flex items-center justify-between">
+<div class="w-full bg-black/40 backdrop-blur-md border border-white/25 text-white text-xs py-1.5 px-3 sm:px-4 rounded-full shadow-xl font-body select-none relative overflow-hidden transition-all duration-300" id="announcement-bar">
+    <div class="w-full flex items-center justify-between">
         
-        <!-- Left Navigation Arrow (10px width) -->
+        <!-- Left Navigation Arrow -->
         <button 
             type="button" 
             id="announcement-prev-btn" 
-            class="p-0.5 text-white/80 hover:text-white transition-all transform hover:scale-110 active:scale-95 cursor-pointer focus:outline-none shrink-0 flex items-center justify-center" 
+            class="p-1 text-white/80 hover:text-white transition-all transform hover:scale-110 active:scale-95 cursor-pointer focus:outline-none shrink-0 flex items-center justify-center rounded-full hover:bg-white/10" 
             aria-label="Previous Announcement"
         >
-            <svg class="w-[10px] h-[10px]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
         </button>
 
-        <!-- Center Rotating Announcement Text (75% width centered) -->
-        <div class="w-[75%] sm:w-[80%] mx-auto overflow-hidden relative h-5 flex items-center justify-center text-center" id="announcement-slider">
+        <!-- Center Rotating Announcement Text -->
+        <div class="w-[82%] sm:w-[86%] mx-auto overflow-hidden relative h-5 flex items-center justify-center text-center" id="announcement-slider">
             
             <!-- Slide 1 -->
             <div class="announcement-slide absolute inset-0 flex items-center justify-center text-center transition-all duration-500 ease-in-out opacity-100 translate-x-0">
@@ -57,14 +57,14 @@
 
         </div>
 
-        <!-- Right Navigation Arrow (10px width) -->
+        <!-- Right Navigation Arrow -->
         <button 
             type="button" 
             id="announcement-next-btn" 
-            class="p-0.5 text-white/80 hover:text-white transition-all transform hover:scale-110 active:scale-95 cursor-pointer focus:outline-none shrink-0 flex items-center justify-center" 
+            class="p-1 text-white/80 hover:text-white transition-all transform hover:scale-110 active:scale-95 cursor-pointer focus:outline-none shrink-0 flex items-center justify-center rounded-full hover:bg-white/10" 
             aria-label="Next Announcement"
         >
-            <svg class="w-[10px] h-[10px]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
             </svg>
         </button>

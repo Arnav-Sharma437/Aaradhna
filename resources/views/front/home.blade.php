@@ -10,6 +10,13 @@
 <!-- ========================================================================= -->
 <section class="relative w-full bg-white overflow-hidden select-none border-b border-[#EAE3D9] font-body" id="hero-banner-carousel">
     
+    <!-- Floating Glass Announcement Bar (Centered Half-Width Over Hero Banner) -->
+    <div class="absolute top-3 sm:top-4 md:top-5 lg:top-6 left-0 right-0 z-25 flex justify-center pointer-events-none px-3 sm:px-4">
+        <div class="w-full sm:w-[85%] md:w-[70%] lg:w-1/2 max-w-xl pointer-events-auto">
+            <x-announcement-bar />
+        </div>
+    </div>
+
     <!-- Slides Wrapper (Responsive Hero Banner Wrapper for 100%, 110%, 125%, 150% Zoom & Mac) -->
     <div class="hero-banner-wrapper relative w-full overflow-hidden bg-white">
         

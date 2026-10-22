@@ -51,10 +51,7 @@
 </head>
 <body class="antialiased text-[#2B1810] bg-white min-h-screen flex flex-col font-body selection:bg-[#F6DAA8] selection:text-[#2B1810]">
 
-    <!-- 1. Announcement Bar -->
-    <x-announcement-bar />
-
-    <!-- 2. Sticky Desktop / Mobile Header -->
+    <!-- 1. Sticky Desktop / Mobile Header -->
     <x-header />
 
     <!-- 3. Mobile Drawer Navigation -->
