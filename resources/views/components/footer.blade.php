@@ -20,27 +20,66 @@
         <div class="absolute -bottom-20 left-1/2 -translate-x-1/2 w-[700px] h-[300px] rounded-full bg-white/10 blur-[90px]"></div>
     </div>
 
-    <!-- Main Footer Container (1440px) -->
-    <div class="w-full max-w-[1440px] mx-auto pt-10 sm:pt-14 pb-8 px-5 sm:px-8 lg:px-[40px] relative z-10">
-        
-        <!-- ================================================================= -->
-        <!-- 1. TOP SECTION: SACRED VEDIC MANTRA & 2 ELEGANT GOLDEN LINES       -->
-        <!-- ================================================================= -->
-        <div class="text-center relative z-10 space-y-3">
-            <div class="text-white text-lg sm:text-2xl md:text-[27px] font-black font-bold font-serif tracking-wide sm:tracking-widest leading-relaxed sm:leading-relaxed drop-shadow-sm">
-                <div>मङ्गलं भगवान् विष्णुः, मङ्गलम् गरुडध्वजः ।</div>
-                <div>मङ्गलं पुण्डरी काक्षः, मङ्गलम् तनो हरिः ॥</div>
-            </div>
+    <!-- ================================================================= -->
+    <!-- 1. TOP SECTION: SACRED VEDIC MANTRA CONTINUOUS SLIDER (FULL WIDTH) -->
+    <!-- ================================================================= -->
+    <div class="relative w-full overflow-hidden border-b border-white/20 py-4 sm:py-6 bg-black/10 z-10">
+        <!-- Edge Gradient Fade Masks for smooth entrance & exit -->
+        <div class="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-36 bg-gradient-to-r from-[#A86911] via-[#A86911]/85 to-transparent z-20"></div>
+        <div class="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-36 bg-gradient-to-l from-[#A86911] via-[#A86911]/85 to-transparent z-20"></div>
 
-            <!-- 2 Thin Golden Lines: One Long, One Short Below (Exact User Requirement) -->
-            <div class="flex flex-col items-center justify-center space-y-1.5 pt-2">
-                <div class="w-36 sm:w-64 h-[1.5px] bg-gradient-to-r from-transparent via-white/80 to-transparent"></div>
-                <div class="w-18 sm:w-32 h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+        <div class="flex overflow-hidden select-none">
+            <div class="animate-marquee-left flex items-center shrink-0 whitespace-nowrap text-xl sm:text-2xl md:text-3xl lg:text-[38px] xl:text-[42px] font-serif font-black tracking-wide sm:tracking-wider text-white drop-shadow-md py-1" style="animation-duration: 75s;">
+                <!-- Group 1 (4 repetitions) -->
+                <div class="flex items-center shrink-0">
+                    <span class="inline-flex items-center">
+                        <span>मङ्गलं भगवान् विष्णुः, मङ्गलम् गरुडध्वजः । मङ्गलं पुण्डरीकाक्षः, मङ्गलम् तनो हरिः ॥</span>
+                        <span class="text-[#F3CD72] text-2xl sm:text-3xl md:text-4xl mx-8 sm:mx-14 font-serif drop-shadow-sm select-none">ॐ</span>
+                    </span>
+                    <span class="inline-flex items-center">
+                        <span>मङ्गलं भगवान् विष्णुः, मङ्गलम् गरुडध्वजः । मङ्गलं पुण्डरीकाक्षः, मङ्गलम् तनो हरिः ॥</span>
+                        <span class="text-[#F3CD72] text-2xl sm:text-3xl md:text-4xl mx-8 sm:mx-14 font-serif drop-shadow-sm select-none">ॐ</span>
+                    </span>
+                    <span class="inline-flex items-center">
+                        <span>मङ्गलं भगवान् विष्णुः, मङ्गलम् गरुडध्वजः । मङ्गलं पुण्डरीकाक्षः, मङ्गलम् तनो हरिः ॥</span>
+                        <span class="text-[#F3CD72] text-2xl sm:text-3xl md:text-4xl mx-8 sm:mx-14 font-serif drop-shadow-sm select-none">ॐ</span>
+                    </span>
+                    <span class="inline-flex items-center">
+                        <span>मङ्गलं भगवान् विष्णुः, मङ्गलम् गरुडध्वजः । मङ्गलं पुण्डरीकाक्षः, मङ्गलम् तनो हरिः ॥</span>
+                        <span class="text-[#F3CD72] text-2xl sm:text-3xl md:text-4xl mx-8 sm:mx-14 font-serif drop-shadow-sm select-none">ॐ</span>
+                    </span>
+                </div>
+                <!-- Group 2 (Identical duplicate for seamless continuous infinite loop) -->
+                <div class="flex items-center shrink-0" aria-hidden="true">
+                    <span class="inline-flex items-center">
+                        <span>मङ्गलं भगवान् विष्णुः, मङ्गलम् गरुडध्वजः । मङ्गलं पुण्डरीकाक्षः, मङ्गलम् तनो हरिः ॥</span>
+                        <span class="text-[#F3CD72] text-2xl sm:text-3xl md:text-4xl mx-8 sm:mx-14 font-serif drop-shadow-sm select-none">ॐ</span>
+                    </span>
+                    <span class="inline-flex items-center">
+                        <span>मङ्गलं भगवान् विष्णुः, मङ्गलम् गरुडध्वजः । मङ्गलं पुण्डरीकाक्षः, मङ्गलम् तनो हरिः ॥</span>
+                        <span class="text-[#F3CD72] text-2xl sm:text-3xl md:text-4xl mx-8 sm:mx-14 font-serif drop-shadow-sm select-none">ॐ</span>
+                    </span>
+                    <span class="inline-flex items-center">
+                        <span>मङ्गलं भगवान् विष्णुः, मङ्गलम् गरुडध्वजः । मङ्गलं पुण्डरीकाक्षः, मङ्गलम् तनो हरिः ॥</span>
+                        <span class="text-[#F3CD72] text-2xl sm:text-3xl md:text-4xl mx-8 sm:mx-14 font-serif drop-shadow-sm select-none">ॐ</span>
+                    </span>
+                    <span class="inline-flex items-center">
+                        <span>मङ्गलं भगवान् विष्णुः, मङ्गलम् गरुडध्वजः । मङ्गलं पुण्डरीकाक्षः, मङ्गलम् तनो हरिः ॥</span>
+                        <span class="text-[#F3CD72] text-2xl sm:text-3xl md:text-4xl mx-8 sm:mx-14 font-serif drop-shadow-sm select-none">ॐ</span>
+                    </span>
+                </div>
             </div>
         </div>
 
-        <!-- Horizontal Divider Line -->
-        <div class="w-full h-[1px] bg-white/20 my-8 sm:my-10"></div>
+        <!-- 2 Thin Golden Lines: One Long, One Short Below (Exact User Requirement) -->
+        <div class="flex flex-col items-center justify-center space-y-1.5 pt-3 sm:pt-4">
+            <div class="w-36 sm:w-64 h-[1.5px] bg-gradient-to-r from-transparent via-white/80 to-transparent"></div>
+            <div class="w-18 sm:w-32 h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+        </div>
+    </div>
+
+    <!-- Main Footer Container (1440px) -->
+    <div class="w-full max-w-[1440px] mx-auto pt-8 sm:pt-12 pb-8 px-5 sm:px-8 lg:px-[40px] relative z-10">
 
         <!-- ================================================================= -->
         <!-- 2. MAIN 4-COLUMN GRID                                             -->
