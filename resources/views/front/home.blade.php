@@ -8,10 +8,15 @@
 <!-- ========================================================================= -->
 <!-- 1. FULL-WIDTH CLEAN LUXURY HERO BANNER                                     -->
 <!-- ========================================================================= -->
-<section class="relative w-full bg-white overflow-hidden select-none font-body" id="hero-banner-carousel">
+<section class="relative w-full bg-[#f5ecda] overflow-hidden select-none font-body" id="hero-banner-carousel">
     
+    <!-- Full-Width Glass Announcement Bar Attached to Top of Hero Banner -->
+    <div class="absolute top-0 inset-x-0 w-full z-25 pointer-events-auto">
+        <x-announcement-bar />
+    </div>
+
     <!-- Slides Wrapper (Responsive Hero Banner Wrapper for 100%, 110%, 125%, 150% Zoom & Mac) -->
-    <div class="hero-banner-wrapper relative w-full overflow-hidden bg-white">
+    <div class="hero-banner-wrapper relative w-full overflow-hidden bg-[#f5ecda]">
         
         @if(isset($banners) && $banners->isNotEmpty())
             @foreach($banners as $index => $banner)
@@ -88,7 +93,7 @@
     @php
         $slideCount = (isset($banners) && $banners->isNotEmpty()) ? $banners->count() : 3;
     @endphp
-    <div class="flex py-3 sm:py-3.5 bg-white justify-center items-center space-x-2 sm:space-x-2.5 relative z-20" id="hero-slider-dots">
+    <div class="flex py-3 sm:py-3.5 bg-[#f5ecda] justify-center items-center space-x-2 sm:space-x-2.5 relative z-20" id="hero-slider-dots">
         @for($i = 0; $i < $slideCount; $i++)
             <button type="button" class="{{ $i === 0 ? 'w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-[#C18129]' : 'w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-[#C18129]/30 hover:bg-[#C18129]/60' }} transition-all duration-300 cursor-pointer" data-index="{{ $i }}" aria-label="Slide {{ $i + 1 }}"></button>
         @endfor
@@ -101,7 +106,7 @@
 <!-- ========================================================================= -->
 <!-- 2. BESTSELLER OF THE MONTH (All 8 Products in Mobile Slider & Desktop Grid) -->
 <!-- ========================================================================= -->
-<section class="py-[40px] bg-white overflow-hidden">
+<section class="py-[40px] bg-[#f5ecda] overflow-hidden">
     <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
         
         <!-- Section Header -->
@@ -118,7 +123,7 @@
             <button 
                 type="button" 
                 id="bestseller-prev-btn" 
-                class="sm:hidden absolute -left-2 top-[38%] -translate-y-1/2 z-30 w-8 h-8 rounded-full bg-white/95 border border-[#EADBCC] text-[#965A15] shadow-md flex items-center justify-center active:scale-95 transition-all cursor-pointer"
+                class="sm:hidden absolute -left-2 top-[38%] -translate-y-1/2 z-30 w-8 h-8 rounded-full bg-white border border-[#EADBCC] text-[#965A15] flex items-center justify-center active:scale-95 transition-all cursor-pointer"
                 aria-label="Previous Slide"
             >
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg>
@@ -126,7 +131,7 @@
             <button 
                 type="button" 
                 id="bestseller-next-btn" 
-                class="sm:hidden absolute -right-2 top-[38%] -translate-y-1/2 z-30 w-8 h-8 rounded-full bg-white/95 border border-[#EADBCC] text-[#965A15] shadow-md flex items-center justify-center active:scale-95 transition-all cursor-pointer"
+                class="sm:hidden absolute -right-2 top-[38%] -translate-y-1/2 z-30 w-8 h-8 rounded-full bg-white border border-[#EADBCC] text-[#965A15] flex items-center justify-center active:scale-95 transition-all cursor-pointer"
                 aria-label="Next Slide"
             >
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
@@ -260,105 +265,100 @@
 </script>
 
 <!-- ========================================================================= -->
-<!-- 3. PRODUCTS CATEGORY (Outer Dark with Center White Card & Dark Category Circles) -->
+<!-- 3. PRODUCTS CATEGORY (Clean Large Single-Item Circles on #f5ecda)         -->
 <!-- ========================================================================= -->
-<section class="py-8 sm:py-12 lg:py-16 bg-[#121212] font-body select-none">
-    <div class="w-full max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-10">
+<section class="py-10 sm:py-14 lg:py-16 bg-[#f5ecda] font-body select-none">
+    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
         
-        <!-- Center White Card Frame -->
-        <div class="bg-white rounded-2xl sm:rounded-3xl lg:rounded-[36px] py-10 sm:py-14 px-4 sm:px-8 lg:px-12 shadow-sm">
+        <!-- Section Header -->
+        <div class="text-center max-w-4xl mx-auto mb-6 sm:mb-10 space-y-1.5">
+            <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#C18129] font-heading">
+                ✦ 100% NATURAL • CHARCOAL FREE ✦
+            </span>
+            <h2 class="text-[18px] sm:text-[24px] md:text-[28px] lg:text-[34px] font-normal capitalize text-[#121212] font-heading tracking-[0.06em] leading-tight whitespace-nowrap">
+                Product Categories
+            </h2>
+        </div>
+
+        <!-- 3 Big Single-Product Category Circles (Centered Grid & Balanced Spacing) -->
+        <div id="category-slider" class="flex sm:grid overflow-x-auto sm:overflow-visible scrollbar-none snap-x snap-mandatory sm:grid-cols-3 justify-start sm:justify-center items-start gap-4 sm:gap-6 lg:gap-8 max-w-4xl mx-auto pb-3 sm:pb-0 -mx-4 px-4 sm:mx-auto sm:px-0 w-full">
             
-            <!-- Section Header -->
-            <div class="text-center max-w-4xl mx-auto mb-6 sm:mb-10 space-y-1.5">
-                <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#C18129] font-heading">
-                    ✦ 100% NATURAL • CHARCOAL FREE ✦
-                </span>
-                <h2 class="text-[18px] sm:text-[24px] md:text-[28px] lg:text-[34px] font-normal capitalize text-[#121212] font-heading tracking-[0.06em] leading-tight whitespace-nowrap">
-                    Product Categories
-                </h2>
-            </div>
-
-            <!-- 3 Big Single-Product Category Circles (Centered Grid & Balanced Spacing) -->
-            <div id="category-slider" class="flex sm:grid overflow-x-auto sm:overflow-visible scrollbar-none snap-x snap-mandatory sm:grid-cols-3 justify-start sm:justify-center items-start gap-4 sm:gap-6 lg:gap-8 max-w-4xl mx-auto pb-3 sm:pb-0 -mx-4 px-4 sm:mx-auto sm:px-0 w-full">
-                
-                <!-- Category 1: Single Bamboo-less Dhoop Stick -->
-                <div class="w-[145px] sm:w-auto shrink-0 snap-start group flex flex-col items-center text-center space-y-2.5 sm:space-y-3">
-                    <a href="{{ route('collections.show', 'bambooless') }}" class="block relative w-full max-w-[170px] sm:max-w-[200px] lg:max-w-[210px] aspect-square rounded-full p-2 bg-[#121212] border border-[#C18129]/30 hover:border-[#C18129] group-hover:scale-105 transition-all duration-500 cursor-pointer shadow-md">
-                        <div class="w-full h-full rounded-full overflow-hidden bg-[#121212] p-1 sm:p-2 flex items-center justify-center relative">
-                            <img 
-                                src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" 
-                                alt="Bamboo-less Dhoop Stick" 
-                                class="w-full h-full object-contain rounded-full scale-105 group-hover:scale-115 transition-transform duration-500"
-                            >
-                        </div>
-                    </a>
-
-                    <!-- Category Details -->
-                    <div class="space-y-0.5 max-w-xs flex flex-col items-center">
-                        <h3 class="text-sm sm:text-base lg:text-[17px] font-normal capitalize tracking-wide text-[#121212] hover:text-[#C18129] transition-colors font-heading block">
-                            <a href="{{ route('collections.show', 'bambooless') }}">Dhoop Stick</a>
-                        </h3>
-                        <p class="text-[11px] sm:text-xs text-[#7A7A7A] font-medium leading-tight">
-                            Bamboo-less Dhoop Stick
-                        </p>
+            <!-- Category 1: Single Bamboo-less Dhoop Stick -->
+            <div class="w-[165px] sm:w-auto shrink-0 snap-start group flex flex-col items-center text-center space-y-2.5 sm:space-y-3">
+                <a href="{{ route('collections.show', 'bambooless') }}" class="block relative w-full max-w-[195px] sm:max-w-[230px] lg:max-w-[245px] aspect-square rounded-full p-2.5 sm:p-3 bg-white border border-[#EADBCC] hover:border-[#C18129] group-hover:scale-105 transition-all duration-500 cursor-pointer">
+                    <div class="w-full h-full rounded-full overflow-hidden bg-white p-1.5 sm:p-2 flex items-center justify-center relative">
+                        <img 
+                            src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" 
+                            alt="Bamboo-less Dhoop Stick" 
+                            class="w-full h-full object-contain rounded-full scale-105 group-hover:scale-115 transition-transform duration-500"
+                        >
                     </div>
-                </div>
+                </a>
 
-                <!-- Category 2: Single Dhoop Cone -->
-                <div class="w-[145px] sm:w-auto shrink-0 snap-start group flex flex-col items-center text-center space-y-2.5 sm:space-y-3">
-                    <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block relative w-full max-w-[170px] sm:max-w-[200px] lg:max-w-[210px] aspect-square rounded-full p-2 bg-[#121212] border border-[#C18129]/30 hover:border-[#C18129] group-hover:scale-105 transition-all duration-500 cursor-pointer shadow-md">
-                        <div class="w-full h-full rounded-full overflow-hidden bg-[#121212] p-1 sm:p-2 flex items-center justify-center relative">
-                            <img 
-                                src="{{ asset('assets/images/single-dhoop-cone.jpg') }}" 
-                                alt="Easy to Use Dhoop Cone" 
-                                class="w-full h-full object-contain rounded-full scale-105 group-hover:scale-115 transition-transform duration-500"
-                            >
-                        </div>
-                    </a>
-
-                    <!-- Category Details -->
-                    <div class="space-y-0.5 max-w-xs flex flex-col items-center">
-                        <h3 class="text-sm sm:text-base lg:text-[17px] font-normal capitalize tracking-wide text-[#121212] hover:text-[#C18129] transition-colors font-heading block">
-                            <a href="{{ route('collections.show', 'dhoop-cones') }}">Dhoop Cones</a>
-                        </h3>
-                        <p class="text-[11px] sm:text-xs text-[#7A7A7A] font-medium leading-tight">
-                            Easy to Use Dhoop Cone
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Category 3: Single 100% Organic Havan Cup -->
-                <div class="w-[145px] sm:w-auto shrink-0 snap-start group flex flex-col items-center text-center space-y-2.5 sm:space-y-3">
-                    <a href="{{ route('collections.show', 'havan-cups') }}" class="block relative w-full max-w-[170px] sm:max-w-[200px] lg:max-w-[210px] aspect-square rounded-full p-2 bg-[#121212] border border-[#C18129]/30 hover:border-[#C18129] group-hover:scale-105 transition-all duration-500 cursor-pointer shadow-md">
-                        <div class="w-full h-full rounded-full overflow-hidden bg-[#121212] p-1 sm:p-2 flex items-center justify-center relative">
-                            <img 
-                                src="{{ asset('assets/images/single-havan-cup.jpg') }}" 
-                                alt="100% Organic Havan Cups" 
-                                class="w-full h-full object-contain rounded-full scale-105 group-hover:scale-115 transition-transform duration-500"
-                            >
-                        </div>
-                    </a>
-
-                    <!-- Category Details -->
-                    <div class="space-y-0.5 max-w-xs flex flex-col items-center">
-                        <h3 class="text-sm sm:text-base lg:text-[17px] font-normal capitalize tracking-wide text-[#121212] hover:text-[#C18129] transition-colors font-heading block">
-                            <a href="{{ route('collections.show', 'havan-cups') }}">Havan Cup</a>
-                        </h3>
-                        <p class="text-[11px] sm:text-xs text-[#7A7A7A] font-medium leading-tight">
-                            100% Organic Havan Cups
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Mobile Scroll Indicator Line -->
-            <div class="sm:hidden flex justify-center mt-5">
-                <div class="w-28 h-1 bg-[#EADBCC] rounded-full overflow-hidden relative">
-                    <div id="category-scroll-bar" class="w-10 h-full bg-[#C18129] rounded-full transition-transform duration-75"></div>
+                <!-- Category Details -->
+                <div class="space-y-0.5 max-w-xs flex flex-col items-center">
+                    <h3 class="text-sm sm:text-base lg:text-[17px] font-normal capitalize tracking-wide text-[#121212] hover:text-[#C18129] transition-colors font-heading block">
+                        <a href="{{ route('collections.show', 'bambooless') }}">Dhoop Stick</a>
+                    </h3>
+                    <p class="text-[11px] sm:text-xs text-[#7A7A7A] font-medium leading-tight">
+                        Bamboo-less Dhoop Stick
+                    </p>
                 </div>
             </div>
 
+            <!-- Category 2: Single Dhoop Cone -->
+            <div class="w-[165px] sm:w-auto shrink-0 snap-start group flex flex-col items-center text-center space-y-2.5 sm:space-y-3">
+                <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block relative w-full max-w-[195px] sm:max-w-[230px] lg:max-w-[245px] aspect-square rounded-full p-2.5 sm:p-3 bg-white border border-[#EADBCC] hover:border-[#C18129] group-hover:scale-105 transition-all duration-500 cursor-pointer">
+                    <div class="w-full h-full rounded-full overflow-hidden bg-white p-1.5 sm:p-2 flex items-center justify-center relative">
+                        <img 
+                            src="{{ asset('assets/images/single-dhoop-cone.jpg') }}" 
+                            alt="Easy to Use Dhoop Cone" 
+                            class="w-full h-full object-contain rounded-full scale-105 group-hover:scale-115 transition-transform duration-500"
+                        >
+                    </div>
+                </a>
+
+                <!-- Category Details -->
+                <div class="space-y-0.5 max-w-xs flex flex-col items-center">
+                    <h3 class="text-sm sm:text-base lg:text-[17px] font-normal capitalize tracking-wide text-[#121212] hover:text-[#C18129] transition-colors font-heading block">
+                        <a href="{{ route('collections.show', 'dhoop-cones') }}">Dhoop Cones</a>
+                    </h3>
+                    <p class="text-[11px] sm:text-xs text-[#7A7A7A] font-medium leading-tight">
+                        Easy to Use Dhoop Cone
+                    </p>
+                </div>
+            </div>
+
+            <!-- Category 3: Single 100% Organic Havan Cup -->
+            <div class="w-[165px] sm:w-auto shrink-0 snap-start group flex flex-col items-center text-center space-y-2.5 sm:space-y-3">
+                <a href="{{ route('collections.show', 'havan-cups') }}" class="block relative w-full max-w-[195px] sm:max-w-[230px] lg:max-w-[245px] aspect-square rounded-full p-2.5 sm:p-3 bg-white border border-[#EADBCC] hover:border-[#C18129] group-hover:scale-105 transition-all duration-500 cursor-pointer">
+                    <div class="w-full h-full rounded-full overflow-hidden bg-white p-1.5 sm:p-2 flex items-center justify-center relative">
+                        <img 
+                            src="{{ asset('assets/images/single-havan-cup.jpg') }}" 
+                            alt="100% Organic Havan Cups" 
+                            class="w-full h-full object-contain rounded-full scale-105 group-hover:scale-115 transition-transform duration-500"
+                        >
+                    </div>
+                </a>
+
+                <!-- Category Details -->
+                <div class="space-y-0.5 max-w-xs flex flex-col items-center">
+                    <h3 class="text-sm sm:text-base lg:text-[17px] font-normal capitalize tracking-wide text-[#121212] hover:text-[#C18129] transition-colors font-heading block">
+                        <a href="{{ route('collections.show', 'havan-cups') }}">Havan Cup</a>
+                    </h3>
+                    <p class="text-[11px] sm:text-xs text-[#7A7A7A] font-medium leading-tight">
+                        100% Organic Havan Cups
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Mobile Scroll Indicator Line -->
+        <div class="sm:hidden flex justify-center mt-5">
+            <div class="w-28 h-1 bg-[#EADBCC] rounded-full overflow-hidden relative">
+                <div id="category-scroll-bar" class="w-10 h-full bg-[#C18129] rounded-full transition-transform duration-75"></div>
+            </div>
         </div>
 
     </div>
@@ -367,7 +367,7 @@
 <!-- ========================================================================= -->
 <!-- 4. STANDALONE PROMO BANNER: BUY 5 TRIAL PACKS @ 799 (Full Width Edge-to-Edge) -->
 <!-- ========================================================================= -->
-<section class="w-full bg-white overflow-hidden select-none">
+<section class="w-full bg-[#f5ecda] overflow-hidden select-none">
     <a href="{{ route('bundles.trial-packs') }}" class="block w-full group focus:outline-none">
         <picture class="block w-full">
             <source media="(max-width: 640px)" srcset="{{ asset('assets/images/festive-offer-mobile-banner.png') }}">
@@ -391,7 +391,7 @@
 <!-- 6. DAILY DEVOTIONAL RITUALS (Dynamic Sacred Products) -->
 <!-- ========================================================================= -->
 @if(isset($newLaunches) && $newLaunches->isNotEmpty())
-<section class="py-[40px] bg-white">
+<section class="py-[40px] bg-[#f5ecda]">
     <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
         
         <div class="text-center max-w-4xl mx-auto mb-5 sm:mb-6 space-y-1.5">
@@ -414,7 +414,7 @@
 <!-- ========================================================================= -->
 <!-- 5. DEVOTEE TESTIMONIALS (2-Row Continuous Smooth Marquee Ticker)         -->
 <!-- ========================================================================= -->
-<section class="py-[40px] bg-white overflow-hidden select-none" id="testimonials-marquee-section">
+<section class="py-[40px] bg-[#f5ecda] overflow-hidden select-none" id="testimonials-marquee-section">
     <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
         
         <!-- Header -->
@@ -429,8 +429,8 @@
         <div class="relative w-full space-y-4 sm:space-y-5 overflow-hidden marquee-track-pause">
             
             <!-- Left & Right Edge Fade Gradients -->
-            <div class="absolute top-0 bottom-0 left-0 w-12 sm:w-28 z-20 pointer-events-none bg-gradient-to-r from-white via-white/90 to-transparent"></div>
-            <div class="absolute top-0 bottom-0 right-0 w-12 sm:w-28 z-20 pointer-events-none bg-gradient-to-l from-white via-white/90 to-transparent"></div>
+            <div class="absolute top-0 bottom-0 left-0 w-12 sm:w-28 z-20 pointer-events-none bg-gradient-to-r from-[#f5ecda] via-[#f5ecda]/90 to-transparent"></div>
+            <div class="absolute top-0 bottom-0 right-0 w-12 sm:w-28 z-20 pointer-events-none bg-gradient-to-l from-[#f5ecda] via-[#f5ecda]/90 to-transparent"></div>
         
             <!-- ========================================== -->
             <!-- ROW 1: RIGHT TO LEFT (Continuous Scroll)   -->
@@ -493,7 +493,7 @@
 
                 <!-- First Pass -->
                 @foreach($row1Testimonials as $t)
-                    <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[380px] h-[180px] bg-white rounded-[16px] p-5 border border-[#EADBCC] shadow-xs hover:shadow-lg hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between">
+                    <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[380px] h-[180px] bg-white rounded-[16px] p-5 border border-[#EADBCC] hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between">
                         <div class="space-y-2">
                             <div class="flex items-center space-x-1 text-[#D38928] text-lg sm:text-xl leading-none">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
@@ -518,7 +518,7 @@
 
                 <!-- Second Duplicate Pass for Infinite Seamless Marquee -->
                 @foreach($row1Testimonials as $t)
-                    <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[380px] h-[180px] bg-white rounded-[16px] p-5 border border-[#EADBCC] shadow-xs hover:shadow-lg hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between" aria-hidden="true">
+                    <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[380px] h-[180px] bg-white rounded-[16px] p-5 border border-[#EADBCC] hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between" aria-hidden="true">
                         <div class="space-y-2">
                             <div class="flex items-center space-x-1 text-[#D38928] text-lg sm:text-xl leading-none">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
@@ -599,7 +599,7 @@
 
                 <!-- First Pass -->
                 @foreach($row2Testimonials as $t)
-                    <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[380px] h-[180px] bg-white rounded-[16px] p-5 border border-[#EADBCC] shadow-xs hover:shadow-lg hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between">
+                    <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[380px] h-[180px] bg-white rounded-[16px] p-5 border border-[#EADBCC] hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between">
                         <div class="space-y-2">
                             <div class="flex items-center space-x-1 text-[#D38928] text-lg sm:text-xl leading-none">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
@@ -624,7 +624,7 @@
 
                 <!-- Second Duplicate Pass for Infinite Seamless Marquee -->
                 @foreach($row2Testimonials as $t)
-                    <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[380px] h-[180px] bg-white rounded-[16px] p-5 border border-[#EADBCC] shadow-xs hover:shadow-lg hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between" aria-hidden="true">
+                    <div class="shrink-0 w-[290px] sm:w-[360px] md:w-[380px] h-[180px] bg-white rounded-[16px] p-5 border border-[#EADBCC] hover:border-[#D38928] transition-all duration-300 flex flex-col justify-between" aria-hidden="true">
                         <div class="space-y-2">
                             <div class="flex items-center space-x-1 text-[#D38928] text-lg sm:text-xl leading-none">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
@@ -657,7 +657,7 @@
 <!-- ========================================================================= -->
 <!-- 6. ROOTED IN PURITY (Exact Matching Reference Screenshot Styling)         -->
 <!-- ========================================================================= -->
-<section class="py-12 sm:py-16 bg-[#FFFDF9] select-none font-body">
+<section class="py-12 sm:py-16 bg-[#f5ecda] select-none font-body">
     <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
         
         <!-- Clean Standard Eyebrow Header -->
@@ -672,7 +672,7 @@
         </div>
 
         <!-- Slim & Wide Elegant Card Container (8px Radius, Soft Gold Border matching icon borders, Inset Gold Divider Lines) -->
-        <div class="bg-white rounded-[8px] border-2 border-[#D38928]/40 max-w-[1260px] mx-auto shadow-2xs overflow-hidden">
+        <div class="bg-white rounded-[8px] border-2 border-[#D38928]/40 max-w-[1260px] mx-auto overflow-hidden">
             <div class="grid grid-cols-1 md:grid-cols-3 relative">
                 
                 <!-- Column 1: Ancient Recipes -->
@@ -750,7 +750,7 @@
 <!-- ========================================================================= -->
 <!-- 8. FREQUENTLY ASKED QUESTIONS (Pure White Background, 10px Padding, 8px)  -->
 <!-- ========================================================================= -->
-<section class="py-[40px] bg-white select-none">
+<section class="py-[40px] bg-[#f5ecda] select-none">
     <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
         <div class="max-w-5xl lg:max-w-[1100px] mx-auto space-y-6 sm:space-y-8">
         
@@ -763,7 +763,7 @@
         </div>
 
         <!-- Seamless Accordion Container (8px Border Radius & 10px Inner Padding) -->
-        <div class="bg-white rounded-[8px] border border-[#EADBCC] shadow-xs divide-y divide-[#EADBCC] overflow-hidden">
+        <div class="bg-white rounded-[8px] border border-[#EADBCC] divide-y divide-[#EADBCC] overflow-hidden">
             
             <!-- FAQ 1 -->
             <div class="faq-item">

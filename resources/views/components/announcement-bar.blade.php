@@ -1,4 +1,4 @@
-<div class="w-full bg-black/40 backdrop-blur-md border-b border-white/20 text-white text-xs py-1 sm:py-1.5 px-3 sm:px-4 shadow-xs font-body select-none relative overflow-hidden transition-all duration-300" id="announcement-bar">
+<div class="w-full bg-black/40 backdrop-blur-md border-b border-white/20 text-white text-xs py-1 sm:py-1.5 px-3 sm:px-4 font-body select-none relative overflow-hidden transition-all duration-300" id="announcement-bar">
     <div class="w-full max-w-xl lg:max-w-2xl mx-auto flex items-center justify-center gap-1.5 sm:gap-3">
         
         <!-- Left Navigation Arrow -->
@@ -164,61 +164,12 @@
             startTimer();
         }
 
-        function initAnnouncementMorph() {
-            const wrapper = document.getElementById('announcement-morph-wrapper');
-            const inner = document.getElementById('announcement-morph-inner');
-            const bar = document.getElementById('announcement-bar');
-            if (!wrapper || !inner || !bar) return;
-
-            const isHome = {{ request()->routeIs('home') ? 'true' : 'false' }};
-            let isScrolled = null;
-
-            function handleScroll() {
-                const scrolled = window.scrollY > 40;
-                if (scrolled === isScrolled) return;
-                isScrolled = scrolled;
-
-                if (scrolled) {
-                    wrapper.classList.remove('translate-y-0', 'px-0');
-                    wrapper.classList.add('-translate-y-1/2', 'px-3', 'sm:px-4');
-
-                    if (!isHome) {
-                        wrapper.classList.remove('opacity-0', 'pointer-events-none');
-                    }
-
-                    inner.classList.remove('w-full');
-                    inner.classList.add('w-[92%]', 'sm:w-[82%]', 'md:w-[65%]', 'lg:w-[48%]', 'max-w-xl');
-
-                    bar.classList.remove('rounded-none', 'border-b', 'bg-black/40');
-                    bar.classList.add('rounded-full', 'border', 'border-white/30', 'shadow-2xl', 'bg-black/65');
-                } else {
-                    if (isHome) {
-                        wrapper.classList.add('translate-y-0', 'px-0');
-                        wrapper.classList.remove('-translate-y-1/2', 'px-3', 'sm:px-4');
-
-                        inner.classList.add('w-full');
-                        inner.classList.remove('w-[92%]', 'sm:w-[82%]', 'md:w-[65%]', 'lg:w-[48%]', 'max-w-xl');
-
-                        bar.classList.add('rounded-none', 'border-b', 'bg-black/40');
-                        bar.classList.remove('rounded-full', 'border', 'border-white/30', 'shadow-2xl', 'bg-black/65');
-                    } else {
-                        wrapper.classList.add('opacity-0', 'pointer-events-none');
-                    }
-                }
-            }
-
-            window.addEventListener('scroll', handleScroll, { passive: true });
-            handleScroll();
-        }
-
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', () => {
                 initAnnouncementSlider();
-                initAnnouncementMorph();
             });
         } else {
             initAnnouncementSlider();
-            initAnnouncementMorph();
         }
     })();
 </script>

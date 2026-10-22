@@ -49,7 +49,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('styles')
 </head>
-<body class="antialiased text-[#2B1810] bg-white min-h-screen flex flex-col font-body selection:bg-[#F6DAA8] selection:text-[#2B1810]">
+<body class="antialiased text-[#2B1810] bg-[#f5ecda] min-h-screen flex flex-col font-body selection:bg-[#F3CD72] selection:text-[#2B1810]">
 
     <!-- 1. Sticky Desktop / Mobile Header -->
     <x-header />

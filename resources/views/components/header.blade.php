@@ -1,4 +1,4 @@
-<header class="sticky top-0 z-40 bg-[#FFF9ED] border-b border-[#EAE3D9] transition-all duration-200 shadow-xs font-body">
+<header class="sticky top-0 z-40 bg-[#f5ecda] border-b border-[#EAE3D9] transition-all duration-200 font-body">
     <div class="w-full max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8 xl:px-10">
         <div class="relative flex items-center justify-between h-18 sm:h-20 lg:h-22 gap-2 sm:gap-4">
             
@@ -227,7 +227,7 @@
     </div>
 
     <!-- Mobile Horizontal Quick Category & Offer Pills Strip (Matches Reference Screenshot) -->
-    <div class="lg:hidden w-full border-t border-[#EAE3D9]/70 bg-[#FFF9ED] py-2 px-3 overflow-x-auto scrollbar-none">
+    <div class="lg:hidden w-full border-t border-[#EAE3D9]/70 bg-[#f5ecda] py-2 px-3 overflow-x-auto scrollbar-none">
         <div class="flex items-center space-x-2 whitespace-nowrap text-xs font-semibold">
             <a href="{{ route('bundles.buy2get1') }}" class="px-3.5 py-1 rounded-full border border-[#831F2E]/40 bg-[#FFF8F8] text-[#831F2E] hover:bg-[#831F2E] hover:text-white transition-colors shrink-0 shadow-2xs font-heading">
                 Buy 2 Get 1 free
@@ -244,19 +244,6 @@
             <a href="{{ route('collections.show', 'havan-cups') }}" class="px-3.5 py-1 rounded-full border border-[#C18129] bg-white text-[#121212] hover:bg-[#C18129] hover:text-white transition-colors shrink-0 shadow-2xs">
                 Havan Cups
             </a>
-        </div>
-    </div>
-
-    <!-- Sticky Morphing Announcement Bar Attached to Header Bottom Seam -->
-    <div 
-        id="announcement-morph-wrapper" 
-        class="absolute left-0 right-0 top-full z-50 pointer-events-none flex justify-center transition-all duration-300 ease-out {{ request()->routeIs('home') ? 'translate-y-0 px-0' : '-translate-y-1/2 px-3 sm:px-4 opacity-0 pointer-events-none' }}"
-    >
-        <div 
-            id="announcement-morph-inner" 
-            class="pointer-events-auto transition-all duration-300 ease-out {{ request()->routeIs('home') ? 'w-full' : 'w-[92%] sm:w-[82%] md:w-[65%] lg:w-[48%] max-w-xl' }}"
-        >
-            <x-announcement-bar />
         </div>
     </div>
 </header>
