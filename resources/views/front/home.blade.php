@@ -142,7 +142,7 @@
                 @forelse($bestsellers as $product)
                     <x-product-card 
                         :product="$product" 
-                        class="w-[260px] sm:w-auto shrink-0 sm:shrink snap-start {{ $loop->index >= 4 ? 'bestseller-extra-card sm:hidden' : '' }}" 
+                        class="w-[260px] sm:w-auto shrink-0 sm:shrink snap-start" 
                     />
                 @empty
                     <div class="w-full col-span-full py-12 text-center">
@@ -156,33 +156,7 @@
             </div>
         </div>
 
-        @if($bestsellers->count() > 4)
-            <!-- Dynamic Action: Simple Load More Text -> Changes to View All Products Button (Only Desktop) -->
-            <div class="mt-8 sm:mt-10 text-center hidden sm:block">
-                <!-- 1. Simple Load More Text Action -->
-                <button 
-                    type="button" 
-                    id="bestseller-load-more-btn"
-                    class="inline-flex items-center space-x-1.5 text-xs sm:text-sm font-bold text-[#D38928] hover:text-[#965A15] border-b-2 border-[#D38928] hover:border-[#965A15] pb-0.5 tracking-wider transition-all duration-200 cursor-pointer font-heading capitalize group"
-                >
-                    <span>Load More</span>
-                    <svg class="w-3.5 h-3.5 group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-                </button>
-
-                <!-- 2. Themed 'View All Products' Button (Appears after Load More is clicked) -->
-                <div id="bestseller-view-all-wrapper" style="display: none;">
-                    <a 
-                        href="{{ route('collections.show', 'all') }}" 
-                        id="bestseller-view-all-btn"
-                        class="inline-flex items-center space-x-2 px-8 py-3.5 bg-[#A86911] hover:bg-[#8D540A] active:bg-[#744406] text-white text-xs sm:text-sm font-bold uppercase tracking-widest rounded-[8px] sm:rounded-[10px] shadow-sm hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 font-heading cursor-pointer"
-                        aria-label="View All Products"
-                    >
-                        <span>View All Products</span>
-                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                    </a>
-                </div>
-            </div>
-        @elseif($bestsellers->count() > 0)
+        @if($bestsellers->count() > 0)
             <div class="mt-8 sm:mt-10 text-center hidden sm:block">
                 <a 
                     href="{{ route('collections.show', 'all') }}" 
@@ -200,42 +174,9 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const loadMoreBtn = document.getElementById('bestseller-load-more-btn');
-        const viewAllWrapper = document.getElementById('bestseller-view-all-wrapper');
-        const extraCards = document.querySelectorAll('.bestseller-extra-card');
         const bestsellerGrid = document.getElementById('bestseller-grid');
         const prevBtn = document.getElementById('bestseller-prev-btn');
         const nextBtn = document.getElementById('bestseller-next-btn');
-
-        if (loadMoreBtn && viewAllWrapper) {
-            loadMoreBtn.addEventListener('click', () => {
-                extraCards.forEach((card, index) => {
-                    card.classList.remove('sm:hidden');
-                    card.style.opacity = '0';
-                    card.style.transform = 'translateY(24px)';
-                    card.style.transition = 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
-                    
-                    setTimeout(() => {
-                        card.style.opacity = '1';
-                        card.style.transform = 'translateY(0)';
-                    }, index * 90 + 30);
-                });
-
-                loadMoreBtn.style.transition = 'opacity 0.2s ease-out';
-                loadMoreBtn.style.opacity = '0';
-                setTimeout(() => {
-                    loadMoreBtn.style.display = 'none';
-                    viewAllWrapper.style.display = 'block';
-                    viewAllWrapper.style.opacity = '0';
-                    viewAllWrapper.style.transform = 'scale(0.95)';
-                    viewAllWrapper.style.transition = 'opacity 0.4s ease-out, transform 0.4s ease-out';
-                    setTimeout(() => {
-                        viewAllWrapper.style.opacity = '1';
-                        viewAllWrapper.style.transform = 'scale(1)';
-                    }, 40);
-                }, 200);
-            });
-        }
 
         if (prevBtn && bestsellerGrid) {
             prevBtn.addEventListener('click', () => {

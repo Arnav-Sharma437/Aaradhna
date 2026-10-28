@@ -26,26 +26,22 @@ class HomeController extends Controller
             $banners = collect();
         }
 
-        // 1. Bestsellers of the Month (Featured Collection)
+        // 1. Bestsellers of the Month (All Active Products, Bestsellers prioritized)
         try {
             $bestsellers = Product::where('status', 'active')
                 ->where('is_bestseller', true)
                 ->with(['category', 'primaryImage', 'images', 'variants', 'approvedReviews'])
                 ->latest()
-                ->take(8)
                 ->get();
 
-            // If fewer than 8 marked bestsellers, append other active products so section has full display
-            if ($bestsellers->count() < 8) {
-                $excludeIds = $bestsellers->pluck('id')->toArray();
-                $additional = Product::where('status', 'active')
-                    ->whereNotIn('id', $excludeIds)
-                    ->with(['category', 'primaryImage', 'images', 'variants', 'approvedReviews'])
-                    ->latest()
-                    ->take(8 - $bestsellers->count())
-                    ->get();
-                $bestsellers = $bestsellers->concat($additional);
-            }
+            // Append other active products so all store products are directly shown
+            $excludeIds = $bestsellers->pluck('id')->toArray();
+            $additional = Product::where('status', 'active')
+                ->whereNotIn('id', $excludeIds)
+                ->with(['category', 'primaryImage', 'images', 'variants', 'approvedReviews'])
+                ->latest()
+                ->get();
+            $bestsellers = $bestsellers->concat($additional);
         } catch (\Throwable $e) {
             $bestsellers = collect();
         }
