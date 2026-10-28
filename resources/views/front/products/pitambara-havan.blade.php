@@ -58,7 +58,7 @@
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(211,137,40,0.3),transparent_70%)] pointer-events-none"></div>
 
         <!-- Breadcrumb / Consecration Bar within Hero -->
-        <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px] relative z-20 mb-8 sm:mb-12">
+        <div class="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 relative z-20 mb-8 sm:mb-12">
             <div class="flex flex-wrap items-center justify-between gap-3 text-xs">
                 <nav class="flex items-center space-x-2 text-white/70 font-medium">
                     <a href="{{ route('home') }}" class="hover:text-[#FAD961] transition-colors">Home</a>
@@ -87,7 +87,7 @@
         @endif
 
         <!-- Main Banner Centerpiece Content -->
-        <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px] relative z-20 space-y-10 sm:space-y-14">
+        <div class="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 relative z-20 space-y-10 sm:space-y-14">
             
             <div class="text-center max-w-4xl mx-auto space-y-5">
                 
@@ -210,7 +210,7 @@
             ISHANAA
         </div>
 
-        <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px] space-y-16 sm:space-y-20 relative z-10">
+        <div class="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 space-y-16 sm:space-y-20 relative z-10">
             
             <!-- Section Header -->
             <div class="text-center max-w-3xl mx-auto space-y-3">
@@ -534,7 +534,7 @@
     <!-- ========================================================================= -->
     <section class="py-20 sm:py-28 pitambara-dark-bg text-white relative overflow-hidden">
         
-        <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px] relative z-10 space-y-14">
+        <div class="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 relative z-10 space-y-14">
             
             <div class="text-center max-w-3xl mx-auto space-y-3">
                 <div class="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.25em] text-[#F5CE7A] font-bold font-heading bg-white/10 px-5 py-2 rounded-full border border-white/15">
@@ -630,7 +630,7 @@
     <!-- 5. WHAT GOES INSIDE — 100% SCRIPTURAL INGREDIENTS                          -->
     <!-- ========================================================================= -->
     <section class="py-16 sm:py-24 bg-white border-b border-[#EADBCC]">
-        <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px] space-y-12">
+        <div class="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 space-y-12">
             
             <div class="text-center max-w-2xl mx-auto space-y-3">
                 <span class="text-[11px] font-black uppercase tracking-[0.25em] text-[#D38928] font-heading">✦ 100% SCRIPTURAL INGREDIENTS ✦</span>

@@ -107,7 +107,7 @@
 <!-- 2. BESTSELLER OF THE MONTH (All 8 Products in Mobile Slider & Desktop Grid) -->
 <!-- ========================================================================= -->
 <section class="py-[40px] bg-white overflow-hidden">
-    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
+    <div class="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
         
         <!-- Section Header -->
         <div class="text-center max-w-4xl mx-auto mb-5 sm:mb-6 space-y-1.5">
@@ -268,7 +268,7 @@
 <!-- 3. PRODUCTS CATEGORY (Clean Large Single-Item Square Tiles on #f5ecda)   -->
 <!-- ========================================================================= -->
 <section class="py-10 sm:py-14 lg:py-16 bg-[#f5ecda] font-body select-none">
-    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
+    <div class="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
         
         <!-- Section Header -->
         <div class="text-center max-w-4xl mx-auto mb-6 sm:mb-10 space-y-1.5">
@@ -392,7 +392,7 @@
 <!-- ========================================================================= -->
 @if(isset($newLaunches) && $newLaunches->isNotEmpty())
 <section class="py-[40px] bg-white">
-    <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
+    <div class="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
         
         <div class="text-center max-w-4xl mx-auto mb-5 sm:mb-6 space-y-1.5">
             <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#C18129] font-heading">✦ DAILY RITUAL GUIDES ✦</span>
@@ -415,7 +415,7 @@
 <!-- 5. DEVOTEE TESTIMONIALS (2-Row Continuous Smooth Marquee Ticker)         -->
 <!-- ========================================================================= -->
 <section class="py-[40px] bg-white overflow-hidden select-none" id="testimonials-marquee-section">
-    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
+    <div class="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
         
         <!-- Header -->
         <div class="text-center max-w-4xl mx-auto space-y-1.5 mb-5 sm:mb-6">
@@ -658,7 +658,7 @@
 <!-- 6. ROOTED IN PURITY (Exact Matching Reference Screenshot Styling)         -->
 <!-- ========================================================================= -->
 <section class="py-12 sm:py-16 bg-[#FFFDF9] select-none font-body">
-    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
+    <div class="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
         
         <!-- Clean Standard Eyebrow Header -->
         <div class="text-center max-w-4xl mx-auto mb-4 sm:mb-6 space-y-1.5">
@@ -748,7 +748,7 @@
 <!-- 8. FREQUENTLY ASKED QUESTIONS (Pure White Background, 10px Padding, 8px)  -->
 <!-- ========================================================================= -->
 <section class="py-[40px] bg-white select-none">
-    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
+    <div class="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
         <div class="max-w-5xl lg:max-w-[1100px] mx-auto space-y-6 sm:space-y-8">
         
         <!-- Section Header -->

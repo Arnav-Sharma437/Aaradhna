@@ -55,7 +55,7 @@
     <!-- 2. THE SACRED VOW — WHY 100% BAMBOO-FREE                                   -->
     <!-- ========================================================================= -->
     <section class="py-16 sm:py-24 border-b border-[#EAE3D9] bg-white">
-        <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
+        <div class="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
             
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
                 
@@ -126,7 +126,7 @@
     <!-- 3. THE 4 SACRED PILLARS OF ISHANAA                                        -->
     <!-- ========================================================================= -->
     <section class="py-16 sm:py-24 bg-white border-b border-[#EAE3D9]">
-        <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
+        <div class="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
             
             <div class="text-center max-w-2xl mx-auto mb-14 space-y-2">
                 <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ ETERNAL VALUES ✦</span>
@@ -213,7 +213,7 @@
     <!-- 4. SACRED ARTISAN PROCESS TIMELINE                                        -->
     <!-- ========================================================================= -->
     <section class="py-16 sm:py-24 bg-white border-b border-[#EAE3D9]">
-        <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
+        <div class="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
             
             <div class="text-center max-w-2xl mx-auto mb-14 space-y-2">
                 <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D38928] font-heading">✦ FROM GHAT TO MANDIR ✦</span>

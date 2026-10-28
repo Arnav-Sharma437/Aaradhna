@@ -45,7 +45,7 @@
     <!-- 2. CONTACT CHANNELS & INTERACTIVE SPIRITUAL FORM                          -->
     <!-- ========================================================================= -->
     <section class="py-16 sm:py-24 bg-white border-b border-[#EAE3D9]">
-        <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
+        <div class="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
             
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
                 

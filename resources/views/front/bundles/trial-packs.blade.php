@@ -21,7 +21,7 @@
     </div>
 
     <!-- Festive Notice Strip inside Container (Modern Luxury Festive Card) -->
-    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px] pt-4 sm:pt-6">
+    <div class="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 pt-4 sm:pt-6">
         <div class="rounded-2xl border border-[#D38928]/35 bg-gradient-to-r from-[#FFF9F2] via-[#FAF3EA] to-[#FFF9F2] p-3.5 sm:p-4 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-3.5">
             <div class="flex items-center space-x-3.5 text-center sm:text-left">
                 <div class="w-10 h-10 rounded-xl bg-[#831F2E] text-white flex items-center justify-center font-black text-base shrink-0 shadow-xs">
@@ -46,7 +46,7 @@
     </div>
 
     <!-- Main Container -->
-    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px] pt-6 sm:pt-8 space-y-8">
+    <div class="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 pt-6 sm:pt-8 space-y-8">
 
         <!-- Section Title -->
         <div class="text-center space-y-1">

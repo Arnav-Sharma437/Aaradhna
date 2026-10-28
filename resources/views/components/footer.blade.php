@@ -78,8 +78,8 @@
         </div>
     </div>
 
-    <!-- Main Footer Container (1440px) -->
-    <div class="w-full max-w-[1440px] mx-auto pt-8 sm:pt-12 pb-8 px-5 sm:px-8 lg:px-[40px] relative z-10">
+    <!-- Main Footer Container (1600px) -->
+    <div class="w-full max-w-[1600px] mx-auto pt-8 sm:pt-12 pb-8 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 relative z-10">
 
         <!-- ================================================================= -->
         <!-- 2. MAIN 4-COLUMN GRID                                             -->

@@ -5,7 +5,7 @@
 
 @section('content')
 <div class="bg-[#FAF7F2] min-h-screen py-10 sm:py-16 font-body">
-    <div class="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[40px]">
+    <div class="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
         
         <!-- Header -->
         <div class="text-center max-w-xl mx-auto mb-10 space-y-2">

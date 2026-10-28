@@ -1,5 +1,5 @@
 <header class="sticky top-0 z-40 bg-[#FFF9ED] border-b border-[#EAE3D9] transition-all duration-200 font-body">
-    <div class="w-full max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8 xl:px-10">
+    <div class="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
         <div class="relative flex items-center justify-between h-18 sm:h-20 lg:h-22 gap-2 sm:gap-4">
             
             <!-- LEFT: Mobile Menu Button (Mobile only) + Desktop Brand Logo -->

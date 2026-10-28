@@ -215,7 +215,7 @@
 <!-- SHOPPABLE VIDEO REELS SECTION                                             -->
 <!-- ========================================================================= -->
 <section class="py-[40px] bg-white overflow-hidden font-body select-none relative" id="shoppable-reels-section">
-    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
+    <div class="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
         
         <!-- Section Header -->
         <div class="text-center max-w-4xl mx-auto mb-6 sm:mb-8 space-y-1.5">

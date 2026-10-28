@@ -7,9 +7,9 @@
 <div class="bg-white min-h-screen pb-36 font-body">
 
     <!-- ========================================================================= -->
-    <!-- 1. HERO FESTIVE BANNER & NOTICE STRIP (Inside 1440px Container)           -->
+    <!-- 1. HERO FESTIVE BANNER & NOTICE STRIP (Inside 1600px Container)           -->
     <!-- ========================================================================= -->
-    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px] pt-4 sm:pt-6 space-y-4">
+    <div class="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 pt-4 sm:pt-6 space-y-4">
         
         <!-- Festive Banner with Rounded Corners matching Home Standard -->
         <div class="w-full rounded-[16px] sm:rounded-[20px] overflow-hidden shadow-xs border border-[#EADBCC]">
@@ -46,7 +46,7 @@
     </div>
 
     <!-- Main Container -->
-    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px] pt-6 sm:pt-8 space-y-8">
+    <div class="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 pt-6 sm:pt-8 space-y-8">
 
         <!-- Step Indicator (Step 1 / Step 2) -->
         <div class="max-w-md mx-auto text-center space-y-2">

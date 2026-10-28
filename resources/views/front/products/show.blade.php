@@ -74,7 +74,7 @@
 @endphp
 
 <div class="bg-white min-h-screen py-2 sm:py-4 pb-20 font-body">
-    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[40px]">
+    <div class="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
 
         <!-- Breadcrumbs (Compact Spacing) -->
         <nav class="flex items-center text-xs text-gray-500 mb-3 space-x-2 font-medium" aria-label="Breadcrumb">
