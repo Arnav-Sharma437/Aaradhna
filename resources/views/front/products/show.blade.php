@@ -102,13 +102,13 @@
 
                 <!-- 1. MOBILE/TABLET VIEW: Main Hero Image + Horizontal Thumbnails Below (Visible on mobile/tablet, hidden on desktop) -->
                 <div class="block lg:hidden space-y-[5px]" id="product-mobile-gallery">
-                    <!-- Main Large Hero Image -->
-                    <div class="relative w-full aspect-square sm:aspect-[4/3.8] rounded-[8px] sm:rounded-[10px] overflow-hidden bg-[#FAF7F2] shadow-xs group flex items-center justify-center p-3 pb-11">
+                    <!-- Main Large Hero Image (Full Attach, No Side Padding) -->
+                    <div class="relative w-full aspect-square sm:aspect-[4/3.8] rounded-[8px] sm:rounded-[10px] overflow-hidden bg-[#FAF7F2] shadow-xs group">
                         <img 
                             id="main-product-gallery-img" 
                             src="{{ $galleryImages[0] }}" 
                             alt="{{ $product->title }}" 
-                            class="w-full h-full object-contain transition-opacity duration-200 ease-out"
+                            class="w-full h-full object-cover object-top transition-opacity duration-200 ease-out"
                             onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}';"
                         >
                         
@@ -132,22 +132,22 @@
                         @foreach($galleryImages as $index => $imgUrl)
                             <button 
                                 type="button" 
-                                class="gallery-thumbnail-btn relative w-18 h-18 sm:w-20 sm:h-20 rounded-[6px] sm:rounded-[8px] overflow-hidden bg-[#FAF7F2] transition-all duration-200 shrink-0 cursor-pointer focus:outline-none flex items-center justify-center p-1 {{ $index === 0 ? 'ring-2 ring-[#D38928] opacity-100' : 'opacity-75 hover:opacity-100' }}"
+                                class="gallery-thumbnail-btn relative w-18 h-18 sm:w-20 sm:h-20 rounded-[6px] sm:rounded-[8px] overflow-hidden bg-[#FAF7F2] transition-all duration-200 shrink-0 cursor-pointer focus:outline-none {{ $index === 0 ? 'ring-2 ring-[#D38928] opacity-100' : 'opacity-75 hover:opacity-100' }}"
                                 data-img-src="{{ $imgUrl }}"
                                 data-index="{{ $index }}"
                                 aria-label="View product image {{ $index + 1 }}"
                             >
-                                <img src="{{ $imgUrl }}" alt="{{ $product->title }} thumbnail {{ $index + 1 }}" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}';">
+                                <img src="{{ $imgUrl }}" alt="{{ $product->title }} thumbnail {{ $index + 1 }}" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}';">
                             </button>
                         @endforeach
                     </div>
                 </div>
 
-                <!-- 2. DESKTOP VIEW: Large High-Res 2-Column Grid (Showing the 2 Official ISHANAA Product Packaging Images) -->
+                <!-- 2. DESKTOP VIEW: Large High-Res 2-Column Grid (Showing the 2 Official ISHANAA Product Packaging Images Full Attach) -->
                 <div class="hidden lg:grid grid-cols-2 gap-2.5">
                     @foreach($galleryImages as $index => $imgUrl)
-                    <div class="relative aspect-[4/4.8] rounded-[10px] sm:rounded-[12px] overflow-hidden bg-[#FAF7F2] border border-[#EADBCC]/60 shadow-xs group flex items-center justify-center p-3 sm:p-4 pb-12 sm:pb-12">
-                        <img src="{{ $imgUrl }}" alt="{{ $product->title }} visual {{ $index + 1 }}" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='{{ $index === 0 ? asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') : asset('assets/images/products/ishanaa-incense-sticks-trio.jpg') }}';">
+                    <div class="relative aspect-[4/4.8] rounded-[10px] sm:rounded-[12px] overflow-hidden bg-[#FAF7F2] border border-[#EADBCC]/60 shadow-xs group">
+                        <img src="{{ $imgUrl }}" alt="{{ $product->title }} visual {{ $index + 1 }}" class="w-full h-full object-cover {{ $index === 0 ? 'object-top' : 'object-center' }} group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='{{ $index === 0 ? asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') : asset('assets/images/products/ishanaa-incense-sticks-trio.jpg') }}';">
                         @if($index === 0 && ($hasDiscount || $discountPercent))
                         <div class="absolute top-2.5 left-2.5 z-10 pointer-events-none">
                             <span class="inline-block bg-[#8B1E1E] text-white text-xs font-bold px-2.5 py-0.5 rounded-[6px] tracking-wide shadow-sm font-body">
