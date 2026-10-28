@@ -11,8 +11,8 @@
             'slug' => 'swarna-pushpa',
             'subtitle' => '40 Incense Sticks • Sacred Marigold & Saffron',
             'active_price' => 399.00,
-            'image' => 'assets/images/oudh-pack-card.jpg',
-            'lifestyle' => 'assets/images/oudh-pack-card.jpg',
+            'image' => 'assets/images/products/ishanaa-oudh-incense-sticks-100.png',
+            'lifestyle' => 'assets/images/products/ishanaa-incense-sticks-trio.jpg',
         ],
         (object)[
             'id' => 2,
@@ -20,8 +20,8 @@
             'slug' => 'chandan-saanjh',
             'subtitle' => '40 Sticks • 0% Charcoal Purity',
             'active_price' => 399.00,
-            'image' => 'assets/images/incense-pack.jpg',
-            'lifestyle' => 'assets/images/incense-pack.jpg',
+            'image' => 'assets/images/products/ishanaa-oudh-incense-sticks-100.png',
+            'lifestyle' => 'assets/images/products/ishanaa-incense-sticks-trio.jpg',
         ],
         (object)[
             'id' => 3,
@@ -29,8 +29,8 @@
             'slug' => 'royal-oudh',
             'subtitle' => '40 Sticks • Ancient Assam Agarwood',
             'active_price' => 399.00,
-            'image' => 'assets/images/oudh-pack-card.jpg',
-            'lifestyle' => 'assets/images/oudh-pack-card.jpg',
+            'image' => 'assets/images/products/ishanaa-oudh-incense-sticks-100.png',
+            'lifestyle' => 'assets/images/products/ishanaa-incense-sticks-trio.jpg',
         ],
         (object)[
             'id' => 4,
@@ -38,8 +38,8 @@
             'slug' => 'divya-naagchampa',
             'subtitle' => '40 Sticks • Temple Blend & Vedic Herbs',
             'active_price' => 399.00,
-            'image' => 'assets/images/chandan-cones-card.jpg',
-            'lifestyle' => 'assets/images/chandan-cones-card.jpg',
+            'image' => 'assets/images/products/ishanaa-oudh-incense-sticks-100.png',
+            'lifestyle' => 'assets/images/products/ishanaa-incense-sticks-trio.jpg',
         ],
         (object)[
             'id' => 5,
@@ -47,8 +47,8 @@
             'slug' => 'pack-of-six',
             'subtitle' => '6 Luxury Fragrances Combo Pack',
             'active_price' => 1199.00,
-            'image' => 'assets/images/havan-cup.jpg',
-            'lifestyle' => 'assets/images/havan-cup.jpg',
+            'image' => 'assets/images/products/ishanaa-oudh-incense-sticks-100.png',
+            'lifestyle' => 'assets/images/products/ishanaa-incense-sticks-trio.jpg',
         ],
     ]);
 

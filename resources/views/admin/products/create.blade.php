@@ -126,8 +126,8 @@
                             <input 
                                 type="text" 
                                 name="image_url" 
-                                value="{{ old('image_url', 'assets/images/devi-refill-pack-card.jpg') }}" 
-                                placeholder="assets/images/camphor-refill-pack-card.jpg"
+                                value="{{ old('image_url', 'assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}" 
+                                placeholder="assets/images/products/ishanaa-oudh-incense-sticks-100.png"
                                 class="w-full px-3.5 py-2 bg-white border border-[#D2D5D8] focus:border-[#D38928] rounded-[8px] text-xs font-mono text-[#202223] placeholder-gray-400 focus:outline-none"
                             >
                         </div>

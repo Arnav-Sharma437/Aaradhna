@@ -127,7 +127,7 @@ class Product extends Model
         if ($primary && !empty($primary->url)) {
             return $primary->url;
         }
-        return asset('assets/images/incense-pack.jpg');
+        return asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png');
     }
 
     public function getSecondaryImageUrlAttribute(): string
@@ -135,6 +135,6 @@ class Product extends Model
         if ($this->images && $this->images->count() > 1) {
             return $this->images->get(1)->url;
         }
-        return asset('assets/images/single-bambooless-stick.jpg');
+        return asset('assets/images/products/ishanaa-incense-sticks-trio.jpg');
     }
 }

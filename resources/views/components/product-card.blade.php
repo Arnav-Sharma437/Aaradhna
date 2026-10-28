@@ -46,7 +46,7 @@
                     alt="{{ $product->title }}" 
                     class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105"
                     loading="lazy"
-                    onerror="this.onerror=null; this.src='{{ asset('assets/images/incense-pack.jpg') }}';"
+                    onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}';"
                 >
                 <!-- Secondary / Hover Image -->
                 <img 
@@ -54,7 +54,7 @@
                     alt="{{ $product->title }} (Detail)" 
                     class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out"
                     loading="lazy"
-                    onerror="this.onerror=null; this.src='{{ asset('assets/images/single-bambooless-stick.jpg') }}';"
+                    onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-incense-sticks-trio.jpg') }}';"
                 >
             </a>
 

@@ -139,7 +139,7 @@
                                 <td class="px-4 py-3">
                                     <div class="flex items-center space-x-3">
                                         <div class="w-9 h-9 rounded-[8px] bg-gray-100 border border-[#E1E3E5] overflow-hidden shrink-0 flex items-center justify-center p-0.5">
-                                            <img src="{{ asset('assets/images/devi-refill-pack-card.jpg') }}" alt="{{ $product->title }}" class="w-full h-full object-cover rounded-[6px]">
+                                            <img src="{{ $product->primary_image_url }}" alt="{{ $product->title }}" class="w-full h-full object-cover rounded-[6px]" onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}';">
                                         </div>
                                         <div class="min-w-0">
                                             <span class="font-bold text-[#202223] truncate block text-xs">{{ $product->title }}</span>

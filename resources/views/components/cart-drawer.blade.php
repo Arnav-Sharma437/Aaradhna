@@ -91,7 +91,7 @@
                     <div class="bg-[#FFFDF9] border border-[#EADBCC] rounded-[12px] p-2 flex flex-col justify-between text-center space-y-1 relative">
                         <span class="absolute top-1 left-1 px-1.5 py-0.2 bg-[#C28430] text-white text-[8px] font-bold rounded-full font-heading">30% OFF</span>
                         <div class="w-full aspect-square rounded-[8px] overflow-hidden bg-white mb-1">
-                            <img src="{{ asset('assets/images/devi-refill-pack-card.jpg') }}" alt="Bestseller Combo" class="w-full h-full object-cover">
+                            <img src="{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}" alt="Bestseller Combo" class="w-full h-full object-cover">
                         </div>
                         <h5 class="text-[10px] font-bold font-serif text-[#121212] truncate">Bestseller Combo</h5>
                         <div class="text-[11px] font-black text-[#C87A1E] font-heading">₹1,399.00</div>
@@ -104,7 +104,7 @@
                     <div class="bg-[#FFFDF9] border border-[#EADBCC] rounded-[12px] p-2 flex flex-col justify-between text-center space-y-1 relative">
                         <span class="absolute top-1 left-1 px-1.5 py-0.2 bg-[#C28430] text-white text-[8px] font-bold rounded-full font-heading">30% OFF</span>
                         <div class="w-full aspect-square rounded-[8px] overflow-hidden bg-white mb-1">
-                            <img src="{{ asset('assets/images/oudh-pack-card.jpg') }}" alt="Bhairav Refill Pack" class="w-full h-full object-cover">
+                            <img src="{{ asset('assets/images/products/ishanaa-incense-sticks-trio.jpg') }}" alt="Bhairav Refill Pack" class="w-full h-full object-cover">
                         </div>
                         <h5 class="text-[10px] font-bold font-serif text-[#121212] truncate">Bhairav Refill Pack</h5>
                         <div class="text-[11px] font-black text-[#C87A1E] font-heading">₹489.00</div>
@@ -117,7 +117,7 @@
                     <div class="bg-[#FFFDF9] border border-[#EADBCC] rounded-[12px] p-2 flex flex-col justify-between text-center space-y-1 relative">
                         <span class="absolute top-1 left-1 px-1.5 py-0.2 bg-[#C28430] text-white text-[8px] font-bold rounded-full font-heading">51% OFF</span>
                         <div class="w-full aspect-square rounded-[8px] overflow-hidden bg-white mb-1">
-                            <img src="{{ asset('assets/images/devi-refill-pack-card.jpg') }}" alt="Devi Refill Pack" class="w-full h-full object-cover">
+                            <img src="{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}" alt="Devi Refill Pack" class="w-full h-full object-cover">
                         </div>
                         <h5 class="text-[10px] font-bold font-serif text-[#121212] truncate">Devi Refill Pack</h5>
                         <div class="text-[11px] font-black text-[#C87A1E] font-heading">₹489.00</div>
@@ -139,7 +139,7 @@
 
                     <div class="flex items-center justify-between gap-3 bg-white p-2.5 rounded-[10px] border border-[#EADBCC]">
                         <div class="w-12 h-12 rounded-[6px] bg-[#FAF7F2] overflow-hidden shrink-0">
-                            <img src="{{ asset('assets/images/oudh-pack-card.jpg') }}" alt="Oudh Trial Pack" class="w-full h-full object-cover">
+                            <img src="{{ asset('assets/images/products/ishanaa-incense-sticks-trio.jpg') }}" alt="Oudh Trial Pack" class="w-full h-full object-cover">
                         </div>
                         <div class="flex-1 min-w-0">
                             <h6 class="text-xs font-bold font-serif text-[#121212] truncate">Oudh Trial Pack</h6>

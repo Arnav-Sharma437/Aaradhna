@@ -176,7 +176,7 @@
                             <input 
                                 type="text" 
                                 name="new_image_url" 
-                                placeholder="assets/images/camphor-refill-pack-card.jpg"
+                                placeholder="assets/images/products/ishanaa-oudh-incense-sticks-100.png"
                                 class="w-full px-3.5 py-1.5 bg-white border border-[#D2D5D8] rounded-[8px] text-xs font-mono text-[#202223] focus:outline-none"
                             >
                         </div>

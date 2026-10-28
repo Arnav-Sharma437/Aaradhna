@@ -164,6 +164,8 @@ jobs:
             chmod -R 775 storage bootstrap/cache public/uploads public/storage 2>/dev/null || true
 
             echo "Syncing any uploaded product media into public directory..."
+            cp -rn public/assets/images/products/* public/uploads/products/ 2>/dev/null || true
+            cp -rn public/assets/images/products/* public/storage/products/ 2>/dev/null || true
             cp -rn storage/app/public/products/* public/uploads/products/ 2>/dev/null || true
             cp -rn storage/app/public/products/* public/storage/products/ 2>/dev/null || true
 

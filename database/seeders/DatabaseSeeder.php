@@ -550,12 +550,24 @@ class DatabaseSeeder extends Seeder
                 ]
             );
 
-            // Images
+            // Images: Exactly 2 official packaging visuals
+            ProductImage::where('product_id', $product->id)->where('sort_order', '>', 2)->delete();
+
             ProductImage::updateOrCreate(
-                ['product_id' => $product->id, 'is_primary' => true],
+                ['product_id' => $product->id, 'sort_order' => 1],
                 [
-                    'image_path' => $pData['image'],
-                    'sort_order' => 1,
+                    'image_path' => 'uploads/products/ishanaa-oudh-incense-sticks-100.png',
+                    'alt_text'   => $product->title . ' - ISHANAA Incense Sticks',
+                    'is_primary' => true,
+                ]
+            );
+
+            ProductImage::updateOrCreate(
+                ['product_id' => $product->id, 'sort_order' => 2],
+                [
+                    'image_path' => 'uploads/products/ishanaa-incense-sticks-trio.jpg',
+                    'alt_text'   => $product->title . ' - ISHANAA Collection Trio',
+                    'is_primary' => false,
                 ]
             );
 
