@@ -54,7 +54,7 @@
     $actualReviewCount = $product->approvedReviews ? $product->approvedReviews->count() : 0;
     $reviewCount = $actualReviewCount > 0 ? $actualReviewCount : (1386 + (abs(crc32($product->slug ?? $product->id)) % 150));
 
-    // Gallery images: Exactly the 2 official ISHANAA packaging visuals
+    // Gallery images: Exactly the product images uploaded in backend
     $galleryImages = [];
     if ($product->images && $product->images->count() > 0) {
         foreach ($product->images as $img) {
@@ -62,14 +62,12 @@
         }
     }
     
-    // Ensure both primary and secondary images are present
+    // Only fall back to default packaging visuals if no images exist at all
     if (empty($galleryImages)) {
         $galleryImages = [
             asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png'),
             asset('assets/images/products/ishanaa-incense-sticks-trio.jpg'),
         ];
-    } elseif (count($galleryImages) === 1) {
-        $galleryImages[] = asset('assets/images/products/ishanaa-incense-sticks-trio.jpg');
     }
 @endphp
 

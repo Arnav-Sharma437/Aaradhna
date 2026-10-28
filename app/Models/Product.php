@@ -135,6 +135,12 @@ class Product extends Model
         if ($this->images && $this->images->count() > 1) {
             return $this->images->get(1)->url;
         }
+        if ($this->primaryImage && !empty($this->primaryImage->url)) {
+            return $this->primaryImage->url;
+        }
+        if ($this->images && $this->images->count() === 1) {
+            return $this->images->first()->url;
+        }
         return asset('assets/images/products/ishanaa-incense-sticks-trio.jpg');
     }
 }

@@ -47,8 +47,10 @@ return new class extends Migration
 
             $products = Product::all();
             foreach ($products as $product) {
-                // Delete existing images for this product
-                ProductImage::where('product_id', $product->id)->delete();
+                // NEVER delete or overwrite existing images if the product already has images!
+                if ($product->images()->count() > 0) {
+                    continue;
+                }
 
                 // 1. Primary Image (Front Box Packaging)
                 ProductImage::create([

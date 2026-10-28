@@ -32,7 +32,9 @@ class ProductImage extends Model
     {
         $path = $this->image_path;
         if (empty($path)) {
-            return asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png');
+            return ($this->is_primary || $this->sort_order === 1)
+                ? asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png')
+                : asset('assets/images/products/ishanaa-incense-sticks-trio.jpg');
         }
         if (str_starts_with($path, 'http://') || str_starts_with($path, 'https://')) {
             return $path;
@@ -41,9 +43,9 @@ class ProductImage extends Model
         $cleanPath = ltrim($path, '/');
         $fileName = basename($cleanPath);
 
-        // 1. Check if physically present in public/assets/images/products/
-        if (file_exists(public_path('assets/images/products/' . $fileName))) {
-            return asset('assets/images/products/' . $fileName);
+        // 1. Direct match in public folder if it actually exists on disk
+        if (file_exists(public_path($cleanPath))) {
+            return asset($cleanPath);
         }
 
         // 2. Check if physically present in public/uploads/products/
@@ -56,14 +58,13 @@ class ProductImage extends Model
             return asset('storage/products/' . $fileName);
         }
 
-        // 4. Direct match in public folder if it actually exists on disk
-        if (file_exists(public_path($cleanPath))) {
-            return asset($cleanPath);
+        // 4. Check if physically present in public/assets/images/products/
+        if (file_exists(public_path('assets/images/products/' . $fileName))) {
+            return asset('assets/images/products/' . $fileName);
         }
 
-        // 5. If the file is missing or old, fall back to the 2 official packaging visuals
-        return ($this->is_primary || $this->sort_order === 1)
-            ? asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png')
-            : asset('assets/images/products/ishanaa-incense-sticks-trio.jpg');
+        // 5. If the path was explicitly saved in the database (e.g. uploads/products/..., storage/..., etc.),
+        // ALWAYS respect and return the saved path! Never overwrite or mask admin-uploaded images with defaults.
+        return asset($cleanPath);
     }
 }
