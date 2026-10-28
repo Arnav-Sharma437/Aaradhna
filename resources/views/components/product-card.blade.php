@@ -109,7 +109,7 @@
             @else
                 <button 
                     type="button" 
-                    class="quick-add-to-cart-btn w-full py-2 px-2 sm:px-4 bg-[#A86911] hover:bg-[#8D540A] text-white text-xs sm:text-sm font-normal rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-body cursor-pointer"
+                    class="quick-add-to-cart-btn w-full py-2 px-2 sm:px-4 bg-[#C18129] hover:bg-[#A86911] text-white text-xs sm:text-sm font-normal rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-body cursor-pointer"
                     data-product-id="{{ $product->id }}"
                     data-product-title="{{ $product->title }}"
                     data-product-slug="{{ $product->slug }}"

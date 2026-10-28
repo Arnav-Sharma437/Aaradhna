@@ -358,7 +358,7 @@
                             <!-- Brand Logo Gold Add To Cart Button -->
                             <button 
                                 type="button" 
-                                class="quick-add-to-cart-btn w-full py-2 px-3 bg-[#A86911] hover:bg-[#8D540A] text-white text-xs font-bold rounded-[8px] transition-all flex items-center justify-center space-x-1 font-heading cursor-pointer shadow-xs active:scale-95"
+                                class="quick-add-to-cart-btn w-full py-2 px-3 bg-[#C18129] hover:bg-[#A86911] text-white text-xs font-bold rounded-[8px] transition-all flex items-center justify-center space-x-1 font-heading cursor-pointer shadow-xs active:scale-95"
                                 data-product-id="{{ $reel['id'] }}"
                                 data-product-title="{{ $reel['title'] }}"
                                 data-product-slug="{{ $reel['slug'] }}"
@@ -529,7 +529,7 @@
                                 <!-- Quick Add To Cart Button on Bar -->
                                 <button 
                                     type="button" 
-                                    class="quick-add-to-cart-btn shrink-0 ml-2 py-2 px-3.5 bg-[#A86911] hover:bg-[#8D540A] text-white font-bold text-xs rounded-[10px] shadow-sm transition-all flex items-center space-x-1 font-heading cursor-pointer focus:outline-none"
+                                    class="quick-add-to-cart-btn shrink-0 ml-2 py-2 px-3.5 bg-[#C18129] hover:bg-[#A86911] text-white font-bold text-xs rounded-[10px] shadow-sm transition-all flex items-center space-x-1 font-heading cursor-pointer focus:outline-none"
                                     data-product-id="{{ $item['id'] }}"
                                     data-product-title="{{ $item['title'] }}"
                                     data-product-slug="{{ $item['slug'] }}"
@@ -605,7 +605,7 @@
                     <button 
                         type="button" 
                         id="drawer-add-to-cart-btn"
-                        class="quick-add-to-cart-btn w-full py-3 px-4 bg-[#A86911] hover:bg-[#8D540A] text-white font-black text-sm rounded-[12px] shadow-md hover:shadow-lg transition-all transform active:scale-95 flex items-center justify-center space-x-2 font-heading cursor-pointer focus:outline-none"
+                        class="quick-add-to-cart-btn w-full py-3 px-4 bg-[#C18129] hover:bg-[#A86911] text-white font-black text-sm rounded-[12px] shadow-md hover:shadow-lg transition-all transform active:scale-95 flex items-center justify-center space-x-2 font-heading cursor-pointer focus:outline-none"
                         data-product-id="1"
                         data-product-title=""
                         data-product-slug=""

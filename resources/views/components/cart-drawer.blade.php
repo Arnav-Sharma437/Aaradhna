@@ -95,7 +95,7 @@
                         </div>
                         <h5 class="text-[10px] font-bold font-serif text-[#121212] truncate">Bestseller Combo</h5>
                         <div class="text-[11px] font-black text-[#C87A1E] font-heading">₹1,399.00</div>
-                        <button type="button" class="drawer-quick-add w-full py-1 bg-[#A86911] hover:bg-[#8D540A] text-white text-[10px] font-bold rounded-[6px] font-heading transition-colors" data-title="Bestseller Combo" data-price="1399.00">
+                        <button type="button" class="drawer-quick-add w-full py-1 bg-[#C18129] hover:bg-[#A86911] text-white text-[10px] font-bold rounded-[6px] font-heading transition-colors" data-title="Bestseller Combo" data-price="1399.00">
                             Add to cart
                         </button>
                     </div>
@@ -108,7 +108,7 @@
                         </div>
                         <h5 class="text-[10px] font-bold font-serif text-[#121212] truncate">Bhairav Refill Pack</h5>
                         <div class="text-[11px] font-black text-[#C87A1E] font-heading">₹489.00</div>
-                        <button type="button" class="drawer-quick-add w-full py-1 bg-[#A86911] hover:bg-[#8D540A] text-white text-[10px] font-bold rounded-[6px] font-heading transition-colors" data-title="Bhairav Refill Pack" data-price="489.00">
+                        <button type="button" class="drawer-quick-add w-full py-1 bg-[#C18129] hover:bg-[#A86911] text-white text-[10px] font-bold rounded-[6px] font-heading transition-colors" data-title="Bhairav Refill Pack" data-price="489.00">
                             Add to cart
                         </button>
                     </div>
@@ -121,7 +121,7 @@
                         </div>
                         <h5 class="text-[10px] font-bold font-serif text-[#121212] truncate">Devi Refill Pack</h5>
                         <div class="text-[11px] font-black text-[#C87A1E] font-heading">₹489.00</div>
-                        <button type="button" class="drawer-quick-add w-full py-1 bg-[#A86911] hover:bg-[#8D540A] text-white text-[10px] font-bold rounded-[6px] font-heading transition-colors" data-title="Devi Refill Pack" data-price="489.00">
+                        <button type="button" class="drawer-quick-add w-full py-1 bg-[#C18129] hover:bg-[#A86911] text-white text-[10px] font-bold rounded-[6px] font-heading transition-colors" data-title="Devi Refill Pack" data-price="489.00">
                             Add to cart
                         </button>
                     </div>
