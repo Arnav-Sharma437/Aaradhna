@@ -56,22 +56,14 @@ class ProductImage extends Model
             return asset('storage/products/' . $fileName);
         }
 
-        // 4. Direct match in public folder
+        // 4. Direct match in public folder if it actually exists on disk
         if (file_exists(public_path($cleanPath))) {
             return asset($cleanPath);
         }
 
-        // 5. If path starts with assets/ (static design asset)
-        if (str_starts_with($cleanPath, 'assets/')) {
-            return asset($cleanPath);
-        }
-
-        // 6. Default to uploads/products if path is clean filename or starts with uploads/
-        if (str_starts_with($cleanPath, 'uploads/')) {
-            return asset($cleanPath);
-        }
-
-        // 7. Otherwise return asset
-        return asset($cleanPath);
+        // 5. If the file is missing or old, fall back to the 2 official packaging visuals
+        return ($this->is_primary || $this->sort_order === 1)
+            ? asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png')
+            : asset('assets/images/products/ishanaa-incense-sticks-trio.jpg');
     }
 }

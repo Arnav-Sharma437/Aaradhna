@@ -178,9 +178,13 @@ jobs:
 
             echo "Running database migrations safely..."
             php artisan migrate --force 2>&1 || {
-              echo "⚠️ Running specific QR scans table migration..."
+              echo "⚠️ Running specific migrations..."
               php artisan migrate --path=database/migrations/2026_10_28_104614_create_qr_scans_table.php --force 2>&1 || true
+              php artisan migrate --path=database/migrations/2026_10_28_122500_update_all_products_to_new_ishanaa_images.php --force 2>&1 || true
             }
+
+            echo "Synchronizing product images across database and storage..."
+            php artisan ishanaa:sync-product-images 2>&1 || true
 
             echo "Generating high-resolution QR codes and branded packaging labels..."
             php artisan qr:generate 2>&1 || true
@@ -189,6 +193,10 @@ jobs:
             mkdir -p public/storage/qr
             cp -rf storage/app/public/qr/* public/storage/qr/ 2>/dev/null || true
             chmod -R 775 public/storage/qr storage/app/public/qr 2>/dev/null || true
+
+            echo "Rebuilding view cache..."
+            php artisan view:clear
+            php artisan view:cache || true
 
             echo "Creating storage symlink if not already linked..."
             php artisan storage:link 2>/dev/null || true
