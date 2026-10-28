@@ -70,6 +70,48 @@
         </div>
     </div>
 
+    @if(!$isCustomDomainActive)
+    <!-- ========================================================================= -->
+    <!-- DOMAIN DNS STATUS & LIVE TEST SCAN CARD                                   -->
+    <!-- ========================================================================= -->
+    <div class="mb-6 p-4 sm:p-5 rounded-[14px] bg-gradient-to-r from-amber-50/90 to-orange-50/60 border border-amber-200/80 shadow-2xs">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
+            <div class="flex items-start space-x-3.5 max-w-2xl">
+                <div class="w-10 h-10 rounded-full bg-amber-500/15 text-amber-700 flex items-center justify-center shrink-0 text-xl font-bold">
+                    📱
+                </div>
+                <div>
+                    <div class="flex items-center space-x-2">
+                        <h3 class="text-sm font-bold text-gray-900">Why didn't my phone scan show up yet?</h3>
+                        <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-800 border border-amber-300">Domain Note</span>
+                    </div>
+                    <p class="text-xs text-gray-600 mt-1 leading-relaxed">
+                        The official print QR code encodes <strong>{{ $targetUrl }}</strong> (intended for factory box printing). Currently, <strong>ishanaa.in</strong> is pointing to GoDaddy domain parking in DNS, so phone cameras open GoDaddy instead of reaching this Hostinger server.
+                        <br class="hidden sm:inline">
+                        To test live scanning <strong>right now from your phone</strong>, scan the <strong>Live Test QR</strong> on the right or tap the button!
+                    </p>
+                </div>
+            </div>
+            
+            <div class="flex items-center space-x-4 bg-white p-3 rounded-[12px] border border-amber-200 shadow-2xs shrink-0">
+                <div class="w-20 h-20 bg-white rounded-[8px] p-1 border border-gray-200 flex items-center justify-center">
+                    <img src="{{ $qrFiles['staging_png']['url'] ?? asset('storage/qr/ishanaa-staging-test-qr.png') }}" alt="Live Test QR" class="w-full h-full object-contain">
+                </div>
+                <div class="space-y-1.5">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1 animate-pulse"></span>
+                        Scan to Test Live
+                    </span>
+                    <p class="text-[11px] text-gray-500 max-w-[140px] leading-tight">Point phone camera here to record real scan.</p>
+                    <a href="{{ $currentTrackingUrl }}" target="_blank" class="inline-flex items-center space-x-1 text-xs font-bold text-[#A86911] hover:underline">
+                        <span>Open /qr directly ↗</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endif
+
     <!-- ========================================================================= -->
     <!-- 2. FOUR HIGH-LEVEL POLARIS KPI SUMMARY CARDS                              -->
     <!-- ========================================================================= -->

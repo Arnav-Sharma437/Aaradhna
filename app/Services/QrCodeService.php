@@ -80,6 +80,13 @@ class QrCodeService
         File::put($brandedSvgPath, $brandedSvg);
         File::put($publicDir . '/ishanaa-qr-label-branded.svg', $brandedSvg);
 
+        // 5. Staging / Environment Test QR (Directly scan with phone on current server)
+        $stagingTargetUrl = url('/qr');
+        $stagingPng = $this->generateRawPng($stagingTargetUrl, 16);
+        $stagingPngPath = $storageDir . '/ishanaa-staging-test-qr.png';
+        File::put($stagingPngPath, $stagingPng);
+        File::put($publicDir . '/ishanaa-staging-test-qr.png', $stagingPng);
+
         // Verify decoding
         $verification = $this->verifyDecoding($rawPngPath);
 
@@ -104,8 +111,14 @@ class QrCodeService
                 'url' => asset('storage/qr/ishanaa-qr-label-branded.svg'),
                 'size_bytes' => strlen($brandedSvg),
             ],
+            'staging_png' => [
+                'path' => $stagingPngPath,
+                'url' => asset('storage/qr/ishanaa-staging-test-qr.png'),
+                'size_bytes' => strlen($stagingPng),
+            ],
             'verification' => $verification,
             'target_url' => self::TARGET_URL,
+            'staging_url' => $stagingTargetUrl,
         ];
     }
 
@@ -113,8 +126,10 @@ class QrCodeService
      * Generate raw high-resolution PNG using chillerlan QR with GD.
      * High Error Correction Level H (~30%) with quiet zone 4.
      */
-    public function generateRawPng(int $scale = 24): string
+    public function generateRawPng(?string $url = null, int $scale = 24): string
     {
+        $target = $url ?: self::TARGET_URL;
+
         $options = new QROptions();
         $options->version = Version::AUTO;
         $options->eccLevel = EccLevel::H;
@@ -125,14 +140,16 @@ class QrCodeService
         $options->outputBase64 = false;
 
         $qrcode = new QRCode($options);
-        return $qrcode->render(self::TARGET_URL);
+        return $qrcode->render($target);
     }
 
     /**
      * Generate infinite-scale vector SVG.
      */
-    public function generateRawSvg(): string
+    public function generateRawSvg(?string $url = null): string
     {
+        $target = $url ?: self::TARGET_URL;
+
         $options = new QROptions();
         $options->version = Version::AUTO;
         $options->eccLevel = EccLevel::H;
@@ -143,7 +160,7 @@ class QrCodeService
         $options->outputBase64 = false;
 
         $qrcode = new QRCode($options);
-        return $qrcode->render(self::TARGET_URL);
+        return $qrcode->render($target);
     }
 
     /**

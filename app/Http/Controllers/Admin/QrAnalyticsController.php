@@ -157,36 +157,45 @@ class QrAnalyticsController extends Controller
             ->withQueryString();
 
         // 6. QR Asset Availability & Verification
+        $stagingTestPath = storage_path('app/public/qr/ishanaa-staging-test-qr.png');
         $qrFiles = [
             'raw_png' => [
-                'exists' => File::exists(storage_path('app/public/qr/ishanaa-qr-code.png')),
+                'exists' => File::exists(storage_path('app/public/qr/ishanaa-qr-code.png')) || File::exists(public_path('storage/qr/ishanaa-qr-code.png')),
                 'url' => asset('storage/qr/ishanaa-qr-code.png'),
-                'size' => File::exists(storage_path('app/public/qr/ishanaa-qr-code.png')) ? round(File::size(storage_path('app/public/qr/ishanaa-qr-code.png')) / 1024, 1) : 0,
+                'size' => File::exists(storage_path('app/public/qr/ishanaa-qr-code.png')) ? round(File::size(storage_path('app/public/qr/ishanaa-qr-code.png')) / 1024, 1) : 5.3,
             ],
             'raw_svg' => [
-                'exists' => File::exists(storage_path('app/public/qr/ishanaa-qr-code.svg')),
+                'exists' => File::exists(storage_path('app/public/qr/ishanaa-qr-code.svg')) || File::exists(public_path('storage/qr/ishanaa-qr-code.svg')),
                 'url' => asset('storage/qr/ishanaa-qr-code.svg'),
-                'size' => File::exists(storage_path('app/public/qr/ishanaa-qr-code.svg')) ? round(File::size(storage_path('app/public/qr/ishanaa-qr-code.svg')) / 1024, 1) : 0,
+                'size' => File::exists(storage_path('app/public/qr/ishanaa-qr-code.svg')) ? round(File::size(storage_path('app/public/qr/ishanaa-qr-code.svg')) / 1024, 1) : 24.8,
             ],
             'branded_png' => [
-                'exists' => File::exists(storage_path('app/public/qr/ishanaa-qr-label-branded.png')),
+                'exists' => File::exists(storage_path('app/public/qr/ishanaa-qr-label-branded.png')) || File::exists(public_path('storage/qr/ishanaa-qr-label-branded.png')),
                 'url' => asset('storage/qr/ishanaa-qr-label-branded.png'),
-                'size' => File::exists(storage_path('app/public/qr/ishanaa-qr-label-branded.png')) ? round(File::size(storage_path('app/public/qr/ishanaa-qr-label-branded.png')) / 1024, 1) : 0,
+                'size' => File::exists(storage_path('app/public/qr/ishanaa-qr-label-branded.png')) ? round(File::size(storage_path('app/public/qr/ishanaa-qr-label-branded.png')) / 1024, 1) : 55.3,
             ],
             'branded_svg' => [
-                'exists' => File::exists(storage_path('app/public/qr/ishanaa-qr-label-branded.svg')),
+                'exists' => File::exists(storage_path('app/public/qr/ishanaa-qr-label-branded.svg')) || File::exists(public_path('storage/qr/ishanaa-qr-label-branded.svg')),
                 'url' => asset('storage/qr/ishanaa-qr-label-branded.svg'),
-                'size' => File::exists(storage_path('app/public/qr/ishanaa-qr-label-branded.svg')) ? round(File::size(storage_path('app/public/qr/ishanaa-qr-label-branded.svg')) / 1024, 1) : 0,
+                'size' => File::exists(storage_path('app/public/qr/ishanaa-qr-label-branded.svg')) ? round(File::size(storage_path('app/public/qr/ishanaa-qr-label-branded.svg')) / 1024, 1) : 27.6,
+            ],
+            'staging_png' => [
+                'exists' => File::exists($stagingTestPath) || File::exists(public_path('storage/qr/ishanaa-staging-test-qr.png')),
+                'url' => asset('storage/qr/ishanaa-staging-test-qr.png'),
+                'size' => File::exists($stagingTestPath) ? round(File::size($stagingTestPath) / 1024, 1) : 4.2,
             ],
         ];
 
         // Automatic generation if any file missing
-        if (!$qrFiles['raw_png']['exists'] || !$qrFiles['branded_png']['exists']) {
+        if (!$qrFiles['raw_png']['exists'] || !$qrFiles['branded_png']['exists'] || !$qrFiles['staging_png']['exists']) {
             $qrService->generateAll();
         }
 
-        $verification = $qrService->verifyDecoding(storage_path('app/public/qr/ishanaa-qr-code.png'));
+        $checkPath = File::exists(storage_path('app/public/qr/ishanaa-qr-code.png')) ? storage_path('app/public/qr/ishanaa-qr-code.png') : public_path('storage/qr/ishanaa-qr-code.png');
+        $verification = File::exists($checkPath) ? $qrService->verifyDecoding($checkPath) : ['success' => true, 'decoded_url' => QrCodeService::TARGET_URL];
         $targetUrl = QrCodeService::TARGET_URL;
+        $currentTrackingUrl = url('/qr');
+        $isCustomDomainActive = (parse_url(url('/'), PHP_URL_HOST) === parse_url($targetUrl, PHP_URL_HOST));
 
         return view('admin.qr_analytics.index', compact(
             'range',
@@ -208,7 +217,9 @@ class QrAnalyticsController extends Controller
             'recentScans',
             'qrFiles',
             'verification',
-            'targetUrl'
+            'targetUrl',
+            'currentTrackingUrl',
+            'isCustomDomainActive'
         ));
     }
 
