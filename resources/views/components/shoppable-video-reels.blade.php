@@ -341,7 +341,7 @@
                         <div class="mt-2.5 bg-white p-2 sm:p-2.5 rounded-[12px] border border-[#EADBCC] shadow-2xs space-y-2">
                             <div class="flex items-center space-x-2">
                                 <div class="w-10 h-10 rounded-[6px] border border-[#EADBCC] p-0.5 bg-[#FAF7F2] shrink-0 overflow-hidden flex items-center justify-center">
-                                    <img src="{{ $reel['thumbnail'] }}" alt="{{ $reel['title'] }}" class="w-full h-full object-cover rounded-[4px]">
+                                    <img src="{{ $reel['thumbnail'] }}" alt="{{ $reel['title'] }}" class="w-full h-full object-contain rounded-[4px]">
                                 </div>
                                 <div class="min-w-0 flex-1">
                                     <h4 class="text-[12px] font-medium font-body text-[#1F1F1F] truncate leading-tight">

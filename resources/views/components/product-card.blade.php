@@ -38,13 +38,13 @@
 
     <!-- Product Image Box (5px Inner Padding) -->
     <div class="p-[5px] pb-0">
-        <div class="relative w-full aspect-[4/4.8] rounded-[16px] sm:rounded-[20px] overflow-hidden bg-[#FAF7F2] shadow-2xs">
-            <a href="{{ route('products.show', $product->slug) }}" class="block w-full h-full relative overflow-hidden">
+        <div class="relative w-full aspect-[4/4.8] rounded-[16px] sm:rounded-[20px] overflow-hidden bg-[#FAF7F2] shadow-2xs flex items-center justify-center p-2.5 sm:p-3">
+            <a href="{{ route('products.show', $product->slug) }}" class="block w-full h-full relative overflow-hidden flex items-center justify-center">
                 <!-- Primary Image -->
                 <img 
                     src="{{ $imageSrc }}" 
                     alt="{{ $product->title }}" 
-                    class="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105"
+                    class="w-full h-full object-contain object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105"
                     loading="lazy"
                     onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}';"
                 >
@@ -52,7 +52,7 @@
                 <img 
                     src="{{ $hoverImageSrc }}" 
                     alt="{{ $product->title }} (Detail)" 
-                    class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out"
+                    class="absolute inset-0 w-full h-full object-contain object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out p-1"
                     loading="lazy"
                     onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-incense-sticks-trio.jpg') }}';"
                 >
@@ -60,7 +60,7 @@
 
             <!-- Free Ceramic Stand Banner for Devi / Specials -->
             @if(str_contains(strtolower($product->slug), 'devi'))
-                <div class="absolute bottom-1.5 left-1.5 right-1.5 sm:bottom-2 sm:left-2 sm:right-2 bg-black/65 backdrop-blur-xs py-1 sm:py-1.5 px-1.5 sm:px-2 rounded-[6px] text-center text-white text-[10px] sm:text-xs font-bold tracking-wider z-10">
+                <div class="absolute bottom-1.5 left-1.5 right-1.5 sm:bottom-2 sm:left-2 sm:right-2 bg-black/65 backdrop-blur-xs py-1 sm:py-1.5 px-1.5 sm:px-2 rounded-[6px] text-center text-white text-[10px] sm:text-xs font-bold tracking-wider z-10 pointer-events-none">
                     FREE STAND <span class="text-[#F6DAA8] font-normal hidden sm:inline">₹150/-</span>
                 </div>
             @endif

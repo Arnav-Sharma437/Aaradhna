@@ -140,8 +140,8 @@
             <!-- Left: 1 Free Gift Slot + 3 Selectable Slots -->
             <div class="flex items-center space-x-2 sm:space-x-3">
                 <!-- Locked Free Gift Slot -->
-                <div class="relative w-12 h-12 sm:w-14 sm:h-14 rounded-[12px] border-2 border-emerald-600 bg-emerald-50 flex items-center justify-center overflow-hidden shadow-2xs ring-2 ring-emerald-400/30 shrink-0" title="Free Chandan Trial Pack">
-                    <img src="{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}" alt="Free Gift" class="w-full h-full object-cover">
+                <div class="relative w-12 h-12 sm:w-14 sm:h-14 rounded-[12px] border-2 border-emerald-600 bg-emerald-50 flex items-center justify-center overflow-hidden shadow-2xs ring-2 ring-emerald-400/30 shrink-0 p-0.5" title="Free Chandan Trial Pack">
+                    <img src="{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}" alt="Free Gift" class="w-full h-full object-contain">
                     <span class="absolute bottom-0 inset-x-0 bg-emerald-700 text-white text-[7px] sm:text-[7.5px] font-black uppercase text-center py-0.5 tracking-wider leading-none">FREE GIFT</span>
                 </div>
 
@@ -152,8 +152,8 @@
                     @for($i = 0; $i < 3; $i++)
                         <div class="bundle-slot relative w-12 h-12 sm:w-14 sm:h-14 rounded-[12px] border-2 border-gray-300 bg-white flex items-center justify-center text-gray-400 font-bold text-xl transition-all shadow-2xs" data-slot="{{ $i }}">
                             <span class="slot-plus text-gray-400 font-bold text-xl select-none">+</span>
-                            <div class="slot-content hidden w-full h-full relative rounded-[10px] overflow-visible group">
-                                <img src="" alt="" class="slot-img w-full h-full object-cover rounded-[10px]">
+                            <div class="slot-content hidden w-full h-full relative rounded-[10px] overflow-visible group flex items-center justify-center p-0.5">
+                                <img src="" alt="" class="slot-img w-full h-full object-contain rounded-[10px]">
                                 <!-- Bigger Minus Badge in Top Right Corner -->
                                 <button type="button" class="slot-remove-btn absolute -top-1.5 -right-1.5 w-5 h-5 rounded-md bg-black text-white text-xs font-black flex items-center justify-center shadow-md cursor-pointer hover:bg-[#C28430] transition-colors leading-none select-none z-10" title="Remove pack">−</button>
                             </div>
