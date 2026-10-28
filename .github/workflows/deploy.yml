@@ -194,4 +194,4 @@ jobs:
             echo "=================================================="
             echo "🎉 Aaradhna Deployment Completed Successfully!"
             echo "=================================================="
-EOF
+          EOF
