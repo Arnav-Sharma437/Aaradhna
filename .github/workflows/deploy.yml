@@ -159,11 +159,23 @@ jobs:
             echo "Ensuring storage and media directories exist..."
             mkdir -p storage/framework/{sessions,views,cache} storage/logs bootstrap/cache
             mkdir -p public/uploads/products public/storage/products
+            mkdir -p storage/app/public/qr public/storage/qr
             chmod -R 775 storage bootstrap/cache public/uploads public/storage 2>/dev/null || true
 
             echo "Syncing any uploaded product media into public directory..."
             cp -rn storage/app/public/products/* public/uploads/products/ 2>/dev/null || true
             cp -rn storage/app/public/products/* public/storage/products/ 2>/dev/null || true
+
+            echo "Running database migrations safely..."
+            php artisan migrate --force
+
+            echo "Generating high-resolution QR codes and branded packaging labels..."
+            php artisan qr:generate || true
+
+            echo "Syncing QR assets into public directory..."
+            mkdir -p public/storage/qr
+            cp -rf storage/app/public/qr/* public/storage/qr/ 2>/dev/null || true
+            chmod -R 775 public/storage/qr storage/app/public/qr 2>/dev/null || true
 
             echo "Clearing stale framework cache safely..."
             php artisan optimize:clear || php artisan view:clear
@@ -174,6 +186,10 @@ jobs:
 
             echo "Creating storage symlink if not already linked..."
             php artisan storage:link 2>/dev/null || true
+
+            echo "Rebuilding route and view cache..."
+            php artisan route:cache || true
+            php artisan view:cache || true
 
             echo "=================================================="
             echo "🎉 Aaradhna Deployment Completed Successfully!"

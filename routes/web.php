@@ -11,6 +11,12 @@ use App\Http\Controllers\Front\DiscountSignupController;
 // Storefront Homepage
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+// Permanent Packaging QR Scan Tracking Route (Public, No Login Required)
+use App\Http\Controllers\Front\QrTrackController;
+Route::get('/qr', [QrTrackController::class, 'track'])
+    ->middleware(['throttle:120,1'])
+    ->name('qr.track');
+
 // Search Routes (Full Search & Predictive AJAX Suggestions)
 Route::get('/search', [SearchController::class, 'index'])->name('search.index');
 Route::get('/api/search/predictive', [SearchController::class, 'predictive'])->name('search.predictive');
@@ -148,6 +154,7 @@ use App\Http\Controllers\Admin\BlogController as AdminBlogController;
 use App\Http\Controllers\Admin\FaqController as AdminFaqController;
 use App\Http\Controllers\Admin\TestimonialController as AdminTestimonialController;
 use App\Http\Controllers\Admin\SettingController as AdminSettingController;
+use App\Http\Controllers\Admin\QrAnalyticsController as AdminQrAnalyticsController;
 
 Route::prefix('admin')->name('admin.')->group(function () {
     // Guest Admin Auth Routes
@@ -195,6 +202,11 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
         // 7b. Discount Signups & Lead Survey Responses
         Route::resource('discount-signups', AdminDiscountSignupController::class)->only(['index', 'destroy']);
+
+        // 7c. QR Packaging & Scan Tracking Analytics
+        Route::get('/qr-analytics', [AdminQrAnalyticsController::class, 'index'])->name('qr-analytics.index');
+        Route::post('/qr-analytics/regenerate', [AdminQrAnalyticsController::class, 'regenerate'])->name('qr-analytics.regenerate');
+        Route::get('/qr-analytics/download/{type}', [AdminQrAnalyticsController::class, 'download'])->name('qr-analytics.download');
 
         // 8. Product Reviews Moderation Module
         Route::get('/reviews', [AdminReviewController::class, 'index'])->name('reviews.index');

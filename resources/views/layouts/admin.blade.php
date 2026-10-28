@@ -95,6 +95,7 @@
                             'customers' => \App\Models\User::where('role', 'customer')->count(),
                             'coupons' => \App\Models\Coupon::where('is_active', true)->count(),
                             'discount_signups' => \Illuminate\Support\Facades\Schema::hasTable('discount_signups') ? \App\Models\DiscountSignup::count() : 0,
+                            'qr_scans' => \Illuminate\Support\Facades\Schema::hasTable('qr_scans') ? \App\Models\QrScan::count() : 0,
                             'reviews' => \App\Models\Review::count(),
                             'banners' => \App\Models\HomepageBanner::where('is_active', true)->count(),
                             'blogs' => \App\Models\BlogPost::where('is_published', true)->count(),
@@ -217,6 +218,18 @@
                                     <span>Discount Signups</span>
                                 </div>
                                 <span class="px-2 py-0.5 text-[10px] font-bold rounded-full {{ $navCounts['discount_signups'] > 0 ? 'bg-amber-500/20 text-amber-300' : 'bg-white/10 text-white/80' }}">{{ $navCounts['discount_signups'] }}</span>
+                            </a>
+
+                            <!-- QR Packaging Tracking & Analytics -->
+                            <a 
+                                href="{{ route('admin.qr-analytics.index') }}" 
+                                class="flex items-center justify-between px-3 py-2 rounded-[8px] text-xs font-medium transition-all group {{ request()->routeIs('admin.qr-analytics*') ? 'bg-[#2E2E2E] text-white font-bold' : 'text-[#CCCCCC] hover:bg-[#252525] hover:text-white' }}"
+                            >
+                                <div class="flex items-center space-x-3">
+                                    <svg class="w-4 h-4 text-[#D38928] group-hover:text-[#F6DAA8]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"/></svg>
+                                    <span>QR Analytics</span>
+                                </div>
+                                <span class="px-2 py-0.5 text-[10px] font-bold rounded-full {{ ($navCounts['qr_scans'] ?? 0) > 0 ? 'bg-[#D38928]/25 text-[#F6DAA8]' : 'bg-white/10 text-white/80' }}">{{ $navCounts['qr_scans'] ?? 0 }}</span>
                             </a>
 
                             <!-- Reviews -->
