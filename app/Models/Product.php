@@ -32,6 +32,7 @@ class Product extends Model
         'is_featured',
         'is_bestseller',
         'badge_text',
+        'badge_color',
         'status',
         'meta_title',
         'meta_description',
@@ -163,6 +164,65 @@ class Product extends Model
         }
 
         return null;
+    }
+
+    /**
+     * Parse pack tag into structured 3-part layout (prefix, big number, suffix)
+     * e.g. "pack of 100 sticks" -> ['prefix' => 'pack of', 'number' => '100', 'suffix' => 'sticks']
+     */
+    public function getPackTagPartsAttribute(): ?array
+    {
+        $raw = $this->pack_tag;
+        if (empty($raw)) {
+            return null;
+        }
+
+        $trimmed = trim($raw);
+
+        // Match pattern: (optional prefix) (digits) (optional suffix)
+        // e.g. "pack of 100 sticks", "Pack of 40", "100 sticks", "Pack of 100 Refill"
+        if (preg_match('/^(.*?)\s*(\d+)\s*(.*?)$/i', $trimmed, $m)) {
+            $prefix = trim($m[1]);
+            $number = trim($m[2]);
+            $suffix = trim($m[3]);
+
+            // If prefix is empty or generic, default to "pack of"
+            if (empty($prefix) || strtolower($prefix) === 'pack' || strtolower($prefix) === 'pack of') {
+                $prefix = 'pack of';
+            }
+            // If suffix is empty, default to "sticks" (or keep Refill if present)
+            if (empty($suffix)) {
+                $suffix = 'sticks';
+            }
+
+            return [
+                'prefix' => strtolower($prefix),
+                'number' => $number,
+                'suffix' => strtolower($suffix),
+            ];
+        }
+
+        // If no number found (e.g. "BESTSELLER"), return as custom text
+        return [
+            'prefix' => '',
+            'number' => '',
+            'suffix' => $trimmed,
+        ];
+    }
+
+    /**
+     * Get the badge / tag color, defaulting to deep maroon (#8B1E1E) as shown in reference.
+     */
+    public function getBadgeColorAttribute(?string $value): string
+    {
+        if (!empty($value)) {
+            $val = trim($value);
+            if (!str_starts_with($val, '#') && preg_match('/^[a-f0-9]{3,8}$/i', $val)) {
+                $val = '#' . $val;
+            }
+            return $val;
+        }
+        return '#8B1E1E';
     }
 
     public function getPrimaryImageUrlAttribute(): string

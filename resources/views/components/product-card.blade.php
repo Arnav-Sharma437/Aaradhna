@@ -43,12 +43,36 @@
             >
         </a>
 
-        <!-- Top-Right Tag Type Badge (Pack Size or Custom Tag) -->
-        @if(!empty($packTag))
-            <div class="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 z-20 pointer-events-none">
-                <span class="inline-flex items-center px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-[6px] sm:rounded-[8px] bg-white/95 backdrop-blur-xs border border-[#C18129]/35 text-[#8B4513] text-[9.5px] sm:text-[10.5px] font-extrabold tracking-wide font-heading shadow-xs">
-                    {{ $packTag }}
-                </span>
+        <!-- Top-Right Tag Type Badge (Matches Reference Image Design & Custom Color) -->
+        @php
+            $tagParts = $product->pack_tag_parts;
+            $tagColor = $product->badge_color;
+        @endphp
+        @if(!empty($tagParts))
+            <div class="absolute top-2 right-2 sm:top-2.5 sm:right-2.5 z-20 pointer-events-none select-none">
+                @if(!empty($tagParts['number']))
+                    <div 
+                        class="flex flex-col items-center justify-center text-center font-heading leading-tight"
+                        style="color: {{ $tagColor }};"
+                    >
+                        <span class="text-[8.5px] sm:text-[9.5px] font-bold lowercase tracking-tight leading-none">
+                            {{ $tagParts['prefix'] }}
+                        </span>
+                        <span class="text-[19px] sm:text-[22px] font-black leading-none my-0.5 tracking-tight font-heading">
+                            {{ $tagParts['number'] }}
+                        </span>
+                        <span class="text-[8.5px] sm:text-[9.5px] font-bold lowercase tracking-tight leading-none">
+                            {{ $tagParts['suffix'] }}
+                        </span>
+                    </div>
+                @else
+                    <span 
+                        class="inline-flex items-center px-2 py-0.5 rounded-[5px] bg-white/95 border text-[9px] sm:text-[10px] font-extrabold tracking-wider font-heading shadow-xs uppercase"
+                        style="color: {{ $tagColor }}; border-color: {{ $tagColor }}40;"
+                    >
+                        {{ $tagParts['suffix'] }}
+                    </span>
+                @endif
             </div>
         @endif
 

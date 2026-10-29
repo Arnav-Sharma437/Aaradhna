@@ -119,12 +119,36 @@
                         </div>
                         @endif
 
-                        <!-- Top-Right Tag Type Badge (Pack Size or Custom Tag) -->
-                        @if(!empty($product->pack_tag))
-                        <div class="absolute top-2.5 right-2.5 z-10 pointer-events-none">
-                            <span class="inline-flex items-center px-2.5 py-1 rounded-[6px] bg-white/95 backdrop-blur-xs border border-[#C18129]/40 text-[#8B4513] text-xs font-bold tracking-wide shadow-xs font-heading">
-                                {{ $product->pack_tag }}
-                            </span>
+                        <!-- Top-Right Tag Type Badge (Matches User Reference Image & Custom Color) -->
+                        @php
+                            $tagParts = $product->pack_tag_parts;
+                            $tagColor = $product->badge_color;
+                        @endphp
+                        @if(!empty($tagParts))
+                        <div class="absolute top-2.5 right-2.5 z-10 pointer-events-none select-none">
+                            @if(!empty($tagParts['number']))
+                                <div 
+                                    class="flex flex-col items-center justify-center text-center font-heading leading-tight"
+                                    style="color: {{ $tagColor }};"
+                                >
+                                    <span class="text-[9.5px] sm:text-[10.5px] font-bold lowercase tracking-tight leading-none">
+                                        {{ $tagParts['prefix'] }}
+                                    </span>
+                                    <span class="text-[21px] sm:text-[24px] font-black leading-none my-0.5 tracking-tight font-heading">
+                                        {{ $tagParts['number'] }}
+                                    </span>
+                                    <span class="text-[9.5px] sm:text-[10.5px] font-bold lowercase tracking-tight leading-none">
+                                        {{ $tagParts['suffix'] }}
+                                    </span>
+                                </div>
+                            @else
+                                <span 
+                                    class="inline-flex items-center px-2.5 py-1 rounded-[6px] bg-white/95 border text-xs font-bold tracking-wide shadow-xs font-heading"
+                                    style="color: {{ $tagColor }}; border-color: {{ $tagColor }}40;"
+                                >
+                                    {{ $tagParts['suffix'] }}
+                                </span>
+                            @endif
                         </div>
                         @endif
 
@@ -163,11 +187,31 @@
                         </div>
                         @endif
 
-                        @if($index === 0 && !empty($product->pack_tag))
-                        <div class="absolute top-2.5 right-2.5 z-10 pointer-events-none">
-                            <span class="inline-flex items-center px-2.5 py-1 rounded-[6px] bg-white/95 backdrop-blur-xs border border-[#C18129]/40 text-[#8B4513] text-xs font-bold tracking-wide shadow-xs font-heading">
-                                {{ $product->pack_tag }}
-                            </span>
+                        @if($index === 0 && !empty($tagParts))
+                        <div class="absolute top-2.5 right-2.5 z-10 pointer-events-none select-none">
+                            @if(!empty($tagParts['number']))
+                                <div 
+                                    class="flex flex-col items-center justify-center text-center font-heading leading-tight"
+                                    style="color: {{ $tagColor }};"
+                                >
+                                    <span class="text-[9.5px] sm:text-[10.5px] font-bold lowercase tracking-tight leading-none">
+                                        {{ $tagParts['prefix'] }}
+                                    </span>
+                                    <span class="text-[21px] sm:text-[24px] font-black leading-none my-0.5 tracking-tight font-heading">
+                                        {{ $tagParts['number'] }}
+                                    </span>
+                                    <span class="text-[9.5px] sm:text-[10.5px] font-bold lowercase tracking-tight leading-none">
+                                        {{ $tagParts['suffix'] }}
+                                    </span>
+                                </div>
+                            @else
+                                <span 
+                                    class="inline-flex items-center px-2.5 py-1 rounded-[6px] bg-white/95 border text-xs font-bold tracking-wide shadow-xs font-heading"
+                                    style="color: {{ $tagColor }}; border-color: {{ $tagColor }}40;"
+                                >
+                                    {{ $tagParts['suffix'] }}
+                                </span>
+                            @endif
                         </div>
                         @endif
                         @if($index === 0)

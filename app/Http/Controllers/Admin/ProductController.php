@@ -20,7 +20,7 @@ use Illuminate\View\View;
 class ProductController extends Controller
 {
     /**
-     * Auto-heal products table schema if badge_text column does not exist.
+     * Auto-heal products table schema if badge_text or badge_color columns do not exist.
      */
     private function ensureBadgeColumnExists(): void
     {
@@ -28,6 +28,11 @@ class ProductController extends Controller
             if (!Schema::hasColumn('products', 'badge_text')) {
                 Schema::table('products', function (Blueprint $table) {
                     $table->string('badge_text', 100)->nullable()->after('is_bestseller');
+                });
+            }
+            if (!Schema::hasColumn('products', 'badge_color')) {
+                Schema::table('products', function (Blueprint $table) {
+                    $table->string('badge_color', 50)->nullable()->default('#8B1E1E')->after('badge_text');
                 });
             }
         } catch (\Throwable $e) {
@@ -248,6 +253,7 @@ class ProductController extends Controller
             'is_featured' => ['nullable', 'boolean'],
             'is_bestseller' => ['nullable', 'boolean'],
             'badge_text' => ['nullable', 'string', 'max:100'],
+            'badge_color' => ['nullable', 'string', 'max:50'],
             'status' => ['required', 'in:active,draft,archived'],
             'meta_title' => ['nullable', 'string', 'max:255'],
             'meta_description' => ['nullable', 'string', 'max:500'],
@@ -301,6 +307,9 @@ class ProductController extends Controller
 
             if (Schema::hasColumn('products', 'badge_text')) {
                 $productData['badge_text'] = $request->filled('badge_text') ? trim($request->badge_text) : null;
+            }
+            if (Schema::hasColumn('products', 'badge_color')) {
+                $productData['badge_color'] = $request->filled('badge_color') ? trim($request->badge_color) : null;
             }
 
             $product = Product::create($productData);
@@ -427,6 +436,7 @@ class ProductController extends Controller
             'is_featured' => ['nullable', 'boolean'],
             'is_bestseller' => ['nullable', 'boolean'],
             'badge_text' => ['nullable', 'string', 'max:100'],
+            'badge_color' => ['nullable', 'string', 'max:50'],
             'status' => ['required', 'in:active,draft,archived'],
             'meta_title' => ['nullable', 'string', 'max:255'],
             'meta_description' => ['nullable', 'string', 'max:500'],
@@ -476,6 +486,9 @@ class ProductController extends Controller
 
             if (Schema::hasColumn('products', 'badge_text')) {
                 $productData['badge_text'] = $request->filled('badge_text') ? trim($request->badge_text) : null;
+            }
+            if (Schema::hasColumn('products', 'badge_color')) {
+                $productData['badge_color'] = $request->filled('badge_color') ? trim($request->badge_color) : null;
             }
 
             $product->update($productData);

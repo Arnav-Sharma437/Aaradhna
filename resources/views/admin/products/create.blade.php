@@ -369,19 +369,92 @@
                             value="{{ old('badge_text') }}" 
                             placeholder="e.g. Pack of 40, Pack of 60, Pack of 100, Pack of 20"
                             class="w-full px-3 py-2 bg-white border border-[#D2D5D8] focus:border-[#D38928] rounded-[8px] text-xs font-bold text-[#965A15] placeholder-gray-400 focus:outline-none"
+                            oninput="updateTagLivePreview();"
                         >
-                        <p class="text-[11px] text-gray-400 leading-tight">Shown as a stylish tag in the top-right corner of the product image.</p>
+                        <p class="text-[11px] text-gray-400 leading-tight">Shown as a stylish 3-line tag in the top-right corner of the product image.</p>
                         
                         <!-- Quick Tag Presets -->
                         <div class="flex flex-wrap gap-1.5 pt-1">
-                            <button type="button" onclick="document.getElementById('badge_text').value='Pack of 20'" class="px-2 py-0.5 bg-amber-50 hover:bg-amber-100 text-[#965A15] text-[10px] font-bold rounded border border-amber-200 cursor-pointer">Pack of 20</button>
-                            <button type="button" onclick="document.getElementById('badge_text').value='Pack of 40'" class="px-2 py-0.5 bg-amber-50 hover:bg-amber-100 text-[#965A15] text-[10px] font-bold rounded border border-amber-200 cursor-pointer">Pack of 40</button>
-                            <button type="button" onclick="document.getElementById('badge_text').value='Pack of 60'" class="px-2 py-0.5 bg-amber-50 hover:bg-amber-100 text-[#965A15] text-[10px] font-bold rounded border border-amber-200 cursor-pointer">Pack of 60</button>
-                            <button type="button" onclick="document.getElementById('badge_text').value='Pack of 100'" class="px-2 py-0.5 bg-amber-50 hover:bg-amber-100 text-[#965A15] text-[10px] font-bold rounded border border-amber-200 cursor-pointer">Pack of 100</button>
-                            <button type="button" onclick="document.getElementById('badge_text').value='Pack of 100 Refill'" class="px-2 py-0.5 bg-amber-50 hover:bg-amber-100 text-[#965A15] text-[10px] font-bold rounded border border-amber-200 cursor-pointer">Pack of 100 Refill</button>
-                            <button type="button" onclick="document.getElementById('badge_text').value='BUY 2 GET 1 FREE'" class="px-2 py-0.5 bg-amber-50 hover:bg-amber-100 text-[#965A15] text-[10px] font-bold rounded border border-amber-200 cursor-pointer">BUY 2 GET 1</button>
-                            <button type="button" onclick="document.getElementById('badge_text').value='BESTSELLER'" class="px-2 py-0.5 bg-amber-50 hover:bg-amber-100 text-[#965A15] text-[10px] font-bold rounded border border-amber-200 cursor-pointer">BESTSELLER</button>
-                            <button type="button" onclick="document.getElementById('badge_text').value=''" class="px-2 py-0.5 bg-gray-100 hover:bg-gray-200 text-gray-600 text-[10px] font-bold rounded border border-gray-300 cursor-pointer">✕ No Tag</button>
+                            <button type="button" onclick="setTagText('Pack of 20')" class="px-2 py-0.5 bg-amber-50 hover:bg-amber-100 text-[#965A15] text-[10px] font-bold rounded border border-amber-200 cursor-pointer">Pack of 20</button>
+                            <button type="button" onclick="setTagText('Pack of 40')" class="px-2 py-0.5 bg-amber-50 hover:bg-amber-100 text-[#965A15] text-[10px] font-bold rounded border border-amber-200 cursor-pointer">Pack of 40</button>
+                            <button type="button" onclick="setTagText('Pack of 60')" class="px-2 py-0.5 bg-amber-50 hover:bg-amber-100 text-[#965A15] text-[10px] font-bold rounded border border-amber-200 cursor-pointer">Pack of 60</button>
+                            <button type="button" onclick="setTagText('Pack of 100')" class="px-2 py-0.5 bg-amber-50 hover:bg-amber-100 text-[#965A15] text-[10px] font-bold rounded border border-amber-200 cursor-pointer">Pack of 100</button>
+                            <button type="button" onclick="setTagText('Pack of 100 Refill')" class="px-2 py-0.5 bg-amber-50 hover:bg-amber-100 text-[#965A15] text-[10px] font-bold rounded border border-amber-200 cursor-pointer">Pack of 100 Refill</button>
+                            <button type="button" onclick="setTagText('BUY 2 GET 1 FREE')" class="px-2 py-0.5 bg-amber-50 hover:bg-amber-100 text-[#965A15] text-[10px] font-bold rounded border border-amber-200 cursor-pointer">BUY 2 GET 1</button>
+                            <button type="button" onclick="setTagText('BESTSELLER')" class="px-2 py-0.5 bg-amber-50 hover:bg-amber-100 text-[#965A15] text-[10px] font-bold rounded border border-amber-200 cursor-pointer">BESTSELLER</button>
+                            <button type="button" onclick="setTagText('')" class="px-2 py-0.5 bg-gray-100 hover:bg-gray-200 text-gray-600 text-[10px] font-bold rounded border border-gray-300 cursor-pointer">✕ No Tag</button>
+                        </div>
+                    </div>
+
+                    <!-- Tag Color Code Picker & Swatches -->
+                    <div class="pt-3 border-t border-gray-100 space-y-2">
+                        <div class="flex items-center justify-between">
+                            <label for="badge_color" class="block text-xs font-bold uppercase tracking-wider text-gray-700 font-heading">
+                                Tag Color Code
+                            </label>
+                            <span class="text-[10px] text-gray-400">Hex code (e.g. #8B1E1E)</span>
+                        </div>
+                        
+                        <div class="flex items-center space-x-2">
+                            <!-- Native Color Picker Input -->
+                            <input 
+                                type="color" 
+                                id="badge_color_picker" 
+                                value="{{ old('badge_color', '#8B1E1E') }}" 
+                                class="w-9 h-9 p-0.5 rounded-[6px] border border-[#D2D5D8] cursor-pointer bg-white shrink-0"
+                                oninput="document.getElementById('badge_color').value = this.value; updateTagLivePreview();"
+                            >
+                            <!-- Text Hex Code Input -->
+                            <input 
+                                type="text" 
+                                id="badge_color" 
+                                name="badge_color" 
+                                value="{{ old('badge_color', '#8B1E1E') }}" 
+                                placeholder="#8B1E1E"
+                                class="flex-1 px-3 py-2 bg-white border border-[#D2D5D8] focus:border-[#D38928] rounded-[8px] text-xs font-mono font-bold text-[#202223] placeholder-gray-400 focus:outline-none uppercase"
+                                oninput="document.getElementById('badge_color_picker').value = this.value; updateTagLivePreview();"
+                            >
+                        </div>
+
+                        <!-- Color Preset Swatches -->
+                        <div class="flex flex-wrap items-center gap-1.5 pt-1">
+                            <span class="text-[10px] text-gray-400 font-medium">Presets:</span>
+                            <button type="button" onclick="setTagColor('#8B1E1E')" class="inline-flex items-center space-x-1 px-2 py-0.5 rounded text-[10px] font-bold border cursor-pointer" style="background:#FFF5F5; color:#8B1E1E; border-color:#8B1E1E40;">
+                                <span class="w-2 h-2 rounded-full inline-block" style="background:#8B1E1E;"></span>
+                                <span>Maroon</span>
+                            </button>
+                            <button type="button" onclick="setTagColor('#C18129')" class="inline-flex items-center space-x-1 px-2 py-0.5 rounded text-[10px] font-bold border cursor-pointer" style="background:#FFF9F0; color:#C18129; border-color:#C1812940;">
+                                <span class="w-2 h-2 rounded-full inline-block" style="background:#C18129;"></span>
+                                <span>Vedic Gold</span>
+                            </button>
+                            <button type="button" onclick="setTagColor('#065F46')" class="inline-flex items-center space-x-1 px-2 py-0.5 rounded text-[10px] font-bold border cursor-pointer" style="background:#F0FDF4; color:#065F46; border-color:#065F4640;">
+                                <span class="w-2 h-2 rounded-full inline-block" style="background:#065F46;"></span>
+                                <span>Green</span>
+                            </button>
+                            <button type="button" onclick="setTagColor('#1E3A8A')" class="inline-flex items-center space-x-1 px-2 py-0.5 rounded text-[10px] font-bold border cursor-pointer" style="background:#EFF6FF; color:#1E3A8A; border-color:#1E3A8A40;">
+                                <span class="w-2 h-2 rounded-full inline-block" style="background:#1E3A8A;"></span>
+                                <span>Royal Blue</span>
+                            </button>
+                            <button type="button" onclick="setTagColor('#581C87')" class="inline-flex items-center space-x-1 px-2 py-0.5 rounded text-[10px] font-bold border cursor-pointer" style="background:#FAF5FF; color:#581C87; border-color:#581C8740;">
+                                <span class="w-2 h-2 rounded-full inline-block" style="background:#581C87;"></span>
+                                <span>Purple</span>
+                            </button>
+                            <button type="button" onclick="setTagColor('#18181B')" class="inline-flex items-center space-x-1 px-2 py-0.5 rounded text-[10px] font-bold border cursor-pointer" style="background:#F4F4F5; color:#18181B; border-color:#18181B40;">
+                                <span class="w-2 h-2 rounded-full inline-block" style="background:#18181B;"></span>
+                                <span>Black</span>
+                            </button>
+                        </div>
+
+                        <!-- Live Visual Tag Preview Matching Reference Image -->
+                        <div class="mt-2.5 p-3 rounded-[8px] bg-[#FAF8F5] border border-[#EADBCC] flex items-center justify-between">
+                            <span class="text-[11px] font-bold text-gray-500">Live Tag Preview:</span>
+                            <div id="tag-live-preview-box" class="p-1 min-w-[70px] flex items-center justify-center">
+                                <div id="tag-preview-content" class="flex flex-col items-center justify-center text-center font-heading leading-tight" style="color: {{ old('badge_color', '#8B1E1E') }};">
+                                    <span class="text-[9px] font-bold lowercase tracking-tight leading-none" id="preview-prefix">pack of</span>
+                                    <span class="text-[20px] font-black leading-none my-0.5 tracking-tight font-heading" id="preview-number">100</span>
+                                    <span class="text-[9px] font-bold lowercase tracking-tight leading-none" id="preview-suffix">sticks</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -480,6 +553,56 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
+
+    // Live Tag & Color Preview Handlers
+    window.setTagColor = function(color) {
+        const textIn = document.getElementById('badge_color');
+        const pickIn = document.getElementById('badge_color_picker');
+        if (textIn) textIn.value = color;
+        if (pickIn) pickIn.value = color;
+        window.updateTagLivePreview();
+    };
+
+    window.setTagText = function(text) {
+        const textIn = document.getElementById('badge_text');
+        if (textIn) textIn.value = text;
+        window.updateTagLivePreview();
+    };
+
+    window.updateTagLivePreview = function() {
+        const textInput = document.getElementById('badge_text');
+        const colorInput = document.getElementById('badge_color');
+        const contentBox = document.getElementById('tag-preview-content');
+        if (!contentBox) return;
+
+        const rawText = (textInput ? textInput.value : '').trim();
+        const color = (colorInput && colorInput.value ? colorInput.value : '#8B1E1E').trim();
+
+        contentBox.style.color = color;
+
+        const displayText = rawText || 'Pack of 100 sticks';
+        const m = displayText.match(/^(.*?)\s*(\d+)\s*(.*?)$/i);
+        const preEl = document.getElementById('preview-prefix');
+        const numEl = document.getElementById('preview-number');
+        const sufEl = document.getElementById('preview-suffix');
+
+        if (m) {
+            let prefix = m[1].trim() || 'pack of';
+            if (prefix.toLowerCase() === 'pack' || prefix.toLowerCase() === 'pack of') prefix = 'pack of';
+            let number = m[2].trim();
+            let suffix = m[3].trim() || 'sticks';
+
+            if (preEl) { preEl.style.display = 'block'; preEl.textContent = prefix.toLowerCase(); }
+            if (numEl) { numEl.style.display = 'block'; numEl.textContent = number; }
+            if (sufEl) { sufEl.textContent = suffix.toLowerCase(); }
+        } else {
+            if (preEl) { preEl.style.display = 'none'; }
+            if (numEl) { numEl.style.display = 'none'; }
+            if (sufEl) { sufEl.textContent = displayText; }
+        }
+    };
+
+    window.updateTagLivePreview();
 });
 </script>
 @endsection
