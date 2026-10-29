@@ -400,31 +400,34 @@
                         <span class="text-xs font-semibold text-gray-800">✦ Featured Product</span>
                     </label>
 
-                    <!-- Top Card Floating Tag / Badge -->
+                    <!-- Product Image Tag / Pack Size Badge (Top-Right) -->
                     <div class="pt-3 border-t border-gray-100 space-y-2">
                         <div class="flex items-center justify-between">
                             <label for="badge_text" class="block text-xs font-bold uppercase tracking-wider text-gray-700 font-heading">
-                                Card Top Badge / Tag
+                                Product Image Tag (Top-Right)
                             </label>
-                            <span class="text-[10px] text-gray-400">Floating pill</span>
+                            <span class="text-[10px] text-[#C18129] font-bold">Pack of 40, 60, 100, etc.</span>
                         </div>
                         <input 
                             type="text" 
                             id="badge_text" 
                             name="badge_text" 
                             value="{{ old('badge_text', $product->badge_text) }}" 
-                            placeholder="e.g. BUY 2 GET 1 FREE (or leave empty)"
-                            class="w-full px-3 py-2 bg-white border border-[#D2D5D8] focus:border-[#D38928] rounded-[8px] text-xs font-bold text-[#965A15] placeholder-gray-400 focus:outline-none uppercase"
+                            placeholder="e.g. Pack of 40, Pack of 60, Pack of 100, Pack of 20"
+                            class="w-full px-3 py-2 bg-white border border-[#D2D5D8] focus:border-[#D38928] rounded-[8px] text-xs font-bold text-[#965A15] placeholder-gray-400 focus:outline-none"
                         >
-                        <p class="text-[11px] text-gray-400 leading-tight">Leave completely blank if you do not want a badge on this product card.</p>
+                        <p class="text-[11px] text-gray-400 leading-tight">Shown as a stylish tag in the top-right corner of the product image.</p>
                         
                         <!-- Quick Tag Presets -->
                         <div class="flex flex-wrap gap-1.5 pt-1">
-                            <button type="button" onclick="document.getElementById('badge_text').value='BUY 2 GET 1 FREE'" class="px-2 py-0.5 bg-amber-50 hover:bg-amber-100 text-[#965A15] text-[10px] font-bold rounded border border-amber-200 cursor-pointer">BUY 2 GET 1 FREE</button>
+                            <button type="button" onclick="document.getElementById('badge_text').value='Pack of 20'" class="px-2 py-0.5 bg-amber-50 hover:bg-amber-100 text-[#965A15] text-[10px] font-bold rounded border border-amber-200 cursor-pointer">Pack of 20</button>
+                            <button type="button" onclick="document.getElementById('badge_text').value='Pack of 40'" class="px-2 py-0.5 bg-amber-50 hover:bg-amber-100 text-[#965A15] text-[10px] font-bold rounded border border-amber-200 cursor-pointer">Pack of 40</button>
+                            <button type="button" onclick="document.getElementById('badge_text').value='Pack of 60'" class="px-2 py-0.5 bg-amber-50 hover:bg-amber-100 text-[#965A15] text-[10px] font-bold rounded border border-amber-200 cursor-pointer">Pack of 60</button>
+                            <button type="button" onclick="document.getElementById('badge_text').value='Pack of 100'" class="px-2 py-0.5 bg-amber-50 hover:bg-amber-100 text-[#965A15] text-[10px] font-bold rounded border border-amber-200 cursor-pointer">Pack of 100</button>
+                            <button type="button" onclick="document.getElementById('badge_text').value='Pack of 100 Refill'" class="px-2 py-0.5 bg-amber-50 hover:bg-amber-100 text-[#965A15] text-[10px] font-bold rounded border border-amber-200 cursor-pointer">Pack of 100 Refill</button>
+                            <button type="button" onclick="document.getElementById('badge_text').value='BUY 2 GET 1 FREE'" class="px-2 py-0.5 bg-amber-50 hover:bg-amber-100 text-[#965A15] text-[10px] font-bold rounded border border-amber-200 cursor-pointer">BUY 2 GET 1</button>
                             <button type="button" onclick="document.getElementById('badge_text').value='BESTSELLER'" class="px-2 py-0.5 bg-amber-50 hover:bg-amber-100 text-[#965A15] text-[10px] font-bold rounded border border-amber-200 cursor-pointer">BESTSELLER</button>
-                            <button type="button" onclick="document.getElementById('badge_text').value='NEW LAUNCH'" class="px-2 py-0.5 bg-amber-50 hover:bg-amber-100 text-[#965A15] text-[10px] font-bold rounded border border-amber-200 cursor-pointer">NEW LAUNCH</button>
-                            <button type="button" onclick="document.getElementById('badge_text').value='FLAT 20% OFF'" class="px-2 py-0.5 bg-amber-50 hover:bg-amber-100 text-[#965A15] text-[10px] font-bold rounded border border-amber-200 cursor-pointer">FLAT 20% OFF</button>
-                            <button type="button" onclick="document.getElementById('badge_text').value=''" class="px-2 py-0.5 bg-gray-100 hover:bg-gray-200 text-gray-600 text-[10px] font-bold rounded border border-gray-300 cursor-pointer">✕ No Badge</button>
+                            <button type="button" onclick="document.getElementById('badge_text').value=''" class="px-2 py-0.5 bg-gray-100 hover:bg-gray-200 text-gray-600 text-[10px] font-bold rounded border border-gray-300 cursor-pointer">✕ No Tag</button>
                         </div>
                     </div>
                 </div>

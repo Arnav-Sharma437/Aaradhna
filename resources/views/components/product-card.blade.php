@@ -5,14 +5,8 @@
     $hoverImageSrc = $product->secondary_image_url;
     $isSoldOut = $product->stock_quantity <= 0;
     
-    // Top border pill badge: strictly controlled by admin badge_text
-    $topBadge = null;
-    if (!empty($product->badge_text)) {
-        $val = trim($product->badge_text);
-        if (!in_array(strtolower($val), ['none', 'null', '0', 'no badge', 'no'])) {
-            $topBadge = $val;
-        }
-    }
+    // Top-Right Pack / Badge Tag
+    $packTag = $product->pack_tag;
 
     $reviewCount = ($product->approvedReviews && $product->approvedReviews->count() > 0) 
         ? $product->approvedReviews->count() 
@@ -21,21 +15,13 @@
     $mrpPrice = $product->base_price > $product->active_price 
         ? $product->base_price 
         : ($product->active_price * 1.35);
+        
+    $displayTitle = $product->clean_title;
+    $hindiTitle = $product->hindi_title ? trim($product->hindi_title) : null;
 @endphp
 
 <div {{ $attributes->merge(['class' => 'product-card group relative flex flex-col bg-white rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#C18129] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body']) }}>
     
-    @if(!empty($topBadge))
-    <!-- Centered Overlapping Top Border Pill Badge with Sparkles -->
-    <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
-        <span class="inline-flex items-center space-x-1 bg-white px-2 sm:px-2.5 py-[2px] rounded-full border border-[#C18129] text-[8.5px] sm:text-[9px] font-bold tracking-wider text-[#A86911] uppercase shadow-2xs whitespace-nowrap font-heading leading-tight">
-            <span class="text-[#C18129] text-[8px] sm:text-[9px]">✨</span>
-            <span>{{ $topBadge }}</span>
-            <span class="text-[#C18129] text-[8px] sm:text-[9px]">✨</span>
-        </span>
-    </div>
-    @endif
-
     <!-- Product Image Box (Full Attach, No Side Padding) -->
     <div class="relative w-full aspect-[4/4.8] rounded-t-[20px] sm:rounded-t-[24px] overflow-hidden bg-[#FAF7F2]">
         <a href="{{ route('products.show', $product->slug) }}" class="block w-full h-full relative overflow-hidden">
@@ -57,6 +43,15 @@
             >
         </a>
 
+        <!-- Top-Right Tag Type Badge (Pack Size or Custom Tag) -->
+        @if(!empty($packTag))
+            <div class="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 z-20 pointer-events-none">
+                <span class="inline-flex items-center px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-[6px] sm:rounded-[8px] bg-white/95 backdrop-blur-xs border border-[#C18129]/35 text-[#8B4513] text-[9.5px] sm:text-[10.5px] font-extrabold tracking-wide font-heading shadow-xs">
+                    {{ $packTag }}
+                </span>
+            </div>
+        @endif
+
         <!-- Free Ceramic Stand Banner for Devi / Specials -->
         @if(str_contains(strtolower($product->slug), 'devi'))
             <div class="absolute bottom-1.5 left-1.5 right-1.5 sm:bottom-2 sm:left-2 sm:right-2 bg-black/65 backdrop-blur-xs py-1 sm:py-1.5 px-1.5 sm:px-2 rounded-[6px] text-center text-white text-[10px] sm:text-xs font-bold tracking-wider z-10 pointer-events-none">
@@ -70,9 +65,9 @@
     <div class="p-3.5 sm:p-4 pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
         
         <div class="space-y-1">
-            <h3 class="text-[15px] sm:text-base font-bold text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-1 leading-snug font-body">
+            <h3 class="text-[13.5px] sm:text-[15px] font-bold text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-2 leading-snug font-body min-h-[2.4em]">
                 <a href="{{ route('products.show', $product->slug) }}">
-                    {{ $product->title }}
+                    {{ $displayTitle }}@if(!empty($hindiTitle) && !str_contains($displayTitle, $hindiTitle)) <span class="font-normal font-serif text-[12.5px] sm:text-[13.5px] text-[#8B4513]">({{ $hindiTitle }})</span>@endif
                 </a>
             </h3>
 
@@ -109,7 +104,7 @@
                     type="button" 
                     class="quick-add-to-cart-btn w-full py-2 px-2 sm:px-4 bg-[#C18129] hover:bg-[#A86911] text-white text-xs sm:text-sm font-normal rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-body cursor-pointer"
                     data-product-id="{{ $product->id }}"
-                    data-product-title="{{ $product->title }}"
+                    data-product-title="{{ $product->formatted_title }}"
                     data-product-slug="{{ $product->slug }}"
                     data-product-price="{{ $product->active_price }}"
                     data-product-image="{{ $imageSrc }}"

@@ -87,7 +87,7 @@
                 <a href="{{ route('collections.show', 'all') }}" class="hover:text-[#D38928] transition-colors">Products</a>
                 <span>/</span>
             @endif
-            <span class="text-[#121212] font-bold truncate max-w-xs">{{ $product->title }}</span>
+            <span class="text-[#121212] font-bold truncate max-w-xs">{{ $product->clean_title }}@if(!empty($product->hindi_title) && !str_contains($product->clean_title, $product->hindi_title)) ({{ $product->hindi_title }})@endif</span>
         </nav>
 
         <!-- ========================================================================= -->
@@ -115,6 +115,15 @@
                         <div class="absolute top-2.5 left-2.5 z-10 pointer-events-none">
                             <span class="inline-block bg-[#8B1E1E] text-white text-[11px] sm:text-xs font-bold px-2.5 py-0.5 rounded-[6px] tracking-wide shadow-sm font-body">
                                 {{ $discountPercent }}% OFF
+                            </span>
+                        </div>
+                        @endif
+
+                        <!-- Top-Right Tag Type Badge (Pack Size or Custom Tag) -->
+                        @if(!empty($product->pack_tag))
+                        <div class="absolute top-2.5 right-2.5 z-10 pointer-events-none">
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-[6px] bg-white/95 backdrop-blur-xs border border-[#C18129]/40 text-[#8B4513] text-xs font-bold tracking-wide shadow-xs font-heading">
+                                {{ $product->pack_tag }}
                             </span>
                         </div>
                         @endif
@@ -153,6 +162,14 @@
                             </span>
                         </div>
                         @endif
+
+                        @if($index === 0 && !empty($product->pack_tag))
+                        <div class="absolute top-2.5 right-2.5 z-10 pointer-events-none">
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-[6px] bg-white/95 backdrop-blur-xs border border-[#C18129]/40 text-[#8B4513] text-xs font-bold tracking-wide shadow-xs font-heading">
+                                {{ $product->pack_tag }}
+                            </span>
+                        </div>
+                        @endif
                         @if($index === 0)
                         <div class="absolute bottom-2.5 left-2.5 right-2.5 bg-black/60 backdrop-blur-xs py-1.5 px-3 rounded-[6px] text-center text-white text-xs font-bold tracking-wider shadow-sm font-body pointer-events-none">
                             FREE CERAMIC STAND <span class="text-[#F6DAA8] font-normal">Worth ₹150/-</span>
@@ -181,7 +198,7 @@
                 <!-- 2. Product Title & Subtitle / Category (Capitalized) -->
                 <div>
                     <h1 class="text-2xl sm:text-3xl lg:text-[38px] font-normal text-[#121212] tracking-tight leading-[1.15] font-serif">
-                        {{ $product->title }}
+                        {{ $product->clean_title }}@if(!empty($product->hindi_title) && !str_contains($product->clean_title, $product->hindi_title)) <span class="font-normal font-serif text-xl sm:text-2xl lg:text-[28px] text-[#8B4513]">({{ $product->hindi_title }})</span>@endif
                     </h1>
                     <div class="text-xs sm:text-[13px] text-gray-500 capitalize font-medium pt-0.5 font-body">
                         {{ $product->category ? ucwords(strtolower($product->category->name)) : 'Incense Sticks' }}
@@ -345,7 +362,7 @@
                             id="main-add-to-cart-btn"
                             class="flex-1 h-11 sm:h-12 bg-[#C18129] hover:bg-[#A86911] active:bg-[#8D540A] text-white text-sm sm:text-base font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 text-center flex items-center justify-center cursor-pointer focus:outline-none font-heading"
                             data-product-id="{{ $product->id }}"
-                            data-product-title="{{ $product->title }}"
+                            data-product-title="{{ $product->formatted_title }}"
                             data-product-slug="{{ $product->slug }}"
                             data-product-price="{{ $product->active_price }}"
                             data-product-image="{{ $galleryImages[0] }}"
@@ -1274,7 +1291,7 @@
             <img src="{{ asset($mainImg) }}" alt="{{ $product->title }}" class="w-full h-full object-cover">
         </div>
         <div class="truncate text-left">
-            <div class="text-xs sm:text-base font-bold text-[#121212] font-heading truncate leading-tight">{{ $product->title }}</div>
+            <div class="text-xs sm:text-base font-bold text-[#121212] font-heading truncate leading-tight">{{ $product->clean_title }}@if(!empty($product->hindi_title) && !str_contains($product->clean_title, $product->hindi_title)) ({{ $product->hindi_title }})@endif</div>
             <div class="flex items-baseline space-x-2 pt-0.5 sm:pt-1 font-body">
                 <span class="text-sm sm:text-lg font-bold text-[#C87A1E]">
                     ₹{{ number_format($product->active_price, 2) }}
@@ -1296,7 +1313,7 @@
         id="sticky-atc-btn" 
         class="py-2.5 sm:py-3 px-5 sm:px-7 bg-[#C18129] hover:bg-[#A86911] active:bg-[#8D540A] text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-[10px] shadow-sm hover:shadow-md transition-all font-heading cursor-pointer whitespace-nowrap shrink-0 flex items-center space-x-2"
         data-product-id="{{ $product->id }}"
-        data-product-title="{{ $product->title }}"
+        data-product-title="{{ $product->formatted_title }}"
         data-product-slug="{{ $product->slug }}"
         data-product-price="{{ $product->active_price }}"
         data-product-image="{{ asset($mainImg) }}"
