@@ -52,23 +52,23 @@
             <div class="absolute top-2 right-2 sm:top-2.5 sm:right-2.5 z-20 pointer-events-none select-none">
                 @if(!empty($tagParts['number']))
                     <div 
-                        class="flex flex-col items-center justify-center text-center font-heading leading-tight"
-                        style="color: {{ $tagColor }};"
+                        class="pack-tag-badge flex flex-col items-center justify-center text-center leading-none"
+                        style="color: {{ $tagColor }}; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;"
                     >
-                        <span class="text-[9.5px] sm:text-[10.5px] font-black lowercase tracking-tight leading-none">
+                        <span class="pack-tag-prefix text-[10px] sm:text-[11px] font-black lowercase tracking-tight leading-none" style="font-weight: 900 !important;">
                             {{ $tagParts['prefix'] }}
                         </span>
-                        <span class="text-[22px] sm:text-[25px] font-black leading-none my-0.5 tracking-tighter font-heading">
+                        <span class="pack-tag-number text-[24px] sm:text-[27px] font-black leading-none my-0.5 tracking-tighter" style="font-weight: 900 !important; line-height: 0.86;">
                             {{ $tagParts['number'] }}
                         </span>
-                        <span class="text-[9.5px] sm:text-[10.5px] font-black lowercase tracking-tight leading-none">
+                        <span class="pack-tag-suffix text-[10px] sm:text-[11px] font-black lowercase tracking-tight leading-none" style="font-weight: 900 !important;">
                             {{ $tagParts['suffix'] }}
                         </span>
                     </div>
                 @else
                     <span 
-                        class="inline-flex items-center px-2 py-0.5 rounded-[5px] bg-white/95 border text-[9px] sm:text-[10px] font-extrabold tracking-wider font-heading shadow-xs uppercase"
-                        style="color: {{ $tagColor }}; border-color: {{ $tagColor }}40;"
+                        class="pack-tag-badge-single inline-flex items-center px-2 py-0.5 rounded-[5px] bg-white/95 border text-[10px] sm:text-[11px] font-black tracking-wider shadow-xs uppercase leading-none"
+                        style="color: {{ $tagColor }}; border-color: {{ $tagColor }}40; font-weight: 900 !important; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;"
                     >
                         {{ $tagParts['suffix'] }}
                     </span>

@@ -449,10 +449,10 @@
                         <div class="mt-2.5 p-3 rounded-[8px] bg-[#FAF8F5] border border-[#EADBCC] flex items-center justify-between">
                             <span class="text-[11px] font-bold text-gray-500">Live Tag Preview:</span>
                             <div id="tag-live-preview-box" class="p-1 min-w-[70px] flex items-center justify-center">
-                                <div id="tag-preview-content" class="flex flex-col items-center justify-center text-center font-heading leading-tight" style="color: {{ old('badge_color', '#8B1E1E') }};">
-                                    <span class="text-[9.5px] font-black lowercase tracking-tight leading-none" id="preview-prefix">pack of</span>
-                                    <span class="text-[22px] font-black leading-none my-0.5 tracking-tighter font-heading" id="preview-number">100</span>
-                                    <span class="text-[9.5px] font-black lowercase tracking-tight leading-none" id="preview-suffix">sticks</span>
+                                <div id="tag-preview-content" class="pack-tag-badge flex flex-col items-center justify-center text-center leading-none" style="color: {{ old('badge_color', '#8B1E1E') }}; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;">
+                                    <span class="pack-tag-prefix text-[10px] font-black lowercase tracking-tight leading-none" id="preview-prefix" style="font-weight: 900 !important;">pack of</span>
+                                    <span class="pack-tag-number text-[24px] font-black leading-none my-0.5 tracking-tighter" id="preview-number" style="font-weight: 900 !important; line-height: 0.86;">100</span>
+                                    <span class="pack-tag-suffix text-[10px] font-black lowercase tracking-tight leading-none" id="preview-suffix" style="font-weight: 900 !important;">sticks</span>
                                 </div>
                             </div>
                         </div>

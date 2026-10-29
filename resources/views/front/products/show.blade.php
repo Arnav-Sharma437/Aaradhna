@@ -128,23 +128,23 @@
                         <div class="absolute top-2.5 right-2.5 z-10 pointer-events-none select-none">
                             @if(!empty($tagParts['number']))
                                 <div 
-                                    class="flex flex-col items-center justify-center text-center font-heading leading-tight"
-                                    style="color: {{ $tagColor }};"
+                                    class="pack-tag-badge flex flex-col items-center justify-center text-center leading-none"
+                                    style="color: {{ $tagColor }}; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;"
                                 >
-                                    <span class="text-[10px] sm:text-[11px] font-black lowercase tracking-tight leading-none">
+                                    <span class="pack-tag-prefix text-[11px] sm:text-[12px] font-black lowercase tracking-tight leading-none" style="font-weight: 900 !important;">
                                         {{ $tagParts['prefix'] }}
                                     </span>
-                                    <span class="text-[24px] sm:text-[28px] font-black leading-none my-0.5 tracking-tighter font-heading">
+                                    <span class="pack-tag-number text-[28px] sm:text-[32px] font-black leading-none my-0.5 tracking-tighter" style="font-weight: 900 !important; line-height: 0.86;">
                                         {{ $tagParts['number'] }}
                                     </span>
-                                    <span class="text-[10px] sm:text-[11px] font-black lowercase tracking-tight leading-none">
+                                    <span class="pack-tag-suffix text-[11px] sm:text-[12px] font-black lowercase tracking-tight leading-none" style="font-weight: 900 !important;">
                                         {{ $tagParts['suffix'] }}
                                     </span>
                                 </div>
                             @else
                                 <span 
-                                    class="inline-flex items-center px-2.5 py-1 rounded-[6px] bg-white/95 border text-xs font-bold tracking-wide shadow-xs font-heading"
-                                    style="color: {{ $tagColor }}; border-color: {{ $tagColor }}40;"
+                                    class="pack-tag-badge-single inline-flex items-center px-2.5 py-1 rounded-[6px] bg-white/95 border text-xs font-black tracking-wide shadow-xs uppercase leading-none"
+                                    style="color: {{ $tagColor }}; border-color: {{ $tagColor }}40; font-weight: 900 !important; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;"
                                 >
                                     {{ $tagParts['suffix'] }}
                                 </span>
@@ -191,23 +191,23 @@
                         <div class="absolute top-2.5 right-2.5 z-10 pointer-events-none select-none">
                             @if(!empty($tagParts['number']))
                                 <div 
-                                    class="flex flex-col items-center justify-center text-center font-heading leading-tight"
-                                    style="color: {{ $tagColor }};"
+                                    class="pack-tag-badge flex flex-col items-center justify-center text-center leading-none"
+                                    style="color: {{ $tagColor }}; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;"
                                 >
-                                    <span class="text-[10px] sm:text-[11px] font-black lowercase tracking-tight leading-none">
+                                    <span class="pack-tag-prefix text-[11px] sm:text-[12px] font-black lowercase tracking-tight leading-none" style="font-weight: 900 !important;">
                                         {{ $tagParts['prefix'] }}
                                     </span>
-                                    <span class="text-[24px] sm:text-[28px] font-black leading-none my-0.5 tracking-tighter font-heading">
+                                    <span class="pack-tag-number text-[28px] sm:text-[32px] font-black leading-none my-0.5 tracking-tighter" style="font-weight: 900 !important; line-height: 0.86;">
                                         {{ $tagParts['number'] }}
                                     </span>
-                                    <span class="text-[10px] sm:text-[11px] font-black lowercase tracking-tight leading-none">
+                                    <span class="pack-tag-suffix text-[11px] sm:text-[12px] font-black lowercase tracking-tight leading-none" style="font-weight: 900 !important;">
                                         {{ $tagParts['suffix'] }}
                                     </span>
                                 </div>
                             @else
                                 <span 
-                                    class="inline-flex items-center px-2.5 py-1 rounded-[6px] bg-white/95 border text-xs font-bold tracking-wide shadow-xs font-heading"
-                                    style="color: {{ $tagColor }}; border-color: {{ $tagColor }}40;"
+                                    class="pack-tag-badge-single inline-flex items-center px-2.5 py-1 rounded-[6px] bg-white/95 border text-xs font-black tracking-wide shadow-xs uppercase leading-none"
+                                    style="color: {{ $tagColor }}; border-color: {{ $tagColor }}40; font-weight: 900 !important; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;"
                                 >
                                     {{ $tagParts['suffix'] }}
                                 </span>
@@ -355,10 +355,10 @@
                 @if($product->variants && $product->variants->count() > 1)
                 <div class="space-y-2 pt-2 pb-1 border-t border-[#F0E6D8]">
                     <div class="flex items-center justify-between">
-                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 font-heading">
+                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 font-body">
                             Select Pack Option:
                         </label>
-                        <span id="selected-variant-label" class="text-xs font-bold text-[#D38928] font-heading">
+                        <span id="selected-variant-label" class="text-xs font-bold text-[#D38928] font-body">
                             {{ $product->variants->first()->title }}
                         </span>
                     </div>
@@ -366,7 +366,7 @@
                         @foreach($product->variants as $vIdx => $v)
                             <button 
                                 type="button" 
-                                class="variant-select-btn px-3.5 py-2 rounded-[8px] border text-xs font-bold transition-all cursor-pointer font-heading {{ $loop->first ? 'border-[#D38928] bg-[#FFF9F2] text-[#965A15] shadow-2xs ring-1 ring-[#D38928]' : 'border-gray-200 bg-white text-gray-700 hover:border-[#D38928]/60' }}"
+                                class="variant-select-btn px-3.5 py-2 rounded-[8px] border text-xs font-bold transition-all cursor-pointer font-body {{ $loop->first ? 'border-[#D38928] bg-[#FFF9F2] text-[#965A15] shadow-2xs ring-1 ring-[#D38928]' : 'border-gray-200 bg-white text-gray-700 hover:border-[#D38928]/60' }}"
                                 data-variant-id="{{ $v->id }}"
                                 data-variant-title="{{ $v->title }}"
                                 data-variant-price="{{ $v->price }}"
