@@ -131,13 +131,13 @@
                                     class="flex flex-col items-center justify-center text-center font-heading leading-tight"
                                     style="color: {{ $tagColor }};"
                                 >
-                                    <span class="text-[9.5px] sm:text-[10.5px] font-bold lowercase tracking-tight leading-none">
+                                    <span class="text-[10px] sm:text-[11px] font-black lowercase tracking-tight leading-none">
                                         {{ $tagParts['prefix'] }}
                                     </span>
-                                    <span class="text-[21px] sm:text-[24px] font-black leading-none my-0.5 tracking-tight font-heading">
+                                    <span class="text-[24px] sm:text-[28px] font-black leading-none my-0.5 tracking-tighter font-heading">
                                         {{ $tagParts['number'] }}
                                     </span>
-                                    <span class="text-[9.5px] sm:text-[10.5px] font-bold lowercase tracking-tight leading-none">
+                                    <span class="text-[10px] sm:text-[11px] font-black lowercase tracking-tight leading-none">
                                         {{ $tagParts['suffix'] }}
                                     </span>
                                 </div>
@@ -194,13 +194,13 @@
                                     class="flex flex-col items-center justify-center text-center font-heading leading-tight"
                                     style="color: {{ $tagColor }};"
                                 >
-                                    <span class="text-[9.5px] sm:text-[10.5px] font-bold lowercase tracking-tight leading-none">
+                                    <span class="text-[10px] sm:text-[11px] font-black lowercase tracking-tight leading-none">
                                         {{ $tagParts['prefix'] }}
                                     </span>
-                                    <span class="text-[21px] sm:text-[24px] font-black leading-none my-0.5 tracking-tight font-heading">
+                                    <span class="text-[24px] sm:text-[28px] font-black leading-none my-0.5 tracking-tighter font-heading">
                                         {{ $tagParts['number'] }}
                                     </span>
-                                    <span class="text-[9.5px] sm:text-[10.5px] font-bold lowercase tracking-tight leading-none">
+                                    <span class="text-[10px] sm:text-[11px] font-black lowercase tracking-tight leading-none">
                                         {{ $tagParts['suffix'] }}
                                     </span>
                                 </div>
@@ -242,7 +242,7 @@
                 <!-- 2. Product Title & Subtitle / Category (Capitalized) -->
                 <div>
                     <h1 class="text-2xl sm:text-3xl lg:text-[38px] font-normal text-[#121212] tracking-tight leading-[1.15] font-serif">
-                        {{ $product->clean_title }}@if(!empty($product->hindi_title) && !str_contains($product->clean_title, $product->hindi_title)) <span class="font-normal font-serif text-xl sm:text-2xl lg:text-[28px] text-[#8B4513]">({{ $product->hindi_title }})</span>@endif
+                        {{ $product->clean_title }}@if(!empty($product->hindi_title) && !str_contains($product->clean_title, $product->hindi_title)) <span class="font-bold font-serif text-xl sm:text-2xl lg:text-[28px] text-[#8B4513]">({{ $product->hindi_title }})</span>@endif
                     </h1>
                     <div class="text-xs sm:text-[13px] text-gray-500 capitalize font-medium pt-0.5 font-body">
                         {{ $product->category ? ucwords(strtolower($product->category->name)) : 'Incense Sticks' }}

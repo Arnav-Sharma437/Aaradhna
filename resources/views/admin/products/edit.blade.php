@@ -496,9 +496,9 @@
                             <span class="text-[11px] font-bold text-gray-500">Live Tag Preview:</span>
                             <div id="tag-live-preview-box" class="p-1 min-w-[70px] flex items-center justify-center">
                                 <div id="tag-preview-content" class="flex flex-col items-center justify-center text-center font-heading leading-tight" style="color: {{ old('badge_color', $product->badge_color ?? '#8B1E1E') }};">
-                                    <span class="text-[9px] font-bold lowercase tracking-tight leading-none" id="preview-prefix">pack of</span>
-                                    <span class="text-[20px] font-black leading-none my-0.5 tracking-tight font-heading" id="preview-number">100</span>
-                                    <span class="text-[9px] font-bold lowercase tracking-tight leading-none" id="preview-suffix">sticks</span>
+                                    <span class="text-[9.5px] font-black lowercase tracking-tight leading-none" id="preview-prefix">pack of</span>
+                                    <span class="text-[22px] font-black leading-none my-0.5 tracking-tighter font-heading" id="preview-number">100</span>
+                                    <span class="text-[9.5px] font-black lowercase tracking-tight leading-none" id="preview-suffix">sticks</span>
                                 </div>
                             </div>
                         </div>

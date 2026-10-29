@@ -55,13 +55,13 @@
                         class="flex flex-col items-center justify-center text-center font-heading leading-tight"
                         style="color: {{ $tagColor }};"
                     >
-                        <span class="text-[8.5px] sm:text-[9.5px] font-bold lowercase tracking-tight leading-none">
+                        <span class="text-[9.5px] sm:text-[10.5px] font-black lowercase tracking-tight leading-none">
                             {{ $tagParts['prefix'] }}
                         </span>
-                        <span class="text-[19px] sm:text-[22px] font-black leading-none my-0.5 tracking-tight font-heading">
+                        <span class="text-[22px] sm:text-[25px] font-black leading-none my-0.5 tracking-tighter font-heading">
                             {{ $tagParts['number'] }}
                         </span>
-                        <span class="text-[8.5px] sm:text-[9.5px] font-bold lowercase tracking-tight leading-none">
+                        <span class="text-[9.5px] sm:text-[10.5px] font-black lowercase tracking-tight leading-none">
                             {{ $tagParts['suffix'] }}
                         </span>
                     </div>
@@ -91,7 +91,7 @@
         <div class="space-y-1">
             <h3 class="text-[13.5px] sm:text-[15px] font-bold text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-2 leading-snug font-body min-h-[2.4em]">
                 <a href="{{ route('products.show', $product->slug) }}">
-                    {{ $displayTitle }}@if(!empty($hindiTitle) && !str_contains($displayTitle, $hindiTitle)) <span class="font-normal font-serif text-[12.5px] sm:text-[13.5px] text-[#8B4513]">({{ $hindiTitle }})</span>@endif
+                    {{ $displayTitle }}@if(!empty($hindiTitle) && !str_contains($displayTitle, $hindiTitle)) <span class="font-bold font-serif text-[13px] sm:text-[14px] text-[#8B4513]">({{ $hindiTitle }})</span>@endif
                 </a>
             </h3>
 
