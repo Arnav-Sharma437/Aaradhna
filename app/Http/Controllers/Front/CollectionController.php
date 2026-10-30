@@ -153,7 +153,7 @@ class CollectionController extends Controller
                 break;
             case 'featured':
             default:
-                $query->orderByDesc('is_featured')->orderByDesc('is_bestseller')->orderBy('id', 'asc');
+                $query->orderBy('sort_order', 'asc')->orderByDesc('is_featured')->orderByDesc('is_bestseller')->orderBy('id', 'desc');
                 break;
         }
 

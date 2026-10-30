@@ -136,23 +136,48 @@
 
                     <!-- Existing Images List -->
                     @if($product->images->count() > 0)
-                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3.5" id="product-images-grid">
                             @foreach($product->images as $img)
-                                <div class="relative p-2 rounded-[10px] bg-[#FAF8F5] border {{ $img->is_primary ? 'border-[#D38928] shadow-xs' : 'border-[#E1E3E5]' }} group">
-                                    <div class="w-full aspect-square rounded-[6px] overflow-hidden bg-white mb-2">
+                                <div class="image-card-item relative p-2.5 rounded-[12px] bg-[#FAF8F5] border {{ $img->is_primary ? 'border-[#D38928] ring-1 ring-[#D38928]/40 shadow-xs' : 'border-[#E1E3E5]' }} group transition-all" data-image-id="{{ $img->id }}">
+                                    <div class="w-full aspect-square rounded-[8px] overflow-hidden bg-white mb-2 relative">
                                         <img src="{{ asset($img->image_path) }}" alt="{{ $img->alt_text }}" class="w-full h-full object-cover">
+                                        @if($img->is_primary)
+                                            <span class="absolute top-1.5 left-1.5 bg-[#C18129] text-white text-[9px] font-bold px-1.5 py-0.5 rounded shadow-xs uppercase tracking-wider">Primary</span>
+                                        @endif
                                     </div>
                                     
-                                    <div class="space-y-1">
-                                        <label class="flex items-center space-x-1.5 text-[11px] text-gray-700 cursor-pointer font-medium">
-                                            <input type="radio" name="primary_image_id" value="{{ $img->id }}" {{ $img->is_primary ? 'checked' : '' }} class="text-[#D38928]">
-                                            <span>Primary</span>
-                                        </label>
+                                    <div class="space-y-2 pt-1 border-t border-gray-100">
+                                        <!-- Primary Selection & Direct Delete -->
+                                        <div class="flex items-center justify-between">
+                                            <label class="flex items-center space-x-1.5 text-[11px] text-gray-700 cursor-pointer font-bold">
+                                                <input type="radio" name="primary_image_id" value="{{ $img->id }}" {{ $img->is_primary ? 'checked' : '' }} class="text-[#D38928]">
+                                                <span>Primary</span>
+                                            </label>
 
-                                        <label class="flex items-center space-x-1.5 text-[11px] text-rose-600 cursor-pointer">
-                                            <input type="checkbox" name="delete_images[]" value="{{ $img->id }}" class="text-rose-600 rounded">
-                                            <span>Delete</span>
-                                        </label>
+                                            <!-- Direct Delete Button (Instant AJAX without Save Changes) -->
+                                            <button 
+                                                type="button" 
+                                                onclick="directDeleteImage({{ $img->id }}, this)" 
+                                                class="inline-flex items-center space-x-1 px-2 py-0.5 text-[10px] font-bold text-rose-600 hover:text-white bg-rose-50 hover:bg-rose-600 rounded-[5px] transition-colors border border-rose-200 cursor-pointer"
+                                                title="Delete this image immediately"
+                                            >
+                                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                                                <span>Delete</span>
+                                            </button>
+                                        </div>
+
+                                        <!-- Order / Position Setting -->
+                                        <div class="flex items-center justify-between text-[11px] bg-white p-1 rounded-[6px] border border-gray-200">
+                                            <span class="text-[10px] text-gray-500 font-bold uppercase">Order:</span>
+                                            <input 
+                                                type="number" 
+                                                name="image_sort_orders[{{ $img->id }}]" 
+                                                value="{{ $img->sort_order }}" 
+                                                min="0"
+                                                class="w-12 text-center text-xs font-bold text-[#202223] bg-transparent border-b border-gray-300 focus:border-[#D38928] focus:outline-none"
+                                                title="Image sequence order (0, 1, 2...)"
+                                            >
+                                        </div>
                                     </div>
                                 </div>
                             @endforeach
@@ -399,6 +424,25 @@
                         <input type="checkbox" name="is_featured" value="1" {{ old('is_featured', $product->is_featured) ? 'checked' : '' }} class="w-4 h-4 text-[#D38928] rounded border-gray-300">
                         <span class="text-xs font-semibold text-gray-800">✦ Featured Product</span>
                     </label>
+
+                    <!-- Product Display Sort Order -->
+                    <div class="pt-2 border-t border-gray-100 space-y-1.5">
+                        <div class="flex items-center justify-between">
+                            <label for="sort_order" class="block text-xs font-bold uppercase tracking-wider text-gray-700 font-heading">
+                                Display Sort Order
+                            </label>
+                            <span class="text-[10px] text-gray-400 font-normal">0 = First / Top</span>
+                        </div>
+                        <input 
+                            type="number" 
+                            id="sort_order" 
+                            name="sort_order" 
+                            value="{{ old('sort_order', $product->sort_order ?? 0) }}" 
+                            min="0"
+                            placeholder="0"
+                            class="w-full px-3.5 py-2 bg-white border border-[#D2D5D8] focus:border-[#D38928] rounded-[8px] text-xs font-bold text-[#202223] focus:outline-none"
+                        >
+                    </div>
 
                     <!-- Product Image Tag / Pack Size Badge (Top-Right) -->
                     <div class="pt-3 border-t border-gray-100 space-y-2">
@@ -665,6 +709,44 @@ document.addEventListener('DOMContentLoaded', function () {
             if (numEl) { numEl.style.display = 'none'; }
             if (sufEl) { sufEl.textContent = displayText; }
         }
+    };
+
+    window.directDeleteImage = function(imageId, btnElement) {
+        if (!confirm('Are you sure you want to delete this image immediately?')) return;
+        const card = btnElement.closest('.image-card-item');
+        btnElement.disabled = true;
+        btnElement.innerHTML = '...';
+
+        fetch(`{{ url('admin/products/images') }}/${imageId}/delete`, {
+            method: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                'Accept': 'application/json',
+                'X-Requested-With': 'XMLHttpRequest'
+            }
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.success) {
+                card.style.transition = 'all 0.3s ease';
+                card.style.opacity = '0';
+                card.style.transform = 'scale(0.8)';
+                setTimeout(() => card.remove(), 300);
+                if (data.new_primary_id) {
+                    const newRadio = document.querySelector(`input[name="primary_image_id"][value="${data.new_primary_id}"]`);
+                    if (newRadio) newRadio.checked = true;
+                }
+            } else {
+                alert(data.message || 'Failed to delete image');
+                btnElement.disabled = false;
+                btnElement.innerHTML = 'Delete';
+            }
+        })
+        .catch(err => {
+            alert('Error deleting image');
+            btnElement.disabled = false;
+            btnElement.innerHTML = 'Delete';
+        });
     };
 
     window.updateTagLivePreview();

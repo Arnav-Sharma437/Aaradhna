@@ -174,6 +174,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
         // 2. Products Module
         Route::patch('/products/{product}/toggle-status', [AdminProductController::class, 'toggleStatus'])->name('products.toggle-status');
+        Route::post('/products/{product}/sort-order', [AdminProductController::class, 'updateSortOrder'])->name('products.update-sort-order');
+        Route::delete('/products/images/{image}', [AdminProductController::class, 'deleteImage'])->name('products.images.destroy');
+        Route::post('/products/images/{image}/delete', [AdminProductController::class, 'deleteImage'])->name('products.images.delete');
+        Route::post('/products/images/{image}/reorder', [AdminProductController::class, 'reorderImage'])->name('products.images.reorder');
         Route::resource('products', AdminProductController::class);
 
         // 3. Inventory Tracking Module

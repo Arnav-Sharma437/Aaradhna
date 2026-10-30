@@ -35,6 +35,11 @@ class ProductController extends Controller
                     $table->string('badge_color', 50)->nullable()->default('#8B1E1E')->after('badge_text');
                 });
             }
+            if (!Schema::hasColumn('products', 'sort_order')) {
+                Schema::table('products', function (Blueprint $table) {
+                    $table->integer('sort_order')->default(0)->after('status')->index();
+                });
+            }
         } catch (\Throwable $e) {
             // Silently continue if cannot alter
         }
@@ -160,8 +165,14 @@ class ProductController extends Controller
         }
 
         // 5. Sorting
-        $sortBy = $request->get('sort', 'newest');
+        $sortBy = $request->get('sort', 'order_asc');
         switch ($sortBy) {
+            case 'order_asc':
+                $query->orderBy('sort_order', 'asc')->orderBy('id', 'desc');
+                break;
+            case 'newest':
+                $query->orderBy('id', 'desc');
+                break;
             case 'oldest':
                 $query->orderBy('id', 'asc');
                 break;
@@ -183,9 +194,8 @@ class ProductController extends Controller
             case 'stock_desc':
                 $query->orderBy('stock_quantity', 'desc');
                 break;
-            case 'newest':
             default:
-                $query->orderBy('id', 'desc');
+                $query->orderBy('sort_order', 'asc')->orderBy('id', 'desc');
                 break;
         }
 
@@ -252,6 +262,7 @@ class ProductController extends Controller
             'how_to_use' => ['nullable', 'string'],
             'is_featured' => ['nullable', 'boolean'],
             'is_bestseller' => ['nullable', 'boolean'],
+            'sort_order' => ['nullable', 'integer', 'min:0'],
             'badge_text' => ['nullable', 'string', 'max:100'],
             'badge_color' => ['nullable', 'string', 'max:50'],
             'status' => ['required', 'in:active,draft,archived'],
@@ -310,6 +321,9 @@ class ProductController extends Controller
             }
             if (Schema::hasColumn('products', 'badge_color')) {
                 $productData['badge_color'] = $request->filled('badge_color') ? trim($request->badge_color) : null;
+            }
+            if (Schema::hasColumn('products', 'sort_order')) {
+                $productData['sort_order'] = $request->filled('sort_order') ? (int)$request->sort_order : 0;
             }
 
             $product = Product::create($productData);
@@ -435,6 +449,7 @@ class ProductController extends Controller
             'how_to_use' => ['nullable', 'string'],
             'is_featured' => ['nullable', 'boolean'],
             'is_bestseller' => ['nullable', 'boolean'],
+            'sort_order' => ['nullable', 'integer', 'min:0'],
             'badge_text' => ['nullable', 'string', 'max:100'],
             'badge_color' => ['nullable', 'string', 'max:50'],
             'status' => ['required', 'in:active,draft,archived'],
@@ -490,6 +505,9 @@ class ProductController extends Controller
             if (Schema::hasColumn('products', 'badge_color')) {
                 $productData['badge_color'] = $request->filled('badge_color') ? trim($request->badge_color) : null;
             }
+            if (Schema::hasColumn('products', 'sort_order')) {
+                $productData['sort_order'] = $request->filled('sort_order') ? (int)$request->sort_order : 0;
+            }
 
             $product->update($productData);
 
@@ -522,6 +540,15 @@ class ProductController extends Controller
             if ($request->hasFile('new_gallery_files')) {
                 foreach ($request->file('new_gallery_files') as $idx => $imgFile) {
                     $this->saveProductImage($imgFile, $product, $product->title . ' Gallery Image', false, $product->images()->count() + $idx);
+                }
+            }
+
+            // Update existing image sort orders
+            if ($request->has('image_sort_orders')) {
+                foreach ($request->input('image_sort_orders', []) as $imgId => $order) {
+                    ProductImage::where('id', $imgId)->where('product_id', $product->id)->update([
+                        'sort_order' => (int) $order,
+                    ]);
                 }
             }
 
@@ -616,5 +643,95 @@ class ProductController extends Controller
 
         $label = $newStatus === 'active' ? 'activated' : 'moved to draft';
         return back()->with('success', "Product '{$product->title}' is now {$label}.");
+    }
+
+    /**
+     * Delete an image directly via AJAX without requiring form submission.
+     */
+    public function deleteImage(ProductImage $image)
+    {
+        try {
+            $product = $image->product;
+            $wasPrimary = (bool) $image->is_primary;
+
+            // Remove file if exists and not default shared asset
+            if (!empty($image->image_path)) {
+                $cleanPath = ltrim($image->image_path, '/');
+                $fullPath = public_path($cleanPath);
+                if (file_exists($fullPath) && !str_contains($cleanPath, 'ishanaa-') && !str_contains($cleanPath, 'devi-refill')) {
+                    @unlink($fullPath);
+                }
+            }
+
+            $image->delete();
+
+            $newPrimaryId = null;
+            if ($wasPrimary && $product) {
+                $firstRemaining = $product->images()->first();
+                if ($firstRemaining) {
+                    $firstRemaining->update(['is_primary' => true]);
+                    $newPrimaryId = $firstRemaining->id;
+                }
+            }
+
+            if (request()->expectsJson() || request()->ajax()) {
+                return response()->json([
+                    'success' => true,
+                    'message' => 'Image deleted successfully!',
+                    'new_primary_id' => $newPrimaryId,
+                ]);
+            }
+
+            return back()->with('success', 'Image deleted successfully!');
+        } catch (\Throwable $e) {
+            if (request()->expectsJson() || request()->ajax()) {
+                return response()->json(['success' => false, 'message' => $e->getMessage()], 500);
+            }
+            return back()->with('error', 'Failed to delete image: ' . $e->getMessage());
+        }
+    }
+
+    /**
+     * Reorder an image directly.
+     */
+    public function reorderImage(Request $request, ProductImage $image)
+    {
+        try {
+            $newOrder = (int) $request->input('sort_order', 0);
+            $image->update(['sort_order' => $newOrder]);
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Image order updated!',
+            ]);
+        } catch (\Throwable $e) {
+            return response()->json(['success' => false, 'message' => $e->getMessage()], 500);
+        }
+    }
+
+    /**
+     * Update product sort order quickly from index table or edit page.
+     */
+    public function updateSortOrder(Request $request, Product $product)
+    {
+        try {
+            $this->ensureBadgeColumnExists();
+            $order = (int) $request->input('sort_order', 0);
+            $product->update(['sort_order' => $order]);
+
+            if ($request->expectsJson() || $request->ajax()) {
+                return response()->json([
+                    'success' => true,
+                    'message' => "Order for '{$product->title}' updated to {$order}!",
+                ]);
+            }
+
+            return back()->with('success', "Order for '{$product->title}' updated!");
+        } catch (\Throwable $e) {
+            if ($request->expectsJson() || $request->ajax()) {
+                return response()->json(['success' => false, 'message' => $e->getMessage()], 500);
+            }
+            return back()->with('error', 'Failed to update order: ' . $e->getMessage());
+        }
     }
 }

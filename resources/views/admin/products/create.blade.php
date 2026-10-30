@@ -345,14 +345,33 @@
                     </h3>
 
                     <label class="flex items-center space-x-2.5 p-2 rounded-[8px] hover:bg-gray-50 cursor-pointer">
-                        <input type="checkbox" name="is_bestseller" value="1" {{ old('is_bestseller', true) ? 'checked' : '' }} class="w-4 h-4 text-[#D38928] rounded border-gray-300">
+                        <input type="checkbox" name="is_bestseller" value="1" {{ old('is_bestseller', false) ? 'checked' : '' }} class="w-4 h-4 text-[#D38928] rounded border-gray-300">
                         <span class="text-xs font-semibold text-gray-800">★ Mark as Bestseller (Show on Homepage)</span>
                     </label>
 
                     <label class="flex items-center space-x-2.5 p-2 rounded-[8px] hover:bg-gray-50 cursor-pointer">
-                        <input type="checkbox" name="is_featured" value="1" {{ old('is_featured', true) ? 'checked' : '' }} class="w-4 h-4 text-[#D38928] rounded border-gray-300">
+                        <input type="checkbox" name="is_featured" value="1" {{ old('is_featured', false) ? 'checked' : '' }} class="w-4 h-4 text-[#D38928] rounded border-gray-300">
                         <span class="text-xs font-semibold text-gray-800">✦ Featured Product</span>
                     </label>
+
+                    <!-- Product Display Sort Order -->
+                    <div class="pt-2 border-t border-gray-100 space-y-1.5">
+                        <div class="flex items-center justify-between">
+                            <label for="sort_order" class="block text-xs font-bold uppercase tracking-wider text-gray-700 font-heading">
+                                Display Sort Order
+                            </label>
+                            <span class="text-[10px] text-gray-400 font-normal">0 = First / Top</span>
+                        </div>
+                        <input 
+                            type="number" 
+                            id="sort_order" 
+                            name="sort_order" 
+                            value="{{ old('sort_order', 0) }}" 
+                            min="0"
+                            placeholder="0"
+                            class="w-full px-3.5 py-2 bg-white border border-[#D2D5D8] focus:border-[#D38928] rounded-[8px] text-xs font-bold text-[#202223] focus:outline-none"
+                        >
+                    </div>
 
                     <!-- Product Image Tag / Pack Size Badge (Top-Right) -->
                     <div class="pt-3 border-t border-gray-100 space-y-2">

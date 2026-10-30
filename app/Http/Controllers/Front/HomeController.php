@@ -26,12 +26,13 @@ class HomeController extends Controller
             $banners = collect();
         }
 
-        // 1. Bestsellers of the Month (Strictly 8 Products, Bestsellers prioritized)
+        // 1. Bestsellers of the Month (Strictly 8 Products, Bestsellers prioritized, ordered by custom sort_order)
         try {
             $bestsellers = Product::where('status', 'active')
                 ->where('is_bestseller', true)
                 ->with(['category', 'primaryImage', 'images', 'variants', 'approvedReviews'])
-                ->latest()
+                ->orderBy('sort_order', 'asc')
+                ->orderBy('id', 'desc')
                 ->take(8)
                 ->get();
 
@@ -41,7 +42,8 @@ class HomeController extends Controller
                 $additional = Product::where('status', 'active')
                     ->whereNotIn('id', $excludeIds)
                     ->with(['category', 'primaryImage', 'images', 'variants', 'approvedReviews'])
-                    ->latest()
+                    ->orderBy('sort_order', 'asc')
+                    ->orderBy('id', 'desc')
                     ->take(8 - $bestsellers->count())
                     ->get();
                 $bestsellers = $bestsellers->concat($additional);
@@ -69,13 +71,16 @@ class HomeController extends Controller
                       ->orWhere('is_featured', true);
                 })
                 ->with(['category', 'primaryImage', 'images', 'variants', 'approvedReviews'])
+                ->orderBy('sort_order', 'asc')
+                ->orderBy('id', 'desc')
                 ->take(4)
                 ->get();
 
             if ($newLaunches->count() < 4) {
                 $newLaunches = Product::where('status', 'active')
                     ->with(['category', 'primaryImage', 'images', 'variants', 'approvedReviews'])
-                    ->inRandomOrder()
+                    ->orderBy('sort_order', 'asc')
+                    ->orderBy('id', 'desc')
                     ->take(4)
                     ->get();
             }

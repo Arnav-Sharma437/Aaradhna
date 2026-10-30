@@ -30,15 +30,15 @@
                 <img 
                     src="{{ $imageSrc }}" 
                     alt="{{ $product->title }}" 
-                    class="w-full h-full object-cover object-top rounded-[20px] transition-opacity duration-300 ease-in-out group-hover:opacity-0"
+                    class="w-full h-full object-cover object-top rounded-[20px] transition-all duration-500 ease-out group-hover:scale-108 group-hover:opacity-0"
                     loading="lazy"
                     onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}';"
                 >
-                <!-- Secondary / Hover Image (Swaps on hover) -->
+                <!-- Secondary / Hover Image (Swaps on hover with Zoom In) -->
                 <img 
                     src="{{ $hoverImageSrc }}" 
                     alt="{{ $product->title }} (Detail)" 
-                    class="absolute inset-0 w-full h-full object-cover object-center rounded-[20px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"
+                    class="absolute inset-0 w-full h-full object-cover object-center rounded-[20px] opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out group-hover:scale-108"
                     loading="lazy"
                     onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-incense-sticks-trio.jpg') }}';"
                 >

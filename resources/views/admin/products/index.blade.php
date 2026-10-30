@@ -117,6 +117,7 @@
                         onchange="this.form.submit()"
                         class="w-full px-3 py-2 bg-white border border-[#D2D5D8] rounded-[8px] text-xs text-[#202223] focus:outline-none focus:border-[#D38928]"
                     >
+                        <option value="order_asc" {{ request('sort', 'order_asc') === 'order_asc' ? 'selected' : '' }}>Custom Order</option>
                         <option value="newest" {{ request('sort') === 'newest' ? 'selected' : '' }}>Newest</option>
                         <option value="title_asc" {{ request('sort') === 'title_asc' ? 'selected' : '' }}>Title A-Z</option>
                         <option value="price_high_low" {{ request('sort') === 'price_high_low' ? 'selected' : '' }}>Price High-Low</option>
@@ -145,6 +146,7 @@
                         <th class="px-4 py-3">Category</th>
                         <th class="px-4 py-3">Price</th>
                         <th class="px-4 py-3">Variants</th>
+                        <th class="px-3 py-3 text-center w-24">Order</th>
                         <th class="px-4 py-3 text-right">Actions</th>
                     </tr>
                 </thead>
@@ -236,6 +238,21 @@
                                 {{ $product->variants->count() }} {{ Str::plural('variant', $product->variants->count()) }}
                             </td>
 
+                            <!-- Order / Position Setting -->
+                            <td class="px-3 py-3.5 text-center whitespace-nowrap">
+                                <div class="inline-flex items-center space-x-1">
+                                    <input 
+                                        type="number" 
+                                        value="{{ $product->sort_order ?? 0 }}" 
+                                        min="0"
+                                        class="w-14 px-2 py-1 bg-white border border-[#D2D5D8] focus:border-[#D38928] rounded-[6px] text-xs font-bold text-center text-[#202223] focus:outline-none transition-all"
+                                        data-url="{{ route('admin.products.update-sort-order', $product->id) }}"
+                                        onchange="saveProductOrder(this)"
+                                        title="Display order (0 = first)"
+                                    >
+                                </div>
+                            </td>
+
                             <!-- Actions -->
                             <td class="px-4 py-3.5 text-right whitespace-nowrap">
                                 <div class="inline-flex items-center space-x-1.5">
@@ -325,4 +342,41 @@
     </div>
 
 </div>
+
+<script>
+function saveProductOrder(input) {
+    const url = input.dataset.url;
+    const val = input.value;
+    input.style.borderColor = '#D38928';
+
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'X-CSRF-TOKEN': '{{ csrf_token() }}',
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'X-Requested-With': 'XMLHttpRequest'
+        },
+        body: JSON.stringify({ sort_order: val })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.success) {
+            input.style.borderColor = '#10B981';
+            input.style.backgroundColor = '#ECFDF5';
+            setTimeout(() => {
+                input.style.borderColor = '';
+                input.style.backgroundColor = '';
+            }, 1200);
+        } else {
+            input.style.borderColor = '#EF4444';
+            alert(data.message || 'Failed to save order');
+        }
+    })
+    .catch(err => {
+        input.style.borderColor = '#EF4444';
+        alert('Failed to save order');
+    });
+}
+</script>
 @endsection

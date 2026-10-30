@@ -181,6 +181,7 @@ jobs:
               echo "⚠️ Running specific migrations..."
               php artisan migrate --path=database/migrations/2026_10_28_104614_create_qr_scans_table.php --force 2>&1 || true
               php artisan migrate --path=database/migrations/2026_10_29_000001_add_badge_color_to_products_table.php --force 2>&1 || true
+              php artisan migrate --path=database/migrations/2026_10_30_000001_add_sort_order_to_products_table.php --force 2>&1 || true
             }
 
             echo "Generating high-resolution QR codes and branded packaging labels..."
