@@ -102,22 +102,22 @@
                     $tagColor = $product->badge_color;
                 @endphp
 
-                <!-- 1. MOBILE/TABLET VIEW: Main Hero Image + Horizontal Thumbnails Below (Clean Full Card Image & Pack Badge) -->
+                <!-- 1. MOBILE/TABLET VIEW: Main Hero Image + Horizontal Thumbnails Below (Clean Background, #fafafa Border, 6px Radius, 2px Padding) -->
                 <div class="block lg:hidden space-y-2.5" id="product-mobile-gallery">
-                    <!-- Main Large Hero Image (Exact Match with Product Card Styling) -->
-                    <div class="product-card group relative bg-[#FFF9ED] rounded-[20px] border border-[#EAE3D9] p-[5px] shadow-xs overflow-hidden">
-                        <div class="relative w-full aspect-[4/4.8] rounded-[20px] overflow-hidden bg-[#FAF3E5]">
+                    <!-- Main Large Hero Image (2px padding, 6px radius, #fafafa border, transparent background) -->
+                    <div class="product-card group relative bg-transparent rounded-[6px] border border-[#fafafa] p-[2px] shadow-none overflow-hidden" style="border-color: #fafafa !important; border-radius: 6px !important;">
+                        <div class="relative w-full aspect-[4/4.8] rounded-[5px] overflow-hidden bg-transparent">
                             <img 
                                 id="main-product-gallery-img" 
                                 src="{{ $galleryImages[0] }}" 
                                 alt="{{ $product->title }}" 
-                                class="w-full h-full object-cover object-top rounded-[20px] transition-transform duration-500 ease-out"
+                                class="w-full h-full object-cover object-top rounded-[5px] transition-transform duration-500 ease-out"
                                 onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}';"
                             >
 
                             <!-- Top-Right Tag Type Badge (Matches Product Card Outside Exactly) -->
                             @if(!empty($tagParts))
-                                <div class="absolute top-3.5 right-5 sm:top-4 sm:right-6 z-20 pointer-events-none select-none opacity-90" style="opacity: 0.9 !important;">
+                                <div class="absolute top-2.5 right-3.5 sm:top-3 sm:right-4 z-20 pointer-events-none select-none opacity-90" style="opacity: 0.9 !important;">
                                     @if(!empty($tagParts['number']))
                                         <div 
                                             class="pack-tag-badge flex flex-col items-center justify-center text-center leading-none"
@@ -135,7 +135,7 @@
                                         </div>
                                     @else
                                         <span 
-                                            class="pack-tag-badge-single inline-flex items-center px-2 py-0.5 rounded-[5px] bg-white/95 border text-[9px] sm:text-[10px] font-black tracking-wider shadow-xs uppercase leading-none"
+                                            class="pack-tag-badge-single inline-flex items-center px-2 py-0.5 rounded-[4px] bg-white/95 border text-[9px] sm:text-[10px] font-black tracking-wider shadow-xs uppercase leading-none"
                                             style="color: {{ $tagColor }}; border-color: {{ $tagColor }}40; opacity: 0.9 !important; font-weight: 900 !important; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;"
                                         >
                                             {{ $tagParts['suffix'] }}
@@ -146,39 +146,40 @@
                         </div>
                     </div>
 
-                    <!-- Horizontal Thumbnails Strip Directly Below (Matching Product Card Aesthetics) -->
+                    <!-- Horizontal Thumbnails Strip Directly Below (Matching 2px padding, 6px radius, #fafafa border) -->
                     <div class="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none" id="product-thumbnails-container">
                         @foreach($galleryImages as $index => $imgUrl)
                             <button 
                                 type="button" 
-                                class="gallery-thumbnail-btn relative w-16 h-19 sm:w-18 sm:h-21 p-[3px] bg-[#FFF9ED] rounded-[14px] border transition-all duration-200 shrink-0 cursor-pointer focus:outline-none {{ $index === 0 ? 'border-[#C87A1E] ring-1 ring-[#C87A1E]/40' : 'border-[#EAE3D9] opacity-75 hover:opacity-100' }}"
+                                class="gallery-thumbnail-btn relative w-16 h-19 sm:w-18 sm:h-21 p-[2px] bg-transparent rounded-[6px] border transition-all duration-200 shrink-0 cursor-pointer focus:outline-none {{ $index === 0 ? 'border-[#C87A1E] ring-1 ring-[#C87A1E]/40' : 'border-[#fafafa] opacity-75 hover:opacity-100' }}"
+                                style="{{ $index === 0 ? '' : 'border-color: #fafafa !important;' }} border-radius: 6px !important;"
                                 data-img-src="{{ $imgUrl }}"
                                 data-index="{{ $index }}"
                                 aria-label="View product image {{ $index + 1 }}"
                             >
-                                <div class="w-full h-full rounded-[10px] overflow-hidden bg-[#FAF3E5] aspect-[4/4.8]">
-                                    <img src="{{ $imgUrl }}" alt="{{ $product->title }} thumbnail {{ $index + 1 }}" class="w-full h-full object-cover rounded-[10px]" onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}';">
+                                <div class="w-full h-full rounded-[5px] overflow-hidden bg-transparent aspect-[4/4.8]">
+                                    <img src="{{ $imgUrl }}" alt="{{ $product->title }} thumbnail {{ $index + 1 }}" class="w-full h-full object-cover rounded-[5px]" onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}';">
                                 </div>
                             </button>
                         @endforeach
                     </div>
                 </div>
 
-                <!-- 2. DESKTOP VIEW: Full Card Images + Outer-Matching Pack Badge -->
+                <!-- 2. DESKTOP VIEW: Clean Background, #fafafa Border, 6px Radius, 2px Padding + Pack Badge -->
                 <div class="hidden lg:grid grid-cols-2 gap-3 xl:gap-4">
                     @foreach($galleryImages as $index => $imgUrl)
-                    <div class="product-card group relative bg-[#FFF9ED] rounded-[20px] border border-[#EAE3D9] p-[5px] shadow-xs overflow-hidden">
-                        <div class="relative w-full aspect-[4/4.8] rounded-[20px] overflow-hidden bg-[#FAF3E5]">
+                    <div class="product-card group relative bg-transparent rounded-[6px] border border-[#fafafa] p-[2px] shadow-none overflow-hidden" style="border-color: #fafafa !important; border-radius: 6px !important;">
+                        <div class="relative w-full aspect-[4/4.8] rounded-[5px] overflow-hidden bg-transparent">
                             <img 
                                 src="{{ $imgUrl }}" 
                                 alt="{{ $product->title }} visual {{ $index + 1 }}" 
-                                class="w-full h-full object-cover {{ $index === 0 ? 'object-top' : 'object-center' }} rounded-[20px] transition-transform duration-500 ease-out group-hover:scale-108" 
+                                class="w-full h-full object-cover {{ $index === 0 ? 'object-top' : 'object-center' }} rounded-[5px] transition-transform duration-500 ease-out group-hover:scale-108" 
                                 onerror="this.onerror=null; this.src='{{ $index === 0 ? asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') : asset('assets/images/products/ishanaa-incense-sticks-trio.jpg') }}';"
                             >
 
                             <!-- Top-Right Tag Type Badge (Matches Product Card Outside Exactly) -->
                             @if($index === 0 && !empty($tagParts))
-                                <div class="absolute top-3.5 right-5 sm:top-4 sm:right-6 z-20 pointer-events-none select-none opacity-90" style="opacity: 0.9 !important;">
+                                <div class="absolute top-2.5 right-3.5 sm:top-3 sm:right-4 z-20 pointer-events-none select-none opacity-90" style="opacity: 0.9 !important;">
                                     @if(!empty($tagParts['number']))
                                         <div 
                                             class="pack-tag-badge flex flex-col items-center justify-center text-center leading-none"
@@ -196,7 +197,7 @@
                                         </div>
                                     @else
                                         <span 
-                                            class="pack-tag-badge-single inline-flex items-center px-2 py-0.5 rounded-[5px] bg-white/95 border text-[9px] sm:text-[10px] font-black tracking-wider shadow-xs uppercase leading-none"
+                                            class="pack-tag-badge-single inline-flex items-center px-2 py-0.5 rounded-[4px] bg-white/95 border text-[9px] sm:text-[10px] font-black tracking-wider shadow-xs uppercase leading-none"
                                             style="color: {{ $tagColor }}; border-color: {{ $tagColor }}40; opacity: 0.9 !important; font-weight: 900 !important; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;"
                                         >
                                             {{ $tagParts['suffix'] }}
