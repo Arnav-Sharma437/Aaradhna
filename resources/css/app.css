@@ -174,16 +174,18 @@ header nav button,
     cursor: pointer;
 }
 
-/* Product card title typography: zero letter-spacing, bolder weight */
+/* Product card title typography: zero letter-spacing, 500 weight, 18px size */
 .product-card h3,
 .product-card h3 a {
     letter-spacing: normal !important;
-    font-weight: 800 !important;
+    font-weight: 500 !important;
+    font-size: 18px !important;
 }
 
 .product-card h3 .product-hindi-title {
     letter-spacing: normal !important;
-    font-weight: 700 !important;
+    font-weight: 500 !important;
+    font-size: 12px !important;
 }
 
 /* ========================================================================= */

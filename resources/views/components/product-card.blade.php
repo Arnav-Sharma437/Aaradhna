@@ -26,13 +26,21 @@
     <div class="p-[5px] pb-0">
         <div class="relative w-full aspect-[4/4.8] rounded-[20px] overflow-hidden bg-[#FAF3E5]">
             <a href="{{ route('products.show', $product->slug) }}" class="block w-full h-full relative overflow-hidden rounded-[20px]">
-                <!-- Primary Image (Crisp Single Image with Smooth Zoom In, No Blur) -->
+                <!-- Primary Image -->
                 <img 
                     src="{{ $imageSrc }}" 
                     alt="{{ $product->title }}" 
-                    class="w-full h-full object-cover object-top rounded-[20px] transition-transform duration-500 ease-out group-hover:scale-108"
+                    class="w-full h-full object-cover object-top rounded-[20px] transition-opacity duration-300 ease-in-out group-hover:opacity-0"
                     loading="lazy"
                     onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}';"
+                >
+                <!-- Secondary / Hover Image (Swaps on hover) -->
+                <img 
+                    src="{{ $hoverImageSrc }}" 
+                    alt="{{ $product->title }} (Detail)" 
+                    class="absolute inset-0 w-full h-full object-cover object-center rounded-[20px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"
+                    loading="lazy"
+                    onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-incense-sticks-trio.jpg') }}';"
                 >
             </a>
 
@@ -83,9 +91,9 @@
     <div class="p-3.5 sm:p-4 pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
         
         <div class="space-y-1">
-            <h3 class="text-[18px] sm:text-[20px] font-extrabold text-[#1F1F1F] tracking-normal line-clamp-2 leading-snug font-body" style="letter-spacing: normal !important;">
-                <a href="{{ route('products.show', $product->slug) }}" class="font-extrabold text-[#1F1F1F] tracking-normal" style="letter-spacing: normal !important;">
-                    {{ $displayTitle }}@if(!empty($hindiTitle) && !str_contains($displayTitle, $hindiTitle)) <span class="product-hindi-title font-bold text-[12px] tracking-normal" style="letter-spacing: normal !important;">({{ $hindiTitle }})</span>@endif
+            <h3 class="text-[18px] font-medium text-[#1F1F1F] tracking-normal line-clamp-2 leading-snug font-body" style="letter-spacing: normal !important; font-weight: 500 !important; font-size: 18px !important;">
+                <a href="{{ route('products.show', $product->slug) }}" class="font-medium text-[#1F1F1F] tracking-normal" style="letter-spacing: normal !important; font-weight: 500 !important;">
+                    {{ $displayTitle }}@if(!empty($hindiTitle) && !str_contains($displayTitle, $hindiTitle)) <span class="product-hindi-title font-medium text-[12px] tracking-normal" style="letter-spacing: normal !important; font-weight: 500 !important; font-size: 12px !important;">({{ $hindiTitle }})</span>@endif
                 </a>
             </h3>
 
