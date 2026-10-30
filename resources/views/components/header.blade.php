@@ -1,6 +1,6 @@
 <header class="sticky top-0 z-40 bg-[#FFF9ED] border-b border-[#EAE3D9] transition-all duration-200 font-body">
     <div class="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
-        <div class="relative flex items-center justify-between h-18 sm:h-20 lg:h-22 gap-2 sm:gap-4">
+        <div class="relative flex items-center justify-between h-13 sm:h-14 lg:h-15 gap-2 sm:gap-4">
             
             <!-- LEFT: Mobile Menu Button (Mobile only) + Desktop Brand Logo -->
             <div class="flex items-center space-x-2 sm:space-x-3 shrink-0">
@@ -8,10 +8,10 @@
                 <button 
                     type="button" 
                     id="mobile-menu-trigger"
-                    class="lg:hidden p-2 -ml-1.5 text-[#A86911] hover:text-[#C18129] focus:outline-none transition-colors rounded-full hover:bg-black/5 cursor-pointer z-10"
+                    class="lg:hidden p-1.5 -ml-1 text-[#A86911] hover:text-[#C18129] focus:outline-none transition-colors rounded-full hover:bg-black/5 cursor-pointer z-10"
                     aria-label="Open Mobile Menu"
                 >
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-5 h-5 sm:w-5.5 sm:h-5.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
                 </button>
@@ -23,22 +23,22 @@
                 @endphp
 
                 <!-- Brand Logo (Desktop Left-aligned) -->
-                <a href="{{ route('home') }}" class="hidden lg:flex items-center py-1" aria-label="{{ $storeBrandName }}">
+                <a href="{{ route('home') }}" class="hidden lg:flex items-center py-0.5" aria-label="{{ $storeBrandName }}">
                     <img 
                         src="{{ $headerLogoSrc }}" 
                         alt="{{ $storeBrandName }}" 
-                        class="h-10 lg:h-11 xl:h-12 w-auto max-w-[170px] lg:max-w-[190px] xl:max-w-[210px] object-contain"
+                        class="h-8 lg:h-8.5 xl:h-9 w-auto max-w-[140px] lg:max-w-[155px] xl:max-w-[170px] object-contain"
                     >
                 </a>
             </div>
 
             <!-- CENTER: Brand Logo (Mobile Centered) -->
             <div class="lg:hidden absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-auto">
-                <a href="{{ route('home') }}" class="flex items-center py-1" aria-label="{{ $storeBrandName }}">
+                <a href="{{ route('home') }}" class="flex items-center py-0.5" aria-label="{{ $storeBrandName }}">
                     <img 
                         src="{{ $headerLogoSrc }}" 
                         alt="{{ $storeBrandName }}" 
-                        class="h-9 sm:h-10 w-auto max-w-[135px] sm:max-w-[150px] object-contain"
+                        class="h-7 sm:h-7.5 w-auto max-w-[115px] sm:max-w-[125px] object-contain"
                     >
                 </a>
             </div>
@@ -48,7 +48,7 @@
                 
                 <!-- 1. Incense Sticks -->
                 @php $isIncenseSticks = request()->is('collections/bambooless'); @endphp
-                <div class="py-2 xl:py-3 flex items-center">
+                <div class="py-1 xl:py-1.5 flex items-center">
                     <a 
                         href="{{ route('collections.show', 'bambooless') }}" 
                         class="text-[13.5px] lg:text-[14px] xl:text-[14.5px] {{ $isIncenseSticks ? 'font-bold text-[#C18129] border-b-2 border-[#C18129] pb-0.5' : 'font-medium text-[#444444] hover:text-[#C18129]' }} transition-colors whitespace-nowrap tracking-normal"
@@ -59,7 +59,7 @@
 
                 <!-- 2. Havan Cups -->
                 @php $isHavanCups = request()->is('collections/havan-cups'); @endphp
-                <div class="py-2 xl:py-3 flex items-center">
+                <div class="py-1 xl:py-1.5 flex items-center">
                     <a 
                         href="{{ route('collections.show', 'havan-cups') }}" 
                         class="text-[13.5px] lg:text-[14px] xl:text-[14.5px] {{ $isHavanCups ? 'font-bold text-[#C18129] border-b-2 border-[#C18129] pb-0.5' : 'font-medium text-[#444444] hover:text-[#C18129]' }} transition-colors whitespace-nowrap tracking-normal"
@@ -70,7 +70,7 @@
 
                 <!-- 3. Dhoop Cones -->
                 @php $isDhoopCones = request()->is('collections/dhoop-cones'); @endphp
-                <div class="py-2 xl:py-3 flex items-center">
+                <div class="py-1 xl:py-1.5 flex items-center">
                     <a 
                         href="{{ route('collections.show', 'dhoop-cones') }}" 
                         class="text-[13.5px] lg:text-[14px] xl:text-[14.5px] {{ $isDhoopCones ? 'font-bold text-[#C18129] border-b-2 border-[#C18129] pb-0.5' : 'font-medium text-[#444444] hover:text-[#C18129]' }} transition-colors whitespace-nowrap tracking-normal"
@@ -81,7 +81,7 @@
 
                 <!-- 4. Super Save Offers (Interactive Mega Menu) -->
                 @php $isSuperSave = request()->is('bundles*') || request()->is('collections/super-save-offers'); @endphp
-                <div class="relative group py-2 xl:py-3 flex items-center">
+                <div class="relative group py-1 xl:py-1.5 flex items-center">
                     <button 
                         type="button"
                         class="flex items-center space-x-1 text-[13.5px] lg:text-[14px] xl:text-[14.5px] {{ $isSuperSave ? 'font-bold text-[#C18129] border-b-2 border-[#C18129] pb-0.5' : 'font-medium text-[#444444] group-hover:text-[#C18129]' }} transition-colors whitespace-nowrap tracking-normal cursor-pointer focus:outline-none"
@@ -161,7 +161,7 @@
 
                 <!-- 5. Best Seller Combo -->
                 @php $isBestSeller = request()->is('products/pack-of-six'); @endphp
-                <div class="py-2 xl:py-3 flex items-center">
+                <div class="py-1 xl:py-1.5 flex items-center">
                     <a 
                         href="{{ route('products.show', 'pack-of-six') }}" 
                         class="text-[13.5px] lg:text-[14px] xl:text-[14.5px] {{ $isBestSeller ? 'font-bold text-[#C18129] border-b-2 border-[#C18129] pb-0.5' : 'font-medium text-[#444444] hover:text-[#C18129]' }} transition-colors whitespace-nowrap tracking-normal"
@@ -173,16 +173,16 @@
             </nav>
 
             <!-- RIGHT: Clean Compact Action Icons (Search + Account + Wishlist + Cart) -->
-            <div class="flex items-center justify-end space-x-1 sm:space-x-1.5 lg:space-x-2 shrink-0">
+            <div class="flex items-center justify-end space-x-1 sm:space-x-1.5 shrink-0">
                 
                 <!-- 1. Search Icon Button -->
                 <button 
                     type="button" 
                     id="search-modal-trigger" 
-                    class="p-2 text-[#A86911] hover:text-[#C18129] transition-colors focus:outline-none shrink-0 cursor-pointer rounded-full hover:bg-black/5 search-modal-opener" 
+                    class="p-1.5 text-[#A86911] hover:text-[#C18129] transition-colors focus:outline-none shrink-0 cursor-pointer rounded-full hover:bg-black/5 search-modal-opener" 
                     aria-label="Open Search"
                 >
-                    <svg class="w-6 h-6 sm:w-[25px] sm:h-[25px]" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                    <svg class="w-5 h-5 sm:w-5.5 sm:h-5.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
                     </svg>
                 </button>
@@ -190,12 +190,12 @@
                 <!-- 2. Customer Account (Visible on all screens) -->
                 <a 
                     href="{{ auth()->check() ? route('account.index') : route('account.login') }}" 
-                    class="p-1.5 sm:p-2 text-[#A86911] hover:text-[#C18129] transition-colors inline-flex items-center justify-center shrink-0 rounded-full hover:bg-black/5 relative group"
+                    class="p-1.5 text-[#A86911] hover:text-[#C18129] transition-colors inline-flex items-center justify-center shrink-0 rounded-full hover:bg-black/5 relative group"
                     aria-label="Customer Account"
                     title="{{ auth()->check() ? 'My Devotee Account (' . auth()->user()->name . ')' : 'Sign In to Devotee Account' }}"
                 >
                     <div class="relative">
-                        <svg class="w-5 h-5 sm:w-6 sm:h-6 {{ auth()->check() ? 'text-[#C18129]' : 'text-[#A86911]' }}" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                        <svg class="w-5 h-5 sm:w-5.5 sm:h-5.5 {{ auth()->check() ? 'text-[#C18129]' : 'text-[#A86911]' }}" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
                         </svg>
                         <span class="absolute -top-1 -right-1 text-[#D5A23D] text-[10px] leading-none font-bold">⚡</span>
@@ -206,16 +206,16 @@
                 <a 
                     href="{{ route('cart.index') }}" 
                     id="cart-drawer-trigger" 
-                    class="p-1.5 sm:p-2 text-[#A86911] hover:text-[#C18129] transition-colors relative inline-flex items-center justify-center shrink-0 cursor-pointer rounded-full hover:bg-black/5 cart-drawer-opener" 
+                    class="p-1.5 text-[#A86911] hover:text-[#C18129] transition-colors relative inline-flex items-center justify-center shrink-0 cursor-pointer rounded-full hover:bg-black/5 cart-drawer-opener" 
                     aria-label="Cart"
                 >
-                    <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                    <svg class="w-5 h-5 sm:w-5.5 sm:h-5.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
                     </svg>
                     
                     <span 
                         id="header-cart-badge"
-                        class="header-cart-badge absolute top-0.5 right-0 bg-[#831F2E] text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center leading-none ring-1 ring-white"
+                        class="header-cart-badge absolute top-0 right-0 bg-[#831F2E] text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center leading-none ring-1 ring-white"
                     >
                         {{ session('cart_count', 0) }}
                     </span>
@@ -227,21 +227,21 @@
     </div>
 
     <!-- Mobile Horizontal Quick Category & Offer Pills Strip (Matches Reference Screenshot) -->
-    <div class="lg:hidden w-full border-t border-[#EAE3D9]/70 bg-[#FFF9ED] py-2 px-3 overflow-x-auto scrollbar-none">
-        <div class="flex items-center space-x-2 whitespace-nowrap text-xs font-semibold">
-            <a href="{{ route('bundles.buy2get1') }}" class="px-3.5 py-1 rounded-full border border-[#831F2E]/40 bg-[#FFF8F8] text-[#831F2E] hover:bg-[#831F2E] hover:text-white transition-colors shrink-0 font-heading">
+    <div class="lg:hidden w-full border-t border-[#EAE3D9]/70 bg-[#FFF9ED] py-1.5 px-3 overflow-x-auto scrollbar-none">
+        <div class="flex items-center space-x-2 whitespace-nowrap text-[11px] font-semibold">
+            <a href="{{ route('bundles.buy2get1') }}" class="px-2.5 py-0.5 rounded-full border border-[#831F2E]/40 bg-[#FFF8F8] text-[#831F2E] hover:bg-[#831F2E] hover:text-white transition-colors shrink-0 font-heading">
                 Buy 2 Get 1 free
             </a>
-            <a href="{{ route('collections.show', 'bambooless') }}" class="px-3.5 py-1 rounded-full border border-[#C18129] bg-white text-[#121212] hover:bg-[#C18129] hover:text-white transition-colors shrink-0">
+            <a href="{{ route('collections.show', 'bambooless') }}" class="px-2.5 py-0.5 rounded-full border border-[#C18129] bg-white text-[#121212] hover:bg-[#C18129] hover:text-white transition-colors shrink-0">
                 Incense Sticks
             </a>
-            <a href="{{ route('collections.show', 'dhoop-cones') }}" class="px-3.5 py-1 rounded-full border border-[#C18129] bg-white text-[#121212] hover:bg-[#C18129] hover:text-white transition-colors shrink-0">
+            <a href="{{ route('collections.show', 'dhoop-cones') }}" class="px-2.5 py-0.5 rounded-full border border-[#C18129] bg-white text-[#121212] hover:bg-[#C18129] hover:text-white transition-colors shrink-0">
                 Dhoop Cones
             </a>
-            <a href="{{ route('bundles.trial-packs') }}" class="px-3.5 py-1 rounded-full border border-[#C18129] bg-white text-[#121212] hover:bg-[#C18129] hover:text-white transition-colors shrink-0">
+            <a href="{{ route('bundles.trial-packs') }}" class="px-2.5 py-0.5 rounded-full border border-[#C18129] bg-white text-[#121212] hover:bg-[#C18129] hover:text-white transition-colors shrink-0">
                 Trial Packs @ 799
             </a>
-            <a href="{{ route('collections.show', 'havan-cups') }}" class="px-3.5 py-1 rounded-full border border-[#C18129] bg-white text-[#121212] hover:bg-[#C18129] hover:text-white transition-colors shrink-0">
+            <a href="{{ route('collections.show', 'havan-cups') }}" class="px-2.5 py-0.5 rounded-full border border-[#C18129] bg-white text-[#121212] hover:bg-[#C18129] hover:text-white transition-colors shrink-0">
                 Havan Cups
             </a>
         </div>

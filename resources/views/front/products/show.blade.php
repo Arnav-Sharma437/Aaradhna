@@ -98,138 +98,58 @@
             <!-- LEFT COLUMN: Mobile Single+Thumbnails & Desktop High-Res 2-Column Grid (7 Cols) -->
             <div class="lg:col-span-7 space-y-2.5">
 
-                <!-- 1. MOBILE/TABLET VIEW: Main Hero Image + Horizontal Thumbnails Below (Visible on mobile/tablet, hidden on desktop) -->
-                <div class="block lg:hidden space-y-[5px]" id="product-mobile-gallery">
-                    <!-- Main Large Hero Image (Full Attach, No Side Padding) -->
-                    <div class="relative w-full aspect-square sm:aspect-[4/3.8] rounded-[8px] sm:rounded-[10px] overflow-hidden bg-[#FAF7F2] shadow-xs group">
-                        <img 
-                            id="main-product-gallery-img" 
-                            src="{{ $galleryImages[0] }}" 
-                            alt="{{ $product->title }}" 
-                            class="w-full h-full object-cover object-top transition-opacity duration-200 ease-out"
-                            onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}';"
-                        >
-                        
-                        <!-- Discount Badge top-left -->
-                        @if($hasDiscount || $discountPercent)
-                        <div class="absolute top-2.5 left-2.5 z-10 pointer-events-none">
-                            <span class="inline-block bg-[#8B1E1E] text-white text-[11px] sm:text-xs font-bold px-2.5 py-0.5 rounded-[6px] tracking-wide shadow-sm font-body">
-                                {{ $discountPercent }}% OFF
-                            </span>
-                        </div>
-                        @endif
-
-                        <!-- Top-Right Tag Type Badge (Matches User Reference Design, 0.9 Opacity) -->
-                        @php
-                            $tagParts = $product->pack_tag_parts;
-                            $tagColor = $product->badge_color;
-                        @endphp
-                        @if(!empty($tagParts))
-                        <div class="absolute top-4 right-5 sm:top-5 sm:right-7 z-10 pointer-events-none select-none opacity-90" style="opacity: 0.9 !important;">
-                            @if(!empty($tagParts['number']))
-                                <div 
-                                    class="pack-tag-badge flex flex-col items-center justify-center text-center leading-none"
-                                    style="color: {{ $tagColor }}; opacity: 0.9 !important; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;"
-                                >
-                                    <span class="pack-tag-prefix text-[11px] sm:text-[12px] font-black lowercase tracking-tight leading-none" style="font-weight: 900 !important;">
-                                        {{ $tagParts['prefix'] }}
-                                    </span>
-                                    <span class="pack-tag-number text-[28px] sm:text-[32px] font-black leading-none my-0.5 tracking-tighter" style="font-weight: 900 !important; line-height: 0.86;">
-                                        {{ $tagParts['number'] }}
-                                    </span>
-                                    <span class="pack-tag-suffix text-[11px] sm:text-[12px] font-black lowercase tracking-tight leading-none" style="font-weight: 900 !important;">
-                                        {{ $tagParts['suffix'] }}
-                                    </span>
-                                </div>
-                            @else
-                                <span 
-                                    class="pack-tag-badge-single inline-flex items-center px-2.5 py-1 rounded-[6px] bg-white/95 border text-xs font-black tracking-wide shadow-xs uppercase leading-none"
-                                    style="color: {{ $tagColor }}; border-color: {{ $tagColor }}40; opacity: 0.9 !important; font-weight: 900 !important; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;"
-                                >
-                                    {{ $tagParts['suffix'] }}
-                                </span>
-                            @endif
-                        </div>
-                        @endif
-
-                        <!-- Free Ceramic Stand highlight tag bottom -->
-                        <div class="absolute bottom-2.5 left-2.5 right-2.5 bg-black/60 backdrop-blur-xs py-1.5 px-3 rounded-[6px] text-center text-white text-xs font-semibold tracking-wide shadow-sm font-body pointer-events-none">
-                            FREE CERAMIC STAND <span class="text-[#F6DAA8] font-normal">Worth ₹150/-</span>
+                <!-- 1. MOBILE/TABLET VIEW: Main Hero Image + Horizontal Thumbnails Below (Clean Images, No Overlay Text, Same Card Design) -->
+                <div class="block lg:hidden space-y-2.5" id="product-mobile-gallery">
+                    <!-- Main Large Hero Image (Exact Match with Product Card Styling) -->
+                    <div class="product-card group relative bg-[#FFF9ED] rounded-[20px] border border-[#EAE3D9] p-[5px] shadow-xs overflow-hidden">
+                        <div class="relative w-full aspect-[4/4.8] rounded-[20px] overflow-hidden bg-[#FAF3E5]">
+                            <img 
+                                id="main-product-gallery-img" 
+                                src="{{ $galleryImages[0] }}" 
+                                alt="{{ $product->title }}" 
+                                class="w-full h-full object-cover object-top rounded-[20px] transition-transform duration-500 ease-out"
+                                onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}';"
+                            >
                         </div>
                     </div>
 
-                    <!-- Horizontal Thumbnails Strip Directly Below (5px gap) -->
-                    <div class="flex items-center gap-[5px] overflow-x-auto pb-1 scrollbar-none" id="product-thumbnails-container">
+                    <!-- Horizontal Thumbnails Strip Directly Below (Matching Product Card Aesthetics) -->
+                    <div class="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none" id="product-thumbnails-container">
                         @foreach($galleryImages as $index => $imgUrl)
                             <button 
                                 type="button" 
-                                class="gallery-thumbnail-btn relative w-18 h-18 sm:w-20 sm:h-20 rounded-[6px] sm:rounded-[8px] overflow-hidden bg-[#FAF7F2] transition-all duration-200 shrink-0 cursor-pointer focus:outline-none {{ $index === 0 ? 'ring-2 ring-[#D38928] opacity-100' : 'opacity-75 hover:opacity-100' }}"
+                                class="gallery-thumbnail-btn relative w-16 h-19 sm:w-18 sm:h-21 p-[3px] bg-[#FFF9ED] rounded-[14px] border transition-all duration-200 shrink-0 cursor-pointer focus:outline-none {{ $index === 0 ? 'border-[#C87A1E] ring-1 ring-[#C87A1E]/40' : 'border-[#EAE3D9] opacity-75 hover:opacity-100' }}"
                                 data-img-src="{{ $imgUrl }}"
                                 data-index="{{ $index }}"
                                 aria-label="View product image {{ $index + 1 }}"
                             >
-                                <img src="{{ $imgUrl }}" alt="{{ $product->title }} thumbnail {{ $index + 1 }}" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}';">
+                                <div class="w-full h-full rounded-[10px] overflow-hidden bg-[#FAF3E5] aspect-[4/4.8]">
+                                    <img src="{{ $imgUrl }}" alt="{{ $product->title }} thumbnail {{ $index + 1 }}" class="w-full h-full object-cover rounded-[10px]" onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}';">
+                                </div>
                             </button>
                         @endforeach
                     </div>
                 </div>
 
-                <!-- 2. DESKTOP VIEW: Large High-Res 2-Column Grid (Showing the 2 Official ISHANAA Product Packaging Images Full Attach) -->
-                <div class="hidden lg:grid grid-cols-2 gap-2.5">
+                <!-- 2. DESKTOP VIEW: Clean Images with Exact Same Product Card Dimensions & Styling (No Text Overlay) -->
+                <div class="hidden lg:grid grid-cols-2 gap-3 xl:gap-4">
                     @foreach($galleryImages as $index => $imgUrl)
-                    <div class="relative aspect-[4/4.8] rounded-[10px] sm:rounded-[12px] overflow-hidden bg-[#FAF7F2] border border-[#EADBCC]/60 shadow-xs group">
-                        <img src="{{ $imgUrl }}" alt="{{ $product->title }} visual {{ $index + 1 }}" class="w-full h-full object-cover {{ $index === 0 ? 'object-top' : 'object-center' }} transition-transform duration-700 ease-out group-hover:scale-108" onerror="this.onerror=null; this.src='{{ $index === 0 ? asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') : asset('assets/images/products/ishanaa-incense-sticks-trio.jpg') }}';">
-                        @if($index === 0 && ($hasDiscount || $discountPercent))
-                        <div class="absolute top-2.5 left-2.5 z-10 pointer-events-none">
-                            <span class="inline-block bg-[#8B1E1E] text-white text-xs font-bold px-2.5 py-0.5 rounded-[6px] tracking-wide shadow-sm font-body">
-                                {{ $discountPercent }}% OFF
-                            </span>
+                    <div class="product-card group relative bg-[#FFF9ED] rounded-[20px] border border-[#EAE3D9] p-[5px] shadow-xs overflow-hidden">
+                        <div class="relative w-full aspect-[4/4.8] rounded-[20px] overflow-hidden bg-[#FAF3E5]">
+                            <img 
+                                src="{{ $imgUrl }}" 
+                                alt="{{ $product->title }} visual {{ $index + 1 }}" 
+                                class="w-full h-full object-cover {{ $index === 0 ? 'object-top' : 'object-center' }} rounded-[20px] transition-transform duration-500 ease-out group-hover:scale-108" 
+                                onerror="this.onerror=null; this.src='{{ $index === 0 ? asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') : asset('assets/images/products/ishanaa-incense-sticks-trio.jpg') }}';"
+                            >
                         </div>
-                        @endif
-
-                        @if($index === 0 && !empty($tagParts))
-                        <div class="absolute top-4 right-5 sm:top-5 sm:right-7 z-10 pointer-events-none select-none opacity-90" style="opacity: 0.9 !important;">
-                            @if(!empty($tagParts['number']))
-                                <div 
-                                    class="pack-tag-badge flex flex-col items-center justify-center text-center leading-none"
-                                    style="color: {{ $tagColor }}; opacity: 0.9 !important; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;"
-                                >
-                                    <span class="pack-tag-prefix text-[11px] sm:text-[12px] font-black lowercase tracking-tight leading-none" style="font-weight: 900 !important;">
-                                        {{ $tagParts['prefix'] }}
-                                    </span>
-                                    <span class="pack-tag-number text-[28px] sm:text-[32px] font-black leading-none my-0.5 tracking-tighter" style="font-weight: 900 !important; line-height: 0.86;">
-                                        {{ $tagParts['number'] }}
-                                    </span>
-                                    <span class="pack-tag-suffix text-[11px] sm:text-[12px] font-black lowercase tracking-tight leading-none" style="font-weight: 900 !important;">
-                                        {{ $tagParts['suffix'] }}
-                                    </span>
-                                </div>
-                            @else
-                                <span 
-                                    class="pack-tag-badge-single inline-flex items-center px-2.5 py-1 rounded-[6px] bg-white/95 border text-xs font-black tracking-wide shadow-xs uppercase leading-none"
-                                    style="color: {{ $tagColor }}; border-color: {{ $tagColor }}40; opacity: 0.9 !important; font-weight: 900 !important; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;"
-                                >
-                                    {{ $tagParts['suffix'] }}
-                                </span>
-                            @endif
-                        </div>
-                        @endif
-                        @if($index === 0)
-                        <div class="absolute bottom-2.5 left-2.5 right-2.5 bg-black/60 backdrop-blur-xs py-1.5 px-3 rounded-[6px] text-center text-white text-xs font-bold tracking-wider shadow-sm font-body pointer-events-none">
-                            FREE CERAMIC STAND <span class="text-[#F6DAA8] font-normal">Worth ₹150/-</span>
-                        </div>
-                        @else
-                        <div class="absolute bottom-2.5 left-2.5 right-2.5 bg-black/60 backdrop-blur-xs py-1.5 px-3 rounded-[6px] text-center text-white text-xs font-bold tracking-wider shadow-sm font-body pointer-events-none">
-                            100% BAMBOO FREE &amp; VEDIC
-                        </div>
-                        @endif
                     </div>
                     @endforeach
                 </div>
             </div>
 
             <!-- RIGHT COLUMN: Compact Purchase Details (5 Cols, 12px Spacing) -->
-            <div class="lg:col-span-5 space-y-3 lg:pl-2 sticky top-24 font-body">
+            <div class="lg:col-span-5 space-y-3 lg:pl-2 sticky top-20 font-body">
                 
                 <!-- 1. Star Rating & Review Count (Bigger & Clickable to scroll to reviews) -->
                 <a href="#customer-reviews" class="inline-flex items-center space-x-2 text-sm sm:text-[15px] text-gray-700 hover:text-[#D38928] transition-colors group cursor-pointer focus:outline-none">
