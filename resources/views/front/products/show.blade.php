@@ -125,7 +125,7 @@
                             $tagColor = $product->badge_color;
                         @endphp
                         @if(!empty($tagParts))
-                        <div class="absolute top-4 right-4 sm:top-5 sm:right-5 z-10 pointer-events-none select-none">
+                        <div class="absolute top-4 right-5 sm:top-5 sm:right-7 z-10 pointer-events-none select-none">
                             @if(!empty($tagParts['number']))
                                 <div 
                                     class="pack-tag-badge flex flex-col items-center justify-center text-center leading-none"
@@ -188,7 +188,7 @@
                         @endif
 
                         @if($index === 0 && !empty($tagParts))
-                        <div class="absolute top-4 right-4 sm:top-5 sm:right-5 z-10 pointer-events-none select-none">
+                        <div class="absolute top-4 right-5 sm:top-5 sm:right-7 z-10 pointer-events-none select-none">
                             @if(!empty($tagParts['number']))
                                 <div 
                                     class="pack-tag-badge flex flex-col items-center justify-center text-center leading-none"
