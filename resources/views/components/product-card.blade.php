@@ -26,21 +26,13 @@
     <div class="p-[5px] pb-0">
         <div class="relative w-full aspect-[4/4.8] rounded-[20px] overflow-hidden bg-[#FAF3E5]">
             <a href="{{ route('products.show', $product->slug) }}" class="block w-full h-full relative overflow-hidden rounded-[20px]">
-                <!-- Primary Image (Solid Base Layer + Smooth Zoom In) -->
+                <!-- Primary Image (Crisp Single Image with Smooth Zoom In, No Blur) -->
                 <img 
                     src="{{ $imageSrc }}" 
                     alt="{{ $product->title }}" 
-                    class="w-full h-full object-cover object-top rounded-[20px] transition-transform duration-700 ease-out group-hover:scale-108"
+                    class="w-full h-full object-cover object-top rounded-[20px] transition-transform duration-500 ease-out group-hover:scale-108"
                     loading="lazy"
                     onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}';"
-                >
-                <!-- Secondary / Hover Image (Smooth Luxurious Crossfade + Matching Zoom In) -->
-                <img 
-                    src="{{ $hoverImageSrc }}" 
-                    alt="{{ $product->title }} (Detail)" 
-                    class="absolute inset-0 w-full h-full object-cover object-center rounded-[20px] opacity-0 group-hover:opacity-100 transition-all duration-700 ease-out group-hover:scale-108 pointer-events-none"
-                    loading="lazy"
-                    onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-incense-sticks-trio.jpg') }}';"
                 >
             </a>
 
@@ -91,9 +83,9 @@
     <div class="p-3.5 sm:p-4 pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
         
         <div class="space-y-1">
-            <h3 class="text-[13.5px] sm:text-[15px] font-bold text-[#1F1F1F] group-hover:text-[#D38928] transition-colors line-clamp-2 leading-snug font-body min-h-[2.4em]">
+            <h3 class="text-[19px] sm:text-[24px] font-bold text-[#1F1F1F] line-clamp-2 leading-snug font-body">
                 <a href="{{ route('products.show', $product->slug) }}">
-                    {{ $displayTitle }}@if(!empty($hindiTitle) && !str_contains($displayTitle, $hindiTitle)) <span class="font-bold font-serif text-[13px] sm:text-[14px] text-[#8B4513]">({{ $hindiTitle }})</span>@endif
+                    {{ $displayTitle }}@if(!empty($hindiTitle) && !str_contains($displayTitle, $hindiTitle)) <span class="font-medium text-[16px] sm:text-[20px]">({{ $hindiTitle }})</span>@endif
                 </a>
             </h3>
 
