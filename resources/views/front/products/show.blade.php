@@ -97,19 +97,52 @@
             
             <!-- LEFT COLUMN: Mobile Single+Thumbnails & Desktop High-Res 2-Column Grid (7 Cols) -->
             <div class="lg:col-span-7 space-y-2.5">
+                @php
+                    $tagParts = $product->pack_tag_parts;
+                    $tagColor = $product->badge_color;
+                @endphp
 
-                <!-- 1. MOBILE/TABLET VIEW: Main Hero Image + Horizontal Thumbnails Below (Clean Images, No Overlay Text, Same Card Design) -->
+                <!-- 1. MOBILE/TABLET VIEW: Main Hero Image + Horizontal Thumbnails Below (Zoomed out with side spacing & outer-matching pack badge) -->
                 <div class="block lg:hidden space-y-2.5" id="product-mobile-gallery">
                     <!-- Main Large Hero Image (Exact Match with Product Card Styling) -->
                     <div class="product-card group relative bg-[#FFF9ED] rounded-[20px] border border-[#EAE3D9] p-[5px] shadow-xs overflow-hidden">
-                        <div class="relative w-full aspect-[4/4.8] rounded-[20px] overflow-hidden bg-[#FAF3E5]">
+                        <div class="relative w-full aspect-[4/4.8] rounded-[20px] overflow-hidden bg-[#FAF3E5] flex items-center justify-center p-3 sm:p-5">
                             <img 
                                 id="main-product-gallery-img" 
                                 src="{{ $galleryImages[0] }}" 
                                 alt="{{ $product->title }}" 
-                                class="w-full h-full object-cover object-top rounded-[20px] transition-transform duration-500 ease-out"
+                                class="w-full h-full object-contain rounded-[14px] transition-transform duration-500 ease-out"
                                 onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}';"
                             >
+
+                            <!-- Top-Right Tag Type Badge (Matches Product Card Outside Exactly) -->
+                            @if(!empty($tagParts))
+                                <div class="absolute top-3.5 right-5 sm:top-4 sm:right-6 z-20 pointer-events-none select-none opacity-90" style="opacity: 0.9 !important;">
+                                    @if(!empty($tagParts['number']))
+                                        <div 
+                                            class="pack-tag-badge flex flex-col items-center justify-center text-center leading-none"
+                                            style="color: {{ $tagColor }}; opacity: 0.9 !important; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;"
+                                        >
+                                            <span class="pack-tag-prefix text-[8.5px] sm:text-[9.5px] font-black lowercase tracking-tight leading-none" style="font-weight: 900 !important;">
+                                                {{ $tagParts['prefix'] }}
+                                            </span>
+                                            <span class="pack-tag-number text-[18px] sm:text-[20px] font-black leading-none my-0.5 tracking-tighter" style="font-weight: 900 !important; line-height: 0.86;">
+                                                {{ $tagParts['number'] }}
+                                            </span>
+                                            <span class="pack-tag-suffix text-[8.5px] sm:text-[9.5px] font-black lowercase tracking-tight leading-none" style="font-weight: 900 !important;">
+                                                {{ $tagParts['suffix'] }}
+                                            </span>
+                                        </div>
+                                    @else
+                                        <span 
+                                            class="pack-tag-badge-single inline-flex items-center px-2 py-0.5 rounded-[5px] bg-white/95 border text-[9px] sm:text-[10px] font-black tracking-wider shadow-xs uppercase leading-none"
+                                            style="color: {{ $tagColor }}; border-color: {{ $tagColor }}40; opacity: 0.9 !important; font-weight: 900 !important; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;"
+                                        >
+                                            {{ $tagParts['suffix'] }}
+                                        </span>
+                                    @endif
+                                </div>
+                            @endif
                         </div>
                     </div>
 
@@ -123,25 +156,54 @@
                                 data-index="{{ $index }}"
                                 aria-label="View product image {{ $index + 1 }}"
                             >
-                                <div class="w-full h-full rounded-[10px] overflow-hidden bg-[#FAF3E5] aspect-[4/4.8]">
-                                    <img src="{{ $imgUrl }}" alt="{{ $product->title }} thumbnail {{ $index + 1 }}" class="w-full h-full object-cover rounded-[10px]" onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}';">
+                                <div class="w-full h-full rounded-[10px] overflow-hidden bg-[#FAF3E5] aspect-[4/4.8] p-1 flex items-center justify-center">
+                                    <img src="{{ $imgUrl }}" alt="{{ $product->title }} thumbnail {{ $index + 1 }}" class="w-full h-full object-contain rounded-[8px]" onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}';">
                                 </div>
                             </button>
                         @endforeach
                     </div>
                 </div>
 
-                <!-- 2. DESKTOP VIEW: Clean Images with Exact Same Product Card Dimensions & Styling (No Text Overlay) -->
+                <!-- 2. DESKTOP VIEW: Zoomed out with side spacing + outer-matching pack badge -->
                 <div class="hidden lg:grid grid-cols-2 gap-3 xl:gap-4">
                     @foreach($galleryImages as $index => $imgUrl)
                     <div class="product-card group relative bg-[#FFF9ED] rounded-[20px] border border-[#EAE3D9] p-[5px] shadow-xs overflow-hidden">
-                        <div class="relative w-full aspect-[4/4.8] rounded-[20px] overflow-hidden bg-[#FAF3E5]">
+                        <div class="relative w-full aspect-[4/4.8] rounded-[20px] overflow-hidden bg-[#FAF3E5] flex items-center justify-center p-3 sm:p-5">
                             <img 
                                 src="{{ $imgUrl }}" 
                                 alt="{{ $product->title }} visual {{ $index + 1 }}" 
-                                class="w-full h-full object-cover {{ $index === 0 ? 'object-top' : 'object-center' }} rounded-[20px] transition-transform duration-500 ease-out group-hover:scale-108" 
+                                class="w-full h-full object-contain rounded-[14px] transition-transform duration-500 ease-out group-hover:scale-105" 
                                 onerror="this.onerror=null; this.src='{{ $index === 0 ? asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') : asset('assets/images/products/ishanaa-incense-sticks-trio.jpg') }}';"
                             >
+
+                            <!-- Top-Right Tag Type Badge (Matches Product Card Outside Exactly) -->
+                            @if($index === 0 && !empty($tagParts))
+                                <div class="absolute top-3.5 right-5 sm:top-4 sm:right-6 z-20 pointer-events-none select-none opacity-90" style="opacity: 0.9 !important;">
+                                    @if(!empty($tagParts['number']))
+                                        <div 
+                                            class="pack-tag-badge flex flex-col items-center justify-center text-center leading-none"
+                                            style="color: {{ $tagColor }}; opacity: 0.9 !important; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;"
+                                        >
+                                            <span class="pack-tag-prefix text-[8.5px] sm:text-[9.5px] font-black lowercase tracking-tight leading-none" style="font-weight: 900 !important;">
+                                                {{ $tagParts['prefix'] }}
+                                            </span>
+                                            <span class="pack-tag-number text-[18px] sm:text-[20px] font-black leading-none my-0.5 tracking-tighter" style="font-weight: 900 !important; line-height: 0.86;">
+                                                {{ $tagParts['number'] }}
+                                            </span>
+                                            <span class="pack-tag-suffix text-[8.5px] sm:text-[9.5px] font-black lowercase tracking-tight leading-none" style="font-weight: 900 !important;">
+                                                {{ $tagParts['suffix'] }}
+                                            </span>
+                                        </div>
+                                    @else
+                                        <span 
+                                            class="pack-tag-badge-single inline-flex items-center px-2 py-0.5 rounded-[5px] bg-white/95 border text-[9px] sm:text-[10px] font-black tracking-wider shadow-xs uppercase leading-none"
+                                            style="color: {{ $tagColor }}; border-color: {{ $tagColor }}40; opacity: 0.9 !important; font-weight: 900 !important; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;"
+                                        >
+                                            {{ $tagParts['suffix'] }}
+                                        </span>
+                                    @endif
+                                </div>
+                            @endif
                         </div>
                     </div>
                     @endforeach
