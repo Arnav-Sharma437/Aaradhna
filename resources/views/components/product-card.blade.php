@@ -20,7 +20,7 @@
     $hindiTitle = $product->hindi_title ? trim($product->hindi_title) : null;
 @endphp
 
-<div {{ $attributes->merge(['class' => 'product-card group relative flex flex-col bg-white rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#C18129] shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-visible h-full font-body']) }}>
+<div {{ $attributes->merge(['class' => 'product-card group relative flex flex-col bg-white rounded-[20px] sm:rounded-[24px] border border-[#EADBCC] hover:border-[#C18129] shadow-xs hover:shadow-md transition-colors duration-200 overflow-visible h-full font-body']) }}>
     
     <!-- Product Image Box (Full Attach, No Side Padding) -->
     <div class="relative w-full aspect-[4/4.8] rounded-t-[20px] sm:rounded-t-[24px] overflow-hidden bg-[#FAF7F2]">
@@ -29,7 +29,7 @@
             <img 
                 src="{{ $imageSrc }}" 
                 alt="{{ $product->title }}" 
-                class="w-full h-full object-cover object-top transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105"
+                class="w-full h-full object-cover object-top transition-opacity duration-300 ease-in-out group-hover:opacity-0"
                 loading="lazy"
                 onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}';"
             >
@@ -37,19 +37,19 @@
             <img 
                 src="{{ $hoverImageSrc }}" 
                 alt="{{ $product->title }} (Detail)" 
-                class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-500 ease-out"
+                class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"
                 loading="lazy"
                 onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-incense-sticks-trio.jpg') }}';"
             >
         </a>
 
-        <!-- Top-Right Tag Type Badge (Matches Reference Image Design & Custom Color) -->
+        <!-- Top-Right Tag Type Badge (Equal spacing from top & right, moved away from edge) -->
         @php
             $tagParts = $product->pack_tag_parts;
             $tagColor = $product->badge_color;
         @endphp
         @if(!empty($tagParts))
-            <div class="absolute top-2 right-2 sm:top-2.5 sm:right-2.5 z-20 pointer-events-none select-none">
+            <div class="absolute top-4 right-4 sm:top-5 sm:right-5 z-20 pointer-events-none select-none">
                 @if(!empty($tagParts['number']))
                     <div 
                         class="pack-tag-badge flex flex-col items-center justify-center text-center leading-none"
@@ -126,7 +126,7 @@
             @else
                 <button 
                     type="button" 
-                    class="quick-add-to-cart-btn w-full py-2 px-2 sm:px-4 bg-[#C18129] hover:bg-[#A86911] text-white text-xs sm:text-sm font-normal rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-1.5 font-body cursor-pointer"
+                    class="quick-add-to-cart-btn w-full py-2 px-2 sm:px-4 bg-[#C18129] hover:bg-[#A86911] text-white text-xs sm:text-sm font-normal rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-colors duration-200 text-center flex items-center justify-center space-x-1.5 font-body cursor-pointer"
                     data-product-id="{{ $product->id }}"
                     data-product-title="{{ $product->formatted_title }}"
                     data-product-slug="{{ $product->slug }}"
