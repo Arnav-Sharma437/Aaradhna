@@ -178,7 +178,7 @@
                 <div class="hidden lg:grid grid-cols-2 gap-2.5">
                     @foreach($galleryImages as $index => $imgUrl)
                     <div class="relative aspect-[4/4.8] rounded-[10px] sm:rounded-[12px] overflow-hidden bg-[#FAF7F2] border border-[#EADBCC]/60 shadow-xs group">
-                        <img src="{{ $imgUrl }}" alt="{{ $product->title }} visual {{ $index + 1 }}" class="w-full h-full object-cover {{ $index === 0 ? 'object-top' : 'object-center' }}" onerror="this.onerror=null; this.src='{{ $index === 0 ? asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') : asset('assets/images/products/ishanaa-incense-sticks-trio.jpg') }}';">
+                        <img src="{{ $imgUrl }}" alt="{{ $product->title }} visual {{ $index + 1 }}" class="w-full h-full object-cover {{ $index === 0 ? 'object-top' : 'object-center' }} transition-transform duration-700 ease-out group-hover:scale-108" onerror="this.onerror=null; this.src='{{ $index === 0 ? asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') : asset('assets/images/products/ishanaa-incense-sticks-trio.jpg') }}';">
                         @if($index === 0 && ($hasDiscount || $discountPercent))
                         <div class="absolute top-2.5 left-2.5 z-10 pointer-events-none">
                             <span class="inline-block bg-[#8B1E1E] text-white text-xs font-bold px-2.5 py-0.5 rounded-[6px] tracking-wide shadow-sm font-body">

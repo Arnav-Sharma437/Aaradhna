@@ -20,25 +20,25 @@
     $hindiTitle = $product->hindi_title ? trim($product->hindi_title) : null;
 @endphp
 
-<div {{ $attributes->merge(['class' => 'product-card group relative flex flex-col bg-white rounded-[20px] border border-[#EADBCC] shadow-xs overflow-hidden h-full font-body']) }}>
+<div {{ $attributes->merge(['class' => 'product-card group relative flex flex-col bg-[#FFF9ED] rounded-[20px] border border-[#EAE3D9] shadow-xs overflow-hidden h-full font-body']) }}>
     
     <!-- Product Image Box (5px padding, 20px border radius) -->
     <div class="p-[5px] pb-0">
-        <div class="relative w-full aspect-[4/4.8] rounded-[20px] overflow-hidden bg-[#FAF7F2]">
+        <div class="relative w-full aspect-[4/4.8] rounded-[20px] overflow-hidden bg-[#FAF3E5]">
             <a href="{{ route('products.show', $product->slug) }}" class="block w-full h-full relative overflow-hidden rounded-[20px]">
-                <!-- Primary Image (Solid Base Layer, No Flicker) -->
+                <!-- Primary Image (Solid Base Layer + Smooth Zoom In) -->
                 <img 
                     src="{{ $imageSrc }}" 
                     alt="{{ $product->title }}" 
-                    class="w-full h-full object-cover object-top rounded-[20px]"
+                    class="w-full h-full object-cover object-top rounded-[20px] transition-transform duration-700 ease-out group-hover:scale-108"
                     loading="lazy"
                     onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}';"
                 >
-                <!-- Secondary / Hover Image (Smooth Luxurious Crossfade) -->
+                <!-- Secondary / Hover Image (Smooth Luxurious Crossfade + Matching Zoom In) -->
                 <img 
                     src="{{ $hoverImageSrc }}" 
                     alt="{{ $product->title }} (Detail)" 
-                    class="absolute inset-0 w-full h-full object-cover object-center rounded-[20px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out pointer-events-none"
+                    class="absolute inset-0 w-full h-full object-cover object-center rounded-[20px] opacity-0 group-hover:opacity-100 transition-all duration-700 ease-out group-hover:scale-108 pointer-events-none"
                     loading="lazy"
                     onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-incense-sticks-trio.jpg') }}';"
                 >
