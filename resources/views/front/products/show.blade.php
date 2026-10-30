@@ -102,16 +102,16 @@
                     $tagColor = $product->badge_color;
                 @endphp
 
-                <!-- 1. MOBILE/TABLET VIEW: Main Hero Image + Horizontal Thumbnails Below (Zoomed out with side spacing & outer-matching pack badge) -->
+                <!-- 1. MOBILE/TABLET VIEW: Main Hero Image + Horizontal Thumbnails Below (Clean Full Card Image & Pack Badge) -->
                 <div class="block lg:hidden space-y-2.5" id="product-mobile-gallery">
                     <!-- Main Large Hero Image (Exact Match with Product Card Styling) -->
                     <div class="product-card group relative bg-[#FFF9ED] rounded-[20px] border border-[#EAE3D9] p-[5px] shadow-xs overflow-hidden">
-                        <div class="relative w-full aspect-[4/4.8] rounded-[20px] overflow-hidden bg-[#FAF3E5] flex items-center justify-center p-3 sm:p-5">
+                        <div class="relative w-full aspect-[4/4.8] rounded-[20px] overflow-hidden bg-[#FAF3E5]">
                             <img 
                                 id="main-product-gallery-img" 
                                 src="{{ $galleryImages[0] }}" 
                                 alt="{{ $product->title }}" 
-                                class="w-full h-full object-contain rounded-[14px] transition-transform duration-500 ease-out"
+                                class="w-full h-full object-cover object-top rounded-[20px] transition-transform duration-500 ease-out"
                                 onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}';"
                             >
 
@@ -156,23 +156,23 @@
                                 data-index="{{ $index }}"
                                 aria-label="View product image {{ $index + 1 }}"
                             >
-                                <div class="w-full h-full rounded-[10px] overflow-hidden bg-[#FAF3E5] aspect-[4/4.8] p-1 flex items-center justify-center">
-                                    <img src="{{ $imgUrl }}" alt="{{ $product->title }} thumbnail {{ $index + 1 }}" class="w-full h-full object-contain rounded-[8px]" onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}';">
+                                <div class="w-full h-full rounded-[10px] overflow-hidden bg-[#FAF3E5] aspect-[4/4.8]">
+                                    <img src="{{ $imgUrl }}" alt="{{ $product->title }} thumbnail {{ $index + 1 }}" class="w-full h-full object-cover rounded-[10px]" onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}';">
                                 </div>
                             </button>
                         @endforeach
                     </div>
                 </div>
 
-                <!-- 2. DESKTOP VIEW: Zoomed out with side spacing + outer-matching pack badge -->
+                <!-- 2. DESKTOP VIEW: Full Card Images + Outer-Matching Pack Badge -->
                 <div class="hidden lg:grid grid-cols-2 gap-3 xl:gap-4">
                     @foreach($galleryImages as $index => $imgUrl)
                     <div class="product-card group relative bg-[#FFF9ED] rounded-[20px] border border-[#EAE3D9] p-[5px] shadow-xs overflow-hidden">
-                        <div class="relative w-full aspect-[4/4.8] rounded-[20px] overflow-hidden bg-[#FAF3E5] flex items-center justify-center p-3 sm:p-5">
+                        <div class="relative w-full aspect-[4/4.8] rounded-[20px] overflow-hidden bg-[#FAF3E5]">
                             <img 
                                 src="{{ $imgUrl }}" 
                                 alt="{{ $product->title }} visual {{ $index + 1 }}" 
-                                class="w-full h-full object-contain rounded-[14px] transition-transform duration-500 ease-out group-hover:scale-105" 
+                                class="w-full h-full object-cover {{ $index === 0 ? 'object-top' : 'object-center' }} rounded-[20px] transition-transform duration-500 ease-out group-hover:scale-108" 
                                 onerror="this.onerror=null; this.src='{{ $index === 0 ? asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') : asset('assets/images/products/ishanaa-incense-sticks-trio.jpg') }}';"
                             >
 
@@ -382,11 +382,12 @@
                             <button type="button" id="qty-increment" class="text-gray-600 hover:text-[#121212] transition-colors focus:outline-none font-bold text-lg leading-none cursor-pointer">+</button>
                         </div>
 
-                        <!-- Add to Cart CTA (Matching Website Button Radius: 8px/10px) -->
+                        <!-- Add to Cart CTA (Color #d3a13e) -->
                         <button 
                             type="button" 
                             id="main-add-to-cart-btn"
-                            class="flex-1 h-11 sm:h-12 bg-[#C18129] hover:bg-[#A86911] active:bg-[#8D540A] text-white text-sm sm:text-base font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 text-center flex items-center justify-center cursor-pointer focus:outline-none font-heading"
+                            class="flex-1 h-11 sm:h-12 bg-[#d3a13e] hover:bg-[#c2902f] active:bg-[#aa7c24] text-white text-sm sm:text-base font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 text-center flex items-center justify-center cursor-pointer focus:outline-none font-heading"
+                            style="background-color: #d3a13e !important;"
                             data-product-id="{{ $product->id }}"
                             data-product-title="{{ $product->formatted_title }}"
                             data-product-slug="{{ $product->slug }}"
@@ -1337,7 +1338,8 @@
     <button 
         type="button" 
         id="sticky-atc-btn" 
-        class="py-2.5 sm:py-3 px-5 sm:px-7 bg-[#C18129] hover:bg-[#A86911] active:bg-[#8D540A] text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-[10px] shadow-sm hover:shadow-md transition-all font-heading cursor-pointer whitespace-nowrap shrink-0 flex items-center space-x-2"
+        class="py-2.5 sm:py-3 px-5 sm:px-7 bg-[#d3a13e] hover:bg-[#c2902f] active:bg-[#aa7c24] text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-[10px] shadow-sm hover:shadow-md transition-all font-heading cursor-pointer whitespace-nowrap shrink-0 flex items-center space-x-2"
+        style="background-color: #d3a13e !important;"
         data-product-id="{{ $product->id }}"
         data-product-title="{{ $product->formatted_title }}"
         data-product-slug="{{ $product->slug }}"
