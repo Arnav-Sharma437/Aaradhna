@@ -83,9 +83,9 @@
     <div class="p-3.5 sm:p-4 pt-2 sm:pt-3 flex flex-col justify-between flex-grow space-y-2 sm:space-y-3">
         
         <div class="space-y-1">
-            <h3 class="text-[18px] sm:text-[20px] font-bold text-[#1F1F1F] line-clamp-2 leading-snug font-body">
-                <a href="{{ route('products.show', $product->slug) }}">
-                    {{ $displayTitle }}@if(!empty($hindiTitle) && !str_contains($displayTitle, $hindiTitle)) <span class="font-medium text-[12px]">({{ $hindiTitle }})</span>@endif
+            <h3 class="text-[18px] sm:text-[20px] font-extrabold text-[#1F1F1F] tracking-normal line-clamp-2 leading-snug font-body" style="letter-spacing: normal !important;">
+                <a href="{{ route('products.show', $product->slug) }}" class="font-extrabold text-[#1F1F1F] tracking-normal" style="letter-spacing: normal !important;">
+                    {{ $displayTitle }}@if(!empty($hindiTitle) && !str_contains($displayTitle, $hindiTitle)) <span class="product-hindi-title font-bold text-[12px] tracking-normal" style="letter-spacing: normal !important;">({{ $hindiTitle }})</span>@endif
                 </a>
             </h3>
 
