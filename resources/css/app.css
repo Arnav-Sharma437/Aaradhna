@@ -512,7 +512,7 @@ input:-webkit-autofill:active {
 
 .pack-tag-badge,
 .pack-tag-badge-single {
-    opacity: 0.7 !important;
+    opacity: 0.9 !important;
 }
 
 .pack-tag-badge .pack-tag-prefix,

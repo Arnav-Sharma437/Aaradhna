@@ -44,17 +44,17 @@
                 >
             </a>
 
-            <!-- Top-Right Tag Type Badge (Compact size & shifted slightly more left, 0.7 opacity) -->
+            <!-- Top-Right Tag Type Badge (Compact size & shifted slightly more left, 0.9 opacity) -->
             @php
                 $tagParts = $product->pack_tag_parts;
                 $tagColor = $product->badge_color;
             @endphp
             @if(!empty($tagParts))
-                <div class="absolute top-3.5 right-5 sm:top-4 sm:right-6 z-20 pointer-events-none select-none opacity-70" style="opacity: 0.7 !important;">
+                <div class="absolute top-3.5 right-5 sm:top-4 sm:right-6 z-20 pointer-events-none select-none opacity-90" style="opacity: 0.9 !important;">
                     @if(!empty($tagParts['number']))
                         <div 
                             class="pack-tag-badge flex flex-col items-center justify-center text-center leading-none"
-                            style="color: {{ $tagColor }}; opacity: 0.7 !important; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;"
+                            style="color: {{ $tagColor }}; opacity: 0.9 !important; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;"
                         >
                             <span class="pack-tag-prefix text-[8.5px] sm:text-[9.5px] font-black lowercase tracking-tight leading-none" style="font-weight: 900 !important;">
                                 {{ $tagParts['prefix'] }}
@@ -69,7 +69,7 @@
                     @else
                         <span 
                             class="pack-tag-badge-single inline-flex items-center px-2 py-0.5 rounded-[5px] bg-white/95 border text-[9px] sm:text-[10px] font-black tracking-wider shadow-xs uppercase leading-none"
-                            style="color: {{ $tagColor }}; border-color: {{ $tagColor }}40; opacity: 0.7 !important; font-weight: 900 !important; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;"
+                            style="color: {{ $tagColor }}; border-color: {{ $tagColor }}40; opacity: 0.9 !important; font-weight: 900 !important; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;"
                         >
                             {{ $tagParts['suffix'] }}
                         </span>
