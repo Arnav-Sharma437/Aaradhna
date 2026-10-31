@@ -118,13 +118,13 @@
                             >
 
                             @if($hasVideo)
-                                <div id="main-product-gallery-video-wrap" class="hidden absolute inset-0 w-full h-full bg-black rounded-[6px] overflow-hidden">
+                                <div id="main-product-gallery-video-wrap" class="hidden absolute inset-0 w-full h-full bg-transparent rounded-[6px] overflow-hidden">
                                     @if($product->is_youtube_video)
                                         <iframe 
                                             id="main-product-gallery-yt-iframe"
                                             src=""
-                                            data-src="{{ $product->youtube_embed_url }}"
-                                            class="w-full h-full border-0 rounded-[6px]" 
+                                            data-src="{{ $product->youtube_embed_url }}&controls=0&modestbranding=1"
+                                            class="w-full h-full border-0 rounded-[6px] pointer-events-none" 
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                             allowfullscreen
                                         ></iframe>
@@ -133,10 +133,11 @@
                                             id="main-product-gallery-video"
                                             src="{{ $product->video_asset_url }}" 
                                             poster="{{ $galleryImages[0] }}"
+                                            autoplay
+                                            loop
+                                            muted
                                             playsinline
-                                            controls
-                                            preload="metadata"
-                                            class="w-full h-full object-cover rounded-[6px]"
+                                            class="w-full h-full object-cover rounded-[6px] pointer-events-none"
                                         ></video>
                                     @endif
                                 </div>
@@ -258,35 +259,28 @@
                     </div>
                     @endif
 
-                    <!-- Video Card in Gallery Grid (Position 2 if product has video) -->
+                    <!-- Video Card in Gallery Grid (Position 2 if product has video - Autoplay Muted Loop, No Controls, No Tag) -->
                     @if($hasVideo)
                     <div class="product-card relative bg-transparent rounded-[6px] border-0 p-0 shadow-none overflow-hidden">
-                        <div class="relative w-full aspect-[4/4.8] rounded-[6px] overflow-hidden bg-black group">
+                        <div class="relative w-full aspect-[4/4.8] rounded-[6px] overflow-hidden bg-transparent">
                             @if($product->is_youtube_video)
                                 <iframe 
-                                    src="{{ $product->youtube_embed_url }}" 
-                                    class="w-full h-full border-0 rounded-[6px]" 
+                                    src="{{ $product->youtube_embed_url }}&controls=0&modestbranding=1" 
+                                    class="w-full h-full border-0 rounded-[6px] pointer-events-none" 
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                     allowfullscreen
                                 ></iframe>
                             @else
                                 <video 
-                                    class="w-full h-full object-cover rounded-[6px]" 
+                                    class="w-full h-full object-cover rounded-[6px] pointer-events-none" 
                                     src="{{ $product->video_asset_url }}" 
                                     poster="{{ $galleryImages[1] ?? $galleryImages[0] }}" 
-                                    playsinline 
-                                    controls 
+                                    autoplay 
+                                    loop 
                                     muted 
-                                    loop
-                                    preload="metadata"
+                                    playsinline 
                                 ></video>
                             @endif
-                            <div class="absolute top-2.5 left-2.5 z-20 pointer-events-none">
-                                <span class="inline-flex items-center space-x-1 px-2 py-0.5 rounded-[4px] bg-black/60 backdrop-blur-md text-white text-[9px] font-bold uppercase tracking-wider border border-white/20">
-                                    <span>▶</span>
-                                    <span>Video</span>
-                                </span>
-                            </div>
                         </div>
                     </div>
                     @endif
