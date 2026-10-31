@@ -160,10 +160,44 @@
                 </div>
 
                 <!-- 5. Best Seller Combo -->
-                @php $isBestSeller = request()->is('products/pack-of-six'); @endphp
+                @php
+                    $headerBestSellerProduct = \App\Models\Product::where('status', 'active')
+                        ->where(function ($q) {
+                            $q->where('slug', 'bestseller-combo')
+                              ->orWhere('slug', 'pack-of-six')
+                              ->orWhere('slug', 'like', '%bestseller%')
+                              ->orWhere('slug', 'like', '%best-seller%')
+                              ->orWhere('title', 'like', '%bestseller%')
+                              ->orWhere('title', 'like', '%best seller%')
+                              ->orWhere('is_bestseller', 1)
+                              ->orWhereHas('collections', function ($cq) {
+                                  $cq->where('slug', 'best-seller-combo')->orWhere('slug', 'best-seller');
+                              })
+                              ->orWhereHas('category', function ($cq) {
+                                  $cq->where('slug', 'like', '%bestseller%')->orWhere('slug', 'like', '%best-seller%');
+                              });
+                        })
+                        ->orderByRaw("CASE 
+                            WHEN slug = 'bestseller-combo' THEN 1 
+                            WHEN slug = 'pack-of-six' THEN 2 
+                            WHEN slug LIKE '%bestseller%' THEN 3 
+                            WHEN is_bestseller = 1 THEN 4 
+                            ELSE 5 END")
+                        ->orderBy('sort_order')
+                        ->first();
+
+                    $headerBestSellerUrl = $headerBestSellerProduct 
+                        ? route('products.show', $headerBestSellerProduct->slug) 
+                        : route('collections.show', 'best-seller-combo');
+
+                    $isBestSeller = request()->is('products/pack-of-six') 
+                        || request()->is('products/bestseller-combo') 
+                        || request()->is('collections/best-seller-combo')
+                        || ($headerBestSellerProduct && request()->is('products/' . $headerBestSellerProduct->slug));
+                @endphp
                 <div class="py-1 xl:py-1.5 flex items-center">
                     <a 
-                        href="{{ route('products.show', 'pack-of-six') }}" 
+                        href="{{ $headerBestSellerUrl }}" 
                         class="text-[13.5px] lg:text-[14px] xl:text-[14.5px] {{ $isBestSeller ? 'font-bold text-[#C18129] border-b-2 border-[#C18129] pb-0.5' : 'font-medium text-[#444444] hover:text-[#C18129]' }} transition-colors whitespace-nowrap tracking-normal"
                     >
                         <span>Best Seller Combo</span>

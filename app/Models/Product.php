@@ -147,24 +147,12 @@ class Product extends Model
         // 1. Explicit badge_text set by admin
         if (!empty($this->badge_text)) {
             $val = trim($this->badge_text);
-            if (!in_array(strtolower($val), ['none', 'null', '0', 'no badge', 'no tag', 'no'])) {
+            if ($val !== '' && !in_array(strtolower($val), ['none', 'null', '0', 'no badge', 'no tag', 'no', 'false'])) {
                 return $val;
             }
         }
 
-        // 2. Look for "Pack of X" in title or variants if not explicitly set
-        if (preg_match('/Pack\s*of\s*\d+(\s*[a-zA-Z]+)?/i', $this->title, $matches)) {
-            return trim($matches[0]);
-        }
-
-        if ($this->relationLoaded('variants') || $this->variants()->exists()) {
-            foreach ($this->variants as $variant) {
-                if (preg_match('/Pack\s*of\s*\d+(\s*[a-zA-Z]+)?/i', $variant->title, $matches)) {
-                    return trim($matches[0]);
-                }
-            }
-        }
-
+        // If tag is empty, return null so nothing is shown
         return null;
     }
 

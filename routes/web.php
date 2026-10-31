@@ -21,8 +21,9 @@ Route::get('/qr', [QrTrackController::class, 'track'])
 Route::get('/search', [SearchController::class, 'index'])->name('search.index');
 Route::get('/api/search/predictive', [SearchController::class, 'predictive'])->name('search.predictive');
 
-// Catalog / Collection Routes
+// Catalog / Collection / Category Routes
 Route::get('/collections/{slug}', [CollectionController::class, 'show'])->name('collections.show');
+Route::get('/categories/{slug}', [CollectionController::class, 'show'])->name('categories.show');
 
 // Product Detail Routes
 Route::get('/pitambara-havan', [ProductController::class, 'showPitambara'])->name('products.pitambara');

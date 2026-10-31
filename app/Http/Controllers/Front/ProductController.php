@@ -39,8 +39,9 @@ class ProductController extends Controller
             'gulab-rooh-40' => 'gulab-rooh',
             'lavender' => 'lavender-veda',
             'lavender-veda-40' => 'lavender-veda',
-            'bambooless-2-combo-pack' => 'pack-of-six',
-            'bambooless-3-combo-pack' => 'pack-of-six',
+            'pack-of-six' => 'bestseller-combo',
+            'bambooless-2-combo-pack' => 'bestseller-combo',
+            'bambooless-3-combo-pack' => 'bestseller-combo',
             'kesar-chandan-dhoop-cones' => 'chandan-saanjh',
             'chandan-cones' => 'chandan-saanjh',
             'sandalwood-dhoop-cones' => 'chandan-saanjh',
@@ -71,8 +72,29 @@ class ProductController extends Controller
 
         // If still not found, try finding by partial slug match
         if (!$product) {
+            $firstSegment = explode('-', $slug)[0];
+            if (!empty($firstSegment) && strlen($firstSegment) > 2) {
+                $product = Product::where('status', 'active')
+                    ->where('slug', 'LIKE', '%' . $firstSegment . '%')
+                    ->with([
+                        'category',
+                        'primaryImage',
+                        'images',
+                        'variants',
+                        'approvedReviews',
+                    ])
+                    ->first();
+            }
+        }
+
+        // If still not found, check if it was pack-of-six or best seller
+        if (!$product && (str_contains($slug, 'pack') || str_contains($slug, 'bestseller') || str_contains($slug, 'best-seller'))) {
             $product = Product::where('status', 'active')
-                ->where('slug', 'LIKE', '%' . explode('-', $slug)[0] . '%')
+                ->where(function ($q) {
+                    $q->where('slug', 'like', '%bestseller%')
+                      ->orWhere('title', 'like', '%bestseller%')
+                      ->orWhere('is_bestseller', 1);
+                })
                 ->with([
                     'category',
                     'primaryImage',
@@ -83,17 +105,9 @@ class ProductController extends Controller
                 ->first();
         }
 
-        // Fallback to first active product if slug not found
+        // If product does not exist, redirect to catalog instead of silently serving Tulsi
         if (!$product) {
-            $product = Product::where('status', 'active')
-                ->with([
-                    'category',
-                    'primaryImage',
-                    'images',
-                    'variants',
-                    'approvedReviews',
-                ])
-                ->first();
+            return redirect()->route('collections.show', 'all');
         }
 
         // 4 Related Products from same category or active products

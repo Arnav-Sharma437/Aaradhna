@@ -125,8 +125,38 @@
             </div>
 
             <!-- 5. Best Seller Combo -->
+            @php
+                $mobileBestSellerProduct = \App\Models\Product::where('status', 'active')
+                    ->where(function ($q) {
+                        $q->where('slug', 'bestseller-combo')
+                          ->orWhere('slug', 'pack-of-six')
+                          ->orWhere('slug', 'like', '%bestseller%')
+                          ->orWhere('slug', 'like', '%best-seller%')
+                          ->orWhere('title', 'like', '%bestseller%')
+                          ->orWhere('title', 'like', '%best seller%')
+                          ->orWhere('is_bestseller', 1)
+                          ->orWhereHas('collections', function ($cq) {
+                              $cq->where('slug', 'best-seller-combo')->orWhere('slug', 'best-seller');
+                          })
+                          ->orWhereHas('category', function ($cq) {
+                              $cq->where('slug', 'like', '%bestseller%')->orWhere('slug', 'like', '%best-seller%');
+                          });
+                    })
+                    ->orderByRaw("CASE 
+                        WHEN slug = 'bestseller-combo' THEN 1 
+                        WHEN slug = 'pack-of-six' THEN 2 
+                        WHEN slug LIKE '%bestseller%' THEN 3 
+                        WHEN is_bestseller = 1 THEN 4 
+                        ELSE 5 END")
+                    ->orderBy('sort_order')
+                    ->first();
+
+                $mobileBestSellerUrl = $mobileBestSellerProduct 
+                    ? route('products.show', $mobileBestSellerProduct->slug) 
+                    : route('collections.show', 'best-seller-combo');
+            @endphp
             <a 
-                href="{{ route('products.show', 'pack-of-six') }}" 
+                href="{{ $mobileBestSellerUrl }}" 
                 class="block py-4 px-5 text-base sm:text-lg font-bold font-serif tracking-wide text-white hover:bg-black/10 transition-colors"
             >
                 <span>Best Seller Combo</span>

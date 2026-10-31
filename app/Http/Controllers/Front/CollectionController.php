@@ -17,8 +17,21 @@ class CollectionController extends Controller
      */
     public function show(Request $request, string $slug = 'all'): View|JsonResponse
     {
-        // 1. Fetch or synthesize Collection Meta
+        // 1. Fetch or synthesize Collection / Category Meta
         $dbCollection = Collection::where('slug', $slug)->where('is_active', true)->first();
+        $category = Category::where('slug', $slug)->where('is_active', true)->first();
+
+        // Cross-match between category and collection if only one found by slug
+        if (!$category && $dbCollection) {
+            $category = Category::where('slug', $dbCollection->slug)
+                ->orWhere('name', 'LIKE', '%' . $dbCollection->title . '%')
+                ->first();
+        }
+        if (!$dbCollection && $category) {
+            $dbCollection = Collection::where('slug', $category->slug)
+                ->orWhere('title', 'LIKE', '%' . $category->name . '%')
+                ->first();
+        }
 
         if ($slug === 'all') {
             $collection = $dbCollection ?? (object) [
@@ -30,33 +43,76 @@ class CollectionController extends Controller
                 'meta_description' => 'Explore 100% pure Vedic pooja essentials crafted without bamboo, toxic charcoal, or synthetic aromas.',
             ];
             $query = Product::where('status', 'active');
-        } elseif ($dbCollection) {
-            $collection = $dbCollection;
-            $query = $collection->products()->where('status', 'active');
+        } elseif ($slug === 'best-seller-combo' || $slug === 'best-seller' || $slug === 'best-sellers') {
+            $collection = $dbCollection ?? (object) [
+                'title' => 'Best Seller Combo',
+                'slug' => $slug,
+                'description' => 'Explore our top-rated, most celebrated sacred Vedic combos and bestsellers.',
+                'banner_path' => null,
+                'meta_title' => 'Best Seller Combo — 100% Pure & Vedic | Mangalam.co',
+                'meta_description' => 'Explore our top-rated, most celebrated sacred Vedic combos.',
+            ];
+            $query = Product::where('status', 'active')
+                ->where(function ($q) use ($dbCollection, $category) {
+                    $q->where('is_bestseller', true)
+                      ->orWhere('slug', 'bestseller-combo')
+                      ->orWhere('slug', 'pack-of-six')
+                      ->orWhere('slug', 'like', '%bestseller%')
+                      ->orWhere('title', 'like', '%bestseller%');
+
+                    if ($dbCollection) {
+                        $q->orWhereHas('collections', function ($cq) use ($dbCollection) {
+                            $cq->where('collections.id', $dbCollection->id);
+                        });
+                    }
+                    if ($category) {
+                        $q->orWhere('category_id', $category->id);
+                    }
+                });
+        } elseif ($dbCollection || $category) {
+            $collection = $dbCollection ?? (object) [
+                'title' => $category->name,
+                'slug' => $category->slug,
+                'description' => $category->description ?? $category->subtitle,
+                'banner_path' => $category->banner_path,
+                'meta_title' => $category->meta_title ?? "{$category->name} — 100% Pure & Vedic | Mangalam.co",
+                'meta_description' => $category->meta_description ?? $category->description,
+            ];
+
+            $query = Product::where('status', 'active')
+                ->where(function ($q) use ($dbCollection, $category) {
+                    $hasCondition = false;
+                    if ($category) {
+                        $q->where('category_id', $category->id);
+                        $hasCondition = true;
+                    }
+                    if ($dbCollection) {
+                        $method = $hasCondition ? 'orWhereHas' : 'whereHas';
+                        $q->$method('collections', function ($cq) use ($dbCollection) {
+                            $cq->where('collections.id', $dbCollection->id);
+                        });
+                    }
+                });
         } else {
-            // If slug matches a category directly
-            $category = Category::where('slug', $slug)->where('is_active', true)->first();
-            if ($category) {
-                $collection = (object) [
-                    'title' => $category->name,
-                    'slug' => $category->slug,
-                    'description' => $category->description ?? $category->subtitle,
-                    'banner_path' => $category->banner_path,
-                    'meta_title' => $category->meta_title ?? "{$category->name} — 100% Pure & Vedic | Mangalam.co",
-                    'meta_description' => $category->meta_description ?? $category->description,
-                ];
-                $query = Product::where('category_id', $category->id)->where('status', 'active');
-            } else {
-                $collection = (object) [
-                    'title' => ucwords(str_replace('-', ' ', $slug)),
-                    'slug' => $slug,
-                    'description' => 'Explore our 100% pure Vedic pooja essentials, bambooless incense and havan cups.',
-                    'banner_path' => null,
-                    'meta_title' => ucwords(str_replace('-', ' ', $slug)) . ' — 100% Pure & Vedic | Mangalam.co',
-                    'meta_description' => 'Explore pure Vedic pooja essentials crafted without bamboo or synthetic aromas.',
-                ];
-                $query = Product::where('status', 'active');
-            }
+            $collection = (object) [
+                'title' => ucwords(str_replace('-', ' ', $slug)),
+                'slug' => $slug,
+                'description' => 'Explore our pure Vedic pooja essentials.',
+                'banner_path' => null,
+                'meta_title' => ucwords(str_replace('-', ' ', $slug)) . ' — 100% Pure & Vedic | Mangalam.co',
+                'meta_description' => 'Explore pure Vedic pooja essentials crafted without bamboo or synthetic aromas.',
+            ];
+            // Filter strictly by keyword matching instead of dumping all products
+            $keyword = str_replace('-', ' ', $slug);
+            $query = Product::where('status', 'active')
+                ->where(function ($q) use ($slug, $keyword) {
+                    $q->where('slug', 'LIKE', "%{$slug}%")
+                      ->orWhere('title', 'LIKE', "%{$keyword}%")
+                      ->orWhereHas('category', function ($cq) use ($slug, $keyword) {
+                          $cq->where('slug', 'LIKE', "%{$slug}%")
+                             ->orWhere('name', 'LIKE', "%{$keyword}%");
+                      });
+                });
         }
 
         // Eager load necessary relationships

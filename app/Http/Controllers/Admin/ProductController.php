@@ -328,9 +328,25 @@ class ProductController extends Controller
 
             $product = Product::create($productData);
 
-            // Sync Collections
-            if (!empty($validated['collections'])) {
-                $product->collections()->sync($validated['collections']);
+            // Sync Collections (include matching category collection & bestseller collection if applicable)
+            $assignedCollections = $validated['collections'] ?? [];
+            if (!empty($product->category_id)) {
+                $cat = Category::find($product->category_id);
+                if ($cat) {
+                    $matchingCol = Collection::where('slug', $cat->slug)->first();
+                    if ($matchingCol && !in_array($matchingCol->id, $assignedCollections)) {
+                        $assignedCollections[] = $matchingCol->id;
+                    }
+                }
+            }
+            if ($product->is_bestseller) {
+                $bsCol = Collection::where('slug', 'best-seller-combo')->orWhere('slug', 'best-seller')->first();
+                if ($bsCol && !in_array($bsCol->id, $assignedCollections)) {
+                    $assignedCollections[] = $bsCol->id;
+                }
+            }
+            if (!empty($assignedCollections)) {
+                $product->collections()->sync($assignedCollections);
             }
 
             // Image Upload Handling
@@ -511,8 +527,24 @@ class ProductController extends Controller
 
             $product->update($productData);
 
-            // Sync Collections
-            $product->collections()->sync($validated['collections'] ?? []);
+            // Sync Collections (include matching category collection & bestseller collection if applicable)
+            $assignedCollections = $validated['collections'] ?? [];
+            if (!empty($product->category_id)) {
+                $cat = Category::find($product->category_id);
+                if ($cat) {
+                    $matchingCol = Collection::where('slug', $cat->slug)->first();
+                    if ($matchingCol && !in_array($matchingCol->id, $assignedCollections)) {
+                        $assignedCollections[] = $matchingCol->id;
+                    }
+                }
+            }
+            if ($product->is_bestseller) {
+                $bsCol = Collection::where('slug', 'best-seller-combo')->orWhere('slug', 'best-seller')->first();
+                if ($bsCol && !in_array($bsCol->id, $assignedCollections)) {
+                    $assignedCollections[] = $bsCol->id;
+                }
+            }
+            $product->collections()->sync($assignedCollections);
 
             // Delete selected images
             if (!empty($validated['delete_images'])) {
