@@ -222,27 +222,36 @@
                     <span class="font-medium underline-offset-3 group-hover:underline font-body text-gray-800 text-sm sm:text-[15px]">{{ $reviewCount }} reviews</span>
                 </a>
 
-                <!-- 2. Product Title & Subtitle / Category (Capitalized) -->
+                <!-- 2. Product Title & Subtitle / Category (Uppercase, 11px, 0.9px letter spacing) -->
                 <div>
                     <h1 class="text-2xl sm:text-3xl lg:text-[38px] font-normal text-[#121212] tracking-tight leading-[1.15] font-serif">
                         {{ $product->clean_title }}@if(!empty($product->hindi_title) && !str_contains($product->clean_title, $product->hindi_title)) <span class="font-bold font-serif text-xl sm:text-2xl lg:text-[28px] text-[#8B4513]">({{ $product->hindi_title }})</span>@endif
                     </h1>
-                    <div class="text-xs sm:text-[13px] text-gray-500 capitalize font-medium pt-0.5 font-body">
-                        {{ $product->category ? ucwords(strtolower($product->category->name)) : 'Incense Sticks' }}
-                    </div>
+                    @php
+                        $categoryName = $product->category 
+                            ? $product->category->name 
+                            : ($product->collections?->first()?->name 
+                                ?? $product->collections?->first()?->title 
+                                ?? 'Incense Sticks');
+                    @endphp
+                    @if($categoryName)
+                        <div class="product-detail-category text-[#7B7B7B] font-medium pt-0.5 font-body leading-tight uppercase" style="font-size: 11px !important; letter-spacing: 0.9px !important; text-transform: uppercase !important;">
+                            {{ strtoupper($categoryName) }}
+                        </div>
+                    @endif
                 </div>
 
                 <!-- 3. Pricing Display & Savings Pill (Same Font & Cohesive Look) -->
                 <div>
                     <div class="flex flex-wrap items-baseline gap-2.5 sm:gap-3 font-body">
-                        <span class="text-base sm:text-lg text-gray-400 line-through font-medium font-body">
+                        <span class="text-base sm:text-lg text-gray-400 line-through font-medium font-body" style="letter-spacing: 0.8px !important;">
                             ₹{{ number_format($mrpPrice, 2) }}
                         </span>
-                        <span id="display-sale-price" class="text-xl sm:text-2xl font-bold text-[#C87A1E] font-body">
+                        <span id="display-sale-price" class="text-xl sm:text-2xl font-bold text-[#C87A1E] font-body" style="letter-spacing: 0.8px !important;">
                             ₹{{ number_format($product->active_price, 2) }}
                         </span>
                         @if($mrpPrice > $product->active_price)
-                        <span class="px-2.5 py-0.5 bg-[#FFF9F2] text-[#C87A1E] border border-[#F0D5B3] text-xs sm:text-[13px] font-semibold rounded-full font-body">
+                        <span class="px-2.5 py-0.5 bg-[#FFF9F2] text-[#C87A1E] border border-[#F0D5B3] text-xs sm:text-[13px] font-semibold rounded-full font-body" style="letter-spacing: 0.5px !important;">
                             Save ₹{{ number_format($mrpPrice - $product->active_price, 2) }} ({{ round((($mrpPrice - $product->active_price) / $mrpPrice) * 100) }}%)
                         </span>
                         @endif
@@ -357,7 +366,7 @@
                                 data-variant-stock="{{ $v->stock_quantity }}"
                             >
                                 <span>{{ $v->title }}</span>
-                                <span class="ml-1 text-[11px] font-normal text-gray-500">₹{{ number_format($v->price, 0) }}</span>
+                                <span class="ml-1 text-[11px] font-normal text-gray-500" style="letter-spacing: 0.6px !important;">₹{{ number_format($v->price, 0) }}</span>
                             </button>
                         @endforeach
                     </div>
@@ -1321,11 +1330,11 @@
         <div class="truncate text-left">
             <div class="text-xs sm:text-base font-bold text-[#121212] font-heading truncate leading-tight">{{ $product->clean_title }}@if(!empty($product->hindi_title) && !str_contains($product->clean_title, $product->hindi_title)) ({{ $product->hindi_title }})@endif</div>
             <div class="flex items-baseline space-x-2 pt-0.5 sm:pt-1 font-body">
-                <span class="text-sm sm:text-lg font-bold text-[#C87A1E]">
+                <span class="text-sm sm:text-lg font-bold text-[#C87A1E]" style="letter-spacing: 0.8px !important;">
                     ₹{{ number_format($product->active_price, 2) }}
                 </span>
                 @if(isset($mrpPrice) && $mrpPrice > $product->active_price)
-                    <span class="text-xs sm:text-sm text-gray-400 line-through font-medium">
+                    <span class="text-xs sm:text-sm text-gray-400 line-through font-medium" style="letter-spacing: 0.8px !important;">
                         ₹{{ number_format($mrpPrice, 2) }}
                     </span>
                     <span class="hidden sm:inline-block px-2 py-0.5 bg-[#FFF8EE] border border-[#F0D5AA] text-[#C87A1E] text-[10px] font-bold rounded-full font-body">

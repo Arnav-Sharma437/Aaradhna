@@ -94,7 +94,7 @@
                             <img src="{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}" alt="Bestseller Combo" class="w-full h-full object-cover">
                         </div>
                         <h5 class="text-[10px] font-bold font-serif text-[#121212] truncate">Bestseller Combo</h5>
-                        <div class="text-[11px] font-black text-[#C87A1E] font-heading">₹1,399.00</div>
+                        <div class="text-[11px] font-black text-[#C87A1E] font-heading" style="letter-spacing: 0.8px !important;">₹1,399.00</div>
                         <button type="button" class="drawer-quick-add w-full py-1 bg-[#d3a13e] hover:bg-[#c2902f] text-white text-[10px] font-bold rounded-[6px] font-heading transition-colors" data-title="Bestseller Combo" data-price="1399.00">
                             Add to cart
                         </button>
@@ -107,7 +107,7 @@
                             <img src="{{ asset('assets/images/products/ishanaa-incense-sticks-trio.jpg') }}" alt="Bhairav Refill Pack" class="w-full h-full object-cover">
                         </div>
                         <h5 class="text-[10px] font-bold font-serif text-[#121212] truncate">Bhairav Refill Pack</h5>
-                        <div class="text-[11px] font-black text-[#C87A1E] font-heading">₹489.00</div>
+                        <div class="text-[11px] font-black text-[#C87A1E] font-heading" style="letter-spacing: 0.8px !important;">₹489.00</div>
                         <button type="button" class="drawer-quick-add w-full py-1 bg-[#d3a13e] hover:bg-[#c2902f] text-white text-[10px] font-bold rounded-[6px] font-heading transition-colors" data-title="Bhairav Refill Pack" data-price="489.00">
                             Add to cart
                         </button>
@@ -120,7 +120,7 @@
                             <img src="{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}" alt="Devi Refill Pack" class="w-full h-full object-cover">
                         </div>
                         <h5 class="text-[10px] font-bold font-serif text-[#121212] truncate">Devi Refill Pack</h5>
-                        <div class="text-[11px] font-black text-[#C87A1E] font-heading">₹489.00</div>
+                        <div class="text-[11px] font-black text-[#C87A1E] font-heading" style="letter-spacing: 0.8px !important;">₹489.00</div>
                         <button type="button" class="drawer-quick-add w-full py-1 bg-[#d3a13e] hover:bg-[#c2902f] text-white text-[10px] font-bold rounded-[6px] font-heading transition-colors" data-title="Devi Refill Pack" data-price="489.00">
                             Add to cart
                         </button>
@@ -144,8 +144,8 @@
                         <div class="flex-1 min-w-0">
                             <h6 class="text-xs font-bold font-serif text-[#121212] truncate">Oudh Trial Pack</h6>
                             <div class="flex items-baseline space-x-1.5 text-xs">
-                                <span class="font-black text-[#C87A1E] font-heading">₹99.00</span>
-                                <span class="text-gray-400 line-through text-[10px]">₹229.00</span>
+                                <span class="font-black text-[#C87A1E] font-heading" style="letter-spacing: 0.8px !important;">₹99.00</span>
+                                <span class="text-gray-400 line-through text-[10px]" style="letter-spacing: 0.5px !important;">₹229.00</span>
                             </div>
                         </div>
                         <button type="button" class="drawer-quick-add px-3 py-1.5 bg-[#A86911] hover:bg-[#8D540A] text-white text-[11px] font-bold rounded-[8px] font-heading whitespace-nowrap" data-title="Oudh Trial Pack" data-price="99.00">
@@ -173,15 +173,15 @@
             <div class="space-y-1 text-xs">
                 <div class="flex justify-between text-gray-600">
                     <span>Subtotal</span>
-                    <span id="drawer-subtotal-val" class="font-bold text-[#121212]">₹1,598.00</span>
+                    <span id="drawer-subtotal-val" class="font-bold text-[#121212]" style="letter-spacing: 0.8px !important;">₹1,598.00</span>
                 </div>
                 <div class="flex justify-between text-emerald-700 font-semibold">
                     <span>Discounts Applied</span>
-                    <span id="drawer-discount-val">-₹610.00</span>
+                    <span id="drawer-discount-val" style="letter-spacing: 0.8px !important;">-₹610.00</span>
                 </div>
                 <div class="flex justify-between text-base font-black font-heading text-[#121212] pt-1.5 border-t border-gray-100">
                     <span>Total</span>
-                    <span id="drawer-total-val" class="text-[#C87A1E]">₹988.00</span>
+                    <span id="drawer-total-val" class="text-[#C87A1E]" style="letter-spacing: 0.8px !important;">₹988.00</span>
                 </div>
             </div>
 

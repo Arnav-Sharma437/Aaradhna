@@ -243,11 +243,10 @@
                             class="mobile-reel-vid w-full h-full object-cover pointer-events-none" 
                             src="{{ $reel['video_url'] }}" 
                             poster="{{ $reel['poster'] }}" 
-                            autoplay 
                             loop 
                             muted 
                             playsinline 
-                            preload="auto"
+                            preload="none"
                         ></video>
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 pointer-events-none"></div>
 
@@ -318,11 +317,10 @@
                                 class="reel-preview-video w-full h-full object-cover pointer-events-none" 
                                 src="{{ $reel['video_url'] }}" 
                                 poster="{{ $reel['poster'] }}" 
-                                autoplay 
                                 loop 
                                 muted 
                                 playsinline 
-                                preload="auto"
+                                preload="none"
                             ></video>
 
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 pointer-events-none"></div>
@@ -348,8 +346,8 @@
                                         {{ $reel['title'] }}
                                     </h4>
                                     <div class="flex items-baseline space-x-1 pt-0.5 font-body">
-                                        <span class="text-xs font-bold text-[#2B1810]">₹{{ $reel['price'] }}</span>
-                                        <span class="text-[10px] text-gray-400 line-through">₹{{ $reel['mrp'] }}</span>
+                                        <span class="text-xs font-bold text-[#2B1810]" style="letter-spacing: 0.8px !important;">₹{{ $reel['price'] }}</span>
+                                        <span class="text-[10px] text-gray-400 line-through" style="letter-spacing: 0.6px !important;">₹{{ $reel['mrp'] }}</span>
                                         <span class="text-[10px] font-bold text-[#16A34A]">{{ $reel['discount'] }}</span>
                                     </div>
                                 </div>
@@ -453,7 +451,7 @@
                             playsinline
                             loop
                             muted
-                            preload="auto"
+                            preload="none"
                         ></video>
 
                         <!-- Gradient Shadow Overlay -->
@@ -520,8 +518,8 @@
                                             <span class="text-[10px] text-[#C28430] font-bold">▲ Details</span>
                                         </div>
                                         <div class="flex items-baseline space-x-1.5 pt-0.5">
-                                            <span class="text-xs sm:text-sm font-black text-[#121212] font-heading">₹{{ $item['price'] }}</span>
-                                            <span class="text-[10px] text-gray-400 line-through">₹{{ $item['mrp'] }}</span>
+                                            <span class="text-xs sm:text-sm font-black text-[#121212] font-heading" style="letter-spacing: 0.8px !important;">₹{{ $item['price'] }}</span>
+                                            <span class="text-[10px] text-gray-400 line-through" style="letter-spacing: 0.6px !important;">₹{{ $item['mrp'] }}</span>
                                             <span class="text-[10px] font-bold text-[#16A34A]">{{ $item['discount'] }}</span>
                                         </div>
                                     </div>
@@ -578,8 +576,8 @@
                                 <span id="drawer-product-rating" class="text-gray-500 font-medium">4.9 (1,240 Reviews)</span>
                             </div>
                             <div class="flex items-baseline space-x-2 pt-1">
-                                <span id="drawer-product-price" class="text-base sm:text-lg font-black text-[#C28430] font-heading">₹289.00</span>
-                                <span id="drawer-product-mrp" class="text-xs text-gray-400 line-through">₹375</span>
+                                <span id="drawer-product-price" class="text-base sm:text-lg font-black text-[#C28430] font-heading" style="letter-spacing: 0.8px !important;">₹289.00</span>
+                                <span id="drawer-product-mrp" class="text-xs text-gray-400 line-through" style="letter-spacing: 0.6px !important;">₹375</span>
                                 <span id="drawer-product-discount" class="text-xs font-bold text-[#16A34A]">23% OFF</span>
                             </div>
                         </div>
@@ -615,7 +613,7 @@
                         data-product-image=""
                     >
                         <span>Add to Cart • </span>
-                        <span id="drawer-btn-price">₹289.00</span>
+                        <span id="drawer-btn-price" style="letter-spacing: 0.8px !important;">₹289.00</span>
                     </button>
                 </div>
             </div>
@@ -661,6 +659,7 @@
         const mobileTrack = document.getElementById('mobile-reels-track');
         const mobileCards = document.querySelectorAll('.mobile-reel-card');
         let mobileActiveIdx = 0;
+        let isReelsSectionVisible = false;
 
         function updateMobileActiveCard() {
             if (!mobileTrack) return;
@@ -682,14 +681,37 @@
             }
 
             mobileCards.forEach((card, idx) => {
+                const vid = card.querySelector('video');
                 if (idx === mobileActiveIdx) {
                     card.classList.remove('scale-[0.86]', 'opacity-50', 'blur-[1.5px]', 'border-transparent');
                     card.classList.add('scale-100', 'opacity-100', 'shadow-2xl', 'border-[#D38928]/70', 'z-20');
+                    if (vid && isReelsSectionVisible) vid.play().catch(() => {});
                 } else {
                     card.classList.remove('scale-100', 'opacity-100', 'shadow-2xl', 'border-[#D38928]/70', 'z-20');
                     card.classList.add('scale-[0.86]', 'opacity-50', 'blur-[1.5px]', 'border-transparent');
+                    if (vid) {
+                        vid.pause();
+                        vid.currentTime = 0;
+                    }
                 }
             });
+        }
+
+        // Section IntersectionObserver to prevent background video execution
+        const reelsSection = document.getElementById('shoppable-reels-section');
+        if (reelsSection && 'IntersectionObserver' in window) {
+            const sectionObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    isReelsSectionVisible = entry.isIntersecting;
+                    if (!entry.isIntersecting) {
+                        document.querySelectorAll('.mobile-reel-vid, .reel-preview-video').forEach(v => v.pause());
+                    } else if (window.innerWidth < 640 && mobileCards[mobileActiveIdx]) {
+                        const activeVid = mobileCards[mobileActiveIdx].querySelector('video');
+                        if (activeVid) activeVid.play().catch(() => {});
+                    }
+                });
+            }, { threshold: 0.1 });
+            sectionObserver.observe(reelsSection);
         }
 
         if (mobileTrack) {
@@ -741,8 +763,19 @@
 
         let isGlobalMuted = true;
 
-        // Desktop Reel Cards Click
+        // Desktop Reel Cards Hover Preview & Click Navigation
         document.querySelectorAll('.reel-card').forEach(card => {
+            const vid = card.querySelector('.reel-preview-video');
+            if (vid) {
+                card.addEventListener('mouseenter', () => {
+                    vid.play().catch(() => {});
+                });
+                card.addEventListener('mouseleave', () => {
+                    vid.pause();
+                    vid.currentTime = 0;
+                });
+            }
+
             card.addEventListener('click', (e) => {
                 if (e.target.closest('button')) return;
                 const idx = parseInt(card.getAttribute('data-reel-index') || '0', 10);

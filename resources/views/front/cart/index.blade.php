@@ -89,11 +89,11 @@
                     <div class="space-y-2.5 text-xs sm:text-sm pt-3 border-t border-[#EADBCC] text-gray-600">
                         <div class="flex justify-between">
                             <span>Subtotal</span>
-                            <span id="summary-subtotal" class="font-bold text-[#121212]">₹0.00</span>
+                            <span id="summary-subtotal" class="font-bold text-[#121212]" style="letter-spacing: 0.8px !important;">₹0.00</span>
                         </div>
                         <div class="flex justify-between text-emerald-700 font-semibold" id="summary-discount-row">
                             <span>Discount</span>
-                            <span id="summary-discount">-₹0.00</span>
+                            <span id="summary-discount" style="letter-spacing: 0.8px !important;">-₹0.00</span>
                         </div>
                         <div class="flex justify-between">
                             <span>Estimated Shipping</span>
@@ -101,7 +101,7 @@
                         </div>
                         <div class="flex justify-between text-base sm:text-lg font-black font-heading text-[#121212] pt-3 border-t border-[#EADBCC]">
                             <span>Grand Total</span>
-                            <span id="summary-grand-total" class="text-[#C87A1E]">₹0.00</span>
+                            <span id="summary-grand-total" class="text-[#C87A1E]" style="letter-spacing: 0.8px !important;">₹0.00</span>
                         </div>
                         <p class="text-[10px] text-gray-400 text-right">Inclusive of all Vedic Samagri GST taxes.</p>
                     </div>

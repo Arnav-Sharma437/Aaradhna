@@ -62,10 +62,10 @@
                 <div class="flex items-center justify-between pt-1 border-t border-[#EADBCC]/60 text-xs">
                     <div>
                         <span class="text-gray-600 font-medium">Total Payable:</span>
-                        <span class="text-gray-400 line-through ml-1.5 hidden" id="gokwik-original-price">₹0.00</span>
+                        <span class="text-gray-400 line-through ml-1.5 hidden" id="gokwik-original-price" style="letter-spacing: 0.6px !important;">₹0.00</span>
                     </div>
                     <div class="text-right">
-                        <span id="gokwik-payable-price" class="text-base font-black font-heading text-[#C28430]">₹0.00</span>
+                        <span id="gokwik-payable-price" class="text-base font-black font-heading text-[#C28430]" style="letter-spacing: 0.8px !important;">₹0.00</span>
                     </div>
                 </div>
             </div>
@@ -214,7 +214,7 @@
                     class="w-full py-3.5 px-6 bg-[#D38928] hover:bg-[#B8741E] active:bg-[#9E6215] text-white text-sm sm:text-base font-black uppercase tracking-wider rounded-[12px] shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center space-x-2 font-heading cursor-pointer mt-3"
                 >
                     <span id="gokwik-pay-btn-label">⚡ PAY VIA RAZORPAY</span>
-                    <span id="gokwik-btn-price" class="bg-black/20 px-2.5 py-0.5 rounded-full text-xs font-mono">₹0.00</span>
+                    <span id="gokwik-btn-price" class="bg-black/20 px-2.5 py-0.5 rounded-full text-xs font-mono" style="letter-spacing: 0.8px !important;">₹0.00</span>
                 </button>
 
             </div>
@@ -267,8 +267,8 @@
     </div>
 </div>
 
-<!-- Razorpay Standard Checkout SDK -->
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<!-- Razorpay Standard Checkout SDK (Deferred non-blocking) -->
+<script src="https://checkout.razorpay.com/v1/checkout.js" defer></script>
 
 <!-- ========================================================================= -->
 <!-- SCRIPT: RAZORPAY CHECKOUT TRIGGER & SIGNATURE VERIFICATION               -->

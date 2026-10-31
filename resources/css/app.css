@@ -546,6 +546,22 @@ input:-webkit-autofill:active {
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* Category Label (Uppercase, 11px, 0.9px Letter Spacing) */
+.product-card-category,
+.product-detail-category {
+    font-size: 11px !important;
+    letter-spacing: 0.9px !important;
+    text-transform: uppercase !important;
+}
+
+/* Refined Price Letter Spacing */
+.price-val,
+.price-display,
+[data-price] {
+    letter-spacing: 0.8px;
+}
+
+
 
 
 

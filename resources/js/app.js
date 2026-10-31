@@ -194,7 +194,7 @@ function renderCartDrawer() {
                             <span class="drawer-qty-val px-2.5 py-0.5 font-bold text-[#121212]">${item.quantity}</span>
                             <button type="button" class="drawer-qty-plus px-2 py-0.5 text-gray-600 hover:bg-gray-100 font-bold" data-title="${item.title}">+</button>
                         </div>
-                        <div class="text-xs sm:text-sm font-black font-heading text-[#C87A1E]">
+                        <div class="text-xs sm:text-sm font-black font-heading text-[#C87A1E]" style="letter-spacing: 0.8px !important;">
                             ₹${(item.price * item.quantity).toFixed(2)}
                         </div>
                     </div>
@@ -256,7 +256,7 @@ function renderCartPage() {
                             <a href="${item.slug ? '/products/' + item.slug : '#'}" class="hover:text-[#D38928] transition-colors">${item.title}</a>
                         </h3>
                         <p class="text-xs text-gray-500">${item.packInfo || '100 sticks'}</p>
-                        <div class="text-xs sm:text-sm font-black text-[#C87A1E] font-heading">
+                        <div class="text-xs sm:text-sm font-black text-[#C87A1E] font-heading" style="letter-spacing: 0.8px !important;">
                             ₹${item.price.toFixed(2)}
                         </div>
                     </div>
@@ -268,7 +268,7 @@ function renderCartPage() {
                         <button type="button" class="cart-page-qty-plus px-3.5 py-2 text-gray-500 hover:text-[#121212] font-bold text-base cursor-pointer" data-title="${item.title}">+</button>
                     </div>
                     <div class="text-right min-w-[90px]">
-                        <span class="cart-row-total text-base sm:text-lg font-black font-heading text-[#121212]">
+                        <span class="cart-row-total text-base sm:text-lg font-black font-heading text-[#121212]" style="letter-spacing: 0.8px !important;">
                             ₹${(item.price * item.quantity).toFixed(2)}
                         </span>
                     </div>
@@ -858,10 +858,11 @@ function initSearchModal() {
 }
 
 // -------------------------------------------------------------------------
-// 10. Luxury Scroll Reveal & Smooth Loading Effects
+// 10. Luxury Scroll Reveal & Smooth Loading Effects (Instant & Non-Blocking)
 // -------------------------------------------------------------------------
 function initScrollReveal() {
-    const targets = document.querySelectorAll('section:not(#hero-banner-carousel):not(#announcement-bar), .scroll-reveal, .fade-in-up');
+    const targets = document.querySelectorAll('.scroll-reveal, .fade-in-up');
+    if (!targets.length) return;
     
     if (!('IntersectionObserver' in window)) {
         targets.forEach(el => el.classList.add('is-visible'));
@@ -877,14 +878,11 @@ function initScrollReveal() {
         });
     }, {
         root: null,
-        rootMargin: '0px 0px -40px 0px',
-        threshold: 0.06
+        rootMargin: '100px 0px 50px 0px',
+        threshold: 0.01
     });
 
     targets.forEach(el => {
-        if (!el.classList.contains('scroll-reveal') && !el.classList.contains('fade-in-up')) {
-            el.classList.add('scroll-reveal');
-        }
         observer.observe(el);
     });
 }

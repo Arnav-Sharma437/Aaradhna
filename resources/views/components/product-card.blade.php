@@ -106,8 +106,8 @@
                         ?? 'Incense Sticks');
             @endphp
             @if($categoryName)
-                <div class="product-card-category text-[12px] text-[#7B7B7B] font-medium capitalize tracking-normal leading-tight font-body">
-                    {{ ucwords(strtolower($categoryName)) }}
+                <div class="product-card-category text-[#7B7B7B] font-medium uppercase leading-tight font-body" style="font-size: 11px !important; letter-spacing: 0.9px !important; text-transform: uppercase !important;">
+                    {{ strtoupper($categoryName) }}
                 </div>
             @endif
 
@@ -123,10 +123,10 @@
         <!-- Pricing & Add to Cart -->
         <div>
             <div class="flex items-baseline space-x-1.5 pt-0.5 pb-2 sm:pb-3 font-body">
-                <span class="text-xs sm:text-sm text-gray-400 line-through font-medium">
+                <span class="text-xs sm:text-sm text-gray-400 line-through font-medium" style="letter-spacing: 0.8px !important;">
                     ₹{{ number_format($mrpPrice, 0) }}
                 </span>
-                <span class="text-sm sm:text-base font-bold text-[#C87A1E]">
+                <span class="text-sm sm:text-base font-bold text-[#C87A1E]" style="letter-spacing: 0.8px !important;">
                     ₹{{ number_format($product->active_price, 2) }}
                 </span>
             </div>

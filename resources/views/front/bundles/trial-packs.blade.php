@@ -96,8 +96,8 @@
 
                         <div>
                             <div class="flex items-baseline space-x-2 pt-1 pb-2.5">
-                                <span class="text-xs sm:text-sm font-black font-heading text-[#C87A1E]">₹{{ $prod['price'] }}</span>
-                                <span class="text-[11px] text-gray-400 line-through">₹{{ $prod['mrp'] }}</span>
+                                <span class="text-xs sm:text-sm font-black font-heading text-[#C87A1E]" style="letter-spacing: 0.8px !important;">₹{{ $prod['price'] }}</span>
+                                <span class="text-[11px] text-gray-400 line-through" style="letter-spacing: 0.6px !important;">₹{{ $prod['mrp'] }}</span>
                             </div>
 
                             <!-- Add to Box Button (Persistent Green on Selection) -->
@@ -160,8 +160,8 @@
                         </span>
                     </div>
                     <div class="flex items-baseline justify-end space-x-1.5 pt-0.5">
-                        <span id="bundle-total-price" class="text-sm sm:text-base font-black font-heading text-[#121212]">₹0</span>
-                        <span id="bundle-mrp-price" class="text-xs text-gray-400 line-through">₹0</span>
+                        <span id="bundle-total-price" class="text-sm sm:text-base font-black font-heading text-[#121212]" style="letter-spacing: 0.8px !important;">₹0</span>
+                        <span id="bundle-mrp-price" class="text-xs text-gray-400 line-through" style="letter-spacing: 0.6px !important;">₹0</span>
                     </div>
                 </div>
 
