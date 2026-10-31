@@ -97,6 +97,20 @@
                 </a>
             </h3>
 
+            <!-- Category (Just below product title) -->
+            @php
+                $categoryName = $product->category 
+                    ? $product->category->name 
+                    : ($product->collections?->first()?->name 
+                        ?? $product->collections?->first()?->title 
+                        ?? 'Incense Sticks');
+            @endphp
+            @if($categoryName)
+                <div class="product-card-category text-[12px] text-[#7B7B7B] font-medium capitalize tracking-normal leading-tight font-body">
+                    {{ ucwords(strtolower($categoryName)) }}
+                </div>
+            @endif
+
             <!-- 5 Star Golden Rating Strip with Matching Gold Count -->
             <div class="flex items-center space-x-1 text-[#D38928]">
                 <div class="flex text-[11px] sm:text-xs leading-none space-x-0.5">

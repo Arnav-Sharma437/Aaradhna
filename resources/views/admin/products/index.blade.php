@@ -166,7 +166,10 @@
                                         <a href="{{ route('admin.products.edit', $product) }}" class="font-bold text-[#202223] hover:text-[#D38928] truncate block text-xs">
                                             {{ $product->title }}
                                         </a>
-                                        <div class="flex items-center space-x-2 text-[10px] text-gray-400 font-mono">
+                                        <div class="text-[11px] text-[#A86911] font-medium leading-tight">
+                                            {{ $product->category->name ?? 'Uncategorized' }}
+                                        </div>
+                                        <div class="flex items-center space-x-2 text-[10px] text-gray-400 font-mono mt-0.5">
                                             <span>SKU: {{ $product->sku }}</span>
                                             @if($product->is_bestseller)
                                                 <span class="text-amber-700 font-bold bg-amber-50 px-1.5 py-0.2 rounded font-sans">★ Bestseller</span>
