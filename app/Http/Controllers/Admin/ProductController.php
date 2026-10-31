@@ -25,6 +25,16 @@ class ProductController extends Controller
     private function ensureBadgeColumnExists(): void
     {
         try {
+            if (!Schema::hasColumn('products', 'show_in_trial_bundle')) {
+                Schema::table('products', function (Blueprint $table) {
+                    $table->boolean('show_in_trial_bundle')->default(false)->after('is_bestseller')->index();
+                });
+            }
+            if (!Schema::hasColumn('products', 'show_in_buy2get1_bundle')) {
+                Schema::table('products', function (Blueprint $table) {
+                    $table->boolean('show_in_buy2get1_bundle')->default(false)->after('show_in_trial_bundle')->index();
+                });
+            }
             if (!Schema::hasColumn('products', 'badge_text')) {
                 Schema::table('products', function (Blueprint $table) {
                     $table->string('badge_text', 100)->nullable()->after('is_bestseller');
@@ -262,6 +272,8 @@ class ProductController extends Controller
             'how_to_use' => ['nullable', 'string'],
             'is_featured' => ['nullable', 'boolean'],
             'is_bestseller' => ['nullable', 'boolean'],
+            'show_in_trial_bundle' => ['nullable', 'boolean'],
+            'show_in_buy2get1_bundle' => ['nullable', 'boolean'],
             'sort_order' => ['nullable', 'integer', 'min:0'],
             'badge_text' => ['nullable', 'string', 'max:100'],
             'badge_color' => ['nullable', 'string', 'max:50'],
@@ -316,6 +328,12 @@ class ProductController extends Controller
                 'meta_description' => $validated['meta_description'] ?? null,
             ];
 
+            if (Schema::hasColumn('products', 'show_in_trial_bundle')) {
+                $productData['show_in_trial_bundle'] = $request->boolean('show_in_trial_bundle');
+            }
+            if (Schema::hasColumn('products', 'show_in_buy2get1_bundle')) {
+                $productData['show_in_buy2get1_bundle'] = $request->boolean('show_in_buy2get1_bundle');
+            }
             if (Schema::hasColumn('products', 'badge_text')) {
                 $productData['badge_text'] = $request->filled('badge_text') ? trim($request->badge_text) : null;
             }
@@ -343,6 +361,18 @@ class ProductController extends Controller
                 $bsCol = Collection::where('slug', 'best-seller-combo')->orWhere('slug', 'best-seller')->first();
                 if ($bsCol && !in_array($bsCol->id, $assignedCollections)) {
                     $assignedCollections[] = $bsCol->id;
+                }
+            }
+            if ($product->show_in_trial_bundle) {
+                $trialCol = Collection::where('slug', 'trial-packs')->first();
+                if ($trialCol && !in_array($trialCol->id, $assignedCollections)) {
+                    $assignedCollections[] = $trialCol->id;
+                }
+            }
+            if ($product->show_in_buy2get1_bundle) {
+                $b2g1Col = Collection::where('slug', 'buy2get1')->first();
+                if ($b2g1Col && !in_array($b2g1Col->id, $assignedCollections)) {
+                    $assignedCollections[] = $b2g1Col->id;
                 }
             }
             if (!empty($assignedCollections)) {
@@ -465,6 +495,8 @@ class ProductController extends Controller
             'how_to_use' => ['nullable', 'string'],
             'is_featured' => ['nullable', 'boolean'],
             'is_bestseller' => ['nullable', 'boolean'],
+            'show_in_trial_bundle' => ['nullable', 'boolean'],
+            'show_in_buy2get1_bundle' => ['nullable', 'boolean'],
             'sort_order' => ['nullable', 'integer', 'min:0'],
             'badge_text' => ['nullable', 'string', 'max:100'],
             'badge_color' => ['nullable', 'string', 'max:50'],
@@ -515,6 +547,12 @@ class ProductController extends Controller
                 'meta_description' => $validated['meta_description'] ?? null,
             ];
 
+            if (Schema::hasColumn('products', 'show_in_trial_bundle')) {
+                $productData['show_in_trial_bundle'] = $request->boolean('show_in_trial_bundle');
+            }
+            if (Schema::hasColumn('products', 'show_in_buy2get1_bundle')) {
+                $productData['show_in_buy2get1_bundle'] = $request->boolean('show_in_buy2get1_bundle');
+            }
             if (Schema::hasColumn('products', 'badge_text')) {
                 $productData['badge_text'] = $request->filled('badge_text') ? trim($request->badge_text) : null;
             }
@@ -542,6 +580,18 @@ class ProductController extends Controller
                 $bsCol = Collection::where('slug', 'best-seller-combo')->orWhere('slug', 'best-seller')->first();
                 if ($bsCol && !in_array($bsCol->id, $assignedCollections)) {
                     $assignedCollections[] = $bsCol->id;
+                }
+            }
+            if ($product->show_in_trial_bundle) {
+                $trialCol = Collection::where('slug', 'trial-packs')->first();
+                if ($trialCol && !in_array($trialCol->id, $assignedCollections)) {
+                    $assignedCollections[] = $trialCol->id;
+                }
+            }
+            if ($product->show_in_buy2get1_bundle) {
+                $b2g1Col = Collection::where('slug', 'buy2get1')->first();
+                if ($b2g1Col && !in_array($b2g1Col->id, $assignedCollections)) {
+                    $assignedCollections[] = $b2g1Col->id;
                 }
             }
             $product->collections()->sync($assignedCollections);

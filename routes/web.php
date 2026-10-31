@@ -144,6 +144,7 @@ use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\Admin\CollectionController as AdminCollectionController;
+use App\Http\Controllers\Admin\BundleController as AdminBundleController;
 use App\Http\Controllers\Admin\InventoryController as AdminInventoryController;
 use App\Http\Controllers\Admin\OrderController as AdminOrderController;
 use App\Http\Controllers\Admin\CustomerController as AdminCustomerController;
@@ -195,6 +196,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
         // 5. Collections Module
         Route::patch('/collections/{collection}/toggle-status', [AdminCollectionController::class, 'toggleStatus'])->name('collections.toggle-status');
         Route::resource('collections', AdminCollectionController::class);
+
+        // 5.1 Festive Bundle Offers Module (Buy 5 & Buy 2 Get 1)
+        Route::get('/bundles', [AdminBundleController::class, 'index'])->name('bundles.index');
+        Route::post('/bundles', [AdminBundleController::class, 'update'])->name('bundles.update');
 
         // 6. Customers 360 Module
         Route::get('/customers', [AdminCustomerController::class, 'index'])->name('customers.index');

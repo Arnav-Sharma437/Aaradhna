@@ -177,6 +177,12 @@
                                             @if($product->is_featured)
                                                 <span class="text-blue-700 font-bold bg-blue-50 px-1.5 py-0.2 rounded font-sans">Featured</span>
                                             @endif
+                                            @if($product->show_in_trial_bundle)
+                                                <span class="text-amber-800 font-bold bg-amber-100/70 px-1.5 py-0.2 rounded font-sans">🎁 Buy 5</span>
+                                            @endif
+                                            @if($product->show_in_buy2get1_bundle)
+                                                <span class="text-rose-800 font-bold bg-rose-100/70 px-1.5 py-0.2 rounded font-sans">✨ Buy 2 Get 1</span>
+                                            @endif
                                             @if($product->badge_text)
                                                 <span class="text-purple-700 font-bold bg-purple-50 px-1.5 py-0.2 rounded font-sans">Tag: {{ $product->badge_text }}</span>
                                             @endif

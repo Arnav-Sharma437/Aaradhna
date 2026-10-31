@@ -31,6 +31,8 @@ class Product extends Model
         'track_inventory',
         'is_featured',
         'is_bestseller',
+        'show_in_trial_bundle',
+        'show_in_buy2get1_bundle',
         'badge_text',
         'badge_color',
         'sort_order',
@@ -47,6 +49,8 @@ class Product extends Model
         'track_inventory' => 'boolean',
         'is_featured' => 'boolean',
         'is_bestseller' => 'boolean',
+        'show_in_trial_bundle' => 'boolean',
+        'show_in_buy2get1_bundle' => 'boolean',
     ];
 
     public function category(): BelongsTo

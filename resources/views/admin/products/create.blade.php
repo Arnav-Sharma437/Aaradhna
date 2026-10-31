@@ -354,6 +354,26 @@
                         <span class="text-xs font-semibold text-gray-800">✦ Featured Product</span>
                     </label>
 
+                    <!-- Festive Bundle Offers Visibility -->
+                    <div class="pt-2 border-t border-gray-100 space-y-2">
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-[#A86911]">🎁 Special Bundle Offers</span>
+                        <label class="flex items-center space-x-2.5 p-2 rounded-[8px] hover:bg-[#FFF9F2] cursor-pointer border border-transparent hover:border-[#EADBCC] transition-colors">
+                            <input type="checkbox" name="show_in_trial_bundle" value="1" {{ old('show_in_trial_bundle', false) ? 'checked' : '' }} class="w-4 h-4 text-[#D38928] rounded border-gray-300">
+                            <div>
+                                <span class="text-xs font-bold text-gray-800 block">Buy Any 5 Trial Packs @ ₹799</span>
+                                <span class="text-[10px] text-gray-500 block">Show in 5-pack bundle builder</span>
+                            </div>
+                        </label>
+
+                        <label class="flex items-center space-x-2.5 p-2 rounded-[8px] hover:bg-[#FFF9F2] cursor-pointer border border-transparent hover:border-[#EADBCC] transition-colors">
+                            <input type="checkbox" name="show_in_buy2get1_bundle" value="1" {{ old('show_in_buy2get1_bundle', false) ? 'checked' : '' }} class="w-4 h-4 text-[#D38928] rounded border-gray-300">
+                            <div>
+                                <span class="text-xs font-bold text-gray-800 block">Buy 2 Get 1 FREE Offer</span>
+                                <span class="text-[10px] text-gray-500 block">Show in Buy 2 Get 1 offer box</span>
+                            </div>
+                        </label>
+                    </div>
+
                     <!-- Product Display Sort Order -->
                     <div class="pt-2 border-t border-gray-100 space-y-1.5">
                         <div class="flex items-center justify-between">

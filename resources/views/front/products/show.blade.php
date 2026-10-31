@@ -102,16 +102,16 @@
                     $tagColor = $product->badge_color;
                 @endphp
 
-                <!-- 1. MOBILE/TABLET VIEW: Main Hero Image + Horizontal Thumbnails Below (Clean Background, #fafafa Border, 6px Radius, 2px Padding, No Hover Zoom) -->
-                <div class="block lg:hidden space-y-2.5" id="product-mobile-gallery">
-                    <!-- Main Large Hero Image (2px padding, 6px radius, #fafafa border, transparent background) -->
-                    <div class="product-card relative bg-transparent rounded-[6px] border border-[#fafafa] p-[2px] shadow-none overflow-hidden" style="border-color: #fafafa !important; border-radius: 6px !important;">
-                        <div class="relative w-full aspect-[4/4.8] rounded-[5px] overflow-hidden bg-transparent">
+                <!-- 1. MOBILE/TABLET VIEW: Main Hero Image + Horizontal Thumbnails Below (Clean Borderless, Equal Minimal Spacing, No Hover Zoom) -->
+                <div class="block lg:hidden space-y-2" id="product-mobile-gallery">
+                    <!-- Main Large Hero Image (No border, zero padding, rounded 6px) -->
+                    <div class="product-card relative bg-transparent rounded-[6px] border-0 p-0 shadow-none overflow-hidden">
+                        <div class="relative w-full aspect-[4/4.8] rounded-[6px] overflow-hidden bg-transparent">
                             <img 
                                 id="main-product-gallery-img" 
                                 src="{{ $galleryImages[0] }}" 
                                 alt="{{ $product->title }}" 
-                                class="w-full h-full object-cover object-top rounded-[5px]"
+                                class="w-full h-full object-cover object-top rounded-[6px]"
                                 onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}';"
                             >
 
@@ -146,34 +146,34 @@
                         </div>
                     </div>
 
-                    <!-- Horizontal Thumbnails Strip Directly Below (Matching 2px padding, 6px radius, #fafafa border) -->
+                    <!-- Horizontal Thumbnails Strip Directly Below (Equal 8px gap, borderless) -->
                     <div class="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none" id="product-thumbnails-container">
                         @foreach($galleryImages as $index => $imgUrl)
                             <button 
                                 type="button" 
-                                class="gallery-thumbnail-btn relative w-16 h-19 sm:w-18 sm:h-21 p-[2px] bg-transparent rounded-[6px] border transition-all duration-200 shrink-0 cursor-pointer focus:outline-none {{ $index === 0 ? 'border-[#C87A1E] ring-1 ring-[#C87A1E]/40' : 'border-[#fafafa] opacity-75 hover:opacity-100' }}"
-                                style="{{ $index === 0 ? '' : 'border-color: #fafafa !important;' }} border-radius: 6px !important;"
+                                class="gallery-thumbnail-btn relative w-16 h-19 sm:w-18 sm:h-21 p-0 bg-transparent rounded-[6px] border-0 transition-all duration-200 shrink-0 cursor-pointer focus:outline-none {{ $index === 0 ? 'ring-2 ring-[#C87A1E] opacity-100' : 'opacity-70 hover:opacity-100' }}"
+                                style="border-radius: 6px !important;"
                                 data-img-src="{{ $imgUrl }}"
                                 data-index="{{ $index }}"
                                 aria-label="View product image {{ $index + 1 }}"
                             >
-                                <div class="w-full h-full rounded-[5px] overflow-hidden bg-transparent aspect-[4/4.8]">
-                                    <img src="{{ $imgUrl }}" alt="{{ $product->title }} thumbnail {{ $index + 1 }}" class="w-full h-full object-cover rounded-[5px]" onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}';">
+                                <div class="w-full h-full rounded-[6px] overflow-hidden bg-transparent aspect-[4/4.8]">
+                                    <img src="{{ $imgUrl }}" alt="{{ $product->title }} thumbnail {{ $index + 1 }}" class="w-full h-full object-cover rounded-[6px]" onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}';">
                                 </div>
                             </button>
                         @endforeach
                     </div>
                 </div>
 
-                <!-- 2. DESKTOP VIEW: Clean Background, #fafafa Border, 6px Radius, 2px Padding, No Hover Zoom + Pack Badge -->
-                <div class="hidden lg:grid grid-cols-2 gap-3 xl:gap-4">
+                <!-- 2. DESKTOP VIEW: Borderless, Equal Minimal Spacing (gap-2 = 8px equal on top, bottom, sides), No Hover Zoom + Pack Badge -->
+                <div class="hidden lg:grid grid-cols-2 gap-2">
                     @foreach($galleryImages as $index => $imgUrl)
-                    <div class="product-card relative bg-transparent rounded-[6px] border border-[#fafafa] p-[2px] shadow-none overflow-hidden" style="border-color: #fafafa !important; border-radius: 6px !important;">
-                        <div class="relative w-full aspect-[4/4.8] rounded-[5px] overflow-hidden bg-transparent">
+                    <div class="product-card relative bg-transparent rounded-[6px] border-0 p-0 shadow-none overflow-hidden">
+                        <div class="relative w-full aspect-[4/4.8] rounded-[6px] overflow-hidden bg-transparent">
                             <img 
                                 src="{{ $imgUrl }}" 
                                 alt="{{ $product->title }} visual {{ $index + 1 }}" 
-                                class="w-full h-full object-cover {{ $index === 0 ? 'object-top' : 'object-center' }} rounded-[5px]" 
+                                class="w-full h-full object-cover {{ $index === 0 ? 'object-top' : 'object-center' }} rounded-[6px]" 
                                 onerror="this.onerror=null; this.src='{{ $index === 0 ? asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') : asset('assets/images/products/ishanaa-incense-sticks-trio.jpg') }}';"
                             >
 

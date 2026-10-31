@@ -184,6 +184,18 @@
                                 <span class="px-2 py-0.5 text-[10px] font-bold rounded-full bg-white/10 text-white/80">{{ $navCounts['collections'] }}</span>
                             </a>
 
+                            <!-- Festive Bundle Offers -->
+                            <a 
+                                href="{{ route('admin.bundles.index') }}" 
+                                class="flex items-center justify-between px-3 py-2 rounded-[8px] text-xs font-medium transition-all group {{ request()->routeIs('admin.bundles*') ? 'bg-[#2E2E2E] text-white font-bold' : 'text-[#CCCCCC] hover:bg-[#252525] hover:text-white' }}"
+                            >
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-sm">🎁</span>
+                                    <span>Bundle Offers</span>
+                                </div>
+                                <span class="px-1.5 py-0.5 text-[9px] font-bold rounded-full bg-[#D38928]/20 text-[#D38928]">Buy 5 / Buy 2</span>
+                            </a>
+
                             <!-- Customers -->
                             <a 
                                 href="{{ route('admin.customers.index') }}" 
