@@ -143,6 +143,42 @@
                             class="w-full text-xs text-gray-500 file:mr-3 file:py-2 file:px-3 file:rounded-[6px] file:border-0 file:text-xs file:font-semibold file:bg-gray-100 file:text-gray-700 hover:file:bg-[#D38928] hover:file:text-white cursor-pointer"
                         >
                     </div>
+
+                    <!-- Product Gallery Video -->
+                    <div class="pt-4 border-t border-gray-100 space-y-3">
+                        <div class="flex items-center justify-between">
+                            <label class="block text-xs font-bold text-gray-800 flex items-center space-x-1.5">
+                                <span class="text-base">🎬</span>
+                                <span>Product Gallery Video</span>
+                            </label>
+                            <span class="text-[11px] text-gray-400">Shows in product gallery alongside images</span>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="space-y-1.5">
+                                <label class="block text-xs font-medium text-gray-600">Upload Video File (.mp4, .webm)</label>
+                                <input 
+                                    type="file" 
+                                    name="video_file" 
+                                    accept="video/mp4,video/webm,video/ogg,video/quicktime"
+                                    class="w-full text-xs text-gray-500 file:mr-3 file:py-2 file:px-3 file:rounded-[6px] file:border-0 file:text-xs file:font-semibold file:bg-[#FAF3EA] file:text-[#965A15] hover:file:bg-[#D38928] hover:file:text-white cursor-pointer"
+                                >
+                                <p class="text-[10px] text-gray-400">Max 50MB (.mp4 / .webm). Auto-saved to uploads.</p>
+                            </div>
+
+                            <div class="space-y-1.5">
+                                <label class="block text-xs font-medium text-gray-600">Or Video URL / Asset Path</label>
+                                <input 
+                                    type="text" 
+                                    name="video_url" 
+                                    value="{{ old('video_url') }}" 
+                                    placeholder="assets/videos/reel-video-1.mp4 or YouTube URL"
+                                    class="w-full px-3.5 py-2 bg-white border border-[#D2D5D8] focus:border-[#D38928] rounded-[8px] text-xs font-mono text-[#202223] placeholder-gray-400 focus:outline-none"
+                                >
+                                <p class="text-[10px] text-gray-400">Local asset path or YouTube URL.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Card 3: Pricing & Inventory -->

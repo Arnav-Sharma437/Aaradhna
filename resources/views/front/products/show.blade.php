@@ -69,6 +69,8 @@
             asset('assets/images/products/ishanaa-incense-sticks-trio.jpg'),
         ];
     }
+
+    $hasVideo = $product->has_video;
 @endphp
 
 <div class="bg-white min-h-screen py-2 sm:py-4 pb-20 font-body">
@@ -106,7 +108,7 @@
                 <div class="block lg:hidden space-y-2" id="product-mobile-gallery">
                     <!-- Main Large Hero Image (No border, zero padding, rounded 6px) -->
                     <div class="product-card relative bg-transparent rounded-[6px] border-0 p-0 shadow-none overflow-hidden">
-                        <div class="relative w-full aspect-[4/4.8] rounded-[6px] overflow-hidden bg-transparent">
+                        <div class="relative w-full aspect-[4/4.8] rounded-[6px] overflow-hidden bg-transparent" id="main-product-media-container">
                             <img 
                                 id="main-product-gallery-img" 
                                 src="{{ $galleryImages[0] }}" 
@@ -114,6 +116,31 @@
                                 class="w-full h-full object-cover object-top rounded-[6px]"
                                 onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}';"
                             >
+
+                            @if($hasVideo)
+                                <div id="main-product-gallery-video-wrap" class="hidden absolute inset-0 w-full h-full bg-black rounded-[6px] overflow-hidden">
+                                    @if($product->is_youtube_video)
+                                        <iframe 
+                                            id="main-product-gallery-yt-iframe"
+                                            src=""
+                                            data-src="{{ $product->youtube_embed_url }}"
+                                            class="w-full h-full border-0 rounded-[6px]" 
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                            allowfullscreen
+                                        ></iframe>
+                                    @else
+                                        <video 
+                                            id="main-product-gallery-video"
+                                            src="{{ $product->video_asset_url }}" 
+                                            poster="{{ $galleryImages[0] }}"
+                                            playsinline
+                                            controls
+                                            preload="metadata"
+                                            class="w-full h-full object-cover rounded-[6px]"
+                                        ></video>
+                                    @endif
+                                </div>
+                            @endif
 
                             <!-- Top-Right Tag Type Badge (Matches Product Card Outside Exactly) -->
                             @if(!empty($tagParts))
@@ -153,6 +180,7 @@
                                 type="button" 
                                 class="gallery-thumbnail-btn relative w-16 h-19 sm:w-18 sm:h-21 p-0 bg-transparent rounded-[6px] border-0 transition-all duration-200 shrink-0 cursor-pointer focus:outline-none {{ $index === 0 ? 'ring-2 ring-[#C87A1E] opacity-100' : 'opacity-70 hover:opacity-100' }}"
                                 style="border-radius: 6px !important;"
+                                data-type="image"
                                 data-img-src="{{ $imgUrl }}"
                                 data-index="{{ $index }}"
                                 aria-label="View product image {{ $index + 1 }}"
@@ -162,23 +190,44 @@
                                 </div>
                             </button>
                         @endforeach
+
+                        @if($hasVideo)
+                            <button 
+                                type="button" 
+                                class="gallery-thumbnail-btn relative w-16 h-19 sm:w-18 sm:h-21 p-0 bg-black rounded-[6px] border-0 transition-all duration-200 shrink-0 cursor-pointer focus:outline-none opacity-85 hover:opacity-100 group"
+                                style="border-radius: 6px !important;"
+                                data-type="video"
+                                aria-label="Play product video"
+                            >
+                                <div class="w-full h-full rounded-[6px] overflow-hidden bg-black aspect-[4/4.8] relative flex items-center justify-center">
+                                    <img src="{{ $galleryImages[0] }}" alt="Video thumbnail" class="w-full h-full object-cover rounded-[6px] opacity-60">
+                                    <div class="absolute inset-0 flex flex-col items-center justify-center text-white">
+                                        <div class="w-6 h-6 rounded-full bg-[#d3a13e] flex items-center justify-center shadow-md">
+                                            <svg class="w-3 h-3 fill-white ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                        </div>
+                                        <span class="text-[8px] font-bold uppercase tracking-wider mt-0.5 text-white drop-shadow">Video</span>
+                                    </div>
+                                </div>
+                            </button>
+                        @endif
                     </div>
                 </div>
 
                 <!-- 2. DESKTOP VIEW: Borderless, Equal Minimal Spacing (gap-2 = 8px equal on top, bottom, sides), No Hover Zoom + Pack Badge -->
                 <div class="hidden lg:grid grid-cols-2 gap-2">
-                    @foreach($galleryImages as $index => $imgUrl)
+                    <!-- Primary Image Card -->
+                    @if(isset($galleryImages[0]))
                     <div class="product-card relative bg-transparent rounded-[6px] border-0 p-0 shadow-none overflow-hidden">
                         <div class="relative w-full aspect-[4/4.8] rounded-[6px] overflow-hidden bg-transparent">
                             <img 
-                                src="{{ $imgUrl }}" 
-                                alt="{{ $product->title }} visual {{ $index + 1 }}" 
-                                class="w-full h-full object-cover {{ $index === 0 ? 'object-top' : 'object-center' }} rounded-[6px]" 
-                                onerror="this.onerror=null; this.src='{{ $index === 0 ? asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') : asset('assets/images/products/ishanaa-incense-sticks-trio.jpg') }}';"
+                                src="{{ $galleryImages[0] }}" 
+                                alt="{{ $product->title }} visual 1" 
+                                class="w-full h-full object-cover object-top rounded-[6px]" 
+                                onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}';"
                             >
 
                             <!-- Top-Right Tag Type Badge (Matches Product Card Outside Exactly) -->
-                            @if($index === 0 && !empty($tagParts))
+                            @if(!empty($tagParts))
                                 <div class="absolute top-2.5 right-3.5 sm:top-3 sm:right-4 z-20 pointer-events-none select-none opacity-90" style="opacity: 0.9 !important;">
                                     @if(!empty($tagParts['number']))
                                         <div 
@@ -207,6 +256,55 @@
                             @endif
                         </div>
                     </div>
+                    @endif
+
+                    <!-- Video Card in Gallery Grid (Position 2 if product has video) -->
+                    @if($hasVideo)
+                    <div class="product-card relative bg-transparent rounded-[6px] border-0 p-0 shadow-none overflow-hidden">
+                        <div class="relative w-full aspect-[4/4.8] rounded-[6px] overflow-hidden bg-black group">
+                            @if($product->is_youtube_video)
+                                <iframe 
+                                    src="{{ $product->youtube_embed_url }}" 
+                                    class="w-full h-full border-0 rounded-[6px]" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen
+                                ></iframe>
+                            @else
+                                <video 
+                                    class="w-full h-full object-cover rounded-[6px]" 
+                                    src="{{ $product->video_asset_url }}" 
+                                    poster="{{ $galleryImages[1] ?? $galleryImages[0] }}" 
+                                    playsinline 
+                                    controls 
+                                    muted 
+                                    loop
+                                    preload="metadata"
+                                ></video>
+                            @endif
+                            <div class="absolute top-2.5 left-2.5 z-20 pointer-events-none">
+                                <span class="inline-flex items-center space-x-1 px-2 py-0.5 rounded-[4px] bg-black/60 backdrop-blur-md text-white text-[9px] font-bold uppercase tracking-wider border border-white/20">
+                                    <span>▶</span>
+                                    <span>Video</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    @endif
+
+                    <!-- Additional Gallery Images -->
+                    @foreach($galleryImages as $index => $imgUrl)
+                        @if($index > 0)
+                        <div class="product-card relative bg-transparent rounded-[6px] border-0 p-0 shadow-none overflow-hidden">
+                            <div class="relative w-full aspect-[4/4.8] rounded-[6px] overflow-hidden bg-transparent">
+                                <img 
+                                    src="{{ $imgUrl }}" 
+                                    alt="{{ $product->title }} visual {{ $index + 1 }}" 
+                                    class="w-full h-full object-cover object-center rounded-[6px]" 
+                                    onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-incense-sticks-trio.jpg') }}';"
+                                >
+                            </div>
+                        </div>
+                        @endif
                     @endforeach
                 </div>
             </div>
@@ -1366,29 +1464,56 @@
 @push('scripts')
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        // Thumbnail Gallery Switcher (Instant Image Swap on Click)
+        // Thumbnail Gallery Switcher (Instant Image/Video Swap on Click)
         const mainGalleryImg = document.getElementById('main-product-gallery-img');
+        const mainGalleryVideoWrap = document.getElementById('main-product-gallery-video-wrap');
+        const mainGalleryVideo = document.getElementById('main-product-gallery-video');
+        const mainGalleryYtIframe = document.getElementById('main-product-gallery-yt-iframe');
         const thumbnailBtns = document.querySelectorAll('.gallery-thumbnail-btn');
 
-        if (mainGalleryImg && thumbnailBtns.length > 0) {
+        if (thumbnailBtns.length > 0) {
             thumbnailBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
-                    const newSrc = btn.dataset.imgSrc;
-                    if (newSrc && mainGalleryImg.src !== newSrc) {
-                        mainGalleryImg.style.opacity = '0.3';
-                        mainGalleryImg.src = newSrc;
-                        mainGalleryImg.onload = () => {
-                            mainGalleryImg.style.opacity = '1';
-                        };
+                    const isVideo = btn.dataset.type === 'video';
+
+                    if (isVideo) {
+                        if (mainGalleryImg) mainGalleryImg.classList.add('hidden');
+                        if (mainGalleryVideoWrap) {
+                            mainGalleryVideoWrap.classList.remove('hidden');
+                            if (mainGalleryVideo) {
+                                mainGalleryVideo.play().catch(() => {});
+                            }
+                            if (mainGalleryYtIframe && mainGalleryYtIframe.dataset.src && !mainGalleryYtIframe.src) {
+                                mainGalleryYtIframe.src = mainGalleryYtIframe.dataset.src;
+                            }
+                        }
+                    } else {
+                        if (mainGalleryVideoWrap) {
+                            mainGalleryVideoWrap.classList.add('hidden');
+                            if (mainGalleryVideo) {
+                                mainGalleryVideo.pause();
+                            }
+                        }
+                        if (mainGalleryImg) {
+                            mainGalleryImg.classList.remove('hidden');
+                            const newSrc = btn.dataset.imgSrc;
+                            if (newSrc && mainGalleryImg.src !== newSrc) {
+                                mainGalleryImg.style.opacity = '0.3';
+                                mainGalleryImg.src = newSrc;
+                                mainGalleryImg.onload = () => {
+                                    mainGalleryImg.style.opacity = '1';
+                                };
+                            }
+                        }
                     }
                     
                     // Update Active Thumbnail Border Styling
                     thumbnailBtns.forEach(b => {
-                        b.classList.remove('border-[#D38928]', 'ring-2', 'ring-[#D38928]/30', 'opacity-100');
-                        b.classList.add('border-gray-200', 'opacity-75');
+                        b.classList.remove('ring-2', 'ring-[#C87A1E]', 'opacity-100');
+                        b.classList.add('opacity-70');
                     });
-                    btn.classList.remove('border-gray-200', 'opacity-75');
-                    btn.classList.add('border-[#D38928]', 'ring-2', 'ring-[#D38928]/30', 'opacity-100');
+                    btn.classList.remove('opacity-70');
+                    btn.classList.add('ring-2', 'ring-[#C87A1E]', 'opacity-100');
                 });
             });
         }

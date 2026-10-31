@@ -217,6 +217,66 @@
                             class="w-full text-xs text-gray-500 file:mr-3 file:py-1.5 file:px-3 file:rounded-[6px] file:border-0 file:text-xs file:font-semibold file:bg-gray-100 file:text-gray-700 hover:file:bg-[#D38928] hover:file:text-white cursor-pointer"
                         >
                     </div>
+
+                    <!-- Product Gallery Video Management -->
+                    <div class="pt-4 border-t border-gray-100 space-y-3">
+                        <div class="flex items-center justify-between">
+                            <label class="block text-xs font-bold text-gray-800 flex items-center space-x-1.5">
+                                <span class="text-base">🎬</span>
+                                <span>Product Gallery Video</span>
+                            </label>
+                            <span class="text-[11px] text-gray-400">Shows in product gallery alongside images</span>
+                        </div>
+
+                        @if($product->has_video)
+                            <div class="p-3 bg-[#FAF8F5] rounded-[10px] border border-[#EADBCC] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                                <div class="flex items-center space-x-3 min-w-0">
+                                    <div class="w-16 h-16 rounded-[8px] bg-black overflow-hidden shrink-0 flex items-center justify-center relative">
+                                        @if($product->is_youtube_video)
+                                            <span class="text-rose-500 font-bold text-xl">▶</span>
+                                        @else
+                                            <video src="{{ $product->video_asset_url }}" class="w-full h-full object-cover" muted></video>
+                                        @endif
+                                    </div>
+                                    <div class="min-w-0">
+                                        <div class="text-xs font-bold text-[#121212] truncate">Active Gallery Video</div>
+                                        <div class="text-[11px] text-gray-500 font-mono truncate max-w-xs">{{ $product->video_url }}</div>
+                                    </div>
+                                </div>
+                                <label class="flex items-center space-x-1.5 text-xs text-rose-600 font-bold cursor-pointer shrink-0">
+                                    <input type="checkbox" name="remove_video" value="1" class="text-rose-600 rounded">
+                                    <span>Remove Video</span>
+                                </label>
+                            </div>
+                        @endif
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="space-y-1.5">
+                                <label class="block text-xs font-medium text-gray-600">
+                                    {{ $product->has_video ? 'Replace Video File (.mp4, .webm)' : 'Upload Video File (.mp4, .webm)' }}
+                                </label>
+                                <input 
+                                    type="file" 
+                                    name="video_file" 
+                                    accept="video/mp4,video/webm,video/ogg,video/quicktime"
+                                    class="w-full text-xs text-gray-500 file:mr-3 file:py-1.5 file:px-3 file:rounded-[6px] file:border-0 file:text-xs file:font-semibold file:bg-[#FAF3EA] file:text-[#965A15] hover:file:bg-[#D38928] hover:file:text-white cursor-pointer"
+                                >
+                                <p class="text-[10px] text-gray-400">Max 50MB (.mp4 / .webm). Auto-saved to uploads.</p>
+                            </div>
+
+                            <div class="space-y-1.5">
+                                <label class="block text-xs font-medium text-gray-600">Or Set Video URL / Asset Path</label>
+                                <input 
+                                    type="text" 
+                                    name="video_url" 
+                                    value="{{ old('video_url', $product->video_url) }}" 
+                                    placeholder="assets/videos/reel-video-1.mp4 or YouTube link"
+                                    class="w-full px-3.5 py-1.5 bg-white border border-[#D2D5D8] rounded-[8px] text-xs font-mono text-[#202223] focus:outline-none"
+                                >
+                                <p class="text-[10px] text-gray-400">Local asset path or YouTube URL.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Card 3: Pricing & Inventory -->

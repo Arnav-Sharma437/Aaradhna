@@ -25,6 +25,8 @@ class Product extends Model
         'benefits',
         'how_to_use',
         'burn_time',
+        'video_url',
+        'video_thumbnail',
         'base_price',
         'sale_price',
         'stock_quantity',
@@ -240,5 +242,64 @@ class Product extends Model
             return $this->images->first()->url;
         }
         return asset('assets/images/products/ishanaa-incense-sticks-trio.jpg');
+    }
+
+    public function getHasVideoAttribute(): bool
+    {
+        return !empty($this->video_url);
+    }
+
+    public function getVideoAssetUrlAttribute(): ?string
+    {
+        $path = $this->video_url;
+        if (empty($path)) return null;
+
+        if (str_starts_with($path, 'http://') || str_starts_with($path, 'https://')) {
+            return $path;
+        }
+
+        $cleanPath = ltrim($path, '/');
+        $fileName = basename($cleanPath);
+
+        if (file_exists(public_path($cleanPath))) {
+            return asset($cleanPath);
+        }
+        if (file_exists(public_path('uploads/products/videos/' . $fileName))) {
+            return asset('uploads/products/videos/' . $fileName);
+        }
+        if (file_exists(public_path('assets/videos/' . $fileName))) {
+            return asset('assets/videos/' . $fileName);
+        }
+
+        return asset($cleanPath);
+    }
+
+    public function getIsYoutubeVideoAttribute(): bool
+    {
+        if (empty($this->video_url)) return false;
+        return str_contains($this->video_url, 'youtube.com') || str_contains($this->video_url, 'youtu.be');
+    }
+
+    public function getYoutubeEmbedUrlAttribute(): ?string
+    {
+        if (!$this->is_youtube_video) return null;
+        $url = $this->video_url;
+
+        // https://youtu.be/ID
+        if (preg_match('/youtu\.be\/([a-zA-Z0-9_\-]+)/', $url, $matches)) {
+            return 'https://www.youtube.com/embed/' . $matches[1] . '?autoplay=1&mute=1&loop=1&playlist=' . $matches[1];
+        }
+
+        // https://www.youtube.com/watch?v=ID
+        if (preg_match('/[?&]v=([a-zA-Z0-9_\-]+)/', $url, $matches)) {
+            return 'https://www.youtube.com/embed/' . $matches[1] . '?autoplay=1&mute=1&loop=1&playlist=' . $matches[1];
+        }
+
+        // https://www.youtube.com/embed/ID
+        if (str_contains($url, 'youtube.com/embed/')) {
+            return $url;
+        }
+
+        return $url;
     }
 }

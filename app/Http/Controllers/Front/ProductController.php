@@ -16,6 +16,14 @@ class ProductController extends Controller
      */
     public function show(string $slug): View
     {
+        try {
+            if (\Illuminate\Support\Facades\Schema::hasTable('products') && !\Illuminate\Support\Facades\Schema::hasColumn('products', 'video_url')) {
+                \Illuminate\Support\Facades\Schema::table('products', function (\Illuminate\Database\Schema\Blueprint $table) {
+                    $table->string('video_url', 500)->nullable()->after('burn_time');
+                });
+            }
+        } catch (\Throwable $e) {}
+
         // Aliases mapping for promotional, card, and legacy URLs
         $aliases = [
             'kesar-chandan' => 'swarna-pushpa',

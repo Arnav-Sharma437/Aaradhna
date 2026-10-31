@@ -25,6 +25,16 @@ class ProductController extends Controller
     private function ensureBadgeColumnExists(): void
     {
         try {
+            if (!Schema::hasColumn('products', 'video_url')) {
+                Schema::table('products', function (Blueprint $table) {
+                    $table->string('video_url', 500)->nullable()->after('burn_time');
+                });
+            }
+            if (!Schema::hasColumn('products', 'video_thumbnail')) {
+                Schema::table('products', function (Blueprint $table) {
+                    $table->string('video_thumbnail', 500)->nullable()->after('video_url');
+                });
+            }
             if (!Schema::hasColumn('products', 'show_in_trial_bundle')) {
                 Schema::table('products', function (Blueprint $table) {
                     $table->boolean('show_in_trial_bundle')->default(false)->after('is_bestseller')->index();
@@ -285,6 +295,8 @@ class ProductController extends Controller
             'primary_image_file' => ['nullable', 'image', 'max:4096'],
             'image_files.*' => ['nullable', 'image', 'max:4096'],
             'image_url' => ['nullable', 'string', 'max:500'],
+            'video_file' => ['nullable', 'file', 'mimetypes:video/mp4,video/webm,video/ogg,video/quicktime', 'max:51200'],
+            'video_url' => ['nullable', 'string', 'max:500'],
             'variants' => ['nullable', 'array'],
             'variants.*.title' => ['nullable', 'string', 'max:255'],
             'variants.*.sku' => ['nullable', 'string', 'max:100'],
@@ -342,6 +354,20 @@ class ProductController extends Controller
             }
             if (Schema::hasColumn('products', 'sort_order')) {
                 $productData['sort_order'] = $request->filled('sort_order') ? (int)$request->sort_order : 0;
+            }
+
+            // Video Handling
+            if ($request->hasFile('video_file')) {
+                $vFile = $request->file('video_file');
+                $vName = 'prod_vid_' . time() . '_' . Str::random(6) . '.' . $vFile->getClientOriginalExtension();
+                $vDest = public_path('uploads/products/videos');
+                if (!file_exists($vDest)) {
+                    @mkdir($vDest, 0755, true);
+                }
+                $vFile->move($vDest, $vName);
+                $productData['video_url'] = 'uploads/products/videos/' . $vName;
+            } elseif ($request->filled('video_url')) {
+                $productData['video_url'] = trim($request->video_url);
             }
 
             $product = Product::create($productData);
@@ -509,6 +535,9 @@ class ProductController extends Controller
             'new_primary_file' => ['nullable', 'image', 'max:4096'],
             'new_gallery_files.*' => ['nullable', 'image', 'max:4096'],
             'new_image_url' => ['nullable', 'string', 'max:500'],
+            'video_file' => ['nullable', 'file', 'mimetypes:video/mp4,video/webm,video/ogg,video/quicktime', 'max:51200'],
+            'video_url' => ['nullable', 'string', 'max:500'],
+            'remove_video' => ['nullable', 'boolean'],
             'delete_images' => ['nullable', 'array'],
             'delete_images.*' => ['exists:product_images,id'],
             'variants' => ['nullable', 'array'],
@@ -561,6 +590,30 @@ class ProductController extends Controller
             }
             if (Schema::hasColumn('products', 'sort_order')) {
                 $productData['sort_order'] = $request->filled('sort_order') ? (int)$request->sort_order : 0;
+            }
+
+            // Video Handling
+            if ($request->boolean('remove_video')) {
+                if ($product->video_url && str_starts_with($product->video_url, 'uploads/products/videos/')) {
+                    $oldPath = public_path($product->video_url);
+                    if (file_exists($oldPath)) @unlink($oldPath);
+                }
+                $productData['video_url'] = null;
+            } elseif ($request->hasFile('video_file')) {
+                if ($product->video_url && str_starts_with($product->video_url, 'uploads/products/videos/')) {
+                    $oldPath = public_path($product->video_url);
+                    if (file_exists($oldPath)) @unlink($oldPath);
+                }
+                $vFile = $request->file('video_file');
+                $vName = 'prod_vid_' . time() . '_' . Str::random(6) . '.' . $vFile->getClientOriginalExtension();
+                $vDest = public_path('uploads/products/videos');
+                if (!file_exists($vDest)) {
+                    @mkdir($vDest, 0755, true);
+                }
+                $vFile->move($vDest, $vName);
+                $productData['video_url'] = 'uploads/products/videos/' . $vName;
+            } elseif ($request->has('video_url')) {
+                $productData['video_url'] = $request->filled('video_url') ? trim($request->video_url) : null;
             }
 
             $product->update($productData);
