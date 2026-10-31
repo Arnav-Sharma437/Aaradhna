@@ -102,16 +102,16 @@
                     $tagColor = $product->badge_color;
                 @endphp
 
-                <!-- 1. MOBILE/TABLET VIEW: Main Hero Image + Horizontal Thumbnails Below (Clean Background, #fafafa Border, 6px Radius, 2px Padding) -->
+                <!-- 1. MOBILE/TABLET VIEW: Main Hero Image + Horizontal Thumbnails Below (Clean Background, #fafafa Border, 6px Radius, 2px Padding, No Hover Zoom) -->
                 <div class="block lg:hidden space-y-2.5" id="product-mobile-gallery">
                     <!-- Main Large Hero Image (2px padding, 6px radius, #fafafa border, transparent background) -->
-                    <div class="product-card group relative bg-transparent rounded-[6px] border border-[#fafafa] p-[2px] shadow-none overflow-hidden" style="border-color: #fafafa !important; border-radius: 6px !important;">
+                    <div class="product-card relative bg-transparent rounded-[6px] border border-[#fafafa] p-[2px] shadow-none overflow-hidden" style="border-color: #fafafa !important; border-radius: 6px !important;">
                         <div class="relative w-full aspect-[4/4.8] rounded-[5px] overflow-hidden bg-transparent">
                             <img 
                                 id="main-product-gallery-img" 
                                 src="{{ $galleryImages[0] }}" 
                                 alt="{{ $product->title }}" 
-                                class="w-full h-full object-cover object-top rounded-[5px] transition-transform duration-500 ease-out"
+                                class="w-full h-full object-cover object-top rounded-[5px]"
                                 onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}';"
                             >
 
@@ -165,15 +165,15 @@
                     </div>
                 </div>
 
-                <!-- 2. DESKTOP VIEW: Clean Background, #fafafa Border, 6px Radius, 2px Padding + Pack Badge -->
+                <!-- 2. DESKTOP VIEW: Clean Background, #fafafa Border, 6px Radius, 2px Padding, No Hover Zoom + Pack Badge -->
                 <div class="hidden lg:grid grid-cols-2 gap-3 xl:gap-4">
                     @foreach($galleryImages as $index => $imgUrl)
-                    <div class="product-card group relative bg-transparent rounded-[6px] border border-[#fafafa] p-[2px] shadow-none overflow-hidden" style="border-color: #fafafa !important; border-radius: 6px !important;">
+                    <div class="product-card relative bg-transparent rounded-[6px] border border-[#fafafa] p-[2px] shadow-none overflow-hidden" style="border-color: #fafafa !important; border-radius: 6px !important;">
                         <div class="relative w-full aspect-[4/4.8] rounded-[5px] overflow-hidden bg-transparent">
                             <img 
                                 src="{{ $imgUrl }}" 
                                 alt="{{ $product->title }} visual {{ $index + 1 }}" 
-                                class="w-full h-full object-cover {{ $index === 0 ? 'object-top' : 'object-center' }} rounded-[5px] transition-transform duration-500 ease-out group-hover:scale-108" 
+                                class="w-full h-full object-cover {{ $index === 0 ? 'object-top' : 'object-center' }} rounded-[5px]" 
                                 onerror="this.onerror=null; this.src='{{ $index === 0 ? asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') : asset('assets/images/products/ishanaa-incense-sticks-trio.jpg') }}';"
                             >
 
