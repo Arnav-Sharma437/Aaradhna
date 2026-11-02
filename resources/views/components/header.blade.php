@@ -20,6 +20,9 @@
                     $headerLogoPath = !empty($storeSettings['header_logo']) ? $storeSettings['header_logo'] : 'assets/images/ishanaa-header-logo.png';
                     $headerLogoSrc = asset($headerLogoPath);
                     $storeBrandName = $storeSettings['store_name'] ?? 'ISHANAA - Puja Essentials & Fragrances';
+                    $supportWhatsapp = preg_replace('/[^0-9]/', '', $storeSettings['support_whatsapp'] ?? '917807211102');
+                    $supportPhone = $storeSettings['support_phone'] ?? '+91 78072 11102';
+                    $supportEmail = $storeSettings['support_email'] ?? 'hello.ishanaa@gmail.com';
                 @endphp
 
                 <!-- Brand Logo (Desktop Left-aligned) -->
@@ -209,6 +212,74 @@
             <!-- RIGHT: Clean Compact Action Icons (Search + Account + Wishlist + Cart) -->
             <div class="flex items-center justify-end space-x-1 sm:space-x-1.5 shrink-0">
                 
+                <!-- Contact Us Dropdown Button (Exact Match to Reference Screenshot) -->
+                <div class="relative group mr-1 sm:mr-1.5" id="header-contact-wrapper">
+                    <button 
+                        type="button" 
+                        id="header-contact-trigger"
+                        class="inline-flex items-center gap-1 sm:gap-1.5 bg-[#C28430] hover:bg-[#A86911] text-white text-[11px] sm:text-xs md:text-[13px] font-medium px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full transition-all duration-200 cursor-pointer shadow-xs focus:outline-none select-none"
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                        aria-label="Contact Us Dropdown"
+                    >
+                        <span class="underline underline-offset-2">Contact Us</span>
+                        <svg 
+                            id="header-contact-chevron"
+                            class="w-3 h-3 text-white transition-transform duration-200 shrink-0 transform group-hover:rotate-180" 
+                            fill="none" 
+                            stroke="currentColor" 
+                            stroke-width="2.5" 
+                            viewBox="0 0 24 24"
+                        >
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+
+                    <!-- Dropdown Content Box (Matches Reference Screenshot) -->
+                    <div 
+                        id="header-contact-dropdown"
+                        class="absolute right-0 top-full mt-2 w-[260px] sm:w-[280px] bg-white rounded-lg shadow-2xl border border-[#EAE3D9] p-4 sm:p-5 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top -translate-y-1 group-hover:translate-y-0 pointer-events-none group-hover:pointer-events-auto"
+                        role="menu"
+                    >
+                        <div class="space-y-3.5 text-left font-body">
+                            <!-- Email Line -->
+                            <div class="text-[13px] sm:text-[13.5px] text-[#222222] leading-snug">
+                                <span class="text-[#444444]">Email:</span>
+                                <a 
+                                    href="mailto:{{ $supportEmail }}" 
+                                    class="text-[#121212] hover:text-[#C28430] hover:underline transition-colors ml-1 font-medium break-all"
+                                >
+                                    {{ $supportEmail }}
+                                </a>
+                            </div>
+
+                            <!-- WhatsApp Support Block -->
+                            <div class="pt-0.5 space-y-0.5">
+                                <a 
+                                    href="https://wa.me/{{ $supportWhatsapp }}" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    class="font-bold underline text-[#121212] hover:text-[#C28430] text-[13.5px] sm:text-[14px] leading-snug block transition-colors"
+                                >
+                                    WhatsApp Support
+                                </a>
+                                <div class="text-[11.5px] sm:text-xs text-gray-500">
+                                    (10:00 AM to 6:00 PM)
+                                </div>
+                                <div class="pt-1.5">
+                                    <a 
+                                        href="tel:+{{ $supportWhatsapp }}" 
+                                        class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#8B4513] hover:text-[#C28430] hover:underline transition-colors"
+                                    >
+                                        <span>📞</span>
+                                        <span>{{ $supportPhone }}</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- 1. Search Icon Button -->
                 <button 
                     type="button" 
@@ -281,3 +352,47 @@
         </div>
     </div>
 </header>
+
+<!-- Header Contact Us Dropdown Script -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const trigger = document.getElementById('header-contact-trigger');
+        const dropdown = document.getElementById('header-contact-dropdown');
+        const chevron = document.getElementById('header-contact-chevron');
+        const wrapper = document.getElementById('header-contact-wrapper');
+
+        if (trigger && dropdown) {
+            trigger.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isOpen = dropdown.classList.contains('contact-dropdown-open');
+                if (isOpen) {
+                    closeContactDropdown();
+                } else {
+                    openContactDropdown();
+                }
+            });
+
+            function openContactDropdown() {
+                dropdown.classList.add('contact-dropdown-open');
+                dropdown.classList.remove('opacity-0', 'invisible', 'pointer-events-none', '-translate-y-1');
+                dropdown.classList.add('opacity-100', 'visible', 'pointer-events-auto', 'translate-y-0');
+                if (chevron) chevron.classList.add('rotate-180');
+                trigger.setAttribute('aria-expanded', 'true');
+            }
+
+            function closeContactDropdown() {
+                dropdown.classList.remove('contact-dropdown-open');
+                dropdown.classList.remove('opacity-100', 'visible', 'pointer-events-auto', 'translate-y-0');
+                dropdown.classList.add('opacity-0', 'invisible', 'pointer-events-none', '-translate-y-1');
+                if (chevron) chevron.classList.remove('rotate-180');
+                trigger.setAttribute('aria-expanded', 'false');
+            }
+
+            document.addEventListener('click', (e) => {
+                if (wrapper && !wrapper.contains(e.target)) {
+                    closeContactDropdown();
+                }
+            });
+        }
+    });
+</script>
