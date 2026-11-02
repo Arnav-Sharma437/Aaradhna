@@ -267,6 +267,9 @@ class Product extends Model
         if (file_exists(public_path('uploads/products/videos/' . $fileName))) {
             return asset('uploads/products/videos/' . $fileName);
         }
+        if (file_exists(public_path('storage/products/videos/' . $fileName))) {
+            return asset('storage/products/videos/' . $fileName);
+        }
         if (file_exists(public_path('assets/videos/' . $fileName))) {
             return asset('assets/videos/' . $fileName);
         }

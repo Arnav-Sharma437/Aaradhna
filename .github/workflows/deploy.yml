@@ -159,7 +159,7 @@ jobs:
 
             echo "Ensuring storage and media directories exist..."
             mkdir -p storage/framework/{sessions,views,cache} storage/logs bootstrap/cache
-            mkdir -p public/uploads/products public/storage/products
+            mkdir -p public/uploads/products/videos public/storage/products/videos storage/app/public/products/videos
             mkdir -p storage/app/public/qr public/storage/qr
             chmod -R 775 storage bootstrap/cache public/uploads public/storage 2>/dev/null || true
 
@@ -168,6 +168,9 @@ jobs:
             cp -rn public/assets/images/products/* public/storage/products/ 2>/dev/null || true
             cp -rn storage/app/public/products/* public/uploads/products/ 2>/dev/null || true
             cp -rn storage/app/public/products/* public/storage/products/ 2>/dev/null || true
+            cp -rn public/uploads/products/videos/* public/storage/products/videos/ 2>/dev/null || true
+            cp -rn public/storage/products/videos/* public/uploads/products/videos/ 2>/dev/null || true
+            cp -rn storage/app/public/products/videos/* public/uploads/products/videos/ 2>/dev/null || true
 
             echo "Clearing stale framework cache safely..."
             php artisan optimize:clear || php artisan view:clear
@@ -182,6 +185,8 @@ jobs:
               php artisan migrate --path=database/migrations/2026_10_28_104614_create_qr_scans_table.php --force 2>&1 || true
               php artisan migrate --path=database/migrations/2026_10_29_000001_add_badge_color_to_products_table.php --force 2>&1 || true
               php artisan migrate --path=database/migrations/2026_10_30_000001_add_sort_order_to_products_table.php --force 2>&1 || true
+              php artisan migrate --path=database/migrations/2026_10_31_150000_add_bundle_visibility_to_products_table.php --force 2>&1 || true
+              php artisan migrate --path=database/migrations/2026_10_31_233000_add_video_url_to_products_table.php --force 2>&1 || true
             }
 
             echo "Generating high-resolution QR codes and branded packaging labels..."
@@ -192,9 +197,9 @@ jobs:
             cp -rf storage/app/public/qr/* public/storage/qr/ 2>/dev/null || true
             chmod -R 775 public/storage/qr storage/app/public/qr 2>/dev/null || true
 
-            echo "Rebuilding view cache..."
+            echo "Clearing compiled view cache so newest blade templates take effect immediately..."
             php artisan view:clear
-            php artisan view:cache || true
+            php artisan cache:clear
 
             echo "Creating storage symlink if not already linked..."
             php artisan storage:link 2>/dev/null || true

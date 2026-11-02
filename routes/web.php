@@ -49,7 +49,7 @@ Route::get('/contact-us', [PageController::class, 'contact'])->name('pages.conta
 Route::post('/contact/submit', [PageController::class, 'submitContact'])->name('pages.contact.submit');
 Route::get('/pages/{slug}', [PageController::class, 'policy'])->name('pages.show');
 
-// Storage & Uploads Direct File Fallback Routes (Guarantees image delivery with or without symlinks)
+// Storage & Uploads Direct File Fallback Routes (Guarantees image & video delivery with byte-range streaming)
 $streamAssetFile = function (string $path) {
     $clean = ltrim($path, '/');
     $name = basename($clean);
@@ -57,22 +57,46 @@ $streamAssetFile = function (string $path) {
         public_path($clean),
         public_path('uploads/' . $clean),
         public_path('uploads/products/' . $name),
+        public_path('uploads/products/videos/' . $name),
         public_path('storage/' . $clean),
         public_path('storage/products/' . $name),
+        public_path('storage/products/videos/' . $name),
+        public_path('assets/' . $clean),
+        public_path('assets/videos/' . $name),
         storage_path('app/public/' . $clean),
         storage_path('app/public/products/' . $name),
+        storage_path('app/public/products/videos/' . $name),
         storage_path('app/' . $clean),
     ];
     foreach ($candidates as $file) {
         if (file_exists($file) && !is_dir($file)) {
-            $mime = mime_content_type($file) ?: 'image/jpeg';
-            return response()->file($file, [
+            $ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
+            $videoMimes = [
+                'mp4' => 'video/mp4',
+                'webm' => 'video/webm',
+                'ogg' => 'video/ogg',
+                'ogv' => 'video/ogg',
+                'mov' => 'video/quicktime',
+            ];
+            $mime = $videoMimes[$ext] ?? (mime_content_type($file) ?: 'application/octet-stream');
+            
+            $response = response()->file($file, [
                 'Content-Type' => $mime,
+                'Accept-Ranges' => 'bytes',
                 'Cache-Control' => 'public, max-age=31536000',
             ]);
+            $response->prepare(request());
+            return $response;
         }
     }
-    // Graceful fallback to default image if file missing
+
+    // If it's a video file, return 404 (never send a JPEG image fallback to a video tag)
+    $ext = strtolower(pathinfo($clean, PATHINFO_EXTENSION));
+    if (in_array($ext, ['mp4', 'webm', 'ogg', 'ogv', 'mov'])) {
+        abort(404, 'Video file not found');
+    }
+
+    // Graceful fallback to default image if image file missing
     $fallback = public_path('assets/images/incense-pack.jpg');
     if (file_exists($fallback)) {
         return response()->file($fallback, [
@@ -272,11 +296,52 @@ Route::get('/run-migrations', function () {
         \Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
         $output = \Illuminate\Support\Facades\Artisan::output();
 
+        // Ensure video_url exists
+        if (\Illuminate\Support\Facades\Schema::hasTable('products') && !\Illuminate\Support\Facades\Schema::hasColumn('products', 'video_url')) {
+            \Illuminate\Support\Facades\Schema::table('products', function (\Illuminate\Database\Schema\Blueprint $table) {
+                $table->string('video_url', 500)->nullable()->after('burn_time');
+            });
+        }
+
         \App\Http\Controllers\Admin\ProductController::syncStorageToPublic();
         @\Illuminate\Support\Facades\Artisan::call('storage:link');
 
-        return response("<pre style='font-family:monospace;padding:24px;background:#1e1e1e;color:#50fa7b;border-radius:8px;font-size:14px;line-height:1.6;'>✓ Database migrations executed successfully:\n\n" . htmlspecialchars($output) . "\n✓ Media storage successfully synced to public/uploads/products.</pre>");
+        // Clear view & config cache
+        @\Illuminate\Support\Facades\Artisan::call('view:clear');
+        @\Illuminate\Support\Facades\Artisan::call('cache:clear');
+
+        return response("<pre style='font-family:monospace;padding:24px;background:#1e1e1e;color:#50fa7b;border-radius:8px;font-size:14px;line-height:1.6;'>✓ Database migrations executed successfully:\n\n" . htmlspecialchars($output) . "\n✓ Media storage successfully synced to public/uploads/products.\n✓ Stale view caches cleared.</pre>");
     } catch (\Throwable $e) {
         return response("<pre style='font-family:monospace;padding:24px;background:#1e1e1e;color:#ff5555;border-radius:8px;font-size:14px;line-height:1.6;'>✗ Migration Error:\n\n" . htmlspecialchars($e->getMessage()) . "</pre>", 500);
+    }
+});
+
+// Cache Clearing Utility Route (Clears blade views, application cache, config cache, and routes)
+Route::get('/clear-cache', function () {
+    try {
+        $logs = [];
+        \Illuminate\Support\Facades\Artisan::call('optimize:clear');
+        $logs[] = trim(\Illuminate\Support\Facades\Artisan::output());
+
+        \Illuminate\Support\Facades\Artisan::call('view:clear');
+        $logs[] = trim(\Illuminate\Support\Facades\Artisan::output());
+
+        \Illuminate\Support\Facades\Artisan::call('cache:clear');
+        $logs[] = trim(\Illuminate\Support\Facades\Artisan::output());
+
+        \Illuminate\Support\Facades\Artisan::call('config:clear');
+        $logs[] = trim(\Illuminate\Support\Facades\Artisan::output());
+
+        \Illuminate\Support\Facades\Artisan::call('route:clear');
+        $logs[] = trim(\Illuminate\Support\Facades\Artisan::output());
+
+        \App\Http\Controllers\Admin\ProductController::syncStorageToPublic();
+        @\Illuminate\Support\Facades\Artisan::call('storage:link');
+        $logs[] = "Storage directories & videos synchronized successfully.";
+
+        $output = implode("\n", array_filter($logs));
+        return response("<pre style='font-family:monospace;padding:24px;background:#1e1e1e;color:#50fa7b;border-radius:8px;font-size:14px;line-height:1.6;'>✓ All application, view, route, and config caches successfully cleared!\n\n" . htmlspecialchars($output) . "</pre>");
+    } catch (\Throwable $e) {
+        return response("<pre style='font-family:monospace;padding:24px;background:#1e1e1e;color:#ff5555;border-radius:8px;'>✗ Cache Clear Error: " . htmlspecialchars($e->getMessage()) . "</pre>", 500);
     }
 });

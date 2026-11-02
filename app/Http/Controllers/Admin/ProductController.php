@@ -66,7 +66,7 @@ class ProductController extends Controller
     }
 
     /**
-     * Mirror any images stored in storage/app/public/products to public/uploads/products and public/storage/products.
+     * Mirror any images & videos stored in storage/app/public/products to public/uploads/products and public/storage/products.
      */
     public static function syncStorageToPublic(): void
     {
@@ -75,7 +75,11 @@ class ProductController extends Controller
             $targetUploads = public_path('uploads/products');
             $targetStorage = public_path('storage/products');
 
-            foreach ([$targetUploads, $targetStorage] as $tDir) {
+            $videoUploads = public_path('uploads/products/videos');
+            $videoStorage = public_path('storage/products/videos');
+            $videoAppStorage = storage_path('app/public/products/videos');
+
+            foreach ([$targetUploads, $targetStorage, $videoUploads, $videoStorage, $videoAppStorage] as $tDir) {
                 if (!file_exists($tDir)) {
                     @mkdir($tDir, 0775, true);
                 }
@@ -84,7 +88,7 @@ class ProductController extends Controller
             if (is_dir($sourceDir)) {
                 $files = scandir($sourceDir);
                 foreach ($files as $file) {
-                    if ($file === '.' || $file === '..') continue;
+                    if ($file === '.' || $file === '..' || is_dir($sourceDir . '/' . $file)) continue;
                     $src = $sourceDir . '/' . $file;
                     if (is_file($src)) {
                         $upDest = $targetUploads . '/' . $file;
@@ -95,6 +99,19 @@ class ProductController extends Controller
                         if (!file_exists($stDest)) {
                             @copy($src, $stDest);
                         }
+                    }
+                }
+            }
+
+            // Sync videos between uploads and storage
+            if (is_dir($videoUploads)) {
+                $vFiles = scandir($videoUploads);
+                foreach ($vFiles as $vf) {
+                    if ($vf === '.' || $vf === '..') continue;
+                    $vSrc = $videoUploads . '/' . $vf;
+                    if (is_file($vSrc)) {
+                        if (!file_exists($videoStorage . '/' . $vf)) @copy($vSrc, $videoStorage . '/' . $vf);
+                        if (!file_exists($videoAppStorage . '/' . $vf)) @copy($vSrc, $videoAppStorage . '/' . $vf);
                     }
                 }
             }
@@ -361,10 +378,17 @@ class ProductController extends Controller
                 $vFile = $request->file('video_file');
                 $vName = 'prod_vid_' . time() . '_' . Str::random(6) . '.' . $vFile->getClientOriginalExtension();
                 $vDest = public_path('uploads/products/videos');
-                if (!file_exists($vDest)) {
-                    @mkdir($vDest, 0755, true);
+                $vStorageDest = public_path('storage/products/videos');
+                $vAppStorageDest = storage_path('app/public/products/videos');
+                foreach ([$vDest, $vStorageDest, $vAppStorageDest] as $d) {
+                    if (!file_exists($d)) @mkdir($d, 0775, true);
                 }
                 $vFile->move($vDest, $vName);
+                $savedFile = $vDest . '/' . $vName;
+                if (file_exists($savedFile)) {
+                    @copy($savedFile, $vStorageDest . '/' . $vName);
+                    @copy($savedFile, $vAppStorageDest . '/' . $vName);
+                }
                 $productData['video_url'] = 'uploads/products/videos/' . $vName;
             } elseif ($request->filled('video_url')) {
                 $productData['video_url'] = trim($request->video_url);
@@ -597,20 +621,35 @@ class ProductController extends Controller
                 if ($product->video_url && str_starts_with($product->video_url, 'uploads/products/videos/')) {
                     $oldPath = public_path($product->video_url);
                     if (file_exists($oldPath)) @unlink($oldPath);
+                    $oldStorage = public_path('storage/' . str_replace('uploads/', '', $product->video_url));
+                    if (file_exists($oldStorage)) @unlink($oldStorage);
+                    $oldAppStorage = storage_path('app/public/' . str_replace('uploads/', '', $product->video_url));
+                    if (file_exists($oldAppStorage)) @unlink($oldAppStorage);
                 }
                 $productData['video_url'] = null;
             } elseif ($request->hasFile('video_file')) {
                 if ($product->video_url && str_starts_with($product->video_url, 'uploads/products/videos/')) {
                     $oldPath = public_path($product->video_url);
                     if (file_exists($oldPath)) @unlink($oldPath);
+                    $oldStorage = public_path('storage/' . str_replace('uploads/', '', $product->video_url));
+                    if (file_exists($oldStorage)) @unlink($oldStorage);
+                    $oldAppStorage = storage_path('app/public/' . str_replace('uploads/', '', $product->video_url));
+                    if (file_exists($oldAppStorage)) @unlink($oldAppStorage);
                 }
                 $vFile = $request->file('video_file');
                 $vName = 'prod_vid_' . time() . '_' . Str::random(6) . '.' . $vFile->getClientOriginalExtension();
                 $vDest = public_path('uploads/products/videos');
-                if (!file_exists($vDest)) {
-                    @mkdir($vDest, 0755, true);
+                $vStorageDest = public_path('storage/products/videos');
+                $vAppStorageDest = storage_path('app/public/products/videos');
+                foreach ([$vDest, $vStorageDest, $vAppStorageDest] as $d) {
+                    if (!file_exists($d)) @mkdir($d, 0775, true);
                 }
                 $vFile->move($vDest, $vName);
+                $savedFile = $vDest . '/' . $vName;
+                if (file_exists($savedFile)) {
+                    @copy($savedFile, $vStorageDest . '/' . $vName);
+                    @copy($savedFile, $vAppStorageDest . '/' . $vName);
+                }
                 $productData['video_url'] = 'uploads/products/videos/' . $vName;
             } elseif ($request->has('video_url')) {
                 $productData['video_url'] = $request->filled('video_url') ? trim($request->video_url) : null;

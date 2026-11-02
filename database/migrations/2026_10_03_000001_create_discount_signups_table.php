@@ -11,21 +11,23 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('discount_signups', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('phone', 20);
-            $table->string('email')->index();
-            $table->string('product_interest');
-            $table->string('ordering_blocker');
-            $table->string('discovery_source');
-            $table->string('product_priority');
-            $table->string('generated_coupon_code')->index();
-            $table->foreignId('coupon_id')->nullable()->constrained('coupons')->nullOnDelete();
-            $table->string('coupon_status')->default('issued')->index(); // 'issued', 'used'
-            $table->string('ip_address', 45)->nullable();
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('discount_signups')) {
+            Schema::create('discount_signups', function (Blueprint $table) {
+                $table->id();
+                $table->string('name');
+                $table->string('phone', 20);
+                $table->string('email')->index();
+                $table->string('product_interest');
+                $table->string('ordering_blocker');
+                $table->string('discovery_source');
+                $table->string('product_priority');
+                $table->string('generated_coupon_code')->index();
+                $table->foreignId('coupon_id')->nullable()->constrained('coupons')->nullOnDelete();
+                $table->string('coupon_status')->default('issued')->index(); // 'issued', 'used'
+                $table->string('ip_address', 45)->nullable();
+                $table->timestamps();
+            });
+        }
     }
 
     /**

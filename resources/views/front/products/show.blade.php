@@ -132,13 +132,18 @@
                                         <video 
                                             id="main-product-gallery-video"
                                             src="{{ $product->video_asset_url }}" 
-                                            poster="{{ $galleryImages[0] }}"
+                                            @if(!empty($product->video_thumbnail)) poster="{{ asset($product->video_thumbnail) }}" @endif
                                             autoplay
                                             loop
                                             muted
                                             playsinline
+                                            webkit-playsinline
+                                            preload="auto"
                                             class="w-full h-full object-cover rounded-[6px] pointer-events-none"
-                                        ></video>
+                                        >
+                                            <source src="{{ $product->video_asset_url }}" type="video/mp4">
+                                            <source src="{{ $product->video_asset_url }}" type="video/webm">
+                                        </video>
                                     @endif
                                 </div>
                             @endif
@@ -274,12 +279,17 @@
                                 <video 
                                     class="w-full h-full object-cover rounded-[6px] pointer-events-none" 
                                     src="{{ $product->video_asset_url }}" 
-                                    poster="{{ $galleryImages[1] ?? $galleryImages[0] }}" 
+                                    @if(!empty($product->video_thumbnail)) poster="{{ asset($product->video_thumbnail) }}" @endif
                                     autoplay 
                                     loop 
                                     muted 
                                     playsinline 
-                                ></video>
+                                    webkit-playsinline
+                                    preload="auto"
+                                >
+                                    <source src="{{ $product->video_asset_url }}" type="video/mp4">
+                                    <source src="{{ $product->video_asset_url }}" type="video/webm">
+                                </video>
                             @endif
                         </div>
                     </div>
@@ -1458,6 +1468,40 @@
 @push('scripts')
 <script>
     document.addEventListener('DOMContentLoaded', () => {
+        // Ensure all gallery/cinemagraph videos play continuously, muted and autoplaying
+        document.querySelectorAll('video').forEach(vid => {
+            vid.muted = true;
+            vid.defaultMuted = true;
+            vid.playsInline = true;
+            const playVideo = () => {
+                vid.muted = true;
+                const p = vid.play();
+                if (p && typeof p.catch === 'function') {
+                    p.catch(() => {});
+                }
+            };
+            if (vid.readyState >= 2) {
+                playVideo();
+            } else {
+                vid.addEventListener('loadedmetadata', playVideo, { once: true });
+                vid.addEventListener('canplay', playVideo, { once: true });
+            }
+        });
+
+        // Autoplay unlock fallback for mobile/strict browser autoplay policies
+        const unlockAutoplay = () => {
+            document.querySelectorAll('video').forEach(vid => {
+                vid.muted = true;
+                vid.play().catch(() => {});
+            });
+            window.removeEventListener('touchstart', unlockAutoplay);
+            window.removeEventListener('click', unlockAutoplay);
+            window.removeEventListener('scroll', unlockAutoplay);
+        };
+        window.addEventListener('touchstart', unlockAutoplay, { passive: true, once: true });
+        window.addEventListener('click', unlockAutoplay, { passive: true, once: true });
+        window.addEventListener('scroll', unlockAutoplay, { passive: true, once: true });
+
         // Thumbnail Gallery Switcher (Instant Image/Video Swap on Click)
         const mainGalleryImg = document.getElementById('main-product-gallery-img');
         const mainGalleryVideoWrap = document.getElementById('main-product-gallery-video-wrap');
@@ -1475,6 +1519,8 @@
                         if (mainGalleryVideoWrap) {
                             mainGalleryVideoWrap.classList.remove('hidden');
                             if (mainGalleryVideo) {
+                                mainGalleryVideo.muted = true;
+                                mainGalleryVideo.defaultMuted = true;
                                 mainGalleryVideo.play().catch(() => {});
                             }
                             if (mainGalleryYtIframe && mainGalleryYtIframe.dataset.src && !mainGalleryYtIframe.src) {

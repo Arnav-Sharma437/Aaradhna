@@ -7,6 +7,7 @@ use App\Models\Product;
 use App\Models\Review;
 use App\Models\ReviewMedia;
 use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
 class ProductController extends Controller
@@ -14,13 +15,20 @@ class ProductController extends Controller
     /**
      * Display the specified product detail page.
      */
-    public function show(string $slug): View
+    public function show(string $slug): View|RedirectResponse
     {
         try {
-            if (\Illuminate\Support\Facades\Schema::hasTable('products') && !\Illuminate\Support\Facades\Schema::hasColumn('products', 'video_url')) {
-                \Illuminate\Support\Facades\Schema::table('products', function (\Illuminate\Database\Schema\Blueprint $table) {
-                    $table->string('video_url', 500)->nullable()->after('burn_time');
-                });
+            if (\Illuminate\Support\Facades\Schema::hasTable('products')) {
+                if (!\Illuminate\Support\Facades\Schema::hasColumn('products', 'video_url')) {
+                    \Illuminate\Support\Facades\Schema::table('products', function (\Illuminate\Database\Schema\Blueprint $table) {
+                        $table->string('video_url', 500)->nullable()->after('burn_time');
+                    });
+                }
+                if (!\Illuminate\Support\Facades\Schema::hasColumn('products', 'video_thumbnail')) {
+                    \Illuminate\Support\Facades\Schema::table('products', function (\Illuminate\Database\Schema\Blueprint $table) {
+                        $table->string('video_thumbnail', 500)->nullable()->after('video_url');
+                    });
+                }
             }
         } catch (\Throwable $e) {}
 
