@@ -238,42 +238,44 @@
                     <!-- Dropdown Content Box (Matches Reference Screenshot) -->
                     <div 
                         id="header-contact-dropdown"
-                        class="absolute right-0 top-full mt-2 w-[260px] sm:w-[280px] bg-white rounded-lg shadow-2xl border border-[#EAE3D9] p-4 sm:p-5 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top -translate-y-1 group-hover:translate-y-0 pointer-events-none group-hover:pointer-events-auto"
+                        class="absolute right-0 top-full pt-1.5 w-[260px] sm:w-[280px] z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top -translate-y-1 group-hover:translate-y-0 pointer-events-none group-hover:pointer-events-auto"
                         role="menu"
                     >
-                        <div class="space-y-3.5 text-left font-body">
-                            <!-- Email Line -->
-                            <div class="text-[13px] sm:text-[13.5px] text-[#222222] leading-snug">
-                                <span class="text-[#444444]">Email:</span>
-                                <a 
-                                    href="mailto:{{ $supportEmail }}" 
-                                    class="text-[#121212] hover:text-[#C28430] transition-colors ml-1 font-medium break-all"
-                                >
-                                    {{ $supportEmail }}
-                                </a>
-                            </div>
-
-                            <!-- WhatsApp Support Block -->
-                            <div class="pt-0.5 space-y-0.5">
-                                <a 
-                                    href="https://wa.me/{{ $supportWhatsapp }}" 
-                                    target="_blank" 
-                                    rel="noopener noreferrer" 
-                                    class="font-bold text-[#121212] hover:text-[#C28430] text-[13.5px] sm:text-[14px] leading-snug block transition-colors"
-                                >
-                                    WhatsApp Support
-                                </a>
-                                <div class="text-[11.5px] sm:text-xs text-gray-500">
-                                    (10:00 AM to 6:00 PM)
-                                </div>
-                                <div class="pt-1.5">
+                        <div class="bg-white rounded-lg shadow-2xl border border-[#EAE3D9] p-4 sm:p-5">
+                            <div class="space-y-3.5 text-left font-body">
+                                <!-- Email Line -->
+                                <div class="text-[13px] sm:text-[13.5px] text-[#222222] leading-snug">
+                                    <span class="text-[#444444]">Email:</span>
                                     <a 
-                                        href="tel:+{{ $supportWhatsapp }}" 
-                                        class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#8B4513] hover:text-[#C28430] transition-colors"
+                                        href="mailto:{{ $supportEmail }}" 
+                                        class="text-[#121212] hover:text-[#C28430] transition-colors ml-1 font-medium break-all"
                                     >
-                                        <span>📞</span>
-                                        <span>{{ $supportPhone }}</span>
+                                        {{ $supportEmail }}
                                     </a>
+                                </div>
+
+                                <!-- WhatsApp Support Block -->
+                                <div class="pt-0.5 space-y-0.5">
+                                    <a 
+                                        href="https://wa.me/{{ $supportWhatsapp }}" 
+                                        target="_blank" 
+                                        rel="noopener noreferrer" 
+                                        class="font-bold text-[#121212] hover:text-[#C28430] text-[13.5px] sm:text-[14px] leading-snug block transition-colors"
+                                    >
+                                        WhatsApp Support
+                                    </a>
+                                    <div class="text-[11.5px] sm:text-xs text-gray-500">
+                                        (10:00 AM to 6:00 PM)
+                                    </div>
+                                    <div class="pt-1.5">
+                                        <a 
+                                            href="tel:+{{ $supportWhatsapp }}" 
+                                            class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#8B4513] hover:text-[#C28430] transition-colors"
+                                        >
+                                            <span>📞</span>
+                                            <span>{{ $supportPhone }}</span>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -361,18 +363,11 @@
         const chevron = document.getElementById('header-contact-chevron');
         const wrapper = document.getElementById('header-contact-wrapper');
 
-        if (trigger && dropdown) {
-            trigger.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const isOpen = dropdown.classList.contains('contact-dropdown-open');
-                if (isOpen) {
-                    closeContactDropdown();
-                } else {
-                    openContactDropdown();
-                }
-            });
+        if (trigger && dropdown && wrapper) {
+            let closeTimer = null;
 
             function openContactDropdown() {
+                if (closeTimer) clearTimeout(closeTimer);
                 dropdown.classList.add('contact-dropdown-open');
                 dropdown.classList.remove('opacity-0', 'invisible', 'pointer-events-none', '-translate-y-1');
                 dropdown.classList.add('opacity-100', 'visible', 'pointer-events-auto', 'translate-y-0');
@@ -381,6 +376,7 @@
             }
 
             function closeContactDropdown() {
+                if (closeTimer) clearTimeout(closeTimer);
                 dropdown.classList.remove('contact-dropdown-open');
                 dropdown.classList.remove('opacity-100', 'visible', 'pointer-events-auto', 'translate-y-0');
                 dropdown.classList.add('opacity-0', 'invisible', 'pointer-events-none', '-translate-y-1');
@@ -388,8 +384,29 @@
                 trigger.setAttribute('aria-expanded', 'false');
             }
 
+            function scheduleClose() {
+                closeTimer = setTimeout(() => {
+                    closeContactDropdown();
+                }, 280);
+            }
+
+            // Seamless hover interaction with grace delay
+            wrapper.addEventListener('mouseenter', openContactDropdown);
+            wrapper.addEventListener('mouseleave', scheduleClose);
+
+            // Click/touch toggle
+            trigger.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (dropdown.classList.contains('contact-dropdown-open')) {
+                    closeContactDropdown();
+                } else {
+                    openContactDropdown();
+                }
+            });
+
+            // Close on click outside
             document.addEventListener('click', (e) => {
-                if (wrapper && !wrapper.contains(e.target)) {
+                if (!wrapper.contains(e.target)) {
                     closeContactDropdown();
                 }
             });
