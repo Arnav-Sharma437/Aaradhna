@@ -30,7 +30,7 @@
             $storeBrandName = $storeSettings['store_name'] ?? 'ISHANAA - Puja Essentials & Fragrances';
             $supportWhatsapp = preg_replace('/[^0-9]/', '', $storeSettings['support_whatsapp'] ?? '917807211102');
             $supportPhone = $storeSettings['support_phone'] ?? '+91 78072 11102';
-            $supportEmail = $storeSettings['support_email'] ?? 'hello.ishanaa@gmail.com';
+            $supportEmail = 'hello.ishanaa@gmail.com';
         @endphp
         <a href="{{ route('home') }}" class="flex items-center">
             <img src="{{ $headerLogoSrc }}" alt="{{ $storeBrandName }}" class="h-9 sm:h-10 w-auto object-contain">
@@ -173,7 +173,7 @@
                     class="w-full flex items-center justify-between py-4 px-5 text-base sm:text-lg font-bold font-serif tracking-wide text-white hover:bg-black/10 transition-colors cursor-pointer focus:outline-none"
                     aria-expanded="false"
                 >
-                    <span class="underline underline-offset-2">Contact Us</span>
+                    <span>Contact Us</span>
                     <svg id="mobile-drawer-contact-arrow" class="w-4 h-4 text-white transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                     </svg>
@@ -181,7 +181,7 @@
                 <div id="mobile-drawer-contact-content" class="hidden px-5 pb-4 pt-1 bg-black/15 text-white space-y-3 font-body text-xs sm:text-sm">
                     <div>
                         <span class="text-white/70">Email:</span>
-                        <a href="mailto:{{ $supportEmail }}" class="font-medium text-white hover:underline ml-1 break-all">
+                        <a href="mailto:{{ $supportEmail }}" class="font-medium text-white ml-1 break-all">
                             {{ $supportEmail }}
                         </a>
                     </div>
@@ -190,7 +190,7 @@
                             href="https://wa.me/{{ $supportWhatsapp }}" 
                             target="_blank" 
                             rel="noopener noreferrer" 
-                            class="font-bold underline text-white hover:text-[#FFF8EE] block"
+                            class="font-bold text-white hover:text-[#FFF8EE] block"
                         >
                             WhatsApp Support
                         </a>
@@ -198,7 +198,7 @@
                             (10:00 AM to 6:00 PM)
                         </div>
                         <div class="pt-1.5">
-                            <a href="tel:+{{ $supportWhatsapp }}" class="inline-flex items-center gap-1 font-semibold text-[#FFD79A] hover:underline">
+                            <a href="tel:+{{ $supportWhatsapp }}" class="inline-flex items-center gap-1 font-semibold text-[#FFD79A]">
                                 <span>📞</span>
                                 <span>{{ $supportPhone }}</span>
                             </a>

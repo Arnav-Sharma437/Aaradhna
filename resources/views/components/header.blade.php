@@ -22,7 +22,7 @@
                     $storeBrandName = $storeSettings['store_name'] ?? 'ISHANAA - Puja Essentials & Fragrances';
                     $supportWhatsapp = preg_replace('/[^0-9]/', '', $storeSettings['support_whatsapp'] ?? '917807211102');
                     $supportPhone = $storeSettings['support_phone'] ?? '+91 78072 11102';
-                    $supportEmail = $storeSettings['support_email'] ?? 'hello.ishanaa@gmail.com';
+                    $supportEmail = 'hello.ishanaa@gmail.com';
                 @endphp
 
                 <!-- Brand Logo (Desktop Left-aligned) -->
@@ -222,7 +222,7 @@
                         aria-haspopup="true"
                         aria-label="Contact Us Dropdown"
                     >
-                        <span class="underline underline-offset-2">Contact Us</span>
+                        <span>Contact Us</span>
                         <svg 
                             id="header-contact-chevron"
                             class="w-3 h-3 text-white transition-transform duration-200 shrink-0 transform group-hover:rotate-180" 
@@ -247,7 +247,7 @@
                                 <span class="text-[#444444]">Email:</span>
                                 <a 
                                     href="mailto:{{ $supportEmail }}" 
-                                    class="text-[#121212] hover:text-[#C28430] hover:underline transition-colors ml-1 font-medium break-all"
+                                    class="text-[#121212] hover:text-[#C28430] transition-colors ml-1 font-medium break-all"
                                 >
                                     {{ $supportEmail }}
                                 </a>
@@ -259,7 +259,7 @@
                                     href="https://wa.me/{{ $supportWhatsapp }}" 
                                     target="_blank" 
                                     rel="noopener noreferrer" 
-                                    class="font-bold underline text-[#121212] hover:text-[#C28430] text-[13.5px] sm:text-[14px] leading-snug block transition-colors"
+                                    class="font-bold text-[#121212] hover:text-[#C28430] text-[13.5px] sm:text-[14px] leading-snug block transition-colors"
                                 >
                                     WhatsApp Support
                                 </a>
@@ -269,7 +269,7 @@
                                 <div class="pt-1.5">
                                     <a 
                                         href="tel:+{{ $supportWhatsapp }}" 
-                                        class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#8B4513] hover:text-[#C28430] hover:underline transition-colors"
+                                        class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#8B4513] hover:text-[#C28430] transition-colors"
                                     >
                                         <span>📞</span>
                                         <span>{{ $supportPhone }}</span>
