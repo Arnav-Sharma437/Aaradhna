@@ -104,119 +104,137 @@
                     $tagColor = $product->badge_color;
                 @endphp
 
-                <!-- 1. MOBILE/TABLET VIEW: Main Hero Image + Horizontal Thumbnails Below (Clean Borderless, Equal Minimal Spacing, No Hover Zoom) -->
-                <div class="block lg:hidden space-y-2" id="product-mobile-gallery">
-                    <!-- Main Large Hero Image (No border, zero padding, rounded 6px) -->
-                    <div class="product-card relative bg-transparent rounded-[6px] border-0 p-0 shadow-none overflow-hidden">
-                        <div class="relative w-full aspect-[4/4.8] rounded-[6px] overflow-hidden bg-transparent" id="main-product-media-container">
-                            <img 
-                                id="main-product-gallery-img" 
-                                src="{{ $galleryImages[0] }}" 
-                                alt="{{ $product->title }}" 
-                                class="w-full h-full object-cover object-top rounded-[6px]"
-                                onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}';"
-                            >
+                <!-- 1. MOBILE/TABLET VIEW: Swipeable Touch Slider Carousel (Clean Borderless, Smooth Scroll Snap, Dots Indicator, No Thumbnails) -->
+                @php
+                    $mobileSlides = [];
+                    if (isset($galleryImages[0])) {
+                        $mobileSlides[] = [
+                            'type' => 'image',
+                            'url' => $galleryImages[0],
+                            'alt' => $product->title . ' - Image 1',
+                        ];
+                    }
+                    if ($hasVideo) {
+                        $mobileSlides[] = [
+                            'type' => 'video',
+                            'is_youtube' => $product->is_youtube_video,
+                            'yt_url' => $product->youtube_embed_url,
+                            'asset_url' => $product->video_asset_url,
+                            'thumbnail' => $product->video_thumbnail,
+                        ];
+                    }
+                    for ($i = 1; $i < count($galleryImages); $i++) {
+                        $mobileSlides[] = [
+                            'type' => 'image',
+                            'url' => $galleryImages[$i],
+                            'alt' => $product->title . ' - Image ' . ($i + 1),
+                        ];
+                    }
+                    $totalMobileSlides = count($mobileSlides);
+                @endphp
 
-                            @if($hasVideo)
-                                <div id="main-product-gallery-video-wrap" class="hidden absolute inset-0 w-full h-full bg-transparent rounded-[6px] overflow-hidden">
-                                    @if($product->is_youtube_video)
-                                        <iframe 
-                                            id="main-product-gallery-yt-iframe"
-                                            src=""
-                                            data-src="{{ $product->youtube_embed_url }}&controls=0&modestbranding=1"
-                                            class="w-full h-full border-0 rounded-[6px] pointer-events-none" 
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                            allowfullscreen
-                                        ></iframe>
-                                    @else
-                                        <video 
-                                            id="main-product-gallery-video"
-                                            src="{{ $product->video_asset_url }}" 
-                                            @if(!empty($product->video_thumbnail)) poster="{{ asset($product->video_thumbnail) }}" @endif
-                                            autoplay
-                                            loop
-                                            muted
-                                            playsinline
-                                            webkit-playsinline
-                                            preload="auto"
-                                            class="w-full h-full object-cover rounded-[6px] pointer-events-none"
+                <div class="block lg:hidden space-y-2 select-none" id="product-mobile-gallery">
+                    <!-- Main Slider Viewport (Swipeable with Scroll Snap) -->
+                    <div class="relative w-full aspect-[4/4.8] rounded-[6px] overflow-hidden bg-transparent shadow-none">
+                        
+                        <!-- Track -->
+                        <div 
+                            id="mobile-product-slider" 
+                            class="w-full h-full flex overflow-x-auto snap-x snap-mandatory scrollbar-none scroll-smooth bg-transparent"
+                            style="scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;"
+                        >
+                            @foreach($mobileSlides as $slideIndex => $slide)
+                                <div 
+                                    class="w-full h-full shrink-0 snap-center snap-always relative overflow-hidden bg-transparent aspect-[4/4.8]"
+                                    data-slide-index="{{ $slideIndex }}"
+                                >
+                                    @if($slide['type'] === 'image')
+                                        <img 
+                                            src="{{ $slide['url'] }}" 
+                                            alt="{{ $slide['alt'] }}" 
+                                            class="w-full h-full object-cover object-top rounded-[6px] pointer-events-none"
+                                            loading="{{ $slideIndex === 0 ? 'eager' : 'lazy' }}"
+                                            onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}';"
                                         >
-                                            <source src="{{ $product->video_asset_url }}" type="video/mp4">
-                                            <source src="{{ $product->video_asset_url }}" type="video/webm">
-                                        </video>
+                                    @elseif($slide['type'] === 'video')
+                                        @if($slide['is_youtube'])
+                                            <iframe 
+                                                src="{{ $slide['yt_url'] }}&controls=0&modestbranding=1" 
+                                                class="w-full h-full border-0 rounded-[6px] pointer-events-none" 
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                                allowfullscreen
+                                            ></iframe>
+                                        @else
+                                            <video 
+                                                class="w-full h-full object-cover rounded-[6px] pointer-events-none" 
+                                                src="{{ $slide['asset_url'] }}" 
+                                                @if(!empty($slide['thumbnail'])) poster="{{ asset($slide['thumbnail']) }}" @endif
+                                                autoplay 
+                                                loop 
+                                                muted 
+                                                playsinline 
+                                                webkit-playsinline
+                                                preload="auto"
+                                            >
+                                                <source src="{{ $slide['asset_url'] }}" type="video/mp4">
+                                                <source src="{{ $slide['asset_url'] }}" type="video/webm">
+                                            </video>
+                                        @endif
                                     @endif
                                 </div>
-                            @endif
+                            @endforeach
+                        </div>
 
-                            <!-- Top-Right Tag Type Badge (Matches Product Card Outside Exactly) -->
-                            @if(!empty($tagParts))
-                                <div class="absolute top-2.5 right-3.5 sm:top-3 sm:right-4 z-20 pointer-events-none select-none opacity-90" style="opacity: 0.9 !important;">
-                                    @if(!empty($tagParts['number']))
-                                        <div 
-                                            class="pack-tag-badge flex flex-col items-center justify-center text-center leading-none"
-                                            style="color: {{ $tagColor }}; opacity: 0.9 !important; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;"
-                                        >
-                                            <span class="pack-tag-prefix text-[8.5px] sm:text-[9.5px] font-black lowercase tracking-tight leading-none" style="font-weight: 900 !important;">
-                                                {{ $tagParts['prefix'] }}
-                                            </span>
-                                            <span class="pack-tag-number text-[18px] sm:text-[20px] font-black leading-none my-0.5 tracking-tighter" style="font-weight: 900 !important; line-height: 0.86;">
-                                                {{ $tagParts['number'] }}
-                                            </span>
-                                            <span class="pack-tag-suffix text-[8.5px] sm:text-[9.5px] font-black lowercase tracking-tight leading-none" style="font-weight: 900 !important;">
-                                                {{ $tagParts['suffix'] }}
-                                            </span>
-                                        </div>
-                                    @else
-                                        <span 
-                                            class="pack-tag-badge-single inline-flex items-center px-2 py-0.5 rounded-[4px] bg-white/95 border text-[9px] sm:text-[10px] font-black tracking-wider shadow-xs uppercase leading-none"
-                                            style="color: {{ $tagColor }}; border-color: {{ $tagColor }}40; opacity: 0.9 !important; font-weight: 900 !important; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;"
-                                        >
+                        <!-- Top-Right Tag Type Badge (Matches Product Card Outside Exactly) -->
+                        @if(!empty($tagParts))
+                            <div class="absolute top-2.5 right-3.5 sm:top-3 sm:right-4 z-20 pointer-events-none select-none opacity-90" style="opacity: 0.9 !important;">
+                                @if(!empty($tagParts['number']))
+                                    <div 
+                                        class="pack-tag-badge flex flex-col items-center justify-center text-center leading-none"
+                                        style="color: {{ $tagColor }}; opacity: 0.9 !important; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;"
+                                    >
+                                        <span class="pack-tag-prefix text-[8.5px] sm:text-[9.5px] font-black lowercase tracking-tight leading-none" style="font-weight: 900 !important;">
+                                            {{ $tagParts['prefix'] }}
+                                        </span>
+                                        <span class="pack-tag-number text-[18px] sm:text-[20px] font-black leading-none my-0.5 tracking-tighter" style="font-weight: 900 !important; line-height: 0.86;">
+                                            {{ $tagParts['number'] }}
+                                        </span>
+                                        <span class="pack-tag-suffix text-[8.5px] sm:text-[9.5px] font-black lowercase tracking-tight leading-none" style="font-weight: 900 !important;">
                                             {{ $tagParts['suffix'] }}
                                         </span>
-                                    @endif
-                                </div>
-                            @endif
-                        </div>
-                    </div>
-
-                    <!-- Horizontal Thumbnails Strip Directly Below (Equal 8px gap, borderless) -->
-                    <div class="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none" id="product-thumbnails-container">
-                        @foreach($galleryImages as $index => $imgUrl)
-                            <button 
-                                type="button" 
-                                class="gallery-thumbnail-btn relative w-16 h-19 sm:w-18 sm:h-21 p-0 bg-transparent rounded-[6px] border-0 transition-all duration-200 shrink-0 cursor-pointer focus:outline-none {{ $index === 0 ? 'ring-2 ring-[#C87A1E] opacity-100' : 'opacity-70 hover:opacity-100' }}"
-                                style="border-radius: 6px !important;"
-                                data-type="image"
-                                data-img-src="{{ $imgUrl }}"
-                                data-index="{{ $index }}"
-                                aria-label="View product image {{ $index + 1 }}"
-                            >
-                                <div class="w-full h-full rounded-[6px] overflow-hidden bg-transparent aspect-[4/4.8]">
-                                    <img src="{{ $imgUrl }}" alt="{{ $product->title }} thumbnail {{ $index + 1 }}" class="w-full h-full object-cover rounded-[6px]" onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}';">
-                                </div>
-                            </button>
-                        @endforeach
-
-                        @if($hasVideo)
-                            <button 
-                                type="button" 
-                                class="gallery-thumbnail-btn relative w-16 h-19 sm:w-18 sm:h-21 p-0 bg-black rounded-[6px] border-0 transition-all duration-200 shrink-0 cursor-pointer focus:outline-none opacity-85 hover:opacity-100 group"
-                                style="border-radius: 6px !important;"
-                                data-type="video"
-                                aria-label="Play product video"
-                            >
-                                <div class="w-full h-full rounded-[6px] overflow-hidden bg-black aspect-[4/4.8] relative flex items-center justify-center">
-                                    <img src="{{ $galleryImages[0] }}" alt="Video thumbnail" class="w-full h-full object-cover rounded-[6px] opacity-60">
-                                    <div class="absolute inset-0 flex flex-col items-center justify-center text-white">
-                                        <div class="w-6 h-6 rounded-full bg-[#d3a13e] flex items-center justify-center shadow-md">
-                                            <svg class="w-3 h-3 fill-white ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                                        </div>
-                                        <span class="text-[8px] font-bold uppercase tracking-wider mt-0.5 text-white drop-shadow">Video</span>
                                     </div>
-                                </div>
-                            </button>
+                                @else
+                                    <span 
+                                        class="pack-tag-badge-single inline-flex items-center px-2 py-0.5 rounded-[4px] bg-white/95 border text-[9px] sm:text-[10px] font-black tracking-wider shadow-xs uppercase leading-none"
+                                        style="color: {{ $tagColor }}; border-color: {{ $tagColor }}40; opacity: 0.9 !important; font-weight: 900 !important; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;"
+                                    >
+                                        {{ $tagParts['suffix'] }}
+                                    </span>
+                                @endif
+                            </div>
+                        @endif
+
+                        <!-- Floating Slide Counter Pill (Bottom Right, e.g. 1 / 4) -->
+                        @if($totalMobileSlides > 1)
+                            <div class="absolute bottom-2.5 right-2.5 z-20 bg-black/60 backdrop-blur-xs text-white text-[10px] font-semibold px-2 py-0.5 rounded-full shadow-sm pointer-events-none tracking-wider">
+                                <span id="mobile-slider-current">1</span> / <span>{{ $totalMobileSlides }}</span>
+                            </div>
                         @endif
                     </div>
+
+                    <!-- Dots Indicators Below Image (Minimal, Smooth, Clean) -->
+                    @if($totalMobileSlides > 1)
+                        <div class="flex items-center justify-center gap-1.5 pt-1.5 pb-0.5" id="mobile-slider-dots">
+                            @for($d = 0; $d < $totalMobileSlides; $d++)
+                                <button 
+                                    type="button" 
+                                    class="mobile-slider-dot h-1.5 rounded-full transition-all duration-300 cursor-pointer focus:outline-none {{ $d === 0 ? 'w-5 bg-[#C87A1E]' : 'w-1.5 bg-black/20 hover:bg-black/40' }}"
+                                    data-slide-to="{{ $d }}"
+                                    aria-label="Go to slide {{ $d + 1 }}"
+                                ></button>
+                            @endfor
+                        </div>
+                    @endif
                 </div>
 
                 <!-- 2. DESKTOP VIEW: Borderless, Equal Minimal Spacing (gap-2 = 8px equal on top, bottom, sides), No Hover Zoom + Pack Badge -->
@@ -1502,60 +1520,57 @@
         window.addEventListener('click', unlockAutoplay, { passive: true, once: true });
         window.addEventListener('scroll', unlockAutoplay, { passive: true, once: true });
 
-        // Thumbnail Gallery Switcher (Instant Image/Video Swap on Click)
-        const mainGalleryImg = document.getElementById('main-product-gallery-img');
-        const mainGalleryVideoWrap = document.getElementById('main-product-gallery-video-wrap');
-        const mainGalleryVideo = document.getElementById('main-product-gallery-video');
-        const mainGalleryYtIframe = document.getElementById('main-product-gallery-yt-iframe');
-        const thumbnailBtns = document.querySelectorAll('.gallery-thumbnail-btn');
+        // Mobile Slider Touch & Dot Controller
+        const mobileSlider = document.getElementById('mobile-product-slider');
+        const sliderDots = document.querySelectorAll('.mobile-slider-dot');
+        const currentSlideLabel = document.getElementById('mobile-slider-current');
 
-        if (thumbnailBtns.length > 0) {
-            thumbnailBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const isVideo = btn.dataset.type === 'video';
+        if (mobileSlider) {
+            let isScrollingTimer;
 
-                    if (isVideo) {
-                        if (mainGalleryImg) mainGalleryImg.classList.add('hidden');
-                        if (mainGalleryVideoWrap) {
-                            mainGalleryVideoWrap.classList.remove('hidden');
-                            if (mainGalleryVideo) {
-                                mainGalleryVideo.muted = true;
-                                mainGalleryVideo.defaultMuted = true;
-                                mainGalleryVideo.play().catch(() => {});
-                            }
-                            if (mainGalleryYtIframe && mainGalleryYtIframe.dataset.src && !mainGalleryYtIframe.src) {
-                                mainGalleryYtIframe.src = mainGalleryYtIframe.dataset.src;
-                            }
+            const updateActiveSlide = () => {
+                const slideWidth = mobileSlider.clientWidth;
+                if (!slideWidth) return;
+                const activeIndex = Math.min(
+                    Math.max(0, Math.round(mobileSlider.scrollLeft / slideWidth)),
+                    sliderDots.length > 0 ? sliderDots.length - 1 : 999
+                );
+
+                if (currentSlideLabel) {
+                    currentSlideLabel.textContent = (activeIndex + 1);
+                }
+
+                if (sliderDots.length > 0) {
+                    sliderDots.forEach((dot, idx) => {
+                        if (idx === activeIndex) {
+                            dot.classList.remove('w-1.5', 'bg-black/20');
+                            dot.classList.add('w-5', 'bg-[#C87A1E]');
+                        } else {
+                            dot.classList.remove('w-5', 'bg-[#C87A1E]');
+                            dot.classList.add('w-1.5', 'bg-black/20');
                         }
-                    } else {
-                        if (mainGalleryVideoWrap) {
-                            mainGalleryVideoWrap.classList.add('hidden');
-                            if (mainGalleryVideo) {
-                                mainGalleryVideo.pause();
-                            }
-                        }
-                        if (mainGalleryImg) {
-                            mainGalleryImg.classList.remove('hidden');
-                            const newSrc = btn.dataset.imgSrc;
-                            if (newSrc && mainGalleryImg.src !== newSrc) {
-                                mainGalleryImg.style.opacity = '0.3';
-                                mainGalleryImg.src = newSrc;
-                                mainGalleryImg.onload = () => {
-                                    mainGalleryImg.style.opacity = '1';
-                                };
-                            }
-                        }
-                    }
-                    
-                    // Update Active Thumbnail Border Styling
-                    thumbnailBtns.forEach(b => {
-                        b.classList.remove('ring-2', 'ring-[#C87A1E]', 'opacity-100');
-                        b.classList.add('opacity-70');
                     });
-                    btn.classList.remove('opacity-70');
-                    btn.classList.add('ring-2', 'ring-[#C87A1E]', 'opacity-100');
+                }
+            };
+
+            mobileSlider.addEventListener('scroll', () => {
+                clearTimeout(isScrollingTimer);
+                isScrollingTimer = setTimeout(updateActiveSlide, 30);
+            }, { passive: true });
+
+            // Click/tap on dots to smoothly navigate
+            if (sliderDots.length > 0) {
+                sliderDots.forEach((dot) => {
+                    dot.addEventListener('click', () => {
+                        const targetIndex = parseInt(dot.dataset.slideTo) || 0;
+                        const slideWidth = mobileSlider.clientWidth;
+                        mobileSlider.scrollTo({
+                            left: targetIndex * slideWidth,
+                            behavior: 'smooth'
+                        });
+                    });
                 });
-            });
+            }
         }
 
         // Quantity Stepper
