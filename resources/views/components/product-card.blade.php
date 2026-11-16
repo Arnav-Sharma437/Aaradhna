@@ -138,15 +138,16 @@
                 <button 
                     type="button" 
                     disabled
-                    class="w-full py-2.5 sm:py-3 px-2 sm:px-4 bg-gray-200 text-gray-500 text-xs sm:text-sm font-bold uppercase tracking-wider rounded-[8px] sm:rounded-[10px] cursor-not-allowed font-heading text-center"
+                    class="w-[80%] mx-auto py-2.5 sm:py-3 px-2 sm:px-4 bg-gray-200 text-gray-500 text-xs sm:text-sm font-bold uppercase tracking-wider rounded-[8px] sm:rounded-[10px] cursor-not-allowed font-heading text-center block"
+                    style="width: 80% !important;"
                 >
                     Sold Out
                 </button>
             @else
                 <button 
                     type="button" 
-                    class="quick-add-to-cart-btn w-full py-2 px-2 sm:px-4 bg-[#c28430] hover:bg-[#a86911] active:bg-[#915609] text-white text-xs sm:text-sm font-normal rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-colors duration-200 text-center flex items-center justify-center space-x-1.5 font-body cursor-pointer"
-                    style="background-color: #c28430 !important;"
+                    class="quick-add-to-cart-btn w-[80%] mx-auto py-2 px-2 sm:px-4 bg-[#c28430] hover:bg-[#a86911] active:bg-[#915609] text-white text-xs sm:text-sm font-normal rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-colors duration-200 text-center flex items-center justify-center space-x-1.5 font-body cursor-pointer"
+                    style="background-color: #c28430 !important; width: 80% !important;"
                     data-product-id="{{ $product->id }}"
                     data-product-title="{{ $product->formatted_title }}"
                     data-product-slug="{{ $product->slug }}"
