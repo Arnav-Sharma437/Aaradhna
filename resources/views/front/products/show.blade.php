@@ -375,21 +375,21 @@
                 </div>
 
                 <!-- 3. Pricing Display & Savings Pill (Same Font & Cohesive Look) -->
-                <div>
+                <div class="mb-[10px]">
                     <div class="flex flex-wrap items-baseline gap-2.5 sm:gap-3 font-body">
-                        <span class="text-base sm:text-lg text-gray-400 line-through font-medium font-body" style="letter-spacing: 0.8px !important;">
+                        <span class="text-base sm:text-lg text-gray-400 line-through font-medium font-body" style="letter-spacing: 0.8px !important; font-weight: 500 !important;">
                             ₹{{ number_format($mrpPrice, 2) }}
                         </span>
-                        <span id="display-sale-price" class="text-xl sm:text-2xl font-bold text-[#C87A1E] font-body" style="letter-spacing: 0.8px !important;">
+                        <span id="display-sale-price" class="text-xl sm:text-2xl font-medium text-[#C87A1E] font-body" style="letter-spacing: 0.8px !important; font-weight: 500 !important;">
                             ₹{{ number_format($product->active_price, 2) }}
                         </span>
                         @if($mrpPrice > $product->active_price)
-                        <span class="px-2.5 py-0.5 bg-[#FFF9F2] text-[#C87A1E] border border-[#F0D5B3] text-xs sm:text-[13px] font-semibold rounded-full font-body" style="letter-spacing: 0.5px !important;">
+                        <span class="px-2.5 py-0.5 bg-[#FFF9F2] text-[#C87A1E] border border-[#F0D5B3] text-xs sm:text-[13px] font-medium rounded-full font-body" style="letter-spacing: 0.5px !important; font-weight: 500 !important;">
                             Save ₹{{ number_format($mrpPrice - $product->active_price, 2) }} ({{ round((($mrpPrice - $product->active_price) / $mrpPrice) * 100) }}%)
                         </span>
                         @endif
                     </div>
-                    <p class="text-xs text-gray-500 pt-0.5 font-body">
+                    <p class="text-xs text-gray-500 pt-0.5 mb-[10px] font-body">
                         Taxes included. <a href="{{ route('pages.show', 'shipping-policy') }}" class="underline hover:text-[#D38928] text-gray-700">Shipping</a> calculated at checkout.
                     </p>
                 </div>
@@ -1432,7 +1432,7 @@
         <div class="truncate text-left">
             <div class="text-xs sm:text-base font-bold text-[#121212] font-heading truncate leading-tight">{{ $product->clean_title }}@if(!empty($product->hindi_title) && !str_contains($product->clean_title, $product->hindi_title)) ({{ $product->hindi_title }})@endif</div>
             <div class="flex items-baseline space-x-2 pt-0.5 sm:pt-1 font-body">
-                <span class="text-sm sm:text-lg font-bold text-[#C87A1E]" style="letter-spacing: 0.8px !important;">
+                <span class="text-sm sm:text-lg font-medium text-[#C87A1E]" style="letter-spacing: 0.8px !important; font-weight: 500 !important;">
                     ₹{{ number_format($product->active_price, 2) }}
                 </span>
                 @if(isset($mrpPrice) && $mrpPrice > $product->active_price)
