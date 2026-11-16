@@ -577,47 +577,89 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
                                 </svg>
                             </button>
-                            <div id="product-desc-accordion-body" class="px-4 pb-4 pt-2 text-sm sm:text-[15px] text-gray-700 leading-relaxed font-body border-t border-[#EADBCC]/60 bg-[#FFFEFC] transition-all duration-300">
+                            <div id="product-desc-accordion-body" class="px-4 pb-4 pt-3 text-sm sm:text-[15px] text-gray-700 leading-relaxed font-body border-t border-[#EADBCC]/60 bg-[#FFFEFC] transition-all duration-300">
                                 <div class="space-y-3">
-                                    <!-- Initial 4 Lines Content -->
-                                    <p class="leading-relaxed">
-                                        Immerse your sacred home temple and living spaces in divine transcendental tranquility with <strong>{{ $product->title }}</strong>. Crafted with deep reverence in the holy land of Vrindavan Dham, each artisanal stick is infused with time-tested Vedic botanicals, naturally harvested temple flower extracts, rare Himalayan herbs, pure Guggal, and sacred Bhimseni camphor.
-                                    </p>
+                                    @if(!empty(trim($product->description ?? '')) || !empty(trim($product->short_description ?? '')))
+                                        {{-- 1. Custom Short Summary if present --}}
+                                        @if(!empty(trim($product->short_description ?? '')))
+                                            <p class="font-medium text-gray-900 leading-relaxed">
+                                                {!! nl2br(e($product->short_description)) !!}
+                                            </p>
+                                        @endif
 
-                                    <!-- Collapsible Extra Content (Read More) -->
-                                    <div id="product-desc-more" class="hidden space-y-3">
-                                        <p class="leading-relaxed">
-                                            In strict adherence to Sanatana Dharma scriptures, our formulation is 100% bamboo-free (Vamsha-free) and completely devoid of toxic black charcoal or synthetic dipping chemicals. It produces a gentle, soothing white aromatic smoke that purifies the indoor prana without causing throat irritation, coughing, or eye burning.
-                                        </p>
-                                        <p class="leading-relaxed">
-                                            Ideal for your morning puja, sandhya aarti, deep meditation, yogic sadhana, and festive rituals. Each pack comes accompanied by a complimentary handcrafted terracotta ceramic holder to ensure a safe, residue-free burning experience.
-                                        </p>
-                                        @if($product->description)
-                                            <div class="prose prose-sm max-w-none text-gray-700 pt-1 border-t border-gray-100">
-                                                {!! $product->description !!}
+                                        {{-- 2. Custom Full Description from Admin Panel --}}
+                                        @if(!empty(trim($product->description ?? '')))
+                                            <div class="prose prose-sm max-w-none text-gray-700 leading-relaxed font-body">
+                                                @if(str_contains($product->description, '<'))
+                                                    {!! $product->description !!}
+                                                @else
+                                                    {!! nl2br(e($product->description)) !!}
+                                                @endif
                                             </div>
                                         @endif
-                                    </div>
 
-                                    <!-- Read More / Read Less Toggle Button -->
-                                    <button 
-                                        type="button" 
-                                        id="desc-read-more-btn"
-                                        class="inline-flex items-center gap-1 text-xs sm:text-sm font-bold text-[#8C531B] hover:text-[#7B1925] transition-colors focus:outline-none cursor-pointer select-none pt-0.5"
-                                        onclick="
-                                            const moreContent = document.getElementById('product-desc-more');
-                                            const btn = document.getElementById('desc-read-more-btn');
-                                            if (moreContent.classList.contains('hidden')) {
-                                                moreContent.classList.remove('hidden');
-                                                btn.innerHTML = 'Read Less &minus;';
-                                            } else {
-                                                moreContent.classList.add('hidden');
-                                                btn.innerHTML = 'Read More &plus;';
-                                            }
-                                        "
-                                    >
-                                        Read More &plus;
-                                    </button>
+                                        {{-- 3. Collapsible Vedic Formulation & Scripture Notes --}}
+                                        <div id="product-desc-more" class="hidden space-y-3 pt-2 border-t border-[#EADBCC]/50 text-xs sm:text-sm text-gray-600">
+                                            <p class="leading-relaxed">
+                                                In strict adherence to Sanatana Dharma scriptures, our formulation is 100% bamboo-free (Vamsha-free) and completely devoid of toxic black charcoal or synthetic dipping chemicals. It produces a gentle, soothing white aromatic smoke that purifies the indoor prana without causing throat irritation, coughing, or eye burning.
+                                            </p>
+                                            <p class="leading-relaxed">
+                                                Ideal for your morning puja, sandhya aarti, deep meditation, yogic sadhana, and festive rituals. Each pack comes accompanied by a complimentary handcrafted terracotta ceramic holder to ensure a safe, residue-free burning experience.
+                                            </p>
+                                        </div>
+
+                                        <button 
+                                            type="button" 
+                                            id="desc-read-more-btn"
+                                            class="inline-flex items-center gap-1 text-xs sm:text-sm font-bold text-[#8C531B] hover:text-[#7B1925] transition-colors focus:outline-none cursor-pointer select-none pt-0.5"
+                                            onclick="
+                                                const moreContent = document.getElementById('product-desc-more');
+                                                const btn = document.getElementById('desc-read-more-btn');
+                                                if (moreContent.classList.contains('hidden')) {
+                                                    moreContent.classList.remove('hidden');
+                                                    btn.innerHTML = 'Read Less &minus;';
+                                                } else {
+                                                    moreContent.classList.add('hidden');
+                                                    btn.innerHTML = 'Read More &plus;';
+                                                }
+                                            "
+                                        >
+                                            Read More &plus;
+                                        </button>
+                                    @else
+                                        {{-- Fallback: When no custom description has been added in admin --}}
+                                        <p class="leading-relaxed">
+                                            Immerse your sacred home temple and living spaces in divine transcendental tranquility with <strong>{{ $product->clean_title }}</strong>. Crafted with deep reverence in the holy land of Vrindavan Dham, each artisanal stick is infused with time-tested Vedic botanicals, naturally harvested temple flower extracts, rare Himalayan herbs, pure Guggal, and sacred Bhimseni camphor.
+                                        </p>
+
+                                        <div id="product-desc-more" class="hidden space-y-3">
+                                            <p class="leading-relaxed">
+                                                In strict adherence to Sanatana Dharma scriptures, our formulation is 100% bamboo-free (Vamsha-free) and completely devoid of toxic black charcoal or synthetic dipping chemicals. It produces a gentle, soothing white aromatic smoke that purifies the indoor prana without causing throat irritation, coughing, or eye burning.
+                                            </p>
+                                            <p class="leading-relaxed">
+                                                Ideal for your morning puja, sandhya aarti, deep meditation, yogic sadhana, and festive rituals. Each pack comes accompanied by a complimentary handcrafted terracotta ceramic holder to ensure a safe, residue-free burning experience.
+                                            </p>
+                                        </div>
+
+                                        <button 
+                                            type="button" 
+                                            id="desc-read-more-btn"
+                                            class="inline-flex items-center gap-1 text-xs sm:text-sm font-bold text-[#8C531B] hover:text-[#7B1925] transition-colors focus:outline-none cursor-pointer select-none pt-0.5"
+                                            onclick="
+                                                const moreContent = document.getElementById('product-desc-more');
+                                                const btn = document.getElementById('desc-read-more-btn');
+                                                if (moreContent.classList.contains('hidden')) {
+                                                    moreContent.classList.remove('hidden');
+                                                    btn.innerHTML = 'Read Less &minus;';
+                                                } else {
+                                                    moreContent.classList.add('hidden');
+                                                    btn.innerHTML = 'Read More &plus;';
+                                                }
+                                            "
+                                        >
+                                            Read More &plus;
+                                        </button>
+                                    @endif
                                 </div>
                             </div>
                         </div>
