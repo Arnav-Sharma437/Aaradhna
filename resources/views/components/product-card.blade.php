@@ -145,8 +145,8 @@
             @else
                 <button 
                     type="button" 
-                    class="quick-add-to-cart-btn w-full py-2 px-2 sm:px-4 bg-[#d3a13e] hover:bg-[#c2902f] active:bg-[#aa7c24] text-white text-xs sm:text-sm font-normal rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-colors duration-200 text-center flex items-center justify-center space-x-1.5 font-body cursor-pointer"
-                    style="background-color: #d3a13e !important;"
+                    class="quick-add-to-cart-btn w-full py-2 px-2 sm:px-4 bg-[#c28430] hover:bg-[#a86911] active:bg-[#915609] text-white text-xs sm:text-sm font-normal rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-colors duration-200 text-center flex items-center justify-center space-x-1.5 font-body cursor-pointer"
+                    style="background-color: #c28430 !important;"
                     data-product-id="{{ $product->id }}"
                     data-product-title="{{ $product->formatted_title }}"
                     data-product-slug="{{ $product->slug }}"

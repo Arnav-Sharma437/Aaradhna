@@ -379,7 +379,7 @@ class ProductController extends Controller
                 $productData['sort_order'] = $request->filled('sort_order') ? (int)$request->sort_order : 0;
             }
             if (Schema::hasColumn('products', 'tagline')) {
-                $productData['tagline'] = $request->filled('tagline') ? trim($request->tagline) : null;
+                $productData['tagline'] = $request->has('tagline') ? trim($request->input('tagline', '')) : '';
             }
 
             // Video Handling
@@ -626,7 +626,7 @@ class ProductController extends Controller
                 $productData['sort_order'] = $request->filled('sort_order') ? (int)$request->sort_order : 0;
             }
             if (Schema::hasColumn('products', 'tagline')) {
-                $productData['tagline'] = $request->filled('tagline') ? trim($request->tagline) : null;
+                $productData['tagline'] = $request->has('tagline') ? trim($request->input('tagline', '')) : '';
             }
 
             // Video Handling

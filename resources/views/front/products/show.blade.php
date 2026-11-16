@@ -333,7 +333,7 @@
             </div>
 
             <!-- RIGHT COLUMN: Compact Purchase Details (5 Cols, 12px Spacing) -->
-            <div class="lg:col-span-5 space-y-3 lg:pl-2 sticky top-20 font-body">
+            <div class="lg:col-span-5 space-y-3 lg:pl-2 pb-[5px] sticky top-20 font-body">
                 
                 <!-- 1. Star Rating & Review Count (Strictly Real Reviews Only - Hidden if 0 reviews) -->
                 @if($actualReviewCount > 0)
@@ -395,23 +395,13 @@
                 </div>
 
                 <!-- 4. Bold Hook Statement (20px Font Size) -->
+                @if(!empty(trim($product->tagline ?? '')))
                 <div>
                     <p class="text-[18px] sm:text-[20px] font-bold text-[#121212] font-body leading-snug">
-                        @if(!empty($product->tagline))
-                            {{ $product->tagline }}
-                        @elseif(str_contains(strtolower($product->slug), 'cone'))
-                            30 Sticks. No Bamboo ~ One stick fills the room with clean, real fragrance.
-                        @elseif(str_contains(strtolower($product->slug), 'cup'))
-                            12 Sambrani Cups. 100% Charcoal Free ~ One cup fills your temple with clean, real fragrance.
-                        @elseif(str_contains(strtolower($product->slug), '100'))
-                            100 Sticks. No Bamboo ~ One stick fills the room with clean, real fragrance.
-                        @elseif(str_contains(strtolower($product->slug), '240') || str_contains(strtolower($product->slug), 'six'))
-                            240 Sticks. No Bamboo ~ One stick fills the room with clean, real fragrance.
-                        @else
-                            40 Sticks. No Bamboo ~ One stick fills the room with clean, real fragrance.
-                        @endif
+                        {{ trim($product->tagline) }}
                     </p>
                 </div>
+                @endif
 
                 <!-- 5. 4 Iconic Feature Circles with Text (3 in First Line + 1 in Second Line, Bigger Font) -->
                 <div class="space-y-2 py-1">
@@ -527,12 +517,12 @@
                             <button type="button" id="qty-increment" class="text-gray-600 hover:text-[#121212] transition-colors focus:outline-none font-bold text-lg leading-none cursor-pointer">+</button>
                         </div>
 
-                        <!-- Add to Cart CTA (Color #d3a13e) -->
+                        <!-- Add to Cart CTA (Color #c28430) -->
                         <button 
                             type="button" 
                             id="main-add-to-cart-btn"
-                            class="flex-1 h-11 sm:h-12 bg-[#d3a13e] hover:bg-[#c2902f] active:bg-[#aa7c24] text-white text-sm sm:text-base font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 text-center flex items-center justify-center cursor-pointer focus:outline-none font-heading"
-                            style="background-color: #d3a13e !important;"
+                            class="flex-1 h-11 sm:h-12 bg-[#c28430] hover:bg-[#a86911] active:bg-[#915609] text-white text-sm sm:text-base font-bold rounded-[8px] sm:rounded-[10px] shadow-xs hover:shadow-md transition-all duration-200 text-center flex items-center justify-center cursor-pointer focus:outline-none font-heading"
+                            style="background-color: #c28430 !important;"
                             data-product-id="{{ $product->id }}"
                             data-product-title="{{ $product->formatted_title }}"
                             data-product-slug="{{ $product->slug }}"
@@ -1460,8 +1450,8 @@
     <button 
         type="button" 
         id="sticky-atc-btn" 
-        class="py-2.5 sm:py-3 px-5 sm:px-7 bg-[#d3a13e] hover:bg-[#c2902f] active:bg-[#aa7c24] text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-[10px] shadow-sm hover:shadow-md transition-all font-heading cursor-pointer whitespace-nowrap shrink-0 flex items-center space-x-2"
-        style="background-color: #d3a13e !important;"
+        class="py-2.5 sm:py-3 px-5 sm:px-7 bg-[#c28430] hover:bg-[#a86911] active:bg-[#915609] text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-[10px] shadow-sm hover:shadow-md transition-all font-heading cursor-pointer whitespace-nowrap shrink-0 flex items-center space-x-2"
+        style="background-color: #c28430 !important;"
         data-product-id="{{ $product->id }}"
         data-product-title="{{ $product->formatted_title }}"
         data-product-slug="{{ $product->slug }}"

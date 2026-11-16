@@ -110,7 +110,7 @@
                             <!-- Add to Box Button (Persistent Green on Selection) -->
                             <button 
                                 type="button" 
-                                class="add-to-box-btn w-full py-2 sm:py-2.5 px-3 bg-[#D38928] hover:bg-[#B8741E] text-white text-xs font-bold uppercase tracking-wider rounded-[8px] shadow-xs hover:shadow-md transition-all font-heading cursor-pointer flex items-center justify-center space-x-1"
+                                class="add-to-box-btn w-full py-2 sm:py-2.5 px-3 bg-[#C28430] hover:bg-[#A86911] text-white text-xs font-bold uppercase tracking-wider rounded-[8px] shadow-xs hover:shadow-md transition-all font-heading cursor-pointer flex items-center justify-center space-x-1"
                             >
                                 <span class="btn-text">Add to Box</span>
                             </button>
@@ -342,7 +342,7 @@
                 statusMsg.innerHTML = `🎉 <span class="text-emerald-700 font-bold">Buy 2 Get 1 FREE Bundle Complete (+ Free Gift)!</span>`;
                 bundleBtnText.textContent = `Proceed to Checkout @ ₹${BUNDLE_PRICE} ➔`;
                 addBundleBtn.disabled = false;
-                addBundleBtn.className = "px-5 sm:px-8 py-2.5 sm:py-3 bg-[#D38928] hover:bg-[#B8741E] active:bg-[#965A15] text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-[10px] shadow-lg hover:shadow-xl transition-all font-heading cursor-pointer transform hover:-translate-y-0.5 whitespace-nowrap";
+                addBundleBtn.className = "px-5 sm:px-8 py-2.5 sm:py-3 bg-[#C28430] hover:bg-[#A86911] active:bg-[#915609] text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-[10px] shadow-lg hover:shadow-xl transition-all font-heading cursor-pointer transform hover:-translate-y-0.5 whitespace-nowrap";
 
                 // Trigger celebration burst once on completion
                 if (!hasCelebrated) {

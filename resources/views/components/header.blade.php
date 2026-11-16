@@ -1,14 +1,14 @@
 <header class="sticky top-0 z-40 bg-[#FFF9ED] border-b border-[#EAE3D9] transition-all duration-200 font-body">
     <div class="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
-        <div class="relative flex items-center justify-between h-13 sm:h-14 lg:h-15 gap-2 sm:gap-4">
+        <div class="relative flex items-center justify-between h-11 sm:h-12 lg:h-14 xl:h-15 gap-1.5 sm:gap-4">
             
             <!-- LEFT: Mobile Menu Button (Mobile only) + Desktop Brand Logo -->
-            <div class="flex items-center space-x-2 sm:space-x-3 shrink-0">
+            <div class="flex items-center space-x-1.5 sm:space-x-3 shrink-0">
                 <!-- Mobile Menu Button (Mobile / Tablet Only) -->
                 <button 
                     type="button" 
                     id="mobile-menu-trigger"
-                    class="lg:hidden p-1.5 -ml-1 text-[#A86911] hover:text-[#C18129] focus:outline-none transition-colors rounded-full hover:bg-black/5 cursor-pointer z-10"
+                    class="lg:hidden p-1 -ml-0.5 text-[#A86911] hover:text-[#C18129] focus:outline-none transition-colors rounded-full hover:bg-black/5 cursor-pointer z-10"
                     aria-label="Open Mobile Menu"
                 >
                     <svg class="w-5 h-5 sm:w-5.5 sm:h-5.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -41,7 +41,7 @@
                     <img 
                         src="{{ $headerLogoSrc }}" 
                         alt="{{ $storeBrandName }}" 
-                        class="h-7 sm:h-7.5 w-auto max-w-[115px] sm:max-w-[125px] object-contain"
+                        class="h-6 sm:h-7 w-auto max-w-[105px] sm:max-w-[120px] object-contain"
                     >
                 </a>
             </div>
@@ -212,8 +212,8 @@
             <!-- RIGHT: Clean Compact Action Icons (Search + Account + Wishlist + Cart) -->
             <div class="flex items-center justify-end space-x-1 sm:space-x-1.5 shrink-0">
                 
-                <!-- Contact Us Dropdown Button (Exact Match to Reference Screenshot) -->
-                <div class="relative group mr-1 sm:mr-1.5" id="header-contact-wrapper">
+                <!-- Contact Us Dropdown Button (Desktop Only to prevent Mobile Header Clutter) -->
+                <div class="relative group mr-1 sm:mr-1.5 hidden lg:block" id="header-contact-wrapper">
                     <button 
                         type="button" 
                         id="header-contact-trigger"
@@ -333,22 +333,22 @@
         </div>
     </div>
 
-    <!-- Mobile Horizontal Quick Category & Offer Pills Strip (Matches Reference Screenshot) -->
-    <div class="lg:hidden w-full border-t border-[#EAE3D9]/70 bg-[#FFF9ED] py-1.5 px-3 overflow-x-auto scrollbar-none">
-        <div class="flex items-center space-x-2 whitespace-nowrap text-[11px] font-semibold">
-            <a href="{{ route('bundles.buy2get1') }}" class="px-2.5 py-0.5 rounded-full border border-[#831F2E]/40 bg-[#FFF8F8] text-[#831F2E] hover:bg-[#831F2E] hover:text-white transition-colors shrink-0 font-heading">
+    <!-- Mobile Horizontal Quick Category & Offer Pills Strip (Compact Slim Version) -->
+    <div class="lg:hidden w-full border-t border-[#EAE3D9]/70 bg-[#FFF9ED] py-1 px-2.5 overflow-x-auto scrollbar-none">
+        <div class="flex items-center space-x-1.5 whitespace-nowrap text-[10.5px] font-semibold">
+            <a href="{{ route('bundles.buy2get1') }}" class="px-2 py-0.5 rounded-full border border-[#831F2E]/40 bg-[#FFF8F8] text-[#831F2E] hover:bg-[#831F2E] hover:text-white transition-colors shrink-0 font-heading">
                 Buy 2 Get 1 free
             </a>
-            <a href="{{ route('collections.show', 'bambooless') }}" class="px-2.5 py-0.5 rounded-full border border-[#C18129] bg-white text-[#121212] hover:bg-[#C18129] hover:text-white transition-colors shrink-0">
+            <a href="{{ route('collections.show', 'bambooless') }}" class="px-2 py-0.5 rounded-full border border-[#C18129] bg-white text-[#121212] hover:bg-[#C18129] hover:text-white transition-colors shrink-0">
                 Incense Sticks
             </a>
-            <a href="{{ route('collections.show', 'dhoop-cones') }}" class="px-2.5 py-0.5 rounded-full border border-[#C18129] bg-white text-[#121212] hover:bg-[#C18129] hover:text-white transition-colors shrink-0">
+            <a href="{{ route('collections.show', 'dhoop-cones') }}" class="px-2 py-0.5 rounded-full border border-[#C18129] bg-white text-[#121212] hover:bg-[#C18129] hover:text-white transition-colors shrink-0">
                 Dhoop Cones
             </a>
-            <a href="{{ route('bundles.trial-packs') }}" class="px-2.5 py-0.5 rounded-full border border-[#C18129] bg-white text-[#121212] hover:bg-[#C18129] hover:text-white transition-colors shrink-0">
+            <a href="{{ route('bundles.trial-packs') }}" class="px-2 py-0.5 rounded-full border border-[#C18129] bg-white text-[#121212] hover:bg-[#C18129] hover:text-white transition-colors shrink-0">
                 Trial Packs @ 799
             </a>
-            <a href="{{ route('collections.show', 'havan-cups') }}" class="px-2.5 py-0.5 rounded-full border border-[#C18129] bg-white text-[#121212] hover:bg-[#C18129] hover:text-white transition-colors shrink-0">
+            <a href="{{ route('collections.show', 'havan-cups') }}" class="px-2 py-0.5 rounded-full border border-[#C18129] bg-white text-[#121212] hover:bg-[#C18129] hover:text-white transition-colors shrink-0">
                 Havan Cups
             </a>
         </div>

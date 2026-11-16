@@ -114,15 +114,6 @@
                         >{{ old('short_description', $product->short_description) }}</textarea>
                     </div>
 
-                    @php
-                        $defaultTagline = $product->tagline ?: (
-                            str_contains(strtolower($product->slug), 'cone') ? '30 Sticks. No Bamboo ~ One stick fills the room with clean, real fragrance.' :
-                            (str_contains(strtolower($product->slug), 'cup') ? '12 Sambrani Cups. 100% Charcoal Free ~ One cup fills your temple with clean, real fragrance.' :
-                            (str_contains(strtolower($product->slug), '100') ? '100 Sticks. No Bamboo ~ One stick fills the room with clean, real fragrance.' :
-                            (str_contains(strtolower($product->slug), '240') || str_contains(strtolower($product->slug), 'six') ? '240 Sticks. No Bamboo ~ One stick fills the room with clean, real fragrance.' :
-                            '40 Sticks. No Bamboo ~ One stick fills the room with clean, real fragrance.')))
-                        );
-                    @endphp
                     <div class="space-y-1.5">
                         <label for="tagline" class="block text-xs font-bold uppercase tracking-wider text-gray-700 font-heading">
                             Product Detail Tagline / Highlight Line
@@ -131,11 +122,11 @@
                             type="text" 
                             id="tagline" 
                             name="tagline" 
-                            value="{{ old('tagline', $product->tagline ?? $defaultTagline) }}" 
+                            value="{{ old('tagline', $product->tagline) }}" 
                             placeholder="e.g. 40 Sticks. No Bamboo ~ One stick fills the room with clean, real fragrance."
                             class="w-full px-3.5 py-2.5 bg-white border border-[#D2D5D8] focus:border-[#D38928] rounded-[8px] text-xs font-medium text-[#202223] focus:outline-none"
                         >
-                        <p class="text-[11px] text-gray-500">Appears boldly above the pricing on the product detail page (e.g., "40 Sticks. No Bamboo ~ One stick fills the room with clean, real fragrance.").</p>
+                        <p class="text-[11px] text-gray-500">Appears boldly above the pricing on the product detail page (e.g., "40 Sticks. No Bamboo ~ One stick fills the room with clean, real fragrance."). Leave empty to completely hide.</p>
                     </div>
 
                     <div class="space-y-1.5">
