@@ -26,17 +26,21 @@ class HomeController extends Controller
             $banners = collect();
         }
 
-        // 1. Bestsellers of the Month (Strictly 8 Products, Bestsellers prioritized, ordered by custom sort_order)
+        // 1. Featured / Bestsellers of the Month (Strictly ordered by custom sort_order)
         try {
+            // First fetch active products marked as featured or bestseller, ordered by sort_order
             $bestsellers = Product::where('status', 'active')
-                ->where('is_bestseller', true)
+                ->where(function ($q) {
+                    $q->where('is_featured', true)
+                      ->orWhere('is_bestseller', true);
+                })
                 ->with(['category', 'primaryImage', 'images', 'variants', 'approvedReviews'])
                 ->orderBy('sort_order', 'asc')
                 ->orderBy('id', 'desc')
                 ->take(8)
                 ->get();
 
-            // If fewer than 8 marked bestsellers, append other active products so section has exactly 8
+            // If fewer than 8 marked featured/bestseller, append other active products and ensure sort_order is respected
             if ($bestsellers->count() < 8) {
                 $excludeIds = $bestsellers->pluck('id')->toArray();
                 $additional = Product::where('status', 'active')
@@ -46,7 +50,7 @@ class HomeController extends Controller
                     ->orderBy('id', 'desc')
                     ->take(8 - $bestsellers->count())
                     ->get();
-                $bestsellers = $bestsellers->concat($additional);
+                $bestsellers = $bestsellers->concat($additional)->sortBy('sort_order')->values();
             }
         } catch (\Throwable $e) {
             $bestsellers = collect();
