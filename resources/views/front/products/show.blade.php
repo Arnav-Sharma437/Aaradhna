@@ -332,54 +332,50 @@
                 </div>
             </div>
 
-            <!-- RIGHT COLUMN: Compact Purchase Details (5 Cols, 10px Spacing) -->
-            <div class="lg:col-span-5 space-y-[10px] lg:pl-2 pb-[10px] sticky top-20 font-body">
+            <!-- RIGHT COLUMN: Compact Purchase Details (5 Cols, 20px Spacing) -->
+            <div class="lg:col-span-5 space-y-3 lg:pl-2 pb-[20px] sticky top-20 font-body">
                 
                 <!-- 1. Star Rating & Review Count (Strictly Real Reviews Only - Hidden if 0 reviews) -->
                 @if($actualReviewCount > 0)
-                <div class="mb-[10px]" style="margin-bottom: 10px !important;">
-                    <a href="#customer-reviews" class="inline-flex items-center space-x-2 text-sm sm:text-[15px] text-gray-700 hover:text-[#D38928] transition-colors group cursor-pointer focus:outline-none">
-                        <div class="flex text-[#D38928] text-base sm:text-lg leading-none">
-                            @for($s = 1; $s <= 5; $s++)
-                                @if($s <= floor($actualRatingAvg))
-                                    <span>★</span>
-                                @elseif($s - $actualRatingAvg <= 0.5)
-                                    <span>★</span>
-                                @else
-                                    <span class="text-gray-300">★</span>
-                                @endif
-                            @endfor
-                        </div>
-                        <span class="font-medium underline-offset-3 group-hover:underline font-body text-gray-800 text-sm sm:text-[15px]">
-                            {{ $actualReviewCount }} {{ $actualReviewCount === 1 ? 'review' : 'reviews' }}
-                        </span>
-                    </a>
-                </div>
+                <a href="#customer-reviews" class="inline-flex items-center space-x-2 text-sm sm:text-[15px] text-gray-700 hover:text-[#D38928] transition-colors group cursor-pointer focus:outline-none">
+                    <div class="flex text-[#D38928] text-base sm:text-lg leading-none">
+                        @for($s = 1; $s <= 5; $s++)
+                            @if($s <= floor($actualRatingAvg))
+                                <span>★</span>
+                            @elseif($s - $actualRatingAvg <= 0.5)
+                                <span>★</span>
+                            @else
+                                <span class="text-gray-300">★</span>
+                            @endif
+                        @endfor
+                    </div>
+                    <span class="font-medium underline-offset-3 group-hover:underline font-body text-gray-800 text-sm sm:text-[15px]">
+                        {{ $actualReviewCount }} {{ $actualReviewCount === 1 ? 'review' : 'reviews' }}
+                    </span>
+                </a>
                 @endif
 
-                <!-- 2. Product Title (Separate 10px Spacing) -->
-                <div class="mb-[10px]" style="margin-bottom: 10px !important;">
+                <!-- 2. Product Title & Subtitle / Category (Uppercase, 11px, 0.9px letter spacing) -->
+                <div class="mb-[20px]" style="margin-bottom: 20px !important;">
                     <h1 class="text-2xl sm:text-3xl lg:text-[38px] font-normal text-[#121212] tracking-tight leading-[1.15] font-serif">
                         {{ $product->clean_title }}@if(!empty($product->hindi_title) && !str_contains($product->clean_title, $product->hindi_title)) <span class="font-bold font-serif text-xl sm:text-2xl lg:text-[28px] text-[#8B4513]">({{ $product->hindi_title }})</span>@endif
                     </h1>
+                    @php
+                        $categoryName = $product->category 
+                            ? $product->category->name 
+                            : ($product->collections?->first()?->name 
+                                ?? $product->collections?->first()?->title 
+                                ?? 'Incense Sticks');
+                    @endphp
+                    @if($categoryName)
+                        <div class="product-detail-category text-[#7B7B7B] font-medium pt-0.5 font-body leading-tight uppercase" style="font-size: 11px !important; letter-spacing: 0.9px !important; text-transform: uppercase !important;">
+                            {{ strtoupper($categoryName) }}
+                        </div>
+                    @endif
                 </div>
 
-                <!-- 3. Product Category (Separate 10px Spacing) -->
-                @php
-                    $categoryName = $product->category 
-                        ? $product->category->name 
-                        : ($product->collections?->first()?->name 
-                            ?? $product->collections?->first()?->title 
-                            ?? 'Incense Sticks');
-                @endphp
-                @if($categoryName)
-                <div class="product-detail-category text-[#7B7B7B] font-medium font-body leading-tight uppercase mb-[10px]" style="font-size: 11px !important; letter-spacing: 0.9px !important; text-transform: uppercase !important; margin-bottom: 10px !important;">
-                    {{ strtoupper($categoryName) }}
-                </div>
-                @endif
-
-                <!-- 4. Pricing Display & Savings Pill (Separate 10px Spacing) -->
-                <div class="mb-[10px]" style="margin-bottom: 10px !important;">
+                <!-- 3. Pricing Display & Savings Pill (Same Font & Cohesive Look) -->
+                <div class="mb-[20px]" style="margin-bottom: 20px !important;">
                     <div class="flex flex-wrap items-baseline gap-2.5 sm:gap-3 font-body">
                         <span class="text-base sm:text-lg text-gray-400 line-through font-medium font-body" style="letter-spacing: 0.8px !important; font-weight: 500 !important;">
                             ₹{{ number_format($mrpPrice, 2) }}
@@ -393,22 +389,22 @@
                         </span>
                         @endif
                     </div>
-                    <p class="text-xs text-gray-500 pt-0.5 font-body">
+                    <p class="text-xs text-gray-500 pt-0.5 mb-[20px] font-body" style="margin-bottom: 20px !important;">
                         Taxes included. <a href="{{ route('pages.show', 'shipping-policy') }}" class="underline hover:text-[#D38928] text-gray-700">Shipping</a> calculated at checkout.
                     </p>
                 </div>
 
-                <!-- 5. Bold Hook Statement / Line (Separate 10px Spacing, 17px Font Size, 500 Font Weight) -->
+                <!-- 4. Bold Hook Statement (17px Font Size, 500 Font Weight) -->
                 @if(!empty(trim($product->tagline ?? '')))
-                <div class="mb-[10px]" style="margin-bottom: 10px !important;">
+                <div class="mb-[20px]" style="margin-bottom: 20px !important;">
                     <p class="text-[17px] font-medium text-[#121212] font-body leading-snug" style="font-size: 17px !important; font-weight: 500 !important;">
                         {{ trim($product->tagline) }}
                     </p>
                 </div>
                 @endif
 
-                <!-- 6. 4 Iconic Feature Circles with Text (Separate 10px Spacing, 14px Font Size, 500 Font Weight) -->
-                <div class="space-y-[10px] py-1 mb-[10px]" style="margin-bottom: 10px !important;">
+                <!-- 5. 4 Iconic Feature Circles with Text (14px Font Size, 500 Font Weight, 20px Spacing) -->
+                <div class="space-y-2 py-1 mb-[20px]" style="margin-bottom: 20px !important;">
                     <!-- Line 1: 3 Features in one row -->
                     <div class="grid grid-cols-3 gap-2 sm:gap-3">
                         <!-- Feature 1: Chemical Free -->
