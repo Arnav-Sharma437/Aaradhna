@@ -29,6 +29,11 @@ class ProductController extends Controller
                         $table->string('video_thumbnail', 500)->nullable()->after('video_url');
                     });
                 }
+                if (!\Illuminate\Support\Facades\Schema::hasColumn('products', 'tagline')) {
+                    \Illuminate\Support\Facades\Schema::table('products', function (\Illuminate\Database\Schema\Blueprint $table) {
+                        $table->string('tagline', 500)->nullable()->after('short_description');
+                    });
+                }
             }
         } catch (\Throwable $e) {}
 
@@ -144,12 +149,12 @@ class ProductController extends Controller
             $relatedProducts = $relatedProducts->concat($filler);
         }
 
-        // Reviews Statistics
+        // Reviews Statistics (Strictly Real)
         $reviews = ($product && $product->approvedReviews) ? $product->approvedReviews : collect();
-        $totalReviews = $reviews->count() ?: 219;
-        $avgRating = $reviews->count() > 0 ? round($reviews->avg('rating'), 1) : 4.9;
+        $totalReviews = $reviews->count();
+        $avgRating = $totalReviews > 0 ? round($reviews->avg('rating'), 1) : 0;
         
-        $ratingCounts = [5 => 195, 4 => 20, 3 => 4, 2 => 0, 1 => 0];
+        $ratingCounts = [5 => 0, 4 => 0, 3 => 0, 2 => 0, 1 => 0];
         foreach ($reviews as $rev) {
             $r = (int)$rev->rating;
             if (isset($ratingCounts[$r])) {

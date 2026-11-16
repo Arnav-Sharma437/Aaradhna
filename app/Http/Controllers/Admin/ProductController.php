@@ -60,6 +60,11 @@ class ProductController extends Controller
                     $table->integer('sort_order')->default(0)->after('status')->index();
                 });
             }
+            if (!Schema::hasColumn('products', 'tagline')) {
+                Schema::table('products', function (Blueprint $table) {
+                    $table->string('tagline', 500)->nullable()->after('short_description');
+                });
+            }
         } catch (\Throwable $e) {
             // Silently continue if cannot alter
         }
@@ -293,6 +298,7 @@ class ProductController extends Controller
             'stock_quantity' => ['required', 'integer', 'min:0'],
             'burn_time' => ['nullable', 'string', 'max:100'],
             'short_description' => ['nullable', 'string'],
+            'tagline' => ['nullable', 'string', 'max:500'],
             'description' => ['nullable', 'string'],
             'ingredients' => ['nullable', 'string'],
             'benefits' => ['nullable', 'string'],
@@ -371,6 +377,9 @@ class ProductController extends Controller
             }
             if (Schema::hasColumn('products', 'sort_order')) {
                 $productData['sort_order'] = $request->filled('sort_order') ? (int)$request->sort_order : 0;
+            }
+            if (Schema::hasColumn('products', 'tagline')) {
+                $productData['tagline'] = $request->filled('tagline') ? trim($request->tagline) : null;
             }
 
             // Video Handling
@@ -539,6 +548,7 @@ class ProductController extends Controller
             'stock_quantity' => ['required', 'integer', 'min:0'],
             'burn_time' => ['nullable', 'string', 'max:100'],
             'short_description' => ['nullable', 'string'],
+            'tagline' => ['nullable', 'string', 'max:500'],
             'description' => ['nullable', 'string'],
             'ingredients' => ['nullable', 'string'],
             'benefits' => ['nullable', 'string'],
@@ -614,6 +624,9 @@ class ProductController extends Controller
             }
             if (Schema::hasColumn('products', 'sort_order')) {
                 $productData['sort_order'] = $request->filled('sort_order') ? (int)$request->sort_order : 0;
+            }
+            if (Schema::hasColumn('products', 'tagline')) {
+                $productData['tagline'] = $request->filled('tagline') ? trim($request->tagline) : null;
             }
 
             // Video Handling

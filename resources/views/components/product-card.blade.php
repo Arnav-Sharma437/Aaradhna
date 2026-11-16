@@ -8,9 +8,10 @@
     // Top-Right Pack / Badge Tag
     $packTag = $product->pack_tag;
 
-    $reviewCount = ($product->approvedReviews && $product->approvedReviews->count() > 0) 
+    $actualCardReviewCount = ($product->approvedReviews && $product->approvedReviews->count() > 0) 
         ? $product->approvedReviews->count() 
-        : (200 + (abs(crc32($product->slug ?? $product->id)) % 90));
+        : 0;
+    $reviewCount = $actualCardReviewCount;
         
     $mrpPrice = $product->base_price > $product->active_price 
         ? $product->base_price 
@@ -111,13 +112,15 @@
                 </div>
             @endif
 
+            @if($actualCardReviewCount > 0)
             <!-- 5 Star Golden Rating Strip with Matching Gold Count -->
             <div class="flex items-center space-x-1 text-[#D38928]">
                 <div class="flex text-[11px] sm:text-xs leading-none space-x-0.5">
                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
-                <span class="text-[11px] sm:text-xs text-[#D38928] font-medium leading-none">({{ $reviewCount }})</span>
+                <span class="text-[11px] sm:text-xs text-[#D38928] font-medium leading-none">({{ $actualCardReviewCount }})</span>
             </div>
+            @endif
         </div>
 
         <!-- Pricing & Add to Cart -->

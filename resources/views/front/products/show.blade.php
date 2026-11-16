@@ -52,7 +52,8 @@
     $discountPercent = $product->discount_percentage ?: 30;
     $mrpPrice = $product->base_price > $product->active_price ? $product->base_price : ($product->active_price * 1.43);
     $actualReviewCount = $product->approvedReviews ? $product->approvedReviews->count() : 0;
-    $reviewCount = $actualReviewCount > 0 ? $actualReviewCount : (1386 + (abs(crc32($product->slug ?? $product->id)) % 150));
+    $actualRatingAvg = $actualReviewCount > 0 ? round($product->approvedReviews->avg('rating'), 1) : 0;
+    $reviewCount = $actualReviewCount;
 
     // Gallery images: Exactly the product images uploaded in backend
     $galleryImages = [];
@@ -145,7 +146,7 @@
                         >
                             @foreach($mobileSlides as $slideIndex => $slide)
                                 <div 
-                                    class="w-full h-full shrink-0 snap-center snap-always relative overflow-hidden bg-transparent aspect-[4/4.8]"
+                                    class="w-full h-full shrink-0 snap-center snap-always relative overflow-hidden {{ $slide['type'] === 'video' ? 'bg-black flex items-center justify-center' : 'bg-transparent' }} aspect-[4/4.8]"
                                     data-slide-index="{{ $slideIndex }}"
                                 >
                                     @if($slide['type'] === 'image')
@@ -166,7 +167,7 @@
                                             ></iframe>
                                         @else
                                             <video 
-                                                class="w-full h-full object-cover rounded-[6px] pointer-events-none" 
+                                                class="w-full h-full object-contain rounded-[6px] pointer-events-none" 
                                                 src="{{ $slide['asset_url'] }}" 
                                                 @if(!empty($slide['thumbnail'])) poster="{{ asset($slide['thumbnail']) }}" @endif
                                                 autoplay 
@@ -285,7 +286,7 @@
                     <!-- Video Card in Gallery Grid (Position 2 if product has video - Autoplay Muted Loop, No Controls, No Tag) -->
                     @if($hasVideo)
                     <div class="product-card relative bg-transparent rounded-[6px] border-0 p-0 shadow-none overflow-hidden">
-                        <div class="relative w-full aspect-[4/4.8] rounded-[6px] overflow-hidden bg-transparent">
+                        <div class="relative w-full aspect-[4/4.8] rounded-[6px] overflow-hidden bg-black flex items-center justify-center">
                             @if($product->is_youtube_video)
                                 <iframe 
                                     src="{{ $product->youtube_embed_url }}&controls=0&modestbranding=1" 
@@ -295,7 +296,7 @@
                                 ></iframe>
                             @else
                                 <video 
-                                    class="w-full h-full object-cover rounded-[6px] pointer-events-none" 
+                                    class="w-full h-full object-contain rounded-[6px] pointer-events-none" 
                                     src="{{ $product->video_asset_url }}" 
                                     @if(!empty($product->video_thumbnail)) poster="{{ asset($product->video_thumbnail) }}" @endif
                                     autoplay 
@@ -334,13 +335,25 @@
             <!-- RIGHT COLUMN: Compact Purchase Details (5 Cols, 12px Spacing) -->
             <div class="lg:col-span-5 space-y-3 lg:pl-2 sticky top-20 font-body">
                 
-                <!-- 1. Star Rating & Review Count (Bigger & Clickable to scroll to reviews) -->
+                <!-- 1. Star Rating & Review Count (Strictly Real Reviews Only - Hidden if 0 reviews) -->
+                @if($actualReviewCount > 0)
                 <a href="#customer-reviews" class="inline-flex items-center space-x-2 text-sm sm:text-[15px] text-gray-700 hover:text-[#D38928] transition-colors group cursor-pointer focus:outline-none">
                     <div class="flex text-[#D38928] text-base sm:text-lg leading-none">
-                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        @for($s = 1; $s <= 5; $s++)
+                            @if($s <= floor($actualRatingAvg))
+                                <span>★</span>
+                            @elseif($s - $actualRatingAvg <= 0.5)
+                                <span>★</span>
+                            @else
+                                <span class="text-gray-300">★</span>
+                            @endif
+                        @endfor
                     </div>
-                    <span class="font-medium underline-offset-3 group-hover:underline font-body text-gray-800 text-sm sm:text-[15px]">{{ $reviewCount }} reviews</span>
+                    <span class="font-medium underline-offset-3 group-hover:underline font-body text-gray-800 text-sm sm:text-[15px]">
+                        {{ $actualReviewCount }} {{ $actualReviewCount === 1 ? 'review' : 'reviews' }}
+                    </span>
                 </a>
+                @endif
 
                 <!-- 2. Product Title & Subtitle / Category (Uppercase, 11px, 0.9px letter spacing) -->
                 <div>
@@ -384,7 +397,9 @@
                 <!-- 4. Bold Hook Statement (20px Font Size) -->
                 <div>
                     <p class="text-[18px] sm:text-[20px] font-bold text-[#121212] font-body leading-snug">
-                        @if(str_contains(strtolower($product->slug), 'cone'))
+                        @if(!empty($product->tagline))
+                            {{ $product->tagline }}
+                        @elseif(str_contains(strtolower($product->slug), 'cone'))
                             30 Sticks. No Bamboo ~ One stick fills the room with clean, real fragrance.
                         @elseif(str_contains(strtolower($product->slug), 'cup'))
                             12 Sambrani Cups. 100% Charcoal Free ~ One cup fills your temple with clean, real fragrance.
@@ -637,9 +652,27 @@
                                     <!-- Gold Stars & Rating Text -->
                                     <div class="flex items-center space-x-1.5">
                                         <div class="flex text-[#D38928] text-base sm:text-lg leading-none">
-                                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                            @for($s = 1; $s <= 5; $s++)
+                                                @if($actualReviewCount > 0)
+                                                    @if($s <= floor($actualRatingAvg))
+                                                        <span>★</span>
+                                                    @elseif($s - $actualRatingAvg <= 0.5)
+                                                        <span>★</span>
+                                                    @else
+                                                        <span class="text-gray-300">★</span>
+                                                    @endif
+                                                @else
+                                                    <span>★</span>
+                                                @endif
+                                            @endfor
                                         </div>
-                                        <span class="text-sm sm:text-[15px] font-bold text-gray-900 font-heading">Excellent 4.8</span>
+                                        <span class="text-sm sm:text-[15px] font-bold text-gray-900 font-heading">
+                                            @if($actualReviewCount > 0)
+                                                Rated {{ number_format($actualRatingAvg, 1) }} ({{ $actualReviewCount }} {{ $actualReviewCount === 1 ? 'review' : 'reviews' }})
+                                            @else
+                                                100% Pure Vedic Quality
+                                            @endif
+                                        </span>
                                     </div>
                                 </div>
 
@@ -1038,7 +1071,7 @@
             @php
                 $approvedReviewsList = $product->approvedReviews ?? collect();
                 $realCount = $approvedReviewsList->count();
-                $calcAvg = $realCount > 0 ? round($approvedReviewsList->avg('rating'), 1) : 5.0;
+                $calcAvg = $realCount > 0 ? round($approvedReviewsList->avg('rating'), 1) : 0;
                 $ratingCounts = [5 => 0, 4 => 0, 3 => 0, 2 => 0, 1 => 0];
                 foreach ($approvedReviewsList as $rItem) {
                     $star = (int) $rItem->rating;
@@ -1232,18 +1265,27 @@
                 </form>
             </div>
 
-            <!-- 4. Rating Summary Histogram -->
+            <!-- 4. Rating Summary Histogram (Only if actual reviews exist) -->
+            @if($realCount > 0)
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 my-4 pb-4 border-b border-[#EADBCC] items-center">
                 <!-- Average Rating Box -->
                 <div class="lg:col-span-4 text-center lg:border-r border-[#EADBCC] pr-0 lg:pr-6 space-y-1">
                     <div class="text-4xl sm:text-5xl font-black text-[#121212] font-heading leading-none">
-                        {{ $realCount > 0 ? $calcAvg : '5.0' }}
+                        {{ $calcAvg }}
                     </div>
                     <div class="flex justify-center text-[#D38928] text-base sm:text-lg my-1.5">
-                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        @for($s = 1; $s <= 5; $s++)
+                            @if($s <= floor($calcAvg))
+                                <span>★</span>
+                            @elseif($s - $calcAvg <= 0.5)
+                                <span>★</span>
+                            @else
+                                <span class="text-gray-300">★</span>
+                            @endif
+                        @endfor
                     </div>
                     <p class="text-xs text-gray-600 font-medium">
-                        {{ $realCount > 0 ? "Based on {$realCount} authentic review" . ($realCount > 1 ? 's' : '') : 'Based on authentic devotee feedback' }}
+                        Based on {{ $realCount }} authentic {{ $realCount === 1 ? 'review' : 'reviews' }}
                     </p>
                     <div class="inline-flex items-center gap-1 text-[11px] font-bold text-[#1B7F49] bg-[#E8F5E9] px-2.5 py-0.5 rounded-full mt-1">
                         <span>✓</span> 100% Verified Quality
@@ -1253,9 +1295,9 @@
                 <!-- Rating Bars -->
                 <div class="lg:col-span-8 space-y-2 text-xs sm:text-sm">
                     @php
-                        $p5 = $realCount > 0 ? round(($ratingCounts[5] / $realCount) * 100) : 100;
-                        $p4 = $realCount > 0 ? round(($ratingCounts[4] / $realCount) * 100) : 0;
-                        $p3 = $realCount > 0 ? round(($ratingCounts[3] / $realCount) * 100) : 0;
+                        $p5 = round(($ratingCounts[5] / $realCount) * 100);
+                        $p4 = round(($ratingCounts[4] / $realCount) * 100);
+                        $p3 = round(($ratingCounts[3] / $realCount) * 100);
                     @endphp
                     <div class="flex items-center space-x-3">
                         <span class="w-10 text-xs font-bold text-gray-700">5 Star</span>
@@ -1280,6 +1322,7 @@
                     </div>
                 </div>
             </div>
+            @endif
 
             <!-- 5. Reviews List with Profile Avatar Icon & Anonymous Fallback (Clean Divider Lines Only) -->
             <div class="divide-y divide-[#EADBCC]">
@@ -1368,67 +1411,16 @@
                         </div>
                     @endforeach
                 @else
-                    <!-- Default Verified Customer Reviews (Clean Divider Line Rows) -->
-                    <!-- Review 1 -->
-                    <div class="py-5 sm:py-6 space-y-2.5 bg-transparent">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                            <div class="flex items-center space-x-3">
-                                <div class="w-8 h-8 rounded-full bg-[#FAF7F2] border border-[#D38928]/40 flex items-center justify-center text-[#8C531B] text-xs font-bold shadow-2xs shrink-0">
-                                    N
-                                </div>
-                                <div class="flex items-center space-x-2">
-                                    <span class="text-sm sm:text-base font-bold text-[#121212] font-heading">Neha Thakur, Mandi</span>
-                                    <span class="inline-flex items-center gap-1 text-[11px] font-bold text-[#1B7F49] bg-[#E8F5E9] px-2 py-0.5 rounded-full">
-                                        ✓ Verified Buyer
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <div class="flex text-[#D38928] text-sm">
-                                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                                </div>
-                                <span class="text-xs text-gray-400">1 day ago</span>
-                            </div>
+                    <div class="py-10 text-center bg-transparent">
+                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-[#FAF7F2] border border-[#D38928]/40 flex items-center justify-center text-[#D38928]">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
                         </div>
-                        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                            मंडी में हमारे घर में रोजाना सुबह पूजा होती है। इस अगरबत्ती का धुआं बिल्कुल भी आंखों में नहीं लगता और 4-5 घंटे तक कमरे में ताजगी बनी रहती है। बहुत ही शांत अनुभव!
-                        </p>
-                        <div class="flex items-center gap-2 pt-1">
-                            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-[8px] overflow-hidden border border-[#EADBCC] shadow-2xs group cursor-pointer relative" onclick="openReviewImageModal(this.querySelector('img').src)">
-                                <img src="{{ asset('assets/images/hero-incense-banner.jpg') }}" alt="Customer Altar Photo" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-300">
-                            </div>
-                            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-[8px] overflow-hidden border border-[#EADBCC] shadow-2xs group cursor-pointer relative" onclick="openReviewImageModal(this.querySelector('img').src)">
-                                <img src="{{ asset('assets/images/camphor-refill-pack-card.jpg') }}" alt="Customer Stand Photo" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-300">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Review 2 -->
-                    <div class="py-5 sm:py-6 space-y-2.5 bg-transparent">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                            <div class="flex items-center space-x-3">
-                                <div class="w-8 h-8 rounded-full bg-[#FAF7F2] border border-[#D38928]/40 flex items-center justify-center text-[#8C531B] text-xs font-bold shadow-2xs shrink-0">
-                                    <svg class="w-4 h-4 text-[#8C531B]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7 0 3.75 3.75 0 017 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                                    </svg>
-                                </div>
-                                <div class="flex items-center space-x-2">
-                                    <span class="text-sm sm:text-base font-bold text-[#121212] font-heading">Anonymous</span>
-                                    <span class="inline-flex items-center gap-1 text-[11px] font-bold text-[#1B7F49] bg-[#E8F5E9] px-2 py-0.5 rounded-full">
-                                        ✓ Verified Buyer
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <div class="flex text-[#D38928] text-sm">
-                                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                                </div>
-                                <span class="text-xs text-gray-400">3 days ago</span>
-                            </div>
-                        </div>
-                        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                            Zero charcoal and pure flower extract make it safe for closed pooja rooms. The complimentary ceramic stand in the box is very handy.
-                        </p>
+                        <h4 class="text-sm sm:text-base font-bold text-[#121212] font-heading">No reviews yet</h4>
+                        <p class="text-xs text-gray-500 mt-1 max-w-sm mx-auto">Be the first to share your sacred experience with this divine fragrance.</p>
+                        <button type="button" onclick="const form = document.getElementById('inline-review-form'); form.classList.remove('hidden'); form.scrollIntoView({ behavior: 'smooth' });" class="mt-3.5 inline-flex items-center gap-1.5 px-4 py-2 bg-[#C28430] hover:bg-[#A66B1F] text-white text-xs font-bold rounded-[8px] font-heading cursor-pointer transition-colors shadow-xs">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+                            <span>Write the First Review</span>
+                        </button>
                     </div>
                 @endif
             </div>
