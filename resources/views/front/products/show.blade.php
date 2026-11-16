@@ -333,7 +333,7 @@
             </div>
 
             <!-- RIGHT COLUMN: Compact Purchase Details (5 Cols, 12px Spacing) -->
-            <div class="lg:col-span-5 space-y-3 lg:pl-2 pb-[5px] sticky top-20 font-body">
+            <div class="lg:col-span-5 space-y-3 lg:pl-2 pb-[10px] sticky top-20 font-body">
                 
                 <!-- 1. Star Rating & Review Count (Strictly Real Reviews Only - Hidden if 0 reviews) -->
                 @if($actualReviewCount > 0)
@@ -394,17 +394,17 @@
                     </p>
                 </div>
 
-                <!-- 4. Bold Hook Statement (20px Font Size) -->
+                <!-- 4. Bold Hook Statement (17px Font Size, 500 Font Weight) -->
                 @if(!empty(trim($product->tagline ?? '')))
-                <div>
-                    <p class="text-[18px] sm:text-[20px] font-bold text-[#121212] font-body leading-snug">
+                <div class="mb-[10px]">
+                    <p class="text-[17px] font-medium text-[#121212] font-body leading-snug" style="font-size: 17px !important; font-weight: 500 !important;">
                         {{ trim($product->tagline) }}
                     </p>
                 </div>
                 @endif
 
-                <!-- 5. 4 Iconic Feature Circles with Text (3 in First Line + 1 in Second Line, Bigger Font) -->
-                <div class="space-y-2 py-1">
+                <!-- 5. 4 Iconic Feature Circles with Text (14px Font Size, 500 Font Weight, 10px Spacing) -->
+                <div class="space-y-[10px] py-1 mb-[10px]">
                     <!-- Line 1: 3 Features in one row -->
                     <div class="grid grid-cols-3 gap-2 sm:gap-3">
                         <!-- Feature 1: Chemical Free -->
@@ -417,7 +417,7 @@
                                     <path d="M12 13L8 17"/>
                                 </svg>
                             </div>
-                            <span class="text-sm sm:text-[15px] font-bold text-[#121212] font-body leading-tight">
+                            <span class="text-[14px] font-medium text-[#121212] font-body leading-tight" style="font-size: 14px !important; font-weight: 500 !important;">
                                 Chemical<br>Free
                             </span>
                         </div>
@@ -431,7 +431,7 @@
                                     <path d="M16 18c-1-1.5-1-3.5 0-5s2-3.5 1-5-3-3-1-5"/>
                                 </svg>
                             </div>
-                            <span class="text-sm sm:text-[15px] font-bold text-[#121212] font-body leading-tight">
+                            <span class="text-[14px] font-medium text-[#121212] font-body leading-tight" style="font-size: 14px !important; font-weight: 500 !important;">
                                 Low<br>Smoke
                             </span>
                         </div>
@@ -446,7 +446,7 @@
                                     <path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/>
                                 </svg>
                             </div>
-                            <span class="text-sm sm:text-[15px] font-bold text-[#121212] font-body leading-tight">
+                            <span class="text-[14px] font-medium text-[#121212] font-body leading-tight" style="font-size: 14px !important; font-weight: 500 !important;">
                                 Long<br>Lasting
                             </span>
                         </div>
@@ -461,7 +461,7 @@
                                 <circle cx="12" cy="4" r="1" fill="#D38928"/>
                             </svg>
                         </div>
-                        <span class="text-sm sm:text-[15px] font-bold text-[#121212] font-body leading-tight">
+                        <span class="text-[14px] font-medium text-[#121212] font-body leading-tight" style="font-size: 14px !important; font-weight: 500 !important;">
                             Free Ceramic<br>Stand
                         </span>
                     </div>
