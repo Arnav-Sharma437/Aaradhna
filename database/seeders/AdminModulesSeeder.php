@@ -18,7 +18,7 @@ class AdminModulesSeeder extends Seeder
         // 1. Coupons
         if (Coupon::count() === 0) {
             Coupon::create([
-                'code' => 'MANGALAM10',
+                'code' => 'ISHANAA10',
                 'type' => 'percentage',
                 'value' => 10.00,
                 'min_order_amount' => 499.00,
@@ -111,8 +111,8 @@ class AdminModulesSeeder extends Seeder
             $faqsData = [
                 [
                     'category' => 'general',
-                    'question' => 'Why are Mangalam incense sticks completely bambooless?',
-                    'answer' => 'According to ancient Vedic scriptures (Agamas), burning bamboo releases toxic chemicals and heavy soot, and is traditionally considered inauspicious. Mangalam sticks use 100% pure flower resins, natural herbs, and zero bamboo cores for sacred, clean burning.',
+                    'question' => 'Why are ISHANAA incense sticks completely bambooless?',
+                    'answer' => 'According to ancient Vedic scriptures (Agamas), burning bamboo releases toxic chemicals and heavy soot, and is traditionally considered inauspicious. ISHANAA sticks use 100% pure flower resins, natural herbs, and zero bamboo cores for sacred, clean burning.',
                     'sort_order' => 1,
                 ],
                 [
@@ -130,7 +130,7 @@ class AdminModulesSeeder extends Seeder
                 [
                     'category' => 'shipping',
                     'question' => 'What are the delivery timelines and shipping charges?',
-                    'answer' => 'We offer FREE standard express shipping across India on all orders above ₹499. Orders are usually dispatched within 24 hours via Bluedart/Delhivery and delivered in 2-4 business days.',
+                    'answer' => 'We offer FREE standard express shipping across India on all orders above â‚¹499. Orders are usually dispatched within 24 hours via Bluedart/Delhivery and delivered in 2-4 business days.',
                     'sort_order' => 4,
                 ],
                 [
@@ -153,7 +153,7 @@ class AdminModulesSeeder extends Seeder
                     'customer_name' => 'Pandit Radhe Shyam',
                     'location' => 'Vrindavan Dham',
                     'rating' => 5,
-                    'review_text' => 'I am a regular devotee of Mangalam products since 2 years. Very pure havan cups and sambrani. In temples, we strictly avoid toxic bamboo, and Mangalam is 100% compliant with sacred Agamas.',
+                    'review_text' => 'I am a regular devotee of ISHANAA products since 2 years. Very pure havan cups and sambrani. In temples, we strictly avoid toxic bamboo, and ISHANAA is 100% compliant with sacred Agamas.',
                     'product_tag' => 'Bambooless Agarbatti & Havan Cups',
                     'sort_order' => 1,
                 ],
@@ -196,10 +196,10 @@ class AdminModulesSeeder extends Seeder
                 'slug' => 'sacred-vidhi-morning-sandhya-aarti',
                 'excerpt' => 'Discover the spiritual significance of conducting daily morning aarti with charcoal-free, bambooless incense as per ancient Vedic Agamas.',
                 'body_content' => '<p>In Sanatana Dharma, the morning Sandhya represents the auspicious transition from darkness to divine light. Lighting natural herbal incense during this Brahma Muhurta hour clears negative energies and elevates the mind towards spiritual focus.</p><p>Traditional scriptures emphasize using zero bamboo and zero chemical smoke, ensuring that only pure prana-enhancing botanical essences reach the deities.</p>',
-                'author_name' => 'Acharya Mangalam Team',
+                'author_name' => 'Acharya ISHANAA Team',
                 'is_published' => true,
                 'published_at' => now()->subDays(7),
-                'meta_title' => 'The Sacred Vidhi of Morning Aarti | Mangalam.co',
+                'meta_title' => 'The Sacred Vidhi of Morning Aarti | ISHANAA™',
                 'meta_description' => 'Learn how to perform sacred morning aarti with pure bambooless incense and havan cups.',
             ]);
 
@@ -212,15 +212,15 @@ class AdminModulesSeeder extends Seeder
                 'author_name' => 'Vedic Wellness Kendra',
                 'is_published' => true,
                 'published_at' => now()->subDays(3),
-                'meta_title' => 'Bhimseni Camphor & Guggal Purification | Mangalam.co',
+                'meta_title' => 'Bhimseni Camphor & Guggal Purification | ISHANAA™',
                 'meta_description' => 'Benefits of Bhimseni camphor and pure guggal resin for daily pooja.',
             ]);
         }
 
         // 6. Store Settings
         $settingsData = [
-            ['group' => 'general', 'key' => 'store_name', 'value' => 'Mangalam.co™ — Pooja Samagri & Vidhi'],
-            ['group' => 'general', 'key' => 'store_tagline', 'value' => 'शुद्धं समर्पयामि — 100% Pure Vedic Essentials'],
+            ['group' => 'general', 'key' => 'store_name', 'value' => 'ISHANAA™ — Sacred Vedic Living'],
+            ['group' => 'general', 'key' => 'store_tagline', 'value' => 'à¤¶à¥à¤¦à¥à¤§à¤‚ à¤¸à¤®à¤°à¥à¤ªà¤¯à¤¾à¤®à¤¿ â€” 100% Pure Vedic Essentials'],
             ['group' => 'general', 'key' => 'support_email', 'value' => 'hello.ishanaa@gmail.com'],
             ['group' => 'general', 'key' => 'support_phone', 'value' => '+91 98765 43210'],
             ['group' => 'general', 'key' => 'support_whatsapp', 'value' => '+91 98765 43210'],
@@ -238,3 +238,5 @@ class AdminModulesSeeder extends Seeder
         }
     }
 }
+
+

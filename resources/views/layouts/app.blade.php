@@ -6,18 +6,23 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     @php
-        $siteTitle = $storeSettings['store_name'] ?? 'ISHANAA';
+        $rawSiteTitle = $storeSettings['store_name'] ?? 'ISHANAA';
+        $siteTitle = str_ireplace(['mangalam.co', 'mangalam'], ['ISHANAA', 'ISHANAA'], $rawSiteTitle);
+        $brandShort = preg_replace('/[™\s—\-\|].*$/u', '', $siteTitle);
+        if (empty($brandShort)) {
+            $brandShort = 'ISHANAA';
+        }
     @endphp
     <title>@hasSection('title')
 @yield('title')
 @else
-{{ $siteTitle }} — Pure Vedic Living
+{{ $brandShort }} — Pure Vedic Living
 @endif</title>
     <meta name="description" content="@yield('meta_description', 'Pooja Samagri & Vidhi — शुद्धं समर्पयामि. Non-irritating pure incense sticks, organic havan cups, charcoal-free dhoop cones & alcohol-free attar sprays.')">
 
     <!-- OpenGraph Meta -->
-    <meta property="og:site_name" content="{{ $siteTitle }}™">
-    <meta property="og:title" content="@yield('title', $siteTitle . ' - Pooja Samagri & Vidhi')">
+    <meta property="og:site_name" content="{{ $brandShort }}™">
+    <meta property="og:title" content="@yield('title', $brandShort . ' — Pure Vedic Living')">
     <meta property="og:description" content="@yield('meta_description', '100% pure Vedic pooja essentials.')">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">

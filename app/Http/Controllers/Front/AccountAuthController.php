@@ -44,7 +44,7 @@ class AccountAuthController extends Controller
         if (Auth::attempt($credentials, $request->filled('remember'))) {
             $request->session()->regenerate();
             return redirect()->intended(route('account.index'))
-                ->with('success', 'ॐ Welcome back to your Mangalam Devotee Portal.');
+                ->with('success', 'ॐ Welcome back to your Ishanaa Devotee Portal.');
         }
 
         return back()
@@ -59,7 +59,7 @@ class AccountAuthController extends Controller
     {
         // Find or create test customer devotee
         $user = User::firstOrCreate(
-            ['email' => 'devotee@mangalam.co'],
+            ['email' => 'devotee@ishanaa.com'],
             [
                 'name' => 'Pandit Rameshwar Mishra',
                 'phone' => '9876543210',
@@ -113,7 +113,7 @@ class AccountAuthController extends Controller
         $request->session()->regenerate();
 
         return redirect()->route('account.index')
-            ->with('success', 'ॐ Pranam! Your Mangalam Devotee Account has been created successfully.');
+            ->with('success', 'ॐ Pranam! Your Ishanaa Devotee Account has been created successfully.');
     }
 
     /**

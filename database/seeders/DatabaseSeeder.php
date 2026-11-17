@@ -115,12 +115,12 @@ class DatabaseSeeder extends Seeder
         // 4. Products List (Official Manglam Products from Spreadsheet)
         $productsData = [
             // =========================================================================
-            // 7 MANGLAM FRAGRANCES — PACK OF 40 STICKS (MRP: 499, SALE: 399)
+            // 7 MANGLAM FRAGRANCES â€” PACK OF 40 STICKS (MRP: 499, SALE: 399)
             // =========================================================================
             [
                 'category_slug' => 'bambooless',
                 'title' => 'Swarna Pushpa (Pack of 40)',
-                'hindi_title' => 'स्वर्ण पुष्प (40 स्टिक्स)',
+                'hindi_title' => 'à¤¸à¥à¤µà¤°à¥à¤£ à¤ªà¥à¤·à¥à¤ª (40 à¤¸à¥à¤Ÿà¤¿à¤•à¥à¤¸)',
                 'slug' => 'swarna-pushpa',
                 'sku' => 'MNG-BL-SP-40',
                 'short_description' => 'Sacred Marygold temple flower petals hand-blended into charcoal-free bambooless sticks.',
@@ -132,7 +132,7 @@ class DatabaseSeeder extends Seeder
                 'is_featured' => true,
                 'is_bestseller' => true,
                 'status' => 'active',
-                'meta_title' => 'Swarna Pushpa 40 Sticks Bambooless Incense | Mangalam',
+                'meta_title' => 'Swarna Pushpa 40 Sticks Bambooless Incense | ISHANAAâ„¢',
                 'meta_description' => 'Pure Marygold temple flower bambooless agarbatti pack of 40 sticks. 100% natural and charcoal free.',
                 'image' => 'assets/images/oudh-pack-card.jpg',
                 'collections' => ['all', 'bambooless', 'best-seller-combo'],
@@ -144,7 +144,7 @@ class DatabaseSeeder extends Seeder
             [
                 'category_slug' => 'bambooless',
                 'title' => 'Divya Naagchampa (Pack of 40)',
-                'hindi_title' => 'दिव्य नागचंपा (40 स्टिक्स)',
+                'hindi_title' => 'à¤¦à¤¿à¤µà¥à¤¯ à¤¨à¤¾à¤—à¤šà¤‚à¤ªà¤¾ (40 à¤¸à¥à¤Ÿà¤¿à¤•à¥à¤¸)',
                 'slug' => 'divya-naagchampa',
                 'sku' => 'MNG-BL-DN-40',
                 'short_description' => 'Traditional temple Naagchampa with rich floral and earthy resin notes for deep meditation.',
@@ -156,7 +156,7 @@ class DatabaseSeeder extends Seeder
                 'is_featured' => true,
                 'is_bestseller' => true,
                 'status' => 'active',
-                'meta_title' => 'Divya Naagchampa 40 Sticks Bambooless Incense | Mangalam',
+                'meta_title' => 'Divya Naagchampa 40 Sticks Bambooless Incense | ISHANAA™',
                 'meta_description' => 'Authentic Divya Naagchampa bambooless sticks for meditation, yoga, and pooja.',
                 'image' => 'assets/images/incense-pack.jpg',
                 'collections' => ['all', 'bambooless', 'best-seller-combo'],
@@ -168,7 +168,7 @@ class DatabaseSeeder extends Seeder
             [
                 'category_slug' => 'bambooless',
                 'title' => 'Chandan Saanjh (Pack of 40)',
-                'hindi_title' => 'चंदन सांझ (40 स्टिक्स)',
+                'hindi_title' => 'à¤šà¤‚à¤¦à¤¨ à¤¸à¤¾à¤‚à¤ (40 à¤¸à¥à¤Ÿà¤¿à¤•à¥à¤¸)',
                 'slug' => 'chandan-saanjh',
                 'sku' => 'MNG-BL-CS-40',
                 'short_description' => 'Pure Mysore Chandan (Sandalwood) infused with soothing ayurvedic herbs for peaceful rituals.',
@@ -180,7 +180,7 @@ class DatabaseSeeder extends Seeder
                 'is_featured' => true,
                 'is_bestseller' => true,
                 'status' => 'active',
-                'meta_title' => 'Chandan Saanjh 40 Sticks Bambooless Agarbatti | Mangalam',
+                'meta_title' => 'Chandan Saanjh 40 Sticks Bambooless Agarbatti | ISHANAA™',
                 'meta_description' => 'Pure Chandan Saanjh bambooless agarbatti without charcoal. 100% natural and non-toxic.',
                 'image' => 'assets/images/incense-pack.jpg',
                 'collections' => ['all', 'bambooless', 'best-seller-combo'],
@@ -192,7 +192,7 @@ class DatabaseSeeder extends Seeder
             [
                 'category_slug' => 'bambooless',
                 'title' => 'Royal Oudh (Pack of 40)',
-                'hindi_title' => 'रॉयल ऊद (40 स्टिक्स)',
+                'hindi_title' => 'à¤°à¥‰à¤¯à¤² à¤Šà¤¦ (40 à¤¸à¥à¤Ÿà¤¿à¤•à¥à¤¸)',
                 'slug' => 'royal-oudh',
                 'sku' => 'MNG-BL-RO-40',
                 'short_description' => 'Deep, opulent Assam agarwood resin notes creating an immersive and royal meditative aura.',
@@ -204,7 +204,7 @@ class DatabaseSeeder extends Seeder
                 'is_featured' => true,
                 'is_bestseller' => true,
                 'status' => 'active',
-                'meta_title' => 'Royal Oudh 40 Sticks Bambooless Incense | Mangalam',
+                'meta_title' => 'Royal Oudh 40 Sticks Bambooless Incense | ISHANAA™',
                 'meta_description' => 'Luxury Assam Royal Oudh bambooless agarbatti. Pure, resinous, and charcoal-free.',
                 'image' => 'assets/images/oudh-pack-card.jpg',
                 'collections' => ['all', 'bambooless', 'best-seller-combo'],
@@ -216,7 +216,7 @@ class DatabaseSeeder extends Seeder
             [
                 'category_slug' => 'bambooless',
                 'title' => 'Mogra Noor (Pack of 40)',
-                'hindi_title' => 'मोगरा नूर (40 स्टिक्स)',
+                'hindi_title' => 'à¤®à¥‹à¤—à¤°à¤¾ à¤¨à¥‚à¤° (40 à¤¸à¥à¤Ÿà¤¿à¤•à¥à¤¸)',
                 'slug' => 'mogra-noor',
                 'sku' => 'MNG-BL-MN-40',
                 'short_description' => 'Fresh Jasmine Sambac (Mongra) blooms hand-blended for a fresh, uplifting dawn pooja.',
@@ -228,7 +228,7 @@ class DatabaseSeeder extends Seeder
                 'is_featured' => true,
                 'is_bestseller' => false,
                 'status' => 'active',
-                'meta_title' => 'Mogra Noor 40 Sticks Bambooless Incense | Mangalam',
+                'meta_title' => 'Mogra Noor 40 Sticks Bambooless Incense | ISHANAA™',
                 'meta_description' => 'Pure Jasmine Sambac (Mogra Noor) bambooless agarbatti for daily morning prayer.',
                 'image' => 'assets/images/incense-pack.jpg',
                 'collections' => ['all', 'bambooless'],
@@ -240,7 +240,7 @@ class DatabaseSeeder extends Seeder
             [
                 'category_slug' => 'bambooless',
                 'title' => 'Gulab Rooh (Pack of 40)',
-                'hindi_title' => 'गुलाब रूह (40 स्टिक्स)',
+                'hindi_title' => 'à¤—à¥à¤²à¤¾à¤¬ à¤°à¥‚à¤¹ (40 à¤¸à¥à¤Ÿà¤¿à¤•à¥à¤¸)',
                 'slug' => 'gulab-rooh',
                 'sku' => 'MNG-BL-GR-40',
                 'short_description' => 'Sacred desi Damask Rose flower extract infused bambooless sticks for sweet, devotional tranquility.',
@@ -252,7 +252,7 @@ class DatabaseSeeder extends Seeder
                 'is_featured' => true,
                 'is_bestseller' => false,
                 'status' => 'active',
-                'meta_title' => 'Gulab Rooh 40 Sticks Bambooless Agarbatti | Mangalam',
+                'meta_title' => 'Gulab Rooh 40 Sticks Bambooless Agarbatti | ISHANAA™',
                 'meta_description' => 'Pure Desi Gulab Rooh bambooless incense sticks for daily pooja and meditation.',
                 'image' => 'assets/images/incense-pack.jpg',
                 'collections' => ['all', 'bambooless'],
@@ -264,7 +264,7 @@ class DatabaseSeeder extends Seeder
             [
                 'category_slug' => 'bambooless',
                 'title' => 'Lavender Veda (Pack of 40)',
-                'hindi_title' => 'लैवेंडर वेदा (40 स्टिक्स)',
+                'hindi_title' => 'à¤²à¥ˆà¤µà¥‡à¤‚à¤¡à¤° à¤µà¥‡à¤¦à¤¾ (40 à¤¸à¥à¤Ÿà¤¿à¤•à¥à¤¸)',
                 'slug' => 'lavender-veda',
                 'sku' => 'MNG-BL-LV-40',
                 'short_description' => 'Soothing Lavender extracts prepared with natural Vedic resins for calming meditation and peaceful rest.',
@@ -276,7 +276,7 @@ class DatabaseSeeder extends Seeder
                 'is_featured' => true,
                 'is_bestseller' => false,
                 'status' => 'active',
-                'meta_title' => 'Lavender Veda 40 Sticks Bambooless Incense | Mangalam',
+                'meta_title' => 'Lavender Veda 40 Sticks Bambooless Incense | ISHANAA™',
                 'meta_description' => 'Pure Lavender Veda charcoal-free bambooless incense sticks.',
                 'image' => 'assets/images/incense-pack.jpg',
                 'collections' => ['all', 'bambooless'],
@@ -287,12 +287,12 @@ class DatabaseSeeder extends Seeder
             ],
 
             // =========================================================================
-            // 7 MANGLAM FRAGRANCES — PACK OF 100 REFILLS (MRP: 999, SALE: 499)
+            // 7 MANGLAM FRAGRANCES â€” PACK OF 100 REFILLS (MRP: 999, SALE: 499)
             // =========================================================================
             [
                 'category_slug' => 'bambooless',
                 'title' => 'Swarna Pushpa (Pack of 100 Refill)',
-                'hindi_title' => 'स्वर्ण पुष्प (100 स्टिक्स रिफिल)',
+                'hindi_title' => 'à¤¸à¥à¤µà¤°à¥à¤£ à¤ªà¥à¤·à¥à¤ª (100 à¤¸à¥à¤Ÿà¤¿à¤•à¥à¤¸ à¤°à¤¿à¤«à¤¿à¤²)',
                 'slug' => 'swarna-pushpa-100',
                 'sku' => 'MNG-BL-SP-100-REF',
                 'short_description' => '100 sticks mega refill pack of pure Marygold temple flower bambooless incense.',
@@ -304,7 +304,7 @@ class DatabaseSeeder extends Seeder
                 'is_featured' => true,
                 'is_bestseller' => true,
                 'status' => 'active',
-                'meta_title' => 'Swarna Pushpa 100 Sticks Refill Pack | Mangalam',
+                'meta_title' => 'Swarna Pushpa 100 Sticks Refill Pack | ISHANAA™',
                 'meta_description' => 'Mega refill pack of 100 Swarna Pushpa bambooless sticks at best price.',
                 'image' => 'assets/images/devi-refill-pack-card.jpg',
                 'collections' => ['all', 'bambooless', 'super-save-offers'],
@@ -316,7 +316,7 @@ class DatabaseSeeder extends Seeder
             [
                 'category_slug' => 'bambooless',
                 'title' => 'Divya Naagchampa (Pack of 100 Refill)',
-                'hindi_title' => 'दिव्य नागचंपा (100 स्टिक्स रिफिल)',
+                'hindi_title' => 'à¤¦à¤¿à¤µà¥à¤¯ à¤¨à¤¾à¤—à¤šà¤‚à¤ªà¤¾ (100 à¤¸à¥à¤Ÿà¤¿à¤•à¥à¤¸ à¤°à¤¿à¤«à¤¿à¤²)',
                 'slug' => 'divya-naagchampa-100',
                 'sku' => 'MNG-BL-DN-100-REF',
                 'short_description' => '100 sticks mega refill pack of authentic temple Naagchampa bambooless sticks.',
@@ -328,7 +328,7 @@ class DatabaseSeeder extends Seeder
                 'is_featured' => true,
                 'is_bestseller' => true,
                 'status' => 'active',
-                'meta_title' => 'Divya Naagchampa 100 Sticks Refill Pack | Mangalam',
+                'meta_title' => 'Divya Naagchampa 100 Sticks Refill Pack | ISHANAA™',
                 'meta_description' => 'Mega refill pack of 100 Divya Naagchampa bambooless sticks.',
                 'image' => 'assets/images/camphor-refill-pack-card.jpg',
                 'collections' => ['all', 'bambooless', 'super-save-offers'],
@@ -340,7 +340,7 @@ class DatabaseSeeder extends Seeder
             [
                 'category_slug' => 'bambooless',
                 'title' => 'Chandan Saanjh (Pack of 100 Refill)',
-                'hindi_title' => 'चंदन सांझ (100 स्टिक्स रिफिल)',
+                'hindi_title' => 'à¤šà¤‚à¤¦à¤¨ à¤¸à¤¾à¤‚à¤ (100 à¤¸à¥à¤Ÿà¤¿à¤•à¥à¤¸ à¤°à¤¿à¤«à¤¿à¤²)',
                 'slug' => 'chandan-saanjh-100',
                 'sku' => 'MNG-BL-CS-100-REF',
                 'short_description' => '100 sticks mega refill pack of pure Mysore Sandalwood (Chandan) bambooless sticks.',
@@ -352,7 +352,7 @@ class DatabaseSeeder extends Seeder
                 'is_featured' => true,
                 'is_bestseller' => true,
                 'status' => 'active',
-                'meta_title' => 'Chandan Saanjh 100 Sticks Refill Pack | Mangalam',
+                'meta_title' => 'Chandan Saanjh 100 Sticks Refill Pack | ISHANAA™',
                 'meta_description' => '100 sticks pure Mysore Sandalwood bambooless refill pack.',
                 'image' => 'assets/images/devi-refill-pack-card.jpg',
                 'collections' => ['all', 'bambooless', 'super-save-offers'],
@@ -364,7 +364,7 @@ class DatabaseSeeder extends Seeder
             [
                 'category_slug' => 'bambooless',
                 'title' => 'Royal Oudh (Pack of 100 Refill)',
-                'hindi_title' => 'रॉयल ऊद (100 स्टिक्स रिफिल)',
+                'hindi_title' => 'à¤°à¥‰à¤¯à¤² à¤Šà¤¦ (100 à¤¸à¥à¤Ÿà¤¿à¤•à¥à¤¸ à¤°à¤¿à¤«à¤¿à¤²)',
                 'slug' => 'royal-oudh-100',
                 'sku' => 'MNG-BL-RO-100-REF',
                 'short_description' => '100 sticks mega refill pack of luxury Assam Agarwood Royal Oudh.',
@@ -376,7 +376,7 @@ class DatabaseSeeder extends Seeder
                 'is_featured' => true,
                 'is_bestseller' => true,
                 'status' => 'active',
-                'meta_title' => 'Royal Oudh 100 Sticks Refill Pack | Mangalam',
+                'meta_title' => 'Royal Oudh 100 Sticks Refill Pack | ISHANAA™',
                 'meta_description' => '100 sticks Royal Oudh agarbatti refill box.',
                 'image' => 'assets/images/oudh-pack-card.jpg',
                 'collections' => ['all', 'bambooless', 'super-save-offers'],
@@ -388,7 +388,7 @@ class DatabaseSeeder extends Seeder
             [
                 'category_slug' => 'bambooless',
                 'title' => 'Mogra Noor (Pack of 100 Refill)',
-                'hindi_title' => 'मोगरा नूर (100 स्टिक्स रिफिल)',
+                'hindi_title' => 'à¤®à¥‹à¤—à¤°à¤¾ à¤¨à¥‚à¤° (100 à¤¸à¥à¤Ÿà¤¿à¤•à¥à¤¸ à¤°à¤¿à¤«à¤¿à¤²)',
                 'slug' => 'mogra-noor-100',
                 'sku' => 'MNG-BL-MN-100-REF',
                 'short_description' => '100 sticks mega refill pack of fresh Jasmine Sambac (Mogra) blooms.',
@@ -400,7 +400,7 @@ class DatabaseSeeder extends Seeder
                 'is_featured' => false,
                 'is_bestseller' => false,
                 'status' => 'active',
-                'meta_title' => 'Mogra Noor 100 Sticks Refill Pack | Mangalam',
+                'meta_title' => 'Mogra Noor 100 Sticks Refill Pack | ISHANAA™',
                 'meta_description' => '100 sticks pure Jasmine Mogra bambooless refill pack.',
                 'image' => 'assets/images/incense-pack.jpg',
                 'collections' => ['all', 'bambooless', 'super-save-offers'],
@@ -412,7 +412,7 @@ class DatabaseSeeder extends Seeder
             [
                 'category_slug' => 'bambooless',
                 'title' => 'Gulab Rooh (Pack of 100 Refill)',
-                'hindi_title' => 'गुलाब रूह (100 स्टिक्स रिफिल)',
+                'hindi_title' => 'à¤—à¥à¤²à¤¾à¤¬ à¤°à¥‚à¤¹ (100 à¤¸à¥à¤Ÿà¤¿à¤•à¥à¤¸ à¤°à¤¿à¤«à¤¿à¤²)',
                 'slug' => 'gulab-rooh-100',
                 'sku' => 'MNG-BL-GR-100-REF',
                 'short_description' => '100 sticks mega refill pack of authentic Indian Damask Rose incense.',
@@ -424,7 +424,7 @@ class DatabaseSeeder extends Seeder
                 'is_featured' => false,
                 'is_bestseller' => false,
                 'status' => 'active',
-                'meta_title' => 'Gulab Rooh 100 Sticks Refill Pack | Mangalam',
+                'meta_title' => 'Gulab Rooh 100 Sticks Refill Pack | ISHANAA™',
                 'meta_description' => '100 sticks pure Desi Rose Gulab Rooh refill pack.',
                 'image' => 'assets/images/devi-refill-pack-card.jpg',
                 'collections' => ['all', 'bambooless', 'super-save-offers'],
@@ -436,7 +436,7 @@ class DatabaseSeeder extends Seeder
             [
                 'category_slug' => 'bambooless',
                 'title' => 'Lavender Veda (Pack of 100 Refill)',
-                'hindi_title' => 'लैवेंडर वेदा (100 स्टिक्स रिफिल)',
+                'hindi_title' => 'à¤²à¥ˆà¤µà¥‡à¤‚à¤¡à¤° à¤µà¥‡à¤¦à¤¾ (100 à¤¸à¥à¤Ÿà¤¿à¤•à¥à¤¸ à¤°à¤¿à¤«à¤¿à¤²)',
                 'slug' => 'lavender-veda-100',
                 'sku' => 'MNG-BL-LV-100-REF',
                 'short_description' => '100 sticks mega refill pack of calming Lavender Veda bambooless sticks.',
@@ -448,7 +448,7 @@ class DatabaseSeeder extends Seeder
                 'is_featured' => false,
                 'is_bestseller' => false,
                 'status' => 'active',
-                'meta_title' => 'Lavender Veda 100 Sticks Refill Pack | Mangalam',
+                'meta_title' => 'Lavender Veda 100 Sticks Refill Pack | ISHANAA™',
                 'meta_description' => '100 sticks pure Lavender Veda incense refill pack.',
                 'image' => 'assets/images/camphor-refill-pack-card.jpg',
                 'collections' => ['all', 'bambooless', 'super-save-offers'],
@@ -464,7 +464,7 @@ class DatabaseSeeder extends Seeder
             [
                 'category_slug' => 'bambooless',
                 'title' => 'Pack of Six (6 Fragrance Grand Collection)',
-                'hindi_title' => 'पैक ऑफ सिक्स (६ दिव्य सुगंध संग्रह)',
+                'hindi_title' => 'à¤ªà¥ˆà¤• à¤‘à¤« à¤¸à¤¿à¤•à¥à¤¸ (à¥¬ à¤¦à¤¿à¤µà¥à¤¯ à¤¸à¥à¤—à¤‚à¤§ à¤¸à¤‚à¤—à¥à¤°à¤¹)',
                 'slug' => 'pack-of-six',
                 'sku' => 'MNG-BL-PK6-240',
                 'short_description' => 'Complete grand bundle of all 6 sacred Bambooless fragrances: Swarna Pushpa, Divya Naagchampa, Chandan Saanjh, Royal Oudh, Mogra Noor, and Gulab Rooh.',
@@ -476,8 +476,8 @@ class DatabaseSeeder extends Seeder
                 'is_featured' => true,
                 'is_bestseller' => true,
                 'status' => 'active',
-                'meta_title' => 'Pack of Six Bambooless Incense Collection (240 Sticks) | Mangalam',
-                'meta_description' => 'Buy Pack of Six Bambooless Incense Sticks collection (240 sticks). Flat ₹1199 special value price.',
+                'meta_title' => 'Pack of Six Bambooless Incense Collection (240 Sticks) | ISHANAA™',
+                'meta_description' => 'Buy Pack of Six Bambooless Incense Sticks collection (240 sticks). Flat â‚¹1199 special value price.',
                 'image' => 'assets/images/oudh-pack-card.jpg',
                 'collections' => ['all', 'bambooless', 'super-save-offers', 'best-seller-combo'],
                 'variants' => [
@@ -486,12 +486,12 @@ class DatabaseSeeder extends Seeder
             ],
 
             // =========================================================================
-            // MANGALAM PITAMBARA HAVAN PACK (DEDICATED LANDING PAGE ONLY - NOT IN BAMBOOLESS)
+            // Ishanaa Pitambara Havan PACK (DEDICATED LANDING PAGE ONLY - NOT IN BAMBOOLESS)
             // =========================================================================
             [
                 'category_slug' => null,
-                'title' => 'Mangalam Pitambara Havan Pack',
-                'hindi_title' => 'मंगलम पीताम्बरा हवन पैक',
+                'title' => 'Ishanaa Pitambara Havan Pack',
+                'hindi_title' => 'à¤®à¤‚à¤—à¤²à¤® à¤ªà¥€à¤¤à¤¾à¤®à¥à¤¬à¤°à¤¾ à¤¹à¤µà¤¨ à¤ªà¥ˆà¤•',
                 'slug' => 'pitambara-havan',
                 'sku' => 'MNG-HV-PITAMBARA',
                 'short_description' => '100% pure authentic Vedic Pitambara Havan Pack with fresh mango wood sticks, pure desi ghee, and 21 rare Himalayan yajna samagri.',
@@ -503,8 +503,8 @@ class DatabaseSeeder extends Seeder
                 'is_featured' => false,
                 'is_bestseller' => false,
                 'status' => 'active',
-                'meta_title' => 'Mangalam Pitambara Havan Pack | Authentic Vedic Yajna Kit',
-                'meta_description' => 'Experience divine protection and peace with Mangalam Pitambara Havan Pack. Pre-book now.',
+                'meta_title' => 'Ishanaa Pitambara Havan Pack | Authentic Vedic Yajna Kit',
+                'meta_description' => 'Experience divine protection and peace with Ishanaa Pitambara Havan Pack. Pre-book now.',
                 'image' => 'assets/images/banner-pitambara-havan.jpg',
                 'collections' => [],
                 'variants' => [
@@ -610,8 +610,8 @@ class DatabaseSeeder extends Seeder
         }
 
         // Settings
-        Setting::set('store_name', 'Mangalam.co');
+        Setting::set('store_name', 'ISHANAA™ — Sacred Vedic Living');
         Setting::set('free_shipping_threshold', '499');
-        Setting::set('announcement_text', 'शुद्धं समर्पयामि — I offer only what is pure. 100% Bambooless & Charcoal-free.');
+        Setting::set('announcement_text', 'à¤¶à¥à¤¦à¥à¤§à¤‚ à¤¸à¤®à¤°à¥à¤ªà¤¯à¤¾à¤®à¤¿ â€” I offer only what is pure. 100% Bambooless & Charcoal-free.');
     }
 }

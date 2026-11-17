@@ -36,7 +36,7 @@ class PageController extends Controller
             'message' => 'required|string|max:2000',
         ]);
 
-        return back()->with('success_message', 'ॐ नमः शिवाय। Your sacred message has been received at Mangalam Seva Kendra. Our team will get in touch with you shortly.');
+        return back()->with('success_message', 'ॐ नमः शिवाय। Your sacred message has been received at Ishanaa Seva Kendra. Our team will get in touch with you shortly.');
     }
 
     /**

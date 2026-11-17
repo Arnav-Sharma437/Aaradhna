@@ -14,7 +14,7 @@ class CustomerSeeder extends Seeder
     public function run(): void
     {
         $user = User::firstOrCreate(
-            ['email' => 'devotee@mangalam.co'],
+            ['email' => 'devotee@ishanaa.com'],
             [
                 'name' => 'Pandit Rameshwar Mishra',
                 'phone' => '9876543210',
@@ -180,3 +180,4 @@ class CustomerSeeder extends Seeder
         }
     }
 }
+

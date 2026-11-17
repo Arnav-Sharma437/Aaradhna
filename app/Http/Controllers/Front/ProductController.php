@@ -225,7 +225,7 @@ class ProductController extends Controller
             'notes' => 'nullable|string|max:500',
         ]);
 
-        $validated['product_name'] = 'Mangalam Pitambara Havan';
+        $validated['product_name'] = 'Ishanaa Pitambara Havan';
         $validated['status'] = 'confirmed';
 
         try {
@@ -234,7 +234,7 @@ class ProductController extends Controller
             \Illuminate\Support\Facades\Log::warning('PreBooking create notice: ' . $e->getMessage());
         }
 
-        return back()->with('prebooking_success', 'धन्यवाद! Your VIP Pre-booking for Mangalam Pitambara Havan is confirmed. Our Vedic care team will notify you with priority invitation before the public launch.');
+        return back()->with('prebooking_success', 'धन्यवाद! Your VIP Pre-booking for Ishanaa Pitambara Havan is confirmed. Our Vedic care team will notify you with priority invitation before the public launch.');
     }
 
     /**

@@ -72,7 +72,7 @@ class CheckoutController extends Controller
 
             $customerName = trim($validated['name'] ?? 'Devotee');
             $customerPhone = trim($validated['phone'] ?? '');
-            $customerEmail = trim($validated['email'] ?? ($customerPhone ? $customerPhone . '@mangalam.co' : 'devotee@mangalam.co'));
+            $customerEmail = trim($validated['email'] ?? ($customerPhone ? $customerPhone . '@ishanaa.com' : 'devotee@ishanaa.com'));
 
             $user = Auth::user();
             if (!$user && !empty($customerPhone)) {

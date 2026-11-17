@@ -1,7 +1,33 @@
 @extends('layouts.app')
 
-@section('title', $product->meta_title ?? "{$product->title} — ISHANAA™")
-@section('meta_description', $product->meta_description ?? ($product->short_description ?? Str::limit(strip_tags($product->description), 150)))
+@php
+    $pageTitle = trim($product->meta_title ?? '');
+    if (!empty($pageTitle)) {
+        $pageTitle = str_ireplace(['mangalam.co', 'mangalam'], ['ISHANAA', 'ISHANAA'], $pageTitle);
+        $pSearch = strtolower($product->title . ' ' . $product->slug);
+        $mSearch = strtolower($pageTitle);
+        if (str_contains($mSearch, 'naagchampa') && !str_contains($pSearch, 'naagchampa')) {
+            $pageTitle = "{$product->clean_title} — ISHANAA™";
+        }
+    } else {
+        $pageTitle = "{$product->clean_title} — ISHANAA™";
+    }
+
+    $pageDesc = trim($product->meta_description ?? '');
+    if (!empty($pageDesc)) {
+        $pageDesc = str_ireplace(['mangalam.co', 'mangalam'], ['Ishanaa', 'Ishanaa'], $pageDesc);
+        $pSearch = strtolower($product->title . ' ' . $product->slug);
+        $mSearch = strtolower($pageDesc);
+        if (str_contains($mSearch, 'naagchampa') && !str_contains($pSearch, 'naagchampa')) {
+            $pageDesc = $product->short_description ?? Str::limit(strip_tags($product->description), 160);
+        }
+    } else {
+        $pageDesc = $product->short_description ?? Str::limit(strip_tags($product->description), 160);
+    }
+@endphp
+
+@section('title', $pageTitle)
+@section('meta_description', $pageDesc)
 
 @section('content')
 @php

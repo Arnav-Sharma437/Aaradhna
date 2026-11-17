@@ -458,12 +458,12 @@
 
                     <div class="space-y-1.5">
                         <label for="meta_title" class="block text-xs font-bold text-gray-700 uppercase">Page Title (Meta)</label>
-                        <input type="text" id="meta_title" name="meta_title" value="{{ old('meta_title', $product->meta_title) }}" class="w-full px-3.5 py-2 bg-white border border-[#D2D5D8] rounded-[8px] text-xs focus:outline-none focus:border-[#D38928]">
+                        <input type="text" id="meta_title" name="meta_title" value="{{ old('meta_title', str_ireplace(['mangalam.co', 'mangalam'], ['ISHANAA', 'ISHANAA'], $product->meta_title ?? '')) }}" placeholder="e.g. {{ $product->clean_title }} — ISHANAA™" class="w-full px-3.5 py-2 bg-white border border-[#D2D5D8] rounded-[8px] text-xs focus:outline-none focus:border-[#D38928]">
                     </div>
 
                     <div class="space-y-1.5">
                         <label for="meta_description" class="block text-xs font-bold text-gray-700 uppercase">Meta Description</label>
-                        <textarea id="meta_description" name="meta_description" rows="2" class="w-full px-3.5 py-2 bg-white border border-[#D2D5D8] rounded-[8px] text-xs focus:outline-none focus:border-[#D38928]">{{ old('meta_description', $product->meta_description) }}</textarea>
+                        <textarea id="meta_description" name="meta_description" rows="2" placeholder="Summary for Google and social previews..." class="w-full px-3.5 py-2 bg-white border border-[#D2D5D8] rounded-[8px] text-xs focus:outline-none focus:border-[#D38928]">{{ old('meta_description', str_ireplace(['mangalam.co', 'mangalam'], ['Ishanaa', 'Ishanaa'], $product->meta_description ?? '')) }}</textarea>
                     </div>
                 </div>
 

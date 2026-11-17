@@ -340,6 +340,25 @@ class ProductController extends Controller
                 $counter++;
             }
 
+            // Clean & Auto-generate Meta Title & Meta Description
+            $rawMetaTitle = trim($validated['meta_title'] ?? '');
+            if (!empty($rawMetaTitle)) {
+                $metaTitle = str_ireplace(['mangalam.co', 'mangalam'], ['ISHANAA', 'ISHANAA'], $rawMetaTitle);
+            } else {
+                $metaTitle = "{$validated['title']} — ISHANAA™";
+            }
+
+            $rawMetaDesc = trim($validated['meta_description'] ?? '');
+            if (!empty($rawMetaDesc)) {
+                $metaDesc = str_ireplace(['mangalam.co', 'mangalam'], ['Ishanaa', 'Ishanaa'], $rawMetaDesc);
+            } elseif (!empty($validated['short_description'])) {
+                $metaDesc = Str::limit(strip_tags($validated['short_description']), 160);
+            } elseif (!empty($validated['description'])) {
+                $metaDesc = Str::limit(strip_tags($validated['description']), 160);
+            } else {
+                $metaDesc = "Experience 100% pure and sacred {$validated['title']} by ISHANAA.";
+            }
+
             $productData = [
                 'category_id' => $validated['category_id'] ?? null,
                 'title' => $validated['title'],
@@ -359,8 +378,8 @@ class ProductController extends Controller
                 'is_featured' => $request->boolean('is_featured'),
                 'is_bestseller' => $request->boolean('is_bestseller'),
                 'status' => $validated['status'],
-                'meta_title' => $validated['meta_title'] ?? null,
-                'meta_description' => $validated['meta_description'] ?? null,
+                'meta_title' => $metaTitle,
+                'meta_description' => $metaDesc,
             ];
 
             if (Schema::hasColumn('products', 'show_in_trial_bundle')) {
@@ -588,6 +607,37 @@ class ProductController extends Controller
 
         DB::beginTransaction();
         try {
+            // Clean & Auto-generate Meta Title & Meta Description
+            $rawMetaTitle = trim($validated['meta_title'] ?? '');
+            if (!empty($rawMetaTitle)) {
+                $metaTitle = str_ireplace(['mangalam.co', 'mangalam'], ['ISHANAA', 'ISHANAA'], $rawMetaTitle);
+                $titleLower = strtolower($validated['title']);
+                $metaLower = strtolower($metaTitle);
+                if (str_contains($metaLower, 'naagchampa') && !str_contains($titleLower, 'naagchampa')) {
+                    $metaTitle = "{$validated['title']} — ISHANAA™";
+                }
+            } else {
+                $metaTitle = "{$validated['title']} — ISHANAA™";
+            }
+
+            $rawMetaDesc = trim($validated['meta_description'] ?? '');
+            if (!empty($rawMetaDesc)) {
+                $metaDesc = str_ireplace(['mangalam.co', 'mangalam'], ['Ishanaa', 'Ishanaa'], $rawMetaDesc);
+                $titleLower = strtolower($validated['title']);
+                $descLower = strtolower($metaDesc);
+                if (str_contains($descLower, 'naagchampa') && !str_contains($titleLower, 'naagchampa')) {
+                    $metaDesc = !empty($validated['short_description']) 
+                        ? Str::limit(strip_tags($validated['short_description']), 160) 
+                        : "Experience 100% pure and sacred {$validated['title']} by ISHANAA.";
+                }
+            } elseif (!empty($validated['short_description'])) {
+                $metaDesc = Str::limit(strip_tags($validated['short_description']), 160);
+            } elseif (!empty($validated['description'])) {
+                $metaDesc = Str::limit(strip_tags($validated['description']), 160);
+            } else {
+                $metaDesc = "Experience 100% pure and sacred {$validated['title']} by ISHANAA.";
+            }
+
             $productData = [
                 'category_id' => $validated['category_id'] ?? null,
                 'title' => $validated['title'],
@@ -606,8 +656,8 @@ class ProductController extends Controller
                 'is_featured' => $request->boolean('is_featured'),
                 'is_bestseller' => $request->boolean('is_bestseller'),
                 'status' => $validated['status'],
-                'meta_title' => $validated['meta_title'] ?? null,
-                'meta_description' => $validated['meta_description'] ?? null,
+                'meta_title' => $metaTitle,
+                'meta_description' => $metaDesc,
             ];
 
             if (Schema::hasColumn('products', 'show_in_trial_bundle')) {

@@ -12,7 +12,7 @@ use App\Models\Review;
 class PitambaraHavanSeeder extends Seeder
 {
     /**
-     * Run the database seeds for Mangalam Pitambara Havan.
+     * Run the database seeds for Ishanaa Pitambara Havan.
      */
     public function run(): void
     {
@@ -22,12 +22,12 @@ class PitambaraHavanSeeder extends Seeder
             ['slug' => 'pitambara-havan'],
             [
                 'category_id' => $category ? $category->id : null,
-                'title' => 'Mangalam Pitambara Havan',
-                'hindi_title' => 'पीताम्बरा हवन — माँ बगलामुखी कृपा',
+                'title' => 'Ishanaa Pitambara Havan',
+                'hindi_title' => 'à¤ªà¥€à¤¤à¤¾à¤®à¥à¤¬à¤°à¤¾ à¤¹à¤µà¤¨ â€” à¤®à¤¾à¤ à¤¬à¤—à¤²à¤¾à¤®à¥à¤–à¥€ à¤•à¥ƒà¤ªà¤¾',
                 'slug' => 'pitambara-havan',
                 'sku' => 'MNG-PITAMBARA-HVN',
                 'short_description' => 'A Sacred Blend for a Calmer, Lighter & More Positive Life. 100% Natural, Cow Dung Based with Fresh Mango Wood Sticks & Inspired by Maa Baglamukhi.',
-                'description' => 'Experience the sacred power of Mangalam Pitambara Havan. Handcrafted with devotion using time-honoured Vedic traditions, this pure cow dung and mango wood havan cup is your spiritual shield against negativity, bringing profound peace and divine atmosphere into your sanctuary.',
+                'description' => 'Experience the sacred power of Ishanaa Pitambara Havan. Handcrafted with devotion using time-honoured Vedic traditions, this pure cow dung and mango wood havan cup is your spiritual shield against negativity, bringing profound peace and divine atmosphere into your sanctuary.',
                 'ingredients' => 'Desi Gir Cow Dung, Aam ki Samidha (Fresh Mango Wood), Pure Desi Ghee, Bhimseni Camphor, Vedic Guggal, Loban, Jatamansi, Nagarmotha, Shatavari & 16 Sacred Herbs.',
                 'benefits' => 'Spiritual Protection against negative energies, Removes household vastu doshas, Calms racing mind and anxiety, Creates a pure divine temple atmosphere.',
                 'how_to_use' => 'Hold the havan cup, light the mango wood stick and cup rim with a diya/match, blow gently after 15 seconds, place on the complimentary ceramic stand and let the sacred smoke purify every corner.',
@@ -39,8 +39,8 @@ class PitambaraHavanSeeder extends Seeder
                 'is_featured' => true,
                 'is_bestseller' => true,
                 'status' => 'active',
-                'meta_title' => 'Mangalam Pitambara Havan — Pure Vedic Negative Energy Cleanser',
-                'meta_description' => 'Mangalam Pitambara Havan: 100% Natural, Cow dung based with fresh mango wood sticks. Inspired by Maa Baglamukhi for spiritual protection and peace.',
+                'meta_title' => 'Ishanaa Pitambara Havan â€” Pure Vedic Negative Energy Cleanser',
+                'meta_description' => 'Ishanaa Pitambara Havan: 100% Natural, Cow dung based with fresh mango wood sticks. Inspired by Maa Baglamukhi for spiritual protection and peace.',
             ]
         );
 
@@ -48,7 +48,7 @@ class PitambaraHavanSeeder extends Seeder
         $product->images()->delete();
 
         $images = [
-            ['path' => 'assets/images/pitambara/hero-altar.jpg', 'alt' => 'Mangalam Pitambara Havan Altar', 'is_primary' => true, 'order' => 0],
+            ['path' => 'assets/images/pitambara/hero-altar.jpg', 'alt' => 'Ishanaa Pitambara Havan Altar', 'is_primary' => true, 'order' => 0],
             ['path' => 'assets/images/pitambara/step4-light.jpg', 'alt' => 'Burning Pitambara Havan Cup with Sacred Smoke', 'is_primary' => false, 'order' => 1],
             ['path' => 'assets/images/pitambara/step2-blend.jpg', 'alt' => 'Sacred Herbs and Maa Baglamukhi Blend', 'is_primary' => false, 'order' => 2],
             ['path' => 'assets/images/pitambara/step3-mangowood.jpg', 'alt' => 'Fresh Mango Wood Sticks Infusion', 'is_primary' => false, 'order' => 3],
@@ -80,7 +80,7 @@ class PitambaraHavanSeeder extends Seeder
                 'sort_order' => 0,
             ],
             [
-                'title' => 'Pack of 24 Cups (Save ₹450)',
+                'title' => 'Pack of 24 Cups (Save â‚¹450)',
                 'sku' => 'MNG-PIT-24',
                 'price' => 549.00,
                 'compare_at_price' => 999.00,
@@ -128,7 +128,7 @@ class PitambaraHavanSeeder extends Seeder
                 'reviewer_name' => 'Vikas Malhotra',
                 'reviewer_email' => 'vikas.m@yahoo.com',
                 'rating' => 5,
-                'title' => 'Shield against negative vibes — must buy!',
+                'title' => 'Shield against negative vibes â€” must buy!',
                 'review_text' => 'Every evening we light one cup during Sandhya aarti. The fragrance of pure camphor, loban, and mango wood lingers for hours. Our home feels like a temple altar.',
                 'is_verified_buyer' => true,
                 'status' => 'approved',
@@ -140,3 +140,4 @@ class PitambaraHavanSeeder extends Seeder
         }
     }
 }
+

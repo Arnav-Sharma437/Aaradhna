@@ -39,7 +39,7 @@ class CollectionController extends Controller
                 'slug' => 'all',
                 'description' => 'Discover our complete range of 100% natural pooja samagri, bambooless incense sticks, organic havan cups, and sacred attar sprays.',
                 'banner_path' => null,
-                'meta_title' => 'Shop Pure Pooja Samagri & Bambooless Agarbatti | Mangalam.co',
+                'meta_title' => 'Shop Pure Pooja Samagri & Bambooless Agarbatti | ISHANAA™',
                 'meta_description' => 'Explore 100% pure Vedic pooja essentials crafted without bamboo, toxic charcoal, or synthetic aromas.',
             ];
             $query = Product::where('status', 'active');
@@ -49,7 +49,7 @@ class CollectionController extends Controller
                 'slug' => $slug,
                 'description' => 'Explore our top-rated, most celebrated sacred Vedic combos and bestsellers.',
                 'banner_path' => null,
-                'meta_title' => 'Best Seller Combo — 100% Pure & Vedic | Mangalam.co',
+                'meta_title' => 'Best Seller Combo — 100% Pure & Vedic | ISHANAA™',
                 'meta_description' => 'Explore our top-rated, most celebrated sacred Vedic combos.',
             ];
             $query = Product::where('status', 'active')
@@ -75,7 +75,7 @@ class CollectionController extends Controller
                 'slug' => $category->slug,
                 'description' => $category->description ?? $category->subtitle,
                 'banner_path' => $category->banner_path,
-                'meta_title' => $category->meta_title ?? "{$category->name} — 100% Pure & Vedic | Mangalam.co",
+                'meta_title' => $category->meta_title ?? "{$category->name} — 100% Pure & Vedic | ISHANAA™",
                 'meta_description' => $category->meta_description ?? $category->description,
             ];
 
@@ -99,7 +99,7 @@ class CollectionController extends Controller
                 'slug' => $slug,
                 'description' => 'Explore our pure Vedic pooja essentials.',
                 'banner_path' => null,
-                'meta_title' => ucwords(str_replace('-', ' ', $slug)) . ' — 100% Pure & Vedic | Mangalam.co',
+                'meta_title' => ucwords(str_replace('-', ' ', $slug)) . ' — 100% Pure & Vedic | ISHANAA™',
                 'meta_description' => 'Explore pure Vedic pooja essentials crafted without bamboo or synthetic aromas.',
             ];
             // Filter strictly by keyword matching instead of dumping all products
