@@ -79,81 +79,119 @@
             <div id="drawer-items-list" class="space-y-3"></div>
 
             <!-- 4. Quick Cross-Sell: Try These Fresh Fragrances As Well 👇 -->
+            @php
+                // Dynamically fetch genuine active products with real photography
+                $realDrawerUpsells = \App\Models\Product::where('status', 'active')
+                    ->whereHas('images', function ($q) {
+                        $q->where('image_path', 'LIKE', '%uploads/products/%');
+                    })
+                    ->with(['primaryImage', 'images'])
+                    ->orderBy('sort_order', 'asc')
+                    ->take(3)
+                    ->get();
+
+                if ($realDrawerUpsells->count() < 3) {
+                    $realDrawerUpsells = \App\Models\Product::where('status', 'active')
+                        ->with(['primaryImage', 'images'])
+                        ->take(3)
+                        ->get();
+                }
+
+                // Special 99 offer product: Oudh Mystique or Rose Royale real product
+                $special99Product = \App\Models\Product::where('status', 'active')
+                    ->where(function($q) {
+                        $q->where('slug', 'like', '%oudh%')
+                          ->orWhere('title', 'like', '%oudh%')
+                          ->orWhere('slug', 'like', '%rose%');
+                    })
+                    ->whereHas('images', function ($q) {
+                        $q->where('image_path', 'LIKE', '%uploads/products/%');
+                    })
+                    ->first() ?? $realDrawerUpsells->first();
+            @endphp
+
             <div class="pt-4 space-y-2.5">
                 <div class="flex items-center justify-between text-xs font-bold text-[#121212] font-heading">
                     <span>Try these fresh fragrances as well 👇</span>
                 </div>
 
-                <!-- 3-Column Mini Upsell Carousel -->
+                <!-- 3-Column Mini Upsell Carousel (Real Products with Genuine Photos) -->
                 <div class="grid grid-cols-3 gap-2">
-                    
-                    <!-- Upsell 1 -->
-                    <div class="bg-[#FFFDF9] border border-[#EADBCC] rounded-[12px] p-2 flex flex-col justify-between text-center space-y-1 relative">
-                        <span class="absolute top-1 left-1 px-1.5 py-0.2 bg-[#C28430] text-white text-[8px] font-bold rounded-full font-heading">30% OFF</span>
-                        <div class="w-full aspect-square rounded-[8px] overflow-hidden bg-white mb-1">
-                            <img src="{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}" alt="Bestseller Combo" class="w-full h-full object-cover">
+                    @foreach($realDrawerUpsells as $uIndex => $uProd)
+                        @php
+                            $uImg = $uProd->primary_image_url;
+                            $uPrice = $uProd->active_price;
+                            $uDiscountPct = ($uProd->base_price > $uPrice && $uProd->base_price > 0)
+                                ? round((($uProd->base_price - $uPrice) / $uProd->base_price) * 100)
+                                : 30;
+                        @endphp
+                        <div class="bg-[#FFFDF9] border border-[#EADBCC] rounded-[12px] p-2 flex flex-col justify-between text-center space-y-1 relative">
+                            <span class="absolute top-1 left-1 px-1.5 py-0.2 bg-[#C28430] text-white text-[8px] font-bold rounded-full font-heading">{{ $uDiscountPct }}% OFF</span>
+                            <div class="w-full aspect-square rounded-[8px] overflow-hidden bg-white mb-1">
+                                <img src="{{ $uImg }}" alt="{{ $uProd->clean_title }}" class="w-full h-full object-cover">
+                            </div>
+                            <h5 class="text-[10px] font-bold font-serif text-[#121212] truncate">{{ $uProd->clean_title }}</h5>
+                            <div class="text-[11px] font-black text-[#C87A1E] font-heading" style="letter-spacing: 0.8px !important;">₹{{ number_format($uPrice, 2) }}</div>
+                            <button 
+                                type="button" 
+                                class="drawer-quick-add w-full py-1 bg-[#c28430] hover:bg-[#a86911] text-white text-[10px] font-bold rounded-[6px] font-heading transition-colors" 
+                                style="background-color: #c28430 !important;" 
+                                data-product-id="{{ $uProd->id }}"
+                                data-product-title="{{ $uProd->clean_title }}"
+                                data-product-slug="{{ $uProd->slug }}"
+                                data-product-price="{{ $uPrice }}"
+                                data-product-image="{{ $uImg }}"
+                                data-title="{{ $uProd->clean_title }}" 
+                                data-price="{{ $uPrice }}"
+                            >
+                                Add to cart
+                            </button>
                         </div>
-                        <h5 class="text-[10px] font-bold font-serif text-[#121212] truncate">Bestseller Combo</h5>
-                        <div class="text-[11px] font-black text-[#C87A1E] font-heading" style="letter-spacing: 0.8px !important;">₹1,399.00</div>
-                        <button type="button" class="drawer-quick-add w-full py-1 bg-[#c28430] hover:bg-[#a86911] text-white text-[10px] font-bold rounded-[6px] font-heading transition-colors" style="background-color: #c28430 !important;" data-title="Bestseller Combo" data-price="1399.00">
-                            Add to cart
-                        </button>
-                    </div>
-
-                    <!-- Upsell 2 -->
-                    <div class="bg-[#FFFDF9] border border-[#EADBCC] rounded-[12px] p-2 flex flex-col justify-between text-center space-y-1 relative">
-                        <span class="absolute top-1 left-1 px-1.5 py-0.2 bg-[#C28430] text-white text-[8px] font-bold rounded-full font-heading">30% OFF</span>
-                        <div class="w-full aspect-square rounded-[8px] overflow-hidden bg-white mb-1">
-                            <img src="{{ asset('assets/images/products/ishanaa-incense-sticks-trio.jpg') }}" alt="Bhairav Refill Pack" class="w-full h-full object-cover">
-                        </div>
-                        <h5 class="text-[10px] font-bold font-serif text-[#121212] truncate">Bhairav Refill Pack</h5>
-                        <div class="text-[11px] font-black text-[#C87A1E] font-heading" style="letter-spacing: 0.8px !important;">₹489.00</div>
-                        <button type="button" class="drawer-quick-add w-full py-1 bg-[#c28430] hover:bg-[#a86911] text-white text-[10px] font-bold rounded-[6px] font-heading transition-colors" style="background-color: #c28430 !important;" data-title="Bhairav Refill Pack" data-price="489.00">
-                            Add to cart
-                        </button>
-                    </div>
-
-                    <!-- Upsell 3 -->
-                    <div class="bg-[#FFFDF9] border border-[#EADBCC] rounded-[12px] p-2 flex flex-col justify-between text-center space-y-1 relative">
-                        <span class="absolute top-1 left-1 px-1.5 py-0.2 bg-[#C28430] text-white text-[8px] font-bold rounded-full font-heading">51% OFF</span>
-                        <div class="w-full aspect-square rounded-[8px] overflow-hidden bg-white mb-1">
-                            <img src="{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}" alt="Devi Refill Pack" class="w-full h-full object-cover">
-                        </div>
-                        <h5 class="text-[10px] font-bold font-serif text-[#121212] truncate">Devi Refill Pack</h5>
-                        <div class="text-[11px] font-black text-[#C87A1E] font-heading" style="letter-spacing: 0.8px !important;">₹489.00</div>
-                        <button type="button" class="drawer-quick-add w-full py-1 bg-[#c28430] hover:bg-[#a86911] text-white text-[10px] font-bold rounded-[6px] font-heading transition-colors" style="background-color: #c28430 !important;" data-title="Devi Refill Pack" data-price="489.00">
-                            Add to cart
-                        </button>
-                    </div>
-
+                    @endforeach
                 </div>
             </div>
 
             <!-- 5. Unlocked Special Offer: Buy Any Fragrance at ₹99 -->
-            <div class="pt-4">
-                <div class="bg-[#FFFDF9] border border-[#D38928]/40 rounded-[14px] p-3 space-y-2">
-                    <div class="flex items-center justify-between text-[11px] font-bold font-heading">
-                        <span class="text-[#D38928]">🎉 Unlocked! Buy any fragrance at ₹99</span>
-                        <span class="text-[10px] text-gray-500">*Valid Today</span>
-                    </div>
+            @if($special99Product)
+                @php
+                    $s99Img = $special99Product->primary_image_url;
+                @endphp
+                <div class="pt-4">
+                    <div class="bg-[#FFFDF9] border border-[#D38928]/40 rounded-[14px] p-3 space-y-2">
+                        <div class="flex items-center justify-between text-[11px] font-bold font-heading">
+                            <span class="text-[#D38928]">🎉 Unlocked! Buy any fragrance at ₹99</span>
+                            <span class="text-[10px] text-gray-500">*Valid Today</span>
+                        </div>
 
-                    <div class="flex items-center justify-between gap-3 bg-white p-2.5 rounded-[10px] border border-[#EADBCC]">
-                        <div class="w-12 h-12 rounded-[6px] bg-[#FAF7F2] overflow-hidden shrink-0">
-                            <img src="{{ asset('assets/images/products/ishanaa-incense-sticks-trio.jpg') }}" alt="Oudh Trial Pack" class="w-full h-full object-cover">
-                        </div>
-                        <div class="flex-1 min-w-0">
-                            <h6 class="text-xs font-bold font-serif text-[#121212] truncate">Oudh Trial Pack</h6>
-                            <div class="flex items-baseline space-x-1.5 text-xs">
-                                <span class="font-black text-[#C87A1E] font-heading" style="letter-spacing: 0.8px !important;">₹99.00</span>
-                                <span class="text-gray-400 line-through text-[10px]" style="letter-spacing: 0.5px !important;">₹229.00</span>
+                        <div class="flex items-center justify-between gap-3 bg-white p-2.5 rounded-[10px] border border-[#EADBCC]">
+                            <div class="w-12 h-12 rounded-[6px] bg-[#FAF7F2] overflow-hidden shrink-0">
+                                <img src="{{ $s99Img }}" alt="{{ $special99Product->clean_title }} Trial Pack" class="w-full h-full object-cover">
                             </div>
+                            <div class="flex-1 min-w-0">
+                                <h6 class="text-xs font-bold font-serif text-[#121212] truncate">{{ $special99Product->clean_title }} Trial Pack</h6>
+                                <div class="flex items-baseline space-x-1.5 text-xs">
+                                    <span class="font-black text-[#C87A1E] font-heading" style="letter-spacing: 0.8px !important;">₹99.00</span>
+                                    <span class="text-gray-400 line-through text-[10px]" style="letter-spacing: 0.5px !important;">₹229.00</span>
+                                </div>
+                            </div>
+                            <button 
+                                type="button" 
+                                class="drawer-quick-add px-3 py-1.5 bg-[#c28430] hover:bg-[#a86911] text-white text-[11px] font-bold rounded-[8px] font-heading whitespace-nowrap" 
+                                style="background-color: #c28430 !important;" 
+                                data-product-id="{{ $special99Product->id }}"
+                                data-product-title="{{ $special99Product->clean_title }} Trial Pack" 
+                                data-product-slug="{{ $special99Product->slug }}"
+                                data-product-price="99.00"
+                                data-product-image="{{ $s99Img }}"
+                                data-title="{{ $special99Product->clean_title }} Trial Pack" 
+                                data-price="99.00"
+                            >
+                                Buy at ₹99
+                            </button>
                         </div>
-                        <button type="button" class="drawer-quick-add px-3 py-1.5 bg-[#c28430] hover:bg-[#a86911] text-white text-[11px] font-bold rounded-[8px] font-heading whitespace-nowrap" style="background-color: #c28430 !important;" data-title="Oudh Trial Pack" data-price="99.00">
-                            Buy at ₹99
-                        </button>
                     </div>
                 </div>
-            </div>
+            @endif
 
         </div>
 

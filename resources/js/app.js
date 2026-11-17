@@ -354,7 +354,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 title: atcBtn.dataset.productTitle || atcBtn.dataset.title || 'Sacred Item',
                 slug: atcBtn.dataset.productSlug || '',
                 price: parseFloat(atcBtn.dataset.productPrice || atcBtn.dataset.price) || 489.00,
-                image: atcBtn.dataset.productImage || '/assets/images/devi-refill-pack-card.jpg',
+                image: atcBtn.dataset.productImage || atcBtn.dataset.image || '/uploads/products/prod_1794314582_BlWthCxnC7E7.jpeg',
             };
 
             const qtyInput = document.getElementById('product-quantity');

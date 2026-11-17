@@ -245,18 +245,19 @@
                                             ></iframe>
                                         @else
                                             <video 
+                                                id="mobile-product-video"
                                                 class="w-full h-full object-cover rounded-[6px] pointer-events-none" 
-                                                src="{{ $slide['asset_url'] }}" 
                                                 @if(!empty($slide['thumbnail'])) poster="{{ asset($slide['thumbnail']) }}" @endif
-                                                autoplay 
                                                 loop 
                                                 muted 
                                                 playsinline 
                                                 webkit-playsinline
-                                                preload="auto"
+                                                preload="metadata"
+                                                disablePictureInPicture
+                                                disableRemotePlayback
+                                                style="transform: translateZ(0); -webkit-transform: translateZ(0); will-change: transform;"
                                             >
                                                 <source src="{{ $slide['asset_url'] }}" type="video/mp4">
-                                                <source src="{{ $slide['asset_url'] }}" type="video/webm">
                                             </video>
                                         @endif
                                     @endif
@@ -374,18 +375,19 @@
                                 ></iframe>
                             @else
                                 <video 
+                                    id="desktop-product-video"
                                     class="w-full h-full object-cover rounded-[6px] pointer-events-none" 
-                                    src="{{ $product->video_asset_url }}" 
                                     @if(!empty($product->video_thumbnail)) poster="{{ asset($product->video_thumbnail) }}" @endif
-                                    autoplay 
                                     loop 
                                     muted 
                                     playsinline 
                                     webkit-playsinline
-                                    preload="auto"
+                                    preload="metadata"
+                                    disablePictureInPicture
+                                    disableRemotePlayback
+                                    style="transform: translateZ(0); -webkit-transform: translateZ(0); will-change: transform;"
                                 >
                                     <source src="{{ $product->video_asset_url }}" type="video/mp4">
-                                    <source src="{{ $product->video_asset_url }}" type="video/webm">
                                 </video>
                             @endif
                         </div>
@@ -1555,39 +1557,90 @@
 @push('scripts')
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        // Ensure all gallery/cinemagraph videos play continuously, muted and autoplaying
-        document.querySelectorAll('video').forEach(vid => {
-            vid.muted = true;
-            vid.defaultMuted = true;
-            vid.playsInline = true;
-            const playVideo = () => {
-                vid.muted = true;
-                const p = vid.play();
-                if (p && typeof p.catch === 'function') {
-                    p.catch(() => {});
+        const isMobile = window.innerWidth < 1024;
+        const mobileVideo = document.getElementById('mobile-product-video');
+        const desktopVideo = document.getElementById('desktop-product-video');
+
+        // Deactivate the hidden layout's video entirely to prevent duplicate decoding lag
+        if (isMobile && desktopVideo) {
+            desktopVideo.pause();
+            desktopVideo.removeAttribute('src');
+            desktopVideo.querySelectorAll('source').forEach(s => s.removeAttribute('src'));
+            desktopVideo.load();
+        } else if (!isMobile && mobileVideo) {
+            mobileVideo.pause();
+            mobileVideo.removeAttribute('src');
+            mobileVideo.querySelectorAll('source').forEach(s => s.removeAttribute('src'));
+            mobileVideo.load();
+        }
+
+        const activeVid = isMobile ? mobileVideo : desktopVideo;
+
+        if (activeVid) {
+            activeVid.muted = true;
+            activeVid.defaultMuted = true;
+            activeVid.playsInline = true;
+
+            const safePlay = () => {
+                if (activeVid && activeVid.paused) {
+                    activeVid.muted = true;
+                    const p = activeVid.play();
+                    if (p && typeof p.catch === 'function') {
+                        p.catch(() => {});
+                    }
                 }
             };
-            if (vid.readyState >= 2) {
-                playVideo();
-            } else {
-                vid.addEventListener('loadedmetadata', playVideo, { once: true });
-                vid.addEventListener('canplay', playVideo, { once: true });
-            }
-        });
 
-        // Autoplay unlock fallback for mobile/strict browser autoplay policies
-        const unlockAutoplay = () => {
-            document.querySelectorAll('video').forEach(vid => {
-                vid.muted = true;
-                vid.play().catch(() => {});
-            });
-            window.removeEventListener('touchstart', unlockAutoplay);
-            window.removeEventListener('click', unlockAutoplay);
-            window.removeEventListener('scroll', unlockAutoplay);
-        };
-        window.addEventListener('touchstart', unlockAutoplay, { passive: true, once: true });
-        window.addEventListener('click', unlockAutoplay, { passive: true, once: true });
-        window.addEventListener('scroll', unlockAutoplay, { passive: true, once: true });
+            const safePause = () => {
+                if (activeVid && !activeVid.paused) {
+                    activeVid.pause();
+                }
+            };
+
+            if (activeVid.readyState >= 2) {
+                safePlay();
+            } else {
+                activeVid.addEventListener('canplay', safePlay, { once: true });
+                activeVid.addEventListener('loadedmetadata', safePlay, { once: true });
+            }
+
+            // IntersectionObserver: Pause video when scrolled out of view, resume when visible!
+            if ('IntersectionObserver' in window) {
+                const vidObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            if (isMobile) {
+                                const mobileSlider = document.getElementById('mobile-product-slider');
+                                if (mobileSlider) {
+                                    const slideWidth = mobileSlider.clientWidth || 1;
+                                    const activeIndex = Math.round(mobileSlider.scrollLeft / slideWidth);
+                                    if (activeIndex === 1) {
+                                        safePlay();
+                                    }
+                                } else {
+                                    safePlay();
+                                }
+                            } else {
+                                safePlay();
+                            }
+                        } else {
+                            safePause();
+                        }
+                    });
+                }, { threshold: 0.15 });
+
+                vidObserver.observe(activeVid);
+            }
+
+            // User gesture unlock for strict autoplay browsers (click or touch only)
+            const unlockAutoplay = () => {
+                safePlay();
+                window.removeEventListener('touchstart', unlockAutoplay);
+                window.removeEventListener('click', unlockAutoplay);
+            };
+            window.addEventListener('touchstart', unlockAutoplay, { passive: true, once: true });
+            window.addEventListener('click', unlockAutoplay, { passive: true, once: true });
+        }
 
         // Mobile Slider Touch & Dot Controller
         const mobileSlider = document.getElementById('mobile-product-slider');
@@ -1619,6 +1672,20 @@
                             dot.classList.add('w-1.5', 'bg-black/20');
                         }
                     });
+                }
+
+                // If mobile video slide (slide 1), ensure video plays smoothly; otherwise pause to save battery & GPU
+                if (mobileVideo) {
+                    if (activeIndex === 1) {
+                        if (mobileVideo.paused) {
+                            mobileVideo.muted = true;
+                            mobileVideo.play().catch(() => {});
+                        }
+                    } else {
+                        if (!mobileVideo.paused) {
+                            mobileVideo.pause();
+                        }
+                    }
                 }
             };
 

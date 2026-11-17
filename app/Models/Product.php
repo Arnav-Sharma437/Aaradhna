@@ -222,27 +222,91 @@ class Product extends Model
         return '#8B1E1E';
     }
 
+    public function getRealFallbackImage(bool $isSecondary = false): string
+    {
+        $text = strtolower($this->title . ' ' . $this->slug);
+
+        // Rose
+        if (str_contains($text, 'rose') || str_contains($text, 'gulab')) {
+            return $isSecondary 
+                ? asset('uploads/products/prod_1794308785_rq0RDfCRyHCI.jpeg')
+                : asset('uploads/products/prod_1794313158_AWN4KevDUcRa.jpeg');
+        }
+
+        // Chandan / Sandalwood
+        if (str_contains($text, 'chandan') || str_contains($text, 'sandalwood')) {
+            return $isSecondary 
+                ? asset('uploads/products/prod_1794307727_i93xqOgtbOKa.jpeg')
+                : asset('uploads/products/prod_1794313421_amkJS4wtc3nl.jpeg');
+        }
+
+        // Jasmine / Mogra
+        if (str_contains($text, 'jasmine') || str_contains($text, 'mogra')) {
+            return $isSecondary 
+                ? asset('uploads/products/prod_1794313272_pfSvm1eFbPMi.jpeg')
+                : asset('uploads/products/prod_1794313272_bFMpxnVli3LU.jpeg');
+        }
+
+        // Marigold / Swarna Pushpa / Kesar
+        if (str_contains($text, 'marigold') || str_contains($text, 'swarna') || str_contains($text, 'kesar')) {
+            return $isSecondary 
+                ? asset('uploads/products/prod_1794313407_fxxJ8kF21ZNe.jpeg')
+                : asset('uploads/products/prod_1794313376_1Dmaqv2A1qeU.jpeg');
+        }
+
+        // Tulsi
+        if (str_contains($text, 'tulsi') || str_contains($text, 'तुलसी')) {
+            return $isSecondary 
+                ? asset('uploads/products/prod_1794313496_z0gliGRrigwQ.jpeg')
+                : asset('uploads/products/prod_1794313496_tfnHcumvI7W9.jpeg');
+        }
+
+        // Combo / Packs / Six
+        if (str_contains($text, 'combo') || str_contains($text, 'pack') || str_contains($text, 'six')) {
+            return $isSecondary 
+                ? asset('uploads/products/prod_1794315199_fSBpekR09kj3.jpeg')
+                : asset('uploads/products/prod_1794314582_BlWthCxnC7E7.jpeg');
+        }
+
+        // Havan Cup
+        if (str_contains($text, 'havan') || str_contains($text, 'cup') || str_contains($text, 'loban')) {
+            return asset('assets/images/single-havan-cup.png');
+        }
+
+        // Dhoop Cones
+        if (str_contains($text, 'cone') || str_contains($text, 'dhoop')) {
+            return asset('assets/images/single-dhoop-cone.png');
+        }
+
+        // Default: Oudh Mystique real photography
+        return $isSecondary 
+            ? asset('uploads/products/prod_1793877582_07A5tn8leT3e.jpeg')
+            : asset('uploads/products/prod_1794313187_WMXp0FXgW4ND.jpeg');
+    }
+
     public function getPrimaryImageUrlAttribute(): string
     {
         $primary = $this->primaryImage ?: $this->images->first();
         if ($primary && !empty($primary->url)) {
-            return $primary->url;
+            if (!str_contains($primary->url, 'ishanaa-oudh-incense-sticks-100') && !str_contains($primary->url, 'ishanaa-incense-sticks-trio')) {
+                return $primary->url;
+            }
         }
-        return asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png');
+        return $this->getRealFallbackImage(false);
     }
 
     public function getSecondaryImageUrlAttribute(): string
     {
         if ($this->images && $this->images->count() > 1) {
-            return $this->images->get(1)->url;
+            $second = $this->images->get(1);
+            if (!empty($second->url) && !str_contains($second->url, 'ishanaa-incense-sticks-trio') && !str_contains($second->url, 'ishanaa-oudh-incense-sticks-100')) {
+                return $second->url;
+            }
         }
-        if ($this->primaryImage && !empty($this->primaryImage->url)) {
+        if ($this->primaryImage && !empty($this->primaryImage->url) && !str_contains($this->primaryImage->url, 'ishanaa-oudh-incense-sticks-100') && !str_contains($this->primaryImage->url, 'ishanaa-incense-sticks-trio')) {
             return $this->primaryImage->url;
         }
-        if ($this->images && $this->images->count() === 1) {
-            return $this->images->first()->url;
-        }
-        return asset('assets/images/products/ishanaa-incense-sticks-trio.jpg');
+        return $this->getRealFallbackImage(true);
     }
 
     public function getHasVideoAttribute(): bool
