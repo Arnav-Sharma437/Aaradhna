@@ -228,11 +228,11 @@
             <!-- Category 1: Single Incense Sticks -->
             <div class="w-[165px] sm:w-auto shrink-0 snap-start group flex flex-col items-center text-center space-y-2.5 sm:space-y-3">
                 <a href="{{ route('collections.show', 'bambooless') }}" class="block relative w-full max-w-[195px] sm:max-w-[230px] lg:max-w-[245px] aspect-square rounded-full p-1.5 sm:p-2 bg-white border border-[#EADBCC] hover:border-[#C18129] group-hover:scale-105 transition-all duration-500 cursor-pointer">
-                    <div class="w-full h-full rounded-full overflow-hidden bg-white p-2 sm:p-2.5 flex items-center justify-center relative">
+                    <div class="w-full h-full rounded-full overflow-hidden bg-white p-2.5 sm:p-3 flex items-center justify-center relative">
                         <img 
                             src="{{ asset('assets/images/single-bambooless-stick.png') }}?v={{ file_exists(public_path('assets/images/single-bambooless-stick.png')) ? filemtime(public_path('assets/images/single-bambooless-stick.png')) : time() }}" 
                             alt="Incense Sticks" 
-                            class="w-full h-full object-contain rounded-full scale-100 group-hover:scale-105 transition-transform duration-500"
+                            class="w-full h-full object-contain scale-[0.88] group-hover:scale-[0.93] transition-transform duration-500"
                         >
                     </div>
                 </a>
@@ -251,11 +251,11 @@
             <!-- Category 2: Single Dhoop Cone -->
             <div class="w-[165px] sm:w-auto shrink-0 snap-start group flex flex-col items-center text-center space-y-2.5 sm:space-y-3">
                 <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block relative w-full max-w-[195px] sm:max-w-[230px] lg:max-w-[245px] aspect-square rounded-full p-1.5 sm:p-2 bg-white border border-[#EADBCC] hover:border-[#C18129] group-hover:scale-105 transition-all duration-500 cursor-pointer">
-                    <div class="w-full h-full rounded-full overflow-hidden bg-white p-2 sm:p-2.5 flex items-center justify-center relative">
+                    <div class="w-full h-full rounded-full overflow-hidden bg-white p-2.5 sm:p-3 flex items-center justify-center relative">
                         <img 
                             src="{{ asset('assets/images/single-dhoop-cone.png') }}?v={{ file_exists(public_path('assets/images/single-dhoop-cone.png')) ? filemtime(public_path('assets/images/single-dhoop-cone.png')) : time() }}" 
                             alt="Easy to Use Dhoop Cone" 
-                            class="w-full h-full object-contain rounded-full scale-100 group-hover:scale-105 transition-transform duration-500"
+                            class="w-full h-full object-contain scale-[0.88] group-hover:scale-[0.93] transition-transform duration-500"
                         >
                     </div>
                 </a>
@@ -274,11 +274,11 @@
             <!-- Category 3: Single 100% Organic Havan Cup -->
             <div class="w-[165px] sm:w-auto shrink-0 snap-start group flex flex-col items-center text-center space-y-2.5 sm:space-y-3">
                 <a href="{{ route('collections.show', 'havan-cups') }}" class="block relative w-full max-w-[195px] sm:max-w-[230px] lg:max-w-[245px] aspect-square rounded-full p-1.5 sm:p-2 bg-white border border-[#EADBCC] hover:border-[#C18129] group-hover:scale-105 transition-all duration-500 cursor-pointer">
-                    <div class="w-full h-full rounded-full overflow-hidden bg-white p-2 sm:p-2.5 flex items-center justify-center relative">
+                    <div class="w-full h-full rounded-full overflow-hidden bg-white p-2.5 sm:p-3 flex items-center justify-center relative">
                         <img 
                             src="{{ asset('assets/images/single-havan-cup.png') }}?v={{ file_exists(public_path('assets/images/single-havan-cup.png')) ? filemtime(public_path('assets/images/single-havan-cup.png')) : time() }}" 
                             alt="100% Organic Havan Cups" 
-                            class="w-full h-full object-contain rounded-full scale-100 group-hover:scale-105 transition-transform duration-500"
+                            class="w-full h-full object-contain scale-[0.88] group-hover:scale-[0.93] transition-transform duration-500"
                         >
                     </div>
                 </a>
