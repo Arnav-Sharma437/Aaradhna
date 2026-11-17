@@ -7,7 +7,7 @@
 
     @php
         $rawSiteTitle = $storeSettings['store_name'] ?? 'ISHANAA';
-        $siteTitle = str_ireplace(['mangalam.co', 'mangalam'], ['ISHANAA', 'ISHANAA'], $rawSiteTitle);
+        $siteTitle = str_ireplace(['mangalam.co', 'mangalam', 'manglam'], ['ISHANAA', 'ISHANAA', 'ISHANAA'], $rawSiteTitle);
         $brandShort = preg_replace('/[™\s—\-\|].*$/u', '', $siteTitle);
         if (empty($brandShort)) {
             $brandShort = 'ISHANAA';

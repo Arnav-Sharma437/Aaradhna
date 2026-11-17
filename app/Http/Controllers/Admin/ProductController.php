@@ -341,16 +341,75 @@ class ProductController extends Controller
             }
 
             // Clean & Auto-generate Meta Title & Meta Description
+            $scentFamilies = [
+                'tulsi'         => ['tulsi', 'तुलसी', 'holy basil'],
+                'jasmine'       => ['jasmine', 'mogra', 'mongra', 'sambac', 'चमेली', 'मोगरा'],
+                'naagchampa'    => ['naagchampa', 'nagchampa', 'champaca', 'नागचंपा', 'नागचम्पा'],
+                'chandan'       => ['chandan', 'sandalwood', 'चंदन'],
+                'oudh'          => ['oudh', 'agarwood', 'ऊध'],
+                'rose'          => ['gulab', 'rose', 'गुलाब'],
+                'lavender'      => ['lavender', 'लैवेंडर'],
+                'kesarchandan'  => ['kesar chandan', 'kesar-chandan', 'swarna pushpa', 'swarna-pushpa', 'marigold', 'marygold', 'केसर चंदन', 'स्वर्ण पुष्पा'],
+                'havan'         => ['pitambara', 'havan', 'yajna', 'sambrani', 'loban', 'हवन', 'लोबान'],
+            ];
+
+            $titleSearch = strtolower($validated['title'] . ' ' . $slug);
+            $productFamily = null;
+            foreach ($scentFamilies as $fam => $keywords) {
+                foreach ($keywords as $kw) {
+                    if (str_contains($titleSearch, $kw)) {
+                        $productFamily = $fam;
+                        break 2;
+                    }
+                }
+            }
+
             $rawMetaTitle = trim($validated['meta_title'] ?? '');
             if (!empty($rawMetaTitle)) {
-                $metaTitle = str_ireplace(['mangalam.co', 'mangalam'], ['ISHANAA', 'ISHANAA'], $rawMetaTitle);
+                $metaTitle = str_ireplace(['mangalam.co', 'mangalam', 'manglam'], ['ISHANAA', 'ISHANAA', 'ISHANAA'], $rawMetaTitle);
+                $metaLower = strtolower($metaTitle);
+                $isMismatch = false;
+                if ($productFamily) {
+                    foreach ($scentFamilies as $fam => $keywords) {
+                        if ($fam !== $productFamily) {
+                            foreach ($keywords as $kw) {
+                                if (str_contains($metaLower, $kw) && !str_contains($titleSearch, $kw)) {
+                                    $isMismatch = true;
+                                    break 2;
+                                }
+                            }
+                        }
+                    }
+                }
+                if ($isMismatch) {
+                    $metaTitle = "{$validated['title']} — ISHANAA™";
+                }
             } else {
                 $metaTitle = "{$validated['title']} — ISHANAA™";
             }
 
             $rawMetaDesc = trim($validated['meta_description'] ?? '');
             if (!empty($rawMetaDesc)) {
-                $metaDesc = str_ireplace(['mangalam.co', 'mangalam'], ['Ishanaa', 'Ishanaa'], $rawMetaDesc);
+                $metaDesc = str_ireplace(['mangalam.co', 'mangalam', 'manglam'], ['Ishanaa', 'Ishanaa', 'Ishanaa'], $rawMetaDesc);
+                $descLower = strtolower($metaDesc);
+                $isDescMismatch = false;
+                if ($productFamily) {
+                    foreach ($scentFamilies as $fam => $keywords) {
+                        if ($fam !== $productFamily) {
+                            foreach ($keywords as $kw) {
+                                if (str_contains($descLower, $kw) && !str_contains($titleSearch, $kw)) {
+                                    $isDescMismatch = true;
+                                    break 2;
+                                }
+                            }
+                        }
+                    }
+                }
+                if ($isDescMismatch) {
+                    $metaDesc = !empty($validated['short_description']) 
+                        ? Str::limit(strip_tags($validated['short_description']), 160) 
+                        : "Experience 100% pure and sacred {$validated['title']} by ISHANAA.";
+                }
             } elseif (!empty($validated['short_description'])) {
                 $metaDesc = Str::limit(strip_tags($validated['short_description']), 160);
             } elseif (!empty($validated['description'])) {
@@ -608,12 +667,47 @@ class ProductController extends Controller
         DB::beginTransaction();
         try {
             // Clean & Auto-generate Meta Title & Meta Description
+            $scentFamilies = [
+                'tulsi'         => ['tulsi', 'तुलसी', 'holy basil'],
+                'jasmine'       => ['jasmine', 'mogra', 'mongra', 'sambac', 'चमेली', 'मोगरा'],
+                'naagchampa'    => ['naagchampa', 'nagchampa', 'champaca', 'नागचंपा', 'नागचम्पा'],
+                'chandan'       => ['chandan', 'sandalwood', 'चंदन'],
+                'oudh'          => ['oudh', 'agarwood', 'ऊध'],
+                'rose'          => ['gulab', 'rose', 'गुलाब'],
+                'lavender'      => ['lavender', 'लैवेंडर'],
+                'kesarchandan'  => ['kesar chandan', 'kesar-chandan', 'swarna pushpa', 'swarna-pushpa', 'marigold', 'marygold', 'केसर चंदन', 'स्वर्ण पुष्पा'],
+                'havan'         => ['pitambara', 'havan', 'yajna', 'sambrani', 'loban', 'हवन', 'लोबान'],
+            ];
+
+            $titleSearch = strtolower($validated['title'] . ' ' . ($validated['slug'] ?? ''));
+            $productFamily = null;
+            foreach ($scentFamilies as $fam => $keywords) {
+                foreach ($keywords as $kw) {
+                    if (str_contains($titleSearch, $kw)) {
+                        $productFamily = $fam;
+                        break 2;
+                    }
+                }
+            }
+
             $rawMetaTitle = trim($validated['meta_title'] ?? '');
             if (!empty($rawMetaTitle)) {
-                $metaTitle = str_ireplace(['mangalam.co', 'mangalam'], ['ISHANAA', 'ISHANAA'], $rawMetaTitle);
-                $titleLower = strtolower($validated['title']);
+                $metaTitle = str_ireplace(['mangalam.co', 'mangalam', 'manglam'], ['ISHANAA', 'ISHANAA', 'ISHANAA'], $rawMetaTitle);
                 $metaLower = strtolower($metaTitle);
-                if (str_contains($metaLower, 'naagchampa') && !str_contains($titleLower, 'naagchampa')) {
+                $isMismatch = false;
+                if ($productFamily) {
+                    foreach ($scentFamilies as $fam => $keywords) {
+                        if ($fam !== $productFamily) {
+                            foreach ($keywords as $kw) {
+                                if (str_contains($metaLower, $kw) && !str_contains($titleSearch, $kw)) {
+                                    $isMismatch = true;
+                                    break 2;
+                                }
+                            }
+                        }
+                    }
+                }
+                if ($isMismatch) {
                     $metaTitle = "{$validated['title']} — ISHANAA™";
                 }
             } else {
@@ -622,10 +716,22 @@ class ProductController extends Controller
 
             $rawMetaDesc = trim($validated['meta_description'] ?? '');
             if (!empty($rawMetaDesc)) {
-                $metaDesc = str_ireplace(['mangalam.co', 'mangalam'], ['Ishanaa', 'Ishanaa'], $rawMetaDesc);
-                $titleLower = strtolower($validated['title']);
+                $metaDesc = str_ireplace(['mangalam.co', 'mangalam', 'manglam'], ['Ishanaa', 'Ishanaa', 'Ishanaa'], $rawMetaDesc);
                 $descLower = strtolower($metaDesc);
-                if (str_contains($descLower, 'naagchampa') && !str_contains($titleLower, 'naagchampa')) {
+                $isDescMismatch = false;
+                if ($productFamily) {
+                    foreach ($scentFamilies as $fam => $keywords) {
+                        if ($fam !== $productFamily) {
+                            foreach ($keywords as $kw) {
+                                if (str_contains($descLower, $kw) && !str_contains($titleSearch, $kw)) {
+                                    $isDescMismatch = true;
+                                    break 2;
+                                }
+                            }
+                        }
+                    }
+                }
+                if ($isDescMismatch) {
                     $metaDesc = !empty($validated['short_description']) 
                         ? Str::limit(strip_tags($validated['short_description']), 160) 
                         : "Experience 100% pure and sacred {$validated['title']} by ISHANAA.";

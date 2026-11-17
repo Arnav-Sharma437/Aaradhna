@@ -2,11 +2,51 @@
 
 @php
     $pageTitle = trim($product->meta_title ?? '');
+    
+    // Comprehensive scent families to detect cross-contamination
+    $scentFamilies = [
+        'tulsi'         => ['tulsi', 'तुलसी', 'holy basil'],
+        'jasmine'       => ['jasmine', 'mogra', 'mongra', 'sambac', 'चमेली', 'मोगरा'],
+        'naagchampa'    => ['naagchampa', 'nagchampa', 'champaca', 'नागचंपा', 'नागचम्पा'],
+        'chandan'       => ['chandan', 'sandalwood', 'चंदन'],
+        'oudh'          => ['oudh', 'agarwood', 'ऊध'],
+        'rose'          => ['gulab', 'rose', 'गुलाब'],
+        'lavender'      => ['lavender', 'लैवेंडर'],
+        'kesarchandan'  => ['kesar chandan', 'kesar-chandan', 'swarna pushpa', 'swarna-pushpa', 'marigold', 'marygold', 'केसर चंदन', 'स्वर्ण पुष्पा'],
+        'havan'         => ['pitambara', 'havan', 'yajna', 'sambrani', 'loban', 'हवन', 'लोबान'],
+    ];
+
+    $pSearch = strtolower($product->title . ' ' . $product->slug . ' ' . ($product->clean_title ?? ''));
+    $productFamily = null;
+    foreach ($scentFamilies as $fam => $keywords) {
+        foreach ($keywords as $kw) {
+            if (str_contains($pSearch, $kw)) {
+                $productFamily = $fam;
+                break 2;
+            }
+        }
+    }
+
     if (!empty($pageTitle)) {
-        $pageTitle = str_ireplace(['mangalam.co', 'mangalam'], ['ISHANAA', 'ISHANAA'], $pageTitle);
-        $pSearch = strtolower($product->title . ' ' . $product->slug);
+        $pageTitle = str_ireplace(['mangalam.co', 'mangalam', 'manglam'], ['ISHANAA', 'ISHANAA', 'ISHANAA'], $pageTitle);
         $mSearch = strtolower($pageTitle);
-        if (str_contains($mSearch, 'naagchampa') && !str_contains($pSearch, 'naagchampa')) {
+
+        // If product belongs to a known family and meta mentions a DIFFERENT family, override
+        $isMismatch = false;
+        if ($productFamily) {
+            foreach ($scentFamilies as $fam => $keywords) {
+                if ($fam !== $productFamily) {
+                    foreach ($keywords as $kw) {
+                        if (str_contains($mSearch, $kw) && !str_contains($pSearch, $kw)) {
+                            $isMismatch = true;
+                            break 2;
+                        }
+                    }
+                }
+            }
+        }
+
+        if ($isMismatch) {
             $pageTitle = "{$product->clean_title} — ISHANAA™";
         }
     } else {
@@ -15,10 +55,22 @@
 
     $pageDesc = trim($product->meta_description ?? '');
     if (!empty($pageDesc)) {
-        $pageDesc = str_ireplace(['mangalam.co', 'mangalam'], ['Ishanaa', 'Ishanaa'], $pageDesc);
-        $pSearch = strtolower($product->title . ' ' . $product->slug);
-        $mSearch = strtolower($pageDesc);
-        if (str_contains($mSearch, 'naagchampa') && !str_contains($pSearch, 'naagchampa')) {
+        $pageDesc = str_ireplace(['mangalam.co', 'mangalam', 'manglam'], ['Ishanaa', 'Ishanaa', 'Ishanaa'], $pageDesc);
+        $dSearch = strtolower($pageDesc);
+        $isDescMismatch = false;
+        if ($productFamily) {
+            foreach ($scentFamilies as $fam => $keywords) {
+                if ($fam !== $productFamily) {
+                    foreach ($keywords as $kw) {
+                        if (str_contains($dSearch, $kw) && !str_contains($pSearch, $kw)) {
+                            $isDescMismatch = true;
+                            break 2;
+                        }
+                    }
+                }
+            }
+        }
+        if ($isDescMismatch) {
             $pageDesc = $product->short_description ?? Str::limit(strip_tags($product->description), 160);
         }
     } else {
@@ -172,7 +224,7 @@
                         >
                             @foreach($mobileSlides as $slideIndex => $slide)
                                 <div 
-                                    class="w-full h-full shrink-0 snap-center snap-always relative overflow-hidden {{ $slide['type'] === 'video' ? 'bg-black flex items-center justify-center' : 'bg-transparent' }} aspect-[4/4.8]"
+                                    class="w-full h-full shrink-0 snap-center snap-always relative overflow-hidden bg-transparent aspect-[4/4.8]"
                                     data-slide-index="{{ $slideIndex }}"
                                 >
                                     @if($slide['type'] === 'image')
@@ -193,7 +245,7 @@
                                             ></iframe>
                                         @else
                                             <video 
-                                                class="w-full h-full object-contain rounded-[6px] pointer-events-none" 
+                                                class="w-full h-full object-cover rounded-[6px] pointer-events-none" 
                                                 src="{{ $slide['asset_url'] }}" 
                                                 @if(!empty($slide['thumbnail'])) poster="{{ asset($slide['thumbnail']) }}" @endif
                                                 autoplay 
@@ -312,7 +364,7 @@
                     <!-- Video Card in Gallery Grid (Position 2 if product has video - Autoplay Muted Loop, No Controls, No Tag) -->
                     @if($hasVideo)
                     <div class="product-card relative bg-transparent rounded-[6px] border-0 p-0 shadow-none overflow-hidden">
-                        <div class="relative w-full aspect-[4/4.8] rounded-[6px] overflow-hidden bg-black flex items-center justify-center">
+                        <div class="relative w-full aspect-[4/4.8] rounded-[6px] overflow-hidden bg-transparent">
                             @if($product->is_youtube_video)
                                 <iframe 
                                     src="{{ $product->youtube_embed_url }}&controls=0&modestbranding=1" 
@@ -322,7 +374,7 @@
                                 ></iframe>
                             @else
                                 <video 
-                                    class="w-full h-full object-contain rounded-[6px] pointer-events-none" 
+                                    class="w-full h-full object-cover rounded-[6px] pointer-events-none" 
                                     src="{{ $product->video_asset_url }}" 
                                     @if(!empty($product->video_thumbnail)) poster="{{ asset($product->video_thumbnail) }}" @endif
                                     autoplay 
@@ -566,18 +618,6 @@
                     >
                         Buy It Now
                     </a>
-
-                    <!-- Promotional Promo Banner (Max Width 600px, Height 250px with rounded-[8px] sm:rounded-[10px]) -->
-                    <div class="pt-2">
-                        <a href="{{ route('bundles.trial-packs') }}" class="block w-full max-w-[600px] h-auto max-h-[250px] rounded-[8px] sm:rounded-[10px] overflow-hidden border border-[#EADBCC] shadow-xs group focus:outline-none">
-                            <img 
-                                src="{{ asset('assets/images/Banner 9.jpg') }}" 
-                                alt="Festive Offer - 5 Divine Essentials" 
-                                class="w-full h-full max-h-[250px] object-cover group-hover:scale-102 transition-transform duration-300"
-                                loading="lazy"
-                            >
-                        </a>
-                    </div>
 
                     <!-- 1. Product Description Accordion (Collapsible & Closed by Default) -->
                     <div class="pt-2">
