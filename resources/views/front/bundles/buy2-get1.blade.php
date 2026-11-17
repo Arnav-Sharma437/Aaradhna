@@ -81,7 +81,7 @@
                     
                     <!-- Top Image & Pack Badge -->
                     <div class="relative aspect-square rounded-[14px] bg-[#FAF7F2] overflow-hidden mb-3">
-                        <img src="{{ $cardImg }}" alt="{{ $prod['title'] }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='{{ asset('assets/images/devi-refill-pack-card.jpg') }}';">
+                        <img src="{{ $cardImg }}" alt="{{ $prod['title'] }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='{{ asset('uploads/products/prod_1794314582_BlWthCxnC7E7.jpeg') }}';">
                         <div class="absolute top-2 right-2 text-right pointer-events-none select-none leading-none bg-white/95 px-2 py-1 rounded-[6px] border border-[#EADBCC] shadow-2xs">
                             <span class="text-[8px] uppercase font-semibold text-gray-500 block">pack of</span>
                             <span class="text-xs font-black font-heading text-[#C28430] block">{{ $packNum }}</span>

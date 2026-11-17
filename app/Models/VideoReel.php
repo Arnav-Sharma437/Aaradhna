@@ -70,7 +70,7 @@ class VideoReel extends Model
             return asset(ltrim($this->thumbnail, '/'));
         }
 
-        return asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png');
+        return asset('uploads/products/prod_1794313187_WMXp0FXgW4ND.jpeg');
     }
 
     public function getThumbnailSrcAttribute(): string

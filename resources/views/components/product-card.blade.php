@@ -33,7 +33,7 @@
                     alt="{{ $product->title }}" 
                     class="w-full h-full object-cover object-top rounded-[20px] transition-all duration-500 ease-out group-hover:scale-108 group-hover:opacity-0"
                     loading="lazy"
-                    onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}';"
+                    onerror="this.onerror=null; this.src='{{ asset('uploads/products/prod_1794313187_WMXp0FXgW4ND.jpeg') }}';"
                 >
                 <!-- Secondary / Hover Image (Swaps on hover with Zoom In) -->
                 <img 
@@ -41,7 +41,7 @@
                     alt="{{ $product->title }} (Detail)" 
                     class="absolute inset-0 w-full h-full object-cover object-center rounded-[20px] opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out group-hover:scale-108"
                     loading="lazy"
-                    onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-incense-sticks-trio.jpg') }}';"
+                    onerror="this.onerror=null; this.src='{{ asset('uploads/products/prod_1794314582_BlWthCxnC7E7.jpeg') }}';"
                 >
             </a>
 

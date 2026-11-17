@@ -83,47 +83,6 @@
 
 @section('content')
 @php
-    $imageMap = [
-        'swarna-pushpa' => 'assets/images/oudh-pack-card.jpg',
-        'swarna-pushpa-100' => 'assets/images/devi-refill-pack-card.jpg',
-        'divya-naagchampa' => 'assets/images/incense-pack.jpg',
-        'divya-naagchampa-100' => 'assets/images/camphor-refill-pack-card.jpg',
-        'chandan-saanjh' => 'assets/images/incense-pack.jpg',
-        'chandan-saanjh-100' => 'assets/images/devi-refill-pack-card.jpg',
-        'royal-oudh' => 'assets/images/oudh-pack-card.jpg',
-        'royal-oudh-100' => 'assets/images/oudh-pack-card.jpg',
-        'mogra-noor' => 'assets/images/incense-pack.jpg',
-        'mogra-noor-100' => 'assets/images/incense-pack.jpg',
-        'gulab-rooh' => 'assets/images/incense-pack.jpg',
-        'gulab-rooh-100' => 'assets/images/devi-refill-pack-card.jpg',
-        'lavender-veda' => 'assets/images/incense-pack.jpg',
-        'lavender-veda-100' => 'assets/images/camphor-refill-pack-card.jpg',
-        'pack-of-six' => 'assets/images/oudh-pack-card.jpg',
-        'pitambara-havan' => 'assets/images/pitambara-pack.jpg',
-        'kesar-chandan' => 'assets/images/oudh-pack-card.jpg',
-        'gulab' => 'assets/images/incense-pack.jpg',
-        'naagchampa' => 'assets/images/incense-pack.jpg',
-        'chandan' => 'assets/images/incense-pack.jpg',
-        'havan-bambooless' => 'assets/images/incense-pack.jpg',
-        'oudh' => 'assets/images/oudh-pack-card.jpg',
-        'mongra' => 'assets/images/incense-pack.jpg',
-        'bambooless-2-combo-pack' => 'assets/images/incense-pack.jpg',
-        'bambooless-3-combo-pack' => 'assets/images/oudh-pack-card.jpg',
-        'google-dhoop' => 'assets/images/havan-cup.jpg',
-        'loban' => 'assets/images/havan-cup.jpg',
-        'havan-cup' => 'assets/images/havan-cup.jpg',
-        'havan-cups-2-combo-pack' => 'assets/images/havan-cup.jpg',
-        'havan-cups-3-combo-pack' => 'assets/images/havan-cup.jpg',
-        'rooh-rose' => 'assets/images/dhoop-cones.jpg',
-        'jasmine' => 'assets/images/dhoop-cones.jpg',
-        'sandalwood-dhoop-cones' => 'assets/images/chandan-cones-card.jpg',
-        'forest-wood' => 'assets/images/dhoop-cones.jpg',
-        'lavender' => 'assets/images/dhoop-cones.jpg',
-        'patchouli' => 'assets/images/dhoop-cones.jpg',
-        'dhoop-cones-2-combo-pack' => 'assets/images/dhoop-cones.jpg',
-        'dhoop-cones-3-combo-pack' => 'assets/images/chandan-cones-card.jpg',
-    ];
-
     $mainImg = $product->primary_image_url;
     $isSoldOut = $product->stock_quantity <= 0;
     $hasDiscount = $product->sale_price && ($product->base_price > $product->sale_price);
@@ -144,8 +103,8 @@
     // Only fall back to default packaging visuals if no images exist at all
     if (empty($galleryImages)) {
         $galleryImages = [
-            asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png'),
-            asset('assets/images/products/ishanaa-incense-sticks-trio.jpg'),
+            asset('uploads/products/prod_1794313187_WMXp0FXgW4ND.jpeg'),
+            asset('uploads/products/prod_1794314582_BlWthCxnC7E7.jpeg'),
         ];
     }
 
@@ -233,7 +192,7 @@
                                             alt="{{ $slide['alt'] }}" 
                                             class="w-full h-full object-cover object-top rounded-[6px] pointer-events-none"
                                             loading="{{ $slideIndex === 0 ? 'eager' : 'lazy' }}"
-                                            onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}';"
+                                            onerror="this.onerror=null; this.src='{{ asset('uploads/products/prod_1794313187_WMXp0FXgW4ND.jpeg') }}';"
                                         >
                                     @elseif($slide['type'] === 'video')
                                         @if($slide['is_youtube'])
@@ -327,7 +286,7 @@
                                 src="{{ $galleryImages[0] }}" 
                                 alt="{{ $product->title }} visual 1" 
                                 class="w-full h-full object-cover object-top rounded-[6px]" 
-                                onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png') }}';"
+                                onerror="this.onerror=null; this.src='{{ asset('uploads/products/prod_1794313187_WMXp0FXgW4ND.jpeg') }}';"
                             >
 
                             <!-- Top-Right Tag Type Badge (Matches Product Card Outside Exactly) -->
@@ -403,7 +362,7 @@
                                     src="{{ $imgUrl }}" 
                                     alt="{{ $product->title }} visual {{ $index + 1 }}" 
                                     class="w-full h-full object-cover object-center rounded-[6px]" 
-                                    onerror="this.onerror=null; this.src='{{ asset('assets/images/products/ishanaa-incense-sticks-trio.jpg') }}';"
+                                    onerror="this.onerror=null; this.src='{{ asset('uploads/products/prod_1794314582_BlWthCxnC7E7.jpeg') }}';"
                                 >
                             </div>
                         </div>
