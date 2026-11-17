@@ -157,10 +157,11 @@
         </div>
 
         @if($bestsellers->count() > 0)
-            <div class="mt-8 sm:mt-10 text-center hidden sm:block">
+            <div class="mt-6 sm:mt-10 text-center">
                 <a 
                     href="{{ route('collections.show', 'all') }}" 
-                    class="inline-flex items-center space-x-2 px-8 py-3.5 bg-[#A86911] hover:bg-[#8D540A] active:bg-[#744406] text-white text-xs sm:text-sm font-bold uppercase tracking-widest rounded-[8px] sm:rounded-[10px] shadow-sm hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 font-heading cursor-pointer"
+                    class="inline-flex items-center space-x-2 px-8 py-3.5 bg-[#c28430] hover:bg-[#a86911] active:bg-[#915609] text-white text-xs sm:text-sm font-bold uppercase tracking-widest rounded-[8px] sm:rounded-[10px] shadow-sm hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 font-heading cursor-pointer"
+                    style="background-color: #c28430 !important;"
                     aria-label="View All Products"
                 >
                     <span>View All Products</span>
@@ -227,11 +228,11 @@
             <!-- Category 1: Single Incense Sticks -->
             <div class="w-[165px] sm:w-auto shrink-0 snap-start group flex flex-col items-center text-center space-y-2.5 sm:space-y-3">
                 <a href="{{ route('collections.show', 'bambooless') }}" class="block relative w-full max-w-[195px] sm:max-w-[230px] lg:max-w-[245px] aspect-square rounded-full p-1.5 sm:p-2 bg-white border border-[#EADBCC] hover:border-[#C18129] group-hover:scale-105 transition-all duration-500 cursor-pointer">
-                    <div class="w-full h-full rounded-full overflow-hidden bg-white p-0 flex items-center justify-center relative">
+                    <div class="w-full h-full rounded-full overflow-hidden bg-white p-2 sm:p-2.5 flex items-center justify-center relative">
                         <img 
                             src="{{ asset('assets/images/single-bambooless-stick.png') }}?v={{ file_exists(public_path('assets/images/single-bambooless-stick.png')) ? filemtime(public_path('assets/images/single-bambooless-stick.png')) : time() }}" 
                             alt="Incense Sticks" 
-                            class="w-full h-full object-contain rounded-full scale-115 sm:scale-120 group-hover:scale-125 sm:group-hover:scale-130 transition-transform duration-500"
+                            class="w-full h-full object-contain rounded-full scale-100 group-hover:scale-105 transition-transform duration-500"
                         >
                     </div>
                 </a>
@@ -250,11 +251,11 @@
             <!-- Category 2: Single Dhoop Cone -->
             <div class="w-[165px] sm:w-auto shrink-0 snap-start group flex flex-col items-center text-center space-y-2.5 sm:space-y-3">
                 <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block relative w-full max-w-[195px] sm:max-w-[230px] lg:max-w-[245px] aspect-square rounded-full p-1.5 sm:p-2 bg-white border border-[#EADBCC] hover:border-[#C18129] group-hover:scale-105 transition-all duration-500 cursor-pointer">
-                    <div class="w-full h-full rounded-full overflow-hidden bg-white p-0 flex items-center justify-center relative">
+                    <div class="w-full h-full rounded-full overflow-hidden bg-white p-2 sm:p-2.5 flex items-center justify-center relative">
                         <img 
                             src="{{ asset('assets/images/single-dhoop-cone.png') }}?v={{ file_exists(public_path('assets/images/single-dhoop-cone.png')) ? filemtime(public_path('assets/images/single-dhoop-cone.png')) : time() }}" 
                             alt="Easy to Use Dhoop Cone" 
-                            class="w-full h-full object-contain rounded-full scale-115 sm:scale-120 group-hover:scale-125 sm:group-hover:scale-130 transition-transform duration-500"
+                            class="w-full h-full object-contain rounded-full scale-100 group-hover:scale-105 transition-transform duration-500"
                         >
                     </div>
                 </a>
@@ -273,11 +274,11 @@
             <!-- Category 3: Single 100% Organic Havan Cup -->
             <div class="w-[165px] sm:w-auto shrink-0 snap-start group flex flex-col items-center text-center space-y-2.5 sm:space-y-3">
                 <a href="{{ route('collections.show', 'havan-cups') }}" class="block relative w-full max-w-[195px] sm:max-w-[230px] lg:max-w-[245px] aspect-square rounded-full p-1.5 sm:p-2 bg-white border border-[#EADBCC] hover:border-[#C18129] group-hover:scale-105 transition-all duration-500 cursor-pointer">
-                    <div class="w-full h-full rounded-full overflow-hidden bg-white p-0 flex items-center justify-center relative">
+                    <div class="w-full h-full rounded-full overflow-hidden bg-white p-2 sm:p-2.5 flex items-center justify-center relative">
                         <img 
                             src="{{ asset('assets/images/single-havan-cup.png') }}?v={{ file_exists(public_path('assets/images/single-havan-cup.png')) ? filemtime(public_path('assets/images/single-havan-cup.png')) : time() }}" 
                             alt="100% Organic Havan Cups" 
-                            class="w-full h-full object-contain rounded-full scale-115 sm:scale-120 group-hover:scale-125 sm:group-hover:scale-130 transition-transform duration-500"
+                            class="w-full h-full object-contain rounded-full scale-100 group-hover:scale-105 transition-transform duration-500"
                         >
                     </div>
                 </a>

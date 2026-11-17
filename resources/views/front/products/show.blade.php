@@ -794,133 +794,180 @@
         <!-- ========================================================================= -->
         <!-- 2. SPECIFICATIONS & PURITY COMPARISON SECTION (HTML / Tailwind UI)        -->
         <!-- ========================================================================= -->
+        @php
+            $websiteLogo = !empty($storeSettings['header_logo']) 
+                ? asset($storeSettings['header_logo']) 
+                : asset('assets/images/settings/header-logo-1792669654.png');
+            $brandDisplayName = 'ISHANAA';
+            if (!empty($storeSettings['store_name'])) {
+                $parts = explode('-', $storeSettings['store_name']);
+                $brandDisplayName = trim($parts[0]);
+            }
+        @endphp
         <div class="mt-8 sm:mt-12 max-w-7xl mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 items-stretch">
                 
                 <!-- Left Card: Specifications (5 Cols) -->
                 <div class="lg:col-span-5 bg-white rounded-[14px] sm:rounded-[18px] border border-[#EADBCC] shadow-xs overflow-hidden flex flex-col">
-                    <div class="bg-[#7B1925] px-4 sm:px-5 py-2 sm:py-2.5 border-b border-[#D38928]/40">
-                        <h3 class="font-serif text-lg sm:text-xl text-white font-medium tracking-wide">
+                    <div class="bg-[#FAF5EE] px-5 sm:px-6 py-3.5 sm:py-4 border-b border-[#EADBCC]">
+                        <h3 class="font-serif text-xl sm:text-2xl text-[#7B1925] font-bold tracking-tight">
                             Specifications
                         </h3>
                     </div>
-                    <div class="p-2.5 sm:p-4 flex-1 flex flex-col justify-between divide-y divide-[#F1E5D8]">
-                        <div class="py-[5px] flex items-center justify-between text-xs sm:text-[13.5px]">
-                            <span class="text-gray-700 font-medium">Country of Origin</span>
-                            <span class="text-gray-900 font-bold flex items-center gap-1.5">
-                                Vrindavan, Bharat
-                                <span class="text-base leading-none">🇮🇳</span>
-                            </span>
+                    <div class="p-1 sm:p-2 flex-1 flex flex-col justify-between divide-y divide-[#F4ECE4]">
+                        <div class="py-2.5 sm:py-3 px-4 sm:px-5 flex items-center justify-between text-xs sm:text-[13.5px]">
+                            <span class="text-gray-600 font-medium">Country of Origin</span>
+                            <span class="text-gray-900 font-bold">Vrindavan, Bharat</span>
                         </div>
-                        <div class="py-[5px] flex items-center justify-between text-xs sm:text-[13.5px]">
-                            <span class="text-gray-700 font-medium">Item Form</span>
+                        <div class="py-2.5 sm:py-3 px-4 sm:px-5 flex items-center justify-between text-xs sm:text-[13.5px]">
+                            <span class="text-gray-600 font-medium">Item Form</span>
                             <span class="text-gray-900 font-bold">{{ $product->item_form ?? 'Incense Sticks' }}</span>
                         </div>
-                        <div class="py-[5px] flex items-center justify-between text-xs sm:text-[13.5px]">
-                            <span class="text-gray-700 font-medium">Key Herb / Essence</span>
+                        <div class="py-2.5 sm:py-3 px-4 sm:px-5 flex items-center justify-between text-xs sm:text-[13.5px]">
+                            <span class="text-gray-600 font-medium">Key Herb / Essence</span>
                             <span class="text-gray-900 font-bold">{{ $product->fragrance ?? 'Pure Bhimseni & Herbs' }}</span>
                         </div>
-                        <div class="py-[5px] flex items-center justify-between text-xs sm:text-[13.5px]">
-                            <span class="text-gray-700 font-medium">Stick Count</span>
+                        <div class="py-2.5 sm:py-3 px-4 sm:px-5 flex items-center justify-between text-xs sm:text-[13.5px]">
+                            <span class="text-gray-600 font-medium">Stick Count</span>
                             <span class="text-gray-900 font-bold">{{ $product->stick_count ? $product->stick_count . ' Sticks / Pack' : '100 Sticks / Pack' }}</span>
                         </div>
-                        <div class="py-[5px] flex items-center justify-between text-xs sm:text-[13.5px]">
-                            <span class="text-gray-700 font-medium">Burn Time</span>
-                            <span class="text-gray-900 font-bold">{{ $product->burn_time ?? '45 – 50 Minutes' }}</span>
+                        <div class="py-2.5 sm:py-3 px-4 sm:px-5 flex items-center justify-between text-xs sm:text-[13.5px]">
+                            <span class="text-gray-600 font-medium">Burn Time</span>
+                            <span class="text-gray-900 font-bold">{{ $product->burn_time ?? '45 mins' }}</span>
                         </div>
-                        <div class="py-[5px] flex items-center justify-between text-xs sm:text-[13.5px]">
-                            <span class="text-gray-700 font-medium">Ceramic Holder</span>
-                            <span class="text-[#1B7F49] font-bold">Included FREE (₹150 Value)</span>
+                        <div class="py-2.5 sm:py-3 px-4 sm:px-5 flex items-center justify-between text-xs sm:text-[13.5px]">
+                            <span class="text-gray-600 font-medium">Ceramic Holder</span>
+                            <span class="inline-flex items-center px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-[11px] sm:text-xs font-bold bg-[#EAF5EC] text-[#2E7D32]">Included FREE (₹150 Value)</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right Card: Features Comparison (7 Cols) -->
+                <!-- Right Card: Why Choose Brand / Comparison (7 Cols) -->
                 <div class="lg:col-span-7 bg-white rounded-[14px] sm:rounded-[18px] border border-[#EADBCC] shadow-xs overflow-hidden flex flex-col">
-                    <!-- Header Bar with Distinct Rounded-Top Logo Box -->
-                    <div class="bg-[#7B1925] border-b border-[#D38928]/40 grid grid-cols-12 items-center">
-                        <div class="col-span-6 px-4 sm:px-5 py-2 sm:py-2.5">
-                            <h3 class="font-serif text-lg sm:text-xl text-white font-medium tracking-wide">
-                                Features
+                    <!-- Header Bar with Rounded Pill Logo Container -->
+                    <div class="bg-[#7B1925] border-b border-[#7B1925] grid grid-cols-12 items-stretch min-h-[52px]">
+                        <div class="col-span-6 px-4 sm:px-6 py-3 flex items-center">
+                            <h3 class="font-serif text-base sm:text-xl text-white font-normal sm:font-medium tracking-wide">
+                                Why Choose {{ $brandDisplayName }}?
                             </h3>
                         </div>
-                        <div class="col-span-3 bg-[#FDF6ED] py-1.5 px-2 text-center rounded-t-[10px] border-t-2 border-x-2 border-[#D38928]/50 shadow-xs flex items-center justify-center -mb-[1px] relative z-10 min-h-[46px]">
+                        <div class="col-span-3 bg-[#FAF3EA] px-2 py-2 text-center rounded-t-[14px] sm:rounded-t-[16px] flex items-center justify-center relative z-10 self-end h-full">
                             <img 
-                                src="{{ asset('assets/images/Ishanaa-logo.png') }}" 
-                                alt="ISHANAA" 
-                                class="h-6 sm:h-7 w-auto max-w-[90px] sm:max-w-[110px] object-contain"
+                                src="{{ $websiteLogo }}" 
+                                alt="{{ $brandDisplayName }}" 
+                                class="h-5 sm:h-6.5 w-auto max-w-[95px] sm:max-w-[125px] object-contain mx-auto"
                             >
                         </div>
-                        <div class="col-span-3 py-2 sm:py-2.5 px-2 text-center text-[11px] sm:text-xs font-bold tracking-wider text-[#F7E7CE] uppercase font-heading">
-                            Others
+                        <div class="col-span-3 py-3 px-2 text-center text-xs sm:text-sm font-semibold tracking-wider text-white uppercase font-serif flex items-center justify-center">
+                            OTHERS
                         </div>
                     </div>
 
-                    <!-- Comparison Rows (Perfect Straight Single Row Lines, 30px Green Ticks, Clean Alignment) -->
+                    <!-- Comparison Rows -->
                     <div class="p-0 flex-1 flex flex-col justify-between">
                         
                         <!-- Row 1 -->
-                        <div class="grid grid-cols-12 items-stretch text-xs sm:text-[13.5px] border-b border-[#F1E5D8]">
-                            <div class="col-span-6 px-4 sm:px-5 py-2.5 flex items-center text-gray-800 font-medium">
+                        <div class="grid grid-cols-12 items-stretch text-xs sm:text-[13.5px] border-b border-[#F4ECE4]">
+                            <div class="col-span-6 px-4 sm:px-6 py-2.5 sm:py-3 flex items-center text-gray-800 font-medium">
                                 100% Bamboo-Free (Scripture Compliant)
                             </div>
-                            <div class="col-span-3 bg-[#FDF6ED] border-x border-[#EEDBCA]/60 flex items-center justify-center py-2.5">
-                                <span class="w-[30px] h-[30px] rounded-full bg-[#1B7F49] text-white flex items-center justify-center text-sm font-bold shadow-xs">✓</span>
+                            <div class="col-span-3 bg-[#FAF3EA] flex items-center justify-center py-2.5 sm:py-3">
+                                <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#2E7D32] text-white flex items-center justify-center shadow-xs">
+                                    <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                </div>
                             </div>
-                            <div class="col-span-3 bg-transparent flex items-center justify-center py-2.5">
-                                <span class="w-5 h-5 rounded-full bg-[#D32F2F] text-white flex items-center justify-center text-[11px] font-bold">✕</span>
+                            <div class="col-span-3 bg-white flex items-center justify-center py-2.5 sm:py-3">
+                                <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#E53935] text-white flex items-center justify-center shadow-xs">
+                                    <svg class="w-3 h-3 sm:w-3.5 sm:h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </div>
                             </div>
                         </div>
 
                         <!-- Row 2 -->
-                        <div class="grid grid-cols-12 items-stretch text-xs sm:text-[13.5px] border-b border-[#F1E5D8]">
-                            <div class="col-span-6 px-4 sm:px-5 py-2.5 flex items-center text-gray-800 font-medium">
+                        <div class="grid grid-cols-12 items-stretch text-xs sm:text-[13.5px] border-b border-[#F4ECE4]">
+                            <div class="col-span-6 px-4 sm:px-6 py-2.5 sm:py-3 flex items-center text-gray-800 font-medium">
                                 Zero Toxic Charcoal (No Eye Burning)
                             </div>
-                            <div class="col-span-3 bg-[#FDF6ED] border-x border-[#EEDBCA]/60 flex items-center justify-center py-2.5">
-                                <span class="w-[30px] h-[30px] rounded-full bg-[#1B7F49] text-white flex items-center justify-center text-sm font-bold shadow-xs">✓</span>
+                            <div class="col-span-3 bg-[#FAF3EA] flex items-center justify-center py-2.5 sm:py-3">
+                                <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#2E7D32] text-white flex items-center justify-center shadow-xs">
+                                    <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                </div>
                             </div>
-                            <div class="col-span-3 bg-transparent flex items-center justify-center py-2.5">
-                                <span class="w-5 h-5 rounded-full bg-[#D32F2F] text-white flex items-center justify-center text-[11px] font-bold">✕</span>
+                            <div class="col-span-3 bg-white flex items-center justify-center py-2.5 sm:py-3">
+                                <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#E53935] text-white flex items-center justify-center shadow-xs">
+                                    <svg class="w-3 h-3 sm:w-3.5 sm:h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </div>
                             </div>
                         </div>
 
                         <!-- Row 3 -->
-                        <div class="grid grid-cols-12 items-stretch text-xs sm:text-[13.5px] border-b border-[#F1E5D8]">
-                            <div class="col-span-6 px-4 sm:px-5 py-2.5 flex items-center text-gray-800 font-medium">
+                        <div class="grid grid-cols-12 items-stretch text-xs sm:text-[13.5px] border-b border-[#F4ECE4]">
+                            <div class="col-span-6 px-4 sm:px-6 py-2.5 sm:py-3 flex items-center text-gray-800 font-medium">
                                 Premium Organic Essential Herbs
                             </div>
-                            <div class="col-span-3 bg-[#FDF6ED] border-x border-[#EEDBCA]/60 flex items-center justify-center py-2.5">
-                                <span class="w-[30px] h-[30px] rounded-full bg-[#1B7F49] text-white flex items-center justify-center text-sm font-bold shadow-xs">✓</span>
+                            <div class="col-span-3 bg-[#FAF3EA] flex items-center justify-center py-2.5 sm:py-3">
+                                <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#2E7D32] text-white flex items-center justify-center shadow-xs">
+                                    <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                </div>
                             </div>
-                            <div class="col-span-3 bg-transparent flex items-center justify-center py-2.5">
-                                <span class="w-5 h-5 rounded-full bg-[#D32F2F] text-white flex items-center justify-center text-[11px] font-bold">✕</span>
+                            <div class="col-span-3 bg-white flex items-center justify-center py-2.5 sm:py-3">
+                                <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#E53935] text-white flex items-center justify-center shadow-xs">
+                                    <svg class="w-3 h-3 sm:w-3.5 sm:h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </div>
                             </div>
                         </div>
 
                         <!-- Row 4 -->
-                        <div class="grid grid-cols-12 items-stretch text-xs sm:text-[13.5px] border-b border-[#F1E5D8]">
-                            <div class="col-span-6 px-4 sm:px-5 py-2.5 flex items-center text-gray-800 font-medium">
+                        <div class="grid grid-cols-12 items-stretch text-xs sm:text-[13.5px] border-b border-[#F4ECE4]">
+                            <div class="col-span-6 px-4 sm:px-6 py-2.5 sm:py-3 flex items-center text-gray-800 font-medium">
                                 Long-Lasting Temple Scent (4+ Hours)
                             </div>
-                            <div class="col-span-3 bg-[#FDF6ED] border-x border-[#EEDBCA]/60 flex items-center justify-center py-2.5">
-                                <span class="w-[30px] h-[30px] rounded-full bg-[#1B7F49] text-white flex items-center justify-center text-sm font-bold shadow-xs">✓</span>
+                            <div class="col-span-3 bg-[#FAF3EA] flex items-center justify-center py-2.5 sm:py-3">
+                                <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#2E7D32] text-white flex items-center justify-center shadow-xs">
+                                    <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                </div>
                             </div>
-                            <div class="col-span-3 bg-transparent flex items-center justify-center py-2.5">
-                                <span class="w-5 h-5 rounded-full bg-[#D32F2F] text-white flex items-center justify-center text-[11px] font-bold">✕</span>
+                            <div class="col-span-3 bg-white flex items-center justify-center py-2.5 sm:py-3">
+                                <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#E53935] text-white flex items-center justify-center shadow-xs">
+                                    <svg class="w-3 h-3 sm:w-3.5 sm:h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </div>
                             </div>
                         </div>
 
                         <!-- Row 5 -->
                         <div class="grid grid-cols-12 items-stretch text-xs sm:text-[13.5px]">
-                            <div class="col-span-6 px-4 sm:px-5 py-2.5 flex items-center text-gray-800 font-medium">
+                            <div class="col-span-6 px-4 sm:px-6 py-2.5 sm:py-3 flex items-center text-gray-800 font-medium">
                                 Complimentary Artisan Terracotta Stand
                             </div>
-                            <div class="col-span-3 bg-[#FDF6ED] border-x border-[#EEDBCA]/60 flex items-center justify-center py-2.5 rounded-b-lg">
-                                <span class="w-[30px] h-[30px] rounded-full bg-[#1B7F49] text-white flex items-center justify-center text-sm font-bold shadow-xs">✓</span>
+                            <div class="col-span-3 bg-[#FAF3EA] flex items-center justify-center py-2.5 sm:py-3 rounded-b-[14px] sm:rounded-b-[16px]">
+                                <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#2E7D32] text-white flex items-center justify-center shadow-xs">
+                                    <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                </div>
                             </div>
-                            <div class="col-span-3 bg-transparent flex items-center justify-center py-2.5">
-                                <span class="w-5 h-5 rounded-full bg-[#D32F2F] text-white flex items-center justify-center text-[11px] font-bold">✕</span>
+                            <div class="col-span-3 bg-white flex items-center justify-center py-2.5 sm:py-3">
+                                <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#E53935] text-white flex items-center justify-center shadow-xs">
+                                    <svg class="w-3 h-3 sm:w-3.5 sm:h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </div>
                             </div>
                         </div>
 
