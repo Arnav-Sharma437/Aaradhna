@@ -1,214 +1,245 @@
 @php
-    $reels = [
-        [
-            'id' => 1,
-            'title' => 'Sandalwood (चंदन)',
-            'subtitle' => 'Sacred Mysore Sandalwood Dhoop',
-            'slug' => 'chandan-saanjh',
-            'price' => 289,
-            'mrp' => 375,
-            'discount' => '23% OFF',
-            'views' => '2.6k',
-            'likes' => '380 Likes',
-            'rating' => '4.9 (1,240 Reviews)',
-            'thumbnail' => asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png'),
-            'poster' => asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png'),
-            'video_url' => asset('assets/videos/reel-video-1.mp4'),
-            'why_choose' => [
-                '100% Charcoal-Free & Bamboo-Less',
-                'Pure Mysore Sandalwood & Natural Herbs',
-                '45+ Mins Long Burning Time per Stick',
-                'Zero Toxic Smoke, 100% Organic'
+    try {
+        $dbReels = \App\Models\VideoReel::where('is_active', true)
+            ->with(['product.primaryImage', 'product.category'])
+            ->orderBy('sort_order', 'asc')
+            ->get();
+    } catch (\Throwable $e) {
+        $dbReels = collect();
+    }
+
+    if ($dbReels->isNotEmpty()) {
+        $reels = $dbReels->map(function ($r) {
+            return [
+                'id' => $r->product_id ?: $r->id,
+                'title' => $r->display_title,
+                'subtitle' => $r->display_subtitle,
+                'slug' => $r->display_slug,
+                'price' => $r->display_price,
+                'mrp' => $r->display_mrp,
+                'discount' => $r->display_discount,
+                'views' => $r->views ?: '2.5k',
+                'likes' => $r->likes ?: '350 Likes',
+                'rating' => $r->rating ?: '4.9 (1,200 Reviews)',
+                'thumbnail' => $r->thumbnail_src,
+                'poster' => $r->poster_src,
+                'video_url' => $r->video_src,
+                'why_choose' => $r->why_choose_list,
+                'perfect_for' => $r->perfect_for_list,
+            ];
+        })->toArray();
+    } else {
+        $reels = [
+            [
+                'id' => 1,
+                'title' => 'Sandalwood (चंदन)',
+                'subtitle' => 'Sacred Mysore Sandalwood Dhoop',
+                'slug' => 'chandan-saanjh',
+                'price' => 289,
+                'mrp' => 375,
+                'discount' => '23% OFF',
+                'views' => '2.6k',
+                'likes' => '380 Likes',
+                'rating' => '4.9 (1,240 Reviews)',
+                'thumbnail' => asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png'),
+                'poster' => asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png'),
+                'video_url' => asset('assets/videos/reel-video-1.mp4'),
+                'why_choose' => [
+                    '100% Charcoal-Free & Bamboo-Less',
+                    'Pure Mysore Sandalwood & Natural Herbs',
+                    '45+ Mins Long Burning Time per Stick',
+                    'Zero Toxic Smoke, 100% Organic'
+                ],
+                'perfect_for' => [
+                    'Daily Morning & Evening Puja',
+                    'Meditation, Yoga & Stress Relief',
+                    'Purifying Home Energy & Aura'
+                ]
             ],
-            'perfect_for' => [
-                'Daily Morning & Evening Puja',
-                'Meditation, Yoga & Stress Relief',
-                'Purifying Home Energy & Aura'
-            ]
-        ],
-        [
-            'id' => 2,
-            'title' => 'Nagchampa Refill Pack',
-            'subtitle' => 'Authentic Sacred Floral Woods',
-            'slug' => 'divya-naagchampa',
-            'price' => 489,
-            'mrp' => 700,
-            'discount' => '30% OFF',
-            'views' => '2.6k',
-            'likes' => '492 Likes',
-            'rating' => '4.8 (980 Reviews)',
-            'thumbnail' => asset('assets/images/products/ishanaa-incense-sticks-trio.jpg'),
-            'poster' => asset('assets/images/products/ishanaa-incense-sticks-trio.jpg'),
-            'video_url' => asset('assets/videos/reel-video-2.mp4'),
-            'why_choose' => [
-                'Original Naagchampa Resin & Essential Oils',
-                'Deep, Grounding Earthy Fragrance',
-                'Non-Irritant & Smoke-Free Formulation',
-                'Hand-rolled by Traditional Vedic Artisans'
+            [
+                'id' => 2,
+                'title' => 'Nagchampa Refill Pack',
+                'subtitle' => 'Authentic Sacred Floral Woods',
+                'slug' => 'divya-naagchampa',
+                'price' => 489,
+                'mrp' => 700,
+                'discount' => '30% OFF',
+                'views' => '2.6k',
+                'likes' => '492 Likes',
+                'rating' => '4.8 (980 Reviews)',
+                'thumbnail' => asset('assets/images/products/ishanaa-incense-sticks-trio.jpg'),
+                'poster' => asset('assets/images/products/ishanaa-incense-sticks-trio.jpg'),
+                'video_url' => asset('assets/videos/reel-video-2.mp4'),
+                'why_choose' => [
+                    'Original Naagchampa Resin & Essential Oils',
+                    'Deep, Grounding Earthy Fragrance',
+                    'Non-Irritant & Smoke-Free Formulation',
+                    'Hand-rolled by Traditional Vedic Artisans'
+                ],
+                'perfect_for' => [
+                    'Deep Spiritual Dhyan & Sadhana',
+                    'Spiritual Gatherings & Satsang',
+                    'Relaxation after a Long Day'
+                ]
             ],
-            'perfect_for' => [
-                'Deep Spiritual Dhyan & Sadhana',
-                'Spiritual Gatherings & Satsang',
-                'Relaxation after a Long Day'
-            ]
-        ],
-        [
-            'id' => 3,
-            'title' => 'Oudh Refill Pack',
-            'subtitle' => 'Pure Assam Agarwood Essence',
-            'slug' => 'royal-oudh',
-            'price' => 489,
-            'mrp' => 700,
-            'discount' => '30% OFF',
-            'views' => '1.8k',
-            'likes' => '204 Likes',
-            'rating' => '5.0 (1,450 Reviews)',
-            'thumbnail' => asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png'),
-            'poster' => asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png'),
-            'video_url' => asset('assets/videos/reel-video-3.mp4'),
-            'why_choose' => [
-                'Pure Rich Assam Agarwood Extract',
-                'Opulent Long-lasting Royalty Aroma',
-                'Zero Bamboo or Carbon Fillers',
-                'Soothes the Nervous System'
+            [
+                'id' => 3,
+                'title' => 'Oudh Refill Pack',
+                'subtitle' => 'Pure Assam Agarwood Essence',
+                'slug' => 'royal-oudh',
+                'price' => 489,
+                'mrp' => 700,
+                'discount' => '30% OFF',
+                'views' => '1.8k',
+                'likes' => '204 Likes',
+                'rating' => '5.0 (1,450 Reviews)',
+                'thumbnail' => asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png'),
+                'poster' => asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png'),
+                'video_url' => asset('assets/videos/reel-video-3.mp4'),
+                'why_choose' => [
+                    'Pure Rich Assam Agarwood Extract',
+                    'Opulent Long-lasting Royalty Aroma',
+                    'Zero Bamboo or Carbon Fillers',
+                    'Soothes the Nervous System'
+                ],
+                'perfect_for' => [
+                    'Evening Sandhya Aarti & Reflection',
+                    'Welcoming Honored Guests & Festivities',
+                    'Creating a Sacred Sanctuary at Home'
+                ]
             ],
-            'perfect_for' => [
-                'Evening Sandhya Aarti & Reflection',
-                'Welcoming Honored Guests & Festivities',
-                'Creating a Sacred Sanctuary at Home'
-            ]
-        ],
-        [
-            'id' => 4,
-            'title' => 'Mogra Refill Pack',
-            'subtitle' => 'Pure Jasmine & Floral Herbs',
-            'slug' => 'mogra-noor',
-            'price' => 489,
-            'mrp' => 700,
-            'discount' => '30% OFF',
-            'views' => '3.2k',
-            'likes' => '610 Likes',
-            'rating' => '4.9 (780 Reviews)',
-            'thumbnail' => asset('assets/images/products/ishanaa-incense-sticks-trio.jpg'),
-            'poster' => asset('assets/images/products/ishanaa-incense-sticks-trio.jpg'),
-            'video_url' => asset('assets/videos/reel-video-1.mp4'),
-            'why_choose' => [
-                'Fresh White Mogra Essential Oils',
-                'Sweet Uplifting Floral Scent',
-                'Charcoal-Free Safe Burning',
-                'Cleanses Negative Air'
+            [
+                'id' => 4,
+                'title' => 'Mogra Refill Pack',
+                'subtitle' => 'Pure Jasmine & Floral Herbs',
+                'slug' => 'mogra-noor',
+                'price' => 489,
+                'mrp' => 700,
+                'discount' => '30% OFF',
+                'views' => '3.2k',
+                'likes' => '610 Likes',
+                'rating' => '4.9 (780 Reviews)',
+                'thumbnail' => asset('assets/images/products/ishanaa-incense-sticks-trio.jpg'),
+                'poster' => asset('assets/images/products/ishanaa-incense-sticks-trio.jpg'),
+                'video_url' => asset('assets/videos/reel-video-1.mp4'),
+                'why_choose' => [
+                    'Fresh White Mogra Essential Oils',
+                    'Sweet Uplifting Floral Scent',
+                    'Charcoal-Free Safe Burning',
+                    'Cleanses Negative Air'
+                ],
+                'perfect_for' => [
+                    'Morning Prayers & Pooja',
+                    'Calming Anxiety & Uplifting Mood',
+                    'Home Freshening naturally'
+                ]
             ],
-            'perfect_for' => [
-                'Morning Prayers & Pooja',
-                'Calming Anxiety & Uplifting Mood',
-                'Home Freshening naturally'
-            ]
-        ],
-        [
-            'id' => 5,
-            'title' => 'Loban Havan Cup',
-            'subtitle' => '100% Organic Sacred Cow Dung Cups',
-            'slug' => 'havan-cups',
-            'price' => 499,
-            'mrp' => 649,
-            'discount' => '23% OFF',
-            'views' => '2.8k',
-            'likes' => '725 Likes',
-            'rating' => '5.0 (1,890 Reviews)',
-            'thumbnail' => asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png'),
-            'poster' => asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png'),
-            'video_url' => asset('assets/videos/reel-video-2.mp4'),
-            'why_choose' => [
-                'Purifying Sambrani & Guggul Resin',
-                'Natural Desi Cow Dung Cup Base',
-                'Eliminates Vastu Dosha & Negativity',
-                'Complete Mini Havan in 15 Minutes'
+            [
+                'id' => 5,
+                'title' => 'Loban Havan Cup',
+                'subtitle' => '100% Organic Sacred Cow Dung Cups',
+                'slug' => 'havan-cups',
+                'price' => 499,
+                'mrp' => 649,
+                'discount' => '23% OFF',
+                'views' => '2.8k',
+                'likes' => '725 Likes',
+                'rating' => '5.0 (1,890 Reviews)',
+                'thumbnail' => asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png'),
+                'poster' => asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png'),
+                'video_url' => asset('assets/videos/reel-video-2.mp4'),
+                'why_choose' => [
+                    'Purifying Sambrani & Guggul Resin',
+                    'Natural Desi Cow Dung Cup Base',
+                    'Eliminates Vastu Dosha & Negativity',
+                    'Complete Mini Havan in 15 Minutes'
+                ],
+                'perfect_for' => [
+                    'Daily Home Havan & Purification',
+                    'Tuesday & Saturday Hanuman Puja',
+                    'Festivals, Navratri & Diwali'
+                ]
             ],
-            'perfect_for' => [
-                'Daily Home Havan & Purification',
-                'Tuesday & Saturday Hanuman Puja',
-                'Festivals, Navratri & Diwali'
-            ]
-        ],
-        [
-            'id' => 6,
-            'title' => 'Swarna Pushpa Sticks',
-            'subtitle' => 'Divine Marigold & Rose Fusion',
-            'slug' => 'swarna-pushpa',
-            'price' => 399,
-            'mrp' => 499,
-            'discount' => '20% OFF',
-            'views' => '3.1k',
-            'likes' => '492 Likes',
-            'rating' => '4.9 (980 Reviews)',
-            'thumbnail' => asset('assets/images/products/ishanaa-incense-sticks-trio.jpg'),
-            'poster' => asset('assets/images/products/ishanaa-incense-sticks-trio.jpg'),
-            'video_url' => asset('assets/videos/reel-video-3.mp4'),
-            'why_choose' => [
-                'Crafted with Sacred Temple Flowers',
-                'No Synthetic Charcoal or Chemicals',
-                'Calming Floral Vedic Aroma',
-                'Long-lasting Fragrance Residue'
+            [
+                'id' => 6,
+                'title' => 'Swarna Pushpa Sticks',
+                'subtitle' => 'Divine Marigold & Rose Fusion',
+                'slug' => 'swarna-pushpa',
+                'price' => 399,
+                'mrp' => 499,
+                'discount' => '20% OFF',
+                'views' => '3.1k',
+                'likes' => '492 Likes',
+                'rating' => '4.9 (980 Reviews)',
+                'thumbnail' => asset('assets/images/products/ishanaa-incense-sticks-trio.jpg'),
+                'poster' => asset('assets/images/products/ishanaa-incense-sticks-trio.jpg'),
+                'video_url' => asset('assets/videos/reel-video-3.mp4'),
+                'why_choose' => [
+                    'Crafted with Sacred Temple Flowers',
+                    'No Synthetic Charcoal or Chemicals',
+                    'Calming Floral Vedic Aroma',
+                    'Long-lasting Fragrance Residue'
+                ],
+                'perfect_for' => [
+                    'Daily Temple & Home Deity Worship',
+                    'Festive Havans & Ceremonies',
+                    'Elevating Peace and Positive Vibes'
+                ]
             ],
-            'perfect_for' => [
-                'Daily Temple & Home Deity Worship',
-                'Festive Havans & Ceremonies',
-                'Elevating Peace and Positive Vibes'
-            ]
-        ],
-        [
-            'id' => 7,
-            'title' => 'Gulab Rooh Sticks',
-            'subtitle' => 'Kannauj Rose Flower Essence',
-            'slug' => 'gulab-rooh',
-            'price' => 399,
-            'mrp' => 499,
-            'discount' => '20% OFF',
-            'views' => '4.9k',
-            'likes' => '430 Likes',
-            'rating' => '4.8 (690 Reviews)',
-            'thumbnail' => asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png'),
-            'poster' => asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png'),
-            'video_url' => asset('assets/videos/reel-video-1.mp4'),
-            'why_choose' => [
-                'Authentic Desi Gulab Petals',
-                'Sweet Devotional Aroma',
-                '100% Bamboo-Free Core',
-                'Pure Vedic Formulation'
+            [
+                'id' => 7,
+                'title' => 'Gulab Rooh Sticks',
+                'subtitle' => 'Kannauj Rose Flower Essence',
+                'slug' => 'gulab-rooh',
+                'price' => 399,
+                'mrp' => 499,
+                'discount' => '20% OFF',
+                'views' => '4.9k',
+                'likes' => '430 Likes',
+                'rating' => '4.8 (690 Reviews)',
+                'thumbnail' => asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png'),
+                'poster' => asset('assets/images/products/ishanaa-oudh-incense-sticks-100.png'),
+                'video_url' => asset('assets/videos/reel-video-1.mp4'),
+                'why_choose' => [
+                    'Authentic Desi Gulab Petals',
+                    'Sweet Devotional Aroma',
+                    '100% Bamboo-Free Core',
+                    'Pure Vedic Formulation'
+                ],
+                'perfect_for' => [
+                    'Devi Lakshmi Worship & Aarti',
+                    'Creating Sacred Romance & Serenity',
+                    'Meditation & Gratitude'
+                ]
             ],
-            'perfect_for' => [
-                'Devi Lakshmi Worship & Aarti',
-                'Creating Sacred Romance & Serenity',
-                'Meditation & Gratitude'
+            [
+                'id' => 8,
+                'title' => 'Pack of Six Combo (240)',
+                'subtitle' => 'The Grand 6-Fragrance Assortment',
+                'slug' => 'pack-of-six',
+                'price' => 1199,
+                'mrp' => 1799,
+                'discount' => '33% OFF',
+                'views' => '5.9k',
+                'likes' => '940 Likes',
+                'rating' => '5.0 (3,400 Reviews)',
+                'thumbnail' => asset('assets/images/products/ishanaa-incense-sticks-trio.jpg'),
+                'poster' => asset('assets/images/products/ishanaa-incense-sticks-trio.jpg'),
+                'video_url' => asset('assets/videos/reel-video-2.mp4'),
+                'why_choose' => [
+                    'Includes All 6 Master Blends',
+                    '240 High Grade Dhoop Sticks',
+                    'Brass Holder Stand Included',
+                    'Luxury Gift Box Presentation'
+                ],
+                'perfect_for' => [
+                    'Exploring Every Sacred Scent',
+                    'Housewarming & Spiritual Gifting',
+                    'Year-Round Devotion'
+                ]
             ]
-        ],
-        [
-            'id' => 8,
-            'title' => 'Pack of Six Combo (240)',
-            'subtitle' => 'The Grand 6-Fragrance Assortment',
-            'slug' => 'pack-of-six',
-            'price' => 1199,
-            'mrp' => 1799,
-            'discount' => '33% OFF',
-            'views' => '5.9k',
-            'likes' => '940 Likes',
-            'rating' => '5.0 (3,400 Reviews)',
-            'thumbnail' => asset('assets/images/products/ishanaa-incense-sticks-trio.jpg'),
-            'poster' => asset('assets/images/products/ishanaa-incense-sticks-trio.jpg'),
-            'video_url' => asset('assets/videos/reel-video-2.mp4'),
-            'why_choose' => [
-                'Includes All 6 Master Blends',
-                '240 High Grade Dhoop Sticks',
-                'Brass Holder Stand Included',
-                'Luxury Gift Box Presentation'
-            ],
-            'perfect_for' => [
-                'Exploring Every Sacred Scent',
-                'Housewarming & Spiritual Gifting',
-                'Year-Round Devotion'
-            ]
-        ]
-    ];
+        ];
+    }
 @endphp
 
 <!-- ========================================================================= -->

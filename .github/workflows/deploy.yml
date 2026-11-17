@@ -159,7 +159,7 @@ jobs:
 
             echo "Ensuring storage and media directories exist..."
             mkdir -p storage/framework/{sessions,views,cache} storage/logs bootstrap/cache
-            mkdir -p public/uploads/products/videos public/storage/products/videos storage/app/public/products/videos
+            mkdir -p public/uploads/products/videos public/storage/products/videos storage/app/public/products/videos public/uploads/videos/reels/posters
             mkdir -p storage/app/public/qr public/storage/qr
             chmod -R 775 storage bootstrap/cache public/uploads public/storage 2>/dev/null || true
 

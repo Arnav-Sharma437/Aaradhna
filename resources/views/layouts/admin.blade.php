@@ -101,6 +101,7 @@
                             'blogs' => \App\Models\BlogPost::where('is_published', true)->count(),
                             'faqs' => \App\Models\Faq::where('is_active', true)->count(),
                             'testimonials' => \App\Models\Testimonial::where('is_active', true)->count(),
+                            'reels' => \Illuminate\Support\Facades\Schema::hasTable('video_reels') ? \App\Models\VideoReel::count() : 0,
                         ];
                     @endphp
 
@@ -273,6 +274,18 @@
                                     <span>Banners &amp; Slider</span>
                                 </div>
                                 <span class="px-2 py-0.5 text-[10px] font-bold rounded-full bg-white/10 text-white/80">{{ $navCounts['banners'] }}</span>
+                            </a>
+
+                            <!-- Video Reels (Shoppable Videos) -->
+                            <a 
+                                href="{{ route('admin.reels.index') }}" 
+                                class="flex items-center justify-between px-3 py-2 rounded-[8px] text-xs font-medium transition-all group {{ request()->routeIs('admin.reels*') ? 'bg-[#2E2E2E] text-white font-bold' : 'text-[#CCCCCC] hover:bg-[#252525] hover:text-white' }}"
+                            >
+                                <div class="flex items-center space-x-3">
+                                    <svg class="w-4 h-4 text-white/60 group-hover:text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                                    <span>Video Reels</span>
+                                </div>
+                                <span class="px-2 py-0.5 text-[10px] font-bold rounded-full {{ ($navCounts['reels'] ?? 0) > 0 ? 'bg-[#D38928]/25 text-[#F6DAA8]' : 'bg-white/10 text-white/80' }}">{{ $navCounts['reels'] ?? 0 }}</span>
                             </a>
 
                             <!-- Blog Posts -->

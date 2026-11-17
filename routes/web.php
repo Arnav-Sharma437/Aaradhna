@@ -181,6 +181,7 @@ use App\Http\Controllers\Admin\FaqController as AdminFaqController;
 use App\Http\Controllers\Admin\TestimonialController as AdminTestimonialController;
 use App\Http\Controllers\Admin\SettingController as AdminSettingController;
 use App\Http\Controllers\Admin\QrAnalyticsController as AdminQrAnalyticsController;
+use App\Http\Controllers\Admin\VideoReelController as AdminVideoReelController;
 
 Route::prefix('admin')->name('admin.')->group(function () {
     // Guest Admin Auth Routes
@@ -250,6 +251,11 @@ Route::prefix('admin')->name('admin.')->group(function () {
         // 9. Banners & Sliders Module
         Route::patch('/banners/{banner}/toggle-status', [AdminBannerController::class, 'toggleStatus'])->name('banners.toggle-status');
         Route::resource('banners', AdminBannerController::class);
+
+        // 9b. Video Reels Module (Shoppable Videos / Reels)
+        Route::patch('/reels/{reel}/toggle-status', [AdminVideoReelController::class, 'toggleStatus'])->name('reels.toggle-status');
+        Route::post('/reels/{reel}/sort-order', [AdminVideoReelController::class, 'updateSortOrder'])->name('reels.update-sort-order');
+        Route::resource('reels', AdminVideoReelController::class);
 
         // 10. Blog Posts Module
         Route::patch('/blogs/{blog}/toggle-status', [AdminBlogController::class, 'toggleStatus'])->name('blogs.toggle-status');
