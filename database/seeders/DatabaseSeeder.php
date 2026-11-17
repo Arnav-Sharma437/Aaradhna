@@ -54,18 +54,21 @@ class DatabaseSeeder extends Seeder
                 'name' => 'Bambooless',
                 'subtitle' => 'Non-irritating, 100% Charcoal-Free Bamboo-less Agarbatti',
                 'description' => 'Pure Vedic bambooless incense sticks made without toxic charcoal or chemical binders for clean, sacred burning.',
+                'image_path' => 'assets/images/single-bambooless-stick.png',
                 'sort_order' => 1,
             ],
             'havan-cups' => [
                 'name' => 'Havan Cups',
                 'subtitle' => '100% Organic Vedic Samagri & Desi Ghee Cups',
                 'description' => 'Pure cow dung and guggal havan cups designed for quick and auspicious home yajnas and daily energy purification.',
+                'image_path' => 'assets/images/single-havan-cup.png',
                 'sort_order' => 2,
             ],
             'dhoop-cones' => [
                 'name' => 'Dhoop Cones',
                 'subtitle' => 'Charcoal-Free, Low-Smoke Sacred Dhoop Cones',
                 'description' => 'Prepared from sacred temple flowers, natural resins, and pure essential oils for soothing spiritual vibes.',
+                'image_path' => 'assets/images/single-dhoop-cone.png',
                 'sort_order' => 3,
             ],
         ];

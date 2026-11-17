@@ -229,7 +229,7 @@
                 <a href="{{ route('collections.show', 'bambooless') }}" class="block relative w-full max-w-[195px] sm:max-w-[230px] lg:max-w-[245px] aspect-square rounded-full p-2.5 sm:p-3 bg-white border border-[#EADBCC] hover:border-[#C18129] group-hover:scale-105 transition-all duration-500 cursor-pointer">
                     <div class="w-full h-full rounded-full overflow-hidden bg-white p-1.5 sm:p-2 flex items-center justify-center relative">
                         <img 
-                            src="{{ asset('assets/images/single-bambooless-stick.jpg') }}" 
+                            src="{{ asset('assets/images/single-bambooless-stick.png') }}?v={{ file_exists(public_path('assets/images/single-bambooless-stick.png')) ? filemtime(public_path('assets/images/single-bambooless-stick.png')) : time() }}" 
                             alt="Incense Sticks" 
                             class="w-full h-full object-contain rounded-full scale-105 group-hover:scale-115 transition-transform duration-500"
                         >
@@ -252,7 +252,7 @@
                 <a href="{{ route('collections.show', 'dhoop-cones') }}" class="block relative w-full max-w-[195px] sm:max-w-[230px] lg:max-w-[245px] aspect-square rounded-full p-2.5 sm:p-3 bg-white border border-[#EADBCC] hover:border-[#C18129] group-hover:scale-105 transition-all duration-500 cursor-pointer">
                     <div class="w-full h-full rounded-full overflow-hidden bg-white p-1.5 sm:p-2 flex items-center justify-center relative">
                         <img 
-                            src="{{ asset('assets/images/single-dhoop-cone.jpg') }}" 
+                            src="{{ asset('assets/images/single-dhoop-cone.png') }}?v={{ file_exists(public_path('assets/images/single-dhoop-cone.png')) ? filemtime(public_path('assets/images/single-dhoop-cone.png')) : time() }}" 
                             alt="Easy to Use Dhoop Cone" 
                             class="w-full h-full object-contain rounded-full scale-105 group-hover:scale-115 transition-transform duration-500"
                         >
@@ -275,7 +275,7 @@
                 <a href="{{ route('collections.show', 'havan-cups') }}" class="block relative w-full max-w-[195px] sm:max-w-[230px] lg:max-w-[245px] aspect-square rounded-full p-2.5 sm:p-3 bg-white border border-[#EADBCC] hover:border-[#C18129] group-hover:scale-105 transition-all duration-500 cursor-pointer">
                     <div class="w-full h-full rounded-full overflow-hidden bg-white p-1.5 sm:p-2 flex items-center justify-center relative">
                         <img 
-                            src="{{ asset('assets/images/single-havan-cup.jpg') }}" 
+                            src="{{ asset('assets/images/single-havan-cup.png') }}?v={{ file_exists(public_path('assets/images/single-havan-cup.png')) ? filemtime(public_path('assets/images/single-havan-cup.png')) : time() }}" 
                             alt="100% Organic Havan Cups" 
                             class="w-full h-full object-contain rounded-full scale-105 group-hover:scale-115 transition-transform duration-500"
                         >
