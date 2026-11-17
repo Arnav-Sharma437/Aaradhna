@@ -800,8 +800,9 @@
                 : asset('assets/images/settings/header-logo-1792669654.png');
             $brandDisplayName = 'ISHANAA';
             if (!empty($storeSettings['store_name'])) {
-                $parts = explode('-', $storeSettings['store_name']);
-                $brandDisplayName = trim($parts[0]);
+                $parts = preg_split('/[-–—:]/', $storeSettings['store_name']);
+                $candidate = trim($parts[0]);
+                $brandDisplayName = ($candidate === 'ISHANAAT') ? 'ISHANAA' : $candidate;
             }
         @endphp
         <div class="mt-8 sm:mt-12 max-w-7xl mx-auto">
